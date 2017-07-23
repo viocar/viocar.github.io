@@ -1,8 +1,8 @@
 skill_id.onchange = function(){
 	var s_id = parseInt(skill_id.value);
-	var skillTable = "../tbl/playerskilltable.tbl";
+	var skillTable = "https://raw.githubusercontent.com/viocar/viocar.github.io/master/js/handleskillid.js";
 	if (document.getElementById("enemybox").checked){
-		skillTable ="../tbl/enemyskilltable.tbl";
+		skillTable ="https://raw.githubusercontent.com/viocar/viocar.github.io/master/js/handleskillid.js";
 	}
 	if (!isNaN(s_id)){
 		var skillFileData = new XMLHttpRequest();
