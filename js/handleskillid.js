@@ -1,8 +1,8 @@
 skill_id.onchange = function(){
 	var s_id = parseInt(skill_id.value);
-	var skillTable = "/tbl/playerskilltable.tbl";
+	var skillTable = "../tbl/playerskilltable.tbl";
 	if (document.getElementById("enemybox").checked){
-		skillTable ="/tbl/enemyskilltable.tbl";
+		skillTable ="../tbl/enemyskilltable.tbl";
 	}
 	if (!isNaN(s_id)){
 		var skillFileData = new XMLHttpRequest();
