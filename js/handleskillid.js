@@ -1,28 +1,196 @@
-skill_id.onchange = function(){
-	var s_id = parseInt(skill_id.value);
-	var skillTable = "https://viocar.github.io/tbl/playerskilltable.tbl";
-	if (document.getElementById("enemybox").checked){
-		skillTable ="https://viocar.github.io/tbl/enemyskilltable.tbl";
-	}
-	if (!isNaN(s_id)){
-		var skillFileData = new XMLHttpRequest();
-		skillFileData.open("GET", skillTable, true);
-		skillFileData.responseType = "blob";
-		debugText(skillTable);
-		debugText(skillFileData.response);
-		skillFileData.onload = function(oEvent){
-			var sdBuffer = skillFileData.response;
-			if (sdBuffer){
-				drawSkillTable();
-			} else {
-				console.log("it's fucked");
+const dataSize = 376; //different from game to game. hardcoded for now.
+const tlevels = 10; //total number of levels. this is hardcoded for now but can change from game to game
+const sublen = 4 + (tlevels * 4); //length of a subheader entry, including the subheader itself
+const screen = document.getElementById("screen");
+const ctx = screen.getContext("2d");
+const ar10 = "10pt Arial";
+const ar20 = "20pt Arial";
+var pstable = 0; //variables so table loading only has to happen once
+var estable = 0;
+var errorid = 0;
+
+window.onkeyup = function(e){
+	var key = e.keyCode; 
+	if (key == 13){ //run the code on enter
+		errorid = 0;
+		var s_id = parseInt(skill_id.value);
+		var boxcheck = document.getElementById("enemybox").checked;
+		if (s_id > 400){ //check for some errors
+			if (boxcheck){
+				errorid = 1;
+			} else if (s_id > 421){
+				errorid = 2;
 			}
+		} else if (isNaN(s_id)){
+			errorid = 3;
 		}
-	} else {
-		console.log("it's nan buddy. better get you a number");
+		if (errorid == 0){ //proceed if we have no errors
+			var skillTable = "https://viocar.github.io/tbl/playerskilltable.tbl"; //probably should be relative but ehhhh
+			if (boxcheck){
+				skillTable ="https://viocar.github.io/tbl/enemyskilltable.tbl";
+			}
+			if (pstable != 0 && !boxcheck){ // check if we previously loaded pstable/estable, and use that arraybuffer instead
+				createSkillArray(pstable, s_id);
+			} else if (estable != 0 && boxcheck){
+				createSkillArray(estable, s_id);
+			} else { //if it's our first time, load the files up
+				var skillFileData = new XMLHttpRequest();
+				skillFileData.open("GET", skillTable, true);
+				skillFileData.responseType = "arraybuffer";
+				skillFileData.onload = function(oEvent){ //when we have the files, store them for later use
+					var sdBuffer = skillFileData.response;
+					if (sdBuffer.byteLength % dataSize === 0){ //check if the size is correct
+						if (!boxcheck){
+							pstable = sdBuffer;
+						} else if (boxcheck){
+							estable = sdBuffer;
+						}
+						createSkillArray(sdBuffer, s_id);
+					} else {
+						errorid = 4;
+						errorHandler(errorid);
+					}
+				}
+				skillFileData.send(null);
+			}
+		} else { //something went wrong. holler an error out
+			errorHandler(errorid);
+		}
 	}
 }
 
+function createSkillArray(buffer, len){ //we're getting into some ugly DRY territory here
+	var sv = new DataView(buffer, len * dataSize, dataSize); //get the specific skill we wanna manipulate
+	skillArray = [];
+	skillArray.push(sv.getInt8(0, true)); //skill level. (the true is needed to be read as little endian)
+	skillArray.push(sv.getInt8(1, true)); //skill type
+	skillArray.push(sv.getInt32(2, true)); //unknown values 1
+	skillArray.push(sv.getInt8(6, true)); //target type
+	skillArray.push(sv.getInt8(7, true)); //target group
+	skillArray.push(sv.getInt32(8, true)); //unknown values 2
+	skillArray.push(sv.getInt16(12, true)); //unknown values 3
+	skillArray.push(sv.getInt16(14, true)); //damage type
+	skillArray.push(sv.getInt16(16, true)); //infliction flag
+	skillArray.push(sv.getInt16(18, true)); //ailments inflicted
+	skillArray.push(sv.getInt16(20, true)); //skill flags
+	skillArray.push(sv.getInt16(22, true)); //unknown 4
+	for (i = 0; i < 8; i++){ //each game has room for eight subheaders (I think)
+		skillArray.push(sv.getInt32(24 + (i * sublen), true)); //subheader value
+		for (j = 0; j < tlevels; j++){ //a subheader has space for ten levels even if the level itself has a lower maximum
+			skillArray.push(sv.getInt32(28 + (i * sublen) + (j * 4), true));
+		}
+	}
+	drawSkillTable(skillArray)
+}
+
+function drawSkillTable(array){
+	wipeScreen(); //wipes the screen for a new value
+	var le = 0;
+	var te = 30;
+	var toffset = 17;
+	var s_id = parseInt(skill_id.value); //oops I'm a bad boy redefining variables instead of passing them along through
+	var boxcheck = document.getElementById("enemybox").checked;
+	if (boxcheck){
+		skillname = ename[s_id];
+	} else {
+		skillname = pname[s_id];
+	}
+	drawText(ar20, "start", le, te - 5, skillname, false);
+	for (var i = 0; i < 2; i++){ //this handles the main headers
+		for (var j = 0; j < 12; j++){ //12 will change as I split apart some of the consolidated unknowns
+			var mwidth = (screen.width / 12);
+			var mle = le + (j * mwidth);
+			var mte = te + (i * 24);
+			if (i === 0){
+				drawRect(mle, mte, mwidth, 23, true, "#EEEEEE");
+				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, textheaders[j]);
+			} else {
+				drawRect(mle, mte, mwidth, 23, false);
+				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, getValueFromArray(array), true);
+			}
+		}
+	}
+	for (var i = 0; i < 9; i++){ //this handles subheaders
+		for (var j = 0; j < 11; j++){
+			var mwidth = (screen.width / 11);
+			var mle = le + (j * mwidth);
+			var mte = te + 54 + (i * 24);
+			var isSubheader = false;
+			if (i === 0){
+				if (j % 2 == 0){ //if top row and even number
+					drawRect(mle, mte, mwidth, 23, true, "#DDDDDD");
+				} else { //top row and odd number
+					drawRect(mle, mte, mwidth, 23, true, "#EEEEEE");
+				}
+				if (j === 0){
+					drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, "Subheader");
+				} else {
+					drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, "Level " + j);
+				}
+			} else {
+				if (j === 0){
+					isSubheader = true;
+				} else {
+					isSubheader = false;
+				}
+				if (j % 2 == 0){ //not top row but even
+					drawRect(mle, mte, mwidth, 23, true, "#EEEEEE");
+				} else { //not top row, not even
+					drawRect(mle, mte, mwidth, 23, false);
+				}
+				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, getValueFromArray(array, isSubheader), false)
+			}
+		}
+	}
+	drawText(ar10, "start", le, te + 285, "Note: Some unknown values may be merged with other unknown values and create inaccurate output. This will be fixed as the meanings of the unknown values are discovered.");
+	// drawText(ar10, "start", 4, 348, ".");
+}
+		
+function wipeScreen(){
+	ctx.clearRect(0, 0, screen.width, screen.height);
+}
+
+function getValueFromArray(array, isSubheader){
+	var val = array[0]
+	array.shift();
+	if (isSubheader == true){
+		for (var k in subheaderobj){
+			if (k == val){
+				val = subheaderobj[val];
+			}
+		}
+	}
+	return val;
+}
+
+function drawRect(le, te, width, height, fill, colour){
+	ctx.beginPath();
+	ctx.rect(le, te, width, height);
+	if (fill){
+		ctx.fillStyle = colour;
+		ctx.fill();
+	}
+	ctx.stroke();
+}
+function drawText(font, align, le, te, text, printzero){
+	ctx.beginPath();
+	ctx.fillStyle = "#000000" //all text is hardcoded to be black for now
+	ctx.font = font;
+	ctx.textAlign = align;
+	if ((text == 0) && (!printzero)){
+		return
+	} else {
+		ctx.fillText(text.toString().toUpperCase(), le, te);
+		ctx.stroke();
+	}
+}
+
+function errorHandler(id){
+	wipeScreen();
+	console.log("Error ID: " + id);
+	drawText(ar20, "left", 0, 22, errorm[id], true);
+}
+	
 function debugText(text){
 	var onoff = 1;
 	if (onoff == 1){
