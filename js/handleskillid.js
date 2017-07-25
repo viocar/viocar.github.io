@@ -4,6 +4,7 @@ const sublen = 4 + (tlevels * 4); //length of a subheader entry, including the s
 const screen = document.getElementById("screen");
 const ctx = screen.getContext("2d");
 const ar10 = "10pt Arial";
+const ar16 = "16pt Arial";
 const ar20 = "20pt Arial";
 var pstable = 0; //variables so table loading only has to happen once
 var estable = 0;
@@ -64,11 +65,15 @@ function createSkillArray(buffer, len){ //we're getting into some ugly DRY terri
 	skillArray = [];
 	skillArray.push(sv.getInt8(0, true)); //skill level. (the true is needed to be read as little endian)
 	skillArray.push(sv.getInt8(1, true)); //skill type
-	skillArray.push(sv.getInt32(2, true)); //unknown values 1
+	skillArray.push(sv.getInt16(2, true)); //body part used (0: none probably, 1: head, 2: arm, 4: leg, 8000: all body parts?, 4000: also all body parts? !![NEW]!!
+	skillArray.push(sv.getInt16(4, true)); //some sort of status required for the skill to work. 
 	skillArray.push(sv.getInt8(6, true)); //target type
 	skillArray.push(sv.getInt8(7, true)); //target group
-	skillArray.push(sv.getInt32(8, true)); //unknown values 2
-	skillArray.push(sv.getInt16(12, true)); //unknown values 3
+	skillArray.push(sv.getInt8(8, true)); //useable in combat or field or what. 3 is useable in field only, 4 is usable in combat only, 7 is useable in both
+	skillArray.push(sv.getInt8(9, true)); //buff or debuff? (0 = no, 1 = buff, 2 = debuff)
+	skillArray.push(sv.getInt8(10, true)); //type of buff/debuff 
+	skillArray.push(sv.getInt8(11, true)); //unknown
+	skillArray.push(sv.getInt16(12, true)); //buff/debuff element
 	skillArray.push(sv.getInt16(14, true)); //damage type
 	skillArray.push(sv.getInt16(16, true)); //infliction flag
 	skillArray.push(sv.getInt16(18, true)); //ailments inflicted
@@ -90,15 +95,17 @@ function drawSkillTable(array){
 	var toffset = 17;
 	var s_id = parseInt(skill_id.value); //oops I'm a bad boy redefining variables instead of passing them along through
 	var boxcheck = document.getElementById("enemybox").checked;
+	var skillname;
+	var teamname;
 	if (boxcheck){
-		skillname = ename[s_id];
+		skillname = ename[s_id] + " (Enemy skill)";
 	} else {
-		skillname = pname[s_id];
+		skillname = pname[s_id] + " (Player skill)";
 	}
 	drawText(ar20, "start", le, te - 5, skillname, false);
 	for (var i = 0; i < 2; i++){ //this handles the main headers
-		for (var j = 0; j < 12; j++){ //12 will change as I split apart some of the consolidated unknowns
-			var mwidth = (screen.width / 12);
+		for (var j = 0; j < 16; j++){ //13 will change as I split apart some of the consolidated unknowns
+			var mwidth = (screen.width / 16);
 			var mle = le + (j * mwidth);
 			var mte = te + (i * 24);
 			if (i === 0){
