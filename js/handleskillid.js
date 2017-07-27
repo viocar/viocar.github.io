@@ -9,6 +9,7 @@ const ar20 = "20pt Arial";
 var pstable = 0; //variables so table loading only has to happen once
 var estable = 0;
 var errorid = 0;
+var maxlevelgame = 10; //
 
 window.onkeyup = function(e){
 	var key = e.keyCode; 
@@ -65,7 +66,7 @@ function createSkillArray(buffer, len){ //we're getting into some ugly DRY terri
 	skillArray = [];
 	skillArray.push(sv.getInt8(0, true)); //skill level. (the true is needed to be read as little endian)
 	skillArray.push(sv.getInt8(1, true)); //skill type
-	skillArray.push(sv.getInt16(2, true)); //body part used (0: none probably, 1: head, 2: arm, 4: leg, 8000: all body parts?, 4000: also all body parts? !![NEW]!!
+	skillArray.push(sv.getInt16(2, true)); //body part used (0: none probably, 1: head, 2: arm, 4: leg, 80: unusable if any part bound?, 40: unusable if no part bound?
 	skillArray.push(sv.getInt16(4, true)); //some sort of status required for the skill to work. 
 	skillArray.push(sv.getInt8(6, true)); //target type
 	skillArray.push(sv.getInt8(7, true)); //target group
@@ -103,6 +104,7 @@ function drawSkillTable(array){
 		skillname = pname[s_id] + " (Player skill)";
 	}
 	drawText(ar20, "start", le, te - 5, skillname, false);
+	var mlevel = skillArray[0]; //we don't want to display values for inaccessible levels, so we need the max level before we start shifting data out of our array
 	for (var i = 0; i < 2; i++){ //this handles the main headers
 		for (var j = 0; j < 16; j++){ //13 will change as I split apart some of the consolidated unknowns
 			var mwidth = (screen.width / 16);
@@ -118,38 +120,42 @@ function drawSkillTable(array){
 		}
 	}
 	for (var i = 0; i < 9; i++){ //this handles subheaders
-		for (var j = 0; j < 11; j++){
-			var mwidth = (screen.width / 11);
+		for (var j = 0; j <= maxlevelgame; j++){
+			var mwidth = (screen.width / (maxlevelgame + 1));
 			var mle = le + (j * mwidth);
 			var mte = te + 54 + (i * 24);
 			var isSubheader = false;
-			if (i === 0){
-				if (j % 2 == 0){ //if top row and even number
-					drawRect(mle, mte, mwidth, 23, true, "#DDDDDD");
-				} else { //top row and odd number
-					drawRect(mle, mte, mwidth, 23, true, "#EEEEEE");
-				}
-				if (j === 0){
-					drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, "Subheader");
+			if (j <= mlevel){ //don't draw values for levels beyond the max
+				if (i === 0){
+					if (j % 2 == 0){ //if top row and even number
+						drawRect(mle, mte, mwidth, 23, true, "#DDDDDD");
+					} else { //top row and odd number
+						drawRect(mle, mte, mwidth, 23, true, "#EEEEEE");
+					}
+					if (j === 0){
+						drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, "Subheader");
+					} else {
+						drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, "Level " + j);
+					}
 				} else {
-					drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, "Level " + j);
+					if (j === 0){
+						isSubheader = true;
+					} else {
+						isSubheader = false;
+					}
+					if (j % 2 == 0){ //not top row but even
+						drawRect(mle, mte, mwidth, 23, true, "#EEEEEE");
+					} else { //not top row, not even
+						drawRect(mle, mte, mwidth, 23, false);
+					}
+					drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, getValueFromArray(array, isSubheader), false);
 				}
-			} else {
-				if (j === 0){
-					isSubheader = true;
-				} else {
-					isSubheader = false;
-				}
-				if (j % 2 == 0){ //not top row but even
-					drawRect(mle, mte, mwidth, 23, true, "#EEEEEE");
-				} else { //not top row, not even
-					drawRect(mle, mte, mwidth, 23, false);
-				}
-				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, getValueFromArray(array, isSubheader), false)
+			} else if (i > 0){ //since the game data contains values beyond the max, we still need to shift that data out of our array
+				array.shift();
 			}
 		}
 	}
-	drawText(ar10, "start", le, te + 285, "Note: Some unknown values may be merged with other unknown values and create inaccurate output. This will be fixed as the meanings of the unknown values are discovered.");
+	// drawText(ar10, "start", le, te + 285, "Note: Some unknown values may be merged with other unknown values and create inaccurate output. This will be fixed as the meanings of the unknown values are discovered.");
 	// drawText(ar10, "start", 4, 348, ".");
 }
 		
