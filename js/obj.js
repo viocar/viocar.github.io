@@ -70,19 +70,20 @@ const subheaderobj = {
 	"139":"Unknown", //rocket punch
 	"142":"Ignore defenses",
 	"144":"Use ailment on self",
+	"148":"Use ailment on self",
 	"150":"Join clones after",
 	"151":"Act first", //knighthood
 	"152":"Act first", //quick draw
 	"153":"Unknown", //if you use it on the rear row in rear dignity. loads a value to the stack that doesn't seem to do anything with rear dignity, but might be used in other things.
 	"161":"Provoke flag",
 	"164":"Defrag flag", //again, not sure what this does exactly. don't care enough to find out
-	"165":"Core Dump flag", //I don't actually know what this is for. it seems to do... something with binds.
+	"165":"Yggdroid bind flag", //I don't actually know what this is for. it seems to do... something with binds.
 	"166":"Restrict to bots",
 	"167":"Kill bots after use",
 	"168":"Check for bot", //all out works only with bots
 	"170":"Buff duration",
 	"172":"Use skill at EOT",
-	"174":"ELE %",
+	"174":"ELE weakness %",
 	"175":"DEF % (ailment)",
 	"176":"ATK % (ailment)",
 	"177":"ATK %",
@@ -100,6 +101,7 @@ const subheaderobj = {
 	"205":"Ailment immunity", //205 and 206 are, as far as I can tell identical in the game's code
 	"206":"Ailment immunity",
 	"207":"Bind immunity",
+	"208":"Guaranteed crit",
 	"216":"Reinforce flag",
 	"218":"Use twice chance",
 	"219":"Splash chance",
@@ -186,4 +188,4 @@ const pname = ["Blank","Attack","HP Up","TP Up","Bandage","Combat Study","Limit 
 
 const textheaders = ["Max level","Skill type","Body part","TValidity","Target","TarGroup","Where Use","Buff/Debuff","B/D type","unk.","B/D element","DMG element","ACureorInf","Ailment","Skill fl","unk3"]; //I don't like this. I should rewrite it as an object probably
 
-const errorm = ["No error. Why are you here?","Error! ID must be under 400 for enemy table.","Error! ID must be under 421 for player table.","Error! Must enter a number.","Error! Skill table size mismatched. This should never happen."]; //same with this
+const errorm = ["No error. Why are you here?","Error! ID must be under 400 for enemy table.","Error! ID must be under 421 for player table.","Error! Skill name not found (make sure the checkbox is correct).","Error! Skill table size mismatched. This should never happen."]; //same with this

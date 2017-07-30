@@ -9,7 +9,6 @@ const ar20 = "20pt Arial";
 var pstable = 0; //variables so table loading only has to happen once
 var estable = 0;
 var errorid = 0;
-var maxlevelgame = 10; //
 
 window.onkeyup = function(e){
 	var key = e.keyCode; 
@@ -23,13 +22,27 @@ window.onkeyup = function(e){
 			} else if (s_id > 421){
 				errorid = 2;
 			}
-		} else if (isNaN(s_id)){
-			errorid = 3;
+		} else { //check to see if a name was input instead. search the array for that name, and display that skill.
+			var namearraytouse = pname;
+			if (boxcheck){
+				namearraytouse = ename;
+			}
+			var j = 0; //i in for...of loops is the value of the right side and not a number, so we need to track the loop iteration ourselves
+			for (i of namearraytouse){
+				if (skill_id.value.toString().toUpperCase() == i.toUpperCase()){ //the toUpperCase() method allows for case insensitive comparison
+					s_id = parseInt(j);
+					break;
+				}
+				j++;
+			}
+			if (isNaN(s_id)){ //if s_id still isn't a number at this point, throw an error
+				errorid = 3; //the break in the for loop will break us all the way out of this if statement, so we can just have this here without any other 
+			}
 		}
 		if (errorid == 0){ //proceed if we have no errors
 			var skillTable = "https://viocar.github.io/tbl/playerskilltable.tbl"; //probably should be relative but ehhhh
 			if (boxcheck){
-				skillTable ="https://viocar.github.io/tbl/enemyskilltable.tbl";
+				skillTable = "https://viocar.github.io/tbl/enemyskilltable.tbl";
 			}
 			if (pstable != 0 && !boxcheck){ // check if we previously loaded pstable/estable, and use that arraybuffer instead
 				createSkillArray(pstable, s_id);
@@ -61,8 +74,8 @@ window.onkeyup = function(e){
 	}
 }
 
-function createSkillArray(buffer, len){ //we're getting into some ugly DRY territory here
-	var sv = new DataView(buffer, len * dataSize, dataSize); //get the specific skill we wanna manipulate
+function createSkillArray(buffer, s_id){ //okay, so, I could consolidate these skillArray.push calls into for loops, but then I'd lose comments, which I don't think is worth it.
+	var sv = new DataView(buffer, s_id * dataSize, dataSize); //get the specific skill we wanna manipulate
 	skillArray = [];
 	skillArray.push(sv.getInt8(0, true)); //skill level. (the true is needed to be read as little endian)
 	skillArray.push(sv.getInt8(1, true)); //skill type
@@ -74,7 +87,7 @@ function createSkillArray(buffer, len){ //we're getting into some ugly DRY terri
 	skillArray.push(sv.getInt8(9, true)); //buff or debuff? (0 = no, 1 = buff, 2 = debuff)
 	skillArray.push(sv.getInt8(10, true)); //type of buff/debuff 
 	skillArray.push(sv.getInt8(11, true)); //unknown
-	skillArray.push(sv.getInt16(12, true)); //buff/debuff element
+	skillArray.push(sv.getInt16(12, true)); //buff/debuff element. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png
 	skillArray.push(sv.getInt16(14, true)); //damage type
 	skillArray.push(sv.getInt16(16, true)); //infliction flag
 	skillArray.push(sv.getInt16(18, true)); //ailments inflicted
@@ -86,22 +99,21 @@ function createSkillArray(buffer, len){ //we're getting into some ugly DRY terri
 			skillArray.push(sv.getInt32(28 + (i * sublen) + (j * 4), true));
 		}
 	}
-	drawSkillTable(skillArray)
+	drawSkillTable(skillArray, s_id)
 }
 
-function drawSkillTable(array){
+function drawSkillTable(array, s_id){
 	wipeScreen(); //wipes the screen for a new value
 	var le = 0;
 	var te = 30;
 	var toffset = 17;
-	var s_id = parseInt(skill_id.value); //oops I'm a bad boy redefining variables instead of passing them along through
 	var boxcheck = document.getElementById("enemybox").checked;
 	var skillname;
 	var teamname;
-	if (boxcheck){
-		skillname = ename[s_id] + " (Enemy skill)";
+	if (boxcheck){ //this repetition feels a bit wrong but I think any way around it would wind up being longer
+		skillname = ename[s_id] + " (Enemy skill) [ID: " + s_id + "]";
 	} else {
-		skillname = pname[s_id] + " (Player skill)";
+		skillname = pname[s_id] + " (Player skill) [ID: " + s_id + "]";
 	}
 	drawText(ar20, "start", le, te - 5, skillname, false);
 	var mlevel = skillArray[0]; //we don't want to display values for inaccessible levels, so we need the max level before we start shifting data out of our array
@@ -120,8 +132,8 @@ function drawSkillTable(array){
 		}
 	}
 	for (var i = 0; i < 9; i++){ //this handles subheaders
-		for (var j = 0; j <= maxlevelgame; j++){
-			var mwidth = (screen.width / (maxlevelgame + 1));
+		for (var j = 0; j <= tlevels; j++){
+			var mwidth = (screen.width / (tlevels + 1));
 			var mle = le + (j * mwidth);
 			var mte = te + 54 + (i * 24);
 			var isSubheader = false;
