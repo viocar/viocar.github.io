@@ -11,14 +11,17 @@ const subheaderobj = {
 	"15":"If back",
 	"18":"Swap row on hit (?)",
 	"25":"Chase chance red.",
+	"27":"Ignore DMG type", //I'm not super sure about this one. It's on All Out and it seems to ignore a flag that checks if the attack has no base type?
 	"29":"DMG type from bot",
 	"33":"Horseplay",
+	"39":"Chance to endure",
 	"42":"Day bonus DMG %",
 	"44":"Night bonus DMG %",
 	"45":"Splash %",
 	"51":"Min hits (swash)",
 	"53":"Target mod",
 	"56":"Ailment chance",
+	"60":"Missing HP mult",
 	"64":"Damage %",
 	"65":"Pincushion DMG",
 	"66":"Flat restore",
@@ -45,6 +48,7 @@ const subheaderobj = {
 	"107":"Link on summon",
 	"108":"Beast base HP",
 	"109":"Beast stat mult",
+	"110":"Link after use",
 	"112":"Link on use",
 	"113":"Weapon type", //this is really weird. I'll need to investigate it in detail later
 	"114":"Bot skill ID",
@@ -61,6 +65,9 @@ const subheaderobj = {
 	"128":"Link on hit",
 	"130":"Line counter flag", 
 	"134":"Undodgeable",
+	"135":"Unknown", //shoot
+	"136":"Unknown", //all out
+	"139":"Unknown", //rocket punch
 	"142":"Ignore defenses",
 	"144":"Use ailment on self",
 	"150":"Join clones after",
@@ -68,8 +75,11 @@ const subheaderobj = {
 	"152":"Act first", //quick draw
 	"153":"Unknown", //if you use it on the rear row in rear dignity. loads a value to the stack that doesn't seem to do anything with rear dignity, but might be used in other things.
 	"161":"Provoke flag",
+	"164":"Defrag flag", //again, not sure what this does exactly. don't care enough to find out
+	"165":"Core Dump flag", //I don't actually know what this is for. it seems to do... something with binds.
 	"166":"Restrict to bots",
 	"167":"Kill bots after use",
+	"168":"Check for bot", //all out works only with bots
 	"170":"Buff duration",
 	"172":"Use skill at EOT",
 	"174":"ELE %",

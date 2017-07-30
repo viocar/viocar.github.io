@@ -66,7 +66,7 @@ function createSkillArray(buffer, len){ //we're getting into some ugly DRY terri
 	skillArray = [];
 	skillArray.push(sv.getInt8(0, true)); //skill level. (the true is needed to be read as little endian)
 	skillArray.push(sv.getInt8(1, true)); //skill type
-	skillArray.push(sv.getInt16(2, true)); //body part used (0: none probably, 1: head, 2: arm, 4: leg, 80: unusable if any part bound?, 40: unusable if no part bound?
+	skillArray.push(sv.getUint16(2, true)); //body part used (0: none probably, 1: head, 2: arm, 4: leg, 80: unusable if any part bound?, 40: unusable if no part bound?
 	skillArray.push(sv.getInt16(4, true)); //some sort of status required for the skill to work. 
 	skillArray.push(sv.getInt8(6, true)); //target type
 	skillArray.push(sv.getInt8(7, true)); //target group
