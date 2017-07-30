@@ -1,1 +1,1 @@
-ask me for permission before you do anything
+Uhh, send me a message or something. I am bad at licenses.

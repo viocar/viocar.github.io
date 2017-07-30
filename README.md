@@ -1,1 +1,1 @@
-I beg for death
+A simple skill viewer for Etrian Odyssey III: The Drowned City (and perhaps other games in the future).
