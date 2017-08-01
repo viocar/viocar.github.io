@@ -62,7 +62,7 @@ const subheaderobj = {
 	"125":"Line free cast",
 	"126":"Link when attacked",
 	"127":"Link on elem skill",
-	"128":"Link on hit",
+	"128":"Link on ally hit",
 	"130":"Line counter flag", 
 	"134":"Undodgeable",
 	"135":"Unknown", //shoot
@@ -70,6 +70,7 @@ const subheaderobj = {
 	"139":"Unknown", //rocket punch
 	"142":"Ignore defenses",
 	"144":"Use ailment on self",
+	"145":"Double TP cost",
 	"148":"Use ailment on self",
 	"150":"Join clones after",
 	"151":"Act first", //knighthood
@@ -161,7 +162,6 @@ const subheaderobj = {
 	"295":"Act first",
 	"296":"Act last",
 	"324":"Sword DMG %",
-	"324":"Sword DMG %",
 	"325":"Club DMG %",
 	"326":"Spear DMG %",
 	"327":"Shield DMG %",
@@ -169,7 +169,7 @@ const subheaderobj = {
 	"329":"Gun DMG %",
 	"330":"Knife DMG %",
 	"331":"Unarmed DMG %",
-	"332":"Unarmed DMG %",
+	"332":"Unarmed DMG %", //this is actually used in wild mastery, but it's just 100% for each value. weird
 	"334":"Bolt DMG %",
 	"335":"Katana DMG %",
 	"337":"HP Up %", //note: this subheader doesn't actually change things
@@ -179,7 +179,7 @@ const subheaderobj = {
 	"344":"Bonus ESC chance",
 	"345":"Bonus limit",
 	"346":"EXP Bonus % (/10)"
-	//unknown: 26, 128
+	//unknown: 26
 }
 
 const ename = ["Blank","Attack","Claw Cut","Poison Gun","Membrane","Sea God's Anger","Lightning Drop","Panic Rush","Poison Tail","Thorn","100-Leg Bind","Bite Off","Vine Dance","Choke","Chomp","Charge","Crush","Greedy Fang","Sharp Fang","Call Allies","Breath","Jump","Muddle Roar","DEFend","Ruin Claw","Ferocious Fish","Decay Breath","Life Absorb","Regen","Power Fang","Cover","Absorb Spirit","Withering Glare","Shell","Foul Spew","Mud Ink","Tear Apart","Aqua Shot","Ruin Fangs","King's Gift","Ice Slurry","Cuff Fangs","Dampen Claw","Claw Chop","Charge In","Ancient Curse","Unload","Combust","Ice Aura","Constricting Leg","Bloody Supper","Poison","Yawn","Twine","Fireball","Crazy Swipe","Mud Spit","Worm Crack","Heavy Fire","Call Allies B","Burning Wind","Fumes","Evil Cry","Flame Claw","Hiss","Ram","Venom Fang","Sticky Acid","Throw","DEFend Stance","Throw","Greedy Claws","Predator","Empress Hammer","Duster","Panic Spores","Double Fire","Bide Time","Great Spike","Roar","Lullaby of Rest","Blast Assault","Frost Lap","Fishman Drug","Icicle","Bouha Stance","Rush","Gale Blade","Torpedo","Ice Burn","NONE","Crushing Fang","Ominous Step","Dino Crush","Antihuman Fire","Dis-Element","Zone Icicle","Leaping Slash","Crystal Edge","Nightmare Solo","Soulshaking Song","Dazzling Eye","Bamboo Splicer","Ground Shake","Bronze Fang","Zone Thunder","Zone Blaze","Ice Beast","Wide Cut","Counter","Sea Guillotine","Deadly Incisor","Gel Electrolyte","Sleeper","Petals","Lightning Call","Bullrush","Moon Prayer","Venom","Branch","Stunning Spore","Diving Breath","Silent Claw","Stone Needle","Bolt Spread","Heavenly Bolt","Stinky Mist","Thunderclap","Dozing Gaze","Crazed Shout","Divine Storm","Exhaust Field","Phosphorescence","Amputate","Scythe Dance","Curse Spores","Violent Vines","Tangling Vines","Scorching Hell","Bewildering Eye","Snapping Teeth","Discharge","Crazy Noise","Binding","Mad Charge","Stone Eye","Spirit Dry","Parasite Venom","Dragon Head","Seven Plagues","Halloween","NONE","NONE","NONE","NONE","NONE","Self-Destruct","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","Change","NONE","NONE","NONE","NONE","NONE","NONE","Spurting Fumes","Kaishaku Heal","NONE","NONE","NONE","Imperial Pride","NONE","NONE","Counter","NONE","NONE","NONE","NONE","NONE","Crystal Edge","Reversal Spore","NONE","NONE","NONE (poison damage handler?)","NONE","Counter","Mud Throw","Fin Smack","Whip Ripper","Earthquake","Marsh Dive","Submerged Move","Escape","Grand Berry","Ocean Rave","Spout","Great Melody","Freeze Ripple","Souha Stance","Tenchi Souha Sho","Disperse","Focus","Line Slice","Punching","Iron Claw","Heat Ray","Blizzard Breath","Electric Flash","Malfunction","Lament","Dubious Mist","Thin Ice","Thunder Wrath","Ocean Drop","Sweet Song","Brandish","Grasp Arm","Liberation","Uzurai","Punishment","Dark Breath","Thorn Cutter","Vine Rush","Spine Blaze","Frozen Eye","Death Thunder","Liberate","Accumulate","Bite Off","Shark Rush","Evil Placoid","Charge","Baracuda","Heated Shot","Dazzling Aurora","Arrest Mine","Oil Cannon","Thunder Cannon","Thunder Feather","Godly Flash","Panic Claw","Ice Crush","Heavenly Light","Critical Break","Fuming Snort","Fumes","Tie Up","Overeat","Hard Scale","Cold Wave","NONE","Violent Grudge","Withstand","NONE","Tentacle Grab","Cnidocyte Rush","Tentacle Reap","Tentacle Suck","Twin Ice Spear","Ice Breath","Ice Pillar","Twin Fire Spear","Fire Breath","Fire Pillar","Twin Volt Spear","Volt Breath","Volt Pillar","Dragon Quake","Ultimate Ruin","Regenerate","Devilish Smile","Misfortune","Breath of Envy","Mist Robe","Cold Stare","Demon Kiss","Reflection","Multi Hammer","Triple Hammer","Death Tentacle","Squid Press","Tidal Wave","Shower","Restoration","Supernova","Black Fire","Scarlet Ice","Green Flash","Grand Dive","Wing Rush","Ancient Breath","NONE","Magma Ocean","Ice Tempest","Proton Thunder","Regenerator","NONE","NONE","NONE","NONE","Nameless Wall","Mist Curtain","Chaotic Beckon","Spurting Fumes","Abyssal Offering","NONE","Demon Rage","Rising Claw","Chaos Tentacle","Primitive Burn","Foul Glacier","Dark Lightning","Ripping Neigh","Fetter Dance","Tail Swing","Divine Wrath","Retribution","Imperial Pride","Summons","Fortress","Conciliate","Restraint","Cruel Stare","Cruelty","Demon Reaper","Falcon Thrust","War Spirit","Kaitou Ranma","Ouka no Mai","Frigid","Regen","Iceblock","NONE","NONE","Zero Point","Shower","NONE","NONE","NONEDATA","NONE","Regen","Magic Lullaby","Petrivoice","Darkness Coil","Poison Tale","Voltage","Curse","Corrupt","Fangs","Blow","Searing","Howling","NO DATA","Beat","Red Fang","Strike","Aquaveil","Flood","Coiling","Ice Gaze","Frost Smile","Shock","Tentacle Beat","Vampire Kiss","Pollen","Cry Soul","Embrace","Lullaby","Tentacle","Six Sins","NO DATA","NO DATA","NO DATA","Corroding Acid","Lay Egg","Swallow Whole","Phoenix","Multiply","Multiply","Multiply","Poison Seeds","Scream","Poison Spores","Self-Destruct 1","Palsy Destruct","Endure"]; //it's gross but there's really no reason to load it as a data file tbh
