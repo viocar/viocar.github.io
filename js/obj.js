@@ -2,7 +2,7 @@ const subheaderobj = {
 	"1":"TP cost",
 	"2":"Limit cost",
 	"3":"Speed",
-	"4":"Acc. (skill)",
+	"4":"Skill accuracy",
 	"5":"Acc. (mod)",
 	"6":"Field effect",
 	"8":"DMG % (If bound)",
@@ -22,18 +22,22 @@ const subheaderobj = {
 	"53":"Target mod",
 	"56":"Ailment chance",
 	"60":"Missing HP mult",
+	"62":"UNUSED", //Buc Nin
+	"63":"UNUSED",
 	"64":"Damage %",
 	"65":"Pincushion DMG",
 	"66":"Flat restore",
-	"67":"TP restore",
-	"68":"HP restore",
+	"67":"HP restore",
+	"68":"TP restore",
 	"69":"Self-damage %",
 	"71":"Endure with beast",
 	"73":"Target acts next",
 	"75":"Min hits",
 	"76":"Max hits",
 	"77":"Skill link (ID)",
-	"78":"Delayed turns",
+	"78":"Link after turns",
+	"79":"Summon monster",
+	"80":"Summon amount",
 	"81":"Poison damage",
 	"82":"Charge %",
 	"83":"Cure ailment",
@@ -64,7 +68,7 @@ const subheaderobj = {
 	"127":"Link on elem skill",
 	"128":"Link on ally hit",
 	"130":"Line counter flag", 
-	"134":"Undodgeable",
+	"134":"Cannot miss",
 	"135":"Unknown", //shoot
 	"136":"Unknown", //all out
 	"139":"Unknown", //rocket punch
@@ -109,7 +113,7 @@ const subheaderobj = {
 	"220":"Elem DMG Up %",
 	"221":"Parry chance",
 	"222":"Stun chance",
-	"223":"Phys DEF %",
+	"223":"DEF %", //passive for guardian
 	"226":"Bonus hit chance",
 	"228":"Full DMG in back",
 	"229":"TP cost reduction",
@@ -121,8 +125,11 @@ const subheaderobj = {
 	"240":"Use on skill use",
 	"241":"Use on death", //target allies
 	"242":"Use on death", //target enemies
-	"243":"Use on ally death",
+	"243":"Chance to revive",
 	"244":"Use on ally death", //how does this differ from 243?
+	"245":"Use on ally death", //how does this differ from 243 and 244?
+	"246":"Ailment chance bonus", //this is too long, but that's fine because this is completely unused in the base game
+	"247":"Ailment chance bonus", //this is too long, but that's fine because this is completely unused in the base game
 	"248":"Recovery chance",
 	"249":"Use on kill", //extend. HP only?
 	"250":"Use on kill", //etheric return. TP only?
@@ -161,6 +168,7 @@ const subheaderobj = {
 	"294":"Activation chance", //kaishaku
 	"295":"Act first",
 	"296":"Act last",
+	"308":"UNUSED", //checked for in a subheader handler
 	"324":"Sword DMG %",
 	"325":"Club DMG %",
 	"326":"Spear DMG %",

@@ -22,7 +22,7 @@ window.onkeyup = function(e){
 			} else if (s_id > 421){
 				errorid = 2;
 			}
-		} else { //check to see if a name was input instead. search the array for that name, and display that skill.
+		} else { //check to see if a name was inpu	t instead. search the array for that name, and display that skill.
 			var namearraytouse = pname;
 			if (boxcheck){
 				namearraytouse = ename;
