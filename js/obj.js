@@ -48,11 +48,13 @@ const subheaderobj = {
 	"89":"Field steps",
 	"92":"Flee chance",
 	"94":"Crit damage", //replaces crit damage instead of buffing it
+	"105":"% of damage taken",
 	"106":"Beast to summon",
 	"107":"Link on summon",
 	"108":"Beast base HP",
 	"109":"Beast stat mult",
 	"110":"Link after use",
+	"111":"UNUSED LINKING SUBHEADER", //investigate this!
 	"112":"Link on use",
 	"113":"Weapon type", //this is really weird. I'll need to investigate it in detail later
 	"114":"Bot skill ID",
@@ -67,11 +69,12 @@ const subheaderobj = {
 	"126":"Link when attacked",
 	"127":"Link on elem skill",
 	"128":"Link on ally hit",
-	"130":"Line counter flag", 
+	"130":"Link on line hit", 
 	"134":"Cannot miss",
-	"135":"Unknown", //shoot
-	"136":"Unknown", //all out
-	"139":"Unknown", //rocket punch
+	"135":"Unknown135", //shoot
+	"136":"Unknown136", //all out
+	"137":"Unknown137", //narmer's earthquake
+	"139":"Unknown139", //rocket punch
 	"142":"Ignore defenses",
 	"144":"Use ailment on self",
 	"145":"Double TP cost",
@@ -79,8 +82,9 @@ const subheaderobj = {
 	"150":"Join clones after",
 	"151":"Act first", //knighthood
 	"152":"Act first", //quick draw
-	"153":"Unknown", //if you use it on the rear row in rear dignity. loads a value to the stack that doesn't seem to do anything with rear dignity, but might be used in other things.
+	"153":"Unknown153", //if you use it on the rear row in rear dignity. loads a value to the stack that doesn't seem to do anything with rear dignity, but might be used in other things.
 	"161":"Provoke flag",
+	"162":"Unknown162", //enemy kaishaku heal?
 	"164":"Defrag flag", //again, not sure what this does exactly. don't care enough to find out
 	"165":"Yggdroid bind flag", //I don't actually know what this is for. it seems to do... something with binds.
 	"166":"Restrict to bots",
@@ -110,7 +114,7 @@ const subheaderobj = {
 	"216":"Reinforce flag",
 	"218":"Use twice chance",
 	"219":"Splash chance",
-	"220":"Elem DMG Up %",
+	"220":"DMG Up %",
 	"221":"Parry chance",
 	"222":"Stun chance",
 	"223":"DEF %", //passive for guardian
@@ -158,12 +162,12 @@ const subheaderobj = {
 	"280":"Nobility proof flag",
 	"282":"Fail if this ailment",
 	"283":"Hit %",
-	"284":"Accuracy %", //this is for passives
+	"284":"Evasion %",
 	"285":"Hit rate at night",
 	"286":"Dodge rate at night",
 	"290":"Use on revive",
 	"291":"HP cost on skill",
-	"292":"Link chance", //unsure of this (EM Barrier/226)
+	"292":"Link chance on hit", //unsure of this (EM Barrier/226)
 	"293":"HP threshold", 
 	"294":"Activation chance", //kaishaku
 	"295":"Act first",

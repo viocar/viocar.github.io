@@ -111,14 +111,14 @@ function drawSkillTable(array, s_id){
 	var skillname;
 	var teamname;
 	if (boxcheck){ //this repetition feels a bit wrong but I think any way around it would wind up being longer
-		skillname = ename[s_id] + " (Enemy skill) [ID: " + s_id + "]";
+		skillname = ename[s_id] + " (Enemy skill) [ID: " + s_id + " dec / " + s_id.toString(16) + " hex]";
 	} else {
-		skillname = pname[s_id] + " (Player skill) [ID: " + s_id + "]";
+		skillname = pname[s_id] + " (Player skill) [ID: " + s_id + " dec / " + s_id.toString(16) + " hex]";
 	}
 	drawText(ar20, "start", le, te - 5, skillname, false);
 	var mlevel = skillArray[0]; //we don't want to display values for inaccessible levels, so we need the max level before we start shifting data out of our array
 	for (var i = 0; i < 2; i++){ //this handles the main headers
-		for (var j = 0; j < 16; j++){ //13 will change as I split apart some of the consolidated unknowns
+		for (var j = 0; j < 16; j++){
 			var mwidth = (screen.width / 16);
 			var mle = le + (j * mwidth);
 			var mte = te + (i * 24);
@@ -127,7 +127,7 @@ function drawSkillTable(array, s_id){
 				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, textheaders[j]);
 			} else {
 				drawRect(mle, mte, mwidth, 23, false);
-				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, getValueFromArray(array), true);
+				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, getValueFromArray(array, false, true), true);
 			}
 		}
 	}
@@ -175,7 +175,7 @@ function wipeScreen(){
 	ctx.clearRect(0, 0, screen.width, screen.height);
 }
 
-function getValueFromArray(array, isSubheader){
+function getValueFromArray(array, isSubheader, displayHex){
 	var val = array[0]
 	array.shift();
 	if (isSubheader == true){
@@ -184,6 +184,9 @@ function getValueFromArray(array, isSubheader){
 				val = subheaderobj[val];
 			}
 		}
+	}
+	if (displayHex == true){
+		val = val.toString(16);
 	}
 	return val;
 }
