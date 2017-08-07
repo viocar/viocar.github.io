@@ -85,7 +85,7 @@ function createSkillArray(buffer, s_id){ //okay, so, I could consolidate these s
 	skillArray.push(sv.getInt8(7, true)); //target group
 	skillArray.push(sv.getInt8(8, true)); //useable in combat or field or what. 3 is useable in field only, 4 is usable in combat only, 7 is useable in both
 	skillArray.push(sv.getInt8(9, true)); //buff or debuff? (0 = no, 1 = buff, 2 = debuff)
-	skillArray.push(sv.getInt8(10, true)); //type of buff/debuff 
+	skillArray.push(sv.getInt8(10, true)); //type of buff/debuff. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png (note: 3 is actually evasion I think)
 	skillArray.push(sv.getInt8(11, true)); //unknown
 	skillArray.push(sv.getInt16(12, true)); //buff/debuff element. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png
 	skillArray.push(sv.getInt16(14, true)); //damage type
