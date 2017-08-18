@@ -79,13 +79,13 @@ function createSkillArray(buffer, s_id){ //okay, so, I could consolidate these s
 	skillArray = [];
 	skillArray.push(sv.getInt8(0, true)); //skill level. (the true is needed to be read as little endian)
 	skillArray.push(sv.getInt8(1, true)); //skill type
-	skillArray.push(sv.getUint16(2, true)); //body part used (0: none probably, 1: head, 2: arm, 4: leg, 80: unusable if any part bound?, 40: unusable if no part bound?
-	skillArray.push(sv.getInt16(4, true)); //some sort of status required for the skill to work. 
+	skillArray.push(sv.getUint16(2, true)); //body part used (0: none probably, 1: head, 2: arm, 4: leg, 80: unusable if any part bound?, 40: unusable if no part bound?. weapon requirement is also handled here
+	skillArray.push(sv.getInt16(4, true)); //some sort of status required for the skill to work. 01: dead only. 02: snipe/sharpshooter. 0x10: only people with buffs?
 	skillArray.push(sv.getInt8(6, true)); //target type
 	skillArray.push(sv.getInt8(7, true)); //target group
 	skillArray.push(sv.getInt8(8, true)); //useable in combat or field or what. 3 is useable in field only, 4 is usable in combat only, 7 is useable in both
 	skillArray.push(sv.getInt8(9, true)); //buff or debuff? (0 = no, 1 = buff, 2 = debuff)
-	skillArray.push(sv.getInt8(10, true)); //type of buff/debuff. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png (note: 3 is actually evasion I think)
+	skillArray.push(sv.getInt8(10, true)); //type of buff/debuff. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png (note: 3 is evasion)
 	skillArray.push(sv.getInt8(11, true)); //unknown
 	skillArray.push(sv.getInt16(12, true)); //buff/debuff element. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png
 	skillArray.push(sv.getInt16(14, true)); //damage type

@@ -18,7 +18,7 @@ const subheaderobj = {
 	"42":"Day bonus DMG %",
 	"44":"Night bonus DMG %",
 	"45":"Splash %",
-	"51":"Min hits (swash)",
+	"51":"DW max hit mult",
 	"53":"Target mod",
 	"56":"Ailment chance",
 	"60":"Missing HP mult",
@@ -74,7 +74,7 @@ const subheaderobj = {
 	"135":"Unknown135", //shoot
 	"136":"Unknown136", //all out
 	"137":"Unknown137", //narmer's earthquake
-	"139":"Unknown139", //rocket punch
+	"139":"Hit twice", //??? not certain
 	"142":"Ignore defenses",
 	"144":"Use ailment on self",
 	"145":"Double TP cost",
@@ -111,6 +111,7 @@ const subheaderobj = {
 	"206":"Ailment immunity",
 	"207":"Bind immunity",
 	"208":"Guaranteed crit",
+	"214":"Passive buff dur.", //unused. this subheader, if found in a passive, seems to make it so all buffs that are applied by the user to have a specific duration rather than what's specified on the skill.
 	"216":"Reinforce flag",
 	"218":"Use twice chance",
 	"219":"Splash chance",
@@ -167,7 +168,7 @@ const subheaderobj = {
 	"286":"Dodge rate at night",
 	"290":"Use on revive",
 	"291":"HP cost on skill",
-	"292":"Link chance on hit", //unsure of this (EM Barrier/226)
+	"292":"Link chance on hit", //used only on EM barrier
 	"293":"HP threshold", 
 	"294":"Activation chance", //kaishaku
 	"295":"Act first",
@@ -198,6 +199,6 @@ const ename = ["Blank","Attack","Claw Cut","Poison Gun","Membrane","Sea God's An
 
 const pname = ["Blank","Attack","HP Up","TP Up","Bandage","Combat Study","Limit Boost","AGI Up","LUC Up","Esc Up","Limit Boost","Chop","Mine","Take","Royal Lineage","Monarch March","Royal Veil","Triumphant Cry","Reinforce","Nobility Proof","Attack Order","Guard Order","Rally Order","Negotiation","Inspire","Ad Nihilo","Fire Arms","Freeze Arms","Shock Arms","Regal Radiance","Prevent Order","Protect Order","Knighthood","Endless Battle","Sword Mastery","Club Mastery","Avenger","Stun Attack","Wild Swings","Charge","Berserker Vow","Wolf Howl","White Flame","Break","Rush","Bind Cut","Rampage","Blade Rave","Crushing Blow","Arm Breaker","Freezing Blow","Nine Smashes","Guardian","Spear Mastery","Shield Mastery","Parry","Magic Parry","Recuperate","Selflessness","Provoke","Shrug Off","Switch Stab","Blitzritter","Long Stride","Line Guard","Antifire","Anticold","Antivolt","Bodyguard","Overwatch","Vigilance","Trickster","Rapier Mastery","Gun Mastery","Swashbuckling","Lady Luck","Limit Boost","Eagle Eye","Quick Draw","Rapid Fire","Chase Flame","Chase Ice","Chase Volt","Lights Out","Hanging","Chase Saber","Chase Blow","Chase Thrust","Pincushion","Troublemaker","Keburi no Sue","Kubikiri","Senpuku","Karuwaza","Nikudan","Knife Mastery","Suikyou","Otori","Kumogakure","Bunshin","Makibishi","Kagerou","Sarutobi","Fukubari","Kagenui","Takanoha","Izuna","Tagen Battou","Tonsou Jutsu","Form Qi","Fist Mastery","Ascetic Deeds","Ascetic Reward","Blood Return","Waking Chakra","Kikouken","Healing","Party Heal","Full Heal","Counter","Retaliate","Refresh","Resurrect","Unbind","Line Heal","Breakfire Fist","Darkness Fist","Fire Walk","Ether Mastery","Fire Mastery","Ice Mastery","Volt Mastery","Etheric Return","Singularity","Etheric Charge","Dark Ether","Meteor","Fire Star","Binary Fire","Fire Prophecy","Ice Star","Binary Ice","Ice Prophecy","Volt Star","Binary Thunder","Volt Prophecy","Horoscope","Beast Soul","Wild Mastery","Nature Pact","Sacrifice 1","Sacrifice 2","Alertness","Beast Roar","Primal Drums","Dismiss Beast","Call Bird","Call Snake","Call Mole","Call Insect","Call Cow","Call Owl","Call Elephant","Call Tiger","Call Lion","Call Ooze","Giant Kill","Bolt Mastery","Extend","Night Vision","Double Action","Proper Form","Pop Flares","Smoke Grenade","Snipe","Heavy Shot","Strafe","Sharpshooter","Armor Piercer","Fire Barrage","Front Mortar","Ice Barrage","Volt Barrage","Cloudbuster","Ambush","Earth's Bounty","Persistence","Brave Heart","Camp Mastery","Waste Not","Keen Nose","Play Possum","Sympathy Pain","Rotten Egg","Lullaby","Strange Seeds","Slap Awake","Horseplay","Double Crop","Safe Stroll","To Market","Rain or Shine","Keen Eye","Harvestry","Second Sword","Katana Mastery","Endure","Kaishaku","Bloody Lance","Morale Boost","Unified Spirit","Hilt Strike","Myoujou","Magatoki","5-Ring Sword","Daifuhensha","Warrior Might","Fore Honor","Rear Dignity","Ambush Stance","Fusillade","Blitz Command","Retreat","Sleep Mode","Overheat","Virus Scanner","EM Barrier","Infravision","Data Mining","Red Bot","Blue Bot","Yellow Bot","Resupply","Reflector","Shoot","All Out","Rocket Punch","Rocket Head","Rocket Jump","HP Cannon","Core Dump","DEFrag","Cross Slash","Indomitable","Charge Tactic","Mumyouken","Guard Tactic","Second Wind","Lethal Tactic","Aegis DEFense","Hellfire","Wind Tactic","Absolute Zero","Aegis Barrier","Sungrazer","Regroup Tactic","Typhoon Bolt","Aegis Shield","Quintessence","Star Smasher","Lucky Hammer","Uroboros Guard","Immortal","Buc Farm","Buc Nin","Buc Mon","Buc Farm","Nin Prin","Nin Glad","Nin Farm","Nin Do","Nin Farm","Bind Feather","Wind Wrap","Scratch","Poison Dust","Bull Run","Sleep Powder","Reckless Rush","Death Fang","Sleeping Lion","Plague Gunk","Bind Feather","Wind Wrap","Scratch","Poison Dust","Bull Run","Sleep Powder","Reckless Rush","Fierce Counter","Regal Authority","Plague Gunk","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","Fusillade","Blitz Command","NONE","Reflector","EM Barrier","Kaishaku","NONE","NONE","NONE","Zod Nin","Zod Aba","Buc Nin","Buc Farm","Nin Prin","Snipe","Sharpshooter","NONE","NONE","NONE","NONE","NONE","NONE","NONE","NONE","Medica Type","Amrita Type","Hamao Type","Nectar Type","Nectar Type","Soma Type","Theriaca A","Theriaca A","Theriaca B","Theriaca B","NONE","NONE","NONE","Discharge","NONE","NONE","Strange Seed","Tiger Counter","Warrior Might","Cloudbuster","Counter","Retaliate","Chase Saber","Chase Blow","Chase Thrust","Chase Flame","Chase Ice","Chase Volt","Makibishi","Ambush Stance","Rocket Puch","Rocket Headbutt","Rocket Jump","Red Module","Blue Module","Yellow Module","Fire All","Infect","Restore Mark","Fire Prophecy","Ice Prophecy","Volt Prophecy","Last Chase","Metapon","Unihorn","Bravant","Stonard","Fire Mist","Ice Mist","Volt Mist","Cut Mist","Bash Mist","Stab Mist","Blaze Oil","Freeze Oil","Shock Oil","Fire Jar","Flame Jar","Ice Jar","Frost Jar","Volt Jar","Storm Jar","Poison Gas","Stun Gas","Blind Gas","Sleep Gas","Curse Gas","Addle Gas"]
 
-const textheaders = ["Max level","Skill type","Body part","TValidity","Target","TarGroup","Where Use","Buff/Debuff","B/D type","unk.","B/D element","DMG element","ACureorInf","Ailment","Skill fl","unk3"]; //I don't like this. I should rewrite it as an object probably
+const textheaders = ["Max level","Skill type","Body part","Target req","Target Type","Target Team","Where Use","Buff/Debuff","B/D type","unk.","B/D element","DMG element","ACureorInf","Ailment","Skill fl","unk3"]; //I don't like this. I should rewrite it as an object probably
 
 const errorm = ["No error. Why are you here?","Error! ID must be under 400 for enemy table.","Error! ID must be under 421 for player table.","Error! Skill name not found (make sure the checkbox is correct).","Error! Skill table size mismatched. This should never happen."]; //same with this
