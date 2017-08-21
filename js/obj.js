@@ -11,6 +11,7 @@ const subheaderobj = {
 	"15":"If back",
 	"18":"Swap row on hit (?)",
 	"25":"Chase chance red.",
+	"26":"Maximum chases",
 	"27":"Ignore DMG type", //I'm not super sure about this one. It's on All Out and it seems to ignore a flag that checks if the attack has no base type?
 	"29":"DMG type from bot",
 	"33":"Horseplay",

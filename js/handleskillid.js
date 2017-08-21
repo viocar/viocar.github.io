@@ -93,7 +93,7 @@ function createSkillArray(buffer, s_id){ //okay, so, I could consolidate these s
 	skillArray.push(sv.getInt16(18, true)); //ailments inflicted
 	skillArray.push(sv.getInt16(20, true)); //skill flags
 	skillArray.push(sv.getInt16(22, true)); //unknown 4
-	for (i = 0; i < 8; i++){ //each game has room for eight subheaders (I think)
+	for (i = 0; i < 8; i++){ //EO3 has room for eight subheaders. I believe this is expanded to 10 in later games
 		skillArray.push(sv.getInt32(24 + (i * sublen), true)); //subheader value
 		for (j = 0; j < tlevels; j++){ //a subheader has space for ten levels even if the level itself has a lower maximum
 			skillArray.push(sv.getInt32(28 + (i * sublen) + (j * 4), true));
