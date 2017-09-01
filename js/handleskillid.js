@@ -117,6 +117,9 @@ function drawSkillTable(array, s_id){
 	}
 	drawText(ar20, "start", le, te - 5, skillname, false);
 	var mlevel = skillArray[0]; //we don't want to display values for inaccessible levels, so we need the max level before we start shifting data out of our array
+	if (s_id == 330 || s_id == 331){ //these two skills are improperly handled by the game, so we need this manual hack
+		mlevel = 10;
+	}
 	for (var i = 0; i < 2; i++){ //this handles the main headers
 		for (var j = 0; j < 16; j++){
 			var mwidth = (screen.width / 16);

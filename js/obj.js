@@ -49,6 +49,7 @@ const subheaderobj = {
 	"89":"Field steps",
 	"92":"Flee chance",
 	"94":"Crit damage", //replaces crit damage instead of buffing it
+	"100":"something to do with subheaders", //figure it out
 	"105":"% of damage taken",
 	"106":"Beast to summon",
 	"107":"Link on summon",
@@ -62,14 +63,16 @@ const subheaderobj = {
 	"115":"Bot damage mult",
 	"116":"Clone^2 * this mult", //find better wording
 	"117":"Avoid DMG chance",
+	"118":"Chance to sprout",
 	"119":"Bonus DMG taken", //warrior might
 	"120":"Bot HP and TP",
-	"121":"DMG reduction %", //How does this differ from 85?
+	"121":"Bodyguard DMG %", //How does this differ from 85?
 	"122":"Clone HP/TP",
 	"125":"Line free cast",
 	"126":"Link when attacked",
-	"127":"Link on elem skill",
+	"127":"Block and link W.A.",
 	"128":"Link on ally hit",
+	"129":"DOESN'T EXIST!",
 	"130":"Link on line hit", 
 	"134":"Cannot miss",
 	"135":"Unknown135", //shoot
@@ -83,7 +86,7 @@ const subheaderobj = {
 	"150":"Join clones after",
 	"151":"Act first", //knighthood
 	"152":"Act first", //quick draw
-	"153":"Unknown153", //if you use it on the rear row in rear dignity. loads a value to the stack that doesn't seem to do anything with rear dignity, but might be used in other things.
+	"153":"Rear Dignity flag",
 	"161":"Provoke flag",
 	"162":"Unknown162", //enemy kaishaku heal?
 	"164":"Defrag flag", //again, not sure what this does exactly. don't care enough to find out
@@ -103,7 +106,7 @@ const subheaderobj = {
 	"181":"ATK %", //rear dignity
 	"182":"Bonus DMG taken", //not sure how this differs from 119
 	"183":"Fore Honor flag",
-	"184":"Rear dignity flag",
+	"184":"Rear dignity buff",
 	"186":"Max HP %",
 	"194":"Accuracy %", //this is the buff version, which differs from 284
 	"197":"Evasion",
@@ -121,19 +124,22 @@ const subheaderobj = {
 	"222":"Stun chance",
 	"223":"DEF %", //passive for guardian
 	"226":"Bonus hit chance",
+	"227":"UNUSED PRIORITY SUBHEADER",
 	"228":"Full DMG in back",
 	"229":"TP cost reduction",
 	"230":"Bonus crit chance",
 	"231":"Crit during night",
 	"232":"Instant kill chance",
 	"235":"Use on evade",
+	"237":"UNUSED PRIORITY SUBHEADER",
+	"238":"UNUSED PRIORITY SUBHEADER",
 	"239":"Heal mult %", //form qi
 	"240":"Use on skill use",
 	"241":"Use on death", //target allies
 	"242":"Use on death", //target enemies
 	"243":"Chance to revive",
-	"244":"Use on ally death", //how does this differ from 243?
-	"245":"Use on ally death", //how does this differ from 243 and 244?
+	"244":"Use on ally death",
+	"245":"Use on ally death 2", //how does this differ from 244?
 	"246":"Ailment chance bonus", //this is too long, but that's fine because this is completely unused in the base game
 	"247":"Ailment chance bonus", //this is too long, but that's fine because this is completely unused in the base game
 	"248":"Recovery chance",
@@ -169,12 +175,13 @@ const subheaderobj = {
 	"286":"Dodge rate at night",
 	"290":"Use on revive",
 	"291":"HP cost on skill",
-	"292":"Link chance on hit", //used only on EM barrier
+	"292":"Link when hit %", //used only on EM barrier
 	"293":"HP threshold", 
 	"294":"Activation chance", //kaishaku
 	"295":"Act first",
 	"296":"Act last",
 	"308":"UNUSED", //checked for in a subheader handler
+	"312":"UNUSED PRIORITY SUBHEADER", //checked for in priority function
 	"324":"Sword DMG %",
 	"325":"Club DMG %",
 	"326":"Spear DMG %",
