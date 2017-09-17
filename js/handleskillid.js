@@ -9,11 +9,19 @@ const ar20 = "20pt Arial";
 var pstable = 0; //variables so table loading only has to happen once
 var estable = 0;
 var errorid = 0;
+var debug = 0;
 
 window.onkeyup = function(e){
 	var key = e.keyCode; 
 	if (key == 13){ //run the code on enter
 		errorid = 0;
+		if (skill_id.value == "DEBUG_ON"){
+			debug = 1;
+			return;
+		} else if (skill_id.value == "DEBUG_OFF"){
+			debug = 0;
+			return;
+		}
 		var s_id = parseInt(skill_id.value);
 		var boxcheck = document.getElementById("enemybox").checked;
 		if (s_id > 400){ //check for some errors
@@ -81,7 +89,7 @@ function createSkillArray(buffer, s_id){ //okay, so, I could consolidate these s
 	skillArray.push(sv.getInt8(1, true)); //skill type
 	skillArray.push(sv.getUint16(2, true)); //body part used (0: none probably, 1: head, 2: arm, 4: leg, 80: unusable if any part bound?, 40: unusable if no part bound?. weapon requirement is also handled here
 	skillArray.push(sv.getInt16(4, true)); //some sort of status required for the skill to work. 01: dead only. 02: snipe/sharpshooter. 0x10: only people with buffs?
-	skillArray.push(sv.getInt8(6, true)); //target type
+	skillArray.push(sv.getInt8(6, true)); //target type (1: single, 2: all, 3: multi-hit multi-tar, 4: multi-hit max one, 5: all enemies and self, 6: hit allies not self, 7: hit all but strange targetting, 8: all (both teams), 9: same as 8 with 7 targetting, A: self, B: single but not self, C: dunno. splash? D: splash, E: dunno, F: single random selection I think, 11: multi-hit single target, 12: crashes
 	skillArray.push(sv.getInt8(7, true)); //target group
 	skillArray.push(sv.getInt8(8, true)); //useable in combat or field or what. 3 is useable in field only, 4 is usable in combat only, 7 is useable in both
 	skillArray.push(sv.getInt8(9, true)); //buff or debuff? (0 = no, 1 = buff, 2 = debuff)
@@ -117,7 +125,7 @@ function drawSkillTable(array, s_id){
 	}
 	drawText(ar20, "start", le, te - 5, skillname, false);
 	var mlevel = skillArray[0]; //we don't want to display values for inaccessible levels, so we need the max level before we start shifting data out of our array
-	if (s_id == 330 || s_id == 331){ //these two skills are improperly handled by the game, so we need this manual hack
+	if (s_id == 330 || s_id == 331){ //these two skills are improperly handled by the game, so we need this manual override
 		mlevel = 10;
 	}
 	for (var i = 0; i < 2; i++){ //this handles the main headers
@@ -155,6 +163,7 @@ function drawSkillTable(array, s_id){
 				} else {
 					if (j === 0){
 						isSubheader = true;
+						drawSubheaderDumpText(array, i);
 					} else {
 						isSubheader = false;
 					}
@@ -170,6 +179,7 @@ function drawSkillTable(array, s_id){
 			}
 		}
 	}
+			
 	// drawText(ar10, "start", le, te + 285, "Note: Some unknown values may be merged with other unknown values and create inaccurate output. This will be fixed as the meanings of the unknown values are discovered.");
 	// drawText(ar10, "start", 4, 348, ".");
 }
@@ -192,6 +202,18 @@ function getValueFromArray(array, isSubheader, displayHex){
 		val = val.toString(16);
 	}
 	return val;
+}
+
+function drawSubheaderDumpText(array, i){ //this is a quick hack so I can easily read subheader values lol
+	if (!debug){
+		return;
+	}
+	var te = 300 + (i * 16);
+	var le = 8;
+	var val = array[0];
+	drawText(ar10, "start", le, te, subheaderobj[val], false);
+	drawText(ar10, "start", le + 150, te, val, false);
+	drawText(ar10, "start", le + 190, te, val.toString(16));
 }
 
 function drawRect(le, te, width, height, fill, colour){
