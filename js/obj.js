@@ -14,6 +14,7 @@ const subheaderobj = {
 	"26":"Maximum chases",
 	"27":"Ignore DMG type", //I'm not super sure about this one. It's on All Out and it seems to ignore a flag that checks if the attack has no base type?
 	"29":"DMG type from bot",
+	"31":"Uncounterable",
 	"33":"Horseplay",
 	"39":"Chance to endure",
 	"42":"Day bonus DMG %",
@@ -23,16 +24,17 @@ const subheaderobj = {
 	"51":"DW max hit mult",
 	"53":"Target mod",
 	"56":"Ailment chance",
+	"59":"Unknown59",
 	"60":"Missing HP mult",
 	"62":"UNUSED", //Buc Nin
 	"63":"UNUSED",
 	"64":"Damage %",
 	"65":"Pincushion DMG",
-	"66":"Flat restore",
+	"66":"Restore rate",
 	"67":"HP restore",
 	"68":"TP restore",
 	"69":"Self-damage %",
-	"71":"Endure with beast",
+	"71":"Self-destruct",
 	"73":"Target acts next",
 	"75":"Min hits",
 	"76":"Max hits",
@@ -162,7 +164,7 @@ const subheaderobj = {
 	"263":"Beast DMG %",
 	"264":"Beast DEF %",
 	"265":"Beast HP %",
-	"267":"Chance to endure", //with beast
+	"267":"Chance to trigger", //with beast
 	"268":"Beast ailment %",
 	"269":"Beast draw chance",
 	"270":"Beast draw chance", //not sure why it has two subheaders for this

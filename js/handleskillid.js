@@ -232,10 +232,10 @@ function drawText(font, align, le, te, text, printzero){
 	ctx.textAlign = align;
 	if ((text == 0) && (!printzero)){
 		return
-	} else {
+	} else if (text) {
 		ctx.fillText(text.toString().toUpperCase(), le, te);
 		ctx.stroke();
-	}
+	} 
 }
 
 function errorHandler(id){
