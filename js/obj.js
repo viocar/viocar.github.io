@@ -20,7 +20,7 @@ const subheaderobj = {
 	"42":"Day bonus DMG %",
 	"44":"Night bonus DMG %",
 	"45":"Splash %",
-	"48":"Damage vs. Ailment", //just binds? or 
+	"48":"Damage vs. Binds", //just binds? or 
 	"51":"DW max hit mult",
 	"53":"Target mod",
 	"56":"Ailment chance",
@@ -117,7 +117,7 @@ const subheaderobj = {
 	"194":"Accuracy %", //this is the buff version, which differs from 284
 	"197":"Evasion",
 	"200":"Draw rate modifier",
-	"205":"Ailment immunity", //205 and 206 are, as far as I can tell identical in the game's code
+	"205":"Ailment immunity", //205 and 206 are, as far as I can tell, identical in the game's code
 	"206":"Ailment immunity",
 	"207":"Bind immunity",
 	"208":"Guaranteed crit",
@@ -146,8 +146,8 @@ const subheaderobj = {
 	"243":"Chance to revive",
 	"244":"Use on ally death",
 	"245":"Use on ally death 2", //how does this differ from 244?
-	"246":"Ailment chance bonus", //this is too long, but that's fine because this is completely unused in the base game
-	"247":"Ailment chance bonus", //this is too long, but that's fine because this is completely unused in the base game
+	"246":"Bonus bind chance", //unused
+	"247":"Bonus ail chance", //unused
 	"248":"Recovery chance",
 	"249":"HP on kill", //extend. HP only?
 	"250":"TP on kill", //etheric return. TP only?
