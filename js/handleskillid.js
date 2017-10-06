@@ -89,7 +89,7 @@ function createSkillArray(buffer, s_id){ //okay, so, I could consolidate these s
 	skillArray.push(sv.getInt8(1, true)); //skill type
 	skillArray.push(sv.getUint16(2, true)); //body part used (0: none probably, 1: head, 2: arm, 4: leg, 80: unusable if any part bound?, 40: unusable if no part bound?. weapon requirement is also handled here
 	skillArray.push(sv.getInt16(4, true)); //some sort of status required for the skill to work. 01: dead only. 02: snipe/sharpshooter. 0x10: only people with buffs?
-	skillArray.push(sv.getInt8(6, true)); //target type (1: single, 2: all, 3: multi-hit multi-tar, 4: multi-hit max one, 5: all enemies and self, 6: hit allies not self, 7: hit all but strange targetting, 8: all (both teams), 9: same as 8 with 7 targetting, A: self, B: single but not self, C: dunno. splash? D: splash, E: dunno, F: single random selection I think, 11: multi-hit single target, 12: crashes
+	skillArray.push(sv.getInt8(6, true)); //target type. see text file for details
 	skillArray.push(sv.getInt8(7, true)); //target group
 	skillArray.push(sv.getInt8(8, true)); //useable in combat or field or what. 3 is useable in field only, 4 is usable in combat only, 7 is useable in both
 	skillArray.push(sv.getInt8(9, true)); //buff or debuff? (0 = no, 1 = buff, 2 = debuff)

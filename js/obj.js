@@ -78,8 +78,8 @@ const subheaderobj = {
 	"129":"DOESN'T EXIST!",
 	"130":"Link on line hit", 
 	"134":"Cannot miss",
-	"135":"Unknown135", //shoot
-	"136":"Unknown136", //all out
+	"135":"Unknown135", //shoot - may also be "cannot be chased"
+	"136":"Unknown136", //all out - may also be "cannot be chased"
 	"137":"Unknown137", //narmer's earthquake
 	"139":"Hit twice", //??? not certain
 	"142":"Ignore DEF buffs",
@@ -130,7 +130,7 @@ const subheaderobj = {
 	"222":"Stun chance",
 	"223":"DEF %", //passive for guardian
 	"226":"Bonus hit chance",
-	"227":"UNUSED PRIORITY SUBHEADER",
+	"227":"UNUSED PRIORITY SUBHEADER", //roll a number between x and the subheader value. if found, this character gets +17,000 speed (EO2 1st Hit)
 	"228":"Full DMG in back",
 	"229":"TP cost reduction",
 	"230":"Bonus crit chance",
