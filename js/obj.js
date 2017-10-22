@@ -12,7 +12,7 @@ const subheaderobj = {
 	"18":"Swap row on hit (?)",
 	"25":"Chase chance red.",
 	"26":"Maximum chases",
-	"27":"Ignore DMG type", //I'm not super sure about this one. It's on All Out and it seems to ignore a flag that checks if the attack has no base type?
+	"27":"Use weap. DMG type", //I'm not super sure about this one. It's on All Out and it seems to ignore a flag that checks if the attack has no base type?
 	"29":"DMG type from bot",
 	"31":"Uncounterable",
 	"33":"Horseplay",
@@ -178,6 +178,7 @@ const subheaderobj = {
 	"278":"Avoid blindside %",
 	"279":"Use on DMG skill",
 	"280":"Nobility proof flag",
+	"281":"Use on buff expire",
 	"282":"Fail if this ailment",
 	"283":"Hit %",
 	"284":"Evasion %",
