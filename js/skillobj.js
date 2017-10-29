@@ -22,6 +22,7 @@ const subheaderobj = {
 	"45":"Splash %",
 	"48":"Damage vs. Binds", //just binds? or 
 	"51":"DW max hit mult",
+	"52":"Unknown52", //only one monster skill has this
 	"53":"Target mod",
 	"56":"Ailment chance",
 	"59":"Unknown59",
@@ -184,7 +185,7 @@ const subheaderobj = {
 	"284":"Evasion %",
 	"285":"Hit rate at night",
 	"286":"Dodge rate at night",
-	"289":"Damage while ailment", //unused. ailment goes in the main ailment header
+	"289":"Damage while ailment", //unused. ailment goes in the main ailment header. probably used in EO2 sight
 	"290":"Use on revive",
 	"291":"HP cost on skill",
 	"292":"Link when hit %", //used only on EM barrier
