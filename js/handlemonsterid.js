@@ -12,10 +12,10 @@ window.onkeyup = function(e){
 	var key = e.keyCode; 
 	if (key == 13){ //run the code on enter
 		errorid = 0;
-		if (skill_id.value == "DEBUG_ON"){
+		if (monster_id.value == "DEBUG_ON"){
 			debug = 1;
 			return;
-		} else if (skill_id.value == "DEBUG_OFF"){
+		} else if (monster_id.value == "DEBUG_OFF"){
 			debug = 0;
 			return;
 		}
@@ -38,7 +38,7 @@ window.onkeyup = function(e){
 		if (errorid == 0){ //proceed if we have no errors
 			var skillTable = "https://viocar.github.io/tbl/enemydata.tbl"; //probably should be relative but ehhhh
 			if (enemydata != 0){ // check if we previously loaded monsters, and use that arraybuffer instead
-				createSkillArray(enemydata, m_id);
+				createMonsterArray(enemydata, m_id);
 			} else { //if it's our first time, load the files up
 				var skillFileData = new XMLHttpRequest();
 				skillFileData.open("GET", skillTable, true);
@@ -47,7 +47,7 @@ window.onkeyup = function(e){
 					var sdBuffer = skillFileData.response;
 					if (sdBuffer.byteLength % dataSize === 0){ //check if the size is correct
 						enemydata = sdBuffer;
-						createSkillArray(sdBuffer, m_id);
+						createMonsterArray(sdBuffer, m_id);
 					} else {
 						errorid = 4;
 						errorHandler(errorid);
@@ -61,119 +61,119 @@ window.onkeyup = function(e){
 	}
 }
 
-function createSkillArray(buffer, m_id){ //okay, so, I could consolidate these skillArray.push calls into for loops, but then I'd lose comments, which I don't think is worth it.
-	var sv = new DataView(buffer, m_id * dataSize, dataSize); //get the specific skill we wanna manipulate
-	skillArray = [];
-	skillArray.push(sv.getInt8(0, true)); //skill level. (the true is needed to be read as little endian)
-	skillArray.push(sv.getInt8(1, true)); //skill type
-	skillArray.push(sv.getUint16(2, true)); //body part used (0: none probably, 1: head, 2: arm, 4: leg, 80: unusable if any part bound?, 40: unusable if no part bound?. weapon requirement is also handled here
-	skillArray.push(sv.getInt16(4, true)); //some sort of status required for the skill to work. 01: dead only. 02: snipe/sharpshooter. 0x10: only people with buffs?
-	skillArray.push(sv.getInt8(6, true)); //target type. see text file for details
-	skillArray.push(sv.getInt8(7, true)); //target group
-	skillArray.push(sv.getInt8(8, true)); //useable in combat or field or what. 3 is useable in field only, 4 is usable in combat only, 7 is useable in both
-	skillArray.push(sv.getInt8(9, true)); //buff or debuff? (0 = no, 1 = buff, 2 = debuff)
-	skillArray.push(sv.getInt8(10, true)); //type of buff/debuff. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png (note: 3 is evasion)
-	skillArray.push(sv.getInt8(11, true)); //unknown
-	skillArray.push(sv.getInt16(12, true)); //buff/debuff element. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png
-	skillArray.push(sv.getInt16(14, true)); //damage type
-	skillArray.push(sv.getInt16(16, true)); //infliction flag
-	skillArray.push(sv.getInt16(18, true)); //ailments inflicted
-	skillArray.push(sv.getInt16(20, true)); //skill flags
-	skillArray.push(sv.getInt16(22, true)); //unknown 4
-	for (i = 0; i < 8; i++){ //EO3 has room for eight subheaders. I believe this is expanded to 10 in later games
-		skillArray.push(sv.getInt32(24 + (i * sublen), true)); //subheader value
-		for (j = 0; j < tlevels; j++){ //a subheader has space for ten levels even if the level itself has a lower maximum
-			skillArray.push(sv.getInt32(28 + (i * sublen) + (j * 4), true));
-		}
-	}
-	drawSkillTable(skillArray, m_id)
+function createMonsterArray(buffer, m_id){
+	var mv = new DataView(buffer, m_id * dataSize, dataSize); //get the specific skill we wanna manipulate
+	monsterArray = [];
+	monsterArray.push(mv.getInt16(0, true)); //monster level (the true is for little endian)
+	monsterArray.push(mv.getInt8(2, true)); //monster ID
+	monsterArray.push(mv.getInt32(4, true)); //experience awarded
+	monsterArray.push(mv.getInt32(8, true)); //various flags. this may actually be a 16-bit value
+	monsterArray.push(mv.getInt32(12, true)); //unknown
+	monsterArray.push(mv.getInt32(16, true)); //HP
+	monsterArray.push(mv.getInt32(20, true)); //Unknown
+	for (i = 0; i < 38; i++){  								//STR, VIT, AGI, LUC, TEC, WIS, attack type, acc, cut res, bash res, stab res, fire res, ice res, volt res
+		monsterArray.push(mv.getUint16(24 + (2 * i), true)); //ID res, petrify res, sleep res, panic res, plague res, poison res, blind res, curse res, paralyze res, stun res
+	}														//head bind res, arm bind res, leg bind res, almighty res, drop 1 ID, drop 1 chance, drop 1 condition, (repeat for drops 2 and 3), unknown
+	drawMonsterTable(monsterArray, m_id)
 }
 
-function drawSkillTable(array, m_id){
+function drawMonsterTable(array, m_id){ //warning: this becomes a mess of magic numbers and shit because I just want it to work. sorry
 	wipeScreen(); //wipes the screen for a new value
 	var le = 0;
+	var mwidth = (screen.width / 13.2225); //ah, this is so ugly to me
+	var mwidth2 = (screen.width / 19.84); 
+	var mwidth3 = (screen.width / 9.9175);
 	var te = 30;
 	var toffset = 17;
-	var boxcheck = document.getElementById("enemybox").checked;
-	var skillname;
-	var teamname;
-	if (boxcheck){ //this repetition feels a bit wrong but I think any way around it would wind up being longer
-		skillname = ename[m_id] + " (Enemy skill) [ID: " + m_id + " dec / " + m_id.toString(16) + " hex]";
-	} else {
-		skillname = pname[m_id] + " (Player skill) [ID: " + m_id + " dec / " + m_id.toString(16) + " hex]";
-	}
-	drawText(ar20, "start", le, te - 5, skillname, false);
-	var mlevel = skillArray[0]; //we don't want to display values for inaccessible levels, so we need the max level before we start shifting data out of our array
-	if (m_id == 330 || m_id == 331){ //these two skills are improperly handled by the game, so we need this manual override
-		mlevel = 10;
-	}
-	for (var i = 0; i < 2; i++){ //this handles the main headers
-		for (var j = 0; j < 16; j++){
-			var mwidth = (screen.width / 16);
+	var monstername;
+	var flags;
+	monstername = ename[m_id] + " [ID: " + m_id + " dec / " + m_id.toString(16) + " hex]";
+	drawText(ar20, "start", le, te - 5, monstername, false);
+	var mlevel = monsterArray[0]; //we don't want to display values for inaccessible levels, so we need the max level before we start shifting data out of our array
+	console.log(array);
+	for (var i = 0; i < 2; i++){ //level, ID, EXP, unknown
+		for (var j = 0; j < 3; j++){			
 			var mle = le + (j * mwidth);
 			var mte = te + (i * 24);
 			if (i === 0){
 				drawRect(mle, mte, mwidth, 23, true, "#EEEEEE");
-				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, textheaders[j]);
+				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, textheaders_main[j]);
+			} else {
+				if (j == 1 || j == 2){
+					flags = getValueFromArray(array, false, false);
+				}
+				drawRect(mle, mte, mwidth, 23, false);
+				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, getValueFromArray(array, false, false));
+			}
+		}
+	}
+	var le2 = le + (3 * mwidth); //need to define this down here
+	for (var i = 0; i < 2; i++){ //stats
+		for (var j = 0; j < 15; j++){
+			var mle = le2 + (j * mwidth2);
+			var mte = te + (i * 24);
+			if (i === 0){
+				drawRect(mle, mte, mwidth2, 23, true, "#EEEEEE");
+				drawText(ar10, "center", mle + (mwidth2 / 2), mte + toffset, textheaders_stats[j]);
+			} else {
+				if (j == 7){
+					getValueFromArray(array, false, false);
+				}
+				drawRect(mle, mte, mwidth2, 23, false);
+				drawText(ar10, "center", mle + (mwidth2 / 2), mte + toffset, getValueFromArray(array, false, false));
+			}
+		}
+	}
+	var te2 = 87;
+	for (var i = 0; i < 2; i++){ //ailment resistances
+		for (var j = 0; j < 13; j++){
+			var mle = le + (j * mwidth);
+			var mte = te2 + (i * 24);
+			if (i === 0){
+				drawRect(mle, mte, mwidth, 23, true, "#EEEEEE");
+				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, textheaders_ares[j]);
 			} else {
 				drawRect(mle, mte, mwidth, 23, false);
-				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, getValueFromArray(array, false, true), true);
+				drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, getValueFromArray(array, false, false));
 			}
 		}
 	}
-	for (var i = 0; i < 9; i++){ //this handles subheaders
-		for (var j = 0; j <= tlevels; j++){
-			var mwidth = (screen.width / (tlevels + 1));
-			var mle = le + (j * mwidth);
-			var mte = te + 54 + (i * 24);
-			var isSubheader = false;
-			if (j <= mlevel){ //don't draw values for levels beyond the max
-				if (i === 0){
-					if (j % 2 == 0){ //if top row and even number
-						drawRect(mle, mte, mwidth, 23, true, "#DDDDDD");
-					} else { //top row and odd number
-						drawRect(mle, mte, mwidth, 23, true, "#EEEEEE");
-					}
-					if (j === 0){
-						drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, "Subheader");
-					} else {
-						drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, "Level " + j);
-					}
+	var te3 = 144;
+	drawSingleBoxCombo(le + (mwidth3 * 3), te3, mwidth, 23, toffset, ar10, "center", "Almighty Res", getValueFromArray(array, false, false));
+	for (var i = 0; i < 4; i++){ //stats
+		for (var j = 0; j < 3; j++){
+			var mle = le + (j * mwidth3);
+			var mte = te3 + (i * 24);
+			if (i === 0){
+				drawRect(mle, mte, mwidth3, 23, true, "#EEEEEE");
+				drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, textheaders_items[j]);
+			} else {
+				drawRect(mle, mte, mwidth3, 23, false);
+				if (i > 0 && j == 1){
+					drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, getValueFromArray(array, false, false));
+				} else if (i > 0 && j == 2){
+					drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, getValueFromArray(array, true, false));
 				} else {
-					if (j === 0){
-						isSubheader = true;
-						drawSubheaderDumpText(array, i);
-					} else {
-						isSubheader = false;
-					}
-					if (j % 2 == 0){ //not top row but even
-						drawRect(mle, mte, mwidth, 23, true, "#EEEEEE");
-					} else { //not top row, not even
-						drawRect(mle, mte, mwidth, 23, false);
-					}
-					drawText(ar10, "center", mle + (mwidth / 2), mte + toffset, getValueFromArray(array, isSubheader), false);
+					drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, getValueFromArray(array, false, true));
 				}
-			} else if (i > 0){ //since the game data contains values beyond the max, we still need to shift that data out of our array
-				array.shift();
 			}
 		}
 	}
-			
-	// drawText(ar10, "start", le, te + 285, "Note: Some unknown values may be merged with other unknown values and create inaccurate output. This will be fixed as the meanings of the unknown values are discovered.");
-	// drawText(ar10, "start", 4, 348, ".");
+	drawSingleBoxCombo(le + (mwidth3 * 3) + mwidth, te3, mwidth, 23, toffset, ar10, "center", "Flags", flags.toString(16));
+	drawSingleBoxCombo(le + (mwidth3 * 3) + (mwidth * 2), te3, mwidth, 23, toffset, ar10, "center", "Unknown", getValueFromArray(array, false, true));
 }
-		
+
 function wipeScreen(){
 	ctx.clearRect(0, 0, screen.width, screen.height);
 }
 
-function getValueFromArray(array, isSubheader, displayHex){
+function getValueFromArray(array, isConditional, displayHex){
 	var val = array[0]
 	array.shift();
-	if (isSubheader == true){
-		for (var k in subheaderobj){
+	if (isConditional == true){
+		for (var k in conditionalobj){
 			if (k == val){
-				val = subheaderobj[val];
+				val = conditionalobj[val];
 			}
 		}
 	}
@@ -204,17 +204,20 @@ function drawRect(le, te, width, height, fill, colour){
 	}
 	ctx.stroke();
 }
-function drawText(font, align, le, te, text, printzero){
+function drawText(font, align, le, te, text){
 	ctx.beginPath();
 	ctx.fillStyle = "#000000" //all text is hardcoded to be black for now
 	ctx.font = font;
 	ctx.textAlign = align;
-	if ((text == 0) && (!printzero)){
-		return
-	} else if (text) {
-		ctx.fillText(text.toString().toUpperCase(), le, te);
-		ctx.stroke();
-	} 
+	ctx.fillText(text.toString().toUpperCase(), le, te);
+	ctx.stroke();
+}
+
+function drawSingleBoxCombo(le, te, width, height, toffset, font, align, headertext, datatext){
+	drawRect(le, te, width, height, true, "#EEEEEE");
+	drawText(font, align, le + (width / 2), te + toffset, headertext);
+	drawRect(le, te + 24, width, height, false);
+	drawText(font, align, le + (width / 2), te + toffset + 24, datatext);
 }
 
 function errorHandler(id){
