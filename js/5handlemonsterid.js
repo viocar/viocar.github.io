@@ -20,7 +20,7 @@ window.onkeyup = function(e){
 			return;
 		}
 		var m_id = parseInt(monster_id.value);
-		if (m_id > 255){ //check for some errors
+		if (m_id > 272){ //check for some errors
 			errorid = 1;
 		} else { //check to see if a name was input instead. search the array for that name, and display that skill.
 			var j = 0; //i in for...of loops is the value of the right side and not a number, so we need to track the loop iteration ourselves
@@ -36,7 +36,7 @@ window.onkeyup = function(e){
 			}
 		}
 		if (errorid == 0){ //proceed if we have no errors
-			var skillTable = "https://viocar.github.io/tbl/enemydata.tbl"; //probably should be relative but ehhhh
+			var skillTable = "https://viocar.github.io/tbl/5_enemydata.tbl"; //probably should be relative but ehhhh
 			if (enemydata != 0){ // check if we previously loaded monsters, and use that arraybuffer instead
 				createMonsterArray(enemydata, m_id);
 			} else { //if it's our first time, load the files up
@@ -45,6 +45,7 @@ window.onkeyup = function(e){
 				skillFileData.responseType = "arraybuffer";
 				skillFileData.onload = function(oEvent){ //when we have the files, store them for later use
 					var sdBuffer = skillFileData.response;
+					console.log(sdBuffer.byteLength);
 					if (sdBuffer.byteLength % dataSize === 0){ //check if the size is correct
 						enemydata = sdBuffer;
 						createMonsterArray(sdBuffer, m_id);
