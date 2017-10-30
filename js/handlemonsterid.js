@@ -45,7 +45,6 @@ window.onkeyup = function(e){
 				skillFileData.responseType = "arraybuffer";
 				skillFileData.onload = function(oEvent){ //when we have the files, store them for later use
 					var sdBuffer = skillFileData.response;
-					console.log(sdBuffer.byteLength);
 					if (sdBuffer.byteLength % dataSize === 0){ //check if the size is correct
 						enemydata = sdBuffer;
 						createMonsterArray(sdBuffer, m_id);
