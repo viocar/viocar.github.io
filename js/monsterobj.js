@@ -29,7 +29,7 @@ const ename = ["Blank","Claw Shrimp","Fanged Fish","Devilfish","Starry Slug","Ap
 
 const textheaders_main = ["Level","Experience","Unknown"];
 const textheaders_stats = ["HP", "TP [unused]", "STR", "VIT", "AGI", "LUC", "TEC", "Type", "Acc", "Cut Res", "Bash Res", "Stab Res", "Fire Res", "Ice Res", "Volt Res"];
-const textheaders_ares = ["Death", "Petrify", "Sleep", "Panic", "Plague", "Poison", "Blind", "Curse", "Paralyze", "Stun", "Head Bind", "Arm Bind", "Leg Bind"];
+const textheaders_ares = ["Death Res", "Petrify Res", "Sleep Res", "Panic Res", "Plague Res", "Poison Res", "Blind Res", "Curse Res", "Paralyze Res", "Stun Res", "Head Bind Res", "Arm Bind Res", "Leg Bind Res"];
 const textheaders_items = ["Item Name", "Drop Chance", "Condition"];
 
 const errorm = ["No error. Why are you here?","Error! ID must be under 256","?","Error! Monster name not found.","Error! Monster table size mismatched. This should never happen."]; //same with this
