@@ -90,7 +90,7 @@ function drawMonsterTable(array, m_id){ //warning: this becomes a mess of magic 
 	monstername = ename[m_id] + " [ID: " + m_id + " dec / " + m_id.toString(16) + " hex]";
 	drawText(ar20, "start", le, te - 5, monstername, false);
 	var mlevel = monsterArray[0]; //we don't want to display values for inaccessible levels, so we need the max level before we start shifting data out of our array
-	console.log(array);
+	//console.log(array);
 	for (var i = 0; i < 2; i++){ //level, ID, EXP, unknown
 		for (var j = 0; j < 3; j++){			
 			var mle = le + (j * mwidth);
