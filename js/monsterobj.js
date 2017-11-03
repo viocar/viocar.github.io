@@ -1,4 +1,5 @@
 const conditionalobj = {
+	"0":"No condition",
 	"512":"Kill with non-phys",
 	"1024":"Kill with non-elem",
 	"2048":"Kill with cut",
