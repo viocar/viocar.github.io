@@ -95,6 +95,7 @@ const subheaderobj = {
 	"155":"1% DMG per miss HP",
 	"156":"Clear ailment AR",
 	"157":"Clear bind AR",
+	"159":"Formaldehyde",
 	"161":"Provoke flag",
 	"162":"Unknown162", //enemy kaishaku heal?
 	"164":"Defrag flag", //again, not sure what this does exactly. don't care enough to find out
