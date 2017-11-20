@@ -21,6 +21,7 @@ const subheaderobj = {
 	"44":"Night bonus DMG %",
 	"45":"Splash %",
 	"48":"Damage vs. Binds", //just binds? or 
+	"49":"Reduce chance", //chance reduction after minimum hits it seems
 	"51":"DW max hit mult",
 	"52":"Unknown52", //only one monster skill has this
 	"53":"Target mod",
@@ -87,6 +88,7 @@ const subheaderobj = {
 	"144":"Use ailment on self",
 	"145":"Double TP cost",
 	"146":"Die after use",
+	"147":"All drops on kill",
 	"148":"Use ailment on self",
 	"150":"Join clones after",
 	"151":"Act first", //knighthood
@@ -194,8 +196,10 @@ const subheaderobj = {
 	"294":"Activation chance", //kaishaku
 	"295":"Act first",
 	"296":"Act last",
+	"306":"Drain damage",
 	"308":"UNUSED", //checked for in a subheader handler
 	"312":"UNUSED PRIORITY SUBHEADER", //checked for in priority function
+	"314":"Block element",
 	"320":"UNUSED LINKING SUBHEADER", //checked for in linking function
 	"324":"Sword DMG %",
 	"325":"Club DMG %",

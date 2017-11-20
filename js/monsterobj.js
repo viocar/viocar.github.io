@@ -1,4 +1,4 @@
-const conditionalobj = {
+const conditionalobj = { //strictly speaking, these are not 16-bit values but two 8-bit values, but I'm doing it like this for simplicity's sake
 	"0":"No condition",
 	"512":"Kill with non-phys",
 	"1024":"Kill with non-elem",
