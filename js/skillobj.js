@@ -20,7 +20,7 @@ const subheaderobj = {
 	"42":"Day bonus DMG %",
 	"44":"Night bonus DMG %",
 	"45":"Splash %",
-	"48":"Damage vs. Binds", //just binds? or 
+	"48":"Damage vs. Binds", //just binds?
 	"49":"Reduce chance", //chance reduction after minimum hits it seems
 	"51":"DW max hit mult",
 	"52":"Unknown52", //only one monster skill has this
