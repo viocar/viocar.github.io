@@ -150,11 +150,11 @@ function drawMonsterTable(array, m_id){ //warning: this becomes a mess of magic 
 			} else {
 				drawRect(mle, mte, mwidth3, 23, false);
 				if (i > 0 && j == 1){
-					drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, getValueFromArray(array, false, false));
+					drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, getValueFromArray(array, false, false, false)); //drop chance
 				} else if (i > 0 && j == 2){
-					drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, getValueFromArray(array, true, false));
+					drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, getValueFromArray(array, true, false, false)); //condition
 				} else {
-					drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, getValueFromArray(array, false, true));
+					drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, getValueFromArray(array, false, true, true)); //item ID
 				}
 			}
 		}
@@ -167,9 +167,8 @@ function wipeScreen(){
 	ctx.clearRect(0, 0, screen.width, screen.height);
 }
 
-function getValueFromArray(array, isConditional, displayHex){
-	var val = array[0]
-	array.shift();
+function getValueFromArray(array, isConditional, displayHex, isItemID){
+	var val = array[0] 
 	if (isConditional == true){
 		for (var k in conditionalobj){
 			if (k == val){
@@ -177,9 +176,17 @@ function getValueFromArray(array, isConditional, displayHex){
 			}
 		}
 	}
+    if (isItemID == true){
+        if (array[0] == 0){
+            val = "NONE"
+        } else {
+            val = iname[(array[0] - 0x39D)]
+        }
+    }
 	if (displayHex == true){
 		val = val.toString(16);
 	}
+    array.shift();
 	return val;
 }
 
