@@ -90,7 +90,6 @@ function drawMonsterTable(array, m_id){ //warning: this becomes a mess of magic 
 	monstername = ename[m_id] + " [ID: " + m_id + " dec / " + m_id.toString(16) + " hex]";
 	drawText(ar20, "start", le, te - 5, monstername, false);
 	var mlevel = monsterArray[0]; //we don't want to display values for inaccessible levels, so we need the max level before we start shifting data out of our array
-	//console.log(array);
 	for (var i = 0; i < 2; i++){ //level, ID, EXP, unknown
 		for (var j = 0; j < 3; j++){			
 			var mle = le + (j * mwidth);
@@ -144,11 +143,16 @@ function drawMonsterTable(array, m_id){ //warning: this becomes a mess of magic 
 		for (var j = 0; j < 3; j++){
 			var mle = le + (j * mwidth3);
 			var mte = te3 + (i * 24);
+            console.log (i + " i");
 			if (i === 0){
 				drawRect(mle, mte, mwidth3, 23, true, "#EEEEEE");
 				drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, textheaders_items[j]);
 			} else {
-				drawRect(mle, mte, mwidth3, 23, false);
+                if (i == 3){
+                    drawRect(mle, mte, mwidth3, 23, true, "#ffffcf"); //bottom column, for conditional drop
+                } else {
+                    drawRect(mle, mte, mwidth3, 23, false); //item drops
+                }
 				if (i > 0 && j == 1){
 					drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, getValueFromArray(array, false, false, false)); //drop chance
 				} else if (i > 0 && j == 2){
