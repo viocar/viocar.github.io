@@ -143,7 +143,6 @@ function drawMonsterTable(array, m_id){ //warning: this becomes a mess of magic 
 		for (var j = 0; j < 3; j++){
 			var mle = le + (j * mwidth3);
 			var mte = te3 + (i * 24);
-            console.log (i + " i");
 			if (i === 0){
 				drawRect(mle, mte, mwidth3, 23, true, "#EEEEEE");
 				drawText(ar10, "center", mle + (mwidth3 / 2), mte + toffset, textheaders_items[j]);
@@ -184,7 +183,11 @@ function getValueFromArray(array, isConditional, displayHex, isItemID){
         if (array[0] == 0){
             val = "NONE"
         } else {
-            val = iname[(array[0] - 0x39D)]
+            if (!debug){
+                val = iname[(array[0] - 0x39D)]
+            } else {
+                val = array[0].toString(16) + " " + iname[(array[0] - 0x39D)]
+            }
         }
     }
 	if (displayHex == true){
