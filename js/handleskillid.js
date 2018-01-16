@@ -24,7 +24,7 @@ window.onkeyup = function(e){
 		}
 		var s_id = parseInt(skill_id.value);
 		var boxcheck = document.getElementById("enemybox").checked;
-		if (s_id > 400){ //check for some errors
+		if (s_id > 399){ //check for some errors
 			if (boxcheck){
 				errorid = 1;
 			} else if (s_id > 421){
