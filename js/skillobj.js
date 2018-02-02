@@ -77,6 +77,7 @@ const subheaderobj = {
 	"120":"Bot HP and TP",
 	"121":"Bodyguard DMG %", //How does this differ from 85?
 	"122":"Clone HP/TP",
+    "124":"Abyssal God Event",
 	"125":"Line free cast",
 	"126":"Link when attacked",
 	"127":"Block and link W.A.",
@@ -141,7 +142,7 @@ const subheaderobj = {
 	"222":"Stun chance",
 	"223":"DEF %", //passive for guardian
 	"226":"Bonus hit chance",
-	"227":"UNUSED PRIORITY SUBHEADER", //roll a number between x and the subheader value. if found, this character gets +17,000 speed (EO2 1st Hit)
+	"227":"UNUSED PRIORITY SUBHEADER", //roll a number between x and the subheader value. if found, this character gets +17,000 speed (EO2 1st Hit) [quickness]
 	"228":"Full DMG in back",
 	"229":"TP cost reduction",
 	"230":"Bonus crit chance",
