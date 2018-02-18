@@ -89,7 +89,9 @@ const subheaderobj = {
 	"136":"Unknown136", //all out - may also be "cannot be chased"
 	"137":"Unknown137", //narmer's earthquake
 	"139":"Hit twice", //??? not certain
+    "140":"Cast twice", //also not sure
 	"142":"Ignore DEF buffs",
+    "143":"Some unused ailment thing",
 	"144":"Use ailment on self",
 	"145":"Double TP cost",
 	"146":"Die after use",
@@ -182,7 +184,7 @@ const subheaderobj = {
 	"269":"Beast draw chance",
 	"270":"Beast draw chance", //not sure why it has two subheaders for this
 	"273":"Dual wield DMG %",
-	"274":"Use while defending",
+	"274":"Use on defend",
 	"276":"Ailment resistance",
 	"277":"Reduce blindside chance", //unused
 	"278":"Avoid blindside %",
