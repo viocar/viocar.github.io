@@ -91,7 +91,7 @@ function createSkillArray(buffer, s_id){ //okay, so, I could consolidate these s
 	skillArray.push(sv.getUint16(4, true)); //some sort of status required for the skill to work. 01: dead only. 02: snipe/sharpshooter. 0x10: only people with buffs? 0x8000: it's on immortal, so probably alive + dead
 	skillArray.push(sv.getInt8(6, true)); //target type. see text file for details
 	skillArray.push(sv.getInt8(7, true)); //target team
-	skillArray.push(sv.getInt8(8, true)); //useable in combat or field or what. 3 is useable in field only, 4 is usable in combat only, 7 is useable in both
+	skillArray.push(sv.getInt8(8, true)); //useable in combat or field or what. 1 is usable in town, 2 is usable in dungeon, and 4 is usable in combat, 7 is useable in all
 	skillArray.push(sv.getInt8(9, true)); //buff or debuff? (0 = no, 1 = buff, 2 = debuff)
 	skillArray.push(sv.getInt8(10, true)); //type of buff/debuff. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png (note: 3 is evasion)
 	skillArray.push(sv.getInt8(11, true)); //unknown. the code refers to the type of a buff/debuff as a byte, so I don't know what this is
