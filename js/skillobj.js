@@ -161,7 +161,7 @@ const subheaderobj = {
 	"244":"Use on ally death",
 	"245":"Use on ally death 2", //how does this differ from 244?
 	"246":"Bonus bind chance", //unused
-	"247":"Bonus ail chance", //unused
+	"247":"Bonus ailment chance", //unused
 	"248":"Recovery chance",
 	"249":"HP on kill", //extend. HP only?
 	"250":"TP on kill", //etheric return. TP only?
