@@ -64,8 +64,8 @@ const subheaderobj = {
 	"107":"Link on summon",
 	"108":"Beast base HP",
 	"109":"Beast stat mult",
-	"110":"Link after use",
-	"111":"UNUSED LINKING SUBHEADER", //investigate this!
+	"110":"Link after use", //target self-team
+	"111":"Link after use", //target enemy team
 	"112":"Link on use",
 	"113":"Weapon type", //this is really weird. I'll need to investigate it in detail later
 	"114":"Bot skill ID",
