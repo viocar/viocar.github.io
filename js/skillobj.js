@@ -13,7 +13,7 @@ const subheaderobj = {
 	"18":"Swap row on hit (?)",
 	"25":"Chase chance red.",
 	"26":"Maximum chases",
-	"27":"Use weap. DMG type", //I'm not super sure about this one. It's on All Out and it seems to ignore a flag that checks if the attack has no base type?
+	"27":"Use weap DMG type", //I'm not super sure about this one. It's on All Out and it seems to ignore a flag that checks if the attack has no base type?
 	"29":"DMG type from bot",
 	"31":"Uncounterable",
 	"33":"Horseplay",
@@ -86,7 +86,7 @@ const subheaderobj = {
 	"130":"Link on line hit", 
 	"134":"Cannot miss",
 	"135":"Unknown135", //shoot - may also be "cannot be chased"
-	"136":"Unknown136", //all out - may also be "cannot be chased"
+	"136":"Use weap animation", //all out - may also be "cannot be chased"
 	"137":"Unknown137", //narmer's earthquake
 	"139":"Hit twice", //??? not certain
     "140":"Cast twice", //also not sure
