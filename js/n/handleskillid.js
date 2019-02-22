@@ -1,6 +1,7 @@
 const DATA_SIZE = 0x264; //different from game to game. hardcoded for now.
 const T_LEVELS = 11; //total number of levels. this is hardcoded for now but can change from game to game
 const SUBLEN = 4 + (T_LEVELS * 4); //length of a subheader entry, including the subheader itself
+const HEADER_LEN = 0x24;
 const screen = document.getElementById("screen");
 const ctx = screen.getContext("2d");
 const ar10 = "10pt Arial";
@@ -24,11 +25,11 @@ window.onkeyup = function(e){
 		}
 		var s_id = parseInt(skill_id.value);
 		var box_check = document.getElementById("enemybox").checked;
-		if (s_id > 770){ //check for some errors
-			if (box_check){
-				error_id = 1;
-			} else if (s_id > 901){
+		if (s_id > 900){ //check for some errors
+			if (!box_check){
 				error_id = 2;
+			} else if (s_id > 769){
+				error_id = 1;
 			}
 		} else { //check to see if a name was inpt instead. search the array for that name, and display that skill.
 			var name_array_to_use = PLAYER_SKILL_NAME;
@@ -89,26 +90,30 @@ function createSkillArray(buffer, s_id){ //okay, so, I could consolidate these s
 	skill_array = [];
 	skill_array.push(sv.getInt8(0, true)); //skill level. (the true is needed to be read as little endian)
 	skill_array.push(sv.getInt8(1, true)); //skill type
-	skill_array.push(sv.getUint16(2, true)); //body part used (0: none probably, 1: head, 2: arm, 4: leg, 80: unusable if any part bound?, 4000: unusable if no part bound?. weapon requirement is also handled here
-	skill_array.push(sv.getUint16(4, true)); //some sort of status required for the skill to work. 01: dead only. 02: snipe/sharpshooter. 0x10: only people with buffs? 0x8000: it's on immortal, so probably alive + dead
-	skill_array.push(sv.getInt8(6, true)); //"revive"
-	skill_array.push(sv.getInt8(7, true)); //"range"
-	skill_array.push(sv.getInt8(8, true)); //"icon"
-	skill_array.push(sv.getInt8(9, true)); //"AoE"
-	skill_array.push(sv.getInt8(10, true)); //"side"
-	skill_array.push(sv.getInt8(11, true)); //useable in combat or field or what. 1 is usable in town, 2 is usable in dungeon, and 4 is usable in combat
-	skill_array.push(sv.getInt8(12, true)); //buff or debuff? (0 = no, 1 = buff, 2 = debuff)
-	skill_array.push(sv.getInt8(13, true)); //type of buff/debuff. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png
-	skill_array.push(sv.getInt8(14, true)); //type of buff/debuff 2
-	skill_array.push(sv.getInt16(15, true)); //buff/debuff element. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png
-	skill_array.push(sv.getInt16(17, true)); //damage type
-	skill_array.push(sv.getInt16(19, true)); //infliction flag
-	skill_array.push(sv.getInt16(21, true)); //ailments inflicted
-	skill_array.push(sv.getInt16(23, true)); //skill flags
-	for (i = 0; i < 10; i++){ //EON has room for ten subheaders.
-		skill_array.push(sv.getInt32(24 + (i * SUBLEN), true)); //subheader value
+    //bytes 2 and 3 are unused in EON, so we don't get them here
+	skill_array.push(sv.getUint16(4, true)); //body parts
+    //bytes 5 and 6 are also unused. why? who knows!!
+	skill_array.push(sv.getUint16(8, true)); //target requirement
+	skill_array.push(sv.getUint16(10, true)); //range
+	skill_array.push(sv.getUint32(12, true)); //icon (apparently it's 32-bit! who knew)
+	skill_array.push(sv.getInt8(16, true)); //target team
+	skill_array.push(sv.getInt8(17, true)); //useable in combat or field or what. 1 is usable in town, 2 is usable in dungeon, and 4 is usable in combat
+	skill_array.push(sv.getInt8(18, true)); //buff or debuff? (0 = no, 1 = buff, 2 = debuff)
+	skill_array.push(sv.getInt8(19, true)); //type of buff/debuff. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png
+	skill_array.push(sv.getUint16(20, true)); //buff/debuff element. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png
+	skill_array.push(sv.getInt16(22, true)); //damage type
+	skill_array.push(sv.getInt16(24, true)); //damage type
+	skill_array.push(sv.getInt16(26, true)); //infliction flag
+	skill_array.push(sv.getInt16(28, true)); //ailments inflicted
+    //30 and 31 are unused
+	skill_array.push(sv.getInt32(32, true)); //skill flags
+	for (i = 0; i < 12; i++){ //EON has room for twelve subheaders.
+		skill_array.push(sv.getInt32(HEADER_LEN + (i * SUBLEN), true)); //subheader value
 		for (j = 0; j < T_LEVELS; j++){ //a subheader has space for ten levels even if the level itself has a lower maximum
-			skill_array.push(sv.getInt32(28 + (i * SUBLEN) + (j * 4), true));
+			skill_array.push(sv.getInt32((HEADER_LEN + 4) + (i * SUBLEN) + (j * 4), true));
+            if (j === 0){
+                skill_array.pop(); //due to some skill table strangeness, we've gotta pop the first element, because it's doubled up. I suspect this was done 
+            }
 		}
 	}
 	drawSkillTable(skill_array, s_id)
@@ -146,9 +151,9 @@ function drawSkillTable(array, s_id){
 			}
 		}
 	}
-	for (var i = 0; i < 9; i++){ //this handles subheaders
-		for (var j = 0; j <= T_LEVELS; j++){
-			var m_width = (screen.width / (T_LEVELS + 1));
+	for (var i = 0; i < 13; i++){ //this handles subheaders
+		for (var j = 0; j < T_LEVELS; j++){
+			var m_width = (screen.width / (T_LEVELS));
 			var mle = le + (j * m_width);
 			var mte = te + 54 + (i * 24);
 			var is_subheader = false;
@@ -176,7 +181,11 @@ function drawSkillTable(array, s_id){
 					} else { //not top row, not even
 						drawRect(mle, mte, m_width, 23, false);
 					}
-					drawText(ar10, "center", mle + (m_width / 2), mte + t_offset, getValueFromArray(array, is_subheader), false);
+                    if (j === 0){ //render subheader values in hex
+                        drawText(ar10, "center", mle + (m_width / 2), mte + t_offset, getValueFromArray(array, is_subheader, true), false);
+                    } else {
+                        drawText(ar10, "center", mle + (m_width / 2), mte + t_offset, getValueFromArray(array, is_subheader), false);
+                    }
 				}
 			} else if (i > 0){ //since the game data contains values beyond the max, we still need to shift that data out of our array
 				array.shift();
@@ -212,12 +221,12 @@ function drawSubheaderDumpText(array, i){ //this is a quick hack so I can easily
 	if (!debug){
 		return;
 	}
-	var te = 300 + (i * 16);
+	var te = 400 + (i * 16);
 	var le = 8;
 	var val = array[0];
 	drawText(ar10, "start", le, te, subheader_obj[val], false);
-	drawText(ar10, "start", le + 150, te, val, false);
-	drawText(ar10, "start", le + 190, te, val.toString(16));
+	drawText(ar10, "start", le + 180, te, val, false);
+	drawText(ar10, "start", le + 220, te, val.toString(16));
 }
 
 function drawRect(le, te, width, height, fill, colour){
