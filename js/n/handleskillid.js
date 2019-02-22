@@ -24,13 +24,13 @@ window.onkeyup = function(e){
 		}
 		var s_id = parseInt(skill_id.value);
 		var box_check = document.getElementById("enemybox").checked;
-		if (s_id > 399){ //check for some errors
+		if (s_id > 770){ //check for some errors
 			if (box_check){
 				error_id = 1;
-			} else if (s_id > 421){
+			} else if (s_id > 901){
 				error_id = 2;
 			}
-		} else { //check to see if a name was inpu	t instead. search the array for that name, and display that skill.
+		} else { //check to see if a name was inpt instead. search the array for that name, and display that skill.
 			var name_array_to_use = PLAYER_SKILL_NAME;
 			if (box_check){
 				name_array_to_use = ENEMY_SKILL_NAME;
@@ -48,9 +48,9 @@ window.onkeyup = function(e){
 			}
 		}
 		if (error_id == 0){ //proceed if we have no errors
-			var skill_table = "https://viocar.github.io/tbl/n/playerskilltable.tbl"; //probably should be relative but ehhhh
+			var skill_table = "https://viocar.github.io/tbl/n_pst.tbl"; //probably should be relative but ehhhh
 			if (box_check){
-				skill_table = "https://viocar.github.io/tbl/n/enemyskilltable.tbl";
+				skill_table = "https://viocar.github.io/tbl/n_est.tbl";
 			}
 			if (p_s_table != 0 && !box_check){ // check if we previously loaded p_s_table/e_s_table, and use that arraybuffer instead
 				createSkillArray(p_s_table, s_id);
@@ -70,6 +70,8 @@ window.onkeyup = function(e){
 						}
 						createSkillArray(sd_buffer, s_id);
 					} else {
+                        console.log(sd_buffer.byteLength);
+                        console.log(DATA_SIZE);
 						error_id = 4;
 						errorHandler(error_id);
 					}
