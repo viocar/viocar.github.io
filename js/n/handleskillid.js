@@ -31,9 +31,9 @@ window.onkeyup = function(e){
 				error_id = 2;
 			}
 		} else { //check to see if a name was inpu	t instead. search the array for that name, and display that skill.
-			var name_array_to_use = p_name;
+			var name_array_to_use = PLAYER_SKILL_NAME;
 			if (box_check){
-				name_array_to_use = e_name;
+				name_array_to_use = ENEMY_SKILL_NAME;
 			}
 			var j = 0; //i in for...of loops is the value of the right side and not a number, so we need to track the loop iteration ourselves
 			for (i of name_array_to_use){
@@ -121,9 +121,9 @@ function drawSkillTable(array, s_id){
 	var skill_name;
 	var team_name;
 	if (box_check){ //this repetition feels a bit wrong but I think any way around it would wind up being longer
-		skill_name = e_name[s_id] + " (Enemy skill) [ID: " + s_id + " dec / " + s_id.toString(16) + " hex]";
+		skill_name = ENEMY_SKILL_NAME[s_id] + " (Enemy skill) [ID: " + s_id + " dec / " + s_id.toString(16) + " hex]";
 	} else {
-		skill_name = p_name[s_id] + " (Player skill) [ID: " + s_id + " dec / " + s_id.toString(16) + " hex]";
+		skill_name = PLAYER_SKILL_NAME[s_id] + " (Player skill) [ID: " + s_id + " dec / " + s_id.toString(16) + " hex]";
 	}
 	drawText(ar20, "start", le, te - 5, skill_name, false);
 	var m_level = skill_array[0]; //we don't want to display values for inaccessible levels, so we need the max level before we start shifting data out of our array
