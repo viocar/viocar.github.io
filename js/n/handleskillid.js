@@ -147,7 +147,11 @@ function drawSkillTable(array, s_id){
 				drawText(ar10, "center", mle + (m_width / 2), mte + t_offset, text_headers[j]);
 			} else {
 				drawRect(mle, mte, m_width, 23, false);
-				drawText(ar10, "center", mle + (m_width / 2), mte + t_offset, getValueFromArray(array, false, true), true);
+                if (j === 0){
+                    drawText(ar10, "center", mle + (m_width / 2), mte + t_offset, getValueFromArray(array, false, false), true);
+                } else {
+                    drawText(ar10, "center", mle + (m_width / 2), mte + t_offset, getValueFromArray(array, false, true), true);
+                }
 			}
 		}
 	}

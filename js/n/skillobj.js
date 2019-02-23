@@ -4,7 +4,8 @@ const subheader_obj = {
 	0x3:"Speed",
 	0x4:"Skill accuracy",
 	0x5:"Accuracy modifier",
-    0x6:"Increased item slots",
+    0x6:"Effect", //seems to be a generic subheader... it's on upper stance but also the survivalist item thing
+    0xC:"Maximum activations", //Scapegoat
     0xE:"Maximum activations", //Chase Heal (is this per person?)
     0x62:"Target type modifier",
     0x7E:"Damage absorption",
@@ -20,6 +21,7 @@ const subheader_obj = {
     0xE4:"Skill link", //Shield Flare
     0xF0:"(H) Ailments removed",
     0xF2:"Damage multiplier", //Front Guard
+    0xF4:"Preemptive chance up",
     0xF6:"Field skill duration",
     0x13A:"Damage multiplier", //Ally Shield
     0x18F:"Static HP restore", //Healing Wall
@@ -64,9 +66,11 @@ const subheader_obj = {
     0x63A:"Intensive Care TP mult.",
     0x63B:"ICare [speed or mult]",
     0x63C:"ICare [speed or mult2]",
-    0x676:"[Healing Touch 1]",
-    0x677:"[Healing Touch 2]",
-    0x678:"[Healing Touch 3]",
+    0x665:"Evasion multiplier", //Illusory Formation
+    0x668:"Speed multiplier", //Illusory Formation
+    0x676:"[Break eff. stage 1]",
+    0x677:"[Break eff. stage 2]",
+    0x678:"[Break eff. stage 3]",
     0x6B7:"HP multiplier", //HP Up
     0x6B6:"[Probably TP mult.]",
 }
