@@ -64,7 +64,7 @@ const subheader_obj = {
     0x1E0:"[Dmg. down per enemy]",
     0x1EB:"Can revive", //Resuscitate
     0x1EC:"Revive healing", //Resuscitate
-    0x1F6:"Cooldown",
+    0x1F6:"Cooldown", //On that protector skill
     0x20A:"Enmity multiplier", //Chain Dance
     0x20B:"Evasion increase", //Chain Dance
     0x2AB:"Encounter multiplier", //Cautious Steps
