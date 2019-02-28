@@ -73,8 +73,8 @@ const subheader_obj = {
     0x402:"Buff duration", //Taunt?
     0x410:"Buff damage mult.", //Shield Bash debuff
     0x411:"Buff damage mult.", //Taunt
-    0x41B:"Accuracy reduction", //Trickery
-    0x41E:"Evasion reduction", //Feint Shot
+    0x41B:"Accuracy multiplier", //Trickery
+    0x41E:"Evasion multiplier", //Feint Shot
     0x425:"[???] Enmity multiplier", //Taunt
     0x432:"Ailment chance mult.", //Blood Fortune
     0x433:"Bind chance mult.", //Blood Fortune
