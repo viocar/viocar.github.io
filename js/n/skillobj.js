@@ -7,18 +7,30 @@ const subheader_obj = {
     0x6:"Effect", //seems to be a generic subheader... it's on upper stance but also the survivalist item thing
     0xC:"Maximum activations", //Scapegoat
     0xE:"Maximum activations", //Chase Heal (is this per person?)
+    0x2B:"Ailment damage mult.", //Shadow Bite
     0x2E:"Lifesteal", //Blood Edge
     0x4E:"TP Lifesteal", //Gae Bolg
+    0x50:"Damage mult. at day", //Morning Star
+    0x52:"Damage mult. at night", //Twilight Hour
     0x53:"Splash percent", //Splash Shot
+    0x59:"Max hit mult. w/ 2 weap.", //5-Ring Sword
+    0x5F:"Lifesteal", //Healing Decree
+    0x60:"Ailment chance mult.", //Spread Throw
     0x62:"Target type modifier",
     0x69:"Crit while Upper St.", //Upward Slash
     0x6A:"Crit while Clear St.", //Charging Thrust
     0x6B:"Crit while Swift St.", //Sheath Strike
     0x7E:"Damage absorption",
+    0x8F:"Both type multiplier",
     0x92:"Back row multiplier",
     0x99:"Ailment chance",
     0x9F:"Lower HP damage mult.", //Spear Reversal
+    0xA1:"Revive chance", //Seppuku
+    0xAB:"Cloak ailment chance", //Backstab
+    0xAC:"Damage mult. w/ cloak", //Backstab
+    0xAD:"[Prob. almighty dmg.]", //Backstab
     0xAE:"[Prob. reduce turns?]",
+    0xAF:"[Prob. hits w/ 2 weap?]", //Twin Swallows
     0xBC:"Cast preemptively", //Preemptive Taunt
     0xC3:"Amplified damage", //Charged Shot
     0xC7:"Instant death chance", //Head Pierce
@@ -27,15 +39,36 @@ const subheader_obj = {
     0xD7:"Healing", //Heal Guard, Healing
     0xE1:"Minimum hits",
     0xE2:"Maximum hits",
+    0xE3:"Ailment extra max hits", //Swift Edge
     0xE5:"Delay turns",
+    0xED:"Poison factor", //Venom Throw
     0xE4:"Skill link", //Shield Flare
     0xF0:"(H) Ailments removed",
     0xF2:"Damage multiplier", //Front Guard
     0xF4:"Preemptive chance up",
     0xF6:"Field skill duration",
     0xF9:"Party lifesteal", //Black Sabbath - all allies or only self?
+    0x104:"Charge", //Prophecies and Charge Image
+    0x11B:"[Prob. chase chance]", //Blazing Link
+    0x11C:"Link chance decrease", //Blazing Link
+    0x11D:"[Maximum links?]", //Blazing Link
     0x122:"Self-cast after use",
+    0x125:"Skill for ally to use", //Blitz Command
+    0x126:"[Weap. types to link?]", //Blitz Command
+    0x12D:"Bonus dmg. per clone", //Drawing Slice
+    0x12E:"Cur. HP% for clone", //Ninpo: Mirage
+    0x12F:"Cur. TP% for clone", //Ninpo: Double
+    0x134:"Bonus enmity", //Ninpo: Mirage
     0x13A:"Damage multiplier", //Ally Shield
+    0x13B:"Bonus evasion", //Ninpo: Mirage
+    0x149:"Force restore", //Dominance
+    0x14C:"Link at EOT if not hit", //Biding Slice
+    0x156:"Damage % as TP", //Tactical Decree
+    0x157:"Damage dealt mult.", //Final Decree
+    0x158:"Damage taken mult.", //Final Decree
+    0x159:"HP restore factor", //Clearance
+    0x15A:"TP restore factor", //Clearance
+    0x172:"Damage type increase", //Arms skills
     0x176:"User cur. HP % cost", //Draining Thrust
     0x177:"Party cur. HP % cost", //Blood Fortune - how do this and Legion Thrust differ?
     0x178:"Party cur. HP % cost", //Legion Thrust
@@ -44,6 +77,7 @@ const subheader_obj = {
     0x180:"[Acc or eva mult.]", //Shell Shock
     0x181:"[Acc or eva mult2.]", //Shell Shock
     0x184:"[Link if del. charge?]",
+    0x189:"TP multiplier", //Dark Ether
     0x18D:"Element damage mult.", //Spear Assist
     0x18F:"Static HP restore", //Healing Wall
     0x190:"Percent HP restore", //Healing Wall
@@ -57,56 +91,122 @@ const subheader_obj = {
     0x1A0:"[Musou Clear ailmult.]",
     0x1A1:"[Musou Clear ailmult2.]",
     0x1A2:"[Musou Clear ailmult3.]",
+    0x1C5:"Evasion bonus", //Ninpo: Flight
+    0x1C7:"Reduction per evade", //Ninpo: Flight
     0x1C8:"Link on chase", //Chase Heal
     0x1C9:"Chance reduction",
     0x1D2:"TP cost multiplier", //Act Quick
     0x1DD:"Damage multiplier", //Full Guard
+    0x1DE:"[Max hits per target?]", //Ninpo: Daggers
     0x1E0:"[Dmg. down per enemy]",
     0x1EB:"Can revive", //Resuscitate
     0x1EC:"Revive healing", //Resuscitate
     0x1F6:"Cooldown", //On that protector skill
+    0x208:"Maximum counters", //Ninpo: Caltrops
     0x20A:"Enmity multiplier", //Chain Dance
     0x20B:"Evasion increase", //Chain Dance
+    0x21C:"Elemental charge", //Etheric Charge
+    0x21D:"Multi-Strike charge", //Multi-Strike Ether
+    0x25E:"[Final Decree link]", //Final Decree
+    0x268:"Link when dual wield", //Echoing Slash
+    0x279:"HP cost per activation", //Warrior Might
+    0x27A:"[Range for counter?]", //Front Command
+    0x27D:"Break debuff mult.", //Full Break
+    0x27E:"Bonus dmg. per link", //Link Finale
+    0x27F:"Charge damage mult.", //Full Charge
+    0x280:"Charge speed mult.", //Full Charge
     0x2AB:"Encounter multiplier", //Cautious Steps
+    0x2AC:"Duration", //Taunt Assassins
     0x2BE:"Can't miss",
+    0x2F8:"Zodiac skill flag", //Zodiac damage skills
     0x30C:"Heal skill flag",
+    0x32F:"Link skill flag", //Links
     0x402:"Buff duration", //Taunt?
+    0x405:"Buff link at EOT", //Protect Order
     0x410:"Buff damage mult.", //Shield Bash debuff
     0x411:"Buff damage mult.", //Taunt
+    0x412:"Buff damage mult.", //Great Warrior
+    0x415:"[Buff speed mult.?]", //Swift Justice
+    0x419:"Max HP increase %", //Rally Order
     0x41B:"Accuracy multiplier", //Trickery
     0x41E:"Evasion multiplier", //Feint Shot
-    0x425:"[???] Enmity multiplier", //Taunt
+    0x423:"Buff bonus speed", //Swift Justice
+    0x425:"Enmity multiplier", //Taunt
+    0x428:"Buff endure chance", //Dauntless Order
+    0x42B:"[Prob. anti-ailment %]", //Prevent Order
+    0x42D:"[Prob. anti-bind %]", //Prevent Order
     0x432:"Ailment chance mult.", //Blood Fortune
     0x433:"Bind chance mult.", //Blood Fortune
+    0x43A:"Extra links", //Improved Link
+    0x43B:"Chance red. down", //Improved Link
     0x441:"[Heal or speed mult]",
     0x446:"[Heal or speed mult2]",
     0x45B:"Healing multiplier", //Efficiency
     0x45F:"Link [Deja Vu]", //Deja Vu
-    0x473:"Damage multiplier", //ATK Up
+    0x466:"Buff endure heal", //Dauntless Order
+    0x472:"Outgoing dmg. mult.", //Proficiency (NIN)
+    0x473:"Outgoing dmg. mult.", //ATK Up
+    0x475:"Zod. skill dmg. mult.", //Ether Mastery
+    0x476:"Incoming dmg. mult.", //Second Sword
+    0x477:"Damage multiplier", //Initiative
+    0x47A:"Type null chance", //Anti-Ether
     0x480:"Damage multiplier", //DEF UP
+    0x48A:"Chance for 0 TP cost", //that ether thing on zod
+    0x48B:"TP cost reduction", //Mystic Calm
+    0x48F:"Instant kill chance", //Beheading
+    0x494:"Infliction % bonus", //Return Malice
+    0x495:"Ailments boosted (H)", //Return Malice
     0x499:"Bonus speed", //Speed Up
     0x4A5:"Chance", //Auto-Revive
     0x4A9:"Recovery chance", //Antibodies
+    0x4A1:"Revive chance", //Reincarnation
     0x4AA:"Link on kill",
+    0x4AD:"Damage up % per kill", //Bloody Lance
+    0x4AE:"Stack cap", //Bloody Lance
+    0x4B0:"Weakness multiplier", //Singularity
     0x4C2:"Endure chance", //Aegis
     0x4C3:"Scavenge multiplier", //Scavenge
+    0x4DC:"Dmg. mult. per ailment", //Foul Mastery
+    0x4DD:"Max damage increase", //Foul Mastery
+    0x4DE:"Max stacks", //Foul Mastery
+    0x4DF:"Skill repeat chance", //Follow Trace
+    0x4E0:"Re-apply chance", //Enduring Cloak
     0x4F9:"Health threshold",
     0x4FA:"[prob. proc chance]",
     0x505:"Overheal maximum HP", //Overheal
+    0x513:"Damage mult. per link", //Link Mastery
+    0x514:"Damage mult maximum", //Link Mastery
+    0x52B:"Buff reapply chance", //Renew
     0x552:"Damage multiplier", //Duel
+    0x553:"Damage up % per hit", //Peerless Demon
+    0x554:"Stack cap", //Peerless Demon
+    0x55E:"TP spent damage mult.", //Etheric Boon
+    0x568:"[Back row full dmg.?]", //Proficiency (NIN)
+    0x569:"Link crit chance", //Smash Link
+    0x56A:"Damage mult. 1 elem.", //Single Devotion
+    0x56B:"Damage mult. 2 elem.", //Single Devotion
+    0x56C:"Damage mult. 3 elem.", //Single Devotion
     0x56F:"Damage mult. after hit", //Bloody Veil
+    0x576:"Second attack damage", //Blade Flurry
     0x57F:"Stop blindside chance",
     0x584:"[Maybe max activ.?]", //Royal Veil
-    0x585:"[Eva/Acc buff]", //Speed Up
-    0x586:"[Eva/Acc buff2]",
+    0x585:"Accuracy multiplier", //Speed Up
+    0x586:"Evasion multiplier",
+    0x587:"Accuracy multiplier", //Initiative
+    0x58C:"Dmg. to ailing enemy", //Proficiency (NSK)
+    0x591:"Link HP threshold", //Execution
+    0x592:"Link % at HP thresh.", //Execution
     0x5A9:"Required HP %", //Royal Veil
     0x5AA:"[Staff damage or TP]", //Staff Mastery
     0x5AD:"Chance", //En Garde
+    0x5B1:"Out. dmg. mult. at night", //Avidya Sight
     0x5BB:"Pierce chance", //Penetrator
     0x5BD:"Counter link chance", //Bloodlust
     0x5BE:"Null ailment chance",
     0x5BF:"Chance",
+    0x5C4:"Infliction chance up", //Status ATK Up
     0x5C6:"[Probably chance]", //Stances
+    0x5CA:"Resistance", //Status DEF Up
     0x5D4:"Chance", //Multi-Shot
     0x5E0:"Stance damage mult.", //Upper Stance
     0x5E1:"Stance damage mult.", //Clear Stance
@@ -126,20 +226,36 @@ const subheader_obj = {
     0x5EF:"[Clear ailment mult3.]", //Full Proficiency
     0x5F8:"Act last", //Spear Assist
     0x633:"Force boost duration",
+    0x636:"Damage multiplier", //Trinity
     0x638:"Shield protect boost",
-    0x63A:"Intensive Care TP mult.",
+    0x63A:"TP cost mult.",
     0x63B:"ICare [speed or mult]", //Intensive Care
     0x63C:"ICare [speed or mult2]",
+    0x63D:"Accuracy multiplier", //Trinity
     0x640:"Damage multiplier", //Hero Battle
+    0x643:"Evasion bonus", //Diversion Gambit
+    0x647:"Enmity bonus", //Diversion Gambit
     0x645:"Second use dmg. mult.", //Double Action
+    0x648:"Ailment multiplier", //Killing Intent
+    0x649:"Damage multiplier", //Divination
+    0x64A:"TP refund", //Divination
+    0x64B:"Speed multiplier", //Trinity
     0x64F:"Party lifesteal", //Hero Battle
     0x665:"Evasion multiplier", //Illusory Formation
+    0x666:"Damage multiplier", //Unified Effort
     0x668:"Speed multiplier", //Illusory Formation
+    0x66B:"Party max HP %", //Unified Effort
+    0x66C:"Ailment turn extend", //Disaster
     0x675:"Maximum effect level",
     0x676:"[Break eff. stage 1]",
     0x677:"[Break eff. stage 2]",
     0x678:"[Break eff. stage 3]",
+    0x679:"Poison factor stage 1",
+    0x67A:"Poison factor stage 2",
+    0x67B:"Poison factor stage 3",
     0x682:"Threshold ail. chance",
+    0x6A2:"Damage multiplier", //Proficiency (LDN)
+    0x6A3:"Accuracy multiplier", //Proficiency (LDN)
     0x6B7:"HP multiplier", //HP Up
     0x6B6:"[Probably TP mult.]",
     0x6B9:"TP multiplier", //TP Up
