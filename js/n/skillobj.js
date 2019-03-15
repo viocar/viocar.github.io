@@ -168,9 +168,11 @@ const subheader_obj = {
     0x297:"Minimum multiplier", //Regiment Rave
     0x298:"Afterimage chance up", //Mirage Sword
     0x299:"Afterimage chance up", //Charge Image
+    0x29B:"Damage inc. per proc", //Guard Rush
+    0x29C:"Damage limit", //Guard Rush
     0x2AB:"Encounter multiplier", //Cautious Steps
     0x2AC:"Duration", //Taunt Assassins
-    0x2AE:"[Rare breed % up?]", //New Challenger   
+    0x2AE:"Rare breed % up", //New Challenger   
     0x2AF:"Minimum battles", //New Challenger
     0x2B0:"Maximum battles", //New Challenger
     0x2BE:"Can't miss",
@@ -348,6 +350,7 @@ const subheader_obj = {
     0x679:"Poison factor stage 1",
     0x67A:"Poison factor stage 2",
     0x67B:"Poison factor stage 3",
+    0x67C:"[Overheal %]", //Miracle Edge
     0x682:"Threshold ail. chance",
     0x6A2:"Damage multiplier", //Proficiency (LDN)
     0x6A3:"Accuracy multiplier", //Proficiency (LDN)
@@ -355,6 +358,7 @@ const subheader_obj = {
     0x6B6:"[Probably TP mult.]",
     0x6B8:"Flat HP bonus", //Turn Vampire
     0x6B9:"TP multiplier", //TP Up
+    0x6BA:"Flat TP bonus", //TP Up (0x21A)
     0x6BB:"[Probably STR mult.]", //Turn Vampire
     0x6BC:"STR up", //STR Up
     0x6BD:"[Probably VIT mult.]", //Turn Vampire
