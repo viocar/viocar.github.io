@@ -170,6 +170,7 @@ const subheader_obj = {
     0x299:"Afterimage chance up", //Charge Image
     0x29B:"Damage inc. per proc", //Guard Rush
     0x29C:"Damage limit", //Guard Rush
+    0x29D:"Stack limit", //Guard Rush
     0x2AB:"Encounter multiplier", //Cautious Steps
     0x2AC:"Duration", //Taunt Assassins
     0x2AE:"Rare breed % up", //New Challenger   
