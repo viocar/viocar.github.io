@@ -172,7 +172,7 @@ const subheader_obj = {
     0x29C:"Damage limit", //Guard Rush
     0x29D:"Stack limit", //Guard Rush
     0x2AB:"Encounter multiplier", //Cautious Steps
-    0x2AC:"Duration", //Taunt Assassins
+    0x2AC:"Bonus EXP", //Taunt Assassins
     0x2AE:"Rare breed % up", //New Challenger   
     0x2AF:"Minimum battles", //New Challenger
     0x2B0:"Maximum battles", //New Challenger
