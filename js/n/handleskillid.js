@@ -104,7 +104,7 @@ function createSkillArray(buffer, s_id){ //okay, so, I could consolidate these s
 	skill_array.push(sv.getInt16(22, true)); //damage type
 	skill_array.push(sv.getInt16(24, true)); //damage type
 	skill_array.push(sv.getInt16(26, true)); //infliction flag
-	skill_array.push(sv.getInt16(28, true)); //ailments inflicted
+	skill_array.push(sv.getUint16(28, true)); //ailments inflicted
     //30 and 31 are unused
 	skill_array.push(sv.getInt32(32, true)); //skill flags
 	for (i = 0; i < 12; i++){ //EON has room for twelve subheaders.
