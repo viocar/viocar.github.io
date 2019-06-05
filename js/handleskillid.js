@@ -98,7 +98,7 @@ function createSkillArray(buffer, s_id){ //okay, so, I could consolidate these s
 	skill_array.push(sv.getInt16(12, true)); //buff/debuff element. see: https://cdn.discordapp.com/attachments/221343091133513728/339176275648184320/unknown.png
 	skill_array.push(sv.getInt16(14, true)); //damage type
 	skill_array.push(sv.getInt16(16, true)); //infliction flag
-	skill_array.push(sv.getInt16(18, true)); //ailments inflicted
+	skill_array.push(sv.getUint16(18, true)); //ailments inflicted
 	skill_array.push(sv.getInt16(20, true)); //skill flags
 	skill_array.push(sv.getInt16(22, true)); //unknown 
 	for (i = 0; i < 8; i++){ //EO3 has room for eight subheaders. I believe this is expanded to 10 in later games

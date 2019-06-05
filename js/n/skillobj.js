@@ -203,6 +203,7 @@ const subheader_obj = {
     0x441:"[Heal or speed mult]",
     0x445:"Ail. recovery chance", //Wilting Miasma
     0x446:"[Heal or speed mult2]",
+    0x44B:"Current HP% Loss", //Bloody Offense
     0x45B:"Healing multiplier", //Efficiency
     0x45D:"Bind. recovery chance", //Binding Miasma
     0x45F:"Link [Deja Vu]", //Deja Vu
@@ -303,6 +304,7 @@ const subheader_obj = {
     0x5C4:"Infliction chance up", //Status ATK Up
     0x5C6:"[Probably chance]", //Stances
     0x5CA:"Resistance", //Status DEF Up
+    0x5CB:"Flat heal", //Vampire
     0x5D4:"Chance", //Multi-Shot
     0x5E0:"Stance damage mult.", //Upper Stance
     0x5E1:"Stance damage mult.", //Clear Stance
