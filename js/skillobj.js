@@ -101,7 +101,7 @@ const subheader_obj = {
 	"100":"something to do with subheaders", //figure it out - not in data
     "101":"UNUSED",
     "102":"UNUSED",
-    "103":"Unknown103", //hmm
+    "103":"Store damage turns", //hmm
     "104":"% of damage taken", //a cumulative counter, divided across the team
 	"105":"% of damage taken", //counter
 	"106":"Beast to summon",
@@ -254,6 +254,7 @@ const subheader_obj = {
 	"308":"UNUSED", //checked for in a subheader handler
 	"312":"UNUSED PRIORITY SUBHEADER", //checked for in priority function
 	"314":"Block element",
+    "315":"UNUSED",
     "319":"UNUSED",
 	"320":"UNUSED LINKING SUBHEADER", //checked for in linking function
 	"324":"Sword DMG %",
