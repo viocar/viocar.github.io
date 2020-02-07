@@ -8,7 +8,7 @@ const subheader_obj = {
     "7":"UNUSED",
 	"8":"DMG mult if ailment",
 	"9":"DMG mult per ailm.",
-    "10":"UNUSED",
+    "10":"UNUSED", //Difference-based lifesteal
 	"11":"Lifesteal %",
     "12":"UNUSED",
     "13":"UNUSED",
@@ -30,7 +30,7 @@ const subheader_obj = {
 	"29":"DMG type from bot",
     "30":"Elem from attack",
 	"31":"Uncounterable",
-    "32":"UNUSED",
+    "32":"UNUSED", //stacking charge turn duration (doesn't work)
 	"33":"Horseplay",
     "34":"UNUSED",
     "35":"Mult per buff",
@@ -128,6 +128,7 @@ const subheader_obj = {
 	"128":"Link on ally hit",
 	"129":"DOESN'T EXIST!",
 	"130":"Link on line hit", 
+    "133":"Unused", //Found in the accuracy subheader
 	"134":"Cannot miss",
 	"135":"Cannot repeat", //shoot - may also be "cannot be chased"
 	"136":"Use weap animation", //all out - may also be "cannot be chased"
@@ -140,7 +141,7 @@ const subheader_obj = {
 	"145":"Double TP cost",
 	"146":"Die after use",
 	"147":"All drops on kill",
-	"148":"Use ailment on self",
+	"148":"Rocket jump evasion",
 	"149":"Dispel arms buff",
 	"150":"Join clones after",
 	"151":"Act first", //knighthood
@@ -150,6 +151,7 @@ const subheader_obj = {
 	"156":"Clear ailment AR",
 	"157":"Clear bind AR",
 	"159":"Formaldehyde",
+    "160":"Flee to pole",
 	"161":"Provoke flag",
 	"162":"Unknown162", //enemy kaishaku heal?
 	"164":"Defrag flag", //again, not sure what this does exactly. don't care enough to find out
@@ -252,6 +254,7 @@ const subheader_obj = {
 	"308":"UNUSED", //checked for in a subheader handler
 	"312":"UNUSED PRIORITY SUBHEADER", //checked for in priority function
 	"314":"Block element",
+    "319":"UNUSED",
 	"320":"UNUSED LINKING SUBHEADER", //checked for in linking function
 	"324":"Sword DMG %",
 	"325":"Club DMG %",

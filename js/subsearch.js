@@ -45,20 +45,46 @@ window.onkeyup = function(e){
     var TE = 20;
 	if (key == 13){ //run the code on enter
     	ctx.clearRect(0, 0, screen.width, screen.height);
-        sub_id = parseInt(subh.value);
-        if (isNaN(sub_id)){
-            console.log("not a number");
-            // break;
+        if (subh.value){
+            sub_id = parseInt(subh.value);
+            if (isNaN(sub_id)){
+                console.log("not a number");
+                // break;
+            }
+            for (i = 0; i < 2; i++){ //playerskilltable, enemyskilltable
+                for (j = 0; j < s_table[i].byteLength / DATA_LENGTH; j++){ //number of entries in the table
+                    var sv = new DataView(s_table[i], j * DATA_LENGTH); //a dataview for the skill
+                    console.log(sv)
+                    for (k = 0; k < 8; k++){
+                        var sub = (sv.getInt32(24 + (k * SUBLEN), true));
+                        if (sub == sub_id){
+                            var x = LE + 50 * (Math.floor(res_count / 33));
+                            var y = (TE * res_count % 660) + TE;
+                            ctx.beginPath();
+                            ctx.fillStyle = "#000000" //all text is hardcoded to be black for now
+                            ctx.font = "10pt Arial";
+                            ctx.textAlign = "start"
+                            ctx.fillText(i + "_" + j.toString(16).toUpperCase(), x, y);
+                            ctx.stroke();
+                            res_count++;
+                        }
+                    }
+                }
+            }
         }
-        for (i = 0; i < 2; i++){ //playerskilltable, enemyskilltable
-            for (j = 0; j < s_table[i].byteLength / DATA_LENGTH; j++){ //number of entries in the table
-                var sv = new DataView(s_table[i], j * DATA_LENGTH); //a dataview for the skill
-                for (k = 0; k < 8; k++){
-                    var sub = (sv.getInt32(24 + (k * SUBLEN), true));
-                    if (sub == sub_id){
+        else if (stype.value){
+            type_id = parseInt(stype.value);
+            if (isNaN(type_id)){
+                console.log("not a number");
+                // break;
+            }
+            for (i = 0; i < 2; i++){ //playerskilltable, enemyskilltable
+                for (j = 0; j < s_table[i].byteLength / DATA_LENGTH; j++){ //number of entries in the table
+                    var sv = new DataView(s_table[i], j * DATA_LENGTH); //a dataview for the skill
+                    var s_type = (sv.getInt8(1))
+                    if (s_type === type_id){
                         var x = LE + 50 * (Math.floor(res_count / 33));
                         var y = (TE * res_count % 660) + TE;
-                        console.log(y);
                         ctx.beginPath();
                         ctx.fillStyle = "#000000" //all text is hardcoded to be black for now
                         ctx.font = "10pt Arial";
@@ -68,7 +94,7 @@ window.onkeyup = function(e){
                         res_count++;
                     }
                 }
-            }
+            }            
         }
     }
     thing = results;

@@ -70,7 +70,7 @@ function createMonsterArray(buffer, m_id){
 	monsterArray.push(mv.getInt32(8, true)); //various flags. this may actually be a 16-bit value
 	monsterArray.push(mv.getInt32(12, true)); //unknown
 	monsterArray.push(mv.getInt32(16, true)); //HP
-	monsterArray.push(mv.getInt32(20, true)); //Unknown
+	monsterArray.push(mv.getInt32(20, true)); //"TP"
 	for (i = 0; i < 38; i++){  								//STR, VIT, AGI, LUC, TEC, WIS, attack type, acc, cut res, bash res, stab res, fire res, ice res, volt res
 		monsterArray.push(mv.getUint16(24 + (2 * i), true)); //ID res, petrify res, sleep res, panic res, plague res, poison res, blind res, curse res, paralyze res, stun res
 	}														//head bind res, arm bind res, leg bind res, almighty res, drop 1 ID, drop 1 chance, drop 1 condition, (repeat for drops 2 and 3), unknown

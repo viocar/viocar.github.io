@@ -322,6 +322,7 @@ const subheader_obj = {
     0x5ED:"[Clear ailment mult.]", //Full Proficiency
     0x5EE:"[Clear ailment mult2.]", //Full Proficiency
     0x5EF:"[Clear ailment mult3.]", //Full Proficiency
+    0x5F7:"Force break speed mult", //
     0x5F8:"Act last", //Spear Assist
     0x633:"Force boost duration",
     0x636:"Damage multiplier", //Trinity
