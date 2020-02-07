@@ -141,7 +141,7 @@ const subheader_obj = {
 	"145":"Double TP cost",
 	"146":"Die after use",
 	"147":"All drops on kill",
-	"148":"Rocket jump evasion",
+	"148":"Guaranteed evasion",
 	"149":"Dispel arms buff",
 	"150":"Join clones after",
 	"151":"Act first", //knighthood
