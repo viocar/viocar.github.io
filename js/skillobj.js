@@ -12,8 +12,8 @@ const subheader_obj = {
 	"11":"Lifesteal %",
     "12":"UNUSED",
     "13":"UNUSED",
-	"14":"If front",
-	"15":"If back",
+	"14":"If front multiplier",
+	"15":"If back multiplier",
     "16":"UNUSED",
     "17":"UNUSED",
 	"18":"Swap row on hit (?)",
@@ -103,7 +103,7 @@ const subheader_obj = {
     "102":"UNUSED",
     "103":"Store damage turns", //hmm
     "104":"% of damage taken", //a cumulative counter, divided across the team
-	"105":"% of damage taken", //counter
+	"105":"% of damage taken", //reflection
 	"106":"Beast to summon",
 	"107":"Link on summon",
 	"108":"Beast base HP",
@@ -150,6 +150,7 @@ const subheader_obj = {
 	"155":"1% DMG per miss HP",
 	"156":"Clear ailment AR",
 	"157":"Clear bind AR",
+    "158":"Normal death anim." //death fang (call tiger)
 	"159":"Formaldehyde",
     "160":"Flee to pole",
 	"161":"Provoke flag",
@@ -160,7 +161,9 @@ const subheader_obj = {
 	"167":"Kill bots after use",
 	"168":"Check for bot", //all out works only with bots
 	"170":"Buff duration",
+    "171":"Basic ATK %", //applies to basic attacks only
 	"172":"Use skill at EOT",
+    "173":"Link on buff end", //Fortress
 	"174":"ELE weakness %",
 	"175":"DEF % (ailment)",
 	"176":"ATK % (ailment)",
@@ -180,6 +183,7 @@ const subheader_obj = {
 	"206":"Ailment immunity",
 	"207":"Bind immunity",
 	"208":"Guaranteed crit",
+    "212":"DMG Up %", //unused - this subheader provides a damage buff regardless of the buff type
 	"214":"Passive buff dur.", //unused. this subheader, if found in a passive, seems to make it so all buffs that are applied by the user to have a specific duration rather than what's specified on the skill.
 	"215":"Cast when buffed",
 	"216":"Cast on buff use",
