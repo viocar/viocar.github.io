@@ -150,7 +150,7 @@ const subheader_obj = {
 	"155":"1% DMG per miss HP",
 	"156":"Clear ailment AR",
 	"157":"Clear bind AR",
-    "158":"Normal death anim." //death fang (call tiger)
+    "158":"Normal death anim.", //death fang (call tiger)
 	"159":"Formaldehyde",
     "160":"Flee to pole",
 	"161":"Provoke flag",
