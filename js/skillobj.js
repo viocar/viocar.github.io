@@ -60,7 +60,7 @@ const subheader_obj = {
 	"59":"Unknown59",
 	"60":"Missing HP mult",
     "61":"UNUSED",
-	"62":"UNUSED", //Buc Nin
+	"62":"UNUSED", //Buc Nin - deals damage based on the last source of damage
 	"63":"UNUSED",
 	"64":"Damage %",
 	"65":"Pincushion DMG",
