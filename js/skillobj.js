@@ -144,7 +144,7 @@ const subheader_obj = {
 	"148":"Guaranteed evasion",
 	"149":"Dispel arms buff",
 	"150":"Join clones after",
-	"151":"Act first", //knighthood
+	"151":"Target acts first", //knighthood
 	"152":"Act first", //quick draw
 	"153":"Rear Dignity flag",
 	"155":"1% DMG per miss HP",
