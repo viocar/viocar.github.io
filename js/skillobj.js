@@ -131,7 +131,7 @@ const subheader_obj = {
     "133":"Unused", //Found in the accuracy subheader
 	"134":"Cannot miss",
 	"135":"Cannot repeat", //shoot - may also be "cannot be chased"
-	"136":"Use weap animation", //all out - may also be "cannot be chased"
+	"136":"Use weap ani/snd", //all out - may also be "cannot be chased"
 	"137":"Unknown137", //narmer's earthquake
 	"139":"Hit twice", //??? not certain
     "140":"Cast twice", //also not sure
