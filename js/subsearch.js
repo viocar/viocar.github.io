@@ -96,6 +96,57 @@ window.onkeyup = function(e){
                 }
             }            
         }
+        else if (tmtype.value){
+            type_id = parseInt(tmtype.value);
+            if (isNaN(type_id)){
+                console.log("not a number");
+            }
+            for (i = 0; i < 2; i++){ //playerskilltable, enemyskilltable
+                for (j = 0; j < s_table[i].byteLength / DATA_LENGTH; j++){ //number of entries in the table
+                    var sv = new DataView(s_table[i], j * DATA_LENGTH); //a dataview for the skill
+                    var tm_type_lsb = (sv.getInt8(0x4))
+                    var tm_type_msb = (sv.getInt8(0x5))
+                    var tm_type = ((tm_type_msb * 256) & 0xFFFF) + tm_type_lsb
+                    if (tm_type > 256){
+                        console.log(tm_type)
+                    }
+                    if ((tm_type & type_id) != 0){
+                        var x = LE + 50 * (Math.floor(res_count / 33));
+                        var y = (TE * res_count % 660) + TE;
+                        ctx.beginPath();
+                        ctx.fillStyle = "#000000" //all text is hardcoded to be black for now
+                        ctx.font = "10pt Arial";
+                        ctx.textAlign = "start"
+                        ctx.fillText(i + "_" + j.toString(16).toUpperCase(), x, y);
+                        ctx.stroke();
+                        res_count++;
+                    }
+                }
+            }            
+        }
+        else if (ttype.value){
+            target_type = parseInt(ttype.value);
+            if (isNaN(target_type)){
+                console.log("not a number");
+            }
+            for (i = 0; i < 2; i++){ //playerskilltable, enemyskilltable
+                for (j = 0; j < s_table[i].byteLength / DATA_LENGTH; j++){ //number of entries in the table
+                    var sv = new DataView(s_table[i], j * DATA_LENGTH); //a dataview for the skill
+                    var t_type = sv.getInt8(0x6)
+                    if (t_type === target_type){
+                        var x = LE + 50 * (Math.floor(res_count / 33));
+                        var y = (TE * res_count % 660) + TE;
+                        ctx.beginPath();
+                        ctx.fillStyle = "#000000" //all text is hardcoded to be black for now
+                        ctx.font = "10pt Arial";
+                        ctx.textAlign = "start"
+                        ctx.fillText(i + "_" + j.toString(16).toUpperCase(), x, y);
+                        ctx.stroke();
+                        res_count++;
+                    }
+                }
+            }            
+        }
     }
     thing = results;
 }
