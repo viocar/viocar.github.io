@@ -71,7 +71,7 @@ const subheader_obj = {
 	"70":"UNUSED",
 	"71":"Self-destruct",
     "72":"UNUSED",
-	"73":"Target acts next",
+	"73":"Target acts next", //knighthood
     "74":"UNUSED",
 	"75":"Min hits",
 	"76":"Max hits",
