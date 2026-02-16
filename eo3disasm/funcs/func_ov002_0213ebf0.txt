@@ -1,0 +1,46 @@
+.arm
+func_ov002_0213ebf0:
+stmdb sp!, {r3, lr}
+cmp r1, #0x4
+movlt r0, #0xff
+ldmltia sp!, {r3, pc}
+mov r12, #0x0
+add lr, r0, r1
+mov r0, #0x1
+add r1, sp, #0x0
+mov r2, r12
+.L_2_0213ec14:
+add r3, lr, r12
+ldrsb r3, [r3, #-0x4]
+cmp r3, #0x30
+streqb r2, [r1, r12]
+beq .L_2_0213ec3c
+cmp r3, #0x31
+streqb r0, [r1, r12]
+beq .L_2_0213ec3c
+mov r0, #0xff
+ldmia sp!, {r3, pc}
+.L_2_0213ec3c:
+add r12, r12, #0x1
+cmp r12, #0x4
+blt .L_2_0213ec14
+ldrb r3, [sp, #0x1]
+ldrb r2, [sp, #0x2]
+mov r0, #0x0
+cmp r3, #0x0
+ldreqb r1, [sp, #0x3]
+cmpeq r1, #0x0
+orrne r0, r0, #0x1
+cmp r2, #0x0
+ldreqb r1, [sp, #0x3]
+cmpeq r1, #0x0
+ldrb r1, [sp, #0x0]
+orrne r0, r0, #0x2
+cmp r1, #0x0
+cmpeq r2, #0x0
+ldrb r1, [sp, #0x0]
+orrne r0, r0, #0x4
+cmp r1, #0x0
+cmpeq r3, #0x0
+orrne r0, r0, #0x8
+ldmia sp!, {r3, pc}

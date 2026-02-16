@@ -1,0 +1,4 @@
+data_020e7450:
+.word 0x20e7444
+.word 0x20e7438
+.word 0x20e742c

@@ -1,0 +1,15 @@
+.arm
+func_0200d010:
+stmdb sp!, {r3, lr}
+cmp r0, #0xb
+ldmneia sp!, {r3, pc}
+cmp r2, #0x0
+ldmeqia sp!, {r3, pc}
+ldr r0, [.L_0200d040]
+ldr r1, [r0, #0x4]
+bic r1, r1, #0x20
+str r1, [r0, #0x4]
+ldr r0, [r0, #0x51c]
+bl func_020035dc
+ldmia sp!, {r3, pc}
+.L_0200d040: .word 0x20ef9e0

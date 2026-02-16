@@ -1,0 +1,4 @@
+.arm
+func_02069178:
+stmia r0, {r1, r2}
+bx lr

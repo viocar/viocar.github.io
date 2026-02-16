@@ -1,0 +1,60 @@
+.arm
+SetUpMemoryProtections:
+mrc p15, 0, r0, c1, c0, 0
+ldr r1, [.L_02000b30]
+bic r0, r0, r1
+mcr p15, 0, r0, c1, c0, 0
+mov r0, #0x0
+mcr p15, 0, r0, c7, c5, 0
+mcr p15, 0, r0, c7, c6, 0
+mcr p15, 0, r0, c7, c10, 4
+ldr r0, [.L_02000b34]
+mcr p15, 0, r0, c6, c0, 0
+ldr r0, [.L_02000b38]
+mcr p15, 0, r0, c6, c1, 0
+ldr r0, [.L_02000b3c]
+mcr p15, 0, r0, c6, c2, 0
+ldr r0, [.L_02000b40]
+mcr p15, 0, r0, c6, c3, 0
+ldr r0, [.L_02000b44]
+orr r0, r0, #0x1a
+orr r0, r0, #0x1
+mcr p15, 0, r0, c6, c4, 0
+ldr r0, [.L_02000b48]
+mcr p15, 0, r0, c6, c5, 0
+ldr r0, [.L_02000b4c]
+mcr p15, 0, r0, c6, c6, 0
+ldr r0, [.L_02000b50]
+mcr p15, 0, r0, c6, c7, 0
+mov r0, #0x20
+mcr p15, 0, r0, c9, c1, 1
+ldr r0, [.L_02000b44]
+orr r0, r0, #0xa
+mcr p15, 0, r0, c9, c1, 0
+mov r0, #0x4a
+mcr p15, 0, r0, c2, c0, 1
+mov r0, #0x4a
+mcr p15, 0, r0, c2, c0, 0
+mov r0, #0xa
+mcr p15, 0, r0, c3, c0, 0
+ldr r0, [.L_02000b54]
+mcr p15, 0, r0, c5, c0, 3
+ldr r0, [.L_02000b58]
+mcr p15, 0, r0, c5, c0, 2
+mrc p15, 0, r0, c1, c0, 0
+ldr r1, [.L_02000b5c]
+orr r0, r0, r1
+mcr p15, 0, r0, c1, c0, 0
+bx lr
+.L_02000b30: .word 0xf9005
+.L_02000b34: .word 0x4000033
+.L_02000b38: .word 0x2000031
+.L_02000b3c: .word 0x27ff017
+.L_02000b40: .word 0x8000035
+.L_02000b44: .word data_027e0000
+.L_02000b48: .word 0x100002f
+.L_02000b4c: .word 0xffff001d
+.L_02000b50: .word 0x2fff017
+.L_02000b54: .word 0x5101011
+.L_02000b58: .word 0x15111111
+.L_02000b5c: .word 0x5707d

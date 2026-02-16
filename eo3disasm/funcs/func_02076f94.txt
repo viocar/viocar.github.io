@@ -1,0 +1,10 @@
+.arm
+func_02076f94:
+ldr r1, [.L_02076fb0]
+mov r3, #0x1
+ldr r2, [r1, #0x4]
+strb r3, [r2, #0x3b]
+ldr r1, [r1, #0x4]
+str r0, [r1, #0xa8]
+bx lr
+.L_02076fb0: .word 0x2118cc8

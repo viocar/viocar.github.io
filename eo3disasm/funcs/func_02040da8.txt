@@ -1,0 +1,7 @@
+.arm
+func_02040da8:
+ldrb r0, [r0, #0x716]
+cmp r0, #0x3
+movhs r0, #0x10
+movlo r0, #0x8
+bx lr

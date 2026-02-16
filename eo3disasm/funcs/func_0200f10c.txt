@@ -1,0 +1,61 @@
+.arm
+func_0200f10c:
+stmdb sp!, {r3, r4, r5, lr}
+mov r5, r0
+mov r4, r1
+mov r0, #0x1
+mov r1, #0x2
+bl func_0200e61c
+cmp r0, #0x0
+ldmneia sp!, {r3, r4, r5, pc}
+cmp r4, #0x0
+moveq r0, #0x6
+ldmeqia sp!, {r3, r4, r5, pc}
+ldrh r0, [r4, #0x4]
+cmp r0, #0x0
+beq .L_0200f154
+ldr r0, [r4, #0x0]
+cmp r0, #0x0
+moveq r0, #0x6
+ldmeqia sp!, {r3, r4, r5, pc}
+.L_0200f154:
+ldrh r1, [r4, #0x14]
+ldrh r0, [r4, #0x34]
+mov r2, #0x2a
+cmp r1, #0x0
+moveq r2, #0x0
+add r0, r0, r2
+cmp r0, #0x200
+bgt .L_0200f190
+ldrh r0, [r4, #0x36]
+cmp r1, #0x0
+movne r1, #0x6
+moveq r1, #0x0
+add r0, r0, r1
+cmp r0, #0x200
+ble .L_0200f198
+.L_0200f190:
+mov r0, #0x6
+ldmia sp!, {r3, r4, r5, pc}
+.L_0200f198:
+mov r0, r4
+bl func_0200f1e8
+mov r1, r5
+mov r0, #0x7
+bl func_0200e418
+mov r0, r4
+mov r1, #0x40
+bl CleanDataCacheLine
+ldrh r1, [r4, #0x4]
+cmp r1, #0x0
+beq .L_0200f1cc
+ldr r0, [r4, #0x0]
+bl CleanDataCacheLine
+.L_0200f1cc:
+mov r2, r4
+mov r0, #0x7
+mov r1, #0x1
+bl func_0200e490
+cmp r0, #0x0
+moveq r0, #0x2
+ldmia sp!, {r3, r4, r5, pc}

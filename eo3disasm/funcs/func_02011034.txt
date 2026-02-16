@@ -1,0 +1,12 @@
+.arm
+func_02011034:
+stmdb sp!, {r3, lr}
+and r0, r1, #0x3f
+cmp r0, #0x1
+ldreq r0, [.L_02011058]
+moveq r1, #0x1
+streqh r1, [r0, #0x0]
+ldmeqia sp!, {r3, pc}
+bl HandleError
+ldmia sp!, {r3, pc}
+.L_02011058: .word 0x20f0e3c

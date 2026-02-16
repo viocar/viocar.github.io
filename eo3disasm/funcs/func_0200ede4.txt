@@ -1,0 +1,42 @@
+.arm
+func_0200ede4:
+stmdb sp!, {r3, r4, r5, lr}
+bl func_0200e5ac
+mov r5, r0
+bl func_0200e5bc
+cmp r0, #0x0
+movne r0, #0x0
+ldmneia sp!, {r3, r4, r5, pc}
+mov r4, #0x2
+ldr r0, [r5, #0x4]
+mov r1, r4
+bl InvalidateDataCacheLine
+ldr r1, [r5, #0x4]
+ldrh r0, [r1, #0x0]
+cmp r0, #0x9
+beq .L_0200ee30
+cmp r0, #0xa
+cmpne r0, #0xb
+beq .L_0200ee58
+b .L_0200ee70
+.L_0200ee30:
+add r0, r1, #0x82
+mov r1, r4
+add r0, r0, #0x100
+bl InvalidateDataCacheLine
+ldr r1, [r5, #0x4]
+add r0, r1, #0x100
+ldrh r0, [r0, #0x82]
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r3, r4, r5, pc}
+.L_0200ee58:
+add r0, r1, #0xbc
+mov r1, #0x2
+bl InvalidateDataCacheLine
+ldr r0, [r5, #0x4]
+ldrh r0, [r0, #0xbc]
+ldmia sp!, {r3, r4, r5, pc}
+.L_0200ee70:
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, pc}

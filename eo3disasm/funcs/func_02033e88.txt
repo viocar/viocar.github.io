@@ -1,0 +1,12 @@
+.arm
+func_02033e88:
+cmp r1, #0x0
+moveq r1, #0x0
+streqh r1, [r0, #0x0]
+bxeq lr
+orrgt r1, r1, #0x4000
+strgth r1, [r0, #0x0]
+rsble r1, r1, #0x0
+orrle r1, r1, #0x8000
+strleh r1, [r0, #0x0]
+bx lr

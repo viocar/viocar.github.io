@@ -1,0 +1,10 @@
+data_020ec24c:
+.word 0x20ec3b4
+.word 0x20ec3b4
+.word 0x20ec3b4
+.word 0x20ec344
+.word 0x20ec3b4
+.word 0x20ec3ec
+.word 0x20ec3ec
+.word 0x20ec424
+.word 0x20ec45c

@@ -1,0 +1,5 @@
+.arm
+func_02003f1c:
+ldr r12, [.L_02003f24]
+bx r12
+.L_02003f24: .word func_02003f28

@@ -1,0 +1,113 @@
+.arm
+func_ov001_02156e6c:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, lr}
+sub sp, sp, #0x4
+ldr r4, [.L_1_02157000]
+bl func_02036344
+ldr r6, [r0, #0x80]
+bl func_0204a6e8
+ldrsh r1, [r6, #0x0]
+cmp r1, #0x3
+addls pc, pc, r1, lsl #0x2
+b .L_1_02156ff4
+.L_1_02156e94: ; jump table
+b .L_1_02156ea4 ; case 0
+b .L_1_02156ea4 ; case 1
+b .L_1_02156ea4 ; case 2
+b .L_1_02156ff4 ; case 3
+.L_1_02156ea4:
+add r0, r0, #0x3d8
+add r0, r0, #0x3400
+bl func_02078adc
+cmp r0, #0x0
+beq .L_1_02156ff4
+ldr r5, [r6, #0x1c]
+cmp r5, #0x0
+moveq r7, #0x6
+beq .L_1_02156f08
+ldr r8, [.L_1_02157004]
+mov r7, #0x0
+.L_1_02156ed0:
+mov r0, r5
+mov r1, r4
+bl func_02019920
+cmp r0, #0x1
+bge .L_1_02156f08
+mov r1, r4
+smull r0, r4, r8, r1
+add r0, r7, #0x1
+mov r2, r0, lsl #0x10
+mov r0, r1, lsr #0x1f
+mov r7, r2, asr #0x10
+cmp r7, #0x7
+add r4, r0, r4, asr #0x2
+blt .L_1_02156ed0
+.L_1_02156f08:
+rsb r0, r7, #0x7
+mov r0, r0, lsl #0x10
+mov r3, r0, asr #0x10
+cmp r3, #0x0
+subgt r0, r3, #0x1
+movgt r0, r0, lsl #0x10
+movgt r3, r0, asr #0x10
+mov r0, #0xd
+ldr r2, [r6, #0x4]
+ldr r1, [r6, #0xc]
+smulbb r0, r3, r0
+add r1, r2, r1
+add r0, r1, r0, asr #0x1
+sub r7, r0, #0x6
+ldr r5, [r6, #0x8]
+ldr r4, [r6, #0x10]
+bl func_ov000_01ff9c98
+ldrb r0, [r6, #0x29]
+bl func_ov000_01ff9c40
+ldrh r0, [r6, #0x2]
+tst r0, #0x4
+beq .L_1_02156f7c
+mov r0, #0x0
+str r0, [sp, #0x0]
+ldr r0, [r6, #0x1c]
+ldr r3, [r6, #0x24]
+mov r1, r7
+add r2, r5, r4
+bl func_02079e2c
+.L_1_02156f7c:
+ldrh r0, [r6, #0x2]
+tst r0, #0x8
+beq .L_1_02156fa4
+mov r0, #0x1
+str r0, [sp, #0x0]
+ldr r0, [r6, #0x1c]
+ldr r3, [r6, #0x24]
+mov r1, r7
+add r2, r5, r4
+bl func_02079e2c
+.L_1_02156fa4:
+ldrh r0, [r6, #0x2]
+tst r0, #0x10
+beq .L_1_02156fcc
+mov r0, #0x2
+str r0, [sp, #0x0]
+ldr r0, [r6, #0x1c]
+ldr r3, [r6, #0x24]
+mov r1, r7
+add r2, r5, r4
+bl func_02079e2c
+.L_1_02156fcc:
+ldrh r0, [r6, #0x2]
+tst r0, #0x20
+beq .L_1_02156ff4
+mov r0, #0x3
+str r0, [sp, #0x0]
+ldr r0, [r6, #0x1c]
+ldr r3, [r6, #0x24]
+mov r1, r7
+add r2, r5, r4
+bl func_02079e2c
+.L_1_02156ff4:
+mov r0, #0x0
+add sp, sp, #0x4
+ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
+.L_1_02157000: .word 0xf4240
+.L_1_02157004: .word 0x66666667

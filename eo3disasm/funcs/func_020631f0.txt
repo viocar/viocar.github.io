@@ -1,0 +1,9 @@
+.arm
+func_020631f0:
+ldr r2, [.L_02063208]
+ldrb r1, [r2, r1]
+tst r1, r0
+movne r0, #0x1
+moveq r0, #0x0
+bx lr
+.L_02063208: .word data_020e730c

@@ -1,0 +1,16 @@
+.arm
+func_020054c0:
+ldr r0, [.L_020054ec]
+mov r3, #0x0
+str r3, [r0, #0x0]
+ldr r0, [.L_020054f0]
+mov r2, r3
+.L_020054d4:
+mov r1, r3, lsl #0x1
+add r3, r3, #0x1
+strh r2, [r0, r1]
+cmp r3, #0x9
+blt .L_020054d4
+bx lr
+.L_020054ec: .word 0x20eda00
+.L_020054f0: .word 0x20eda04

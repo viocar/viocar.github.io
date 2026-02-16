@@ -1,0 +1,16 @@
+.arm
+func_0200b6f0:
+stmdb sp!, {r3, lr}
+sub sp, sp, #0x8
+ldr r3, [.L_0200b724]
+add r12, sp, #0x4
+str r12, [sp, #0x0]
+bl func_0200b6a8
+cmp r0, #0x0
+addne sp, sp, #0x8
+ldmneia sp!, {r3, pc}
+bl func_0200b2c4
+ldr r0, [sp, #0x4]
+add sp, sp, #0x8
+ldmia sp!, {r3, pc}
+.L_0200b724: .word func_0200b348

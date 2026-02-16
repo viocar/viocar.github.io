@@ -1,0 +1,12 @@
+.arm
+func_02010c9c:
+stmdb sp!, {r4, lr}
+mov r4, r1
+ldr r1, [r4, #0x0]
+cmp r1, #0x0
+bne .L_02010cb4
+bl func_02002dd8
+.L_02010cb4:
+ldr r0, [r4, #0x4]
+bl EnableIRQ
+ldmia sp!, {r4, pc}

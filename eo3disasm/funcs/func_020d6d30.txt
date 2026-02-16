@@ -1,0 +1,8 @@
+.arm
+func_020d6d30:
+ldr r2, [.L_020d6d44]
+mov r1, #0x164
+ldr r2, [r2, #0x4]
+smlabb r0, r0, r1, r2
+bx lr
+.L_020d6d44: .word 0x2136bdc

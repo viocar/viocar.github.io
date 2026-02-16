@@ -1,0 +1,12 @@
+.arm
+func_02034540:
+ldr r12, [sp, #0x0]
+orr r0, r0, r1, lsl #0x10
+orr r1, r0, r3, lsl #0x18
+cmp r12, #0x0
+ldr r0, [.L_02034564]
+orrne r1, r1, #0x8000
+str r1, [r0, #0x0]
+strh r2, [r0, #0x4]
+bx lr
+.L_02034564: .word 0x4000350

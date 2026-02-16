@@ -1,0 +1,11 @@
+.arm
+Strcpy8:
+mov r12, r0
+cmp r2, #0x0
+bxeq lr
+.L_02012124:
+ldrb r3, [r1], #0x1
+subs r2, r2, #0x1
+strb r3, [r12], #0x1
+bne .L_02012124
+bx lr

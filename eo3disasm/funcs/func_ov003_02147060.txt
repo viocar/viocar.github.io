@@ -1,0 +1,14 @@
+.arm
+func_ov003_02147060:
+mov r2, #0x0
+.L_3_02147064:
+add r1, r0, r2
+ldrb r1, [r1, #0x14c]
+cmp r1, #0xff
+moveq r0, r2
+bxeq lr
+add r2, r2, #0x1
+cmp r2, #0x6
+blt .L_3_02147064
+mvn r0, #0x0
+bx lr

@@ -1,0 +1,24 @@
+.arm
+func_0203c760:
+ldr r1, [.L_0203c7ac]
+mov r3, #0x0
+ldr r12, [r1, #0x0]
+ldr r1, [r12, #0x448]
+cmp r1, #0x0
+ble .L_0203c7a4
+.L_0203c778:
+add r1, r12, r3, lsl #0x2
+ldr r1, [r1, #0x348]
+cmp r0, r1
+moveq r0, #0x1
+bxeq lr
+add r1, r3, #0x1
+mov r1, r1, lsl #0x18
+ldr r2, [r12, #0x448]
+mov r3, r1, asr #0x18
+cmp r2, r1, asr #0x18
+bgt .L_0203c778
+.L_0203c7a4:
+mov r0, #0x0
+bx lr
+.L_0203c7ac: .word 0x21143a4

@@ -1,0 +1,21 @@
+.arm
+func_02008878:
+sub r3, r1, #0x1
+b .L_02008884
+.L_02008880:
+sub r3, r3, #0x1
+.L_02008884:
+cmp r3, #0x0
+ble .L_020088a4
+add r2, r0, r3
+ldrb r2, [r2, #-0x1]
+eor r2, r2, #0x20
+sub r2, r2, #0xa1
+cmp r2, #0x3c
+blo .L_02008880
+.L_020088a4:
+sub r1, r1, #0x1
+sub r0, r1, r3
+and r0, r0, #0x1
+sub r0, r1, r0
+bx lr

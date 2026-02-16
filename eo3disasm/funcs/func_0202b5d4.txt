@@ -1,0 +1,40 @@
+.arm
+func_0202b5d4:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r7, r0
+mov r6, r1
+mov r4, r2
+bl DisableIRQ
+mov r5, r0
+ands r0, r7, #0x3
+rsbne r0, r0, #0x4
+addne r7, r7, r0
+mov r2, #0x20
+cmp r6, #0x0
+mvneq r2, #0x1f
+mov r0, r4
+mov r1, r7
+bl func_02029134
+movs r4, r0
+movne r0, #0x1
+moveq r0, #0x0
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+cmp r4, #0x0
+bne .L_0202b640
+cmp r0, #0x0
+bne .L_0202b650
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_0202b640:
+ldr r0, [.L_0202b660]
+ldr r1, [r0, #0x14]
+add r1, r1, #0x1
+str r1, [r0, #0x14]
+.L_0202b650:
+mov r0, r5
+bl EnableIRQ
+mov r0, r4
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_0202b660: .word 0x20fed88

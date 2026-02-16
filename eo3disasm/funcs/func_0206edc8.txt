@@ -1,0 +1,48 @@
+.arm
+func_0206edc8:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+ldr r3, [r1, #0x14]
+add r3, r1, r3
+add r6, r3, r2, lsl #0x4
+ldr r2, [r6, #0x4]
+cmp r2, #0x0
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+ldr r2, [r6, #0x8]
+add r4, r1, r2
+bl func_0206edb8
+mov r5, r0
+mov r1, r5
+mov r0, #0x0
+mov r2, #0x40
+bl Memset32Aligned
+ldr r0, [r6, #0x4]
+mov r6, #0x0
+cmp r0, #0x40
+movgt r7, #0x20
+addle r0, r0, r0, lsr #0x1f
+movle r7, r0, asr #0x1
+cmp r7, #0x0
+ldmleia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+ldr r8, [.L_0206ee70]
+ldr r9, [.L_0206ee74]
+.L_0206ee2c:
+mov r0, r6, lsl #0x1
+ldrh r0, [r4, r0]
+bl func_0206f518
+cmp r0, r9
+cmpne r0, #0x0
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+cmp r0, #0x8000
+blo .L_0206ee54
+cmp r0, r8
+ldmlsia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_0206ee54:
+mov r1, r6, lsl #0x1
+ldrh r0, [r4, r1]
+add r6, r6, #0x1
+cmp r6, r7
+strh r0, [r5, r1]
+blt .L_0206ee2c
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_0206ee70: .word 0x8070
+.L_0206ee74: .word 0xffff

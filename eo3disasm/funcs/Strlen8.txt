@@ -1,0 +1,10 @@
+.arm
+Strlen8:
+mvn r2, #0x0
+.L_02014464:
+ldrb r1, [r0], #0x1
+add r2, r2, #0x1
+cmp r1, #0x0
+bne .L_02014464
+mov r0, r2
+bx lr

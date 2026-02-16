@@ -1,0 +1,18 @@
+.arm
+Strchr:
+ldrb r2, [r0], #0x1
+and r1, r1, #0xff
+cmp r2, #0x0
+beq .L_02014734
+.L_0201471c:
+cmp r2, r1
+subeq r0, r0, #0x1
+bxeq lr
+ldrb r2, [r0], #0x1
+cmp r2, #0x0
+bne .L_0201471c
+.L_02014734:
+cmp r1, #0x0
+movne r0, #0x0
+subeq r0, r0, #0x1
+bx lr

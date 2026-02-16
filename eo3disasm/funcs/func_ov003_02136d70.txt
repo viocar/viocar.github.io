@@ -1,0 +1,122 @@
+.arm
+func_ov003_02136d70:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, lr}
+sub sp, sp, #0x4
+ldr r6, [.L_3_02136f2c]
+mov r1, #0xd8
+mov r0, r6
+bl func_02035bb0
+mov r7, r0
+ldr r1, [.L_3_02136f30]
+ldr r0, [.L_3_02136f34]
+str r1, [r7, #0x74]
+str r0, [r7, #0x78]
+bl func_0201b55c
+mov r8, #0x1
+mov r4, #0x0
+mov r1, r7
+mov r2, r8
+mov r3, r4
+bl func_02036278
+mov r0, r7
+bl func_02036060
+mov r5, r0
+mov r0, r6
+ldr r6, [.L_3_02136f38]
+mov r1, r4
+str r5, [r6, #0x8]
+str r7, [r5, #0x8]
+bl func_02035bb0
+mov r7, r0
+ldr r1, [.L_3_02136f3c]
+mov r0, #0x10
+str r1, [r7, #0x74]
+ldr r1, [r6, #0x8]
+str r1, [r7, #0x80]
+bl func_ov000_01ff9b94
+str r0, [r7, #0x8c]
+bl func_0201b55c
+ldr r3, [r5, #0x8]
+mov r1, r7
+mov r2, #0x6
+bl func_02036278
+str r7, [r5, #0xc]
+bl func_020a18dc
+bl func_0206c120
+ldr r0, [.L_3_02136f40]
+bl func_0202e130
+str r0, [r5, #0x34]
+mov r0, r5
+bl func_ov003_02137d50
+bl func_ov003_021370ec
+mov r0, #0x4
+mov r1, r8
+mov r2, r8
+bl func_0201d960
+str r0, [r5, #0x10]
+mov r8, #0x4
+mov r7, #0x1
+mov r6, r4
+.L_3_02136e54:
+mov r0, r8
+mov r1, r7
+mov r2, r6
+bl func_0201d960
+add r1, r5, r4, lsl #0x2
+add r4, r4, #0x1
+str r0, [r1, #0x14]
+cmp r4, #0x3
+blt .L_3_02136e54
+mov r8, #0x4
+mov r7, #0x1
+mov r4, #0x0
+.L_3_02136e84:
+mov r0, r8
+mov r1, r7
+mov r2, r4
+bl func_0201d960
+add r1, r5, r6, lsl #0x2
+add r6, r6, #0x1
+str r0, [r1, #0x20]
+cmp r6, #0x3
+blt .L_3_02136e84
+mov r2, r7
+mov r0, #0x5
+mov r1, #0x3
+bl func_0201d960
+mov r6, #0x2
+str r0, [r5, #0x2c]
+mov r0, r6
+mov r1, r7
+mov r2, r4
+bl func_0201d960
+ldr r1, [.L_3_02136f44]
+str r0, [r5, #0x30]
+str r1, [sp, #0x0]
+ldr r0, [r5, #0x30]
+mov r2, r4
+mov r3, r4
+sub r1, r6, #0x3
+bl func_0201d1d0
+mov r0, #0xa0
+str r0, [r5, #0x44]
+strb r4, [r5, #0x4c]
+str r4, [r5, #0x48]
+strh r4, [r5, #0x50]
+ldrsh r1, [r5, #0x50]
+mov r0, r5
+strh r1, [r5, #0x4e]
+str r4, [r5, #0xc8]
+bl func_ov003_02138388
+mov r0, r4
+bl func_ov003_0213951c
+str r4, [r5, #0x0]
+add sp, sp, #0x4
+ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
+.L_3_02136f2c: .word 0xd01f
+.L_3_02136f30: .word func_ov003_021372a0
+.L_3_02136f34: .word func_ov003_02137058
+.L_3_02136f38: .word 0x02166aa0
+.L_3_02136f3c: .word func_ov003_021379a8
+.L_3_02136f40: .word data_ov003_02165370
+.L_3_02136f44: .word data_ov003_021653a0

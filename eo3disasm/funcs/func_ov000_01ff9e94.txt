@@ -1,0 +1,17 @@
+.arm
+func_ov000_01ff9e94:
+ldr r1, [.L_0_01ff9ec4]
+ldr r12, [.L_0_01ff9ec8]
+ldr r0, [.L_0_01ff9ecc]
+str r1, [r12, #0x0]
+ldr r1, [r0, #0x20]
+ldrb r3, [r0, #0x41]
+ldr r2, [r0, #0x34]
+orr r0, r1, #0xc0
+orr r0, r0, r2, lsl #0x18
+orr r0, r0, r3, lsl #0x10
+str r0, [r12, #-0x4]
+bx lr
+.L_0_01ff9ec4: .word 0x60030000
+.L_0_01ff9ec8: .word 0x40004a8
+.L_0_01ff9ecc: .word 0x20ff62c

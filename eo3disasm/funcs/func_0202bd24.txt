@@ -1,0 +1,8 @@
+.arm
+func_0202bd24:
+ldr r1, [.L_0202bd38]
+cmp r0, #0x7f
+movhi r0, #0x7f
+strb r0, [r1, #0x5e1]
+bx lr
+.L_0202bd38: .word 0x20fedb0

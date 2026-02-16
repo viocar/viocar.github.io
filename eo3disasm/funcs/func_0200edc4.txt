@@ -1,0 +1,10 @@
+.arm
+func_0200edc4:
+stmdb sp!, {r3, lr}
+bl func_0200e5bc
+cmp r0, #0x0
+movne r0, #0x8000
+ldreq r0, [.L_0200ede0]
+ldreqh r0, [r0, #0x0]
+ldmia sp!, {r3, pc}
+.L_0200ede0: .word 0x2fffcfa

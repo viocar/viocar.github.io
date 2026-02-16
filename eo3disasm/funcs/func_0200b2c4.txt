@@ -1,0 +1,40 @@
+.arm
+func_0200b2c4:
+stmdb sp!, {r4, r5, r6, lr}
+ldr r4, [.L_0200b33c]
+ldr r0, [r4, #0x0]
+cmp r0, #0x0
+ldmeqia sp!, {r4, r5, r6, pc}
+ldr r6, [.L_0200b340]
+ldr r5, [.L_0200b344]
+.L_0200b2e0:
+ldr r0, [r5, #0x0]
+tst r0, #0x2
+beq .L_0200b2f8
+bl func_020052f0
+cmp r0, #0x12
+beq .L_0200b328
+.L_0200b2f8:
+ldr r0, [r5, #0x0]
+tst r0, #0x4
+beq .L_0200b310
+bl func_020052e4
+cmp r0, #0x80
+beq .L_0200b328
+.L_0200b310:
+ldr r0, [r5, #0x0]
+tst r0, #0x8
+beq .L_0200b32c
+ldrh r0, [r6, #0x0]
+cmp r0, #0x0
+bne .L_0200b32c
+.L_0200b328:
+bl func_0200776c
+.L_0200b32c:
+ldr r0, [r4, #0x0]
+cmp r0, #0x0
+bne .L_0200b2e0
+ldmia sp!, {r4, r5, r6, pc}
+.L_0200b33c: .word 0x20ef928
+.L_0200b340: .word 0x4000208
+.L_0200b344: .word data_020e22b0

@@ -1,0 +1,25 @@
+.arm
+func_02014544:
+stmdb sp!, {r3, lr}
+mov lr, r0
+cmp r2, #0x0
+ldmeqia sp!, {r3, pc}
+.L_02014554:
+ldrb r3, [r1], #0x1
+mov r12, lr
+strb r3, [lr], #0x1
+ldrb r3, [r12, #0x0]
+cmp r3, #0x0
+bne .L_02014588
+subs r2, r2, #0x1
+ldmeqia sp!, {r3, pc}
+mov r1, #0x0
+.L_02014578:
+strb r1, [lr], #0x1
+subs r2, r2, #0x1
+bne .L_02014578
+ldmia sp!, {r3, pc}
+.L_02014588:
+subs r2, r2, #0x1
+bne .L_02014554
+ldmia sp!, {r3, pc}

@@ -1,0 +1,10 @@
+.arm
+func_02002db8:
+ldr r1, [.L_02002dcc]
+ldr r2, [.L_02002dd0]
+ldr r12, [.L_02002dd4]
+mov r3, #0x1
+bx r12
+.L_02002dcc: .word 0x2ffffe8
+.L_02002dd0: .word func_02002e1c
+.L_02002dd4: .word func_02002cb8

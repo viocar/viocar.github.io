@@ -1,0 +1,10 @@
+.arm
+func_0203eecc:
+ldr r0, [r0, #0x80]
+mov r2, #0x1
+cmp r0, #0x0
+moveq r2, #0x0
+cmp r2, #0x0
+moveq r0, #0x0
+addne r0, r0, r1, lsl #0x4
+bx lr

@@ -1,0 +1,12 @@
+data_020e6aec:
+.word 0x20e6a30
+.word 0x20e6a5c
+.word 0x20e6a80
+.word 0x20e6a24
+.word 0x20e6a94
+.word 0x20e6a3c
+.word 0x20e6a4c
+.word 0x20e6abc
+.word 0x20e6ad4
+.word 0x20e6a18
+.word 0x20e6a0c

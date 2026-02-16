@@ -1,0 +1,29 @@
+.arm
+func_020a0398:
+cmp r1, #0x4
+addls pc, pc, r1, lsl #0x2
+b .L_020a03e0
+.L_020a03a4: ; jump table
+b .L_020a03b8 ; case 0
+b .L_020a03c0 ; case 1
+b .L_020a03c8 ; case 2
+b .L_020a03d0 ; case 3
+b .L_020a03d8 ; case 4
+.L_020a03b8:
+add r0, r0, #0x3c
+bx lr
+.L_020a03c0:
+add r0, r0, #0x50
+bx lr
+.L_020a03c8:
+add r0, r0, #0x64
+bx lr
+.L_020a03d0:
+add r0, r0, #0x78
+bx lr
+.L_020a03d8:
+add r0, r0, #0x8c
+bx lr
+.L_020a03e0:
+mov r0, #0x0
+bx lr

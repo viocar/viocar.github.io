@@ -1,0 +1,21 @@
+.arm
+func_020b1820:
+ldr r0, [.L_020b185c]
+ldr r0, [r0, #0x0]
+ldr r0, [r0, #0x8]
+cmp r0, #0x2
+beq .L_020b184c
+cmp r0, #0x3
+beq .L_020b1844
+cmp r0, #0x4
+bne .L_020b1854
+.L_020b1844:
+mov r0, #0x0
+bx lr
+.L_020b184c:
+mov r0, #0x1
+bx lr
+.L_020b1854:
+mov r0, #0x1
+bx lr
+.L_020b185c: .word 0x2135e40

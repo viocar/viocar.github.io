@@ -1,0 +1,44 @@
+.arm
+func_ov000_01ff9dec:
+mov r12, #0x800
+ldr r1, [.L_0_01ff9e8c]
+rsb r12, r12, #0x0
+strh r12, [r1, #0x0]
+mov r3, #0x0
+strh r12, [r1, #0x2]
+strh r3, [r1, #0x4]
+str r3, [r1, #0x10]
+strh r12, [r1, #0x14]
+mov r2, #0x800
+strh r2, [r1, #0x16]
+strh r3, [r1, #0x18]
+str r3, [r1, #0x24]
+strh r2, [r1, #0x28]
+strh r2, [r1, #0x2a]
+strh r3, [r1, #0x2c]
+str r3, [r1, #0x38]
+strh r2, [r1, #0x3c]
+strh r12, [r1, #0x3e]
+strh r3, [r1, #0x40]
+ldr r0, [.L_0_01ff9e90]
+str r3, [r1, #0x4c]
+strh r12, [r0, #0x0]
+strh r2, [r0, #0x2]
+strh r3, [r0, #0x4]
+sub r1, r3, #0x1
+str r1, [r0, #0x10]
+strh r12, [r0, #0x14]
+strh r12, [r0, #0x16]
+strh r3, [r0, #0x18]
+str r1, [r0, #0x24]
+strh r2, [r0, #0x28]
+strh r12, [r0, #0x2a]
+strh r3, [r0, #0x2c]
+str r1, [r0, #0x38]
+strh r2, [r0, #0x3c]
+strh r2, [r0, #0x3e]
+strh r3, [r0, #0x40]
+str r1, [r0, #0x4c]
+bx lr
+.L_0_01ff9e8c: .word 0x01ffc778
+.L_0_01ff9e90: .word 0x01ffc728

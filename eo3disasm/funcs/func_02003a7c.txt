@@ -1,0 +1,45 @@
+.arm
+func_02003a7c:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r6, r0
+mov r5, r1
+mov r7, r2
+bl DisableIRQ
+ldr r1, [r6, #0x1c]
+mov r4, r0
+cmp r1, #0x0
+bne .L_02003ad0
+and r7, r7, #0x1
+.L_02003aa4:
+cmp r7, #0x0
+bne .L_02003abc
+mov r0, r4
+bl EnableIRQ
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_02003abc:
+add r0, r6, #0x8
+bl func_02003524
+ldr r0, [r6, #0x1c]
+cmp r0, #0x0
+beq .L_02003aa4
+.L_02003ad0:
+cmp r5, #0x0
+ldrne r1, [r6, #0x10]
+ldrne r0, [r6, #0x18]
+ldrne r0, [r1, r0, lsl #0x2]
+strne r0, [r5, #0x0]
+ldr r0, [r6, #0x18]
+ldr r1, [r6, #0x14]
+add r0, r0, #0x1
+bl func_02019920
+ldr r2, [r6, #0x1c]
+mov r0, r6
+sub r2, r2, #0x1
+str r1, [r6, #0x18]
+str r2, [r6, #0x1c]
+bl func_02003574
+mov r0, r4
+bl EnableIRQ
+mov r0, #0x1
+ldmia sp!, {r3, r4, r5, r6, r7, pc}

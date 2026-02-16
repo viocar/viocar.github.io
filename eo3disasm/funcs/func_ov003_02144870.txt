@@ -1,0 +1,6 @@
+.arm
+func_ov003_02144870:
+ldr r0, [.L_3_0214487c]
+ldr r0, [r0, #0x0]
+bx lr
+.L_3_0214487c: .word 0x02166ad4

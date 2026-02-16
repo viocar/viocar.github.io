@@ -1,0 +1,45 @@
+.arm
+func_020190c8:
+mov r12, #0x200000
+cmn r12, r1, lsl #0x1
+bhs .L_0201913c
+cmn r12, r3, lsl #0x1
+bhs .L_02019150
+.L_020190dc:
+orrs r12, r3, r1
+bmi .L_0201910c
+cmp r1, r3
+cmpeq r0, r2
+movhi r0, #0x1
+movls r0, #0x0
+bx lr
+.L_020190f8:
+mov r0, #0x0
+mrs r12, cpsr
+bic r12, r12, #0x20000000
+msr cpsr_f, r12
+bx lr
+.L_0201910c:
+orr r12, r0, r12, lsl #0x1
+orrs r12, r12, r2
+moveq r0, #0x0
+mrs r12, cpsr
+bic r12, r12, #0x20000000
+msr cpsr_f, r12
+bxeq lr
+cmp r3, r1
+cmpeq r2, r0
+movhi r0, #0x1
+movls r0, #0x0
+bx lr
+.L_0201913c:
+bne .L_020190f8
+cmp r0, #0x0
+bhi .L_020190f8
+cmn r12, r3, lsl #0x1
+blo .L_020190dc
+.L_02019150:
+bne .L_020190f8
+cmp r2, #0x0
+bhi .L_020190f8
+b .L_020190dc

@@ -1,0 +1,12 @@
+data_020e5c38:
+.word 0x20e5c78
+.word 0x20e5c64
+.word 0x20e5cf4
+.word 0x20e5c8c
+.word 0x20e5d3c
+.word 0x20e5e2c
+.word 0x20e5dfc
+.word 0x20e5fac
+.word 0x20e5ee8
+.word 0x20e5cb4
+.word 0x20e5ca0

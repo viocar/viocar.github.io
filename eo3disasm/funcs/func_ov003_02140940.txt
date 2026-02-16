@@ -1,0 +1,59 @@
+.arm
+func_ov003_02140940:
+stmdb sp!, {r3, lr}
+bl func_ov003_0213dd68
+ldr r0, [r0, #0x9c]
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r3, pc}
+cmp r0, #0x1a
+addls pc, pc, r0, lsl #0x2
+b .L_3_021409f8
+.L_3_02140964: ; jump table
+b .L_3_021409f8 ; case 0
+b .L_3_021409f8 ; case 1
+b .L_3_021409d0 ; case 2
+b .L_3_021409d0 ; case 3
+b .L_3_021409d0 ; case 4
+b .L_3_021409d0 ; case 5
+b .L_3_021409f8 ; case 6
+b .L_3_021409d8 ; case 7
+b .L_3_021409dc ; case 8
+b .L_3_021409dc ; case 9
+b .L_3_021409dc ; case 10
+b .L_3_021409dc ; case 11
+b .L_3_021409dc ; case 12
+b .L_3_021409dc ; case 13
+b .L_3_021409dc ; case 14
+b .L_3_021409dc ; case 15
+b .L_3_021409dc ; case 16
+b .L_3_021409e0 ; case 17
+b .L_3_021409e4 ; case 18
+b .L_3_021409f8 ; case 19
+b .L_3_021409ec ; case 20
+b .L_3_021409ec ; case 21
+b .L_3_021409ec ; case 22
+b .L_3_021409ec ; case 23
+b .L_3_021409ec ; case 24
+b .L_3_021409f0 ; case 25
+b .L_3_021409f8 ; case 26
+.L_3_021409d0:
+bl func_ov003_0214164c
+b .L_3_021409f8
+.L_3_021409d8:
+b .L_3_021409d0
+.L_3_021409dc:
+b .L_3_021409e4
+.L_3_021409e0:
+b .L_3_021409d0
+.L_3_021409e4:
+bl func_ov003_0214208c
+b .L_3_021409d0
+.L_3_021409ec:
+b .L_3_021409d0
+.L_3_021409f0:
+bl func_ov003_0214164c
+bl func_ov003_0214208c
+.L_3_021409f8:
+mov r0, #0x0
+ldmia sp!, {r3, pc}

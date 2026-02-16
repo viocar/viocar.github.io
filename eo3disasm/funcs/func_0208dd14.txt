@@ -1,0 +1,11 @@
+.arm
+func_0208dd14:
+stmdb sp!, {r3, lr}
+ldrsb r1, [r0, #0x28]
+ldrsb r2, [r0, #0x12]
+ldrsb r3, [r0, #0x13]
+bl func_0208dc80
+cmn r0, #0x1
+moveq r0, #0x1
+movne r0, #0x0
+ldmia sp!, {r3, pc}

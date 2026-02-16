@@ -1,0 +1,20 @@
+.arm
+func_0208d328:
+stmdb sp!, {r4, lr}
+ldr r2, [r0, #0x4]
+mov r4, #0x0
+cmp r2, #0x0
+ldmleia sp!, {r4, pc}
+mov r2, #0x3c
+.L_0208d340:
+mul r12, r4, r2
+ldr lr, [r0, #0x50]
+add r4, r4, #0x1
+ldr r3, [lr, r12]
+add r12, lr, r12
+cmp r3, #0x0
+strneb r1, [r12, #0x1d]
+ldr r3, [r0, #0x4]
+cmp r4, r3
+blt .L_0208d340
+ldmia sp!, {r4, pc}

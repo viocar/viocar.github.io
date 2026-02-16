@@ -1,0 +1,70 @@
+.arm
+func_ov002_0213e34c:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+mov r4, r0
+mov r8, r1
+bl func_ov002_02140d4c
+ldr r1, [r4, #0x48]
+mov r7, r0
+ldrb r1, [r1, #0x4]
+mov r0, r4
+bl func_0203eecc
+mov r6, r0
+ldr r0, [.L_2_0213e448]
+mov r1, #0x3c
+bl func_02035bb0
+ldr r1, [.L_2_0213e44c]
+mov r5, r0
+str r1, [r5, #0x74]
+bl func_02036060
+mov r4, r0
+eor r0, r8, #0x1
+add r2, r6, r0, lsl #0x2
+ldr r9, [r2, #0x4]
+ldr r1, [.L_2_0213e450]
+ldr r0, [.L_2_0213e454]
+umull r3, r12, r9, r1
+mov r12, r12, lsr #0xd
+strb r12, [r4, #0x30]
+ldr lr, [r2, #0x4]
+ldr r3, [.L_2_0213e458]
+umull r9, r12, lr, r1
+mov r12, r12, lsr #0xd
+umull r9, r12, r0, r12
+sub r12, lr, r9
+umull r9, lr, r12, r3
+mov lr, lr, lsr #0x5
+strb lr, [r4, #0x31]
+ldr r9, [r2, #0x4]
+mov r2, #0x64
+umull r12, r1, r9, r1
+mov r1, r1, lsr #0xd
+umull r1, r12, r0, r1
+sub r1, r9, r1
+umull r0, r3, r1, r3
+mov r3, r3, lsr #0x5
+umull r0, r3, r2, r3
+sub r3, r1, r0
+strb r3, [r4, #0x32]
+add r0, r7, #0x3e8
+mov r1, r4
+mov r9, #0x2c
+mov r2, r9
+bl Memcpy
+ldr r3, [r7, #0x418]
+add r0, r6, r8
+ldrsb r2, [r0, #0x2]
+mov r0, r5
+mov r1, #0x0
+mla r3, r2, r9, r3
+str r3, [r4, #0x2c]
+strb r8, [r4, #0x33]
+str r1, [r4, #0x34]
+mov r1, #0x78
+str r1, [r4, #0x38]
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_2_0213e448: .word 0x1005
+.L_2_0213e44c: .word func_ov002_0213e180
+.L_2_0213e450: .word 0xd1b71759
+.L_2_0213e454: .word 0x2710
+.L_2_0213e458: .word 0x51eb851f

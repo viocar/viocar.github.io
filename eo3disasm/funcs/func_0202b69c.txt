@@ -1,0 +1,21 @@
+.arm
+func_0202b69c:
+stmdb sp!, {r4, r5, r6, lr}
+mov r6, r0
+mov r5, r1
+bl DisableIRQ
+mov r4, r0
+cmp r6, #0x0
+beq .L_0202b6d4
+mov r0, r5
+mov r1, r6
+bl func_02029164
+ldr r0, [.L_0202b6e0]
+ldr r1, [r0, #0x14]
+sub r1, r1, #0x1
+str r1, [r0, #0x14]
+.L_0202b6d4:
+mov r0, r4
+bl EnableIRQ
+ldmia sp!, {r4, r5, r6, pc}
+.L_0202b6e0: .word 0x20fed88

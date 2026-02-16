@@ -1,0 +1,24 @@
+.arm
+func_0202fea8:
+stmdb sp!, {r3, lr}
+bl func_0202fe74
+bl func_0202e90c
+ldr r1, [.L_0202fef4]
+mov r0, r0, lsl #0x1
+strb r0, [r1, #0xc]
+bl func_0202e90c
+mov r2, r0
+ldr r0, [.L_0202fef8]
+mov r1, #0x1
+bl func_02033eb0
+bl func_0202e874
+cmp r0, #0x0
+ldmneia sp!, {r3, pc}
+bl func_0202e90c
+mov r1, r0
+ldr r0, [.L_0202fefc]
+bl func_02033e88
+ldmia sp!, {r3, pc}
+.L_0202fef4: .word 0x2102378
+.L_0202fef8: .word 0x4000050
+.L_0202fefc: .word 0x400106c

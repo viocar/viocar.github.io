@@ -1,0 +1,6 @@
+.arm
+func_0209e2b0:
+ldr r1, [.L_0209e2bc]
+str r0, [r1, #0xc]
+bx lr
+.L_0209e2bc: .word 0x212bc8c

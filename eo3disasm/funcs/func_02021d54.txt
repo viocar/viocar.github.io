@@ -1,0 +1,9 @@
+.arm
+func_02021d54:
+ldr r0, [.L_02021d68]
+.L_02021d58:
+ldr r1, [r0, #0x4]
+cmp r1, #0x0
+bne .L_02021d58
+bx lr
+.L_02021d68: .word 0x20fc5d8

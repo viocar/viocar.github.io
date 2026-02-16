@@ -1,0 +1,19 @@
+.arm
+func_0208180c:
+stmdb sp!, {r3, lr}
+bl func_02080c5c
+cmp r0, #0x0
+beq .L_02081844
+bl func_02080c5c
+ldr r1, [r0, #0x2c]
+cmp r1, #0x5
+ldreq r1, [r0, #0x24]
+addeq r0, r0, r1, lsl #0x1
+ldreqh r0, [r0, #0x48]
+ldmeqia sp!, {r3, pc}
+cmp r1, #0x6
+mvneq r0, #0x1
+ldmeqia sp!, {r3, pc}
+.L_02081844:
+mvn r0, #0x0
+ldmia sp!, {r3, pc}

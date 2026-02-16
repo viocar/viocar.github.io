@@ -1,0 +1,18 @@
+.arm
+func_02034e1c:
+stmdb sp!, {r4, lr}
+ldr r0, [.L_02034e50]
+ldr r0, [r0, #0x0]
+cmn r0, #0x1
+beq .L_02034e34
+bl func_02005aa0
+.L_02034e34:
+ldr r4, [.L_02034e54]
+ldr r0, [r4, #0xc]
+bl func_0203526c
+mov r0, #0x0
+str r0, [r4, #0xc]
+str r0, [r4, #0x8]
+ldmia sp!, {r4, pc}
+.L_02034e50: .word data_020e5a4c
+.L_02034e54: .word 0x210ea70

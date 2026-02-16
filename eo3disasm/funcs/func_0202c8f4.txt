@@ -1,0 +1,44 @@
+.arm
+func_0202c8f4:
+stmdb sp!, {r4, r5, r6, lr}
+ldr r3, [.L_0202c98c]
+mov r4, r1
+ldr r3, [r3, #0x4]
+mov r6, r2
+ldrh r1, [r3, #0x8]
+cmp r0, r1
+blo .L_0202c920
+bl HandleError
+mov r0, #0x0
+ldmia sp!, {r4, r5, r6, pc}
+.L_0202c920:
+ldrh r5, [r3, #0xa]
+bl func_0202c830
+add r0, r5, r0
+mov r1, r5
+sub r0, r0, #0x1
+bl func_02019b2c
+mul r0, r5, r0
+cmp r4, r0
+bhs .L_0202c950
+bl HandleError
+mov r0, #0x0
+ldmia sp!, {r4, r5, r6, pc}
+.L_0202c950:
+bl func_0200d7d4
+cmp r6, r0
+bls .L_0202c968
+bl HandleError
+mov r0, #0x0
+ldmia sp!, {r4, r5, r6, pc}
+.L_0202c968:
+bl func_0200d7d4
+add r1, r4, r6
+add r1, r1, #0x4
+cmp r1, r0
+movls r0, #0x1
+ldmlsia sp!, {r4, r5, r6, pc}
+bl HandleError
+mov r0, #0x0
+ldmia sp!, {r4, r5, r6, pc}
+.L_0202c98c: .word 0x20ff394

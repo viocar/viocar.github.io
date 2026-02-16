@@ -1,0 +1,23 @@
+.arm
+func_02051e20:
+cmp r2, #0x0
+mov r3, #0x0
+beq .L_02051e38
+cmp r2, #0x1
+beq .L_02051e54
+b .L_02051e60
+.L_02051e38:
+ldrh r2, [r0, #0xbc]
+mvn r0, r1
+and r0, r2, r0
+mov r0, r0, lsl #0x10
+movs r0, r0, lsr #0x10
+moveq r3, #0x1
+b .L_02051e60
+.L_02051e54:
+ldrh r0, [r0, #0xbc]
+tst r0, r1
+movne r3, #0x1
+.L_02051e60:
+mov r0, r3
+bx lr

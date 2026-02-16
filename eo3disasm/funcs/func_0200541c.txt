@@ -1,0 +1,9 @@
+.arm
+func_0200541c:
+mov r1, r0
+ldr r0, [.L_02005430]
+ldr r12, [.L_02005434]
+mov r2, #0x6
+bx r12
+.L_02005430: .word 0x2fffcf4
+.L_02005434: .word Memcpy

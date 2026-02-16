@@ -1,0 +1,19 @@
+.arm
+func_020198e4:
+stmdb sp!, {r4, r5, r6, r7, r11, r12, lr}
+mov r4, #0x1
+.L_020198ec:
+orrs r5, r3, r2
+bne .L_020198fc
+ldmia sp!, {r4, r5, r6, r7, r11, r12, lr}
+bx lr
+.L_020198fc:
+orrs r5, r1, r3
+bne .L_0201979c
+mov r1, r2
+bl .L_02019b34
+cmp r4, #0x0
+movne r0, r1
+mov r1, #0x0
+ldmia sp!, {r4, r5, r6, r7, r11, r12, lr}
+bx lr

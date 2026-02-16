@@ -1,0 +1,9 @@
+.arm
+func_0203eeb0:
+ldr r2, [r0, #0x48]
+ldrsb r1, [r2, #0x6]
+strb r1, [r2, #0x8]
+ldr r1, [r0, #0x48]
+ldrsb r0, [r1, #0x7]
+strb r0, [r1, #0x9]
+bx lr

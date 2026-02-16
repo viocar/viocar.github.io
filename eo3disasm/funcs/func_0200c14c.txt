@@ -1,0 +1,48 @@
+.arm
+func_0200c14c:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r0, #0x360000
+bl func_02005308
+ldr r0, [.L_0200c1ec]
+mov r1, #0xe
+ldr r4, [r0, #0x0]
+str r1, [r0, #0x0]
+bl func_0200bf90
+cmp r0, #0x1
+beq .L_0200c1e0
+mov r0, #0x2
+mov r1, #0x0
+bl func_0200b83c
+cmp r0, #0x0
+beq .L_0200c1b0
+ldr r7, [.L_0200c1f0]
+mov r6, #0x2
+mov r5, #0x0
+.L_0200c194:
+mov r0, r7
+bl func_02005308
+mov r0, r6
+mov r1, r5
+bl func_0200b83c
+cmp r0, #0x0
+bne .L_0200c194
+.L_0200c1b0:
+mov r0, #0x1
+bl func_0200bf54
+cmp r0, #0x0
+bne .L_0200c1e0
+mov r6, #0x5
+mov r5, #0x1
+.L_0200c1c8:
+mov r0, r6
+bl func_02005308
+mov r0, r5
+bl func_0200bf54
+cmp r0, #0x0
+beq .L_0200c1c8
+.L_0200c1e0:
+ldr r0, [.L_0200c1ec]
+str r4, [r0, #0x0]
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_0200c1ec: .word data_020e22b0
+.L_0200c1f0: .word 0x51d23

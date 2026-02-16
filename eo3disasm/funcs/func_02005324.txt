@@ -1,0 +1,10 @@
+.arm
+func_02005324:
+stmdb sp!, {r4, lr}
+mov r4, #0x1
+mov r0, r4
+blx WaitByLoop
+mov r0, r4
+mov r1, r4
+bl func_020026fc
+ldmia sp!, {r4, pc}

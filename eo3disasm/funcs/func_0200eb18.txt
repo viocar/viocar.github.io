@@ -1,0 +1,15 @@
+.arm
+func_0200eb18:
+ldr r1, [.L_0200eb3c]
+ldr r2, [.L_0200eb40]
+ldr r0, [.L_0200eb44]
+str r1, [r2, #0x8]
+mov r3, #0x0
+ldr r12, [.L_0200eb48]
+mov r1, #0x3e8
+str r3, [r2, #0xc]
+bx r12
+.L_0200eb3c: .word ErrorHandlerThunk
+.L_0200eb40: .word 0x20f02ec
+.L_0200eb44: .word 0x20f02f4
+.L_0200eb48: .word func_0200c0f8

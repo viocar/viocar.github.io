@@ -1,0 +1,6 @@
+.arm
+func_0200ca80:
+ldr r0, [.L_0200ca8c]
+ldr r0, [r0, #0x0]
+bx lr
+.L_0200ca8c: .word 0x20ef960

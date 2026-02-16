@@ -1,0 +1,5 @@
+.arm
+func_0203f32c:
+add r0, r0, #0x100
+ldrsb r0, [r0, #0x6c]
+bx lr

@@ -1,0 +1,20 @@
+.arm
+func_02033710:
+cmp r2, #0x0
+beq .L_02033740
+cmp r2, #0x1
+beq .L_02033734
+cmp r2, #0x2
+ldreq r2, [r0, #0x8]
+subeq r1, r2, r1
+streq r1, [r0, #0x0]
+b .L_02033744
+.L_02033734:
+ldr r2, [r0, #0x0]
+add r1, r2, r1
+b .L_02033740
+.L_02033740:
+str r1, [r0, #0x0]
+.L_02033744:
+mov r0, #0x1
+bx lr

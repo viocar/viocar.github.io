@@ -1,0 +1,7 @@
+.arm
+func_020040e8:
+mov r0, r0, lsl #0x2
+add r0, r0, #0x2f00000
+add r0, r0, #0xff000
+ldr r0, [r0, #0xda0]
+bx lr

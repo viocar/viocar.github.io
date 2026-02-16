@@ -1,0 +1,42 @@
+.arm
+func_ov003_02151edc:
+stmdb sp!, {r3, lr}
+bl func_ov003_02150884
+ldr r0, [r0, #0x88]
+cmp r0, #0xf
+addls pc, pc, r0, lsl #0x2
+ldmia sp!, {r3, pc}
+.L_3_02151ef4: ; jump table
+ldmia sp!, {r3, pc} ; case 0
+ldmia sp!, {r3, pc} ; case 1
+b .L_3_02151f34 ; case 2
+b .L_3_02151f34 ; case 3
+b .L_3_02151f34 ; case 4
+b .L_3_02151f34 ; case 5
+b .L_3_02151f40 ; case 6
+b .L_3_02151f40 ; case 7
+b .L_3_02151f40 ; case 8
+b .L_3_02151f40 ; case 9
+b .L_3_02151f40 ; case 10
+b .L_3_02151f40 ; case 11
+b .L_3_02151f40 ; case 12
+b .L_3_02151f4c ; case 13
+b .L_3_02151f4c ; case 14
+b .L_3_02151f5c ; case 15
+.L_3_02151f34:
+bl func_ov003_02151f68
+bl func_ov003_02152098
+ldmia sp!, {r3, pc}
+.L_3_02151f40:
+bl func_ov003_02151f68
+bl func_ov003_021524d0
+ldmia sp!, {r3, pc}
+.L_3_02151f4c:
+bl func_ov003_02151f68
+bl func_ov003_021524d0
+bl func_ov003_02152098
+ldmia sp!, {r3, pc}
+.L_3_02151f5c:
+bl func_ov003_02151f68
+bl func_ov003_02152098
+ldmia sp!, {r3, pc}

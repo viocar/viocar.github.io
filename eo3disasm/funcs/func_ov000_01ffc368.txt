@@ -1,0 +1,14 @@
+.arm
+func_ov000_01ffc368:
+cmp r0, #0x0
+moveq r0, #0x0
+bxeq lr
+ldr r3, [.L_0_01ffc394]
+mov r2, r1, lsr #0x1f
+smull r1, r12, r3, r1
+ldr r1, [r0, #0x0]
+add r12, r2, r12, asr #0x6
+mov r0, #0x4c
+mla r0, r12, r0, r1
+bx lr
+.L_0_01ffc394: .word 0x10624dd3

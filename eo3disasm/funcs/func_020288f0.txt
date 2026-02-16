@@ -1,0 +1,8 @@
+.arm
+func_020288f0:
+ldr r2, [r0, #0x8]
+ldr r1, [r0, #0xc]
+cmp r2, r1
+addlt r1, r2, #0x1
+strlt r1, [r0, #0x8]
+bx lr

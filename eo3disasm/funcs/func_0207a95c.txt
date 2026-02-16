@@ -1,0 +1,66 @@
+.arm
+func_0207a95c:
+cmp r0, #0x0
+mvneq r0, #0x0
+bxeq lr
+mvn r1, r1
+mov r1, r1, lsl #0x10
+cmp r2, #0x0
+and r0, r0, r1, lsr #0x10
+beq .L_0207a9ec
+tst r0, #0x1
+ldrne r0, [.L_0207aa24]
+bxne lr
+tst r0, #0x2
+ldrne r0, [.L_0207aa28]
+bxne lr
+tst r0, #0x4
+ldrne r0, [.L_0207aa2c]
+bxne lr
+tst r0, #0x8
+ldrne r0, [.L_0207aa30]
+bxne lr
+tst r0, #0x10
+ldrne r0, [.L_0207aa34]
+bxne lr
+tst r0, #0x20
+ldrne r0, [.L_0207aa38]
+bxne lr
+tst r0, #0x40
+ldrne r0, [.L_0207aa3c]
+bxne lr
+tst r0, #0x80
+ldrne r0, [.L_0207aa40]
+bxne lr
+tst r0, #0x100
+beq .L_0207aa1c
+ldr r0, [.L_0207aa44]
+bx lr
+.L_0207a9ec:
+tst r0, #0x200
+mvnne r0, #0x0
+bxne lr
+tst r0, #0x400
+ldrne r0, [.L_0207aa48]
+bxne lr
+tst r0, #0x800
+ldrne r0, [.L_0207aa4c]
+bxne lr
+tst r0, #0x1000
+ldrne r0, [.L_0207aa50]
+bxne lr
+.L_0207aa1c:
+mvn r0, #0x0
+bx lr
+.L_0207aa24: .word 0xa028
+.L_0207aa28: .word 0xa029
+.L_0207aa2c: .word 0xa410
+.L_0207aa30: .word 0xa7f8
+.L_0207aa34: .word 0xa412
+.L_0207aa38: .word 0xa411
+.L_0207aa3c: .word 0xa02a
+.L_0207aa40: .word 0xa7fa
+.L_0207aa44: .word 0xa7f9
+.L_0207aa48: .word 0xabe0
+.L_0207aa4c: .word 0xabe1
+.L_0207aa50: .word 0xabe2

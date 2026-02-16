@@ -1,0 +1,21 @@
+.arm
+func_0208e39c:
+ldr r2, [r0, #0x30]
+cmp r2, #0x0
+mov r2, #0x0
+streq r1, [r0, #0x30]
+streq r1, [r0, #0x34]
+streq r2, [r1, #0x8]
+streq r2, [r1, #0xc]
+beq .L_0208e3d4
+ldr r3, [r0, #0x34]
+str r1, [r3, #0xc]
+ldr r3, [r0, #0x34]
+str r3, [r1, #0x8]
+str r2, [r1, #0xc]
+str r1, [r0, #0x34]
+.L_0208e3d4:
+ldr r1, [r0, #0x38]
+add r1, r1, #0x1
+str r1, [r0, #0x38]
+bx lr

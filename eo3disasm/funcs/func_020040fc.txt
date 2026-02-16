@@ -1,0 +1,67 @@
+.arm
+func_020040fc:
+stmdb sp!, {r3, lr}
+cmp r0, #0x6
+addls pc, pc, r0, lsl #0x2
+b .L_020041b4
+.L_0200410c: ; jump table
+b .L_02004128 ; case 0
+b .L_020041b4 ; case 1
+b .L_02004130 ; case 2
+b .L_0200415c ; case 3
+b .L_02004164 ; case 4
+b .L_020041a4 ; case 5
+b .L_020041ac ; case 6
+.L_02004128:
+ldr r0, [.L_020041bc]
+ldmia sp!, {r3, pc}
+.L_02004130:
+ldr r0, [.L_020041c0]
+ldr r0, [r0, #0x4]
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r3, pc}
+bl func_0200395c
+and r0, r0, #0xf
+cmp r0, #0x1
+moveq r0, #0x0
+movne r0, #0x2700000
+ldmia sp!, {r3, pc}
+.L_0200415c:
+mov r0, #0x2000000
+ldmia sp!, {r3, pc}
+.L_02004164:
+ldr r0, [.L_020041c4]
+ldr r1, [.L_020041c8]
+ldr r2, [.L_020041cc]
+add r3, r0, #0x3f80
+cmp r1, #0x0
+sub r2, r3, r2
+bne .L_02004190
+ldr r1, [.L_020041d0]
+cmp r0, r1
+movlo r0, r1
+ldmia sp!, {r3, pc}
+.L_02004190:
+cmp r1, #0x0
+ldrlt r0, [.L_020041d0]
+sublt r0, r0, r1
+subge r0, r2, r1
+ldmia sp!, {r3, pc}
+.L_020041a4:
+ldr r0, [.L_020041d4]
+ldmia sp!, {r3, pc}
+.L_020041ac:
+ldr r0, [.L_020041d8]
+ldmia sp!, {r3, pc}
+.L_020041b4:
+mov r0, #0x0
+ldmia sp!, {r3, pc}
+.L_020041bc: .word 0x23e0000
+.L_020041c0: .word 0x20ed8fc
+.L_020041c4: .word data_027e0000
+.L_020041c8: .word 0x0
+.L_020041cc: .word 0x400
+.L_020041d0: .word 0x27e0080
+.L_020041d4: .word 0x2fff680
+.L_020041d8: .word 0x37f8000

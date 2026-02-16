@@ -1,0 +1,41 @@
+.arm
+func_0200bfac:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+movs r7, r0
+mov r6, r1
+mov r5, r2
+mov r4, r3
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+str r5, [r6, #0x8]
+bl DisableIRQ
+ldr r2, [r7, #0x0]
+mov r3, #0x0
+cmp r2, #0x0
+beq .L_0200c014
+.L_0200bfdc:
+cmp r4, #0x0
+bne .L_0200bff0
+ldr r1, [r2, #0x8]
+cmp r1, r5
+bgt .L_0200c014
+.L_0200bff0:
+cmp r4, #0x1
+bne .L_0200c004
+ldr r1, [r2, #0x8]
+cmp r1, r5
+bge .L_0200c014
+.L_0200c004:
+mov r3, r2
+ldr r2, [r2, #0xc]
+cmp r2, #0x0
+bne .L_0200bfdc
+.L_0200c014:
+cmp r2, #0x0
+strne r2, [r6, #0xc]
+moveq r1, #0x0
+streq r1, [r6, #0xc]
+cmp r3, #0x0
+strne r6, [r3, #0xc]
+streq r6, [r7, #0x0]
+bl EnableIRQ
+ldmia sp!, {r3, r4, r5, r6, r7, pc}

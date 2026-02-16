@@ -1,0 +1,3 @@
+.arm
+func_ov002_021432dc:
+bx lr

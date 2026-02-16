@@ -1,0 +1,51 @@
+.arm
+func_020d0540:
+stmdb sp!, {r4, lr}
+sub sp, sp, #0x10
+add r3, r0, #0x4
+mov r2, #0x24
+mla r4, r1, r2, r3
+ldrsh r1, [r4, #0xc]
+cmp r1, #0x0
+beq .L_020d0570
+cmp r1, #0x1
+beq .L_020d05d0
+add sp, sp, #0x10
+ldmia sp!, {r4, pc}
+.L_020d0570:
+ldrsh r1, [r4, #0xe]
+ldr r0, [r0, #0x128]
+cmp r0, r1
+addne sp, sp, #0x10
+ldmneia sp!, {r4, pc}
+ldr r1, [r4, #0x1c]
+mov r0, #0x7f
+str r1, [sp, #0x0]
+ldr r1, [r4, #0x20]
+add r2, r4, #0x8
+str r1, [sp, #0x4]
+str r0, [sp, #0x8]
+ldr r0, [r4, #0x10]
+str r0, [sp, #0xc]
+ldr r0, [r4, #0x14]
+ldr r1, [r4, #0x4]
+ldr r3, [r4, #0x18]
+bl func_0203960c
+str r0, [r4, #0x0]
+ldrsh r0, [r4, #0xc]
+add sp, sp, #0x10
+add r0, r0, #0x1
+strh r0, [r4, #0xc]
+ldmia sp!, {r4, pc}
+.L_020d05d0:
+ldr r0, [r4, #0x8]
+cmp r0, #0x0
+addne sp, sp, #0x10
+ldmneia sp!, {r4, pc}
+ldr r0, [r4, #0x4]
+bl func_02039eb4
+ldrsh r0, [r4, #0xc]
+add r0, r0, #0x1
+strh r0, [r4, #0xc]
+add sp, sp, #0x10
+ldmia sp!, {r4, pc}

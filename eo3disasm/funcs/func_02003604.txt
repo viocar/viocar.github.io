@@ -1,0 +1,15 @@
+.arm
+func_02003604:
+ldr r0, [.L_0200362c]
+ldr r0, [r0, #0x24]
+b .L_02003614
+.L_02003610:
+ldr r0, [r0, #0x68]
+.L_02003614:
+cmp r0, #0x0
+bxeq lr
+ldr r1, [r0, #0x64]
+cmp r1, #0x1
+bne .L_02003610
+bx lr
+.L_0200362c: .word 0x20ed688

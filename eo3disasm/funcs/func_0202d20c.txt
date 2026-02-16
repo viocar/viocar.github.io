@@ -1,0 +1,62 @@
+.arm
+func_0202d20c:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r5, r0
+bl func_0202d414
+cmp r0, #0x0
+moveq r0, #0x8
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+ldr r6, [.L_0202d2ec]
+mvn r7, #0x1
+ldr r0, [r6, #0x4]
+ldr r1, [r0, #0x10]
+cmp r1, r7
+beq .L_0202d2b0
+add r0, r7, #0x1
+cmp r1, r0
+beq .L_0202d278
+cmp r1, #0x0
+bne .L_0202d2d0
+mov r7, #0x1
+mov r0, r5
+mov r1, r7
+bl func_0202cdac
+mov r4, r0
+cmp r4, #0x2
+ldreq r0, [r6, #0x4]
+subeq r1, r7, #0x2
+streq r1, [r0, #0x10]
+b .L_0202d2d0
+.L_0202d278:
+bl func_0202cc5c
+mov r4, r0
+cmp r4, #0x1
+bne .L_0202d2d0
+ldr r1, [r6, #0x4]
+mov r0, #0x14
+str r7, [r1, #0x10]
+ldr r1, [r6, #0x4]
+ldr r1, [r1, #0x0]
+mla r0, r5, r0, r1
+ldr r0, [r0, #0x4]
+cmp r0, #0x8000
+movhi r4, #0x2
+bhi .L_0202d2d0
+.L_0202d2b0:
+ldr r1, [.L_0202d2ec]
+mov r0, #0x14
+ldr r1, [r1, #0x4]
+ldr r2, [r1, #0x0]
+ldr r1, [r1, #0x14]
+mla r0, r5, r0, r2
+bl func_0202cd68
+mov r4, r0
+.L_0202d2d0:
+cmp r4, #0x2
+ldrne r0, [.L_0202d2ec]
+movne r1, #0x0
+ldrne r0, [r0, #0x4]
+strne r1, [r0, #0x10]
+mov r0, r4
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_0202d2ec: .word 0x20ff394

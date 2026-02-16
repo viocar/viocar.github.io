@@ -1,0 +1,99 @@
+.arm
+func_0200f644:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+sub sp, sp, #0x40
+mov r8, r0
+mov r6, r1
+mov r5, r2
+mov r4, r3
+bl func_0200e5ac
+mov r9, #0x2
+ldr r7, [r0, #0x4]
+mov r0, r9
+mov r1, #0x7
+mov r2, #0x8
+bl func_0200e61c
+cmp r0, #0x0
+addne sp, sp, #0x40
+ldmneia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+mov r1, r9
+add r0, r7, #0x188
+bl InvalidateDataCacheLine
+mov r1, r9
+add r0, r7, #0xc6
+bl InvalidateDataCacheLine
+add r0, r7, #0x100
+ldrh r0, [r0, #0x88]
+cmp r0, #0x0
+ldrneh r0, [r7, #0xc6]
+cmpne r0, #0x1
+addne sp, sp, #0x40
+movne r0, #0x3
+ldmneia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+add r0, r7, #0xc
+mov r1, #0x4
+bl InvalidateDataCacheLine
+ldr r0, [r7, #0xc]
+cmp r0, #0x1
+addeq sp, sp, #0x40
+moveq r0, #0x3
+ldmeqia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+tst r5, #0x3f
+addne sp, sp, #0x40
+movne r0, #0x6
+ldmneia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+ldrh r9, [sp, #0x60]
+tst r9, #0x1f
+addne sp, sp, #0x40
+movne r0, #0x6
+ldmneia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+add r0, r7, #0x9c
+mov r1, #0x2
+bl InvalidateDataCacheLine
+ldrh r0, [r7, #0x9c]
+cmp r0, #0x0
+bne .L_0200f740
+bl func_0200ecf8
+cmp r5, r0
+addlt sp, sp, #0x40
+movlt r0, #0x6
+ldmltia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+bl func_0200ec88
+cmp r9, r0
+addlt sp, sp, #0x40
+movlt r0, #0x6
+ldmltia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+.L_0200f740:
+mov r10, #0xe
+mov r0, r10
+mov r1, r8
+bl func_0200e418
+add r8, sp, #0x0
+mov r9, #0x0
+mov r7, #0x40
+mov r0, r9
+mov r1, r8
+mov r2, r7
+bl Memset32Aligned
+ldrh r3, [sp, #0x60]
+mov r5, r5, lsr #0x1
+add r1, sp, #0x14
+mov r0, r9
+mov r2, #0x1c
+strh r10, [sp, #0x0]
+str r6, [sp, #0x4]
+str r5, [sp, #0x8]
+str r4, [sp, #0xc]
+str r3, [sp, #0x10]
+bl Memset32Aligned
+ldr r0, [sp, #0x64]
+add r1, sp, #0x30
+mov r2, #0x10
+bl func_02005f9c
+mov r0, r8
+mov r1, r7
+bl func_0200e53c
+cmp r0, #0x0
+moveq r0, #0x2
+add sp, sp, #0x40
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}

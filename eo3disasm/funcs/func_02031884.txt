@@ -1,0 +1,11 @@
+.arm
+func_02031884:
+ldr r0, [r0, #0x1c]
+tst r0, #0x4
+beq .L_0203189c
+tst r0, #0x8
+movne r0, #0x1
+bxne lr
+.L_0203189c:
+mov r0, #0x0
+bx lr

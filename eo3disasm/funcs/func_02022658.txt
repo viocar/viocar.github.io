@@ -1,0 +1,18 @@
+.arm
+func_02022658:
+stmdb sp!, {r3, lr}
+mov r3, r0
+ldr r0, [r1, #0x8]
+ldr r12, [r1, #0x0]
+ldrh r1, [r0, #0x4]
+cmp r12, r1, lsl #0xc
+mov r1, r1, lsl #0xc
+subge r12, r1, #0x1
+bge .L_02022684
+cmp r12, #0x0
+movlt r12, #0x0
+.L_02022684:
+mov r1, r2
+mov r2, r12
+bl func_02022938
+ldmia sp!, {r3, pc}

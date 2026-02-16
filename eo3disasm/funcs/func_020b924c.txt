@@ -1,0 +1,12 @@
+.arm
+func_020b924c:
+stmdb sp!, {r4, lr}
+ldr r0, [.L_020b9270]
+ldr r4, [r0, #0x0]
+cmp r4, #0x0
+ldmeqia sp!, {r4, pc}
+bl func_0201b55c
+ldr r1, [r4, #0x0]
+bl func_02035f40
+ldmia sp!, {r4, pc}
+.L_020b9270: .word 0x2135e64

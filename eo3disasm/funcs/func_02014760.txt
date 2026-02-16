@@ -1,0 +1,31 @@
+.arm
+func_02014760:
+add r3, r0, #0x5
+ldrb r2, [r3, r1]
+add r12, r3, r1
+cmp r2, #0x5
+movhi r0, #0x1
+bxhi lr
+mvnlo r0, #0x0
+bxlo lr
+ldrb r2, [r0, #0x4]
+add r12, r12, #0x1
+add r3, r3, r2
+cmp r12, r3
+bhs .L_020147b0
+.L_02014794:
+ldrb r2, [r12, #0x0]
+cmp r2, #0x0
+movne r0, #0x1
+bxne lr
+add r12, r12, #0x1
+cmp r12, r3
+blo .L_02014794
+.L_020147b0:
+sub r1, r1, #0x1
+add r0, r0, r1
+ldrb r0, [r0, #0x5]
+tst r0, #0x1
+movne r0, #0x1
+mvneq r0, #0x0
+bx lr

@@ -1,0 +1,4 @@
+.arm
+func_0201e280:
+mvn r0, #0x0
+bx lr

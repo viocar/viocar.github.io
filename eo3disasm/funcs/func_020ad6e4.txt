@@ -1,0 +1,62 @@
+.arm
+func_020ad6e4:
+ldrsh r1, [r0, #0x8]
+cmp r1, #0x0
+movle r1, #0x0
+ble .L_020ad6fc
+cmp r1, #0x63
+movge r1, #0x63
+.L_020ad6fc:
+ldrsh r2, [r0, #0x10]
+strh r1, [r0, #0x8]
+cmp r2, #0x0
+movle r2, #0x0
+ble .L_020ad718
+cmp r2, #0x63
+movge r2, #0x63
+.L_020ad718:
+ldrsh r1, [r0, #0xa]
+strh r2, [r0, #0x10]
+cmp r1, #0x0
+movle r1, #0x0
+ble .L_020ad734
+cmp r1, #0x63
+movge r1, #0x63
+.L_020ad734:
+ldrsh r2, [r0, #0xe]
+strh r1, [r0, #0xa]
+cmp r2, #0x0
+movle r2, #0x0
+ble .L_020ad750
+cmp r2, #0x63
+movge r2, #0x63
+.L_020ad750:
+ldrsh r1, [r0, #0xc]
+strh r2, [r0, #0xe]
+cmp r1, #0x0
+movle r1, #0x0
+ble .L_020ad76c
+cmp r1, #0x63
+movge r1, #0x63
+.L_020ad76c:
+ldr r2, [r0, #0x0]
+strh r1, [r0, #0xc]
+cmp r2, #0x0
+movle r2, #0x0
+ble .L_020ad78c
+ldr r1, [.L_020ad7b4]
+cmp r2, r1
+movge r2, r1
+.L_020ad78c:
+ldr r3, [r0, #0x4]
+str r2, [r0, #0x0]
+cmp r3, #0x0
+movle r3, #0x0
+ble .L_020ad7ac
+ldr r1, [.L_020ad7b4]
+cmp r3, r1
+movge r3, r1
+.L_020ad7ac:
+str r3, [r0, #0x4]
+bx lr
+.L_020ad7b4: .word 0x3e7

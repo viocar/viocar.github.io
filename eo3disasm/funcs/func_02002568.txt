@@ -1,0 +1,112 @@
+.arm
+func_02002568:
+stmdb sp!, {r4, lr}
+cmp r0, #0x0
+ble .L_020025ec
+cmp r1, #0x0
+ble .L_020025ac
+cmp r1, r0
+movgt r2, r0
+movgt r4, #0x0
+movgt r0, #0x1
+bgt .L_02002694
+movlt r2, r1
+movlt r1, r0
+movlt r4, #0x4000
+movlt r0, #0x0
+blt .L_02002694
+mov r0, #0x2000
+ldmia sp!, {r4, pc}
+.L_020025ac:
+bge .L_020025e4
+rsb r1, r1, #0x0
+cmp r1, r0
+movlt r2, r1
+movlt r1, r0
+movlt r4, #0x4000
+movlt r0, #0x1
+blt .L_02002694
+movgt r2, r0
+movgt r4, #0x8000
+movgt r0, #0x0
+bgt .L_02002694
+mov r0, #0x6000
+ldmia sp!, {r4, pc}
+.L_020025e4:
+mov r0, #0x4000
+ldmia sp!, {r4, pc}
+.L_020025ec:
+bge .L_02002684
+cmp r1, #0x0
+rsb r0, r0, #0x0
+bge .L_0200263c
+rsb r1, r1, #0x0
+cmp r1, r0
+movgt r4, #0x8000
+movgt r2, r0
+rsbgt r4, r4, #0x0
+movgt r0, #0x1
+bgt .L_02002694
+bge .L_02002634
+mov r4, #0x4000
+mov r2, r1
+mov r1, r0
+rsb r4, r4, #0x0
+mov r0, #0x0
+b .L_02002694
+.L_02002634:
+mov r0, #0xa000
+ldmia sp!, {r4, pc}
+.L_0200263c:
+cmp r1, #0x0
+ble .L_0200267c
+cmp r1, r0
+bge .L_02002664
+mov r4, #0x4000
+mov r2, r1
+mov r1, r0
+rsb r4, r4, #0x0
+mov r0, #0x1
+b .L_02002694
+.L_02002664:
+movgt r4, #0x0
+movgt r2, r0
+movgt r0, r4
+bgt .L_02002694
+mov r0, #0xe000
+ldmia sp!, {r4, pc}
+.L_0200267c:
+mov r0, #0xc000
+ldmia sp!, {r4, pc}
+.L_02002684:
+mov r0, #0x0
+cmp r1, #0x0
+movlt r0, #0x8000
+ldmia sp!, {r4, pc}
+.L_02002694:
+cmp r1, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r4, pc}
+cmp r0, #0x0
+mov r0, r2
+beq .L_020026d0
+bl HardwareDiv32
+mov r1, r0, asr #0x5
+ldr r0, [.L_020026f4]
+mov r1, r1, lsl #0x1
+ldrsh r0, [r0, r1]
+add r0, r4, r0
+mov r0, r0, lsl #0x10
+mov r0, r0, lsr #0x10
+ldmia sp!, {r4, pc}
+.L_020026d0:
+bl HardwareDiv32
+mov r1, r0, asr #0x5
+ldr r0, [.L_020026f4]
+mov r1, r1, lsl #0x1
+ldrsh r0, [r0, r1]
+sub r0, r4, r0
+mov r0, r0, lsl #0x10
+mov r0, r0, lsr #0x10
+ldmia sp!, {r4, pc}
+.L_020026f4: .word data_020dde6c

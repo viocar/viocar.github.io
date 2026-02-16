@@ -1,0 +1,18 @@
+.arm
+func_020b2cb0:
+stmdb sp!, {r3, lr}
+ldr r0, [.L_020b2cec]
+mov r1, #0x0
+ldr r12, [r0, #0x0]
+mov r0, #0x1000
+str r1, [r12, #0x8c]
+str r0, [r12, #0x94]
+strb r1, [r12, #0x90]
+strb r1, [r12, #0x91]
+mov r3, #0x6
+add r0, r12, #0x98
+mov r2, #0x9
+str r3, [r12, #0x40]
+bl Memset
+ldmia sp!, {r3, pc}
+.L_020b2cec: .word 0x2135e44

@@ -1,0 +1,52 @@
+.arm
+func_020752e0:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r1, r1, lsl #0x10
+cmp r2, #0x0
+mov r4, r1, asr #0x10
+bne .L_0207530c
+mov r1, #0x3
+mov r2, r1
+bl GetStats
+mov r0, r0, lsl #0x10
+mov r7, r0, asr #0x10
+b .L_02075318
+.L_0207530c:
+bl func_0206f7ac
+add r0, r0, #0x200
+ldrsh r7, [r0, #0xa]
+.L_02075318:
+mov r0, r4
+bl func_02019688
+mov r6, r0
+mov r0, r7
+bl func_02019688
+bl func_02019604
+bl func_02019e5c
+bl func_02018eec
+mov r5, r0
+mov r0, r7
+bl func_02019688
+mov r4, r0
+mov r0, r5
+mov r1, #0x41000000
+bl func_0201a770
+mov r1, r0
+ldr r0, [.L_02075398]
+bl func_0201a2bc
+mov r1, r0
+mov r0, r6
+bl func_0201a0dc
+mov r1, r0
+mov r0, r4
+bl func_0201a2bc
+bl func_02019d10
+cmp r0, #0x1
+movle r0, #0x1
+ldmleia sp!, {r3, r4, r5, r6, r7, pc}
+ldr r1, [.L_0207539c]
+cmp r0, r1
+movge r0, r1
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_02075398: .word 0x3f4ccccd
+.L_0207539c: .word 0x3e7

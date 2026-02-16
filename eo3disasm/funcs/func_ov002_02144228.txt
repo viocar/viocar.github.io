@@ -1,0 +1,20 @@
+.arm
+func_ov002_02144228:
+stmdb sp!, {r4, r5, r6, lr}
+mov r6, r0
+mov r5, r1
+mov r4, r2
+bl func_ov002_021432e0
+ldr r1, [r6, #0xc]
+cmp r1, #0x36
+moveq r0, #0x0
+streq r0, [r5, #0x0]
+streq r0, [r5, #0x4]
+streq r0, [r5, #0x8]
+ldrne r3, [r0, #0x44]
+ldrne r2, [r0, #0x40]
+ldrne r1, [r0, #0x3c]
+stmneia r5, {r1, r2, r3}
+ldrnesh r0, [r0, #0x48]
+strh r0, [r4, #0x0]
+ldmia sp!, {r4, r5, r6, pc}

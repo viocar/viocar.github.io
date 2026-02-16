@@ -1,0 +1,21 @@
+.arm
+func_0202460c:
+ldr r3, [.L_02024650]
+ldrb r2, [r2, #0x17]
+ldr r3, [r3, #0x0]
+mov r12, #0x0
+str r3, [r0, #0xc]
+strb r2, [r0, #0x19]
+str r1, [r0, #0x8]
+tst r2, #0xff
+bxeq lr
+.L_02024630:
+orr r2, r12, #0x100
+add r1, r0, r12, lsl #0x1
+strh r2, [r1, #0x1a]
+ldrb r1, [r0, #0x19]
+add r12, r12, #0x1
+cmp r12, r1
+blo .L_02024630
+bx lr
+.L_02024650: .word data_020e5708

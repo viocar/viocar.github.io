@@ -1,0 +1,7 @@
+.arm
+func_020c5ac4:
+ldr r2, [.L_020c5ad4]
+strb r0, [r2, #0x0]
+str r1, [r2, #0x4]
+bx lr
+.L_020c5ad4: .word data_020ec780

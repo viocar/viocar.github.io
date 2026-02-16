@@ -1,0 +1,17 @@
+.arm
+func_0200c2ec:
+stmdb sp!, {r3, lr}
+ldr r1, [.L_0200c31c]
+mov r2, #0x0
+bl func_0200c27c
+ldr r1, [.L_0200c320]
+cmp r0, #0x0
+str r0, [r1, #0x24]
+bne .L_0200c310
+bl func_0200c7dc
+.L_0200c310:
+ldr r0, [.L_0200c320]
+ldr r0, [r0, #0x24]
+ldmia sp!, {r3, pc}
+.L_0200c31c: .word func_0200c7cc
+.L_0200c320: .word 0x20ef938

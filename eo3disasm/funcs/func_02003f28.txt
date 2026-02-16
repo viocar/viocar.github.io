@@ -1,0 +1,20 @@
+.arm
+func_02003f28:
+stmdb sp!, {r3, lr}
+bl func_0200757c
+bl func_02003f70
+bl func_02002b8c
+bl func_0200408c
+bl func_0200287c
+bl func_02002aec
+bl func_02004760
+bl func_020065b4
+bl func_02004e7c
+bl func_020054c0
+bl func_020031dc
+bl func_02005360
+bl func_02010da0
+bl func_0200c970
+bl func_0200b3b8
+bl func_02003efc
+ldmia sp!, {r3, pc}

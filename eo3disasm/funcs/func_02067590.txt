@@ -1,0 +1,63 @@
+.arm
+func_02067590:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+mov r4, r0
+bl func_020689cc
+ldr r1, [r4, #0x0]
+mov r8, #0x3
+cmp r1, #0x0
+movne r8, #0x1
+mov r6, r0
+cmp r8, #0x0
+mov r7, #0x0
+ble .L_020675e8
+mov r5, #0xc
+.L_020675c0:
+mla r1, r7, r5, r4
+ldr r0, [r1, #0x8]
+ldr r1, [r1, #0xc]
+bl func_02031844
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
+add r7, r7, #0x1
+cmp r7, r8
+blt .L_020675c0
+.L_020675e8:
+ldmib r6, {r0, r1}
+bl func_02031844
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
+mov r5, #0x0
+.L_02067600:
+add r0, r4, r5, lsl #0x2
+ldr r0, [r0, #0x68]
+cmp r0, #0x0
+beq .L_02067620
+bl func_0201e06c
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
+.L_02067620:
+add r5, r5, #0x1
+cmp r5, #0x5
+blt .L_02067600
+ldr r0, [r4, #0x7c]
+cmp r0, #0x0
+beq .L_02067648
+bl func_0201e06c
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
+.L_02067648:
+ldr r0, [r4, #0x80]
+cmp r0, #0x0
+beq .L_02067664
+bl func_0201e06c
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
+.L_02067664:
+mov r0, #0x1
+ldmia sp!, {r4, r5, r6, r7, r8, pc}

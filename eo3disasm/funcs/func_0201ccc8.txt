@@ -1,0 +1,19 @@
+.arm
+func_0201ccc8:
+cmp r0, #0x0
+beq .L_0201ccdc
+cmp r0, #0x1
+beq .L_0201cce4
+b .L_0201ccec
+.L_0201ccdc:
+ldr r0, [.L_0201ccf4]
+bx lr
+.L_0201cce4:
+ldr r0, [.L_0201ccf8]
+bx lr
+.L_0201ccec:
+ldr r0, [.L_0201ccfc]
+bx lr
+.L_0201ccf4: .word data_020e2c58
+.L_0201ccf8: .word data_020e310c
+.L_0201ccfc: .word data_020e35c0

@@ -1,0 +1,6 @@
+.arm
+func_0201b934:
+ldr r2, [r0, #0xc]
+orr r1, r2, r1
+str r1, [r0, #0xc]
+bx lr

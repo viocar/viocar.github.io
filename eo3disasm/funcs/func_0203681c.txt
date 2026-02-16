@@ -1,0 +1,15 @@
+.arm
+func_0203681c:
+cmp r0, #0x0
+moveq r0, #0x0
+bxeq lr
+ldr r2, [r0, #0x0]
+ldr r1, [.L_0203684c]
+cmp r2, r1
+moveq r1, #0x1
+movne r1, #0x0
+cmp r1, #0x0
+moveq r0, #0x0
+ldrne r0, [r0, #0x4]
+bx lr
+.L_0203684c: .word 0x4e494246

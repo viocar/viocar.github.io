@@ -1,0 +1,20 @@
+.arm
+func_ov002_0213ea74:
+cmp r1, #0x0
+blt .L_2_0213ea9c
+ldr r12, [r0, #0x0]
+cmp r1, r12
+bge .L_2_0213ea9c
+cmp r2, #0x0
+blt .L_2_0213ea9c
+ldr r3, [r0, #0x4]
+cmp r2, r3
+blt .L_2_0213eaa4
+.L_2_0213ea9c:
+mov r0, #0x0
+bx lr
+.L_2_0213eaa4:
+mla r1, r2, r12, r1
+ldr r0, [r0, #0xc]
+add r0, r0, r1, lsl #0x1
+bx lr

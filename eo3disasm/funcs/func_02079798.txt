@@ -1,0 +1,47 @@
+.arm
+func_02079798:
+cmp r1, #0x0
+bne .L_020797e0
+cmp r0, #0x19
+ldrlt r0, [.L_02079820]
+strlt r0, [r2, #0x0]
+sublt r0, r0, #0xc0000000
+strlt r0, [r3, #0x0]
+bxlt lr
+cmp r0, #0x64
+ldrlt r0, [.L_02079824]
+ldrge r1, [.L_02079828]
+strlt r0, [r2, #0x0]
+addlt r0, r0, #0x580000
+strlt r0, [r3, #0x0]
+ldrge r0, [.L_0207982c]
+strge r1, [r2, #0x0]
+strge r0, [r3, #0x0]
+bx lr
+.L_020797e0:
+cmp r0, #0x19
+ldrlt r1, [.L_02079830]
+ldrlt r0, [.L_02079834]
+strlt r1, [r2, #0x0]
+strlt r0, [r3, #0x0]
+bxlt lr
+cmp r0, #0x64
+ldrlt r1, [.L_02079838]
+ldrlt r0, [.L_0207983c]
+strlt r1, [r2, #0x0]
+strlt r0, [r3, #0x0]
+ldrge r1, [.L_02079840]
+ldrge r0, [.L_02079844]
+strge r1, [r2, #0x0]
+strge r0, [r3, #0x0]
+bx lr
+.L_02079820: .word 0xa00000ff
+.L_02079824: .word 0xf06000ff
+.L_02079828: .word 0xf8c030ff
+.L_0207982c: .word 0xf8f8a8ff
+.L_02079830: .word 0x1820f8ff
+.L_02079834: .word 0x870f0ff
+.L_02079838: .word 0x80f0ff
+.L_0207983c: .word 0x48f8e0ff
+.L_02079840: .word 0x70f8e0ff
+.L_02079844: .word 0xc8f8d0ff

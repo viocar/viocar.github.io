@@ -1,0 +1,12 @@
+.arm
+func_02031a80:
+stmdb sp!, {r4, lr}
+mov r4, r0
+bl DisableIRQ
+ldr r1, [r4, #0x1c]
+orr r1, r1, #0x8000
+bic r1, r1, #0x10
+bic r1, r1, #0x20
+str r1, [r4, #0x1c]
+bl EnableIRQ
+ldmia sp!, {r4, pc}

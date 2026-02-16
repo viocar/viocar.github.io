@@ -1,0 +1,8 @@
+.arm
+func_ov003_02159ebc:
+mov r1, #0x0
+str r1, [r0, #0x20]
+str r1, [r0, #0x58]
+str r1, [r0, #0x60]
+str r1, [r0, #0x64]
+bx lr

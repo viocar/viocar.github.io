@@ -1,0 +1,80 @@
+.arm
+func_0200a260:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+sub sp, sp, #0x18
+mov r4, #0x0
+mov r8, r1
+mov r7, r2
+mov r6, r3
+mov r9, r0
+mov r0, r6
+mov r1, r4
+mov r2, #0x54
+str r4, [sp, #0x14]
+mov r5, #0x5
+bl Memset
+mov r0, #0x1
+add r10, sp, #0x14
+str r0, [sp, #0x0]
+mov r0, r9
+mov r1, r8
+mov r2, r7
+mov r3, r10
+bl func_02009e54
+cmp r0, #0x0
+bne .L_0200a2d4
+mov r0, #0x100
+str r0, [r6, #0x0]
+ldr r0, [sp, #0x14]
+mov r5, r4
+str r0, [r6, #0x50]
+b .L_0200a374
+.L_0200a2d4:
+mov r0, r9
+mov r1, r8
+mov r2, r7
+mov r3, r10
+str r4, [sp, #0x0]
+bl func_02009e54
+cmp r0, #0x0
+bne .L_0200a374
+str r4, [r6, #0x0]
+ldr r0, [sp, #0x14]
+str r0, [r6, #0x50]
+str r4, [r6, #0x4c]
+ldr r3, [r9, #0x20]
+ldr r1, [sp, #0x14]
+ldr r0, [r3, #0x8]
+mov r2, r1, lsl #0x3
+cmp r0, r1, lsl #0x3
+bls .L_0200a370
+str r9, [sp, #0x4]
+ldr r1, [r3, #0x4]
+add r0, sp, #0x4
+add r3, r1, r2
+add r1, sp, #0xc
+mov r2, #0x8
+str r3, [sp, #0x8]
+bl func_02009284
+cmp r0, #0x0
+bne .L_0200a370
+ldr r2, [sp, #0x10]
+ldr r1, [sp, #0xc]
+mov r0, r9
+sub r1, r2, r1
+str r1, [r6, #0x4c]
+ldr r1, [sp, #0xc]
+bl func_0200a6ec
+cmp r0, #0x0
+ldrne r0, [r6, #0x0]
+orrne r0, r0, #0x400
+strne r0, [r6, #0x0]
+.L_0200a370:
+mov r5, #0x0
+.L_0200a374:
+ldr r1, [r6, #0x0]
+mov r0, r5
+orr r1, r1, #0x200
+str r1, [r6, #0x0]
+add sp, sp, #0x18
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}

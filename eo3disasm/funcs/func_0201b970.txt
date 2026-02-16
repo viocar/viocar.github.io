@@ -1,0 +1,18 @@
+.arm
+func_0201b970:
+stmdb sp!, {r3, r4, r5, lr}
+ldr r4, [.L_0201b9a8]
+ldr r0, [r4, #0x0]
+cmp r0, #0x0
+ldmneia sp!, {r3, r4, r5, pc}
+ldr r5, [.L_0201b9ac]
+mov r0, r5
+bl func_0202b664
+mov r2, r5
+mov r1, #0x0
+str r0, [r4, #0x0]
+bl Memset
+bl func_0201beb8
+ldmia sp!, {r3, r4, r5, pc}
+.L_0201b9a8: .word 0x20f1488
+.L_0201b9ac: .word 0x1ae1c

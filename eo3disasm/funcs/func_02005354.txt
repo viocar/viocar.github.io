@@ -1,0 +1,5 @@
+.arm
+func_02005354:
+ldr r0, [.L_0200535c]
+bx lr
+.L_0200535c: .word 0x2fffc40

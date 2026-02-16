@@ -1,0 +1,12 @@
+.arm
+func_02027350:
+ldr r1, [.L_02027374]
+ldr r1, [r1, #0x0]
+ldr r2, [r1, #0x90]
+ldr r1, [r2, #0x8]
+cmp r0, r1
+movhs r0, #0x0
+addlo r0, r2, r0, lsl #0x4
+ldrlo r0, [r0, #0x10]
+bx lr
+.L_02027374: .word 0x20fd024

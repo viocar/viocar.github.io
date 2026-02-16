@@ -1,0 +1,39 @@
+.arm
+func_02079bf8:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r7, r0
+subs r0, r1, r7
+mov r5, r2
+rsbmi r0, r0, #0x0
+mov r4, r3
+bl func_02019688
+mov r6, r0
+ldr r0, [r5, #0x0]
+mov r1, #0x3f800000
+bl func_020193b8
+movhs r0, #0x0
+bhs .L_02079c38
+ldr r0, [r5, #0x0]
+mov r1, r4
+bl func_0201a2bc
+.L_02079c38:
+str r0, [r5, #0x0]
+mov r1, r0
+ldr r0, [.L_02079c84]
+bl func_0201a0dc
+bl func_02019604
+bl func_02018320
+bl func_02018eec
+mov r5, r0
+mov r0, r7
+bl func_020196d0
+mov r4, r0
+mov r0, r6
+mov r1, r5
+bl func_0201a0dc
+mov r1, r0
+mov r0, r4
+bl func_0201a2bc
+bl func_02019d44
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_02079c84: .word 0x40490fdb

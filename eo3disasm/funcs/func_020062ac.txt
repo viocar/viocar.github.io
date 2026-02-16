@@ -1,0 +1,4 @@
+.arm
+func_020062ac:
+swp r0, r0, [r1]
+bx lr

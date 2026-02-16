@@ -1,0 +1,2 @@
+data_ov002_02146c34: ; ambiguous
+.byte 0x00, 0x00, 0x00, 0x00

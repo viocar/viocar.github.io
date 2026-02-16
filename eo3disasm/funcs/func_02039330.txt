@@ -1,0 +1,64 @@
+.arm
+func_02039330:
+stmdb sp!, {r4, lr}
+mov r4, r0
+ldr r0, [r4, #0x128]
+ldr r1, [r4, #0x11c]
+ldr r2, [r0, #0x8c]
+ldr r3, [r4, #0x134]
+add r0, r4, #0x130
+bl func_0203aed0
+mov r2, r0
+mov r0, r4
+add r1, r4, #0x2c
+str r2, [r4, #0x12c]
+bl func_0203aee0
+ldr r0, [r4, #0x104]
+cmp r0, #0x0
+ldreq r0, [r4, #0x108]
+cmpeq r0, #0x0
+bne .L_020393a8
+ldr r0, [r4, #0x12c]
+mov r1, #0x0
+str r1, [r0, #0xec]
+ldr r0, [r4, #0x12c]
+str r1, [r0, #0xf8]
+ldr r1, [r4, #0x12c]
+ldr r0, [r1, #0xf8]
+str r0, [r1, #0xf4]
+ldr r1, [r4, #0x12c]
+ldr r0, [r1, #0xf4]
+str r0, [r1, #0xf0]
+b .L_020393f4
+.L_020393a8:
+add r0, r4, #0x104
+bl HardwareSqrt
+ldr r1, [r4, #0x12c]
+str r0, [r1, #0xec]
+ldr r1, [r4, #0x12c]
+ldr r0, [r4, #0x104]
+ldr r1, [r1, #0xec]
+bl HardwareDiv32
+ldr r1, [r4, #0x12c]
+str r0, [r1, #0xf0]
+ldr r1, [r4, #0x12c]
+ldr r0, [r4, #0x108]
+ldr r1, [r1, #0xec]
+bl HardwareDiv32
+ldr r2, [r4, #0x12c]
+mov r1, #0x0
+str r0, [r2, #0xf4]
+ldr r0, [r4, #0x12c]
+str r1, [r0, #0xf8]
+.L_020393f4:
+ldrsb r0, [r4, #0x53]
+bl func_02038e60
+ldr r3, [r4, #0x12c]
+ldr r1, [r3, #0xec]
+smull r2, r1, r0, r1
+adds r2, r2, #0x800
+adc r0, r1, #0x0
+mov r1, r2, lsr #0xc
+orr r1, r1, r0, lsl #0x14
+str r1, [r3, #0xec]
+ldmia sp!, {r4, pc}

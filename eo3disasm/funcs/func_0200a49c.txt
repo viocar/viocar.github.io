@@ -1,0 +1,19 @@
+.arm
+func_0200a49c:
+stmdb sp!, {r4, lr}
+mov lr, r0
+ldr r0, [lr, #0x8]
+ldr r3, [.L_0200a4d8]
+ldr r12, [r0, #0x24]
+mov r2, r1
+cmp r12, r3
+mov r4, #0x0
+bne .L_0200a4d0
+mov r1, lr
+bl func_0200a17c
+cmp r0, #0x0
+moveq r4, #0x1
+.L_0200a4d0:
+mov r0, r4
+ldmia sp!, {r4, pc}
+.L_0200a4d8: .word data_020de3cc

@@ -1,0 +1,11 @@
+.arm
+func_02007078:
+stmdb sp!, {r4, lr}
+ldr r4, [.L_02007098]
+mov r1, #0x4
+ldr r0, [r4, #0x0]
+bl InvalidateDataCacheLine
+ldr r0, [r4, #0x0]
+ldr r0, [r0, #0x0]
+ldmia sp!, {r4, pc}
+.L_02007098: .word 0x20ef5a0

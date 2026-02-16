@@ -1,0 +1,39 @@
+.arm
+func_ov003_02162f7c:
+stmdb sp!, {r4, r5, r6, lr}
+bl func_020d6b68
+mov r6, r0
+bl func_ov003_0215cf48
+mov r5, #0x1
+mov r0, r5
+bl func_0206d5d0
+bl func_ov003_02147570
+bl func_ov003_0215cbdc
+bl func_ov003_0215cad8
+bl func_ov003_0215cf68
+mov r0, r5
+mov r1, r5
+bl func_020a9988
+bl func_ov003_02160fd8
+mov r0, r5
+bl func_0206c6e4
+bl func_0206a324
+mov r4, #0x0
+mov r0, r4
+bl func_0206d96c
+bl func_ov003_02147b40
+mov r0, r4
+bl func_0206d920
+bl func_ov003_02147b58
+ldr r0, [.L_3_02163008]
+bl func_0202e130
+ldr r2, [.L_3_0216300c]
+mov r1, r4
+str r0, [r2, #0x0]
+mov r2, r4
+mov r0, r5
+bl func_0202ffd4
+str r5, [r6, #0x990]
+ldmia sp!, {r4, r5, r6, pc}
+.L_3_02163008: .word data_ov003_021669c8
+.L_3_0216300c: .word 0x02166b0c

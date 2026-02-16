@@ -1,0 +1,15 @@
+.arm
+func_020b447c:
+cmp r0, #0x0
+movlt r0, #0x0
+bxlt lr
+cmp r0, #0x1
+blt .L_020b4498
+cmp r0, #0xff
+ble .L_020b44a0
+.L_020b4498:
+mov r0, #0x0
+bx lr
+.L_020b44a0:
+mov r0, #0x1
+bx lr

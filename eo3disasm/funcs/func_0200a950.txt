@@ -1,0 +1,10 @@
+.arm
+func_0200a950:
+mov r3, r0
+mov r2, r1
+ldr r0, [.L_0200a968]
+ldr r12, [.L_0200a96c]
+mov r1, r3
+bx r12
+.L_0200a968: .word 0x20ef860
+.L_0200a96c: .word func_0200a4fc

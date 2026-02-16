@@ -1,0 +1,71 @@
+.arm
+func_02011e24:
+stmdb sp!, {r3, r4, r5, lr}
+cmp r2, #0x0
+beq .L_02011f00
+and r5, r0, #0x3
+and r3, r1, #0x3
+teq r5, r3
+mov r3, #0x0
+bne .L_02011ecc
+cmp r5, #0x0
+beq .L_02011e88
+b .L_02011e74
+.L_02011e50:
+ldrb r4, [r0, r3]
+ldrb r12, [r1, r3]
+cmp r4, r12
+bne .L_02011e68
+cmp r4, #0x0
+bne .L_02011e70
+.L_02011e68:
+sub r0, r4, r12
+ldmia sp!, {r3, r4, r5, pc}
+.L_02011e70:
+add r3, r3, #0x1
+.L_02011e74:
+add r4, r3, r5
+cmp r4, #0x4
+bhs .L_02011e88
+cmp r3, r2
+blt .L_02011e50
+.L_02011e88:
+sub r5, r2, #0x4
+cmp r3, r5
+bgt .L_02011ecc
+ldr r12, [.L_02011f08]
+.L_02011e98:
+ldr r4, [r0, r3]
+ldr lr, [r1, r3]
+cmp r4, lr
+bne .L_02011ecc
+and lr, r4, r12
+add lr, lr, r12
+orr lr, lr, r4
+orr lr, lr, r12
+mvns lr, lr
+bne .L_02011ecc
+add r3, r3, #0x4
+cmp r3, r5
+ble .L_02011e98
+.L_02011ecc:
+cmp r3, r2
+bge .L_02011f00
+.L_02011ed4:
+ldrb r4, [r0, r3]
+ldrb r5, [r1, r3]
+cmp r4, r5
+bne .L_02011eec
+cmp r4, #0x0
+bne .L_02011ef4
+.L_02011eec:
+sub r0, r4, r5
+ldmia sp!, {r3, r4, r5, pc}
+.L_02011ef4:
+add r3, r3, #0x1
+cmp r3, r2
+blt .L_02011ed4
+.L_02011f00:
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, pc}
+.L_02011f08: .word 0x7f7f7f7f

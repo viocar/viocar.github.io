@@ -1,0 +1,27 @@
+.arm
+func_020c8b28:
+mov r1, #0x0
+cmp r0, #0x14
+blo .L_020c8b74
+blt .L_020c8b44
+cmp r0, #0x22
+movlt r1, #0x1
+blt .L_020c8b74
+.L_020c8b44:
+cmp r0, #0x22
+blt .L_020c8b58
+cmp r0, #0x78
+movlt r1, #0x2
+blt .L_020c8b74
+.L_020c8b58:
+cmp r0, #0x78
+blt .L_020c8b6c
+cmp r0, #0x86
+movlt r1, #0x3
+blt .L_020c8b74
+.L_020c8b6c:
+cmp r0, #0x86
+movge r1, #0x4
+.L_020c8b74:
+mov r0, r1
+bx lr

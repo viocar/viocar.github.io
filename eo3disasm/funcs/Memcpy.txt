@@ -1,0 +1,88 @@
+.arm
+Memcpy:
+cmp r2, #0x0
+bxeq lr
+tst r1, #0x1
+beq .L_020061ac
+ldrh r12, [r1, #-0x1]
+and r12, r12, #0xff
+tst r0, #0x1
+ldrneh r3, [r0, #-0x1]
+movne r3, r3, lsr #0x8
+ldreqh r3, [r0, #0x0]
+orr r3, r12, r3, lsl #0x8
+strh r3, [r1, #-0x1]
+add r0, r0, #0x1
+add r1, r1, #0x1
+subs r2, r2, #0x1
+bxeq lr
+.L_020061ac:
+eor r12, r1, r0
+tst r12, #0x1
+beq .L_02006200
+bic r0, r0, #0x1
+ldrh r12, [r0], #0x2
+mov r3, r12, lsr #0x8
+subs r2, r2, #0x2
+blo .L_020061e4
+.L_020061cc:
+ldrh r12, [r0], #0x2
+orr r12, r3, r12, lsl #0x8
+strh r12, [r1], #0x2
+mov r3, r12, lsr #0x10
+subs r2, r2, #0x2
+bhs .L_020061cc
+.L_020061e4:
+tst r2, #0x1
+bxeq lr
+ldrh r12, [r1, #0x0]
+and r12, r12, #0xff00
+orr r12, r12, r3
+strh r12, [r1, #0x0]
+bx lr
+.L_02006200:
+tst r12, #0x2
+beq .L_0200622c
+bics r3, r2, #0x1
+beq .L_02006278
+sub r2, r2, r3
+add r12, r3, r1
+.L_02006218:
+ldrh r3, [r0], #0x2
+strh r3, [r1], #0x2
+cmp r1, r12
+blo .L_02006218
+b .L_02006278
+.L_0200622c:
+cmp r2, #0x2
+blo .L_02006278
+tst r1, #0x2
+beq .L_0200624c
+ldrh r3, [r0], #0x2
+strh r3, [r1], #0x2
+subs r2, r2, #0x2
+bxeq lr
+.L_0200624c:
+bics r3, r2, #0x3
+beq .L_0200626c
+sub r2, r2, r3
+add r12, r3, r1
+.L_0200625c:
+ldr r3, [r0], #0x4
+str r3, [r1], #0x4
+cmp r1, r12
+blo .L_0200625c
+.L_0200626c:
+tst r2, #0x2
+ldrneh r3, [r0], #0x2
+strneh r3, [r1], #0x2
+.L_02006278:
+tst r2, #0x1
+bxeq lr
+ldrh r2, [r1, #0x0]
+ldrh r0, [r0, #0x0]
+and r2, r2, #0xff00
+and r0, r0, #0xff
+orr r0, r2, r0
+strh r0, [r1, #0x0]
+bx lr

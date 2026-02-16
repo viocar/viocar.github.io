@@ -1,0 +1,13 @@
+.arm
+func_02008984:
+mov r2, #0x0
+orr r1, r2, #0x2300
+str r2, [r0, #0x8]
+str r2, [r0, #0x4]
+str r2, [r0, #0x0]
+str r2, [r0, #0x1c]
+str r2, [r0, #0x18]
+str r1, [r0, #0xc]
+str r2, [r0, #0x10]
+str r2, [r0, #0x14]
+bx lr

@@ -1,0 +1,13 @@
+.arm
+func_02034648:
+ldr r2, [.L_02034670]
+ldr r1, [r2, #0x0]
+tst r1, #0x4000
+ldreq r1, [r2, #0x0]
+mvnne r0, #0x0
+andeq r1, r1, #0x2000
+moveq r1, r1, lsr #0xd
+streq r1, [r0, #0x0]
+moveq r0, #0x0
+bx lr
+.L_02034670: .word 0x4000600

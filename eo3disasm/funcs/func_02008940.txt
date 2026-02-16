@@ -1,0 +1,20 @@
+.arm
+func_02008940:
+stmdb sp!, {r3, r4, r5, lr}
+mov r5, r0
+bl func_02011da0
+mov r4, r0
+mov r0, r5
+mov r1, r4
+bl func_02008878
+cmp r0, #0x0
+blt .L_0200897c
+ldrb r1, [r5, r0]
+cmp r1, #0x2f
+cmpne r1, #0x5c
+moveq r1, #0x0
+moveq r4, r0
+streqb r1, [r5, r0]
+.L_0200897c:
+mov r0, r4
+ldmia sp!, {r3, r4, r5, pc}

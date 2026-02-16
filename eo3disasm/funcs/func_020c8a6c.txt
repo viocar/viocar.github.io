@@ -1,0 +1,59 @@
+.arm
+func_020c8a6c:
+cmp r0, #0xe
+mov r2, #0x0
+addls pc, pc, r0, lsl #0x2
+b .L_020c8b20
+.L_020c8a7c: ; jump table
+b .L_020c8b20 ; case 0
+b .L_020c8b20 ; case 1
+b .L_020c8b20 ; case 2
+b .L_020c8b20 ; case 3
+b .L_020c8ab8 ; case 4
+b .L_020c8ac8 ; case 5
+b .L_020c8ad8 ; case 6
+b .L_020c8ae4 ; case 7
+b .L_020c8b20 ; case 8
+b .L_020c8b20 ; case 9
+b .L_020c8b20 ; case 10
+b .L_020c8aec ; case 11
+b .L_020c8af8 ; case 12
+b .L_020c8b08 ; case 13
+b .L_020c8b18 ; case 14
+.L_020c8ab8:
+cmp r1, #0x0
+moveq r2, #0x2
+movne r2, #0xa
+b .L_020c8b20
+.L_020c8ac8:
+cmp r1, #0x0
+moveq r2, #0x4
+movne r2, #0xc
+b .L_020c8b20
+.L_020c8ad8:
+cmp r1, #0x0
+moveq r2, #0x6
+b .L_020c8b20
+.L_020c8ae4:
+mov r2, #0x9
+b .L_020c8b20
+.L_020c8aec:
+cmp r1, #0x0
+moveq r2, #0x5
+b .L_020c8b20
+.L_020c8af8:
+cmp r1, #0x0
+moveq r2, #0x8
+movne r2, #0xd
+b .L_020c8b20
+.L_020c8b08:
+cmp r1, #0x0
+moveq r2, #0x3
+movne r2, #0xb
+b .L_020c8b20
+.L_020c8b18:
+cmp r1, #0x0
+moveq r2, #0x7
+.L_020c8b20:
+mov r0, r2
+bx lr

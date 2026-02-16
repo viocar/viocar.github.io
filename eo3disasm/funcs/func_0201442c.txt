@@ -1,0 +1,4 @@
+.arm
+func_0201442c:
+add sp, sp, #0x8
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}

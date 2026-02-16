@@ -1,0 +1,7 @@
+.arm
+func_020110b8:
+stmdb sp!, {r3, lr}
+mov r0, #0x2
+bl func_02010cc0
+bl HandleError
+ldmia sp!, {r3, pc}

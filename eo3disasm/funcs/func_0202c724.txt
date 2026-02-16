@@ -1,0 +1,15 @@
+.arm
+func_0202c724:
+ldr r2, [.L_0202c750]
+mov r3, #0x0
+.L_0202c72c:
+ldr r1, [r2, r3, lsl #0x2]
+cmp r0, r1
+moveq r0, #0x1
+bxeq lr
+add r3, r3, #0x1
+cmp r3, #0x6
+blo .L_0202c72c
+mov r0, #0x0
+bx lr
+.L_0202c750: .word data_020e5980

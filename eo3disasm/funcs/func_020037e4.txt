@@ -1,0 +1,7 @@
+.arm
+func_020037e4:
+stmdb sp!, {r3, lr}
+bl func_02005278
+.L_020037ec:
+bl WaitForInterrupt
+b .L_020037ec

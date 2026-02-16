@@ -1,0 +1,27 @@
+.arm
+func_0209c51c:
+mov r1, r0, asr #0x8
+mov r0, r0, lsl #0x8
+and r1, r1, #0xff
+and r0, r0, #0xff00
+orr r0, r1, r0
+mov r2, r0, lsl #0x10
+ldr r12, [.L_0209c570]
+ldr r1, [.L_0209c574]
+mov r0, #0x0
+.L_0209c540:
+mov r3, r0, lsl #0x1
+ldrh r3, [r12, r3]
+cmp r3, r1
+beq .L_0209c568
+cmp r3, r2, lsr #0x10
+bxeq lr
+add r0, r0, #0x1
+mov r0, r0, lsl #0x10
+mov r0, r0, lsr #0x10
+b .L_0209c540
+.L_0209c568:
+ldr r0, [.L_0209c574]
+bx lr
+.L_0209c570: .word data_020e931c
+.L_0209c574: .word 0xffff

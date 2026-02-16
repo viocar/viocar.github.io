@@ -1,0 +1,18 @@
+.arm
+func_02024d74:
+stmdb sp!, {r4, lr}
+ldr lr, [r1, #0x1c]
+ldrh r3, [r1, #0x2e]
+mov r2, lr, lsl #0x1
+rsb r2, r2, #0x0
+add r2, r2, #0x2000
+ldr r4, [r1, #0x18]
+mul r1, r3, r2
+mov r12, #0x0
+str lr, [r0, #0x14]
+stmia r0, {r4, r12}
+mov r1, r1, lsl #0x3
+str r12, [r0, #0x30]
+str r1, [r0, #0x34]
+str r12, [r0, #0x10]
+ldmia sp!, {r4, pc}

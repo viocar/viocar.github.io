@@ -1,0 +1,13 @@
+.arm
+func_0202250c:
+cmp r0, #0x0
+beq .L_0202252c
+ldrb r2, [r0, #0x7]
+cmp r1, r2
+ldrloh r2, [r0, #0xa]
+addlo r0, r0, r2
+addlo r0, r0, r1, lsl #0x4
+bxlo lr
+.L_0202252c:
+mov r0, #0x0
+bx lr

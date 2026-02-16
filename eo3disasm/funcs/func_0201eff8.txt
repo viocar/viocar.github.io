@@ -1,0 +1,14 @@
+.arm
+func_0201eff8:
+cmp r0, #0x0
+bxeq lr
+ldr r3, [.L_0201f020]
+ldmia r0, {r0, r1, r2}
+stmia r3, {r0, r1, r2}
+ldr r0, [.L_0201f024]
+ldr r1, [r0, #0xfc]
+bic r1, r1, #0xa4
+str r1, [r0, #0xfc]
+bx lr
+.L_0201f020: .word 0x20f975c
+.L_0201f024: .word 0x20f9670

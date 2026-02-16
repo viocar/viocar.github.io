@@ -1,0 +1,40 @@
+.arm
+GetStats:
+stmdb sp!, {r3, r4, r5, lr}
+mov r5, r2
+mov r4, #0x0
+bl func_020a0398
+cmp r5, #0x6
+addls pc, pc, r5, lsl #0x2
+b .L_020a0a94
+.L_020a0a44: ; jump table
+b .L_020a0a60 ; case 0
+b .L_020a0a68 ; case 1
+b .L_020a0a70 ; case 2
+b .L_020a0a78 ; case 3
+b .L_020a0a80 ; case 4
+b .L_020a0a88 ; case 5
+b .L_020a0a90 ; case 6
+.L_020a0a60:
+ldr r4, [r0, #0x0]
+b .L_020a0a94
+.L_020a0a68:
+ldr r4, [r0, #0x4]
+b .L_020a0a94
+.L_020a0a70:
+ldrsh r4, [r0, #0x8]
+b .L_020a0a94
+.L_020a0a78:
+ldrsh r4, [r0, #0xa]
+b .L_020a0a94
+.L_020a0a80:
+ldrsh r4, [r0, #0xc]
+b .L_020a0a94
+.L_020a0a88:
+ldrsh r4, [r0, #0xe]
+b .L_020a0a94
+.L_020a0a90:
+ldrsh r4, [r0, #0x10]
+.L_020a0a94:
+mov r0, r4
+ldmia sp!, {r3, r4, r5, pc}

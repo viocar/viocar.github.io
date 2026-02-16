@@ -1,0 +1,19 @@
+.arm
+func_020b6f40:
+cmp r0, #0x0
+bne .L_020b6f58
+cmp r1, #0x1
+ldreq r0, [.L_020b6f70]
+ldrne r0, [.L_020b6f74]
+bx lr
+.L_020b6f58:
+cmp r0, #0x1
+bxne lr
+ldr r0, [.L_020b6f78]
+cmp r1, #0x1
+ldrne r0, [.L_020b6f7c]
+bx lr
+.L_020b6f70: .word data_020ec520
+.L_020b6f74: .word data_020ec52c
+.L_020b6f78: .word data_020ec530
+.L_020b6f7c: .word data_020ec544

@@ -1,0 +1,9 @@
+.arm
+func_0204c9d8:
+ldr r1, [.L_0204c9f0]
+mov r0, #0x1
+ldr r1, [r1, #0x4]
+cmp r1, #0x0
+movne r0, #0x0
+bx lr
+.L_0204c9f0: .word 0x21143c0

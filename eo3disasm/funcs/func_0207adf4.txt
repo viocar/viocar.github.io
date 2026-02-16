@@ -1,0 +1,122 @@
+.arm
+func_0207adf4:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x10
+ldrb r8, [sp, #0x38]
+mov r7, r0
+ldr r0, [sp, #0x3c]
+ldr r11, [sp, #0x40]
+mov r6, r1
+mov r5, r2
+mov r4, r3
+cmp r8, #0x3
+str r0, [sp, #0x3c]
+addls pc, pc, r8, lsl #0x2
+b .L_0207ae5c
+.L_0207ae28: ; jump table
+b .L_0207ae38 ; case 0
+b .L_0207ae44 ; case 1
+b .L_0207ae50 ; case 2
+b .L_0207ae5c ; case 3
+.L_0207ae38:
+mov r10, #0x9
+mov r0, #0xc
+b .L_0207ae64
+.L_0207ae44:
+mov r10, #0x8
+mov r0, #0xb
+b .L_0207ae64
+.L_0207ae50:
+mov r10, #0x6
+mov r0, #0xe
+b .L_0207ae64
+.L_0207ae5c:
+mov r10, #0xa
+mov r0, #0xd
+.L_0207ae64:
+str r0, [sp, #0xc]
+mov r9, #0x0
+ldr r1, [sp, #0xc]
+mov r0, r9
+bl func_02031844
+cmp r0, #0x0
+addeq sp, sp, #0x10
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+ldr r0, [sp, #0xc]
+mov r1, #0x3e8
+mul r8, r0, r1
+cmp r11, #0x0
+ble .L_0207aef8
+.L_0207ae98:
+ldr r2, [.L_0207afa8]
+mov r3, r7, lsr #0x1f
+smull lr, r12, r2, r7
+add r12, r3, r12, asr #0x2
+mov r2, #0xa
+smull r3, r12, r2, r12
+sub r12, r7, r3
+str r5, [sp, #0x0]
+mov r0, #0x0
+stmib sp, {r0, r4}
+mov r0, #0x2
+mov r1, #0x0
+add r2, r8, r12
+mov r3, r6
+bl func_ov000_01ffaa38
+add r9, r9, #0x1
+ldr r0, [.L_0207afa8]
+mov r2, r7
+smull r1, r7, r0, r2
+mov r0, r2, lsr #0x1f
+add r7, r0, r7, asr #0x2
+sub r6, r6, r10
+cmp r9, r11
+blt .L_0207ae98
+.L_0207aef8:
+mov r9, #0x0
+stmia sp, {r5, r9}
+mov r1, r9
+mov r3, r6
+add r2, r8, #0xb
+mov r0, #0x2
+str r4, [sp, #0x8]
+bl func_ov000_01ffaa38
+ldr r0, [sp, #0x3c]
+sub r6, r6, r10
+cmp r0, #0x0
+addle sp, sp, #0x10
+ldmleia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+ldr r11, [.L_0207afa8]
+.L_0207af30:
+cmp r7, #0x0
+bne .L_0207af44
+cmp r9, #0x0
+addgt sp, sp, #0x10
+ldmgtia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0207af44:
+mov r0, r7, lsr #0x1f
+smull r1, r2, r11, r7
+add r2, r0, r2, asr #0x2
+mov r3, #0xa
+smull r2, r12, r3, r2
+sub r2, r7, r2
+str r5, [sp, #0x0]
+mov r0, #0x0
+stmib sp, {r0, r4}
+mov r0, #0x2
+mov r1, #0x0
+add r2, r8, r2
+mov r3, r6
+bl func_ov000_01ffaa38
+mov r1, r7
+smull r0, r7, r11, r1
+mov r0, r1, lsr #0x1f
+add r7, r0, r7, asr #0x2
+ldr r0, [sp, #0x3c]
+add r9, r9, #0x1
+sub r6, r6, r10
+cmp r9, r0
+blt .L_0207af30
+add sp, sp, #0x10
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0207afa8: .word 0x66666667

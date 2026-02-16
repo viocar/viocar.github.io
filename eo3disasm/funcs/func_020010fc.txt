@@ -1,0 +1,33 @@
+.arm
+func_020010fc:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+ldr r6, [r0, #0x4]
+ldr r3, [r1, #0xc]
+ldr r4, [r1, #0x10]
+ldr lr, [r1, #0x14]
+smull r8, r7, r6, r4
+smull r12, r3, r6, r3
+smull r5, r4, r6, lr
+ldr r10, [r0, #0x0]
+ldmib r1, {r6, lr}
+ldr r9, [r1, #0x0]
+smlal r8, r7, r10, r6
+smlal r12, r3, r10, r9
+smlal r5, r4, r10, lr
+ldr lr, [r0, #0x8]
+ldr r9, [r1, #0x18]
+ldr r6, [r1, #0x1c]
+ldr r0, [r1, #0x20]
+smlal r8, r7, lr, r6
+smlal r12, r3, lr, r9
+smlal r5, r4, lr, r0
+mov r6, r12, lsr #0xc
+mov r1, r8, lsr #0xc
+mov r0, r5, lsr #0xc
+orr r6, r6, r3, lsl #0x14
+orr r1, r1, r7, lsl #0x14
+orr r0, r0, r4, lsl #0x14
+str r6, [r2, #0x0]
+str r1, [r2, #0x4]
+str r0, [r2, #0x8]
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}

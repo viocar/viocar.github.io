@@ -1,0 +1,14 @@
+.arm
+func_0208d64c:
+stmdb sp!, {r3, lr}
+ldrsb lr, [r0, #0x14]
+ldrsb r12, [r0, #0x15]
+ldrsb r3, [r0, #0x32]
+ldrsb r2, [r0, #0x33]
+mov r1, #0x0
+strb lr, [r0, #0x12]
+strb r12, [r0, #0x13]
+strb r3, [r0, #0x1b]
+strb r2, [r0, #0x1c]
+str r1, [r0, #0x2c]
+ldmia sp!, {r3, pc}

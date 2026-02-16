@@ -1,0 +1,23 @@
+.arm
+func_0201e674:
+stmdb sp!, {r3, lr}
+cmp r1, #0x0
+beq .L_0201e69c
+ldrh lr, [r0, #0x10]
+ldr r12, [r0, #0x8]
+mov r3, #0x0
+bic lr, lr, #0x1
+strh lr, [r0, #0x10]
+str r12, [r1, #0x0]
+str r3, [r0, #0x8]
+.L_0201e69c:
+cmp r2, #0x0
+ldmeqia sp!, {r3, pc}
+ldrh r12, [r0, #0x20]
+ldr r3, [r0, #0x18]
+mov r1, #0x0
+bic r12, r12, #0x1
+strh r12, [r0, #0x20]
+str r3, [r2, #0x0]
+str r1, [r0, #0x18]
+ldmia sp!, {r3, pc}

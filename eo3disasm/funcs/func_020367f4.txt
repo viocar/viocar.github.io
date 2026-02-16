@@ -1,0 +1,13 @@
+.arm
+func_020367f4:
+mov r3, #0x0
+mov r2, #0xc
+.L_020367fc:
+mul r12, r3, r2
+add r3, r3, #0x1
+mov r3, r3, lsl #0x10
+mov r3, r3, lsr #0x10
+strb r1, [r0, r12]
+cmp r3, #0x2
+blo .L_020367fc
+bx lr

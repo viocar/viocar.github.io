@@ -1,0 +1,13 @@
+.arm
+func_0200c090:
+stmdb sp!, {r4, lr}
+movs r4, r0
+ldmeqia sp!, {r4, pc}
+.L_0200c09c:
+ldr r0, [r4, #0x4]
+ldr r1, [r4, #0x0]
+blx r1
+ldr r4, [r4, #0xc]
+cmp r4, #0x0
+bne .L_0200c09c
+ldmia sp!, {r4, pc}

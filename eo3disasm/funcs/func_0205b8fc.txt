@@ -1,0 +1,59 @@
+.arm
+func_0205b8fc:
+stmdb sp!, {r4, r5, r6, lr}
+bl func_0204a6e8
+mov r6, r0
+bl func_0205ff20
+mov r5, #0x0
+mov r0, r5
+bl func_0205bb2c
+mov r4, #0x1
+mov r0, r4
+bl func_0205bb2c
+bl func_0207837c
+bl func_0204a968
+bl func_02066648
+bl func_02062060
+bl func_02061fac
+bl func_020629f8
+bl func_ov001_0215434c
+bl func_ov001_02154424
+bl func_ov001_02153dd8
+bl func_ov001_0214bc80
+bl func_02060048
+bl func_ov001_02157764 ; func_ov003_02157764
+bl func_ov001_02157ee8
+bl func_ov001_021581b4
+bl func_ov001_0215a010
+bl func_ov001_02159eb0
+bl func_ov001_0214fdec
+bl func_ov001_02156448
+bl func_ov001_0215636c
+bl func_020782e4
+add r0, r6, #0x3d8
+add r0, r0, #0x3400
+bl func_02078b34
+bl func_0206e9e8
+bl func_0206c018
+bl func_0206c0cc
+bl func_0206c154
+bl func_0206c348
+bl func_ov001_021467cc
+bl func_ov001_021468b0
+bl func_ov001_0214697c
+bl func_0206bf38
+bl func_0206a358
+bl func_020a1910
+bl func_0206a43c
+bl func_020a1988
+bl func_02080cb4
+bl func_02082318
+bl func_02063a78
+bl func_02063988
+mov r0, r5
+bl func_0206a5ac
+bl func_0204a758
+mov r0, r4
+bl func_0206c6e4
+mov r0, r4
+ldmia sp!, {r4, r5, r6, pc}

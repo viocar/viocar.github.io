@@ -1,0 +1,21 @@
+.arm
+func_020925dc:
+stmdb sp!, {r3, lr}
+ldr lr, [.L_02092624]
+mov r12, r0, lsr #0x1f
+smull r1, r2, lr, r0
+add r2, r12, r2, asr #0x3
+mov r3, #0x11
+smull r1, r2, r3, r2
+sub r2, r0, r1
+cmp r2, #0x8
+smullge r0, r2, lr, r0
+addge r2, r12, r2, asr #0x3
+sublt r1, r0, #0x11
+smulllt r0, r2, lr, r1
+movlt r0, r1, lsr #0x1f
+addlt r2, r0, r2, asr #0x3
+mov r0, r2, lsl #0x18
+mov r0, r0, asr #0x18
+ldmia sp!, {r3, pc}
+.L_02092624: .word 0x78787879

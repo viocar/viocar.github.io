@@ -1,0 +1,124 @@
+.arm
+func_020a5864:
+stmdb sp!, {r4, r5, r6, lr}
+mov r6, r0
+cmp r6, #0xa
+mov r4, #0x1
+addls pc, pc, r6, lsl #0x2
+ldmia sp!, {r4, r5, r6, pc}
+.L_020a587c: ; jump table
+b .L_020a58a8 ; case 0
+b .L_020a58b8 ; case 1
+b .L_020a58c8 ; case 2
+b .L_020a58d8 ; case 3
+b .L_020a5920 ; case 4
+b .L_020a594c ; case 5
+b .L_020a5978 ; case 6
+b .L_020a59dc ; case 7
+b .L_020a5998 ; case 8
+b .L_020a59bc ; case 9
+b .L_020a5a00 ; case 10
+.L_020a58a8:
+mov r1, #0x0
+mov r2, r1
+bl func_020a5a14
+ldmia sp!, {r4, r5, r6, pc}
+.L_020a58b8:
+mov r1, r4
+mov r2, #0x0
+bl func_020a5a14
+ldmia sp!, {r4, r5, r6, pc}
+.L_020a58c8:
+mov r1, #0x4
+mov r2, r4
+bl func_020a5a14
+ldmia sp!, {r4, r5, r6, pc}
+.L_020a58d8:
+bl func_0201b75c
+cmp r0, #0xe
+bne .L_020a58f4
+bl func_0202bccc
+mov r1, r0
+mov r0, #0x4
+b .L_020a5900
+.L_020a58f4:
+bl func_0202bccc
+mov r1, r0
+mov r0, r4
+.L_020a5900:
+bl func_0201c3fc
+mov r0, #0x27
+bl func_020850d0
+mov r0, r6
+mov r1, #0x5
+mov r2, #0x1
+bl func_020a5a14
+ldmia sp!, {r4, r5, r6, pc}
+.L_020a5920:
+bl func_0202bccc
+mov r1, r0
+mov r0, #0x2
+bl func_0201c3fc
+mov r0, #0x27
+bl func_020850d0
+mov r0, r6
+mov r1, #0x5
+mov r2, r4
+bl func_020a5a14
+ldmia sp!, {r4, r5, r6, pc}
+.L_020a594c:
+mov r5, #0x5
+mov r0, r5
+mov r1, r4
+bl func_0201c3fc
+mov r0, #0x27
+bl func_020850d0
+mov r0, r6
+mov r1, r5
+mov r2, r4
+bl func_020a5a14
+ldmia sp!, {r4, r5, r6, pc}
+.L_020a5978:
+bl func_0201c0a8
+mov r0, #0x0
+bl func_0201c6c4
+mov r0, r6
+mov r1, #0x6
+mov r2, r4
+bl func_020a5a14
+ldmia sp!, {r4, r5, r6, pc}
+.L_020a5998:
+bl func_0202bccc
+mov r1, r0
+mov r0, #0x3
+bl func_0201c3fc
+mov r0, r6
+mov r1, r4
+mov r2, #0x1e
+bl func_020a5a14
+ldmia sp!, {r4, r5, r6, pc}
+.L_020a59bc:
+bl func_0201c0a8
+mov r0, #0x0
+bl func_0201c6c4
+mov r0, r6
+mov r1, #0x2
+mov r2, #0x1e
+bl func_020a5a14
+ldmia sp!, {r4, r5, r6, pc}
+.L_020a59dc:
+bl func_0201bb9c
+ldr r2, [.L_020a5a10]
+mov r1, #0x0
+bl Memset
+mov r0, r6
+mov r1, #0x3
+mov r2, r4
+bl func_020a5a14
+ldmia sp!, {r4, r5, r6, pc}
+.L_020a5a00:
+mov r1, #0x7
+mov r2, #0x1e
+bl func_020a5a14
+ldmia sp!, {r4, r5, r6, pc}
+.L_020a5a10: .word 0x4424

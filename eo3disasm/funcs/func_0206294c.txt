@@ -1,0 +1,48 @@
+.arm
+func_0206294c:
+stmdb sp!, {r3, lr}
+sub sp, sp, #0x10
+ldrb r0, [r0, #0x620]
+ldr r12, [sp, #0x18]
+cmp r0, #0x0
+bne .L_020629b0
+str r12, [sp, #0x0]
+mvn r0, #0x0
+str r0, [sp, #0x4]
+cmp r1, #0x0
+str r0, [sp, #0x8]
+bne .L_02062994
+mov r0, #0x0
+mov r1, #0xa
+str r0, [sp, #0xc]
+bl func_0206212c
+add sp, sp, #0x10
+ldmia sp!, {r3, pc}
+.L_02062994:
+mov r12, #0x0
+mov r0, #0xa
+mov r1, #0x2
+str r12, [sp, #0xc]
+bl func_0206212c
+add sp, sp, #0x10
+ldmia sp!, {r3, pc}
+.L_020629b0:
+str r12, [sp, #0x0]
+mvn r0, #0x0
+str r0, [sp, #0x4]
+str r0, [sp, #0x8]
+cmp r1, #0x0
+mov r0, #0xa
+bne .L_020629e0
+mov r1, #0x0
+str r1, [sp, #0xc]
+bl func_0206212c
+add sp, sp, #0x10
+ldmia sp!, {r3, pc}
+.L_020629e0:
+mov r12, #0x0
+mov r1, #0x1
+str r12, [sp, #0xc]
+bl func_0206212c
+add sp, sp, #0x10
+ldmia sp!, {r3, pc}

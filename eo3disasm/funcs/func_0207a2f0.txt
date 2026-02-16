@@ -1,0 +1,120 @@
+.arm
+func_0207a2f0:
+stmdb sp!, {r3, lr}
+mov r3, #0x0
+mov lr, #0x4
+cmp r2, #0x0
+movne lr, #0x1
+mov r12, r3
+cmp r0, #0xb
+addls pc, pc, r0, lsl #0x2
+b .L_0207a3f8
+.L_0207a314: ; jump table
+b .L_0207a384 ; case 0
+b .L_0207a344 ; case 1
+b .L_0207a354 ; case 2
+b .L_0207a364 ; case 3
+b .L_0207a374 ; case 4
+b .L_0207a3ac ; case 5
+b .L_0207a3bc ; case 6
+b .L_0207a38c ; case 7
+b .L_0207a39c ; case 8
+b .L_0207a3cc ; case 9
+b .L_0207a3dc ; case 10
+b .L_0207a3ec ; case 11
+.L_0207a344:
+cmp r2, #0x0
+moveq r3, #0x20
+movne r3, #0x8
+b .L_0207a3f8
+.L_0207a354:
+cmp r2, #0x0
+moveq r3, #0x40
+movne r3, #0x10
+b .L_0207a3f8
+.L_0207a364:
+cmp r2, #0x0
+moveq r3, #0x60
+movne r3, #0x18
+b .L_0207a3f8
+.L_0207a374:
+cmp r2, #0x0
+moveq r3, #0x80
+movne r3, #0x20
+b .L_0207a3f8
+.L_0207a384:
+mov r3, #0x0
+b .L_0207a3f8
+.L_0207a38c:
+cmp r2, #0x0
+moveq r3, #0xe0
+movne r3, #0x38
+b .L_0207a3f8
+.L_0207a39c:
+cmp r2, #0x0
+moveq r3, #0x100
+movne r3, #0x40
+b .L_0207a3f8
+.L_0207a3ac:
+cmp r2, #0x0
+moveq r3, #0xa0
+movne r3, #0x28
+b .L_0207a3f8
+.L_0207a3bc:
+cmp r2, #0x0
+moveq r3, #0xc0
+movne r3, #0x30
+b .L_0207a3f8
+.L_0207a3cc:
+cmp r2, #0x0
+moveq r3, #0x120
+movne r3, #0x48
+b .L_0207a3f8
+.L_0207a3dc:
+cmp r2, #0x0
+moveq r3, #0x140
+movne r3, #0x50
+b .L_0207a3f8
+.L_0207a3ec:
+mov r3, #0x160
+cmp r2, #0x0
+movne r3, #0x58
+.L_0207a3f8:
+cmp r1, #0x7
+addls pc, pc, r1, lsl #0x2
+b .L_0207a460
+.L_0207a404: ; jump table
+b .L_0207a424 ; case 0
+b .L_0207a42c ; case 1
+b .L_0207a434 ; case 2
+b .L_0207a43c ; case 3
+b .L_0207a444 ; case 4
+b .L_0207a44c ; case 5
+b .L_0207a454 ; case 6
+b .L_0207a45c ; case 7
+.L_0207a424:
+mov r12, #0x1
+b .L_0207a460
+.L_0207a42c:
+mov r12, #0x3
+b .L_0207a460
+.L_0207a434:
+mov r12, #0x0
+b .L_0207a460
+.L_0207a43c:
+mov r12, #0x2
+b .L_0207a460
+.L_0207a444:
+mov r12, #0x5
+b .L_0207a460
+.L_0207a44c:
+mov r12, #0x7
+b .L_0207a460
+.L_0207a454:
+mov r12, #0x4
+b .L_0207a460
+.L_0207a45c:
+mov r12, #0x6
+.L_0207a460:
+mla r0, r12, lr, r3
+ldmia sp!, {r3, pc}

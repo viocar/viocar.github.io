@@ -1,0 +1,34 @@
+.arm
+func_02026e5c:
+stmdb sp!, {r3, r4, r5, lr}
+ldr r4, [.L_02026ed8]
+ldr r0, [r4, #0x0]
+cmp r0, #0x0
+ldmeqia sp!, {r3, r4, r5, pc}
+mov r5, #0x0
+ldr r1, [r4, #0xc]
+ldr r2, [r4, #0x14]
+mov r0, r5
+str r5, [r4, #0x1c]
+bl Memset32Aligned
+ldr r1, [r4, #0x10]
+ldr r2, [r4, #0x14]
+mov r0, r5
+bl Memset32Aligned
+ldr r0, [r4, #0xc]
+ldr r1, [r4, #0x14]
+bl DrainWriteBufferAndInvalidateDataCache
+ldr r0, [r4, #0x10]
+ldr r1, [r4, #0x14]
+bl DrainWriteBufferAndInvalidateDataCache
+ldr r1, [r4, #0x2c]
+mov r3, #0x0
+cmp r1, #0x0
+movge r0, #0x1
+movge r5, r0, lsl r1
+ldr r0, [r4, #0x24]
+ldr r1, [r4, #0x28]
+mov r2, r5
+bl func_020066ac
+ldmia sp!, {r3, r4, r5, pc}
+.L_02026ed8: .word 0x20fcfd0

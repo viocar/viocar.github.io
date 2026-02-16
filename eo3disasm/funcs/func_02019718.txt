@@ -1,0 +1,6 @@
+.arm
+func_02019718:
+stmdb sp!, {r4, r5, r6, r7, r11, r12, lr}
+mov r4, r1
+orr r4, r4, #0x1
+b .L_02019738

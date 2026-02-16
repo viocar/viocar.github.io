@@ -1,0 +1,4 @@
+.arm
+func_02009b74:
+mov r0, #0x0
+bx lr

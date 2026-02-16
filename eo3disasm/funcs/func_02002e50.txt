@@ -1,0 +1,9 @@
+.arm
+func_02002e50:
+ldr r1, [.L_02002e60]
+ldr r2, [.L_02002e64]
+ldr r12, [.L_02002e68]
+bx r12
+.L_02002e60: .word 0x2ffffe0
+.L_02002e64: .word func_02002e6c
+.L_02002e68: .word func_02002da8

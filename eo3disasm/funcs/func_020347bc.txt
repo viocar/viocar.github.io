@@ -1,0 +1,15 @@
+.arm
+func_020347bc:
+ldr r1, [.L_020347ec]
+mov r0, #0x4000000
+ldrh r1, [r1, #0x0]
+ldr r0, [r0, #0x0]
+and r0, r0, #0x7000000
+mov r0, r0, lsr #0x18
+and r1, r1, #0x3c
+mov r0, r0, lsl #0x10
+mov r1, r1, asr #0x2
+add r0, r0, #0x6000000
+add r0, r0, r1, lsl #0xe
+bx lr
+.L_020347ec: .word 0x400000a

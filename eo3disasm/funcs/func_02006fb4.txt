@@ -1,0 +1,17 @@
+.arm
+func_02006fb4:
+mov r12, #0x0
+ldr r3, [.L_02006fe8]
+mov r1, r12
+mov r0, #0xc
+.L_02006fc4:
+mul r2, r12, r0
+str r1, [r3, r2]
+add r2, r3, r2
+str r1, [r2, #0x4]
+add r12, r12, #0x1
+strb r1, [r2, #0x8]
+cmp r12, #0x8
+blt .L_02006fc4
+bx lr
+.L_02006fe8: .word 0x20ef540

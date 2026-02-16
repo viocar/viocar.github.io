@@ -1,0 +1,89 @@
+.arm
+func_0204a224:
+stmdb sp!, {r4, lr}
+mov r4, r0
+bl func_02049fc0
+cmn r4, #0x1
+moveq r0, #0x0
+ldmeqia sp!, {r4, pc}
+add r1, r0, #0x400
+ldrsb r2, [r1, #0xc2]
+add r2, r0, r2
+strb r4, [r2, #0x440]
+ldrsb r2, [r1, #0xc2]
+add r2, r2, #0x1
+strb r2, [r0, #0x4c2]
+ldrsb r1, [r1, #0xc2]
+cmp r1, #0x0
+movle r1, #0x0
+ble .L_0204a270
+cmp r1, #0x1e
+movge r1, #0x1e
+.L_0204a270:
+strb r1, [r0, #0x4c2]
+mov lr, #0x0
+.L_0204a278:
+add r1, r0, lr, lsl #0x3
+add r1, r1, #0x200
+ldrsh r2, [r1, #0x2]
+mov r12, lr, lsl #0x3
+cmp r4, r2
+bne .L_0204a2cc
+strh r4, [r1, #0x2]
+add r3, r0, #0x200
+ldrsh r2, [r3, r12]
+add r2, r2, #0x1
+strh r2, [r3, r12]
+ldrsh r2, [r1, #0x0]
+cmp r2, #0x0
+movle r2, #0x0
+ble .L_0204a2bc
+cmp r2, #0x3e8
+movge r2, #0x3e8
+.L_0204a2bc:
+add r1, r0, lr, lsl #0x3
+add r1, r1, #0x200
+strh r2, [r1, #0x0]
+b .L_0204a2e0
+.L_0204a2cc:
+add r1, lr, #0x1
+mov r1, r1, lsl #0x10
+mov lr, r1, asr #0x10
+cmp lr, #0x20
+blt .L_0204a278
+.L_0204a2e0:
+cmp lr, #0x20
+blt .L_0204a354
+mov lr, #0x0
+.L_0204a2ec:
+add r1, r0, lr, lsl #0x3
+add r1, r1, #0x200
+ldrsh r2, [r1, #0x2]
+mov r12, lr, lsl #0x3
+cmp r2, #0x0
+bne .L_0204a340
+strh r4, [r1, #0x2]
+add r3, r0, #0x200
+ldrsh r2, [r3, r12]
+add r2, r2, #0x1
+strh r2, [r3, r12]
+ldrsh r1, [r1, #0x0]
+cmp r1, #0x0
+movle r1, #0x0
+ble .L_0204a330
+cmp r1, #0x3e8
+movge r1, #0x3e8
+.L_0204a330:
+add r0, r0, lr, lsl #0x3
+add r0, r0, #0x200
+strh r1, [r0, #0x0]
+b .L_0204a354
+.L_0204a340:
+add r1, lr, #0x1
+mov r1, r1, lsl #0x10
+mov lr, r1, asr #0x10
+cmp lr, #0x20
+blt .L_0204a2ec
+.L_0204a354:
+mov r0, #0x1
+ldmia sp!, {r4, pc}

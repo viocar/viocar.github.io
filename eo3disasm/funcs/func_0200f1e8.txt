@@ -1,0 +1,26 @@
+.arm
+func_0200f1e8:
+ldrh r1, [r0, #0x4]
+cmp r1, #0x70
+movhi r0, #0x0
+bxhi lr
+ldrh r1, [r0, #0x18]
+cmp r1, #0xa
+blo .L_0200f20c
+cmp r1, #0x3e8
+bls .L_0200f214
+.L_0200f20c:
+mov r0, #0x0
+bx lr
+.L_0200f214:
+ldrh r0, [r0, #0x32]
+cmp r0, #0x1
+blo .L_0200f228
+cmp r0, #0xe
+bls .L_0200f230
+.L_0200f228:
+mov r0, #0x0
+bx lr
+.L_0200f230:
+mov r0, #0x1
+bx lr

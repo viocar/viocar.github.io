@@ -1,0 +1,6 @@
+.arm
+func_020056bc:
+ldr r1, [.L_020056c8]
+strb r0, [r1, #0x0]
+bx lr
+.L_020056c8: .word 0x4000247

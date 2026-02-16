@@ -1,0 +1,15 @@
+.arm
+HandleError:
+stmdb sp!, {r3, lr}
+ldr r0, [.L_020055a4]
+ldr r2, [r0, #0x0]
+cmp r2, #0x0
+beq .L_0200559c
+mov r1, #0x0
+str r1, [r0, #0x0]
+ldr r0, [r0, #0x4]
+blx r2
+.L_0200559c:
+bl FreezeGame
+ldmia sp!, {r3, pc}
+.L_020055a4: .word 0x20eda18

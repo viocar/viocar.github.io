@@ -1,0 +1,53 @@
+.arm
+func_020121b8:
+cmp r2, #0x20
+and r3, r1, #0xff
+blo .L_02012248
+rsb r1, r0, #0x0
+ands r12, r1, #0x3
+beq .L_020121e4
+sub r2, r2, r12
+and r1, r3, #0xff
+.L_020121d8:
+strb r1, [r0], #0x1
+subs r12, r12, #0x1
+bne .L_020121d8
+.L_020121e4:
+cmp r3, #0x0
+movne r1, r3, lsl #0x10
+orrne r1, r1, r3, lsl #0x18
+orrne r1, r1, r3, lsl #0x8
+orrne r3, r3, r1
+movs r1, r2, lsr #0x5
+beq .L_0201222c
+.L_02012200:
+str r3, [r0, #0x0]
+str r3, [r0, #0x4]
+str r3, [r0, #0x8]
+str r3, [r0, #0xc]
+str r3, [r0, #0x10]
+str r3, [r0, #0x14]
+str r3, [r0, #0x18]
+str r3, [r0, #0x1c]
+add r0, r0, #0x20
+subs r1, r1, #0x1
+bne .L_02012200
+.L_0201222c:
+and r1, r2, #0x1f
+movs r1, r1, lsr #0x2
+beq .L_02012244
+.L_02012238:
+str r3, [r0], #0x4
+subs r1, r1, #0x1
+bne .L_02012238
+.L_02012244:
+and r2, r2, #0x3
+.L_02012248:
+cmp r2, #0x0
+bxeq lr
+and r1, r3, #0xff
+.L_02012254:
+strb r1, [r0], #0x1
+subs r2, r2, #0x1
+bne .L_02012254
+bx lr

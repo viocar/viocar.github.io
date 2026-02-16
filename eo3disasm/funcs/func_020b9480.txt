@@ -1,0 +1,11 @@
+.arm
+func_020b9480:
+cmp r1, #0x5
+movhs r0, #0x0
+bxhs lr
+add r0, r0, r1, lsl #0x2
+ldr r0, [r0, #0x10]
+ldr r1, [r0, #0x0]
+tst r1, #0x1
+moveq r0, #0x0
+bx lr

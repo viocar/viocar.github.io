@@ -1,0 +1,17 @@
+.arm
+func_ov001_0214f8a8:
+mov r1, #0x0
+tst r0, #0x1
+orrne r1, r1, #0x1
+tst r0, #0x2
+orrne r1, r1, #0x2
+tst r0, #0x10
+orrne r1, r1, #0x4
+tst r0, #0x20
+orrne r1, r1, #0x8
+tst r0, #0x40
+orrne r1, r1, #0x10
+tst r0, #0x80
+orrne r1, r1, #0x20
+mov r0, r1
+bx lr

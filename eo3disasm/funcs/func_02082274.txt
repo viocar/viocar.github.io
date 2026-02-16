@@ -1,0 +1,18 @@
+.arm
+func_02082274:
+cmp r1, #0x0
+mov r12, #0x0
+beq .L_02082290
+ldr r3, [r0, #0x8]
+cmn r3, #0x1
+moveq r0, #0x0
+bxeq lr
+.L_02082290:
+mov r3, #0x13
+smlabb r0, r1, r3, r0
+add r0, r0, r2
+ldrb r0, [r0, #0xca]
+cmp r0, #0x0
+movne r12, #0x1
+mov r0, r12
+bx lr

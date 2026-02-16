@@ -1,0 +1,10 @@
+.arm
+func_0200cf98:
+stmdb sp!, {r3, lr}
+cmp r1, r2
+blo .L_0200cfac
+bl InvalidateEntireInstructionCache
+ldmia sp!, {r3, pc}
+.L_0200cfac:
+bl InvalidateInstructionCache
+ldmia sp!, {r3, pc}

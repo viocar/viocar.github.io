@@ -1,0 +1,46 @@
+.arm
+func_ov002_02137df0:
+stmdb sp!, {r3, lr}
+bl func_ov002_021432e0
+ldr r2, [r0, #0x4c]
+ldr r1, [r0, #0x50]
+add r1, r2, r1
+str r1, [r0, #0x4c]
+cmp r1, #0x80
+movgt r1, #0x80
+strgt r1, [r0, #0x4c]
+ldr r3, [r0, #0x8]
+ldr r1, [r0, #0x50]
+ldr r2, [.L_2_02137e98]
+add lr, r3, r1
+smull r1, r12, r2, lr
+add r12, lr, r12
+mov r1, lr, lsr #0x1f
+add r12, r1, r12, asr #0x8
+mov r3, #0x168
+smull r1, r2, r3, r12
+sub r12, lr, r1
+mov r1, #0xb6
+mul r1, r12, r1
+mov r2, r1, asr #0x4
+str r12, [r0, #0x8]
+ldr r1, [.L_2_02137e9c]
+mov r2, r2, lsl #0x2
+ldrsh r2, [r1, r2]
+mov r1, #0x180
+ldr r3, [r0, #0x4c]
+smulbb r1, r2, r1
+add r1, r3, r1, asr #0xc
+str r1, [r0, #0x40]
+ldr r1, [r0, #0x54]
+ldrsh r2, [r0, #0x48]
+mov r1, r1, lsl #0x10
+add r1, r2, r1, asr #0x10
+strh r1, [r0, #0x48]
+ldrsh r1, [r0, #0x48]
+cmp r1, #0x0
+addlt r1, r1, #0x168
+strlth r1, [r0, #0x48]
+ldmia sp!, {r3, pc}
+.L_2_02137e98: .word 0xb60b60b7
+.L_2_02137e9c: .word 0x20d9e6c

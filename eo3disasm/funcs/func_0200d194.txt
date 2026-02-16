@@ -1,0 +1,116 @@
+.arm
+func_0200d194:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+mov r9, r0
+ldr r5, [r9, #0x510]
+ldr r0, [.L_0200d320]
+ldr r6, [r9, #0x518]
+ldr r10, [r9, #0x514]
+mov r7, #0x100
+bl func_02000b64
+cmp r5, #0xb
+bne .L_0200d1c8
+bl func_0200d7e8
+mov r7, r0
+b .L_0200d1d8
+.L_0200d1c8:
+cmp r5, #0xf
+ldreq r0, [.L_0200d324]
+ldreq r0, [r0, #0x0]
+ldreq r7, [r0, #0x20]
+.L_0200d1d8:
+ldr r4, [.L_0200d328]
+mov r11, #0x9
+.L_0200d1e0:
+ldr r8, [r9, #0x504]
+ldr r0, [r9, #0x0]
+cmp r7, r8
+movlo r8, r7
+str r8, [r0, #0x14]
+ldr r0, [r9, #0x4]
+tst r0, #0x40
+beq .L_0200d21c
+ldr r1, [r9, #0x4]
+ldr r0, [r9, #0x0]
+bic r1, r1, #0x40
+str r1, [r9, #0x4]
+mov r1, #0x7
+str r1, [r0, #0x0]
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0200d21c:
+cmp r6, #0x3
+addls pc, pc, r6, lsl #0x2
+b .L_0200d2a0
+.L_0200d228: ; jump table
+b .L_0200d238 ; case 0
+b .L_0200d25c ; case 1
+b .L_0200d25c ; case 2
+b .L_0200d288 ; case 3
+.L_0200d238:
+mov r0, r4
+mov r1, r8
+bl InvalidateDataCacheLine
+ldr r1, [r9, #0x4fc]
+ldr r0, [r9, #0x0]
+str r1, [r0, #0xc]
+ldr r0, [r9, #0x0]
+str r4, [r0, #0x10]
+b .L_0200d2a0
+.L_0200d25c:
+ldr r0, [r9, #0x4fc]
+mov r1, r4
+mov r2, r8
+bl Memcpy
+mov r0, r4
+mov r1, r8
+bl DrainWriteBufferAndInvalidateDataCache
+bl DrainWriteBuffer
+ldr r0, [r9, #0x0]
+str r4, [r0, #0xc]
+b .L_0200d294
+.L_0200d288:
+ldr r1, [r9, #0x4fc]
+ldr r0, [r9, #0x0]
+str r1, [r0, #0xc]
+.L_0200d294:
+ldr r1, [r9, #0x500]
+ldr r0, [r9, #0x0]
+str r1, [r0, #0x10]
+.L_0200d2a0:
+mov r0, r9
+mov r1, r5
+mov r2, r10
+bl func_0200d044
+cmp r0, #0x0
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+cmp r6, #0x2
+bne .L_0200d2dc
+mov r0, r9
+mov r1, r11
+mov r2, #0x1
+bl func_0200d044
+cmp r0, #0x0
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+b .L_0200d2f4
+.L_0200d2dc:
+cmp r6, #0x0
+bne .L_0200d2f4
+ldr r1, [r9, #0x500]
+mov r0, r4
+mov r2, r8
+bl Memcpy
+.L_0200d2f4:
+ldr r0, [r9, #0x4fc]
+ldr r2, [r9, #0x500]
+ldr r1, [r9, #0x504]
+add r0, r0, r8
+add r2, r2, r8
+subs r1, r1, r8
+str r0, [r9, #0x4fc]
+str r2, [r9, #0x500]
+str r1, [r9, #0x504]
+bne .L_0200d1e0
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0200d320: .word 0x2000bac
+.L_0200d324: .word 0x20ef9e0
+.L_0200d328: .word 0x20eff20

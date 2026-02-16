@@ -1,0 +1,8 @@
+.arm
+func_02049f90:
+stmdb sp!, {r3, lr}
+bl func_02049fb4
+mov r1, #0x0
+mov r2, #0x54
+bl Memset
+ldmia sp!, {r3, pc}

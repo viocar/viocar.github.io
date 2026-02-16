@@ -1,0 +1,102 @@
+.arm
+func_0203aee0:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r5, r1
+ldr r1, [r5, #0x0]
+mov r4, r2
+mov r3, #0x0
+str r1, [r4, #0x0]
+strb r3, [r4, #0x10c]
+strb r3, [r4, #0x10d]
+strb r3, [r4, #0x10e]
+ldrb r7, [r5, #0x30]
+ldrb r2, [r5, #0x31]
+add r1, r5, #0x9c
+add r6, r4, #0x18
+strb r7, [r4, #0x8]
+strb r2, [r4, #0x9]
+ldrb r7, [r5, #0x32]
+ldrb r2, [r5, #0x33]
+mov r12, r0
+add lr, r5, #0x5c
+strb r7, [r4, #0xa]
+strb r2, [r4, #0xb]
+ldmia r1, {r0, r1, r2}
+stmia r6, {r0, r1, r2}
+add r6, r4, #0xc
+ldmia lr, {r0, r1, r2}
+stmia r6, {r0, r1, r2}
+ldrb lr, [r4, #0x8]
+ldrb r2, [r4, #0x9]
+ldrb r1, [r4, #0xa]
+ldrb r0, [r4, #0xb]
+ldr r6, [r12, #0x1c]
+mov r12, lr, lsl #0xc
+str r6, [r4, #0x80]
+sub lr, r3, #0x800
+str r12, [r4, #0xc4]
+mov r12, #0x800
+mov r2, r2, lsl #0xc
+str r2, [r4, #0xc8]
+mov r1, r1, lsl #0xc
+mov r0, r0, lsl #0xc
+strh lr, [r4, #0x30]
+strh r12, [r4, #0x32]
+strh lr, [r4, #0x44]
+strh lr, [r4, #0x46]
+strh r12, [r4, #0x58]
+strh lr, [r4, #0x5a]
+strh r12, [r4, #0x6c]
+strh r12, [r4, #0x6e]
+str r1, [r4, #0xcc]
+str r0, [r4, #0xd0]
+ldrb r0, [r5, #0x25]
+cmp r0, #0x1
+bne .L_0203afc8
+ldr r1, [.L_0203b060]
+mov r0, r3
+bl func_0202e6b4
+mov r0, r0, lsl #0xc
+str r0, [r4, #0x20]
+.L_0203afc8:
+ldrb r0, [r5, #0x25]
+cmp r0, #0x1
+bne .L_0203afe0
+mov r0, #0x0
+mov r1, #0x1
+bl func_0202e6b4
+.L_0203afe0:
+strb r0, [r4, #0x111]
+ldrsb r1, [r5, #0x26]
+mov r0, #0x0
+bl func_0202e6b4
+rsb r0, r0, #0xa
+strb r0, [r4, #0x112]
+add r0, r4, #0x100
+ldrsb r1, [r0, #0x12]
+ldr r0, [.L_0203b064]
+ldr r3, [r4, #0xc]
+mul r0, r1, r0
+smull r3, r5, r0, r3
+adds lr, r3, #0x800
+ldr r2, [r4, #0x10]
+ldr r1, [r4, #0x14]
+smull r2, r3, r0, r2
+adc r12, r5, #0x0
+adds r5, r2, #0x800
+smull r2, r1, r0, r1
+adc r0, r3, #0x0
+mov r3, r5, lsr #0xc
+mov lr, lr, lsr #0xc
+orr r3, r3, r0, lsl #0x14
+adds r2, r2, #0x800
+adc r0, r1, #0x0
+mov r1, r2, lsr #0xc
+orr lr, lr, r12, lsl #0x14
+orr r1, r1, r0, lsl #0x14
+str lr, [r4, #0xc]
+str r3, [r4, #0x10]
+str r1, [r4, #0x14]
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_0203b060: .word 0x167
+.L_0203b064: .word 0x19a

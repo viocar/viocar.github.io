@@ -1,0 +1,38 @@
+.arm
+func_020772f0:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, lr}
+sub sp, sp, #0x4
+mov r4, r1
+mov r7, #0x3
+mov r5, r0
+mov r6, #0x0
+mov r8, r2
+mov r0, r4
+mov r1, r7
+mov r2, r6
+bl GetStats
+mov r0, r0, lsl #0x10
+str r8, [sp, #0x0]
+ldrsh r1, [r4, #0xa0]
+mov r2, r0, asr #0x10
+mov r3, r6
+mov r0, r5
+bl func_02077380
+mov r1, r7
+mov r0, r4
+mov r6, #0x1
+mov r2, r6
+bl GetStats
+str r8, [sp, #0x0]
+mov r0, r0, lsl #0x10
+mov r2, r0, asr #0x10
+mov r0, r5
+ldrsh r1, [r4, #0xa2]
+mov r3, r6
+bl func_02077380
+mov r0, r5
+mov r1, r4
+bl func_0207749c
+mov r0, r6
+add sp, sp, #0x4
+ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}

@@ -1,0 +1,131 @@
+.arm
+func_ov003_02139874:
+stmdb sp!, {r3, r4, r5, r6, lr}
+sub sp, sp, #0x4
+mov r4, r0
+ldr r1, [r4, #0x44]
+cmp r1, #0x3
+addls pc, pc, r1, lsl #0x2
+b .L_3_02139a14
+.L_3_02139890: ; jump table
+b .L_3_02139a14 ; case 0
+b .L_3_02139958 ; case 1
+b .L_3_021398a0 ; case 2
+b .L_3_02139904 ; case 3
+.L_3_021398a0:
+bl func_ov003_021397ac
+cmp r0, #0x0
+beq .L_3_02139a14
+ldr r0, [r4, #0x4c]
+mov r1, #0x6
+mov r6, #0x0
+str r0, [sp, #0x0]
+mov r3, r6
+add r0, r4, #0x50
+sub r2, r1, #0x76
+bl func_02079c88
+mov r5, r0
+ldr r3, [r4, #0x4c]
+mov r0, r6
+mov r1, #0x1f
+mov r2, #0x4
+bl func_0202e7e0
+ldr r1, [r4, #0x4c]
+strb r0, [r4, #0x80]
+add r0, r1, #0x1
+str r0, [r4, #0x4c]
+cmp r5, #0x0
+movne r0, #0x1
+strne r0, [r4, #0x44]
+b .L_3_02139a14
+.L_3_02139904:
+ldr r0, [r4, #0x4c]
+mov r6, #0x0
+str r0, [sp, #0x0]
+mov r2, r6
+add r0, r4, #0x50
+sub r3, r6, #0x70
+mov r1, #0x6
+bl func_02079c88
+mov r5, r0
+ldr r3, [r4, #0x4c]
+mov r1, r6
+mov r0, #0x1f
+mov r2, #0x4
+bl func_0202e7e0
+cmp r5, #0x0
+ldr r1, [r4, #0x4c]
+strb r0, [r4, #0x80]
+add r0, r1, #0x1
+str r0, [r4, #0x4c]
+strne r6, [r4, #0x44]
+b .L_3_02139a14
+.L_3_02139958:
+ldr r1, [r4, #0x48]
+cmp r1, #0x0
+ldrne r1, [r4, #0x7c]
+cmpne r1, #0x0
+beq .L_3_02139a14
+bl func_ov003_02139dfc
+ldrb r0, [r4, #0x81]
+cmp r0, #0x1
+ldrneb r0, [r4, #0x84]
+cmpne r0, #0x1
+beq .L_3_02139a14
+ldr r0, [r4, #0x74]
+bl func_ov003_0213a390
+cmn r0, #0x1
+bne .L_3_0213999c
+ldrb r0, [r4, #0x85]
+b .L_3_02139a08
+.L_3_0213999c:
+ldr r1, [r4, #0x40]
+cmp r1, #0x0
+bne .L_3_021399c4
+mov r1, #0x1
+bl func_020b439c
+cmp r0, #0x0
+ldrb r0, [r4, #0x85]
+beq .L_3_021399c0
+b .L_3_021399fc
+.L_3_021399c0:
+b .L_3_02139a08
+.L_3_021399c4:
+cmp r1, #0x1
+bne .L_3_021399e8
+mov r1, #0x1
+bl func_020b4440
+cmp r0, #0x0
+ldrb r0, [r4, #0x85]
+beq .L_3_021399e4
+b .L_3_021399fc
+.L_3_021399e4:
+b .L_3_02139a08
+.L_3_021399e8:
+mov r1, #0x0
+bl func_020c79cc
+cmp r0, #0x0
+ldrb r0, [r4, #0x85]
+beq .L_3_02139a08
+.L_3_021399fc:
+cmp r0, #0x0
+moveq r0, #0x2
+b .L_3_02139a10
+.L_3_02139a08:
+cmp r0, #0x1
+moveq r0, #0x3
+.L_3_02139a10:
+streqb r0, [r4, #0x85]
+.L_3_02139a14:
+ldr r0, [r4, #0x30]
+cmp r0, #0x0
+beq .L_3_02139a34
+ldr r1, [r4, #0x74]
+ldr r2, [r4, #0x78]
+bl func_020694a8
+mvn r0, #0x0
+str r0, [r4, #0x78]
+.L_3_02139a34:
+mov r0, #0x0
+add sp, sp, #0x4
+ldmia sp!, {r3, r4, r5, r6, pc}

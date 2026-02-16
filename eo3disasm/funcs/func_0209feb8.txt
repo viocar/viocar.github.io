@@ -1,0 +1,15 @@
+.arm
+func_0209feb8:
+stmdb sp!, {r4, r5, r6, lr}
+mov r6, r0
+mov r5, r1
+bl func_0209fcb8
+ldr r4, [.L_0209fee8]
+mov r2, r6
+mov r1, r4
+bl func_0209fccc
+mov r0, r4
+mov r1, r5
+bl func_0209fe7c
+ldmia sp!, {r4, r5, r6, pc}
+.L_0209fee8: .word 0x2135458

@@ -1,0 +1,45 @@
+.arm
+func_020b8b1c:
+stmdb sp!, {r4, r5, r6, lr}
+bl func_020b89cc
+mov r4, r0
+mov r0, #0x23
+str r0, [r4, #0x24]
+mov r0, #0x0
+str r0, [r4, #0x28]
+str r0, [r4, #0x2c]
+str r0, [r4, #0x30]
+mov r1, #0xa
+str r1, [r4, #0x34]
+str r0, [r4, #0x38]
+str r0, [r4, #0x3c]
+str r0, [r4, #0x40]
+bl func_02035ac8
+cmp r0, #0x0
+bne .L_020b8b70
+ldr r0, [r4, #0x28]
+bl func_02035a48
+mov r0, #0x1
+str r0, [r4, #0x30]
+.L_020b8b70:
+mov r6, #0x0
+mov r5, #0x1
+.L_020b8b78:
+add r1, r4, r6, lsl #0x4
+ldr r0, [r1, #0x28]
+ldr r1, [r1, #0x24]
+bl func_02031844
+cmp r0, #0x0
+bne .L_020b8ba8
+add r1, r4, r6, lsl #0x4
+ldr r0, [r1, #0x28]
+ldr r1, [r1, #0x24]
+bl func_020316bc
+add r0, r4, r6, lsl #0x4
+str r5, [r0, #0x2c]
+.L_020b8ba8:
+add r0, r6, #0x1
+and r6, r0, #0xff
+cmp r6, #0x2
+blo .L_020b8b78
+ldmia sp!, {r4, r5, r6, pc}

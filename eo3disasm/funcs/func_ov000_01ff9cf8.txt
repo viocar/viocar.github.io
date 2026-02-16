@@ -1,0 +1,40 @@
+.arm
+func_ov000_01ff9cf8:
+stmdb sp!, {r3, lr}
+bl func_0202f19c
+cmp r0, #0x1
+bne .L_0_01ff9d58
+ldr r0, [.L_0_01ff9d78]
+mov r1, #0x0
+str r1, [r0, #0xc4]
+ldr r3, [r0, #0xc0]
+cmp r3, #0x40
+bge .L_0_01ff9d44
+ldr r2, [.L_0_01ff9d7c]
+.L_0_01ff9d24:
+ldrb r1, [r2, r3]
+add r3, r3, #0x1
+cmp r1, #0x0
+ldrne r1, [r0, #0xc4]
+addne r1, r1, #0x1
+strne r1, [r0, #0xc4]
+cmp r3, #0x40
+blt .L_0_01ff9d24
+.L_0_01ff9d44:
+ldr r0, [.L_0_01ff9d78]
+ldr r2, [r0, #0xc4]
+ldr r1, [r0, #0xc0]
+add r1, r2, r1
+str r1, [r0, #0xc4]
+.L_0_01ff9d58:
+mov r2, #0x0
+ldr r0, [.L_0_01ff9d7c]
+mov r1, r2
+.L_0_01ff9d64:
+strb r1, [r0, r2]
+add r2, r2, #0x1
+cmp r2, #0x40
+blt .L_0_01ff9d64
+ldmia sp!, {r3, pc}
+.L_0_01ff9d78: .word 0x20ff62c
+.L_0_01ff9d7c: .word 0x01ffc6a8

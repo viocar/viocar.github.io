@@ -1,0 +1,119 @@
+.arm
+func_02042640:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+mov r7, r2
+mov r8, r0
+cmp r7, #0x1
+addeq r6, r8, #0x3c8
+addne r0, r8, #0xc4
+addne r6, r0, #0x400
+mov r0, #0x54
+smulbb r5, r1, r0
+add r4, r6, #0x8
+ldr r0, [r4, r5]
+tst r0, #0x200
+beq .L_02042698
+cmp r3, #0x0
+bne .L_02042698
+add r2, r8, #0x500
+mov r3, #0x0
+add r0, r8, #0x8
+mov r1, #0x20000000
+strh r3, [r2, #0xfc]
+strh r3, [r2, #0xfe]
+bl func_0204a7c4
+.L_02042698:
+ldr r0, [r4, r5]
+tst r0, #0x10000
+beq .L_020426b0
+add r0, r8, #0x28
+mov r1, #0x10000
+bl func_0204a7c4
+.L_020426b0:
+ldr r0, [r4, r5]
+tst r0, #0x20000
+beq .L_020426c8
+add r0, r8, #0x10
+mov r1, #0x2
+bl func_0204a7c4
+.L_020426c8:
+ldr r0, [r4, r5]
+tst r0, #0x40000
+beq .L_020426e0
+add r0, r8, #0x10
+mov r1, #0x4
+bl func_0204a7c4
+.L_020426e0:
+ldr r0, [r4, r5]
+tst r0, #0x800000
+beq .L_020426f8
+add r0, r8, #0x10
+mov r1, #0x10000
+bl func_0204a7c4
+.L_020426f8:
+ldr r0, [r4, r5]
+tst r0, #0x1000000
+beq .L_02042710
+add r0, r8, #0x10
+mov r1, #0x20000
+bl func_0204a7c4
+.L_02042710:
+ldr r0, [r4, r5]
+tst r0, #0x80000
+beq .L_02042728
+add r0, r8, #0x10
+mov r1, #0x8
+bl func_0204a7c4
+.L_02042728:
+ldr r0, [r4, r5]
+tst r0, #0x100000
+beq .L_02042740
+add r0, r8, #0x10
+mov r1, #0x10
+bl func_0204a7c4
+.L_02042740:
+ldr r0, [r4, r5]
+tst r0, #0x400
+beq .L_02042764
+ldrsb r0, [r6, r5]
+cmp r0, #0x0
+bgt .L_02042764
+add r0, r8, #0x8
+mov r1, #0x4000000
+bl func_0204a7b4
+.L_02042764:
+cmp r7, #0x1
+bne .L_020427c4
+ldrb r0, [r8, #0x620]
+add r1, r8, #0x224
+add r1, r1, #0x400
+mov r2, #0x118
+mov r3, #0x0
+bl func_0206aa80
+cmp r0, #0x0
+beq .L_02042798
+add r0, r8, #0xc
+mov r1, #0x80000
+bl func_0204a7b4
+.L_02042798:
+ldrb r0, [r8, #0x620]
+add r1, r8, #0x224
+ldr r2, [.L_020427e4]
+add r1, r1, #0x400
+mov r3, #0x0
+bl func_0206aa80
+cmp r0, #0x0
+beq .L_020427c4
+add r0, r8, #0xc
+mov r1, #0x100000
+bl func_0204a7b4
+.L_020427c4:
+add r0, r6, r5
+mov r1, #0x0
+mov r2, #0x54
+bl Memset
+mov r0, r8
+mov r1, #0x1
+bl func_02048c18
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020427e4: .word 0x119

@@ -1,0 +1,9 @@
+.arm
+func_0200c1f4:
+ldr r1, [.L_0200c208]
+ldr r0, [.L_0200c20c]
+ldr r1, [r1, #0x0]
+str r1, [r0, #0x8]
+bx lr
+.L_0200c208: .word 0x2fffc3c
+.L_0200c20c: .word 0x20ef8fc

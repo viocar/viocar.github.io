@@ -1,0 +1,40 @@
+.arm
+func_ov003_0214fbd0:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+sub sp, sp, #0x8
+mov r8, r0
+ldr r0, [r8, #0x0]
+ldr r6, [.L_3_0214fc5c]
+mov r0, r0, lsl #0x1
+ldrsh r0, [r6, r0]
+mov r7, #0x0
+cmp r0, #0x0
+addle sp, sp, #0x8
+ldmleia sp!, {r4, r5, r6, r7, r8, pc}
+mvn r5, #0x0
+mov r4, r7
+.L_3_0214fc04:
+ldr r0, [r8, #0x40]
+add r0, r0, r7
+add r0, r8, r0, lsl #0x1
+ldrsh r2, [r0, #0x60]
+cmp r2, r5
+beq .L_3_0214fc3c
+ldr r1, [r8, #0xc]
+add r0, r8, r7, lsl #0x2
+stmia sp, {r1, r2}
+ldr r0, [r0, #0x10]
+mov r1, r5
+mov r2, r4
+mov r3, r4
+bl func_0201d288
+.L_3_0214fc3c:
+ldr r0, [r8, #0x0]
+add r7, r7, #0x1
+mov r0, r0, lsl #0x1
+ldrsh r0, [r6, r0]
+cmp r7, r0
+blt .L_3_0214fc04
+add sp, sp, #0x8
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_3_0214fc5c: .word data_ov003_0216623c

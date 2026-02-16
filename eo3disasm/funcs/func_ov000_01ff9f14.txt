@@ -1,0 +1,12 @@
+.arm
+func_ov000_01ff9f14:
+cmp r0, #0x1
+ldreq r0, [.L_0_01ff9f38]
+ldreq r1, [r0, #0x20]
+ldrne r0, [.L_0_01ff9f38]
+orreq r1, r1, #0x800
+ldrne r1, [r0, #0x20]
+bicne r1, r1, #0x800
+str r1, [r0, #0x20]
+bx lr
+.L_0_01ff9f38: .word 0x20ff62c

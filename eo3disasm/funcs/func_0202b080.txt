@@ -1,0 +1,24 @@
+.arm
+func_0202b080:
+stmdb sp!, {r4, lr}
+ldr r4, [.L_0202b0d4]
+mov r2, #0x0
+ldr r1, [r4, #0x4]
+add r1, r1, #0x1000
+ldr r3, [r1, #0x218]
+str r3, [r1, #0x434]
+ldr r1, [r4, #0x4]
+add r1, r1, #0x1000
+str r0, [r1, #0x430]
+ldr r0, [r4, #0x4]
+add r1, r0, #0x1000
+ldr r0, [r1, #0x434]
+ldr r1, [r1, #0x430]
+bl func_0202aa5c
+ldr r0, [r4, #0x4]
+add r0, r0, #0x1000
+ldr r1, [r0, #0x218]
+add r1, r1, #0x6000
+str r1, [r0, #0x218]
+ldmia sp!, {r4, pc}
+.L_0202b0d4: .word 0x20fe780

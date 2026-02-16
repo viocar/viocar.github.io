@@ -1,0 +1,12 @@
+.arm
+func_0206a7c8:
+cmp r0, #0xc
+mvn r2, #0x0
+ldrlt r3, [.L_0206a7ec]
+movlt r2, #0x26
+mlalt r2, r0, r2, r3
+movlt r0, r1, lsl #0x1
+ldrltsh r2, [r0, r2]
+mov r0, r2
+bx lr
+.L_0206a7ec: .word data_020e773c

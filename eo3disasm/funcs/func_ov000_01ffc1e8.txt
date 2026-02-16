@@ -1,0 +1,126 @@
+.arm
+func_ov000_01ffc1e8:
+stmdb sp!, {r4, lr}
+ldr r4, [r0, #0x4]
+mov r0, #0x0
+ldrb lr, [r4, #0x5]
+mov r12, r0
+cmp lr, #0x7
+addls pc, pc, lr, lsl #0x2
+b .L_0_01ffc264
+.L_0_01ffc208: ; jump table
+b .L_0_01ffc230 ; case 0
+b .L_0_01ffc238 ; case 1
+b .L_0_01ffc240 ; case 2
+b .L_0_01ffc248 ; case 3
+b .L_0_01ffc250 ; case 4
+b .L_0_01ffc228 ; case 5
+b .L_0_01ffc258 ; case 6
+b .L_0_01ffc260 ; case 7
+.L_0_01ffc228:
+mov r0, #0x100
+b .L_0_01ffc264
+.L_0_01ffc230:
+mov r0, #0x8
+b .L_0_01ffc264
+.L_0_01ffc238:
+mov r0, #0x10
+b .L_0_01ffc264
+.L_0_01ffc240:
+mov r0, #0x20
+b .L_0_01ffc264
+.L_0_01ffc248:
+mov r0, #0x40
+b .L_0_01ffc264
+.L_0_01ffc250:
+mov r0, #0x80
+b .L_0_01ffc264
+.L_0_01ffc258:
+mov r0, #0x200
+b .L_0_01ffc264
+.L_0_01ffc260:
+mov r0, #0x400
+.L_0_01ffc264:
+ldrb lr, [r4, #0x6]
+cmp lr, #0x7
+addls pc, pc, lr, lsl #0x2
+b .L_0_01ffc2d0
+.L_0_01ffc274: ; jump table
+b .L_0_01ffc29c ; case 0
+b .L_0_01ffc2a4 ; case 1
+b .L_0_01ffc2ac ; case 2
+b .L_0_01ffc2b4 ; case 3
+b .L_0_01ffc2bc ; case 4
+b .L_0_01ffc294 ; case 5
+b .L_0_01ffc2c4 ; case 6
+b .L_0_01ffc2cc ; case 7
+.L_0_01ffc294:
+mov r12, #0x100
+b .L_0_01ffc2d0
+.L_0_01ffc29c:
+mov r12, #0x8
+b .L_0_01ffc2d0
+.L_0_01ffc2a4:
+mov r12, #0x10
+b .L_0_01ffc2d0
+.L_0_01ffc2ac:
+mov r12, #0x20
+b .L_0_01ffc2d0
+.L_0_01ffc2b4:
+mov r12, #0x40
+b .L_0_01ffc2d0
+.L_0_01ffc2bc:
+mov r12, #0x80
+b .L_0_01ffc2d0
+.L_0_01ffc2c4:
+mov r12, #0x200
+b .L_0_01ffc2d0
+.L_0_01ffc2cc:
+mov r12, #0x400
+.L_0_01ffc2d0:
+ldrb lr, [r4, #0x4]
+cmp lr, #0x7
+addls pc, pc, lr, lsl #0x2
+b .L_0_01ffc350
+.L_0_01ffc2e0: ; jump table
+b .L_0_01ffc350 ; case 0
+b .L_0_01ffc32c ; case 1
+b .L_0_01ffc300 ; case 2
+b .L_0_01ffc314 ; case 3
+b .L_0_01ffc328 ; case 4
+b .L_0_01ffc350 ; case 5
+b .L_0_01ffc32c ; case 6
+b .L_0_01ffc33c ; case 7
+.L_0_01ffc300:
+mul lr, r0, r12
+mov lr, lr, lsr #0x2
+str lr, [r1, #0x0]
+mov r1, #0x8
+b .L_0_01ffc34c
+.L_0_01ffc314:
+mul lr, r0, r12
+mov lr, lr, lsr #0x1
+str lr, [r1, #0x0]
+mov r1, #0x20
+b .L_0_01ffc34c
+.L_0_01ffc328:
+b .L_0_01ffc32c
+.L_0_01ffc32c:
+mul lr, r0, r12
+str lr, [r1, #0x0]
+mov r1, #0x200
+b .L_0_01ffc34c
+.L_0_01ffc33c:
+mul lr, r0, r12
+mov lr, lr, lsl #0x1
+str lr, [r1, #0x0]
+mov r1, #0x0
+.L_0_01ffc34c:
+str r1, [r2, #0x0]
+.L_0_01ffc350:
+cmp r3, #0x0
+strne r0, [r3, #0x0]
+ldr r0, [sp, #0x8]
+cmp r0, #0x0
+strne r12, [r0, #0x0]
+ldmia sp!, {r4, pc}

@@ -1,0 +1,51 @@
+.arm
+func_02096c64:
+stmdb sp!, {r4, r5, r6, lr}
+mov r5, r0
+mov r0, #0x0
+bl func_0209d878
+mov r4, r0
+mov r0, #0x1
+bl func_0209d878
+mov r6, r0
+bl func_020925bc
+ldr r2, [.L_02096d24]
+ldr r0, [r0, #0xfc]
+smull r1, lr, r2, r4
+mov r1, r4, lsr #0x1f
+add lr, r1, lr, asr #0x1
+add r1, lr, lr, lsl #0x2
+add r3, r1, #0x2
+sub r0, r6, r0
+smull r1, r12, r2, r0
+mov r1, r0, lsr #0x1f
+add r12, r1, r12, asr #0x1
+cmp r3, r4
+str lr, [r5, #0x0]
+subge r1, lr, #0x1
+str r12, [r5, #0x4]
+strge r1, [r5, #0x0]
+ldr r1, [r5, #0x4]
+add r2, r1, r1, lsl #0x2
+add r2, r2, #0x2
+cmp r2, r0
+subge r0, r1, #0x1
+strge r0, [r5, #0x4]
+ldr r0, [r5, #0x0]
+cmp r0, #0x6
+movge r0, #0x5
+strge r0, [r5, #0x0]
+ldr r0, [r5, #0x0]
+cmp r0, #0x0
+movlt r0, #0x0
+strlt r0, [r5, #0x0]
+ldr r0, [r5, #0x4]
+cmp r0, #0x5
+movge r0, #0x4
+strge r0, [r5, #0x4]
+ldr r0, [r5, #0x4]
+cmp r0, #0x0
+movlt r0, #0x0
+strlt r0, [r5, #0x4]
+ldmia sp!, {r4, r5, r6, pc}
+.L_02096d24: .word 0x66666667

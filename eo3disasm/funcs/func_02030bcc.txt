@@ -1,0 +1,8 @@
+.arm
+func_02030bcc:
+ldr r0, [r1, #0x1c]
+tst r0, #0x1
+bicne r0, r0, #0x1
+orrne r0, r0, #0x4
+strne r0, [r1, #0x1c]
+bx lr

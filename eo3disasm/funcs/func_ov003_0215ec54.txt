@@ -1,0 +1,93 @@
+.arm
+func_ov003_0215ec54:
+stmdb sp!, {r3, lr}
+bl func_020d6b68
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r3, pc}
+ldr r0, [r0, #0x95c]
+cmp r0, #0x29
+addls pc, pc, r0, lsl #0x2
+b .L_3_0215ed7c
+.L_3_0215ec78: ; jump table
+b .L_3_0215ed7c ; case 0
+b .L_3_0215ed20 ; case 1
+b .L_3_0215ed20 ; case 2
+b .L_3_0215ed20 ; case 3
+b .L_3_0215ed28 ; case 4
+b .L_3_0215ed28 ; case 5
+b .L_3_0215ed28 ; case 6
+b .L_3_0215ed2c ; case 7
+b .L_3_0215ed2c ; case 8
+b .L_3_0215ed2c ; case 9
+b .L_3_0215ed2c ; case 10
+b .L_3_0215ed2c ; case 11
+b .L_3_0215ed2c ; case 12
+b .L_3_0215ed2c ; case 13
+b .L_3_0215ed2c ; case 14
+b .L_3_0215ed2c ; case 15
+b .L_3_0215ed2c ; case 16
+b .L_3_0215ed2c ; case 17
+b .L_3_0215ed2c ; case 18
+b .L_3_0215ed2c ; case 19
+b .L_3_0215ed2c ; case 20
+b .L_3_0215ed2c ; case 21
+b .L_3_0215ed2c ; case 22
+b .L_3_0215ed2c ; case 23
+b .L_3_0215ed2c ; case 24
+b .L_3_0215ed40 ; case 25
+b .L_3_0215ed40 ; case 26
+b .L_3_0215ed44 ; case 27
+b .L_3_0215ed48 ; case 28
+b .L_3_0215ed48 ; case 29
+b .L_3_0215ed4c ; case 30
+b .L_3_0215ed4c ; case 31
+b .L_3_0215ed50 ; case 32
+b .L_3_0215ed7c ; case 33
+b .L_3_0215ed7c ; case 34
+b .L_3_0215ed7c ; case 35
+b .L_3_0215ed7c ; case 36
+b .L_3_0215ed54 ; case 37
+b .L_3_0215ed7c ; case 38
+b .L_3_0215ed64 ; case 39
+b .L_3_0215ed6c ; case 40
+b .L_3_0215ed70 ; case 41
+.L_3_0215ed20:
+bl func_ov003_0215ed84
+b .L_3_0215ed7c
+.L_3_0215ed28:
+b .L_3_0215ed64
+.L_3_0215ed2c:
+bl func_ov003_0215ed84
+bl func_ov003_0215ee0c
+bl func_ov003_0215f0b0
+bl func_ov003_0215f928
+b .L_3_0215ed7c
+.L_3_0215ed40:
+b .L_3_0215ed64
+.L_3_0215ed44:
+b .L_3_0215ed2c
+.L_3_0215ed48:
+b .L_3_0215ed64
+.L_3_0215ed4c:
+b .L_3_0215ed20
+.L_3_0215ed50:
+b .L_3_0215ed64
+.L_3_0215ed54:
+bl func_020ae3d4
+cmp r0, #0x1
+bne .L_3_0215ed7c
+b .L_3_0215ed64
+.L_3_0215ed64:
+bl func_ov003_0215ed84
+b .L_3_0215ed78
+.L_3_0215ed6c:
+b .L_3_0215ed20
+.L_3_0215ed70:
+bl func_ov003_0215ed84
+bl func_ov003_02160f04
+.L_3_0215ed78:
+bl func_ov003_0215ee0c
+.L_3_0215ed7c:
+mov r0, #0x0
+ldmia sp!, {r3, pc}

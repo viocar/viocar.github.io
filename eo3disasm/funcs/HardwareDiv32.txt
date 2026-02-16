@@ -1,0 +1,6 @@
+.arm
+HardwareDiv32:
+stmdb sp!, {r3, lr}
+bl GetHardwareDivRegisters
+bl GetHardwareDivResult
+ldmia sp!, {r3, pc}

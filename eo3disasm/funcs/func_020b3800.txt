@@ -1,0 +1,13 @@
+.arm
+func_020b3800:
+stmdb sp!, {r4, lr}
+ldr r4, [.L_020b3824]
+ldr r0, [r4, #0x8]
+cmp r0, #0x0
+ldmneia sp!, {r4, pc}
+ldr r0, [.L_020b3828]
+bl func_0202e130
+str r0, [r4, #0x8]
+ldmia sp!, {r4, pc}
+.L_020b3824: .word 0x2135e48
+.L_020b3828: .word data_020ec4b4

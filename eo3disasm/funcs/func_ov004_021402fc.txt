@@ -1,0 +1,27 @@
+.arm
+func_ov004_021402fc:
+stmdb sp!, {r3, lr}
+and r3, r1, #0xff
+sub r3, r3, #0x1
+strb r1, [r0, #0x124]
+add r1, r0, r3, lsl #0x2
+ldr r3, [r1, #0xbc]
+ldr r1, [r0, #0xb4]
+cmp r2, #0x0
+str r3, [r1, #0x14]
+ldr r2, [r0, #0xb4]
+ldr r1, [r2, #0x1c]
+bic r1, r1, #0x80
+str r1, [r2, #0x1c]
+ldr r2, [r0, #0xb4]
+ldr r1, [r2, #0x1c]
+orr r1, r1, #0xc
+orr r1, r1, #0x1000
+str r1, [r2, #0x1c]
+ldr r0, [r0, #0xb4]
+beq .L_4_02140354
+bl func_0203167c
+ldmia sp!, {r3, pc}
+.L_4_02140354:
+bl func_02031658
+ldmia sp!, {r3, pc}

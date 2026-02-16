@@ -1,0 +1,41 @@
+.arm
+func_0200b3b8:
+stmdb sp!, {r4, r5, r6, lr}
+ldr r0, [.L_0200b440]
+ldrh r1, [r0, #0x0]
+cmp r1, #0x0
+ldmneia sp!, {r4, r5, r6, pc}
+mov r4, #0x1
+strh r4, [r0, #0x0]
+mov r1, #0x0
+str r1, [r0, #0x2c]
+str r1, [r0, #0x30]
+bl func_0200757c
+mov r1, r4
+mov r0, #0x8
+bl func_020076d0
+cmp r0, #0x0
+bne .L_0200b41c
+mov r6, #0x64
+mov r5, #0x8
+.L_0200b400:
+mov r0, r6
+blx WaitByLoop
+mov r0, r5
+mov r1, r4
+bl func_020076d0
+cmp r0, #0x0
+beq .L_0200b400
+.L_0200b41c:
+ldr r1, [.L_0200b444]
+mov r0, #0x8
+bl func_02007684
+ldr r1, [.L_0200b448]
+ldr r0, [.L_0200b440]
+ldr r1, [r1, #0x0]
+str r1, [r0, #0x8]
+str r1, [r0, #0x4]
+ldmia sp!, {r4, r5, r6, pc}
+.L_0200b440: .word 0x20ef8fc
+.L_0200b444: .word func_0200b44c
+.L_0200b448: .word 0x2fffc3c

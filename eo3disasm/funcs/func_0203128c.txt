@@ -1,0 +1,16 @@
+.arm
+func_0203128c:
+stmdb sp!, {r4, lr}
+mov r4, r0
+ldr r0, [r4, #0x14]
+ldr r1, [r4, #0x20]
+bl DrainWriteBufferAndInvalidateDataCache
+ldr r0, [r4, #0x14]
+ldr r1, [r4, #0x8]
+ldr r2, [r4, #0x20]
+bl func_02034be8
+ldr r0, [r4, #0x1c]
+bic r0, r0, #0x10
+orr r0, r0, #0x80
+str r0, [r4, #0x1c]
+ldmia sp!, {r4, pc}

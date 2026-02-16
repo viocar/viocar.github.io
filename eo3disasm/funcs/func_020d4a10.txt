@@ -1,0 +1,237 @@
+.arm
+func_020d4a10:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+sub sp, sp, #0x8
+mov r6, #0x0
+bl func_0206d540
+mov r7, r0
+ldr r0, [r7, #0x4]
+cmp r0, #0xc
+bgt .L_020d4a70
+cmp r0, #0x0
+addge pc, pc, r0, lsl #0x2
+b .L_020d4d58
+.L_020d4a3c: ; jump table
+b .L_020d4a7c ; case 0
+b .L_020d4ae0 ; case 1
+b .L_020d4d58 ; case 2
+b .L_020d4d58 ; case 3
+b .L_020d4d58 ; case 4
+b .L_020d4c30 ; case 5
+b .L_020d4cd0 ; case 6
+b .L_020d4d58 ; case 7
+b .L_020d4d58 ; case 8
+b .L_020d4d58 ; case 9
+b .L_020d4ce8 ; case 10
+b .L_020d4d24 ; case 11
+b .L_020d4d3c ; case 12
+.L_020d4a70:
+cmp r0, #0x14
+beq .L_020d4d48
+b .L_020d4d58
+.L_020d4a7c:
+bl func_020d3644
+bl func_02075fc4
+mov r4, r0
+bl func_02083ca4
+ldr r1, [r0, #0xe4]
+tst r1, #0x80
+bicne r1, r1, #0x80
+strne r1, [r0, #0xe4]
+movne r0, #0xa
+strne r0, [r7, #0x4]
+bne .L_020d4d58
+tst r1, #0x200
+bicne r1, r1, #0x200
+strne r1, [r0, #0xe4]
+movne r0, #0x5
+strne r0, [r7, #0x4]
+bne .L_020d4d58
+cmp r4, #0x1
+addeq sp, sp, #0x8
+moveq r0, r6
+ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020d4ad0:
+ldr r0, [r7, #0x4]
+add r0, r0, #0x1
+.L_020d4ad8:
+str r0, [r7, #0x4]
+b .L_020d4d58
+.L_020d4ae0:
+bl func_0201c730
+cmp r0, #0x0
+cmpne r0, #0x1
+beq .L_020d4b3c
+bl func_020b9228
+cmp r0, #0x0
+beq .L_020d4b3c
+bl func_020b9228
+mov r4, #0x1
+mov r1, r4
+bl func_020c57c8
+cmp r0, #0x1
+bne .L_020d4b3c
+bl func_020c463c
+mov r1, r6
+str r4, [sp, #0x0]
+ldr r0, [.L_020d4d64]
+mov r2, r1
+mov r3, #0x9
+str r1, [sp, #0x4]
+bl func_0207eab4
+mov r0, #0x14
+b .L_020d4ad8
+.L_020d4b3c:
+bl func_0201c730
+cmp r0, #0x1
+beq .L_020d4bc0
+bl func_020b9228
+bl func_020b9764
+mov r4, r0
+ldrb r0, [r4, #0x121]
+bl func_020a0c5c
+ldr r1, [.L_020d4d68]
+ldrb r2, [r4, #0x121]
+ldrb r1, [r1, #0x0]
+mov r5, r0
+cmp r2, r1
+ldreqb r0, [r5, #0xc1]
+cmpeq r2, r0
+bne .L_020d4c1c
+mov r1, r5
+add r0, r4, #0x60
+mov r2, #0x118
+bl Memcpy
+mov r4, #0x3
+mov r0, r5
+mov r1, r4
+mov r2, r6
+bl GetStats
+strh r0, [r5, #0xa0]
+mov r0, r5
+mov r1, r4
+mov r2, #0x1
+bl GetStats
+strh r0, [r5, #0xa2]
+strh r6, [r5, #0xbc]
+b .L_020d4c1c
+.L_020d4bc0:
+mov r8, #0x0
+mov r5, #0x3
+mov r4, #0x1
+.L_020d4bcc:
+mov r0, r8
+bl func_020d028c
+movs r7, r0
+beq .L_020d4c10
+ldrb r1, [r7, #0x0]
+tst r1, #0x8
+bne .L_020d4c10
+mov r1, r5
+mov r2, r6
+bl GetStats
+strh r0, [r7, #0xa0]
+mov r0, r7
+mov r1, r5
+mov r2, r4
+bl GetStats
+strh r0, [r7, #0xa2]
+strh r6, [r7, #0xbc]
+.L_020d4c10:
+add r8, r8, #0x1
+cmp r8, #0x5
+blt .L_020d4bcc
+.L_020d4c1c:
+bl func_020a14b8
+bl func_020d3720
+add sp, sp, #0x8
+mov r0, #0x41
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020d4c30:
+bl func_0201c730
+cmp r0, #0x1
+beq .L_020d4cb0
+bl func_020b9228
+bl func_020b9764
+mov r5, r0
+ldrb r0, [r5, #0x121]
+bl func_020a0c5c
+ldr r1, [.L_020d4d68]
+ldrb r2, [r5, #0x121]
+ldrb r1, [r1, #0x0]
+mov r4, r0
+cmp r2, r1
+ldreqb r0, [r4, #0xc1]
+cmpeq r2, r0
+bne .L_020d4cb0
+mov r1, r4
+add r0, r5, #0x60
+mov r2, #0x118
+bl Memcpy
+mov r5, #0x3
+mov r0, r4
+mov r1, r5
+mov r2, r6
+bl GetStats
+strh r0, [r4, #0xa0]
+mov r0, r4
+mov r1, r5
+mov r2, #0x1
+bl GetStats
+strh r0, [r4, #0xa2]
+strh r6, [r4, #0xbc]
+.L_020d4cb0:
+bl func_020a14b8
+bl func_020d3720
+bl func_020b924c
+bl func_020c4690
+bl func_020c5a80
+mov r0, #0x0
+bl func_0201c744
+b .L_020d4ad0
+.L_020d4cd0:
+bl func_0204c15c
+cmp r0, #0x0
+beq .L_020d4d58
+add sp, sp, #0x8
+mov r0, #0x41
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020d4ce8:
+bl func_0201c730
+cmp r0, #0x1
+moveq r0, #0xc
+beq .L_020d4d0c
+bl func_020b924c
+bl func_020c4690
+bl func_020c5a80
+ldr r0, [r7, #0x4]
+add r0, r0, #0x1
+.L_020d4d0c:
+str r0, [r7, #0x4]
+bl func_020a14b8
+bl func_020d3720
+mov r0, #0x0
+bl func_0201c744
+b .L_020d4d58
+.L_020d4d24:
+bl func_0204c15c
+cmp r0, #0x0
+ldrne r0, [r7, #0x4]
+addne r0, r0, #0x1
+strne r0, [r7, #0x4]
+b .L_020d4d58
+.L_020d4d3c:
+add sp, sp, #0x8
+mov r0, #0x45
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020d4d48:
+bl func_0207ec90
+cmp r0, #0x0
+moveq r0, #0x5
+streq r0, [r7, #0x4]
+.L_020d4d58:
+mov r0, #0x0
+add sp, sp, #0x8
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020d4d64: .word data_020ed3d0
+.L_020d4d68: .word data_020ed20c

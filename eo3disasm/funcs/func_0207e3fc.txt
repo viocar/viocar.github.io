@@ -1,0 +1,20 @@
+.arm
+func_0207e3fc:
+stmdb sp!, {r3, lr}
+bl func_0207da74
+cmp r0, #0x0
+beq .L_0207e438
+bl func_0207da74
+ldr r1, [r0, #0x40]
+cmp r1, #0x1
+ldreq r0, [r0, #0x3c]
+moveq r0, r0, lsl #0x18
+moveq r0, r0, asr #0x18
+ldmeqia sp!, {r3, pc}
+mvn r0, #0x0
+cmp r1, r0
+subeq r0, r0, #0x1
+ldmeqia sp!, {r3, pc}
+.L_0207e438:
+mvn r0, #0x0
+ldmia sp!, {r3, pc}

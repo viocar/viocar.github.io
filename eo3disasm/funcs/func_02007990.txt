@@ -1,0 +1,279 @@
+.arm
+func_02007990:
+stmdb sp!, {r3, r4, r5, r6, lr}
+sub sp, sp, #0x4
+mov r5, r0
+ldr r0, [r5, #0x8]
+mov r4, r1
+cmp r4, #0x23
+ldr r12, [r0, #0x24]
+movhs r6, #0x4
+bhs .L_02007cc0
+ldr r1, [r12, r4, lsl #0x2]
+cmp r1, #0x0
+moveq r6, #0x4
+beq .L_02007cc0
+cmp r4, #0x22
+addls pc, pc, r4, lsl #0x2
+b .L_02007cbc
+.L_020079d0: ; jump table
+b .L_02007a5c ; case 0
+b .L_02007a70 ; case 1
+b .L_02007a7c ; case 2
+b .L_02007a94 ; case 3
+b .L_02007ab0 ; case 4
+b .L_02007acc ; case 5
+b .L_02007ae8 ; case 6
+b .L_02007af4 ; case 7
+b .L_02007b0c ; case 8
+b .L_02007b18 ; case 9
+b .L_02007b2c ; case 10
+b .L_02007b40 ; case 11
+b .L_02007b54 ; case 12
+b .L_02007b68 ; case 13
+b .L_02007b84 ; case 14
+b .L_02007b94 ; case 15
+b .L_02007ba0 ; case 16
+b .L_02007bac ; case 17
+b .L_02007bc0 ; case 18
+b .L_02007bd4 ; case 19
+b .L_02007be4 ; case 20
+b .L_02007bf0 ; case 21
+b .L_02007c04 ; case 22
+b .L_02007c1c ; case 23
+b .L_02007c28 ; case 24
+b .L_02007c34 ; case 25
+b .L_02007c44 ; case 26
+b .L_02007c50 ; case 27
+b .L_02007c68 ; case 28
+b .L_02007cbc ; case 29
+b .L_02007c78 ; case 30
+b .L_02007c80 ; case 31
+b .L_02007c8c ; case 32
+b .L_02007ca8 ; case 33
+b .L_02007cb0 ; case 34
+.L_02007a5c:
+ldr r3, [r5, #0x10]
+ldr r12, [r12, #0x0]
+.L_02007a64:
+ldr r2, [r3], #0x4
+.L_02007a68:
+mov r1, r5
+.L_02007a6c:
+b .L_02007a8c
+.L_02007a70:
+ldr r3, [r5, #0x10]
+ldr r12, [r12, #0x4]
+b .L_02007a64
+.L_02007a7c:
+ldr r1, [r5, #0x10]
+ldr r12, [r12, #0x8]
+.L_02007a84:
+ldmia r1, {r2, r3}
+mov r1, r5
+.L_02007a8c:
+blx r12
+.L_02007a90:
+b .L_02007aa8
+.L_02007a94:
+ldr r1, [r5, #0x10]
+ldr r3, [r12, #0xc]
+.L_02007a9c:
+ldr r2, [r1, #0x0]
+.L_02007aa0:
+mov r1, r5
+blx r3
+.L_02007aa8:
+mov r6, r0
+b .L_02007cc0
+.L_02007ab0:
+ldr r2, [r5, #0x10]
+ldr r1, [r2, #0xc]
+add r3, r2, #0x8
+str r1, [sp, #0x0]
+ldmia r2, {r1, r2}
+ldr r12, [r12, #0x10]
+b .L_02007a6c
+.L_02007acc:
+ldr r3, [r5, #0x10]
+mov r1, r5
+add r2, r3, #0x8
+str r2, [sp, #0x0]
+ldmia r3, {r2, r3}
+ldr r12, [r12, #0x14]
+b .L_02007a6c
+.L_02007ae8:
+ldr r1, [r5, #0x10]
+ldr r12, [r12, #0x18]
+b .L_02007a84
+.L_02007af4:
+ldr r3, [r5, #0x10]
+mov r1, r5
+str r3, [sp, #0x0]
+ldmib r3, {r2, r3}
+ldr r12, [r12, #0x1c]
+b .L_02007a6c
+.L_02007b0c:
+ldr r2, [r12, #0x20]
+.L_02007b10:
+mov r1, r5
+b .L_02007bdc
+.L_02007b18:
+ldr r1, [r12, #0x24]
+blx r1
+add sp, sp, #0x4
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, pc}
+.L_02007b2c:
+ldr r1, [r12, #0x28]
+blx r1
+add sp, sp, #0x4
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, pc}
+.L_02007b40:
+ldr r1, [r12, #0x2c]
+blx r1
+add sp, sp, #0x4
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, pc}
+.L_02007b54:
+ldr r1, [r12, #0x30]
+blx r1
+add sp, sp, #0x4
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, pc}
+.L_02007b68:
+ldr r3, [r5, #0x10]
+mov r1, r5
+ldr r2, [r3, #0x8]
+str r2, [sp, #0x0]
+ldmia r3, {r2, r3}
+ldr r12, [r12, #0x34]
+b .L_02007a6c
+.L_02007b84:
+ldr r2, [r5, #0x10]
+ldr r12, [r12, #0x38]
+ldr r3, [r2, #0x4]
+b .L_02007a68
+.L_02007b94:
+ldr r2, [r5, #0x10]
+ldr r3, [r12, #0x3c]
+.L_02007b9c:
+b .L_02007aa0
+.L_02007ba0:
+ldr r2, [r5, #0x10]
+ldr r3, [r12, #0x40]
+b .L_02007b9c
+.L_02007bac:
+ldr r1, [r12, #0x44]
+blx r1
+add sp, sp, #0x4
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, pc}
+.L_02007bc0:
+ldr r1, [r12, #0x48]
+blx r1
+add sp, sp, #0x4
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, pc}
+.L_02007bd4:
+ldr r1, [r5, #0x10]
+ldr r2, [r12, #0x4c]
+.L_02007bdc:
+blx r2
+b .L_02007a90
+.L_02007be4:
+ldr r3, [r5, #0x10]
+ldr r12, [r12, #0x50]
+b .L_02007c3c
+.L_02007bf0:
+ldr r2, [r5, #0x10]
+ldr r3, [r12, #0x54]
+.L_02007bf8:
+ldmia r2, {r1, r2}
+blx r3
+b .L_02007a90
+.L_02007c04:
+ldr r3, [r5, #0x10]
+ldr r1, [r3, #0xc]
+str r1, [sp, #0x0]
+ldmia r3, {r1, r2, r3}
+ldr r12, [r12, #0x58]
+b .L_02007a6c
+.L_02007c1c:
+ldr r3, [r5, #0x10]
+ldr r12, [r12, #0x5c]
+b .L_02007c3c
+.L_02007c28:
+ldr r3, [r5, #0x10]
+ldr r12, [r12, #0x60]
+b .L_02007c3c
+.L_02007c34:
+ldr r3, [r5, #0x10]
+ldr r12, [r12, #0x64]
+.L_02007c3c:
+ldmia r3, {r1, r2, r3}
+b .L_02007a6c
+.L_02007c44:
+ldr r2, [r5, #0x10]
+ldr r3, [r12, #0x68]
+b .L_02007bf8
+.L_02007c50:
+ldr r3, [r5, #0x10]
+ldr r1, [r3, #0xc]
+str r1, [sp, #0x0]
+ldmia r3, {r1, r2, r3}
+ldr r12, [r12, #0x6c]
+b .L_02007a6c
+.L_02007c68:
+ldr r1, [r5, #0x10]
+ldr r2, [r12, #0x70]
+ldr r1, [r1, #0x0]
+b .L_02007bdc
+.L_02007c78:
+ldr r2, [r12, #0x78]
+b .L_02007b10
+.L_02007c80:
+ldr r1, [r5, #0x10]
+ldr r3, [r12, #0x7c]
+b .L_02007a9c
+.L_02007c8c:
+ldr r3, [r5, #0x10]
+mov r1, r5
+ldr r2, [r3, #0x8]
+str r2, [sp, #0x0]
+ldmia r3, {r2, r3}
+ldr r12, [r12, #0x80]
+b .L_02007a6c
+.L_02007ca8:
+ldr r2, [r12, #0x84]
+b .L_02007b10
+.L_02007cb0:
+ldr r1, [r5, #0x10]
+ldr r12, [r12, #0x88]
+b .L_02007a84
+.L_02007cbc:
+mov r6, #0x4
+.L_02007cc0:
+mov r0, r4
+bl func_0200786c
+cmp r0, #0x0
+bne .L_02007d04
+ldr r0, [r5, #0xc]
+tst r0, #0x4
+beq .L_02007cf0
+mov r0, r5
+mov r1, r6
+bl func_02007938
+mov r6, r0
+b .L_02007d04
+.L_02007cf0:
+cmp r6, #0x100
+beq .L_02007d04
+mov r0, r5
+mov r1, r6
+bl func_02007894
+.L_02007d04:
+mov r0, r6
+add sp, sp, #0x4
+ldmia sp!, {r3, r4, r5, r6, pc}

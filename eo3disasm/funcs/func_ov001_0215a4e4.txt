@@ -1,0 +1,42 @@
+.arm
+func_ov001_0215a4e4:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+mov r4, r0
+cmp r2, #0x6
+mov r10, r1
+moveq r6, #0x3
+moveq r8, #0x28
+mov r0, r4
+mov r1, r10
+mov r11, r3
+mov r7, #0x14
+movne r6, #0x1
+movne r8, #0x22
+mov r9, #0x19
+bl func_0204029c
+mov r5, r0
+cmp r4, #0x1
+ldmneia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+cmp r5, #0x0
+ldrne r0, [r5, #0x60c]
+cmpne r0, #0x0
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+bl func_02036060
+mov r4, r0
+mov r0, r5
+mov r2, r4
+mov r1, #0x5
+add r3, r4, #0x4
+bl func_ov001_02151868
+ldr r0, [r5, #0x604]
+bl func_02036060
+mla r0, r8, r10, r6
+str r0, [r4, #0x0]
+cmp r11, #0x0
+addeq r0, r10, #0x1
+andeq r0, r0, #0x1
+mlaeq r1, r0, r9, r7
+streq r1, [r4, #0x4]
+addne r0, r7, r9
+strne r0, [r4, #0x4]
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}

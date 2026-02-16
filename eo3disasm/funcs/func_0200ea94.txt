@@ -1,0 +1,11 @@
+.arm
+func_0200ea94:
+ldr r2, [.L_0200eab0]
+ldrh r1, [r2, #0x0]
+tst r1, #0x1
+ldrne r0, [.L_0200eab4]
+andne r0, r1, r0
+strneh r0, [r2, #0x0]
+bx lr
+.L_0200eab0: .word 0x2ffff96
+.L_0200eab4: .word 0xfffe

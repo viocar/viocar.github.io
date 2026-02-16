@@ -1,0 +1,56 @@
+.arm
+func_020254fc:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+mov r5, r1
+ldrh r2, [r5, #0x2c]
+ldrh r1, [r5, #0x2e]
+mov r6, r0
+mov r4, r2, lsl #0xc
+mov r7, r1, lsl #0xc
+mov r0, r7
+mov r1, r4
+bl GetHardwareDivRegisters
+ldrsh r0, [r5, #0x22]
+str r0, [r6, #0x0]
+str r0, [r6, #0x14]
+bl GetHardwareDivResult
+ldrsh r2, [r5, #0x20]
+mov r1, r7
+mul r0, r2, r0
+mov r2, r0, asr #0xc
+mov r0, r4
+str r2, [r6, #0x4]
+bl GetHardwareDivRegisters
+ldrh r1, [r5, #0x2e]
+ldr r0, [r5, #0x28]
+ldrh r2, [r5, #0x2c]
+ldr r3, [r5, #0x24]
+mul r4, r0, r1
+rsb r0, r1, #0x0
+add r0, r4, r0, lsl #0xb
+ldrsh lr, [r5, #0x22]
+mul r4, r3, r2
+rsb r3, r2, #0x0
+rsb r9, r4, r3, lsl #0xb
+ldrsh r12, [r5, #0x20]
+smull r8, r7, lr, r9
+smull r4, r3, lr, r0
+smlal r4, r3, r12, r9
+smull lr, r0, r12, r0
+subs r8, r8, lr
+sbc r0, r7, r0
+mov r7, r8, lsr #0x8
+orr r7, r7, r0, lsl #0x18
+add r0, r7, r2, lsl #0xf
+str r0, [r6, #0x30]
+mov r0, r4, lsr #0x8
+orr r0, r0, r3, lsl #0x18
+add r0, r0, r1, lsl #0xf
+str r0, [r6, #0x34]
+bl GetHardwareDivResult
+ldrsh r1, [r5, #0x20]
+rsb r1, r1, #0x0
+mul r0, r1, r0
+mov r0, r0, asr #0xc
+str r0, [r6, #0x10]
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}

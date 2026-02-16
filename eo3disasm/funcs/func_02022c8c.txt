@@ -1,0 +1,94 @@
+.arm
+func_02022c8c:
+stmdb sp!, {r4, lr}
+ldr r12, [r2, #0x4]
+ldr lr, [r2, #0x0]
+mov r4, r1, asr #0xc
+tst lr, #0xc0000000
+add r1, r3, r12
+beq .L_02022dbc
+ldr r2, [.L_02022dd8]
+tst lr, #0x40000000
+and r2, lr, r2
+mov r3, r2, lsr #0x10
+beq .L_02022ce4
+tst r4, #0x1
+beq .L_02022cdc
+cmp r4, r3
+movhi r2, r3, lsr #0x1
+addhi r4, r2, #0x1
+bhi .L_02022dbc
+mov r4, r4, lsr #0x1
+b .L_02022d80
+.L_02022cdc:
+mov r4, r4, lsr #0x1
+b .L_02022dbc
+.L_02022ce4:
+ands r2, r4, #0x3
+beq .L_02022d78
+cmp r4, r3
+addhi r4, r2, r3, lsr #0x2
+bhi .L_02022dbc
+tst r4, #0x1
+beq .L_02022d70
+tst r4, #0x2
+movne r4, r4, lsr #0x2
+addne r2, r4, #0x1
+moveq r2, r4, lsr #0x2
+addeq r4, r2, #0x1
+tst lr, #0x20000000
+beq .L_02022d40
+mov r3, r2, lsl #0x1
+mov r2, r4, lsl #0x1
+ldrsh r3, [r1, r3]
+ldrsh r1, [r1, r2]
+add r2, r3, r3, lsl #0x1
+add r1, r2, r1
+mov r1, r1, asr #0x2
+str r1, [r0, #0x0]
+ldmia sp!, {r4, pc}
+.L_02022d40:
+ldr r3, [r1, r2, lsl #0x2]
+mov r2, #0x3
+umull lr, r12, r3, r2
+mov r3, r3, asr #0x1f
+mla r12, r3, r2, r12
+ldr r1, [r1, r4, lsl #0x2]
+adds r2, lr, r1
+adc r1, r12, r1, asr #0x1f
+mov r2, r2, lsr #0x2
+orr r2, r2, r1, lsl #0x1e
+str r2, [r0, #0x0]
+ldmia sp!, {r4, pc}
+.L_02022d70:
+mov r4, r4, lsr #0x2
+b .L_02022d80
+.L_02022d78:
+mov r4, r4, lsr #0x2
+b .L_02022dbc
+.L_02022d80:
+tst lr, #0x20000000
+addeq r2, r1, r4, lsl #0x2
+ldreq r2, [r2, #0x4]
+ldreq r3, [r1, r4, lsl #0x2]
+moveq r1, r2, asr #0x1
+addeq r1, r1, r3, asr #0x1
+beq .L_02022db4
+mov r3, r4, lsl #0x1
+add r2, r1, r4, lsl #0x1
+ldrsh r3, [r1, r3]
+ldrsh r1, [r2, #0x2]
+add r1, r3, r1
+mov r1, r1, asr #0x1
+.L_02022db4:
+str r1, [r0, #0x0]
+ldmia sp!, {r4, pc}
+.L_02022dbc:
+tst lr, #0x20000000
+movne r2, r4, lsl #0x1
+ldrnesh r1, [r1, r2]
+strne r1, [r0, #0x0]
+ldreq r1, [r1, r4, lsl #0x2]
+streq r1, [r0, #0x0]
+ldmia sp!, {r4, pc}
+.L_02022dd8: .word 0x1fff0000

@@ -1,0 +1,6 @@
+.arm
+func_ov000_01ff9c60:
+ldr r0, [.L_0_01ff9c6c]
+ldrb r0, [r0, #0x41]
+bx lr
+.L_0_01ff9c6c: .word 0x20ff62c

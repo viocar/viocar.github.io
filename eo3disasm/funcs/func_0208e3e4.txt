@@ -1,0 +1,32 @@
+.arm
+func_0208e3e4:
+ldr r2, [r0, #0x38]
+cmp r2, #0x0
+bxeq lr
+ldr r3, [r1, #0x8]
+ldr r2, [r1, #0xc]
+cmp r3, #0x0
+bne .L_0208e420
+cmp r2, #0x0
+strne r2, [r0, #0x30]
+ldrne r1, [r1, #0xc]
+movne r2, #0x0
+strne r2, [r1, #0x8]
+moveq r1, #0x0
+streq r1, [r0, #0x30]
+b .L_0208e440
+.L_0208e420:
+cmp r2, #0x0
+strne r2, [r3, #0xc]
+ldrne r2, [r1, #0x8]
+ldrne r1, [r1, #0xc]
+strne r2, [r1, #0x8]
+moveq r2, #0x0
+streq r2, [r3, #0xc]
+ldreq r1, [r1, #0x8]
+.L_0208e440:
+streq r1, [r0, #0x34]
+ldr r1, [r0, #0x38]
+sub r1, r1, #0x1
+str r1, [r0, #0x38]
+bx lr

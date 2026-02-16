@@ -1,0 +1,51 @@
+.arm
+func_020105d0:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, lr}
+sub sp, sp, #0xc
+mov r6, #0x2
+mov r9, r0
+mov r4, r1
+mov r8, r2
+mov r0, r6
+mov r1, #0x7
+mov r2, #0x9
+mov r7, r3
+bl func_0200e61c
+cmp r0, #0x0
+addne sp, sp, #0xc
+ldmneia sp!, {r4, r5, r6, r7, r8, r9, pc}
+cmp r4, #0x0
+addeq sp, sp, #0xc
+moveq r0, #0x6
+ldmeqia sp!, {r4, r5, r6, r7, r8, r9, pc}
+cmp r8, #0x70
+addhi sp, sp, #0xc
+movhi r0, #0x6
+ldmhiia sp!, {r4, r5, r6, r7, r8, r9, pc}
+ldr r5, [.L_02010690]
+mov r0, r4
+mov r1, r5
+mov r2, r8
+bl func_02005f6c
+mov r0, r5
+mov r1, r8
+bl CleanDataCacheLine
+mov r4, #0x18
+mov r1, r9
+mov r0, r4
+bl func_0200e418
+ldrh lr, [sp, #0x28]
+str r7, [sp, #0x0]
+ldrb r12, [sp, #0x2c]
+str lr, [sp, #0x4]
+mov r0, r4
+mov r2, r5
+mov r3, r8
+mov r1, #0x5
+str r12, [sp, #0x8]
+bl func_0200e490
+cmp r0, #0x0
+moveq r0, r6
+add sp, sp, #0xc
+ldmia sp!, {r4, r5, r6, r7, r8, r9, pc}
+.L_02010690: .word 0x20f0da0

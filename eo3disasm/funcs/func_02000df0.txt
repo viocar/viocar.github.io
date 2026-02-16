@@ -1,0 +1,23 @@
+.arm
+func_02000df0:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+ldr r5, [r0, #0x0]
+ldr r12, [r0, #0xc]
+ldmib r0, {r4, lr}
+smull r7, r0, r2, r5
+smull r6, r5, r2, r4
+smull r4, lr, r3, lr
+smull r12, r2, r3, r12
+mov r7, r7, lsr #0xc
+mov r6, r6, lsr #0xc
+mov r4, r4, lsr #0xc
+mov r3, r12, lsr #0xc
+orr r7, r7, r0, lsl #0x14
+orr r6, r6, r5, lsl #0x14
+orr r4, r4, lr, lsl #0x14
+orr r3, r3, r2, lsl #0x14
+str r7, [r1, #0x0]
+str r6, [r1, #0x4]
+str r4, [r1, #0x8]
+str r3, [r1, #0xc]
+ldmia sp!, {r3, r4, r5, r6, r7, pc}

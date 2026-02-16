@@ -1,0 +1,9 @@
+.arm
+func_02005f54:
+mov r3, #0x0
+.L_02005f58:
+cmp r3, r2
+strlth r0, [r1, r3]
+addlt r3, r3, #0x2
+blt .L_02005f58
+bx lr

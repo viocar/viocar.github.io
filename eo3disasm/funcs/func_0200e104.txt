@@ -1,0 +1,23 @@
+.arm
+func_0200e104:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r7, r0
+mov r6, r1
+mov r1, r7
+mov r0, #0xe
+mov r2, #0x0
+bl func_020076f4
+cmp r0, #0x0
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+mov r5, #0xe
+mov r4, #0x0
+.L_0200e130:
+mov r0, r6
+blx WaitByLoop
+mov r0, r5
+mov r1, r7
+mov r2, r4
+bl func_020076f4
+cmp r0, #0x0
+bne .L_0200e130
+ldmia sp!, {r3, r4, r5, r6, r7, pc}

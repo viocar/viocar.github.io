@@ -1,0 +1,17 @@
+data_020e2258:
+.word func_020046b8
+.word func_020046c0
+.word func_020046c8
+.word func_020046d0
+.word func_020046d8
+.word func_020046e0
+.word func_020046e8
+.word func_020046f0
+.word func_020046f8
+.word func_02004700
+.word func_02004708
+.word func_02004710
+.word func_02004718
+.word func_02004720
+.word func_02004728
+.word func_02004730

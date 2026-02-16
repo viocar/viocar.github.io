@@ -1,0 +1,14 @@
+.arm
+func_0206a4c4:
+stmdb sp!, {r4, lr}
+ldr r4, [.L_0206a4ec]
+ldr r0, [r4, #0x2c]
+cmp r0, #0x0
+beq .L_0206a4e4
+bl func_0202b6e4
+mov r0, #0x0
+str r0, [r4, #0x2c]
+.L_0206a4e4:
+mov r0, #0x1
+ldmia sp!, {r4, pc}
+.L_0206a4ec: .word 0x21187ac

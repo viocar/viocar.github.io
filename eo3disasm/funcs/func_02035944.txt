@@ -1,0 +1,23 @@
+.arm
+func_02035944:
+cmp r0, #0x3
+mov r1, #0x0
+addls pc, pc, r0, lsl #0x2
+b .L_02035978
+.L_02035954: ; jump table
+b .L_02035964 ; case 0
+b .L_02035968 ; case 1
+b .L_0203596c ; case 2
+b .L_02035974 ; case 3
+.L_02035964:
+mov r1, #0x1
+.L_02035968:
+b .L_02035978
+.L_0203596c:
+mov r1, #0x3
+b .L_02035978
+.L_02035974:
+mov r1, #0x2
+.L_02035978:
+mov r0, r1
+bx lr

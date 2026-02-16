@@ -1,0 +1,12 @@
+.arm
+func_ov002_0213a720:
+ldr r3, [r0, #0x0]
+ldr r2, [r0, #0x4]
+ldr r1, [r0, #0xc]
+add r3, r3, #0x1
+add r1, r2, r1
+str r3, [r0, #0x0]
+mov r0, #0x1
+cmp r3, r1
+movle r0, #0x0
+bx lr

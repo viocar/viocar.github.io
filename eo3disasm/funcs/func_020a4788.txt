@@ -1,0 +1,17 @@
+.arm
+func_020a4788:
+stmdb sp!, {r3, lr}
+mov r0, #0x1
+bl func_0202c848
+cmp r0, #0x0
+bne .L_020a47ac
+mov r0, #0x1d
+bl func_0202c848
+cmp r0, #0x0
+beq .L_020a47b4
+.L_020a47ac:
+mov r0, #0x1
+ldmia sp!, {r3, pc}
+.L_020a47b4:
+mov r0, #0x0
+ldmia sp!, {r3, pc}

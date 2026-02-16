@@ -1,0 +1,15 @@
+.arm
+func_0204c39c:
+mov r1, #0x60
+mul r2, r0, r1
+ldr r1, [.L_0204c3c8]
+mov r0, #0x0
+ldrb r1, [r1, r2]
+cmp r1, #0xdb
+ldreq r1, [.L_0204c3cc]
+ldreqb r1, [r1, r2]
+cmpeq r1, #0x95
+moveq r0, #0x1
+bx lr
+.L_0204c3c8: .word 0x211449c
+.L_0204c3cc: .word 0x211449d

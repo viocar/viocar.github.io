@@ -1,0 +1,14 @@
+data_020de398:
+.word func_02009b14
+.word func_02009b44
+.word func_02009310
+.word func_020093ac
+.word func_020094d8
+.word func_020096ec
+.word func_02009a68
+.word func_02009af0
+.word func_02009b74
+.word func_02009b74
+.word func_02009b74
+.word func_02009b74
+.word func_02009b74

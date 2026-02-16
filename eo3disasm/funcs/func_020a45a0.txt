@@ -1,0 +1,5 @@
+.arm
+func_020a45a0:
+ldr r12, [.L_020a45a8]
+bx r12
+.L_020a45a8: .word Memcpy

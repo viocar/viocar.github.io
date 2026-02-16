@@ -1,0 +1,11 @@
+.arm
+func_ov004_0213e7b4:
+ldr r0, [r0, #0x34]
+mov r1, #0xe00
+cmp r0, #0x0
+movlt r0, #0x0
+rsbge r0, r0, #0x0
+rsb r1, r1, #0x0
+cmp r0, r1
+movlt r0, r1
+bx lr

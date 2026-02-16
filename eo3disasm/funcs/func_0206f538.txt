@@ -1,0 +1,23 @@
+.arm
+func_0206f538:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+mov r6, r2
+mov r8, r0
+mov r5, r3
+mov r0, r6
+mov r7, r1
+bl func_02014744
+mov r4, r0
+cmp r5, #0x0
+bne .L_0206f574
+ldr r1, [r7, #0x0]
+mov r0, r6
+add r1, r8, r1, lsl #0x1
+mov r2, r4, lsl #0x1
+bl Memcpy
+.L_0206f574:
+ldr r1, [r7, #0x0]
+mov r0, r4
+add r1, r1, r4
+str r1, [r7, #0x0]
+ldmia sp!, {r4, r5, r6, r7, r8, pc}

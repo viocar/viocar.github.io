@@ -1,0 +1,58 @@
+.arm
+func_0209f9b4:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r4, #0x0
+mov r7, r0
+mov r5, r4
+mov r6, r4
+cmp r1, #0x0
+ldmltia sp!, {r3, r4, r5, r6, r7, pc}
+cmp r1, #0x5
+ldmgeia sp!, {r3, r4, r5, r6, r7, pc}
+cmp r1, #0x4
+addls pc, pc, r1, lsl #0x2
+b .L_0209fa28
+.L_0209f9e4: ; jump table
+b .L_0209fa04 ; case 0
+b .L_0209f9f8 ; case 1
+b .L_0209fa20 ; case 2
+b .L_0209fa18 ; case 3
+b .L_0209fa10 ; case 4
+.L_0209f9f8:
+ldr r4, [.L_0209fa5c]
+.L_0209f9fc:
+mov r5, #0x10
+b .L_0209fa28
+.L_0209fa04:
+ldr r4, [.L_0209fa60]
+.L_0209fa08:
+mov r5, #0xc
+b .L_0209fa28
+.L_0209fa10:
+ldr r4, [.L_0209fa64]
+b .L_0209f9fc
+.L_0209fa18:
+ldr r4, [.L_0209fa68]
+b .L_0209fa08
+.L_0209fa20:
+ldr r4, [.L_0209fa6c]
+mov r5, #0x2
+.L_0209fa28:
+cmp r6, r5
+ldmhsia sp!, {r3, r4, r5, r6, r7, pc}
+add r3, r4, r6, lsl #0x2
+ldrb r1, [r3, #0x3]
+mov r0, r7
+str r1, [sp, #0x0]
+ldrb r1, [r4, r6, lsl #0x2]
+ldrb r2, [r3, #0x1]
+ldrb r3, [r3, #0x2]
+bl func_0209f940
+add r6, r6, #0x1
+b .L_0209fa28
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_0209fa5c: .word data_020e9898
+.L_0209fa60: .word data_020e974c
+.L_0209fa64: .word data_020e98d8
+.L_0209fa68: .word data_020e977c
+.L_0209fa6c: .word data_020e9722

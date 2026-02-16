@@ -1,0 +1,27 @@
+.arm
+func_02062fc4:
+ldr r0, [.L_02063024]
+mov r2, #0x0
+ldr r3, [r0, #0x0]
+mov r1, #0xff
+add r0, r3, #0x4c
+str r2, [r0, #0x410]
+str r2, [r0, #0x40c]
+str r2, [r0, #0x408]
+str r2, [r0, #0x404]
+strb r1, [r0, #0x402]
+strb r1, [r0, #0x401]
+strb r1, [r3, #0x44c]
+mov r1, #0x1f
+strb r1, [r0, #0x403]
+strb r2, [r0, #0x424]
+str r2, [r0, #0x428]
+str r2, [r0, #0x42c]
+mov r1, #0xff000
+str r1, [r0, #0x41c]
+str r1, [r0, #0x418]
+str r1, [r0, #0x414]
+mov r1, #0x1f000
+str r1, [r0, #0x420]
+bx lr
+.L_02063024: .word 0x21143a4

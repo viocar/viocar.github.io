@@ -1,0 +1,27 @@
+.arm
+func_0201cc68:
+stmdb sp!, {r3, r4, r5, lr}
+mov r5, r0
+mov r0, #0x18
+bl func_02035ac8
+cmp r0, #0x1
+moveq r0, #0x1
+movne r0, #0x0
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r3, r4, r5, pc}
+cmp r5, #0x0
+moveq r4, #0x0
+beq .L_0201ccb8
+cmp r5, #0x1
+moveq r4, #0x1
+beq .L_0201ccb8
+cmp r5, #0x2
+moveq r4, #0x2
+beq .L_0201ccb8
+bl HandleError
+.L_0201ccb8:
+mov r1, r4
+mov r0, #0x18
+bl func_02035b24
+ldmia sp!, {r3, r4, r5, pc}

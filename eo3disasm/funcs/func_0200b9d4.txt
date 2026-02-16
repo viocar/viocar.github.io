@@ -1,0 +1,46 @@
+.arm
+func_0200b9d4:
+stmdb sp!, {r4, r5, r6, lr}
+ldr r4, [.L_0200ba60]
+ldr r5, [.L_0200ba64]
+mov r6, #0x0
+.L_0200b9e4:
+mov r0, #0xc
+mul r0, r6, r0
+add r1, r0, #0x4000000
+ldr r2, [r1, #0xb8]
+add r0, r0, #0xb8
+str r2, [r5, r6, lsl #0x2]
+ldr r1, [r1, #0xb8]
+add r2, r0, #0x4000000
+and r0, r1, #0x38000000
+cmp r0, #0x18000000
+cmpne r0, #0x20000000
+beq .L_0200ba2c
+cmp r0, #0x28000000
+bne .L_0200ba38
+.L_0200ba1c:
+ldr r0, [r4, #0x0]
+tst r0, #0x80000000
+bne .L_0200ba1c
+b .L_0200ba50
+.L_0200ba2c:
+mov r0, r6
+.L_0200ba30:
+bl func_02005aa0
+b .L_0200ba50
+.L_0200ba38:
+ldr r0, [r2, #0x0]
+tst r0, #0x2000000
+mov r0, r6
+bne .L_0200ba4c
+b .L_0200ba30
+.L_0200ba4c:
+bl func_02005afc
+.L_0200ba50:
+add r6, r6, #0x1
+cmp r6, #0x3
+bls .L_0200b9e4
+ldmia sp!, {r4, r5, r6, pc}
+.L_0200ba60: .word 0x40001a4
+.L_0200ba64: .word 0x20ef918

@@ -1,0 +1,4 @@
+.arm
+func_02004708:
+mrc p15, 0, r0, c6, c2, 0
+bx lr

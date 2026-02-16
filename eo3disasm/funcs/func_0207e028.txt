@@ -1,0 +1,75 @@
+.arm
+func_0207e028:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+mov r8, #0x0
+mov r11, #0x4
+mov r6, r11
+mov r5, #0x3
+mov r4, r8
+mov r10, #0x1
+.L_0207e044:
+mov r0, r8
+bl func_0207deb0
+bl func_020a1254
+movs r7, r0
+beq .L_0207e124
+ldrh r9, [r7, #0xbc]
+cmp r9, #0x0
+beq .L_0207e074
+mov r0, r8
+bl func_0207deb0
+mov r1, r9
+bl func_02077ee8
+.L_0207e074:
+ldrh r0, [r7, #0xbc]
+tst r0, #0x1
+mov r0, r8
+beq .L_0207e094
+bl func_0207deb0
+mov r1, r6
+bl func_02077584
+b .L_0207e0b4
+.L_0207e094:
+bl func_0207deb0
+bl func_020775e4
+tst r0, #0x4
+beq .L_0207e0b4
+mov r0, r8
+bl func_0207deb0
+mov r1, r11
+bl func_020775b0
+.L_0207e0b4:
+mov r0, r7
+mov r1, r5
+mov r2, r4
+bl GetStats
+mov r9, r0
+mov r0, r8
+bl func_0207deb0
+mov r2, r9
+str r10, [sp, #0x0]
+ldrsh r1, [r7, #0xa0]
+mov r3, r4
+bl func_02077380
+mov r0, r7
+mov r1, r5
+mov r2, r10
+bl GetStats
+mov r9, r0
+mov r0, r8
+bl func_0207deb0
+mov r2, r9
+str r10, [sp, #0x0]
+ldrsh r1, [r7, #0xa2]
+mov r3, r10
+bl func_02077380
+mov r0, r8
+bl func_0207deb0
+ldrh r1, [r7, #0xbc]
+bl func_02077ee8
+.L_0207e124:
+add r0, r8, #0x1
+and r8, r0, #0xff
+cmp r8, #0x5
+blo .L_0207e044
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}

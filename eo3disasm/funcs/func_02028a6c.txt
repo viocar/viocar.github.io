@@ -1,0 +1,26 @@
+.arm
+func_02028a6c:
+stmdb sp!, {r3, lr}
+ldrh r12, [r0, #0xa]
+ldr r3, [r1, r12]
+add lr, r1, r12
+cmp r3, #0x0
+ldreq r1, [lr, #0x4]
+streq r1, [r0, #0x0]
+ldrne r2, [lr, #0x4]
+addne r1, r3, r12
+strne r2, [r1, #0x4]
+ldr r3, [lr, #0x4]
+cmp r3, #0x0
+ldreq r1, [lr, #0x0]
+streq r1, [r0, #0x4]
+ldrneh r1, [r0, #0xa]
+ldrne r2, [lr, #0x0]
+strne r2, [r3, r1]
+mov r1, #0x0
+str r1, [lr, #0x0]
+str r1, [lr, #0x4]
+ldrh r1, [r0, #0x8]
+sub r1, r1, #0x1
+strh r1, [r0, #0x8]
+ldmia sp!, {r3, pc}

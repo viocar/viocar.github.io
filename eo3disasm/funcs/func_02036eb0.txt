@@ -1,0 +1,10 @@
+.arm
+func_02036eb0:
+stmdb sp!, {r4, lr}
+mov r4, r0
+bl func_02036964
+ldr r0, [r0, #0xf8]
+ldr r1, [.L_02036ecc]
+mla r0, r4, r0, r1
+ldmia sp!, {r4, pc}
+.L_02036ecc: .word 0x2110e40

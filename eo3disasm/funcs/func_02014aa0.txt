@@ -1,0 +1,47 @@
+.arm
+func_02014aa0:
+stmdb sp!, {r3, lr}
+mov r12, #0x0
+strh r2, [r0, #0x2]
+strb r12, [r0, #0x0]
+b .L_02014ac8
+.L_02014ab4:
+ldrb r3, [r1], #0x1
+add r2, r0, r12
+add r12, r12, #0x1
+sub r3, r3, #0x30
+strb r3, [r2, #0x5]
+.L_02014ac8:
+cmp r12, #0x20
+bge .L_02014adc
+ldrb r2, [r1, #0x0]
+cmp r2, #0x0
+bne .L_02014ab4
+.L_02014adc:
+ldrb r2, [r1, #0x0]
+strb r12, [r0, #0x4]
+cmp r2, #0x0
+ldmeqia sp!, {r3, pc}
+cmp r2, #0x5
+ldmloia sp!, {r3, pc}
+bhi .L_02014b30
+ldrb r2, [r1, #0x1]
+add r1, r1, #0x1
+cmp r2, #0x0
+beq .L_02014b1c
+.L_02014b08:
+cmp r2, #0x30
+bne .L_02014b30
+ldrb r2, [r1, #0x1]!
+cmp r2, #0x0
+bne .L_02014b08
+.L_02014b1c:
+sub r1, r12, #0x1
+add r1, r0, r1
+ldrb r1, [r1, #0x5]
+tst r1, #0x1
+ldmeqia sp!, {r3, pc}
+.L_02014b30:
+ldrb r1, [r0, #0x4]
+bl func_020147cc
+ldmia sp!, {r3, pc}

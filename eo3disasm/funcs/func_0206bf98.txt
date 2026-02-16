@@ -1,0 +1,4 @@
+.arm
+func_0206bf98:
+ldrsh r0, [r0, #0xf0]
+bx lr

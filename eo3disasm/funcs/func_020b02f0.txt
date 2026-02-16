@@ -1,0 +1,6 @@
+.arm
+func_020b02f0:
+cmp r0, #0x190
+movlo r0, #0x1
+movhs r0, #0x0
+bx lr

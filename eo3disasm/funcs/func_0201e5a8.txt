@@ -1,0 +1,7 @@
+.arm
+func_0201e5a8:
+cmp r1, #0x0
+strne r1, [r0, #0x8]
+cmp r2, #0x0
+strne r2, [r0, #0x18]
+bx lr

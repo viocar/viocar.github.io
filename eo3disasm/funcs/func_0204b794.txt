@@ -1,0 +1,7 @@
+.arm
+func_0204b794:
+ldrsh r3, [r0, #0x78]
+mov r2, #0xc
+add r1, r3, r1
+mla r0, r1, r2, r0
+bx lr

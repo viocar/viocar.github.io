@@ -1,0 +1,9 @@
+.arm
+func_02037044:
+cmp r0, #0x1b
+ldrlo r1, [.L_02037058]
+ldrlo r0, [r1, r0, lsl #0x2]
+ldrhs r0, [.L_0203705c]
+bx lr
+.L_02037058: .word data_020e6010
+.L_0203705c: .word data_020e607c

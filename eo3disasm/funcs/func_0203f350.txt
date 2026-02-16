@@ -1,0 +1,4 @@
+.arm
+func_0203f350:
+ldr r0, [r0, #0x174]
+bx lr

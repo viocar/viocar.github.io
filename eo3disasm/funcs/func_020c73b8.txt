@@ -1,0 +1,19 @@
+.arm
+func_020c73b8:
+cmp r0, #0x880
+mvnge r0, #0x0
+bxge lr
+sub r0, r0, #0x800
+mov r0, r0, lsl #0x10
+ldr r2, [.L_020c73f8]
+mov r3, r0, asr #0x10
+ldrsb r0, [r2, r3]
+add r0, r0, r1
+cmp r0, #0x7f
+movgt r0, #0x7f
+cmp r0, #0x0
+movlt r0, #0x0
+strb r0, [r2, r3]
+ldrsb r0, [r2, r3]
+bx lr
+.L_020c73f8: .word 0x2136684

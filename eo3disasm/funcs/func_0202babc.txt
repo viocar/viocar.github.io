@@ -1,0 +1,11 @@
+.arm
+func_0202babc:
+stmdb sp!, {r4, lr}
+mov r4, r0
+bl func_0202baf0
+ldr r2, [.L_0202badc]
+mov r1, r4
+add r0, r2, r0, lsl #0x2
+bl func_02026278
+ldmia sp!, {r4, pc}
+.L_0202badc: .word 0x20ff31c

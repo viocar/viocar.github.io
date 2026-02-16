@@ -1,0 +1,11 @@
+.arm
+func_0209f1f0:
+mov r1, #0x18
+mul r1, r0, r1
+ldr r0, [.L_0209f210]
+ldrb r0, [r0, r1]
+cmp r0, #0x1
+moveq r0, #0x1
+movne r0, #0x0
+bx lr
+.L_0209f210: .word 0x212bf1e

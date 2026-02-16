@@ -1,0 +1,32 @@
+.arm
+func_02011fc8:
+stmdb sp!, {r0, r1, r2, r3}
+ldr r2, [sp, #0x4]
+ldr r0, [.L_02012030]
+ands r1, r2, r0
+beq .L_02012004
+cmp r1, r0
+bne .L_02012024
+ldr r0, [.L_02012034]
+tst r2, r0
+ldreq r0, [sp, #0x0]
+add sp, sp, #0x10
+cmpeq r0, #0x0
+movne r0, #0x1
+moveq r0, #0x2
+bx lr
+.L_02012004:
+ldr r0, [.L_02012034]
+tst r2, r0
+ldreq r0, [sp, #0x0]
+add sp, sp, #0x10
+cmpeq r0, #0x0
+movne r0, #0x5
+moveq r0, #0x3
+bx lr
+.L_02012024:
+mov r0, #0x4
+add sp, sp, #0x10
+bx lr
+.L_02012030: .word 0x7ff00000
+.L_02012034: .word 0xfffff

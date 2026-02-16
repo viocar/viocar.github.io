@@ -1,0 +1,342 @@
+.arm
+func_02092628:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x8
+mov r4, #0xb2
+mov r9, r0
+mov r5, #0x0
+mov r0, #0xd
+str r5, [sp, #0x0]
+mov r1, r0
+mov r2, r4
+mov r3, r4
+str r5, [sp, #0x4]
+bl func_0202df20
+cmp r0, #0x0
+bne .L_02092678
+sub r0, r4, #0xb3
+strh r0, [r9, #0x98]
+strh r0, [r9, #0x9a]
+bl func_0202a930
+add sp, sp, #0x8
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_02092678:
+ldr r0, [r9, #0x74]
+cmp r0, #0x0
+beq .L_020926a4
+ldrh r1, [r9, #0x6a]
+cmp r1, #0xd
+ldrhsh r0, [r9, #0x6c]
+cmphs r0, #0xd
+blo .L_020926a4
+cmp r1, #0xc3
+cmpls r0, #0xc3
+bls .L_020926bc
+.L_020926a4:
+mvn r0, #0x0
+strh r0, [r9, #0x98]
+strh r0, [r9, #0x9a]
+bl func_0202a930
+add sp, sp, #0x8
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_020926bc:
+ldr r0, [r9, #0x70]
+cmp r0, #0x1
+bne .L_02092ae4
+ldrh r0, [r9, #0x66]
+ldrh r4, [r9, #0x68]
+ldr r1, [.L_02092afc]
+mov r6, r0, lsr #0x1f
+smull r2, r5, r1, r0
+ldr r2, [r9, #0xc8]
+ldr r3, [r9, #0xc4]
+add r5, r6, r5, asr #0x3
+mov r7, #0x11
+smull r5, r6, r7, r5
+sub r5, r0, r5
+mov r6, r4, lsr #0x1f
+smull r10, r8, r1, r4
+add r8, r6, r8, asr #0x3
+smull r1, r6, r7, r8
+ldr r7, [r9, #0xfc]
+add r2, r2, r2, lsl #0x2
+cmp r5, #0xc
+sub r8, r4, r1
+add r6, r3, r3, lsl #0x2
+add r7, r7, r2
+bge .L_02092728
+cmp r5, #0x4
+bgt .L_02092ab0
+.L_02092728:
+cmp r8, #0xc
+bge .L_02092738
+cmp r8, #0x4
+bgt .L_02092ab0
+.L_02092738:
+ldrsh r2, [r9, #0x98]
+mvn r1, #0x0
+cmp r2, r1
+ldreqsh r2, [r9, #0x9a]
+cmpeq r2, r1
+bne .L_02092764
+bl func_020925dc
+strh r0, [r9, #0x98]
+ldrh r0, [r9, #0x68]
+bl func_020925dc
+b .L_02092aac
+.L_02092764:
+bl func_020925dc
+strh r0, [r9, #0x9c]
+ldrh r0, [r9, #0x68]
+bl func_020925dc
+ldrsh r8, [r9, #0x98]
+ldrsh r1, [r9, #0x9c]
+strh r0, [r9, #0x9e]
+cmp r1, r8
+bne .L_02092798
+ldrsh r2, [r9, #0x9e]
+ldrsh r0, [r9, #0x9a]
+cmp r2, r0
+beq .L_02092ab0
+.L_02092798:
+ldrsh r0, [r9, #0x9e]
+ldrsh r10, [r9, #0x9a]
+cmp r1, r8
+add r2, r1, r6
+add r3, r0, r7
+add r4, r8, r6
+add r5, r10, r7
+bne .L_020927d8
+cmp r4, #0x0
+bne .L_020927c8
+cmp r2, #0x0
+beq .L_02092820
+.L_020927c8:
+cmp r4, #0x23
+bne .L_020927d8
+cmp r2, #0x23
+beq .L_02092820
+.L_020927d8:
+cmp r0, r10
+mov r4, #0xd
+bne .L_02092854
+cmp r5, #0x0
+bne .L_020927f4
+cmp r3, #0x0
+beq .L_02092820
+.L_020927f4:
+ldr r11, [r9, #0xfc]
+sub r5, r5, r11
+cmp r5, #0x1e
+bne .L_02092810
+sub r2, r3, r11
+cmp r2, #0x1e
+beq .L_02092820
+.L_02092810:
+cmp r5, #0x0
+bne .L_02092854
+subs r2, r3, r11
+bne .L_02092854
+.L_02092820:
+mov r0, #0xd
+str r0, [sp, #0x0]
+ldrh r0, [r9, #0x6a]
+ldrh r1, [r9, #0x6c]
+ldrh r2, [r9, #0x66]
+ldrh r3, [r9, #0x68]
+and r0, r0, #0xff
+and r1, r1, #0xff
+and r2, r2, #0xff
+and r3, r3, #0xff
+bl func_0202a7b8
+add sp, sp, #0x8
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_02092854:
+cmp r1, r8
+mov r11, #0x0
+mov r5, #0x1
+bne .L_02092974
+cmp r0, r10
+mov r8, r11
+ble .L_020928f0
+cmp r10, r0
+bge .L_02092970
+.L_02092878:
+ldrsh r0, [r9, #0x98]
+ldrb r2, [r9, #0x5c]
+mov r3, r5
+add r0, r0, r6
+sub r0, r0, #0x1
+add r1, r10, r7
+bl func_0209e514
+cmp r0, #0x0
+bne .L_020928dc
+str r5, [sp, #0x0]
+ldrsh r0, [r9, #0x98]
+ldrb r2, [r9, #0x5c]
+mov r3, r5
+add r0, r0, r6
+sub r0, r0, #0x1
+add r1, r10, r7
+bl func_0209e334
+mov r0, r4
+mov r1, r8
+str r5, [r9, #0x8c]
+bl func_0202c120
+cmp r0, #0x0
+bne .L_020928dc
+mov r0, r4
+bl func_0202bd4c
+.L_020928dc:
+ldrsh r0, [r9, #0x9e]
+add r10, r10, #0x1
+cmp r10, r0
+blt .L_02092878
+b .L_02092970
+.L_020928f0:
+sub r10, r10, #0x1
+cmp r10, r0
+blt .L_02092970
+.L_020928fc:
+ldrsh r0, [r9, #0x98]
+ldrb r2, [r9, #0x5c]
+mov r3, r5
+add r0, r0, r6
+sub r0, r0, #0x1
+add r1, r10, r7
+bl func_0209e514
+cmp r0, #0x0
+bne .L_02092960
+str r5, [sp, #0x0]
+ldrsh r0, [r9, #0x98]
+ldrb r2, [r9, #0x5c]
+mov r3, r5
+add r0, r0, r6
+sub r0, r0, #0x1
+add r1, r10, r7
+bl func_0209e334
+mov r0, r4
+mov r1, r8
+str r5, [r9, #0x8c]
+bl func_0202c120
+cmp r0, #0x0
+bne .L_02092960
+mov r0, r4
+bl func_0202bd4c
+.L_02092960:
+ldrsh r0, [r9, #0x9e]
+sub r10, r10, #0x1
+cmp r10, r0
+bge .L_020928fc
+.L_02092970:
+b .L_02092a8c
+.L_02092974:
+cmp r0, r10
+bne .L_02092a9c
+cmp r1, r8
+ble .L_02092a08
+cmp r8, r1
+bge .L_02092a8c
+mov r10, #0x2
+.L_02092990:
+ldrsh r0, [r9, #0x9a]
+ldrb r2, [r9, #0x5c]
+mov r3, r10
+add r1, r0, r7
+add r0, r8, r6
+sub r1, r1, #0x1
+bl func_0209e514
+cmp r0, #0x0
+bne .L_020929f4
+str r5, [sp, #0x0]
+ldrsh r0, [r9, #0x9a]
+ldrb r2, [r9, #0x5c]
+mov r3, r10
+add r1, r0, r7
+add r0, r8, r6
+sub r1, r1, #0x1
+bl func_0209e334
+mov r0, r4
+mov r1, r11
+str r5, [r9, #0x8c]
+bl func_0202c120
+cmp r0, #0x0
+bne .L_020929f4
+mov r0, r4
+bl func_0202bd4c
+.L_020929f4:
+ldrsh r0, [r9, #0x9c]
+add r8, r8, #0x1
+cmp r8, r0
+blt .L_02092990
+b .L_02092a8c
+.L_02092a08:
+sub r10, r8, #0x1
+cmp r10, r1
+blt .L_02092a8c
+mov r8, #0x2
+.L_02092a18:
+ldrsh r0, [r9, #0x9a]
+ldrb r2, [r9, #0x5c]
+mov r3, r8
+add r1, r0, r7
+add r0, r10, r6
+sub r1, r1, #0x1
+bl func_0209e514
+cmp r0, #0x0
+bne .L_02092a7c
+str r5, [sp, #0x0]
+ldrsh r0, [r9, #0x9a]
+ldrb r2, [r9, #0x5c]
+mov r3, r8
+add r1, r0, r7
+add r0, r10, r6
+sub r1, r1, #0x1
+bl func_0209e334
+mov r0, r4
+mov r1, r11
+str r5, [r9, #0x8c]
+bl func_0202c120
+cmp r0, #0x0
+bne .L_02092a7c
+mov r0, r4
+bl func_0202bd4c
+.L_02092a7c:
+ldrsh r0, [r9, #0x9c]
+sub r10, r10, #0x1
+cmp r10, r0
+bge .L_02092a18
+.L_02092a8c:
+ldrb r0, [r9, #0x5c]
+mov r1, #0x1
+bl func_0201c01c
+b .L_02092a9c
+.L_02092a9c:
+bl func_0202a930
+ldrsh r1, [r9, #0x9c]
+ldrsh r0, [r9, #0x9e]
+strh r1, [r9, #0x98]
+.L_02092aac:
+strh r0, [r9, #0x9a]
+.L_02092ab0:
+mov r0, #0xd
+str r0, [sp, #0x0]
+ldrh r0, [r9, #0x6a]
+ldrh r1, [r9, #0x6c]
+ldrh r2, [r9, #0x66]
+ldrh r3, [r9, #0x68]
+and r0, r0, #0xff
+and r1, r1, #0xff
+and r2, r2, #0xff
+and r3, r3, #0xff
+bl func_0202a7b8
+add sp, sp, #0x8
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_02092ae4:
+sub r0, r4, #0xb3
+strh r0, [r9, #0x98]
+strh r0, [r9, #0x9a]
+bl func_0202a930
+add sp, sp, #0x8
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_02092afc: .word 0x78787879

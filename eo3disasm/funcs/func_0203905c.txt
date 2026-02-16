@@ -1,0 +1,18 @@
+.arm
+func_0203905c:
+ldr r2, [.L_02039098]
+mov r3, r0, asr #0xc
+smull r1, r12, r2, r3
+mov r1, r3, lsr #0x1f
+add r12, r12, r0, asr #0xc
+add r12, r1, r12, asr #0x8
+mov r3, #0x168
+smull r1, r2, r3, r12
+rsb r12, r1, r0, asr #0xc
+mov r0, r12, lsl #0x10
+movs r0, r0, asr #0x10
+addmi r0, r0, #0x168
+movmi r0, r0, lsl #0x10
+movmi r0, r0, asr #0x10
+bx lr
+.L_02039098: .word 0xb60b60b7

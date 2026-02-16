@@ -1,0 +1,123 @@
+.arm
+func_02093690:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+mov r6, r1
+mov r7, r0
+mov r5, #0x0
+str r5, [r7, #0x90]
+cmp r6, #0x4
+mov r4, #0x1
+bne .L_02093704
+mov r8, #0x2
+mov r0, r8
+bl func_0202bd78
+bl func_0209e2f8
+mov r1, r0
+mov r0, r8
+bl func_0202a54c
+bl func_0201b75c
+cmp r0, #0x0
+bne .L_020936ec
+add r0, r7, #0xc4
+bl func_02096c64
+mov r0, #0x4
+str r4, [r7, #0x2c]
+b .L_020936fc
+.L_020936ec:
+mov r0, #0x4
+str r5, [r7, #0xc4]
+str r5, [r7, #0xc8]
+str r5, [r7, #0x2c]
+.L_020936fc:
+str r5, [r7, #0x10]
+str r0, [r7, #0x48]
+.L_02093704:
+cmp r6, #0x5
+mvneq r0, #0x0
+streq r0, [r7, #0xcc]
+streq r0, [r7, #0xd0]
+sub r0, r6, #0x2
+streq r4, [r7, #0x90]
+cmp r0, #0x1
+bhi .L_0209376c
+bl func_02096c4c
+cmp r0, #0x0
+beq .L_0209376c
+mov r0, #0x2
+bl func_0202bd78
+ldrb r1, [r7, #0x5c]
+mov r0, r7
+strb r1, [r7, #0x5d]
+bl func_0209dbcc
+cmp r0, #0x0
+beq .L_02093764
+bl func_0209e6a4
+cmp r0, #0x0
+streq r4, [r7, #0xf8]
+strne r5, [r7, #0xf8]
+str r5, [r7, #0x2c]
+.L_02093764:
+mov r0, #0x8
+str r0, [r7, #0x48]
+.L_0209376c:
+cmp r6, #0x16
+bne .L_020937bc
+mov r8, #0x31
+mov r0, r8
+bl func_02085018
+cmp r0, #0x0
+mov r0, #0x11
+bne .L_0209379c
+bl func_0202bd78
+mov r0, r8
+bl func_020850d0
+b .L_020937a8
+.L_0209379c:
+bl func_0202bd78
+mov r0, r8
+bl func_02085140
+.L_020937a8:
+bl func_02099748
+mov r0, #0x43
+bl func_0209f214
+mov r0, #0x0
+bl func_0209bc24
+.L_020937bc:
+cmp r6, #0xe
+bne .L_020937e0
+mov r0, #0x11
+bl func_0202bd78
+ldr r0, [r7, #0x2c]
+cmp r0, #0x1
+movne r0, #0x1
+moveq r0, #0x0
+str r0, [r7, #0x2c]
+.L_020937e0:
+cmp r6, #0x17
+ldmneia sp!, {r4, r5, r6, r7, r8, pc}
+mov r0, #0x11
+bl func_0202bd78
+ldrb r1, [r7, #0x5c]
+mov r2, #0xe
+add r0, r7, #0x100
+sub r1, r1, #0x4
+str r2, [r7, #0x48]
+str r5, [r7, #0x4c]
+str r5, [r7, #0x54]
+strh r1, [r0, #0x6]
+bl func_020851c8
+add r1, r7, #0x100
+ldrsh r1, [r1, #0x6]
+add r1, r1, #0x9
+cmp r1, r0
+ble .L_02093838
+bl func_020851c8
+sub r1, r0, #0x9
+add r0, r7, #0x100
+strh r1, [r0, #0x6]
+.L_02093838:
+add r0, r7, #0x100
+ldrsh r1, [r0, #0x6]
+cmp r1, #0x1
+strlth r4, [r0, #0x6]
+ldmia sp!, {r4, r5, r6, r7, r8, pc}

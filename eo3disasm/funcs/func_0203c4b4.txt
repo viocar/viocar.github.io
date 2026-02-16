@@ -1,0 +1,12 @@
+.arm
+func_0203c4b4:
+stmdb sp!, {r3, lr}
+ldr r0, [.L_0203c4d8]
+mov r1, #0x0
+ldr r0, [r0, #0x0]
+mov r2, #0x310
+add r0, r0, #0x13c
+bl Memset
+bl func_0203c4dc
+ldmia sp!, {r3, pc}
+.L_0203c4d8: .word 0x21143a4

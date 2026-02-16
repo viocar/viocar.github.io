@@ -1,0 +1,25 @@
+.arm
+func_0205f7d4:
+mov r3, #0x800
+ldr r0, [.L_0205f82c]
+rsb r3, r3, #0x0
+strh r3, [r0, #0x0]
+strh r3, [r0, #0x2]
+mov r2, #0x0
+strh r2, [r0, #0x4]
+str r2, [r0, #0x10]
+strh r3, [r0, #0x14]
+mov r1, #0x800
+strh r1, [r0, #0x16]
+strh r2, [r0, #0x18]
+str r2, [r0, #0x24]
+strh r1, [r0, #0x28]
+strh r1, [r0, #0x2a]
+strh r2, [r0, #0x2c]
+str r2, [r0, #0x38]
+strh r1, [r0, #0x3c]
+strh r3, [r0, #0x3e]
+strh r2, [r0, #0x40]
+str r2, [r0, #0x4c]
+bx lr
+.L_0205f82c: .word 0x2118734

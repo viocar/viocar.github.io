@@ -1,0 +1,6 @@
+.arm
+func_020c62d0:
+ldr r2, [r0, #0x28]
+mov r0, #0xc
+smlabb r0, r1, r0, r2
+bx lr

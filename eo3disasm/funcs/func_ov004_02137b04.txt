@@ -1,0 +1,5 @@
+.arm
+func_ov004_02137b04:
+ldr r0, [.L_4_02137b0c]
+bx lr
+.L_4_02137b0c: .word 0x721

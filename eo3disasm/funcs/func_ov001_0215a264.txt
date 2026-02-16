@@ -1,0 +1,17 @@
+.arm
+func_ov001_0215a264:
+stmdb sp!, {r4, r5, r6, lr}
+mov r4, r3
+mov r6, r1
+mov r5, r2
+bl func_02036060
+cmp r4, #0x1
+beq .L_1_0215a290
+cmp r4, #0x2
+streq r6, [r0, #0x2c]
+streq r5, [r0, #0x34]
+ldmia sp!, {r4, r5, r6, pc}
+.L_1_0215a290:
+str r6, [r0, #0x28]
+str r5, [r0, #0x30]
+ldmia sp!, {r4, r5, r6, pc}

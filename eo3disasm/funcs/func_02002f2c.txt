@@ -1,0 +1,8 @@
+.arm
+func_02002f2c:
+ldr r1, [.L_02002f40]
+ldr r0, [r1, #0x18]
+add r0, r0, #0x1
+str r0, [r1, #0x18]
+bx lr
+.L_02002f40: .word 0x20ed688

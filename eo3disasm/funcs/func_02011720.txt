@@ -1,0 +1,123 @@
+.arm
+func_02011720:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+sub sp, sp, #0xc0
+ldr r5, [sp, #0xe0]
+ldr r4, [sp, #0xe4]
+mov r8, r1
+movs r9, r0
+mov r7, r2
+cmpne r8, #0x0
+mov r6, r3
+cmpne r7, #0x0
+cmpne r6, #0x0
+cmpne r5, #0x0
+cmpne r4, #0x0
+addeq sp, sp, #0xc0
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+ldr r0, [r4, #0x4]
+cmp r5, r0
+bls .L_020117a0
+ldr r0, [r4, #0x8]
+ldr r1, [r4, #0x10]
+blx r1
+ldr r0, [r4, #0x8]
+ldr r3, [r4, #0x14]
+mov r1, r6
+mov r2, r5
+blx r3
+add r6, sp, #0x80
+ldr r0, [r4, #0x8]
+ldr r2, [r4, #0x18]
+mov r1, r6
+blx r2
+ldr r5, [r4, #0x0]
+.L_020117a0:
+cmp r5, #0x0
+mov r0, #0x0
+bls .L_020117c8
+add r1, sp, #0x40
+.L_020117b0:
+ldrb r2, [r6, r0]
+eor r2, r2, #0x36
+strb r2, [r1, r0]
+add r0, r0, #0x1
+cmp r0, r5
+blo .L_020117b0
+.L_020117c8:
+ldr r1, [r4, #0x4]
+cmp r0, r1
+bhs .L_020117f0
+mov r3, #0x36
+add r2, sp, #0x40
+.L_020117dc:
+strb r3, [r2, r0]
+ldr r1, [r4, #0x4]
+add r0, r0, #0x1
+cmp r0, r1
+blo .L_020117dc
+.L_020117f0:
+ldr r0, [r4, #0x8]
+ldr r1, [r4, #0x10]
+blx r1
+ldr r0, [r4, #0x8]
+ldr r2, [r4, #0x4]
+ldr r3, [r4, #0x14]
+add r1, sp, #0x40
+blx r3
+ldr r0, [r4, #0x8]
+ldr r3, [r4, #0x14]
+mov r1, r8
+mov r2, r7
+blx r3
+ldr r0, [r4, #0x8]
+ldr r1, [r4, #0xc]
+ldr r2, [r4, #0x18]
+blx r2
+cmp r5, #0x0
+mov r3, #0x0
+bls .L_0201185c
+add r0, sp, #0x0
+.L_02011844:
+ldrb r1, [r6, r3]
+eor r1, r1, #0x5c
+strb r1, [r0, r3]
+add r3, r3, #0x1
+cmp r3, r5
+blo .L_02011844
+.L_0201185c:
+ldr r0, [r4, #0x4]
+cmp r3, r0
+bhs .L_02011884
+mov r2, #0x5c
+add r1, sp, #0x0
+.L_02011870:
+strb r2, [r1, r3]
+ldr r0, [r4, #0x4]
+add r3, r3, #0x1
+cmp r3, r0
+blo .L_02011870
+.L_02011884:
+ldr r0, [r4, #0x8]
+ldr r1, [r4, #0x10]
+blx r1
+ldr r0, [r4, #0x8]
+ldr r2, [r4, #0x4]
+ldr r3, [r4, #0x14]
+add r1, sp, #0x0
+blx r3
+ldr r0, [r4, #0x8]
+ldr r1, [r4, #0xc]
+ldr r2, [r4, #0x0]
+ldr r3, [r4, #0x14]
+blx r3
+ldr r0, [r4, #0x8]
+ldr r2, [r4, #0x18]
+mov r1, r9
+blx r2
+add sp, sp, #0xc0
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_020118d0: .word 0x5a827999
+.L_020118d4: .word 0x6ed9eba1
+.L_020118d8: .word 0x8f1bbcdc
+.L_020118dc: .word 0xca62c1d6

@@ -1,0 +1,15 @@
+.arm
+func_0202ba04:
+stmdb sp!, {r3, r4, r5, lr}
+ldr r4, [.L_0202ba34]
+ldr r0, [r4, #0x1e0]
+ldr r1, [r4, #0x5a4]
+bl func_020276a8
+mov r5, #0x0
+mov r0, r5
+bl func_0202bae0
+sub r0, r5, #0x1
+str r0, [r4, #0x5b8]
+str r0, [r4, #0x5bc]
+ldmia sp!, {r3, r4, r5, pc}
+.L_0202ba34: .word 0x20fedb0

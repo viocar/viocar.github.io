@@ -1,0 +1,54 @@
+.arm
+func_02008f34:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+sub sp, sp, #0x58
+mov r4, #0x0
+mov r8, r0
+mov r6, r2
+mov r7, r1
+add r0, sp, #0x44
+mov r1, r4
+mov r2, #0x14
+mov r5, r3
+bl Memset
+ldr r2, [.L_02008ff0]
+add r1, sp, #0x4
+ldr r0, [r2, #0x14]
+ldr r2, [r2, #0x18]
+bl Memcpy
+cmp r5, #0x0
+beq .L_02008f88
+mov r0, #0x1
+bl func_02011370
+mov r4, r0
+.L_02008f88:
+ldr r1, [.L_02008ff0]
+add r0, sp, #0x44
+ldr r12, [r1, #0x18]
+add r3, sp, #0x4
+mov r1, r7
+mov r2, r6
+str r12, [sp, #0x0]
+bl func_0201168c
+cmp r5, #0x0
+beq .L_02008fb8
+mov r0, r4
+bl func_02011370
+.L_02008fb8:
+mov r3, #0x0
+add r2, sp, #0x44
+.L_02008fc0:
+ldr r1, [r2, r3]
+ldr r0, [r8, r3]
+cmp r1, r0
+bne .L_02008fdc
+add r3, r3, #0x4
+cmp r3, #0x14
+blo .L_02008fc0
+.L_02008fdc:
+mov r0, #0x1
+cmp r3, #0x14
+movne r0, #0x0
+add sp, sp, #0x58
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_02008ff0: .word 0x20ef83c

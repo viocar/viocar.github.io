@@ -1,0 +1,7 @@
+.arm
+func_ov003_0214704c:
+ldr r0, [r0, #0x1a4]
+cmp r0, #0x8
+movne r0, #0x1
+moveq r0, #0x0
+bx lr

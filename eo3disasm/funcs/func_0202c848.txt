@@ -1,0 +1,18 @@
+.arm
+func_0202c848:
+stmdb sp!, {r4, lr}
+mov r4, r0
+bl func_0202d414
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r4, pc}
+ldr r0, [.L_0202c884]
+ldr r0, [r0, #0x4]
+ldr r0, [r0, #0x1c]
+add r0, r0, r4
+ldrb r0, [r0, #0x8]
+cmp r0, #0x1
+moveq r0, #0x1
+movne r0, #0x0
+ldmia sp!, {r4, pc}
+.L_0202c884: .word 0x20ff394

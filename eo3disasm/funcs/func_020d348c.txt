@@ -1,0 +1,10 @@
+.arm
+func_020d348c:
+ldr r2, [.L_020d34a8]
+add r0, r1, r0, lsl #0x2
+ldr r2, [r2, #0x1c]
+sub r1, r0, #0x1
+mov r0, #0x38
+mla r0, r1, r0, r2
+bx lr
+.L_020d34a8: .word 0x2136bac

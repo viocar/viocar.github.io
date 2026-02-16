@@ -1,0 +1,10 @@
+data_020e7010:
+.word 0x20e6e84
+.word 0x20e6e0c
+.word 0x20e708c
+.word 0x20e70d8
+.word 0x20e7108
+.word 0x20e716c
+.word 0x20e7138
+.word 0x20e70b0
+.word 0x20e6fc4

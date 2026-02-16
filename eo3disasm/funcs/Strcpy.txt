@@ -1,0 +1,58 @@
+.arm
+Strcpy:
+stmdb sp!, {r3, r4, r5, lr}
+and r4, r1, #0x3
+and r3, r0, #0x3
+mov r2, r0
+cmp r3, r4
+bne .L_02014518
+cmp r4, #0x0
+beq .L_020144d4
+ldrb r3, [r1, #0x0]
+strb r3, [r0, #0x0]
+tst r3, #0xff
+ldmeqia sp!, {r3, r4, r5, pc}
+rsbs r4, r4, #0x3
+beq .L_020144cc
+.L_020144b4:
+ldrb r3, [r1, #0x1]!
+tst r3, #0xff
+strb r3, [r2, #0x1]!
+ldmeqia sp!, {r3, r4, r5, pc}
+subs r4, r4, #0x1
+bne .L_020144b4
+.L_020144cc:
+add r2, r2, #0x1
+add r1, r1, #0x1
+.L_020144d4:
+ldr r5, [r1, #0x0]
+ldr r3, [.L_0201453c]
+mvn r4, r5
+add lr, r5, r3
+ldr r12, [.L_02014540]
+and r4, lr, r4
+tst r4, r12
+bne .L_02014518
+sub r2, r2, #0x4
+.L_020144f8:
+str r5, [r2, #0x4]!
+ldr r5, [r1, #0x4]!
+add r4, r5, r3
+mvn lr, r5
+and lr, r4, lr
+tst lr, r12
+beq .L_020144f8
+add r2, r2, #0x4
+.L_02014518:
+ldrb r3, [r1, #0x0]
+strb r3, [r2, #0x0]
+tst r3, #0xff
+ldmeqia sp!, {r3, r4, r5, pc}
+.L_02014528:
+ldrb r3, [r1, #0x1]!
+tst r3, #0xff
+strb r3, [r2, #0x1]!
+bne .L_02014528
+ldmia sp!, {r3, r4, r5, pc}
+.L_0201453c: .word 0xfefefeff
+.L_02014540: .word 0x80808080

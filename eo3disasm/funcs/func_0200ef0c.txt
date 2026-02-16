@@ -1,0 +1,41 @@
+.arm
+func_0200ef0c:
+stmdb sp!, {r4, lr}
+sub sp, sp, #0x8
+add r4, sp, #0x0
+mov r0, r4
+bl func_0200541c
+mov r1, #0x0
+mov r2, r1
+.L_0200ef28:
+ldrb r0, [r4, r1]
+add r1, r1, #0x1
+cmp r1, #0x6
+add r0, r2, r0
+mov r0, r0, lsl #0x10
+mov r2, r0, lsr #0x10
+blt .L_0200ef28
+ldr r0, [.L_0200ef9c]
+mov r1, #0xd
+ldr r0, [r0, #0x0]
+ldr r3, [.L_0200efa0]
+mov r0, r0, lsl #0x10
+add r0, r2, r0, lsr #0x10
+mov r0, r0, lsl #0x10
+mov r2, r0, lsr #0x10
+mul r0, r2, r1
+mov r0, r0, lsl #0x10
+mov r2, r0, lsr #0x10
+mov r1, r2, lsr #0x1f
+smull r2, r12, r3, r2
+add r12, r1, r12, asr #0x2
+mov r3, #0xa
+smull r1, r2, r3, r12
+rsb r12, r1, r0, lsr #0x10
+add r0, r12, #0x1e
+mov r0, r0, lsl #0x10
+mov r0, r0, lsr #0x10
+add sp, sp, #0x8
+ldmia sp!, {r4, pc}
+.L_0200ef9c: .word 0x2fffc3c
+.L_0200efa0: .word 0x66666667

@@ -1,0 +1,57 @@
+.arm
+func_0208e0a8:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+ldrb r8, [sp, #0x18]
+mov r7, r0
+mov r6, r1
+mov r5, r2
+mov r4, r3
+cmp r8, #0x0
+bne .L_0208e110
+bl func_0208ddac
+mov r8, r0
+add r0, r8, #0x1
+cmp r0, #0x1
+bhi .L_0208e108
+mov r0, r7
+mov r1, r6
+mov r2, r5
+mov r3, r4
+bl func_0208de1c
+cmp r8, #0x0
+beq .L_0208e100
+cmp r0, #0x0
+bne .L_0208e160
+.L_0208e100:
+mov r0, #0x1
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_0208e108:
+mov r0, #0x0
+b .L_0208e15c
+.L_0208e110:
+cmp r8, #0x1
+bne .L_0208e160
+bl func_0208de1c
+mov r8, r0
+add r0, r8, #0x1
+cmp r0, #0x1
+bhi .L_0208e158
+mov r0, r7
+mov r1, r6
+mov r2, r5
+mov r3, r4
+bl func_0208ddac
+cmp r0, #0x0
+beq .L_0208e150
+cmp r8, #0x0
+bne .L_0208e160
+.L_0208e150:
+mov r0, #0x1
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_0208e158:
+mov r0, #0x1
+.L_0208e15c:
+strb r0, [r6, #0x26]
+.L_0208e160:
+mov r0, #0x0
+ldmia sp!, {r4, r5, r6, r7, r8, pc}

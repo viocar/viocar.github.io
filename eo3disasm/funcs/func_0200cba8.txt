@@ -1,0 +1,36 @@
+.arm
+func_0200cba8:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+ldr r5, [.L_0200cc1c]
+mov r8, r0
+mov r7, r1
+bl DisableIRQ
+ldr r1, [r5, #0x14]
+mov r6, r0
+cmp r1, r8
+bne .L_0200cbe0
+ldr r0, [r5, #0x24]
+cmp r0, r7
+beq .L_0200cc04
+bl HandleError
+b .L_0200cc04
+.L_0200cbe0:
+mvn r4, #0x2
+b .L_0200cbf0
+.L_0200cbe8:
+add r0, r5, #0x1c
+bl func_02003524
+.L_0200cbf0:
+ldr r0, [r5, #0x14]
+cmp r0, r4
+bne .L_0200cbe8
+str r8, [r5, #0x14]
+str r7, [r5, #0x24]
+.L_0200cc04:
+ldr r1, [r5, #0x18]
+mov r0, r6
+add r1, r1, #0x1
+str r1, [r5, #0x18]
+bl EnableIRQ
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_0200cc1c: .word 0x20ef9e0

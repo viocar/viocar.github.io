@@ -1,0 +1,15 @@
+data_020ecfe4:
+.word func_020cbc60
+.word func_020cbc78
+.word func_020cbd40
+.word func_020cbd60
+.word func_020cbf44
+.word func_020cbf60
+.word func_020cbfd8
+.word func_020cbff8
+.word func_020cc148
+.word func_020cc160
+.word func_020cc6b4
+.word func_020cc6f4
+.word func_020cc8f4
+.word func_020cc930

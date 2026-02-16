@@ -1,0 +1,16 @@
+.arm
+func_02002fbc:
+ldr r2, [r0, #0x0]
+cmp r2, #0x0
+beq .L_02002fe8
+ldr r1, [r2, #0x80]
+str r1, [r0, #0x0]
+cmp r1, #0x0
+movne r0, #0x0
+strne r0, [r1, #0x7c]
+moveq r1, #0x0
+streq r1, [r0, #0x4]
+streq r1, [r2, #0x78]
+.L_02002fe8:
+mov r0, r2
+bx lr

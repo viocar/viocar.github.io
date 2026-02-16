@@ -1,0 +1,57 @@
+.arm
+func_ov002_0213a558:
+stmdb sp!, {r4, r5, lr}
+sub sp, sp, #0xc
+mov r4, #0x0
+mov r5, r0
+mov r0, r4
+mov r1, #0x40
+bl func_0202d744
+cmp r0, #0x0
+addne sp, sp, #0xc
+ldmneia sp!, {r4, r5, pc}
+mov r0, r4
+mov r1, #0x80
+bl func_0202d744
+cmp r0, #0x0
+addne sp, sp, #0xc
+ldmneia sp!, {r4, r5, pc}
+mov r0, r4
+mov r1, #0x20
+bl func_0202d744
+cmp r0, #0x0
+addne sp, sp, #0xc
+ldmneia sp!, {r4, r5, pc}
+mov r0, r4
+mov r1, #0x10
+bl func_0202d744
+cmp r0, #0x0
+addne sp, sp, #0xc
+ldmneia sp!, {r4, r5, pc}
+mov r0, r4
+mov r1, #0x200
+bl func_0202d744
+cmp r0, #0x0
+addne sp, sp, #0xc
+ldmneia sp!, {r4, r5, pc}
+mov r0, r4
+mov r1, #0x100
+bl func_0202d744
+cmp r0, #0x0
+addne sp, sp, #0xc
+ldmneia sp!, {r4, r5, pc}
+add r1, sp, #0x8
+add r2, sp, #0x4
+add r3, sp, #0x0
+mov r0, r5
+bl func_ov002_02139f54
+cmp r0, #0x0
+addeq sp, sp, #0xc
+ldmeqia sp!, {r4, r5, pc}
+ldr r1, [sp, #0x8]
+ldr r2, [sp, #0x4]
+ldr r3, [sp, #0x0]
+mov r0, r5
+bl func_ov002_0213a29c
+add sp, sp, #0xc
+ldmia sp!, {r4, r5, pc}

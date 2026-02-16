@@ -1,0 +1,50 @@
+.arm
+func_02050cf0:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, lr}
+sub sp, sp, #0x4
+mov r5, r0
+mov r8, r2
+ldrb r0, [r5, #0x620]
+ldrb r2, [sp, #0x20]
+mov r7, r3
+mov r4, r1
+mov r1, r7
+bl func_0206a56c
+mov r6, r0
+tst r8, #0x30
+beq .L_02050d9c
+add r0, r4, #0x10
+mov r1, #0x400
+bl func_0204a7a0
+cmp r0, #0x0
+addne r0, r4, #0x100
+ldrnesh r1, [r0, #0x1c]
+strneh r1, [r0, #0x18]
+bne .L_02050d9c
+mov r0, #0x51
+str r0, [sp, #0x0]
+ldrb r1, [r5, #0x620]
+add r0, r5, #0x224
+ldrb r3, [sp, #0x20]
+mov r2, r7
+add r0, r0, #0x400
+bl func_0206a9b4
+add r1, r4, #0x100
+strh r0, [r1, #0x18]
+ldrsh r0, [r1, #0x18]
+cmp r0, #0x0
+bgt .L_02050d94
+ldrb r0, [r6, #0x10]
+cmp r0, #0x3
+add r0, r5, #0x100
+ldreqsh r0, [r0, #0x1a]
+streqh r0, [r1, #0x18]
+ldrnesh r0, [r0, #0x18]
+strneh r0, [r1, #0x18]
+.L_02050d94:
+ldrb r0, [sp, #0x20]
+strb r0, [r4, #0xf8]
+.L_02050d9c:
+mov r0, #0x1
+add sp, sp, #0x4
+ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}

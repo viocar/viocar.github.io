@@ -1,0 +1,13 @@
+.arm
+func_02005f28:
+stmdb sp!, {r3, lr}
+ldr r0, [.L_02005f50]
+mov r1, #0x0
+str r1, [r0, #0x0]
+ldr r1, [r0, #0x10]
+ldr r0, [r0, #0x14]
+cmp r1, #0x0
+ldmeqia sp!, {r3, pc}
+blx r1
+ldmia sp!, {r3, pc}
+.L_02005f50: .word 0x20eda20

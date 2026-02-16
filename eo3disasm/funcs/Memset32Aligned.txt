@@ -1,0 +1,8 @@
+.arm
+Memset32Aligned:
+add r12, r1, r2
+.L_02005f8c:
+cmp r1, r12
+stmltia r1!, {r0}
+blt .L_02005f8c
+bx lr

@@ -1,0 +1,52 @@
+.arm
+func_02025788:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+mov r5, r1
+ldrh r2, [r5, #0x2c]
+ldrh r1, [r5, #0x2e]
+mov r6, r0
+mov r4, r2, lsl #0xc
+mov r7, r1, lsl #0xc
+mov r0, r7
+mov r1, r4
+bl GetHardwareDivRegisters
+ldrsh r0, [r5, #0x22]
+str r0, [r6, #0x0]
+str r0, [r6, #0x14]
+bl GetHardwareDivResult
+ldrsh r2, [r5, #0x20]
+mov r1, r7
+mul r0, r2, r0
+mov r2, r0, asr #0xc
+mov r0, r4
+str r2, [r6, #0x4]
+bl GetHardwareDivRegisters
+ldrh r0, [r5, #0x2e]
+ldrh r1, [r5, #0x2c]
+ldrsh r12, [r5, #0x22]
+rsb r2, r0, #0x0
+mov r9, r2, lsl #0xb
+ldrsh r4, [r5, #0x20]
+rsb r2, r1, #0x0
+mov lr, r2, lsl #0xb
+smull r8, r7, r12, lr
+smull r3, r2, r12, r9
+smlal r3, r2, r4, lr
+smull lr, r12, r4, r9
+subs r8, r8, lr
+sbc r4, r7, r12
+mov r7, r8, lsr #0x8
+orr r7, r7, r4, lsl #0x18
+add r1, r7, r1, lsl #0xf
+str r1, [r6, #0x30]
+mov r1, r3, lsr #0x8
+orr r1, r1, r2, lsl #0x18
+add r0, r1, r0, lsl #0xf
+str r0, [r6, #0x34]
+bl GetHardwareDivResult
+ldrsh r1, [r5, #0x20]
+rsb r1, r1, #0x0
+mul r0, r1, r0
+mov r0, r0, asr #0xc
+str r0, [r6, #0x10]
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}

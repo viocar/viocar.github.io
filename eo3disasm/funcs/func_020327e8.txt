@@ -1,0 +1,42 @@
+.arm
+func_020327e8:
+stmdb sp!, {r3, r4, r5, r6, lr}
+sub sp, sp, #0x4
+mov r6, r0
+mov r0, r1
+add r1, sp, #0x0
+mov r2, #0x1
+bl func_0202e144
+movs r5, r0
+addeq sp, sp, #0x4
+ldmeqia sp!, {r3, r4, r5, r6, pc}
+ldr r1, [sp, #0x0]
+bl DrainWriteBufferAndInvalidateDataCache
+bl DisableIRQ
+ldr r3, [.L_02032884]
+mov r4, r0
+ldrsb r1, [r3, #0x0]
+ldrsb r2, [r3, #0x1]
+ldrsb r3, [r3, #0x2]
+mov r0, r5
+bl func_02032a48
+mov r0, r4
+bl EnableIRQ
+mov r0, r5
+bl func_0202246c
+mov r4, r0
+add r0, r6, #0x2000
+ldr r0, [r0, #0xa84]
+bl func_0202245c
+mov r1, r4
+bl func_0201ed14
+add r1, r6, #0x2000
+mov r0, r5
+ldr r2, [r4, #0x8]
+str r2, [r1, #0xa98]
+ldr r2, [r4, #0x2c]
+str r2, [r1, #0xa9c]
+bl func_0202b6e4
+add sp, sp, #0x4
+ldmia sp!, {r3, r4, r5, r6, pc}
+.L_02032884: .word 0x2108c0c

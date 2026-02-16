@@ -1,0 +1,38 @@
+.arm
+func_020302e0:
+cmp r0, #0x1
+mov r2, #0x0
+bne .L_0203031c
+ldr r0, [.L_02030364]
+ldrsb r2, [r0, #0xc]
+ldrsb r1, [r0, #0xf]
+add r1, r2, r1
+strb r1, [r0, #0xc]
+ldrsb r1, [r0, #0xc]
+cmp r1, #0x20
+movgt r1, #0x20
+strgtb r1, [r0, #0xc]
+movgt r0, #0x1
+movle r0, #0x0
+bx lr
+.L_0203031c:
+cmp r0, #0x2
+bne .L_0203035c
+ldr r0, [.L_02030364]
+ldrsb r3, [r0, #0xc]
+cmp r3, #0x0
+streqb r2, [r0, #0xd]
+moveq r0, #0x1
+bxeq lr
+ldrsb r1, [r0, #0xf]
+sub r1, r3, r1
+strb r1, [r0, #0xc]
+ldrsb r1, [r0, #0xc]
+cmp r1, #0x0
+strleb r2, [r0, #0xc]
+mov r0, #0x0
+bx lr
+.L_0203035c:
+mov r0, r2
+bx lr
+.L_02030364: .word 0x2102378

@@ -1,0 +1,12 @@
+.arm
+func_0204ad9c:
+ldr r2, [.L_0204adc0]
+cmp r1, #0x63
+ldr r3, [r2, #0x10]
+mvngt r0, #0x0
+bxgt lr
+mov r2, #0x194
+smlabb r0, r0, r2, r3
+ldr r0, [r0, r1, lsl #0x2]
+bx lr
+.L_0204adc0: .word 0x21143c0

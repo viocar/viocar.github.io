@@ -1,0 +1,60 @@
+.arm
+func_020298f8:
+stmdb sp!, {r4, r5, lr}
+sub sp, sp, #0x14
+mov r3, #0x0
+ldr r0, [.L_020299d8]
+mov r1, #0x200
+mov r4, r3
+.L_02029910:
+ldr r2, [r0, #0x4]
+add r2, r2, #0x8
+str r1, [r2, r3, lsl #0x3]!
+add r3, r3, #0x1
+strh r4, [r2, #0x4]
+cmp r3, #0x80
+blt .L_02029910
+ldr r5, [.L_020299d8]
+mov r1, #0x400
+ldr r0, [r5, #0x4]
+add r0, r0, #0x1000
+ldr r2, [r0, #0x224]
+str r2, [r0, #0x21c]
+ldr r0, [r5, #0x4]
+add r0, r0, #0x8
+bl DrainWriteBufferAndInvalidateDataCache
+ldr r0, [r5, #0x4]
+mov r1, r4
+strb r4, [r0, #0xa08]
+ldr r0, [r5, #0x4]
+mov r2, #0x600
+add r0, r0, #0x8
+add r0, r0, #0x400
+bl Memset
+ldr r0, [r5, #0x4]
+ldr r0, [r0, #0xa14]
+tst r0, #0x1
+addeq sp, sp, #0x14
+ldmeqia sp!, {r4, r5, pc}
+mov r5, #0x800
+mov r0, r5
+bl func_02029a04
+mov r0, #0xc0000000
+str r0, [sp, #0x0]
+mov r0, #0xf
+stmib sp, {r0, r4}
+mov r0, #0x1
+str r0, [sp, #0xc]
+mov r1, r4
+mov r2, r4
+mov r3, r4
+mov r0, #0x7f
+str r4, [sp, #0x10]
+bl func_02029b90
+mov r1, r4
+mov r2, r5
+mov r0, #0x1f
+bl func_02029adc
+add sp, sp, #0x14
+ldmia sp!, {r4, r5, pc}
+.L_020299d8: .word 0x20fe780

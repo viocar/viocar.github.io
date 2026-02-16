@@ -1,0 +1,60 @@
+.arm
+func_02006394:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x4
+add r2, r0, #0x4
+add r7, r2, #0x1
+ldrb r10, [r0, #0x0]
+and r4, r10, #0xf
+mov r3, #0x0
+mov lr, #0x0
+and r10, r4, #0x7
+add r11, r10, #0x4
+str r11, [sp, #0x0]
+ldr r10, [r0, #0x0]
+mov r12, r10, lsr #0x8
+ldrb r10, [r2, #0x0]
+add r10, r10, #0x1
+add r0, r2, r10, lsl #0x1
+mov r2, r7
+.L_020063d8:
+cmp r12, #0x0
+ble .L_02006460
+mov r8, #0x20
+ldr r5, [r0], #0x4
+.L_020063e8:
+subs r8, r8, #0x1
+blt .L_020063d8
+mov r10, #0x1
+and r9, r10, r5, lsr #0x1f
+ldrb r6, [r2, #0x0]
+mov r6, r6, lsl r9
+mov r10, r2, lsr #0x1
+mov r10, r10, lsl #0x1
+ldrb r11, [r2, #0x0]
+and r11, r11, #0x3f
+add r11, r11, #0x1
+add r10, r10, r11, lsl #0x1
+add r2, r10, r9
+tst r6, #0x80
+beq .L_02006450
+mov r3, r3, lsr r4
+ldrb r10, [r2, #0x0]
+rsb r11, r4, #0x20
+orr r3, r3, r10, lsl r11
+mov r2, r7
+add lr, lr, #0x1
+ldr r11, [sp, #0x0]
+cmp lr, r11
+streq r3, [r1], #0x4
+subeq r12, r12, #0x4
+moveq lr, #0x0
+.L_02006450:
+cmp r12, #0x0
+movgt r5, r5, lsl #0x1
+bgt .L_020063e8
+b .L_020063d8
+.L_02006460:
+add sp, sp, #0x4
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+bx lr

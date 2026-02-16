@@ -1,0 +1,42 @@
+.arm
+func_ov003_02138474:
+ldr r3, [r1, #0x4]
+ldr r2, [r0, #0x4]
+cmp r3, #0x0
+bne .L_3_021384a8
+cmp r2, #0x0
+mvnne r0, #0x0
+bxne lr
+ldrsh r2, [r0, #0x0]
+ldrsh r0, [r1, #0x0]
+cmp r2, r0
+movgt r0, #0x1
+mvnle r0, #0x0
+bx lr
+.L_3_021384a8:
+cmp r2, #0x0
+bne .L_3_021384d4
+cmp r3, #0x0
+movne r0, #0x1
+bxne lr
+ldrsh r2, [r0, #0x0]
+ldrsh r0, [r1, #0x0]
+cmp r2, r0
+movgt r0, #0x1
+mvnle r0, #0x0
+bx lr
+.L_3_021384d4:
+cmp r2, r3
+mvnlt r0, #0x0
+bxlt lr
+movgt r0, #0x1
+bxgt lr
+ldrsh r1, [r1, #0x0]
+ldrsh r0, [r0, #0x0]
+cmp r0, r1
+movgt r0, #0x1
+bxgt lr
+movlt r0, #0x1
+movge r0, #0x0
+rsb r0, r0, #0x0
+bx lr

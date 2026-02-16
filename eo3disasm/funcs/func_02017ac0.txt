@@ -1,0 +1,119 @@
+.arm
+func_02017ac0:
+stmdb sp!, {r0, r1, r2, r3}
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+ldr r0, [.L_02017c6c]
+ldr r6, [sp, #0x24]
+rsb r1, r0, #0x400
+and r2, r0, r6, asr #0x14
+add r7, r2, r1
+cmp r7, #0x14
+ldr r8, [sp, #0x20]
+bge .L_02017b98
+cmp r7, #0x0
+bge .L_02017b38
+ldr r2, [sp, #0x20]
+ldr r3, [sp, #0x24]
+ldr r0, [.L_02017c70]
+ldr r1, [.L_02017c74]
+bl func_020184a4
+mov r4, #0x0
+mov r2, r4
+mov r3, r4
+bl func_020190c8
+bls .L_02017c50
+cmp r6, #0x0
+movlt r8, r4
+movlt r6, #0x80000000
+blt .L_02017c50
+orrs r0, r6, r8
+movne r8, r4
+ldrne r6, [.L_02017c78]
+b .L_02017c50
+.L_02017b38:
+ldr r4, [.L_02017c7c]
+and r0, r6, r4, asr r7
+orrs r0, r8, r0
+ldreq r0, [sp, #0x20]
+ldreq r1, [sp, #0x24]
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+addeq sp, sp, #0x10
+bxeq lr
+ldr r2, [sp, #0x20]
+ldr r3, [sp, #0x24]
+ldr r0, [.L_02017c70]
+ldr r1, [.L_02017c74]
+bl func_020184a4
+mov r2, #0x0
+mov r3, r2
+bl func_020190c8
+bls .L_02017c50
+cmp r6, #0x0
+movgt r0, #0x100000
+addgt r6, r6, r0, asr r7
+mvn r0, r4, asr r7
+and r6, r6, r0
+mov r8, #0x0
+b .L_02017c50
+.L_02017b98:
+cmp r7, #0x33
+ble .L_02017bd8
+cmp r7, #0x400
+ldrne r0, [sp, #0x20]
+ldrne r1, [sp, #0x24]
+ldmneia sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+addne sp, sp, #0x10
+bxne lr
+ldr r0, [sp, #0x20]
+ldr r1, [sp, #0x24]
+mov r2, r0
+mov r3, r1
+bl func_020184a4
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+add sp, sp, #0x10
+bx lr
+.L_02017bd8:
+sub r5, r0, #0x800
+sub r4, r7, #0x14
+tst r8, r5, lsr r4
+mov r9, r8
+ldreq r0, [sp, #0x20]
+ldreq r1, [sp, #0x24]
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+addeq sp, sp, #0x10
+bxeq lr
+ldr r2, [sp, #0x20]
+ldr r3, [sp, #0x24]
+ldr r0, [.L_02017c70]
+ldr r1, [.L_02017c74]
+bl func_020184a4
+mov r2, #0x0
+mov r3, r2
+bl func_020190c8
+bls .L_02017c50
+cmp r6, #0x0
+ble .L_02017c48
+cmp r7, #0x14
+addeq r6, r6, #0x1
+beq .L_02017c48
+rsb r0, r7, #0x34
+mov r1, #0x1
+add r8, r8, r1, lsl r0
+cmp r8, r9
+addlo r6, r6, #0x1
+.L_02017c48:
+mvn r0, r5, lsr r4
+and r8, r8, r0
+.L_02017c50:
+mov r0, r8
+mov r1, r6
+str r6, [sp, #0x24]
+str r8, [sp, #0x20]
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+add sp, sp, #0x10
+bx lr
+.L_02017c6c: .word 0x7ff
+.L_02017c70: .word 0x8800759c
+.L_02017c74: .word 0x7e37e43c
+.L_02017c78: .word 0x3ff00000
+.L_02017c7c: .word 0xfffff

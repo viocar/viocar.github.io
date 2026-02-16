@@ -1,0 +1,64 @@
+.arm
+func_ov002_021386cc:
+stmdb sp!, {r3, r4, r5, lr}
+mov r4, r0
+ldr r0, [r4, #0x24]
+ldr r2, [r4, #0x184]
+orr r1, r0, #0x8
+ldr r0, [r4, #0x188]
+bic r1, r1, #0x10000
+cmp r0, r2
+mov r5, #0x0
+str r1, [r4, #0x24]
+bicge r0, r1, #0x8
+strge r0, [r4, #0x24]
+strge r5, [r4, #0x188]
+movge r0, #0x34
+ldmgeia sp!, {r3, r4, r5, pc}
+ldr r0, [.L_2_021387b4]
+ldr r1, [r4, #0x180]
+ldr r0, [r0, r2, lsl #0x2]
+sub r0, r0, #0xa
+cmp r1, r0
+bne .L_2_02138768
+ldr r0, [r4, #0x50]
+mov r1, r5
+bl func_0208ce54
+cmp r0, #0x0
+bne .L_2_0213875c
+ldr r0, [r4, #0x50]
+mov r1, r5
+bl func_0208c694
+ldr r0, [r4, #0x50]
+mov r1, r5
+bl func_0208ce54
+cmp r0, #0x0
+ldrne r0, [r4, #0x24]
+orrne r0, r0, #0x2000
+strne r0, [r4, #0x24]
+.L_2_0213875c:
+ldr r0, [r4, #0x54]
+mov r1, #0x0
+bl func_0208c694
+.L_2_02138768:
+ldr r1, [r4, #0x184]
+ldr r0, [.L_2_021387b4]
+ldr r2, [r4, #0x180]
+ldr r0, [r0, r1, lsl #0x2]
+sub r0, r0, #0x12
+cmp r2, r0
+bne .L_2_0213878c
+mov r0, #0x0
+bl func_0209ef0c
+.L_2_0213878c:
+ldr r1, [r4, #0x184]
+mov r0, r4
+bl func_ov002_0213846c
+cmp r0, #0x1
+ldreq r1, [r4, #0x188]
+ldreq r0, [r4, #0x184]
+addeq r0, r1, r0
+streq r0, [r4, #0x188]
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, pc}
+.L_2_021387b4: .word data_ov002_021443e0

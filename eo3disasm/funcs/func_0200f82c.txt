@@ -1,0 +1,81 @@
+.arm
+func_0200f82c:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, lr}
+sub sp, sp, #0x14
+mov r8, r0
+mov r7, r1
+mov r6, r2
+mov r5, r3
+mov r10, #0x1
+bl func_0200e5ac
+mov r9, #0x2
+ldr r4, [r0, #0x4]
+mov r0, r9
+mov r1, #0x9
+mov r2, #0xa
+bl func_0200e61c
+cmp r0, #0x0
+addne sp, sp, #0x14
+ldmneia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, pc}
+mov r1, r9
+add r0, r4, #0x188
+bl InvalidateDataCacheLine
+add r0, r4, #0x100
+ldrh r0, [r0, #0x88]
+cmp r0, #0x0
+bne .L_0200f8b0
+add r0, r4, #0x82
+mov r1, r9
+add r0, r0, #0x100
+bl InvalidateDataCacheLine
+add r2, r4, #0x100
+mov r1, r9
+add r0, r4, #0x86
+ldrh r10, [r2, #0x82]
+bl InvalidateDataCacheLine
+.L_0200f8b0:
+cmp r6, #0x0
+addeq sp, sp, #0x14
+moveq r0, #0x6
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, pc}
+cmp r10, #0x0
+addeq sp, sp, #0x14
+moveq r0, #0x7
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, pc}
+mov r9, #0x2
+mov r1, r9
+add r0, r4, #0x7c
+bl InvalidateDataCacheLine
+ldr r0, [r4, #0x7c]
+cmp r6, r0
+addeq sp, sp, #0x14
+moveq r0, #0x6
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, pc}
+cmp r5, #0x200
+addhi sp, sp, #0x14
+movhi r0, #0x6
+ldmhiia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, pc}
+cmp r5, #0x0
+addeq sp, sp, #0x14
+moveq r0, #0x6
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, pc}
+mov r0, r6
+mov r1, r5
+bl CleanDataCacheLine
+ldrh r2, [sp, #0x38]
+ldrh r1, [sp, #0x3c]
+ldrh r0, [sp, #0x40]
+str r2, [sp, #0x0]
+str r1, [sp, #0x4]
+str r0, [sp, #0x8]
+str r8, [sp, #0xc]
+mov r2, r6
+mov r3, r5
+mov r0, #0xf
+mov r1, #0x7
+str r7, [sp, #0x10]
+bl func_0200e490
+cmp r0, #0x0
+moveq r0, r9
+add sp, sp, #0x14
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, pc}

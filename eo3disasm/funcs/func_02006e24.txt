@@ -1,0 +1,19 @@
+.arm
+func_02006e24:
+stmdb sp!, {r4, lr}
+bl DisableIRQ
+ldr r1, [.L_02006e5c]
+mov r4, #0x0
+ldr r1, [r1, #0x8]
+cmp r1, #0x0
+beq .L_02006e50
+.L_02006e40:
+ldr r1, [r1, #0x0]
+add r4, r4, #0x1
+cmp r1, #0x0
+bne .L_02006e40
+.L_02006e50:
+bl EnableIRQ
+mov r0, r4
+ldmia sp!, {r4, pc}
+.L_02006e5c: .word 0x20eda5c

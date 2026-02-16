@@ -1,0 +1,25 @@
+.arm
+func_02038d48:
+stmdb sp!, {r3, lr}
+ldr r0, [.L_02038d98]
+ldr r0, [r0, #0x20]
+cmp r0, #0x1
+beq .L_02038d60
+bl HandleError
+.L_02038d60:
+mov r0, #0x3
+bl func_02037060
+ldr r0, [.L_02038d9c]
+bl func_0200f0c8
+cmp r0, #0x2
+ldreq r0, [.L_02038d98]
+moveq r1, #0x0
+streqh r1, [r0, #0x6]
+moveq r0, #0x1
+ldmeqia sp!, {r3, pc}
+mov r0, #0x9
+bl func_02037060
+mov r0, #0x0
+ldmia sp!, {r3, pc}
+.L_02038d98: .word 0x2111620
+.L_02038d9c: .word func_020383d0

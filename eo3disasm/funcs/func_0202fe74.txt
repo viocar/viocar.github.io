@@ -1,0 +1,15 @@
+.arm
+func_0202fe74:
+ldr r0, [.L_0202fea4]
+mov r2, #0x0
+str r2, [r0, #0x0]
+str r2, [r0, #0x4]
+str r2, [r0, #0x8]
+strb r2, [r0, #0xd]
+strb r2, [r0, #0xe]
+mov r1, #0x3
+strb r1, [r0, #0xf]
+strb r2, [r0, #0x10]
+strb r2, [r0, #0x11]
+bx lr
+.L_0202fea4: .word 0x2102378

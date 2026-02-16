@@ -1,0 +1,277 @@
+.arm
+func_020aa9e4:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x1c
+bl func_020a9c68
+mov r6, r0
+ldr r9, [r6, #0x4]
+bl func_ov000_01ff9c98
+mov r0, #0x1f
+bl func_ov000_01ff9c40
+mov r8, #0x0
+mov r11, #0x1
+mov r10, r8
+mov r5, #0x29
+mov r4, #0xe
+.L_020aaa18:
+ldr r0, [r6, #0x2b0]
+cmp r0, #0x1
+beq .L_020aaa30
+ldr r0, [r6, #0x2b8]
+cmp r0, #0x1
+bne .L_020aaa74
+.L_020aaa30:
+mov r0, r11
+bl func_020aa908
+cmp r0, #0x1
+bne .L_020aaa54
+ldrb r0, [r6, #0x2a5]
+subs r0, r0, #0xa
+movmi r0, #0x0
+andpl r0, r0, #0xff
+b .L_020aaa60
+.L_020aaa54:
+mov r0, r9
+mov r1, r8
+bl func_02069e8c
+.L_020aaa60:
+bl func_ov000_01ff9c40
+mov r0, r9
+mov r1, r8
+bl func_02069a20
+b .L_020aaa78
+.L_020aaa74:
+ldr r0, [.L_020aadd8]
+.L_020aaa78:
+bl func_ov000_01ff9bf0
+str r10, [sp, #0x0]
+str r10, [sp, #0x4]
+add r0, r8, r8, lsl #0x1
+str r5, [sp, #0x8]
+add r7, r0, #0xa
+add r2, r7, #0x238
+ldr r3, [r6, #0xa0]
+mov r0, r4
+mov r1, r10
+add r2, r2, #0x4800
+bl func_ov000_01ffb424
+str r10, [sp, #0x0]
+str r10, [sp, #0x4]
+str r5, [sp, #0x8]
+mov r0, r4
+mov r1, r10
+add r2, r7, #0x39
+add r2, r2, #0x4a00
+ldr r3, [r6, #0xa0]
+bl func_ov000_01ffb424
+add r0, r7, #0x3a
+add r2, r0, #0x4a00
+str r10, [sp, #0x0]
+str r10, [sp, #0x4]
+str r5, [sp, #0x8]
+mov r0, r4
+mov r1, r10
+ldr r3, [r6, #0xa0]
+bl func_ov000_01ffb424
+add r0, r8, #0x1
+and r8, r0, #0xff
+cmp r8, #0x4
+blo .L_020aaa18
+bl func_ov000_01ff9c0c
+bl func_ov000_01ff9ce4
+mov r0, #0x1
+bl func_020aa908
+cmp r0, #0x1
+bne .L_020aab28
+ldrb r0, [r6, #0x2a5]
+subs r0, r0, #0xa
+andpl r10, r0, #0xff
+b .L_020aab2c
+.L_020aab28:
+mov r10, #0x1f
+.L_020aab2c:
+mov r0, r10
+bl func_ov000_01ff9c40
+mov r7, #0x0
+mov r8, r7
+mov r5, #0x29
+mov r4, #0xe
+.L_020aab44:
+str r8, [sp, #0x0]
+str r8, [sp, #0x4]
+str r5, [sp, #0x8]
+add r2, r7, #0x238
+ldr r3, [r6, #0xa0]
+mov r0, r4
+mov r1, r8
+add r2, r2, #0x4800
+bl func_ov000_01ffb424
+add r0, r7, #0x1
+and r7, r0, #0xff
+cmp r7, #0xa
+blo .L_020aab44
+bl func_ov000_01ff9ce4
+bl func_ov000_01ff9c98
+ldr r11, [.L_020aaddc]
+mov r0, r11
+bl func_ov000_01ff9bf0
+mov r10, #0x0
+mov r7, #0x2b
+mov r5, #0x2
+mov r4, #0xc
+.L_020aab9c:
+ldr r0, [r6, #0x2b0]
+cmp r0, #0x1
+ldrne r0, [r6, #0x2b8]
+cmpne r0, #0x1
+bne .L_020aabc0
+mov r0, r9
+mov r1, r8
+bl func_02069f80
+b .L_020aabc4
+.L_020aabc0:
+mov r0, r11
+.L_020aabc4:
+bl func_ov000_01ff9bf0
+mul r3, r8, r4
+str r10, [sp, #0x0]
+str r7, [sp, #0x4]
+add r0, r6, r8, lsl #0x2
+ldr r2, [r6, #0xa0]
+ldr r1, [r0, #0x28]
+mov r0, r5
+add r2, r2, #0x1f
+add r3, r3, #0x88
+bl func_0201dd70
+add r0, r8, #0x1
+and r8, r0, #0xff
+cmp r8, #0x4
+blo .L_020aab9c
+bl func_ov000_01ff9c0c
+mov r4, #0xc
+mov r8, #0x0
+mov r7, #0x2b
+mov r11, #0x6
+mov r5, r4
+.L_020aac18:
+bl func_0206fc28
+add r0, r0, #0xc
+mla r0, r10, r4, r0
+bl func_02074e28
+add r0, r0, #0x1c40
+add r2, r0, #0x8000
+mul r0, r10, r5
+add r0, r0, #0x86
+stmia sp, {r0, r8}
+str r7, [sp, #0x8]
+ldr r3, [r6, #0xa0]
+mov r0, r11
+mov r1, r8
+add r3, r3, #0xa
+bl func_ov000_01ffb424
+add r0, r10, #0x1
+and r10, r0, #0xff
+cmp r10, #0x4
+blo .L_020aac18
+ldr r0, [r6, #0x2b8]
+mov r10, #0x0
+cmp r0, #0x1
+bne .L_020aacd4
+bl func_ov000_01ff9c98
+ldr r11, [.L_020aade0]
+mov r7, #0x33
+mov r5, #0x2
+mov r4, #0xc
+.L_020aac88:
+mov r0, r9
+mov r1, r8
+bl func_02069944
+cmp r0, #0x1
+bne .L_020aacc4
+mul r0, r8, r4
+add r0, r0, #0x87
+stmia sp, {r0, r10}
+str r7, [sp, #0x8]
+ldr r3, [r6, #0xa0]
+mov r0, r5
+mov r1, r10
+mov r2, r11
+add r3, r3, #0xc
+bl func_ov000_01ffb424
+.L_020aacc4:
+add r0, r8, #0x1
+and r8, r0, #0xff
+cmp r8, #0x4
+blo .L_020aac88
+.L_020aacd4:
+ldr r0, [r6, #0xb4]
+mov r7, #0x0
+cmp r0, #0x1
+ldreq r1, [r6, #0xbc]
+ldreq r0, [r6, #0xc0]
+cmpeq r1, r0
+bne .L_020aadc0
+bl func_020a0d2c
+cmp r0, #0x0
+beq .L_020aadc0
+ldr r0, [r6, #0xbc]
+mov r3, #0x43
+cmp r0, #0x1
+moveq r0, #0x41
+mov r2, #0x44
+mov r1, #0x40
+streq r0, [sp, #0x18]
+movne r0, #0x42
+str r3, [sp, #0xc]
+str r2, [sp, #0x10]
+str r1, [sp, #0x14]
+strne r0, [sp, #0x18]
+mov r9, #0x0
+mov r6, #0x33
+mov r4, #0x2
+add r5, sp, #0xc
+.L_020aad3c:
+ldr r0, [r5, r9, lsl #0x2]
+str r7, [sp, #0x0]
+add r2, r0, #0x710
+str r7, [sp, #0x4]
+mov r0, r4
+mov r1, r7
+mov r3, r7
+add r2, r2, #0x2000
+str r6, [sp, #0x8]
+mov r8, #0x0
+bl func_ov000_01ffb424
+add r0, r9, #0x1
+and r9, r0, #0xff
+cmp r9, #0x2
+blo .L_020aad3c
+bl func_ov000_01ff9c98
+mov r7, #0x34
+mov r6, #0x2
+add r5, sp, #0xc
+.L_020aad88:
+ldr r0, [r5, r4, lsl #0x2]
+str r8, [sp, #0x0]
+add r2, r0, #0x710
+str r8, [sp, #0x4]
+mov r0, r6
+mov r1, r8
+mov r3, r8
+add r2, r2, #0x2000
+str r7, [sp, #0x8]
+bl func_ov000_01ffb424
+add r0, r4, #0x1
+and r4, r0, #0xff
+cmp r4, #0x4
+blo .L_020aad88
+.L_020aadc0:
+bl func_ov000_01ff9ce4
+mov r0, #0x1f
+bl func_ov000_01ff9c40
+bl func_ov000_01ff9c0c
+add sp, sp, #0x1c
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_020aadd8: .word 0x1888a0ff
+.L_020aaddc: .word 0xb8f8f8ff
+.L_020aade0: .word 0x9c5f

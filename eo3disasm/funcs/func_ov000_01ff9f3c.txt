@@ -1,0 +1,9 @@
+.arm
+func_ov000_01ff9f3c:
+ldr r0, [.L_0_01ff9f54]
+ldr r0, [r0, #0x20]
+tst r0, #0x800
+movne r0, #0x1
+moveq r0, #0x0
+bx lr
+.L_0_01ff9f54: .word 0x20ff62c

@@ -1,0 +1,9 @@
+.arm
+func_0200c7dc:
+ldr r12, [.L_0200c7f0]
+.L_0200c7e0:
+ldr r0, [r12, #0x0]
+cmp r0, #0x1
+beq .L_0200c7e0
+bx lr
+.L_0200c7f0: .word 0x20ef93c

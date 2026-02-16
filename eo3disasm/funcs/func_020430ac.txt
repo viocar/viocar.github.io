@@ -1,0 +1,78 @@
+.arm
+func_020430ac:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, lr}
+sub sp, sp, #0x5c
+mov r9, r0
+mov r8, r1
+mov r7, r2
+mov r6, r3
+ldr r5, [sp, #0x78]
+bl func_0204a6e8
+mov r4, r0
+add r0, sp, #0x8
+mov r1, #0x0
+mov r2, #0x54
+bl Memset
+ldrb r0, [r9, #0x620]
+cmp r0, #0x0
+moveq r0, #0x2
+streqh r0, [sp, #0x10]
+ldreqb r0, [r9, #0x621]
+streq r0, [sp, #0x14]
+movne r0, #0x1
+strneh r0, [sp, #0x10]
+ldrnesh r0, [r9, #0x1a]
+strne r0, [sp, #0x14]
+ldrsh r0, [sp, #0x80]
+cmp r0, #0x2
+beq .L_02043120
+cmp r0, #0x3
+beq .L_0204312c
+b .L_02043134
+.L_02043120:
+mov r0, #0x4e
+.L_02043124:
+strh r0, [sp, #0x4a]
+b .L_02043184
+.L_0204312c:
+mov r0, #0xcc
+b .L_02043124
+.L_02043134:
+add r0, r9, #0xc
+mov r1, #0x10000000
+bl func_0204a7a0
+cmp r0, #0x0
+movne r0, #0xbe
+strneh r0, [sp, #0x4a]
+bne .L_02043184
+add r0, r9, #0xc
+mov r1, #0x8000000
+bl func_0204a7a0
+cmp r0, #0x0
+movne r0, #0x6d
+strneh r0, [sp, #0x4a]
+bne .L_02043184
+ldrb r0, [r9, #0x620]
+cmp r0, #0x0
+moveq r0, #0x48
+streqh r0, [sp, #0x4a]
+movne r0, #0x47
+strneh r0, [sp, #0x4a]
+.L_02043184:
+ldrsh r0, [sp, #0x7c]
+mov r2, #0x1
+mov r1, #0x5a
+strh r2, [sp, #0x48]
+strh r1, [sp, #0x4e]
+str r0, [sp, #0x4]
+add r0, sp, #0x8
+mov r3, r6
+mov r1, r8
+mov r2, r7
+str r5, [sp, #0x0]
+bl func_020618c8
+add r2, r4, #0x1000
+str r0, [r2, #0xf6c]
+str r1, [r2, #0xf70]
+add sp, sp, #0x5c
+ldmia sp!, {r4, r5, r6, r7, r8, r9, pc}

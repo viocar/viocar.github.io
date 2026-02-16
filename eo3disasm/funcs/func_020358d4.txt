@@ -1,0 +1,20 @@
+.arm
+func_020358d4:
+stmdb sp!, {r3, lr}
+cmp r0, #0x0
+ldmeqia sp!, {r3, pc}
+mov r12, #0x1
+and r3, r1, #0x7
+mov r3, r12, lsl r3
+and lr, r3, #0xff
+sub r3, r12, #0x2
+eor r3, lr, r3
+ldrb r12, [r0, r1, lsr #0x3]
+and r3, r3, #0xff
+cmp r2, #0x0
+and r2, r12, r3
+strb r2, [r0, r1, lsr #0x3]
+ldrneb r2, [r0, r1, lsr #0x3]
+orrne r2, r2, lr
+strneb r2, [r0, r1, lsr #0x3]
+ldmia sp!, {r3, pc}

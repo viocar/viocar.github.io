@@ -1,0 +1,65 @@
+.arm
+func_020a5704:
+stmdb sp!, {r4, lr}
+ldr r0, [.L_020a57e8]
+ldr r4, [r0, #0x4]
+ldr r0, [r4, #0x10]
+cmp r0, #0x10
+addls pc, pc, r0, lsl #0x2
+b .L_020a57e0
+.L_020a5720: ; jump table
+b .L_020a57e0 ; case 0
+b .L_020a57e0 ; case 1
+b .L_020a5764 ; case 2
+b .L_020a57e0 ; case 3
+b .L_020a5764 ; case 4
+b .L_020a57e0 ; case 5
+b .L_020a5764 ; case 6
+b .L_020a57e0 ; case 7
+b .L_020a5764 ; case 8
+b .L_020a57e0 ; case 9
+b .L_020a57e0 ; case 10
+b .L_020a5764 ; case 11
+b .L_020a5764 ; case 12
+b .L_020a57e0 ; case 13
+b .L_020a57e0 ; case 14
+b .L_020a57e0 ; case 15
+b .L_020a57e0 ; case 16
+.L_020a5764:
+ldr r0, [r4, #0xe0]
+cmp r0, #0x0
+beq .L_020a57e0
+bl func_ov000_01ff9c0c
+bl func_0207fc0c
+cmp r0, #0x1f
+bne .L_020a5788
+bl func_ov000_01ff9c2c
+b .L_020a5794
+.L_020a5788:
+bl func_0207fc0c
+bl func_ov000_01ff9c40
+bl func_ov000_01ff9c98
+.L_020a5794:
+ldr r3, [r4, #0xa8]
+mov r0, #0x18
+mov r1, #0x64
+mov r2, #0x3d
+bl func_020a4b44
+ldr r1, [r4, #0xac]
+ldr r0, [r4, #0xb0]
+cmp r0, r1
+strhi r1, [r4, #0xb0]
+ldr r0, [r4, #0xb0]
+ldr r1, [r4, #0xac]
+mov r0, r0, lsl #0xa
+bl func_02019b2c
+mov r3, r0
+mov r0, #0x2c
+mov r1, #0x6d
+mov r2, #0x3d
+bl func_020a4a80
+bl func_ov000_01ff9c2c
+.L_020a57e0:
+mov r0, #0x0
+ldmia sp!, {r4, pc}
+.L_020a57e8: .word 0x2135e34

@@ -1,0 +1,9 @@
+data_020e22f0:
+.word 0x20e22d0
+.word 0x20e2334
+.word 0x20e2328
+.word 0x20e2310
+.word 0x20e22cc
+.word 0x20e2344
+.word 0x20e239c
+.word 0x20e22c8

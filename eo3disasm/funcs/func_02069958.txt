@@ -1,0 +1,36 @@
+.arm
+func_02069958:
+mov r2, #0xc
+mul r2, r1, r2
+ldr r0, [r0, #0x4]
+ldr r0, [r0, r2]
+cmp r0, #0x10
+addls pc, pc, r0, lsl #0x2
+b .L_020699c8
+.L_02069974: ; jump table
+b .L_020699b8 ; case 0
+b .L_020699b8 ; case 1
+b .L_020699c8 ; case 2
+b .L_020699c8 ; case 3
+b .L_020699c8 ; case 4
+b .L_020699c0 ; case 5
+b .L_020699c0 ; case 6
+b .L_020699c0 ; case 7
+b .L_020699c0 ; case 8
+b .L_020699c0 ; case 9
+b .L_020699c0 ; case 10
+b .L_020699c0 ; case 11
+b .L_020699c0 ; case 12
+b .L_020699c0 ; case 13
+b .L_020699c0 ; case 14
+b .L_020699c0 ; case 15
+b .L_020699c0 ; case 16
+.L_020699b8:
+mov r0, #0x0
+bx lr
+.L_020699c0:
+mov r0, #0x1
+bx lr
+.L_020699c8:
+mov r0, #0x0
+bx lr

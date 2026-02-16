@@ -1,0 +1,13 @@
+.arm
+func_02076054:
+ldr r2, [r0, #0x1c]
+mov r3, #0x4
+add r2, r0, r2
+strb r3, [r2, #0x20]
+ldr r2, [r0, #0x1c]
+add r2, r0, r2, lsl #0x2
+str r1, [r2, #0x3c]
+ldr r1, [r0, #0x1c]
+add r1, r1, #0x1
+str r1, [r0, #0x1c]
+bx lr

@@ -1,0 +1,25 @@
+.arm
+func_ov001_0214a518:
+ldrb r1, [r0, #0x620]
+mov r2, #0x0
+cmp r1, #0x1
+beq .L_1_0214a548
+cmp r1, #0x0
+bne .L_1_0214a55c
+ldrb r1, [r0, #0x624]
+tst r1, #0x8
+bne .L_1_0214a548
+ldrsh r1, [r0, #0x18]
+cmp r1, #0x0
+beq .L_1_0214a55c
+.L_1_0214a548:
+add r0, r0, #0x200
+ldrh r0, [r0, #0xbc]
+tst r0, #0x1
+movne r2, #0x1
+b .L_1_0214a560
+.L_1_0214a55c:
+mov r2, #0x1
+.L_1_0214a560:
+mov r0, r2
+bx lr

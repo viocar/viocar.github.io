@@ -1,0 +1,10 @@
+.arm
+func_0201be4c:
+sub r1, r0, #0x1e
+cmp r1, #0x1
+ldrhi r2, [.L_0201be68]
+movls r0, #0x0
+movhi r1, #0xc
+mlahi r0, r1, r0, r2
+bx lr
+.L_0201be68: .word 0x20f148c

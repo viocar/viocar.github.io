@@ -1,0 +1,193 @@
+.arm
+func_0207aa54:
+cmp r1, #0x20
+mov r2, #0x2f
+addls pc, pc, r1, lsl #0x2
+b .L_0207acc0
+.L_0207aa64: ; jump table
+b .L_0207aae8 ; case 0
+b .L_0207aaf8 ; case 1
+b .L_0207ab04 ; case 2
+b .L_0207ab10 ; case 3
+b .L_0207ab20 ; case 4
+b .L_0207ab30 ; case 5
+b .L_0207ab3c ; case 6
+b .L_0207ab48 ; case 7
+b .L_0207ab54 ; case 8
+b .L_0207ab60 ; case 9
+b .L_0207ab6c ; case 10
+b .L_0207ab7c ; case 11
+b .L_0207ab8c ; case 12
+b .L_0207ab9c ; case 13
+b .L_0207abac ; case 14
+b .L_0207abbc ; case 15
+b .L_0207abcc ; case 16
+b .L_0207abdc ; case 17
+b .L_0207abec ; case 18
+b .L_0207abfc ; case 19
+b .L_0207ac08 ; case 20
+b .L_0207ac18 ; case 21
+b .L_0207ac28 ; case 22
+b .L_0207ac38 ; case 23
+b .L_0207ac48 ; case 24
+b .L_0207acc0 ; case 25
+b .L_0207ac58 ; case 26
+b .L_0207ac68 ; case 27
+b .L_0207ac78 ; case 28
+b .L_0207ac88 ; case 29
+b .L_0207ac98 ; case 30
+b .L_0207aca8 ; case 31
+b .L_0207acb4 ; case 32
+.L_0207aae8:
+mov r1, #0x31
+str r1, [r0, #0x0]
+mov r0, #0x0
+bx lr
+.L_0207aaf8:
+str r2, [r0, #0x0]
+mov r0, #0x0
+bx lr
+.L_0207ab04:
+str r2, [r0, #0x0]
+mov r0, #0x1
+bx lr
+.L_0207ab10:
+mov r1, #0x29
+str r1, [r0, #0x0]
+mov r0, #0x2
+bx lr
+.L_0207ab20:
+mov r1, #0x2a
+str r1, [r0, #0x0]
+mov r0, #0x0
+bx lr
+.L_0207ab30:
+str r2, [r0, #0x0]
+mov r0, #0x3
+bx lr
+.L_0207ab3c:
+str r2, [r0, #0x0]
+mov r0, #0x4
+bx lr
+.L_0207ab48:
+str r2, [r0, #0x0]
+mov r0, #0x5
+bx lr
+.L_0207ab54:
+str r2, [r0, #0x0]
+mov r0, #0x6
+bx lr
+.L_0207ab60:
+str r2, [r0, #0x0]
+mov r0, #0x7
+bx lr
+.L_0207ab6c:
+mov r1, #0x2a
+str r1, [r0, #0x0]
+mov r0, #0x1
+bx lr
+.L_0207ab7c:
+mov r1, #0x2b
+str r1, [r0, #0x0]
+mov r0, #0x0
+bx lr
+.L_0207ab8c:
+mov r1, #0x2b
+str r1, [r0, #0x0]
+mov r0, #0x1
+bx lr
+.L_0207ab9c:
+mov r1, #0x2c
+str r1, [r0, #0x0]
+mov r0, #0x3
+bx lr
+.L_0207abac:
+mov r1, #0x2a
+str r1, [r0, #0x0]
+mov r0, #0x2
+bx lr
+.L_0207abbc:
+mov r1, #0x2b
+str r1, [r0, #0x0]
+mov r0, #0x2
+bx lr
+.L_0207abcc:
+mov r1, #0x2c
+str r1, [r0, #0x0]
+mov r0, #0x0
+bx lr
+.L_0207abdc:
+mov r1, #0x2c
+str r1, [r0, #0x0]
+mov r0, #0x1
+bx lr
+.L_0207abec:
+mov r1, #0x2c
+str r1, [r0, #0x0]
+mov r0, #0x2
+bx lr
+.L_0207abfc:
+str r2, [r0, #0x0]
+mov r0, #0x2
+bx lr
+.L_0207ac08:
+mov r1, #0x30
+str r1, [r0, #0x0]
+mov r0, #0x0
+bx lr
+.L_0207ac18:
+mov r1, #0x30
+str r1, [r0, #0x0]
+mov r0, #0x1
+bx lr
+.L_0207ac28:
+mov r1, #0x30
+str r1, [r0, #0x0]
+mov r0, #0x2
+bx lr
+.L_0207ac38:
+mov r1, #0x29
+str r1, [r0, #0x0]
+mov r0, #0x1
+bx lr
+.L_0207ac48:
+mov r1, #0x31
+str r1, [r0, #0x0]
+mov r0, #0x3
+bx lr
+.L_0207ac58:
+mov r1, #0x32
+str r1, [r0, #0x0]
+mov r0, #0x0
+bx lr
+.L_0207ac68:
+mov r1, #0x32
+str r1, [r0, #0x0]
+mov r0, #0x1
+bx lr
+.L_0207ac78:
+mov r1, #0x33
+str r1, [r0, #0x0]
+mov r0, #0x0
+bx lr
+.L_0207ac88:
+mov r1, #0x33
+str r1, [r0, #0x0]
+mov r0, #0x1
+bx lr
+.L_0207ac98:
+mov r1, #0x33
+str r1, [r0, #0x0]
+mov r0, #0x2
+bx lr
+.L_0207aca8:
+str r2, [r0, #0x0]
+mov r0, #0x8
+bx lr
+.L_0207acb4:
+str r2, [r0, #0x0]
+mov r0, #0x9
+bx lr
+.L_0207acc0:
+mvn r0, #0x0
+bx lr

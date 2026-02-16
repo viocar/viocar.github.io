@@ -1,0 +1,35 @@
+.arm
+func_0200d814:
+stmdb sp!, {r3, r4, r5, lr}
+mov r0, r0, lsl #0x18
+orr r2, r0, r1, lsr #0x8
+mov r3, r1, lsl #0x18
+ldr r1, [.L_0200d88c]
+.L_0200d828:
+ldr r0, [r1, #0x0]
+tst r0, #0x80000000
+bne .L_0200d828
+ldr r0, [.L_0200d890]
+and r1, r2, #0xff0000
+ldrh r5, [r0, #0x0]
+and r12, r3, #0xff0000
+and lr, r2, #0xff000000
+mov r4, r1, lsr #0x8
+bic r1, r5, #0x2000
+orr r1, r1, #0xc000
+and r5, r2, #0xff00
+orr r4, r4, lr, lsr #0x18
+orr r5, r4, r5, lsl #0x8
+and lr, r3, #0xff000000
+mov r12, r12, lsr #0x8
+and r4, r3, #0xff00
+orr r12, r12, lr, lsr #0x18
+orr r4, r12, r4, lsl #0x8
+strh r1, [r0, #0x0]
+orr r1, r5, r2, lsl #0x18
+str r1, [r0, #0x8]
+orr r1, r4, r3, lsl #0x18
+str r1, [r0, #0xc]
+ldmia sp!, {r3, r4, r5, pc}
+.L_0200d88c: .word 0x40001a4
+.L_0200d890: .word 0x40001a0

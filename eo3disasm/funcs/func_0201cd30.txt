@@ -1,0 +1,14 @@
+.arm
+func_0201cd30:
+cmp r0, #0x0
+ldreq r0, [.L_0201cd54]
+bxeq lr
+cmp r0, #0x1
+ldreq r0, [.L_0201cd58]
+bxeq lr
+cmp r0, #0x2
+ldreq r0, [.L_0201cd5c]
+bx lr
+.L_0201cd54: .word data_020e2b24
+.L_0201cd58: .word data_020e28bc
+.L_0201cd5c: .word data_020e29f0

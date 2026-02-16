@@ -1,0 +1,21 @@
+.arm
+func_020d61d0:
+stmdb sp!, {r4, lr}
+mov r4, r0
+ldr r0, [r4, #0x70]
+sub r1, r0, #0xc
+cmp r1, #0x8
+movlt r0, #0x5e
+strlt r0, [r4, #0x74]
+blt .L_020d6204
+cmp r1, #0x5e
+movgt r0, #0x8
+strgt r0, [r4, #0x74]
+rsble r0, r1, #0x5e
+strle r0, [r4, #0x74]
+.L_020d6204:
+ldr r0, [r4, #0x74]
+rsb r0, r0, #0x76
+bl HardwareDiv32
+str r0, [r4, #0x78]
+ldmia sp!, {r4, pc}

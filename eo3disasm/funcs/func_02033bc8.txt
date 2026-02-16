@@ -1,0 +1,89 @@
+.arm
+func_02033bc8:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+ldr r1, [.L_02033cf4]
+ldr r4, [.L_02033cf8]
+ldrh r0, [r1, #0x0]
+orr r0, r0, #0x8000
+strh r0, [r1, #0x0]
+ldrh r0, [r1, #0x0]
+and r0, r0, r4
+orr r0, r0, #0xe
+orr r0, r0, #0x200
+strh r0, [r1, #0x0]
+ldrh r0, [r1, #0x0]
+orr r0, r0, #0x1
+strh r0, [r1, #0x0]
+bl func_02035844
+ldr r5, [.L_02033cfc]
+ldrh r0, [r5, #0x2]
+cmp r0, #0x0
+bne .L_02033c3c
+add r4, r4, #0x20c
+.L_02033c18:
+bl func_02002ea4
+mov r6, r0
+cmp r6, r4
+bne .L_02033c2c
+bl HandleError
+.L_02033c2c:
+strh r6, [r5, #0x2]
+ldrh r0, [r5, #0x2]
+cmp r0, #0x0
+beq .L_02033c18
+.L_02033c3c:
+ldr r0, [.L_02033d00]
+mov r7, #0x0
+mov r6, #0x4000000
+strh r7, [r0, #0x0]
+ldr r4, [.L_02033d04]
+str r7, [r6, #0x0]
+ldr r0, [r4, #0x4]
+sub r1, r6, #0x4000001
+cmp r0, r1
+beq .L_02033c9c
+mov r5, #0x1
+mov r2, r7
+str r5, [sp, #0x0]
+add r1, r6, #0x8
+mov r3, #0x60
+bl func_020056cc
+strh r7, [r6, #0x6c]
+str r5, [sp, #0x0]
+ldr r0, [r4, #0x4]
+mov r2, r7
+add r1, r6, #0x1000
+mov r3, #0x70
+bl func_020056cc
+b .L_02033cc0
+.L_02033c9c:
+mov r0, r7
+add r1, r6, #0x8
+mov r2, #0x60
+bl Memset32Aligned
+mov r0, r7
+add r1, r6, #0x1000
+mov r2, #0x70
+strh r7, [r6, #0x6c]
+bl Memset32Aligned
+.L_02033cc0:
+ldr r0, [.L_02033d08]
+mov r2, #0x100
+strh r2, [r0, #0x0]
+strh r2, [r0, #0x6]
+strh r2, [r0, #0x10]
+strh r2, [r0, #0x16]
+add r1, r0, #0x1000
+ldr r0, [.L_02033d0c]
+strh r2, [r1, #0x0]
+strh r2, [r0, #0x0]
+strh r2, [r0, #0xa]
+strh r2, [r0, #0x10]
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_02033cf4: .word 0x4000304
+.L_02033cf8: .word 0xfffffdf1
+.L_02033cfc: .word 0x210ea6c
+.L_02033d00: .word 0x4000004
+.L_02033d04: .word data_020e5a48
+.L_02033d08: .word 0x4000020
+.L_02033d0c: .word 0x4001026

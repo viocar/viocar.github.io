@@ -1,0 +1,107 @@
+.arm
+func_020c6cec:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+mov r9, r1
+ldrsh r1, [r9, #0xec]
+mov r8, r2
+mov r6, r0
+mov r5, r3
+bl func_020c6274
+mov r4, r0
+cmp r8, #0x1
+bne .L_020c6d30
+ldr r0, [.L_020c6e6c]
+bl func_02085018
+cmp r0, #0x1
+moveq r6, #0x1
+beq .L_020c6e64
+mvn r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_020c6d30:
+cmp r8, #0x2
+bne .L_020c6d54
+mov r0, #0x120
+bl func_02085018
+cmp r0, #0x1
+moveq r6, #0x0
+beq .L_020c6e64
+mvn r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_020c6d54:
+cmp r8, #0x3
+bne .L_020c6d78
+mov r7, #0x1
+mov r0, r6
+mov r1, r7
+bl func_0208c208
+cmp r0, #0x0
+subne r0, r7, #0x2
+ldmneia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_020c6d78:
+cmp r8, #0x4
+bne .L_020c6d9c
+mov r7, #0x2
+mov r0, r6
+mov r1, r7
+bl func_0208c208
+cmp r0, #0x0
+subne r0, r7, #0x3
+ldmneia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_020c6d9c:
+ldr r0, [r9, #0xe4]
+tst r0, #0x20
+beq .L_020c6df0
+ldrsh r7, [r4, #0x8]
+mov r0, r7
+bl func_0201c650
+ldrsb r1, [r0, #0x0]
+cmp r1, #0x0
+ble .L_020c6df0
+ldrsb r0, [r0, #0x1]
+cmp r0, #0x0
+bne .L_020c6ddc
+mov r0, r7
+bl func_020c6cb0
+mvn r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_020c6ddc:
+ldrsb r0, [r4, #0x2]
+cmp r0, #0x0
+moveq r0, #0x1
+movne r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_020c6df0:
+cmp r5, #0x0
+beq .L_020c6e10
+ldrsh r0, [r4, #0x0]
+ldr r1, [r6, #0x20]
+ldrb r0, [r1, r0]
+cmp r0, #0x0
+mvneq r0, #0x0
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_020c6e10:
+cmp r5, #0x0
+ldreqsh r0, [r4, #0x0]
+ldreq r1, [r6, #0x24]
+ldreqb r0, [r1, r0]
+cmpeq r0, #0x0
+mvneq r0, #0x0
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+mov r6, #0x1
+mov r5, #0x63
+mov r0, r6
+mov r1, r5
+bl func_0202e6b4
+ldrsb r2, [r4, #0x2]
+cmp r0, r2
+movlt r6, #0x0
+blt .L_020c6e64
+ldrsb r1, [r4, #0x3]
+add r1, r2, r1
+cmp r0, r1
+subge r0, r5, #0x64
+ldmgeia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_020c6e64:
+mov r0, r6
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_020c6e6c: .word 0x106

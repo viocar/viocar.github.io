@@ -1,0 +1,13 @@
+.arm
+func_ov003_02136f80:
+ldr r0, [.L_3_02136fa8]
+ldr r0, [r0, #0x8]
+cmp r0, #0x0
+moveq r0, #0x1
+bxeq lr
+ldr r0, [r0, #0x0]
+cmp r0, #0x0
+moveq r0, #0x1
+movne r0, #0x0
+bx lr
+.L_3_02136fa8: .word 0x02166aa0

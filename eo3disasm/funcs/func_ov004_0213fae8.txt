@@ -1,0 +1,28 @@
+.arm
+func_ov004_0213fae8:
+cmp r1, #0x14
+bge .L_4_0213fb08
+ldr r3, [.L_4_0213fb40]
+mov r0, #0x23c
+mla r3, r1, r0, r3
+mov r0, #0x2c
+mla r0, r2, r0, r3
+bx lr
+.L_4_0213fb08:
+cmp r0, #0x3
+ldrne r3, [.L_4_0213fb44]
+mov r0, #0x23c
+subne r1, r1, #0x14
+mlane r3, r1, r0, r3
+movne r0, #0x2c
+mlane r0, r2, r0, r3
+bxne lr
+ldr r3, [.L_4_0213fb48]
+sub r1, r1, #0x14
+mla r3, r1, r0, r3
+mov r0, #0x2c
+mla r0, r2, r0, r3
+bx lr
+.L_4_0213fb40: .word data_ov004_021429d4
+.L_4_0213fb44: .word data_ov004_021417f4
+.L_4_0213fb48: .word data_ov004_02141c6c

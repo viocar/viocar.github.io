@@ -1,0 +1,45 @@
+.arm
+func_02085c18:
+stmdb sp!, {r4, r5, r6, lr}
+bl func_02086524
+mov r5, #0x7
+mov r4, r0
+mov r0, r5
+bl func_02035ac8
+cmp r0, #0x0
+bne .L_02085c40
+mov r0, r5
+bl func_02035a48
+.L_02085c40:
+ldr r2, [.L_02085cb4]
+mov r1, #0x124
+str r2, [r4, #0x120]
+add r0, r2, #0x1
+str r0, [r4, #0x124]
+add r0, r2, #0x2
+str r0, [r4, #0x128]
+str r1, [r4, #0x12c]
+add r0, r1, #0x1
+str r0, [r4, #0x130]
+add r0, r1, #0x2
+str r0, [r4, #0x134]
+mov r6, #0x0
+mov r5, #0x7
+.L_02085c78:
+add r0, r4, r6, lsl #0x2
+ldr r1, [r0, #0x120]
+mov r0, r5
+bl func_02031844
+cmp r0, #0x0
+bne .L_02085ca0
+add r0, r4, r6, lsl #0x2
+ldr r1, [r0, #0x120]
+mov r0, r5
+bl func_020316bc
+.L_02085ca0:
+add r0, r6, #0x1
+and r6, r0, #0xff
+cmp r6, #0x6
+blo .L_02085c78
+ldmia sp!, {r4, r5, r6, pc}
+.L_02085cb4: .word 0x121

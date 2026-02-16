@@ -1,0 +1,48 @@
+.arm
+func_0206dea4:
+stmdb sp!, {r3, lr}
+cmp r0, #0x39c
+bge .L_0206dec4
+cmp r0, #0x0
+beq .L_0206dec4
+bl func_0206e3e0
+ldrb r0, [r0, #0x0]
+ldmia sp!, {r3, pc}
+.L_0206dec4:
+ldr r1, [.L_0206df3c]
+cmp r0, r1
+blt .L_0206dee0
+add r1, r1, #0x17
+cmp r0, r1
+movle r0, #0x14
+ldmleia sp!, {r3, pc}
+.L_0206dee0:
+cmp r0, #0x640
+blt .L_0206def8
+ldr r1, [.L_0206df40]
+cmp r0, r1
+movlt r0, #0x15
+ldmltia sp!, {r3, pc}
+.L_0206def8:
+cmp r0, #0x800
+blt .L_0206df0c
+cmp r0, #0x880
+movlt r0, #0x16
+ldmltia sp!, {r3, pc}
+.L_0206df0c:
+cmp r0, #0x880
+blt .L_0206df20
+cmp r0, #0x8a0
+movlt r0, #0x17
+ldmltia sp!, {r3, pc}
+.L_0206df20:
+cmp r0, #0x8a0
+blt .L_0206df34
+cmp r0, #0x8c0
+movlt r0, #0x18
+ldmltia sp!, {r3, pc}
+.L_0206df34:
+mov r0, #0x13
+ldmia sp!, {r3, pc}
+.L_0206df3c: .word 0x5c3
+.L_0206df40: .word 0x67f

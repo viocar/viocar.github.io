@@ -1,0 +1,8 @@
+.arm
+func_020844ec:
+stmdb sp!, {r3, lr}
+bl func_02083ca4
+ldr r1, [r0, #0xe4]
+bic r1, r1, #0x8
+str r1, [r0, #0xe4]
+ldmia sp!, {r3, pc}

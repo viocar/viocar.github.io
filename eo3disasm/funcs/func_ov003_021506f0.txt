@@ -1,0 +1,10 @@
+.arm
+func_ov003_021506f0:
+stmdb sp!, {r3, lr}
+bl func_ov003_0214fab0
+cmp r0, #0x0
+mvneq r0, #0x0
+ldrne r1, [r0, #0x3c]
+addne r0, r0, r1, lsl #0x1
+ldrnesh r0, [r0, #0x60]
+ldmia sp!, {r3, pc}

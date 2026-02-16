@@ -1,0 +1,97 @@
+.arm
+func_ov003_021508b8:
+stmdb sp!, {r3, r4, r5, lr}
+bl func_020d6b68
+mov r4, r0
+mov r0, #0xdc
+bl func_0202b664
+str r0, [r4, #0x91c]
+mov r1, #0x0
+str r1, [r0, #0x9c]
+ldr r0, [r4, #0x91c]
+mov r5, #0x3c
+strb r1, [r0, #0xca]
+ldr r0, [r4, #0x91c]
+sub r3, r5, #0x3d
+strb r1, [r0, #0xcb]
+ldr r0, [r4, #0x91c]
+mov r2, #0x9
+strb r1, [r0, #0xcc]
+ldr r0, [r4, #0x91c]
+str r1, [r0, #0x8c]
+ldr r0, [r4, #0x91c]
+str r5, [r0, #0x8c]
+ldr r0, [r4, #0x91c]
+str r5, [r0, #0x8c]
+ldr r0, [r4, #0x91c]
+str r1, [r0, #0x8c]
+ldr r0, [r4, #0x91c]
+strb r3, [r0, #0xc8]
+ldr r0, [r4, #0x91c]
+strb r3, [r0, #0xc9]
+ldr r0, [r4, #0x91c]
+str r1, [r0, #0x88]
+ldr r0, [r4, #0x91c]
+strh r1, [r0, #0xc4]
+ldr r0, [r4, #0x91c]
+strh r1, [r0, #0xc6]
+ldr r0, [r4, #0x91c]
+strb r2, [r0, #0xce]
+ldr r0, [r4, #0x91c]
+str r3, [r0, #0xac]
+ldr r0, [r4, #0x91c]
+str r1, [r0, #0xb8]
+ldr r0, [r4, #0x91c]
+str r1, [r0, #0xa8]
+ldr r0, [r4, #0x91c]
+str r1, [r0, #0xb0]
+ldr r0, [r4, #0x91c]
+str r1, [r0, #0xa0]
+ldr r0, [r4, #0x91c]
+str r1, [r0, #0xbc]
+ldr r0, [r4, #0x91c]
+str r1, [r0, #0xc0]
+ldr r0, [r4, #0x91c]
+str r1, [r0, #0xd0]
+ldr r0, [r4, #0x91c]
+str r1, [r0, #0xb4]
+ldr r0, [r4, #0x91c]
+str r1, [r0, #0xd8]
+ldr r2, [r4, #0x91c]
+ldrb r0, [r2, #0xce]
+cmp r0, #0xa
+movhs r0, #0x1
+strhs r0, [r2, #0xd4]
+strlo r1, [r2, #0xd4]
+bl func_ov003_02150a44
+bl func_ov003_02150bc0
+bl func_ov003_02150cb0
+bl func_ov003_02150e08
+ldr r0, [.L_3_02150a28]
+bl func_0202e130
+ldr r1, [.L_3_02150a2c]
+str r0, [r1, #0x0]
+mov r0, #0x18
+bl func_020693f8
+ldr r1, [r4, #0x91c]
+str r0, [r1, #0x20]
+mov r0, #0x8
+bl func_020693f8
+ldr r1, [r4, #0x91c]
+ldr r5, [.L_3_02150a30]
+str r0, [r1, #0x24]
+ldr r0, [r4, #0x91c]
+mov r1, r5
+ldr r0, [r0, #0x20]
+bl func_02069800
+ldr r0, [r4, #0x91c]
+mov r1, r5
+ldr r0, [r0, #0x24]
+bl func_02069800
+mov r0, #0x0
+bl func_020d6b9c
+bl func_ov003_02152f40
+ldmia sp!, {r3, r4, r5, pc}
+.L_3_02150a28: .word data_ov003_02166450
+.L_3_02150a2c: .word 0x02166afc
+.L_3_02150a30: .word func_ov003_02152f38

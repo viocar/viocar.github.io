@@ -1,0 +1,16 @@
+.arm
+GetHardwareDivResult:
+ldr r1, [.L_02002220]
+.L_020021f8:
+ldrh r0, [r1, #0x0]
+tst r0, #0x8000
+bne .L_020021f8
+ldr r1, [.L_02002224]
+ldmia r1, {r0, r1}
+adds r0, r0, #0x80000
+adc r1, r1, #0x0
+mov r0, r0, lsr #0x14
+orr r0, r0, r1, lsl #0xc
+bx lr
+.L_02002220: .word 0x4000280
+.L_02002224: .word 0x40002a0

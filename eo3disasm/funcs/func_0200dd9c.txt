@@ -1,0 +1,106 @@
+.arm
+func_0200dd9c:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+mov r9, r0
+mov r7, r1
+mov r6, r2
+mov r5, r3
+ldr r4, [.L_0200df08]
+bl func_0200ca90
+bl func_0200cca0
+tst r0, #0x4
+bne .L_0200ddc8
+bl HandleError
+.L_0200ddc8:
+mov r8, #0x1
+ldr r2, [sp, #0x20]
+ldr r3, [sp, #0x24]
+mov r0, r4
+mov r1, r8
+bl func_0200ce98
+mov r0, r9
+bl func_0200cf5c
+str r0, [r4, #0x50c]
+cmp r0, #0x0
+andne r0, r9, #0x3
+subeq r0, r8, #0x2
+str r0, [r4, #0x508]
+cmp r0, #0x3
+bhi .L_0200de10
+ldr r1, [r4, #0x50c]
+ldr r1, [r1, #0x4]
+blx r1
+.L_0200de10:
+ldr r8, [.L_0200df0c]
+ldr r0, [.L_0200df10]
+ldr r1, [r8, #0x0]
+str r6, [r4, #0x500]
+add r2, r7, r1
+str r2, [r4, #0x4fc]
+str r5, [r4, #0x504]
+str r0, [r8, #0x14]
+mov r0, #0x0
+str r0, [r8, #0x18]
+str r2, [r8, #0x1c]
+str r6, [r8, #0x20]
+str r5, [r8, #0x24]
+str r0, [r8, #0x28]
+ldr r1, [r8, #0xc]
+ldr r0, [.L_0200df14]
+cmp r1, r0
+bne .L_0200ded8
+ldr r0, [r4, #0x508]
+mov r1, r6
+mov r3, r5
+bl func_0200dc9c
+cmp r0, #0x0
+beq .L_0200ded8
+bl DisableIRQ
+ldr r1, [r8, #0x4]
+mov r5, r0
+cmp r1, #0x0
+beq .L_0200de94
+ldr r0, [r4, #0x500]
+ldr r1, [r4, #0x504]
+ldr r2, [r4, #0xc]
+bl func_0200cf98
+.L_0200de94:
+ldr r0, [.L_0200df18]
+ldr r0, [r0, #0x4]
+cmp r0, #0x0
+beq .L_0200deb4
+ldr r0, [r4, #0x500]
+ldr r1, [r4, #0x504]
+ldr r2, [r4, #0x10]
+bl func_0200cfb4
+.L_0200deb4:
+mov r0, r5
+bl EnableIRQ
+ldr r0, [.L_0200df1c]
+bl func_0200dbf0
+ldr r0, [sp, #0x28]
+cmp r0, #0x0
+ldmneia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+bl func_0200df9c
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_0200ded8:
+ldr r0, [.L_0200df0c]
+ldr r0, [r0, #0x4]
+cmp r0, #0x0
+beq .L_0200def8
+ldr r0, [r4, #0x500]
+ldr r1, [r4, #0x504]
+ldr r2, [r4, #0xc]
+bl func_0200cf98
+.L_0200def8:
+ldr r1, [sp, #0x28]
+ldr r0, [.L_0200df20]
+bl func_0200cdd8
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_0200df08: .word 0x20ef9e0
+.L_0200df0c: .word 0x20f0020
+.L_0200df10: .word func_0200dc6c
+.L_0200df14: .word LoadDataFromCart
+.L_0200df18: .word data_020e22b4
+.L_0200df1c: .word 0x20f0030
+.L_0200df20: .word func_0200dd50

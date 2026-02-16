@@ -1,0 +1,10 @@
+.arm
+func_0201e730:
+ldrh r3, [r0, #0x32]
+ldr r2, [r0, #0x2c]
+mov r1, #0x0
+bic r3, r3, #0x1
+strh r3, [r0, #0x32]
+str r1, [r0, #0x2c]
+mov r0, r2
+bx lr

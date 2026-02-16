@@ -1,0 +1,14 @@
+.arm
+func_0207afac:
+ldrb r1, [r0, #0x1]
+mov r0, #0x0
+cmp r1, #0x0
+cmpne r1, #0x1
+beq .L_0207afd0
+add r1, r1, #0xfc
+and r1, r1, #0xff
+cmp r1, #0x1
+bxhi lr
+.L_0207afd0:
+mov r0, #0x1
+bx lr

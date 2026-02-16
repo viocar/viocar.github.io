@@ -1,0 +1,17 @@
+.arm
+func_0201c070:
+cmp r0, #0x1b
+bhs .L_0201c09c
+ldr r1, [.L_0201c0a4]
+mov r2, #0x1
+ldr r1, [r1, #0x0]
+add r1, r1, #0x18000
+ldr r1, [r1, #0x434]
+tst r1, r2, lsl r0
+moveq r2, #0x0
+mov r0, r2
+bx lr
+.L_0201c09c:
+mov r0, #0x0
+bx lr
+.L_0201c0a4: .word 0x20f1488

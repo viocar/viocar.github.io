@@ -1,0 +1,57 @@
+.arm
+func_0201e3e4:
+ldr r12, [r0, #0x0]
+cmp r12, #0x0
+streq r1, [r0, #0x0]
+bxeq lr
+ldr r2, [r12, #0x10]
+cmp r2, #0x0
+bne .L_0201e444
+ldrb r3, [r12, #0x18]
+ldrb r2, [r1, #0x18]
+cmp r3, r2
+bls .L_0201e43c
+ldr r2, [r1, #0x10]
+mov r3, r1
+cmp r2, #0x0
+beq .L_0201e430
+.L_0201e420:
+ldr r3, [r3, #0x10]
+ldr r2, [r3, #0x10]
+cmp r2, #0x0
+bne .L_0201e420
+.L_0201e430:
+str r12, [r3, #0x10]
+str r1, [r0, #0x0]
+bx lr
+.L_0201e43c:
+str r1, [r12, #0x10]
+bx lr
+.L_0201e444:
+beq .L_0201e494
+ldrb r3, [r1, #0x18]
+.L_0201e44c:
+ldrb r0, [r2, #0x18]
+cmp r0, r3
+blo .L_0201e484
+ldr r0, [r1, #0x10]
+mov r3, r1
+cmp r0, #0x0
+beq .L_0201e478
+.L_0201e468:
+ldr r3, [r3, #0x10]
+ldr r0, [r3, #0x10]
+cmp r0, #0x0
+bne .L_0201e468
+.L_0201e478:
+str r1, [r12, #0x10]
+str r2, [r3, #0x10]
+bx lr
+.L_0201e484:
+mov r12, r2
+ldr r2, [r2, #0x10]
+cmp r2, #0x0
+bne .L_0201e44c
+.L_0201e494:
+str r1, [r12, #0x10]
+bx lr

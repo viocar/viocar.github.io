@@ -1,0 +1,20 @@
+.arm
+func_02010bc4:
+ldr r2, [.L_02010c08]
+ldrh r1, [r2, #0x0]
+and r1, r1, #0xc
+mov r1, r1, asr #0x2
+str r1, [r0, #0x0]
+ldrh r1, [r2, #0x0]
+and r1, r1, #0x10
+mov r1, r1, asr #0x4
+str r1, [r0, #0x4]
+ldrh r0, [r2, #0x0]
+bic r0, r0, #0xc
+orr r0, r0, #0xc
+strh r0, [r2, #0x0]
+ldrh r0, [r2, #0x0]
+bic r0, r0, #0x10
+strh r0, [r2, #0x0]
+bx lr
+.L_02010c08: .word 0x4000204

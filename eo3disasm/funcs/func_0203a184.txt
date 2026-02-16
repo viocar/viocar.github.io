@@ -1,0 +1,7 @@
+.arm
+func_0203a184:
+add r1, r0, r1, lsl #0x2
+ldr r1, [r1, #0xc]
+add r0, r0, r1
+add r0, r0, #0x10
+bx lr

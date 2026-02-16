@@ -1,0 +1,12 @@
+.arm
+func_02076548:
+ldr r2, [r0, #0xbc]
+ldr r1, [r0, #0x18]
+ldr r3, [r0, #0xb4]
+add r1, r2, r1, lsl #0x2
+ldrh r1, [r1, #0x2]
+add r1, r3, r1, lsl #0x5
+ldr r1, [r1, #0x18]
+str r1, [r0, #0x18]
+mov r0, #0x1
+bx lr

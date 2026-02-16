@@ -1,0 +1,204 @@
+.arm
+func_0200ba68:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x1c
+ldr r3, [.L_0200bd40]
+mov r7, r0
+ldr r0, [r3, #0x10]
+str r1, [sp, #0x0]
+str r2, [sp, #0x4]
+mov r5, #0x1
+mov r4, #0x0
+bl func_0200c090
+ldr r0, [.L_0200bd44]
+ldrh r6, [r0, #0x0]
+strh r4, [r0, #0x0]
+bl DisableIRQ
+str r0, [sp, #0x10]
+ldr r0, [.L_0200bd48]
+bl func_02002a90
+str r0, [sp, #0xc]
+bl func_020049f0
+cmp r0, #0x0
+movne r0, #0x8
+moveq r0, r4
+orr r0, r0, #0x40000
+bl func_02002a34
+ldr r0, [sp, #0x10]
+bl EnableIRQ
+ldr r1, [.L_0200bd44]
+tst r7, #0x8
+ldrh r0, [r1, #0x0]
+strh r5, [r1, #0x0]
+beq .L_0200bb00
+bl func_02005344
+add r0, r0, #0xfe
+add r0, r0, #0xff00
+mov r0, r0, lsl #0x10
+mov r0, r0, lsr #0x10
+cmp r0, #0x1
+bicls r7, r7, #0x8
+.L_0200bb00:
+tst r7, #0x10
+beq .L_0200bb14
+bl func_02010ac0
+cmp r0, #0x0
+biceq r7, r7, #0x10
+.L_0200bb14:
+mov r1, #0x4000000
+add r0, r1, #0x1000
+ldr r11, [r1, #0x0]
+ldr r5, [r0, #0x0]
+bl func_0200bf90
+add r9, sp, #0x14
+add r10, sp, #0x18
+str r0, [sp, #0x8]
+mov r0, r10
+mov r1, r9
+bl func_0200b948
+cmp r0, #0x0
+beq .L_0200bb68
+ldr r8, [.L_0200bd4c]
+.L_0200bb4c:
+mov r0, r8
+bl func_02005308
+mov r0, r10
+mov r1, r9
+bl func_0200b948
+cmp r0, #0x0
+bne .L_0200bb4c
+.L_0200bb68:
+mov r0, #0x2
+mov r1, #0x0
+bl func_0200b83c
+cmp r0, #0x0
+beq .L_0200bba4
+ldr r10, [.L_0200bd4c]
+mov r9, #0x2
+mov r8, #0x0
+.L_0200bb88:
+mov r0, r10
+bl func_02005308
+mov r0, r9
+mov r1, r8
+bl func_0200b83c
+cmp r0, #0x0
+bne .L_0200bb88
+.L_0200bba4:
+bl func_0200b384
+mov r2, #0x4000000
+ldr r0, [r2, #0x0]
+add r1, r2, #0x1000
+bic r0, r0, #0x30000
+str r0, [r2, #0x0]
+ldr r0, [r1, #0x0]
+bic r0, r0, #0x10000
+str r0, [r1, #0x0]
+bl func_0200b384
+bl func_0200b384
+bl func_0200b9d4
+ldr r1, [sp, #0x14]
+ldr r0, [.L_0200bd40]
+mov r8, #0x0
+str r8, [r0, #0xc]
+cmp r1, #0x0
+ldr r0, [sp, #0x18]
+movne r8, #0x80
+cmp r0, #0x0
+mov r9, #0x40
+mov r0, #0x40000
+moveq r9, #0x0
+bl func_02002a34
+ldr r1, [sp, #0x0]
+ldr r0, [sp, #0x4]
+orr r1, r1, r0
+orr r0, r7, r9
+orr r0, r0, r8
+mov r0, r0, lsl #0x10
+mov r1, r1, lsl #0x10
+mov r0, r0, lsr #0x10
+mov r1, r1, lsr #0x10
+bl func_0200b61c
+ldr r8, [.L_0200bd40]
+ldr r0, [r8, #0xc]
+cmp r0, #0x0
+bne .L_0200bc4c
+.L_0200bc3c:
+bl WaitForInterrupt
+ldr r0, [r8, #0xc]
+cmp r0, #0x0
+beq .L_0200bc3c
+.L_0200bc4c:
+mov r8, #0x0
+bl func_020049f0
+cmp r0, #0x0
+movne r0, #0x8
+moveq r0, r8
+orr r0, r0, #0x40000
+bl func_02002a34
+tst r7, #0x8
+beq .L_0200bc80
+ldr r0, [.L_0200bd50]
+ldr r0, [r0, #0x0]
+tst r0, #0x100000
+movne r4, #0x1
+.L_0200bc80:
+cmp r4, #0x0
+mov r7, #0x1
+bne .L_0200bcf4
+ldr r0, [sp, #0x8]
+cmp r0, #0x1
+bne .L_0200bcb8
+.L_0200bc98:
+mov r0, r7
+mov r1, r7
+mov r2, r7
+mov r3, r7
+bl func_0200bd54
+cmp r0, #0x1
+bne .L_0200bc98
+b .L_0200bce4
+.L_0200bcb8:
+mov r0, r7
+bl func_0200b78c
+cmp r0, #0x0
+beq .L_0200bce4
+ldr r9, [.L_0200bd4c]
+.L_0200bccc:
+mov r0, r9
+bl func_02005308
+mov r0, r7
+bl func_0200b78c
+cmp r0, #0x0
+bne .L_0200bccc
+.L_0200bce4:
+mov r0, #0x4000000
+str r11, [r0, #0x0]
+add r0, r0, #0x1000
+str r5, [r0, #0x0]
+.L_0200bcf4:
+mov r0, #0x360000
+bl func_02005308
+ldr r5, [.L_0200bd44]
+ldrh r0, [r5, #0x0]
+ldr r0, [sp, #0xc]
+strh r8, [r5, #0x0]
+bl func_02002a34
+ldr r0, [sp, #0x10]
+bl EnableIRQ
+ldrh r0, [r5, #0x0]
+cmp r4, #0x0
+strh r6, [r5, #0x0]
+beq .L_0200bd2c
+bl func_0200b8dc
+.L_0200bd2c:
+ldr r0, [.L_0200bd40]
+ldr r0, [r0, #0x18]
+bl func_0200c090
+add sp, sp, #0x1c
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0200bd40: .word 0x20ef8fc
+.L_0200bd44: .word 0x4000208
+.L_0200bd48: .word 0x3fffff
+.L_0200bd4c: .word 0x51d23
+.L_0200bd50: .word 0x4000214

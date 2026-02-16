@@ -1,0 +1,114 @@
+.arm
+func_02043b40:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, lr}
+sub sp, sp, #0x5c
+mov r9, r0
+mov r8, r1
+ldr r0, [.L_02043cec]
+mov r1, #0x40
+mov r7, r2
+mov r6, r3
+bl func_02035bb0
+mov r5, r0
+mov r2, #0x4
+ldrsh r0, [sp, #0x84]
+strb r2, [r5, #0x0]
+ldrsh r2, [sp, #0x90]
+cmp r0, #0x0
+add r1, sp, #0x88
+strh r2, [r5, #0x38]
+ldmia r1, {r2, r3}
+add r0, r5, #0x4
+stmia r0, {r2, r3}
+mov r0, #0x0
+str r0, [r5, #0x70]
+ldreq r0, [.L_02043cf0]
+ldr r1, [.L_02043cec]
+ldrne r0, [.L_02043cf4]
+str r0, [r5, #0x74]
+mov r0, r5
+str r1, [r5, #0x30]
+bl func_02036060
+mov r4, r0
+strb r9, [r4, #0x2a]
+ldrsh r1, [sp, #0x84]
+strb r8, [r4, #0x2b]
+mov r2, #0x0
+strh r2, [r4, #0x6]
+strh r6, [r4, #0x4]
+strh r1, [r4, #0x0]
+strh r7, [r4, #0x2]
+ldrsh r0, [r4, #0x4]
+mov r6, #0x5
+cmp r1, #0x0
+strh r0, [r4, #0x8]
+strh r2, [r4, #0x16]
+strh r6, [r4, #0x18]
+bne .L_02043c2c
+ldrsh r1, [sp, #0x78]
+ldrb r2, [sp, #0x7c]
+mov r0, r9
+bl func_0206a56c
+rsb r1, r6, #0x144
+bl func_0206aa2c
+cmp r0, #0x0
+streqh r6, [r4, #0x18]
+beq .L_02043c2c
+ldrb r1, [sp, #0x7c]
+add r0, r0, r1, lsl #0x2
+ldr r0, [r0, #0x4]
+sub r0, r0, #0x1
+strh r0, [r4, #0x18]
+.L_02043c2c:
+mov r0, r9
+mov r1, r8
+bl func_0204029c
+mov r6, r0
+add r0, sp, #0x8
+mov r1, #0x0
+mov r2, #0x54
+bl Memset
+ldrb r0, [r4, #0x2a]
+mov r1, #0x1
+cmp r0, #0x0
+moveq r0, #0x2
+streqh r0, [sp, #0x8]
+ldreqb r0, [r4, #0x2b]
+streq r0, [sp, #0xc]
+movne r0, #0x1
+strneh r0, [sp, #0x8]
+ldrnesh r0, [r6, #0x1a]
+strne r0, [sp, #0xc]
+mov r0, #0x5a
+strh r1, [sp, #0x48]
+strh r0, [sp, #0x4e]
+ldrsh r0, [r4, #0x0]
+cmp r0, #0x0
+beq .L_02043cbc
+mov r0, #0x5e
+mov r3, #0x0
+strh r0, [sp, #0x4a]
+sub r1, r3, #0x1
+str r3, [sp, #0x4]
+add r0, sp, #0x8
+mov r2, r1
+str r3, [sp, #0x0]
+bl func_020618c8
+str r0, [r4, #0x20]
+str r1, [r4, #0x24]
+.L_02043cbc:
+bl func_0201b55c
+mov r6, r0
+bl func_0204a6d8
+mov r4, #0x1
+mov r3, r0
+mov r0, r6
+mov r1, r5
+mov r2, r4
+bl func_02036278
+mov r0, r4
+add sp, sp, #0x5c
+ldmia sp!, {r4, r5, r6, r7, r8, r9, pc}
+.L_02043cec: .word 0x200b
+.L_02043cf0: .word func_02048de4
+.L_02043cf4: .word func_02049260

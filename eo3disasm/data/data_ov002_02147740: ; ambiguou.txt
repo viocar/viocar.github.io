@@ -1,0 +1,18 @@
+data_ov002_02147740: ; ambiguous
+.word data_ov002_02146458
+.word data_ov002_02146404
+.word data_ov002_021463b0
+.word data_ov002_0214635c
+.word data_ov002_02146308
+.word data_ov002_021462b4
+.word data_ov002_02146260
+.word data_ov002_0214620c
+.word data_ov002_021461b8
+.word data_ov002_02146164
+.word data_ov002_02146110
+.word data_ov002_021460bc
+.word data_ov002_02146068
+.word data_ov002_02146014
+.word data_ov002_02145fc0
+.word data_ov002_02145f6c
+.word data_ov002_02145f18

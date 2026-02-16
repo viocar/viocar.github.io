@@ -1,0 +1,3 @@
+data_020e22d8:
+.word func_02012038
+.word func_02012070

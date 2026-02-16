@@ -1,0 +1,12 @@
+.arm
+func_02038dec:
+mov r2, #0x0
+ldr r0, [.L_02038e0c]
+mov r1, r2
+.L_02038df8:
+strb r1, [r0, r2]
+add r2, r2, #0x1
+cmp r2, #0x4
+blt .L_02038df8
+bx lr
+.L_02038e0c: .word 0x211166c

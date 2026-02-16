@@ -1,0 +1,25 @@
+data_020ed2f8:
+.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+.word func_020d3b14
+.word func_020d3c24
+.word func_020d3d48
+.word func_020d3d4c
+.word func_020d3d58
+.word func_020d3e94
+.word func_020d417c
+.word func_020d4180
+.word func_020d43c0
+.word func_020d443c
+.word func_020d4528
+.word func_020d452c
+.word func_020d4530
+.word func_020d4540
+.word func_020d4744
+.word func_020d4748
+.word func_020d474c
+.word func_020d4788
+.word func_020d47ec
+.word func_020d47f0
+.byte 0x00, 0x00, 0x00, 0x00
+.word func_020d47f4
+.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00

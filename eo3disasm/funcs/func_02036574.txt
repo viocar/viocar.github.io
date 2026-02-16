@@ -1,0 +1,19 @@
+.arm
+func_02036574:
+stmdb sp!, {r4, lr}
+mov r4, r0
+ldr r2, [r4, #0x0]
+ldr r3, [r4, #0x4]
+adds r12, r2, #0x1
+mov r1, #0x1
+sub r2, r1, #0xc0000002
+adc lr, r3, #0x0
+sub r1, r1, #0x2
+cmp lr, r2
+stmia r4, {r12, lr}
+cmpeq r12, r1
+blo .L_020365ac
+bl func_02036564
+.L_020365ac:
+ldmia r4, {r0, r1}
+ldmia sp!, {r4, pc}

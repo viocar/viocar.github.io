@@ -1,0 +1,58 @@
+.arm
+func_02009b7c:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+mov r9, r0
+ldr r3, [r9, #0x8]
+ldr r5, [.L_02009c44]
+ldr r6, [r3, #0x20]
+mov r8, r1
+ldr r3, [r6, #0x30]
+mov r4, #0x1
+mov r7, r2
+mov r2, r5
+tst r3, r4, lsl r8
+beq .L_02009bf8
+ldr r2, [r6, #0x2c]
+blx r2
+mov r2, r0
+cmp r2, #0x100
+bgt .L_02009bdc
+bge .L_02009bf8
+cmp r2, #0x4
+bgt .L_02009bf8
+cmp r2, #0x0
+blt .L_02009bf8
+cmpne r2, #0x1
+b .L_02009bf8
+.L_02009bdc:
+add r0, r5, #0x1
+cmp r2, r0
+mvneq r0, r4, lsl r8
+ldreq r1, [r6, #0x30]
+moveq r2, r5
+andeq r0, r1, r0
+streq r0, [r6, #0x30]
+.L_02009bf8:
+ldr r0, [.L_02009c44]
+cmp r2, r0
+bne .L_02009c24
+cmp r8, #0xd
+movhs r2, #0x4
+bhs .L_02009c24
+ldr r1, [.L_02009c48]
+mov r0, r9
+ldr r1, [r1, r8, lsl #0x2]
+blx r1
+mov r2, r0
+.L_02009c24:
+cmp r7, #0x0
+beq .L_02009c3c
+mov r0, r9
+mov r1, r2
+bl func_02007938
+mov r2, r0
+.L_02009c3c:
+mov r0, r2
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_02009c44: .word 0x101
+.L_02009c48: .word data_020de398

@@ -1,0 +1,14 @@
+.arm
+func_02026124:
+stmdb sp!, {r4, lr}
+movs r4, r0
+ldmeqia sp!, {r4, pc}
+mov r1, #0x0
+bl func_02006738
+ldr r0, [.L_02026150]
+mvn r1, r4
+ldr r2, [r0, #0x8]
+and r1, r2, r1
+str r1, [r0, #0x8]
+ldmia sp!, {r4, pc}
+.L_02026150: .word 0x20fc614

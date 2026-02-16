@@ -1,0 +1,37 @@
+.arm
+func_02009e54:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, lr}
+sub sp, sp, #0x54
+add r4, sp, #0xc
+mov r8, r0
+mov r0, r4
+mov r7, r1
+mov r6, r2
+mov r5, r3
+bl func_02008984
+mov lr, #0x0
+ldr r12, [sp, #0x70]
+add r3, sp, #0x0
+mov r0, r4
+mov r1, #0x4
+mov r2, #0x1
+strh r7, [sp, #0x40]
+str r6, [sp, #0x48]
+str r12, [sp, #0x4c]
+str r8, [sp, #0x14]
+str r8, [sp, #0x3c]
+strh lr, [sp, #0x42]
+str lr, [sp, #0x44]
+str r3, [sp, #0x50]
+bl func_02009b7c
+cmp r0, #0x0
+addne sp, sp, #0x54
+ldmneia sp!, {r3, r4, r5, r6, r7, r8, pc}
+ldr r1, [sp, #0x70]
+cmp r1, #0x0
+ldrneh r1, [sp, #0x4]
+strne r1, [r5, #0x0]
+ldreq r1, [sp, #0x4]
+streq r1, [r5, #0x0]
+add sp, sp, #0x54
+ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}

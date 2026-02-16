@@ -1,0 +1,8 @@
+.arm
+func_020c9464:
+stmdb sp!, {r3, lr}
+bl func_020c94a8
+cmp r0, #0x0
+movne r0, #0x1
+moveq r0, #0x0
+ldmia sp!, {r3, pc}

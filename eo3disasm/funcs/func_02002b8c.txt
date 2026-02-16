@@ -1,0 +1,56 @@
+.arm
+func_02002b8c:
+stmdb sp!, {r3, r4, r5, lr}
+ldr r3, [.L_02002c4c]
+ldr r0, [r3, #0x0]
+cmp r0, #0x0
+ldmneia sp!, {r3, r4, r5, pc}
+ldr r5, [.L_02002c50]
+mov r2, #0x0
+mov r4, #0x1
+mov r1, r5
+str r2, [r5, #0x0]
+mov r0, #0x7e
+str r4, [r3, #0x0]
+bl func_02002ca8
+ldrh r0, [r5, #0x6]
+cmp r0, #0x0
+beq .L_02002be4
+mov r4, #0x400
+.L_02002bd0:
+mov r0, r4
+blx WaitByLoop
+ldrh r0, [r5, #0x6]
+cmp r0, #0x0
+bne .L_02002bd0
+.L_02002be4:
+ldr r4, [.L_02002c54]
+mvn r1, #0x0
+mov r5, #0x0
+mov r0, r5
+str r1, [r4, #0x0]
+mov r3, r1, lsl #0x10
+add r1, r4, #0x10
+mov r2, #0x28
+str r3, [r4, #0x4]
+bl Memset32Aligned
+ldr r12, [.L_02002c58]
+mov r2, r5
+ldrh r3, [r12, #0x0]
+add r1, r4, #0x40
+mov r0, #0x7e
+orr r3, r3, #0x800
+strh r3, [r12, #0x0]
+ldrh r3, [r12, #0x0]
+orr r3, r3, #0x80
+strh r3, [r12, #0x0]
+bl func_02002d2c
+mov r2, r5
+add r1, r4, #0x40
+mov r0, #0x7f
+bl func_02002ca8
+ldmia sp!, {r3, r4, r5, pc}
+.L_02002c4c: .word 0x20ed684
+.L_02002c50: .word 0x2fffff0
+.L_02002c54: .word 0x2ffffb0
+.L_02002c58: .word 0x4000204

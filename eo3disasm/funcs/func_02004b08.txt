@@ -1,0 +1,37 @@
+.arm
+func_02004b08:
+stmdb sp!, {r4, r5, r6, lr}
+mov r5, r0
+bl func_02004a68
+mov r4, #0x0
+ldr r3, [.L_02004b80]
+mov r2, r4
+strh r4, [r3, #0x0]
+ldr r12, [r5, #0xc]
+ldr lr, [r5, #0x10]
+subs r6, r12, r0
+sbc r5, lr, r1
+ldr r1, [.L_02004b84]
+mov r0, #0x1
+bl func_020029f0
+subs r0, r6, #0x0
+sbcs r0, r5, #0x0
+ldrlt r4, [.L_02004b88]
+blt .L_02004b64
+subs r0, r6, #0x10000
+sbcs r0, r5, r4
+mvnlt r0, r6
+movlt r0, r0, lsl #0x10
+movlt r4, r0, lsr #0x10
+.L_02004b64:
+ldr r2, [.L_02004b8c]
+mov r1, #0xc1
+strh r4, [r2, #0x0]
+mov r0, #0x10
+strh r1, [r2, #0x2]
+bl func_02002a60
+ldmia sp!, {r4, r5, r6, pc}
+.L_02004b80: .word 0x4000106
+.L_02004b84: .word func_02004d80
+.L_02004b88: .word 0xfffe
+.L_02004b8c: .word 0x4000104

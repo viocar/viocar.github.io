@@ -1,0 +1,42 @@
+.arm
+func_020a7968:
+stmdb sp!, {r3, lr}
+bl func_020a5e38
+ldr r0, [r0, #0x4a8]
+cmp r0, #0x12
+addls pc, pc, r0, lsl #0x2
+b .L_020a79ec
+.L_020a7980: ; jump table
+b .L_020a79ec ; case 0
+b .L_020a79ec ; case 1
+b .L_020a79ec ; case 2
+b .L_020a79ec ; case 3
+b .L_020a79cc ; case 4
+b .L_020a79cc ; case 5
+b .L_020a79cc ; case 6
+b .L_020a79cc ; case 7
+b .L_020a79cc ; case 8
+b .L_020a79cc ; case 9
+b .L_020a79cc ; case 10
+b .L_020a79d0 ; case 11
+b .L_020a79d0 ; case 12
+b .L_020a79d0 ; case 13
+b .L_020a79d0 ; case 14
+b .L_020a79dc ; case 15
+b .L_020a79ec ; case 16
+b .L_020a79ec ; case 17
+b .L_020a79ec ; case 18
+.L_020a79cc:
+b .L_020a79dc
+.L_020a79d0:
+bl func_020a79f4
+bl func_020a7b38
+b .L_020a79ec
+.L_020a79dc:
+bl func_020a79f4
+bl func_020a7b38
+bl func_020a8034
+bl func_020a8680
+.L_020a79ec:
+mov r0, #0x0
+ldmia sp!, {r3, pc}

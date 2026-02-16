@@ -1,0 +1,276 @@
+.arm
+func_0200e6ac:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x8
+ldr r0, [.L_0200ea80]
+cmp r2, #0x0
+ldr r4, [r0, #0x4]
+mov r10, r1
+addne sp, sp, #0x8
+ldmneia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+ldr r0, [r4, #0x10]
+mov r1, #0x100
+bl InvalidateDataCacheLine
+ldrh r0, [r4, #0x16]
+cmp r0, #0x0
+bne .L_0200e6f0
+ldr r0, [r4, #0x4]
+mov r1, #0x800
+bl InvalidateDataCacheLine
+.L_0200e6f0:
+ldr r0, [r4, #0x10]
+cmp r10, r0
+beq .L_0200e708
+mov r0, r10
+mov r1, #0x100
+bl InvalidateDataCacheLine
+.L_0200e708:
+ldrh r0, [r10, #0x0]
+cmp r0, #0x2c
+blo .L_0200e7b4
+cmp r0, #0x80
+bne .L_0200e744
+ldrh r0, [r10, #0x2]
+cmp r0, #0x13
+bne .L_0200e72c
+bl HandleError
+.L_0200e72c:
+ldr r1, [r4, #0xc8]
+cmp r1, #0x0
+beq .L_0200ea3c
+.L_0200e738:
+mov r0, r10
+.L_0200e73c:
+blx r1
+b .L_0200ea3c
+.L_0200e744:
+cmp r0, #0x82
+bne .L_0200e794
+ldrh r0, [r10, #0x6]
+add r1, r4, r0, lsl #0x2
+ldr r0, [r1, #0xcc]
+cmp r0, #0x0
+beq .L_0200ea3c
+ldr r0, [r1, #0x10c]
+str r0, [r10, #0x1c]
+ldr r0, [r4, #0x14c]
+strh r0, [r10, #0x22]
+ldr r1, [r4, #0x4]
+ldr r0, [r10, #0x8]
+ldrh r1, [r1, #0x72]
+bl InvalidateDataCacheLine
+ldrh r1, [r10, #0x6]
+mov r0, r10
+add r1, r4, r1, lsl #0x2
+ldr r1, [r1, #0xcc]
+b .L_0200e73c
+.L_0200e794:
+cmp r0, #0x81
+bne .L_0200ea3c
+mov r0, #0xf
+strh r0, [r10, #0x0]
+ldr r1, [r10, #0x1c]
+cmp r1, #0x0
+beq .L_0200ea3c
+b .L_0200e738
+.L_0200e7b4:
+cmp r0, #0xe
+bne .L_0200e7f4
+ldrh r0, [r10, #0x4]
+add r0, r0, #0xf5
+add r0, r0, #0xff00
+mov r0, r0, lsl #0x10
+mov r0, r0, lsr #0x10
+cmp r0, #0x1
+bhi .L_0200e7f4
+ldrh r0, [r10, #0x2]
+cmp r0, #0x0
+bne .L_0200e7f4
+ldr r1, [r4, #0x4]
+ldr r0, [r10, #0x8]
+ldrh r1, [r1, #0x72]
+bl InvalidateDataCacheLine
+.L_0200e7f4:
+ldrh r1, [r10, #0x0]
+cmp r1, #0x4
+cmpne r1, #0x2
+bne .L_0200e810
+ldrh r0, [r10, #0x2]
+cmp r0, #0x0
+beq .L_0200e82c
+.L_0200e810:
+cmp r1, #0x3
+beq .L_0200e820
+cmp r1, #0x0
+bne .L_0200e830
+.L_0200e820:
+ldrh r0, [r10, #0x2]
+cmp r0, #0x0
+beq .L_0200e830
+.L_0200e82c:
+bl func_0200eb4c
+.L_0200e830:
+ldrh r1, [r10, #0x0]
+cmp r1, #0x2
+ldreqh r0, [r10, #0x2]
+cmpeq r0, #0x0
+add r0, r4, r1, lsl #0x2
+bne .L_0200e86c
+ldr r4, [r0, #0x18]
+bl func_0200e3a8
+cmp r4, #0x0
+addeq sp, sp, #0x8
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+mov r0, r10
+blx r4
+add sp, sp, #0x8
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0200e86c:
+ldr r1, [r0, #0x18]
+cmp r1, #0x0
+beq .L_0200e894
+mov r0, r10
+blx r1
+ldr r0, [.L_0200ea80]
+ldrh r0, [r0, #0x0]
+cmp r0, #0x0
+addeq sp, sp, #0x8
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0200e894:
+ldrh r0, [r10, #0x0]
+cmp r0, #0x8
+beq .L_0200e8a8
+cmp r0, #0xc
+bne .L_0200ea3c
+.L_0200e8a8:
+cmp r0, #0x8
+bne .L_0200e8dc
+add r0, r10, #0xa
+str r0, [sp, #0x0]
+ldrh r5, [r10, #0x8]
+ldrh r6, [r10, #0x10]
+ldrh r0, [r10, #0x12]
+add r11, r10, #0x14
+mov r7, #0x0
+str r0, [sp, #0x4]
+ldrh r8, [r10, #0x2c]
+ldrh r9, [r10, #0x2e]
+b .L_0200e90c
+.L_0200e8dc:
+cmp r0, #0xc
+bne .L_0200e90c
+ldrh r5, [r10, #0x8]
+ldrh r7, [r10, #0xa]
+ldrh r0, [r10, #0xc]
+mov r6, #0x0
+mov r11, r6
+str r0, [sp, #0x4]
+add r0, r10, #0x10
+ldrh r8, [r10, #0x16]
+ldrh r9, [r10, #0x18]
+str r0, [sp, #0x0]
+.L_0200e90c:
+cmp r5, #0x7
+cmpne r5, #0x9
+beq .L_0200e920
+cmp r5, #0x1a
+bne .L_0200ea3c
+.L_0200e920:
+cmp r5, #0x7
+ldreq r1, [r4, #0x14c]
+mov r0, #0x1
+orreq r0, r1, r0, lsl r6
+mvnne r0, r0, lsl r6
+ldrne r1, [r4, #0x14c]
+mov r2, #0x44
+andne r0, r1, r0
+str r0, [r4, #0x14c]
+add r1, r4, #0x100
+strh r7, [r1, #0x50]
+ldr r0, [.L_0200ea84]
+mov r1, #0x0
+bl Memset
+ldr r1, [.L_0200ea84]
+mov r2, #0x82
+strh r2, [r1, #0x0]
+mov r2, #0x0
+strh r2, [r1, #0x2]
+strh r5, [r1, #0x4]
+str r2, [r1, #0x8]
+str r2, [r1, #0xc]
+strh r2, [r1, #0x10]
+strh r6, [r1, #0x12]
+strh r7, [r1, #0x20]
+ldr r3, [r4, #0x14c]
+ldr r2, [.L_0200ea88]
+strh r3, [r1, #0x22]
+strh r2, [r1, #0x1a]
+ldr r3, [sp, #0x4]
+ldr r2, [.L_0200ea84]
+ldr r0, [sp, #0x0]
+strh r3, [r2, #0x3c]
+ldr r1, [.L_0200ea8c]
+mov r2, #0x6
+bl Memcpy
+cmp r11, #0x0
+mov r2, #0x18
+beq .L_0200e9cc
+ldr r1, [.L_0200ea90]
+mov r0, r11
+bl func_02005f6c
+b .L_0200e9d8
+.L_0200e9cc:
+ldr r1, [.L_0200ea90]
+mov r0, #0x0
+bl func_02005f54
+.L_0200e9d8:
+mov r1, r8
+cmp r7, #0x0
+movne r1, r9
+ldr r0, [.L_0200ea84]
+cmp r7, #0x0
+ldr r5, [.L_0200ea84]
+strh r1, [r0, #0x40]
+movne r9, r8
+mov r6, #0x0
+strh r9, [r5, #0x42]
+.L_0200ea00:
+strh r6, [r5, #0x6]
+add r2, r4, r6, lsl #0x2
+ldr r0, [r2, #0xcc]
+cmp r0, #0x0
+beq .L_0200ea28
+ldr r1, [r2, #0x10c]
+mov r0, r5
+str r1, [r5, #0x1c]
+ldr r1, [r2, #0xcc]
+blx r1
+.L_0200ea28:
+add r0, r6, #0x1
+mov r0, r0, lsl #0x10
+mov r6, r0, lsr #0x10
+cmp r6, #0x10
+blo .L_0200ea00
+.L_0200ea3c:
+mov r5, #0x100
+ldr r0, [r4, #0x10]
+mov r1, r5
+bl InvalidateDataCacheLine
+bl func_0200ea94
+ldr r0, [r4, #0x10]
+cmp r10, r0
+addeq sp, sp, #0x8
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+ldrh r2, [r10, #0x0]
+mov r0, r10
+mov r1, r5
+orr r2, r2, #0x8000
+strh r2, [r10, #0x0]
+bl CleanDataCacheLine
+add sp, sp, #0x8
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0200ea80: .word 0x20f02ec
+.L_0200ea84: .word 0x20f034c
+.L_0200ea88: .word 0xffff
+.L_0200ea8c: .word 0x20f0360
+.L_0200ea90: .word 0x20f0370

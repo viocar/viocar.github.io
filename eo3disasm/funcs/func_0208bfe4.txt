@@ -1,0 +1,25 @@
+.arm
+func_0208bfe4:
+cmp r1, #0x0
+beq .L_0208c000
+cmp r1, #0x1
+beq .L_0208c004
+cmp r1, #0x2
+beq .L_0208c00c
+b .L_0208c014
+.L_0208c000:
+b .L_0208c014
+.L_0208c004:
+mov r1, #0x1
+b .L_0208c018
+.L_0208c00c:
+mov r1, #0x3
+b .L_0208c018
+.L_0208c014:
+mov r1, #0x0
+.L_0208c018:
+ldrh r0, [r0, #0xbc]
+tst r0, r1
+moveq r0, #0x1
+movne r0, #0x0
+bx lr

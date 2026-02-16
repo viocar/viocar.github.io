@@ -1,0 +1,128 @@
+.arm
+func_02019728:
+stmdb sp!, {r4, r5, r6, r7, r11, r12, lr}
+eor r4, r1, r3
+mov r4, r4, asr #0x1
+mov r4, r4, lsl #0x1
+.L_02019738:
+orrs r5, r3, r2
+bne .L_02019748
+ldmia sp!, {r4, r5, r6, r7, r11, r12, lr}
+bx lr
+.L_02019748:
+mov r5, r0, lsr #0x1f
+add r5, r5, r1
+mov r6, r2, lsr #0x1f
+add r6, r6, r3
+orrs r6, r5, r6
+bne .L_0201977c
+mov r1, r2
+bl func_02019920
+ands r4, r4, #0x1
+movne r0, r1
+mov r1, r0, asr #0x1f
+ldmia sp!, {r4, r5, r6, r7, r11, r12, lr}
+bx lr
+.L_0201977c:
+cmp r1, #0x0
+bge .L_0201978c
+rsbs r0, r0, #0x0
+rsc r1, r1, #0x0
+.L_0201978c:
+cmp r3, #0x0
+bge .L_0201979c
+rsbs r2, r2, #0x0
+rsc r3, r3, #0x0
+.L_0201979c:
+orrs r5, r1, r0
+beq .L_020198c0
+mov r5, #0x0
+mov r6, #0x1
+cmp r3, #0x0
+bmi .L_020197c8
+.L_020197b4:
+add r5, r5, #0x1
+adds r2, r2, r2
+adcs r3, r3, r3
+bpl .L_020197b4
+add r6, r6, r5
+.L_020197c8:
+cmp r1, #0x0
+blt .L_020197e8
+.L_020197d0:
+cmp r6, #0x1
+beq .L_020197e8
+sub r6, r6, #0x1
+adds r0, r0, r0
+adcs r1, r1, r1
+bpl .L_020197d0
+.L_020197e8:
+mov r7, #0x0
+mov r12, #0x0
+mov r11, #0x0
+b .L_02019810
+.L_020197f8:
+orr r12, r12, #0x1
+subs r6, r6, #0x1
+beq .L_02019868
+adds r0, r0, r0
+adcs r1, r1, r1
+adcs r7, r7, r7
+.L_02019810:
+subs r0, r0, r2
+sbcs r1, r1, r3
+sbcs r7, r7, #0x0
+adds r12, r12, r12
+adc r11, r11, r11
+cmp r7, #0x0
+bge .L_020197f8
+.L_0201982c:
+subs r6, r6, #0x1
+beq .L_02019860
+adds r0, r0, r0
+adcs r1, r1, r1
+adc r7, r7, r7
+adds r0, r0, r2
+adcs r1, r1, r3
+adc r7, r7, #0x0
+adds r12, r12, r12
+adc r11, r11, r11
+cmp r7, #0x0
+bge .L_020197f8
+b .L_0201982c
+.L_02019860:
+adds r0, r0, r2
+adc r1, r1, r3
+.L_02019868:
+ands r7, r4, #0x1
+moveq r0, r12
+moveq r1, r11
+beq .L_020198a0
+subs r7, r5, #0x20
+movge r0, r1, lsr r7
+bge .L_020198c4
+rsb r7, r5, #0x20
+mov r0, r0, lsr r5
+orr r0, r0, r1, lsl r7
+mov r1, r1, lsr r5
+b .L_020198a0
+mov r0, r1, lsr r7
+mov r1, #0x0
+.L_020198a0:
+cmp r4, #0x0
+blt .L_020198b0
+ldmia sp!, {r4, r5, r6, r7, r11, r12, lr}
+bx lr
+.L_020198b0:
+rsbs r0, r0, #0x0
+rsc r1, r1, #0x0
+ldmia sp!, {r4, r5, r6, r7, r11, r12, lr}
+bx lr
+.L_020198c0:
+mov r0, #0x0
+.L_020198c4:
+mov r1, #0x0
+cmp r4, #0x0
+blt .L_020198b0
+ldmia sp!, {r4, r5, r6, r7, r11, r12, lr}
+bx lr

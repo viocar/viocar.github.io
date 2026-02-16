@@ -1,0 +1,11 @@
+.arm
+func_0208c2c8:
+ldr r2, [r0, #0x40]
+cmp r2, #0x0
+mvneq r0, #0x0
+bxeq lr
+cmp r1, r2
+mvngt r0, #0x0
+ldrle r0, [r0, #0x44]
+ldrle r0, [r0, r1, lsl #0x2]
+bx lr

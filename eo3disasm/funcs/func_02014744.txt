@@ -1,0 +1,10 @@
+.arm
+func_02014744:
+mvn r2, #0x0
+.L_02014748:
+ldrh r1, [r0], #0x2
+add r2, r2, #0x1
+cmp r1, #0x0
+bne .L_02014748
+mov r0, r2
+bx lr

@@ -1,0 +1,67 @@
+.arm
+func_0209e514:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+sub sp, sp, #0x28
+mov r7, r2
+mov r9, r0
+mov r0, r7
+mov r8, r1
+mov r5, r3
+bl func_0201be4c
+mov r4, r0
+mov r0, r7
+bl func_0201c0c4
+mov r6, r0
+mov r0, r7
+bl func_0201c0cc
+cmp r9, #0x0
+mla r12, r8, r6, r9
+cmpge r8, #0x0
+blt .L_0209e568
+cmp r9, r6
+cmplt r8, r0
+blt .L_0209e574
+.L_0209e568:
+add sp, sp, #0x28
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_0209e574:
+mov r0, #0x0
+cmp r7, #0x1a
+moveq r0, #0x1
+cmp r5, #0x4
+cmpeq r0, #0x0
+addeq sp, sp, #0x28
+moveq r0, #0x1
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+cmp r5, #0x3
+bne .L_0209e5bc
+cmp r0, #0x0
+beq .L_0209e5bc
+ldr r0, [r4, #0x8]
+ldrb r0, [r0, r12]
+tst r0, #0x20
+addeq sp, sp, #0x28
+moveq r0, #0x4
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_0209e5bc:
+ldr r7, [.L_0209e608]
+add r6, sp, #0x0
+ldmia r7!, {r0, r1, r2, r3}
+mov lr, r6
+stmia r6!, {r0, r1, r2, r3}
+ldmia r7!, {r0, r1, r2, r3}
+stmia r6!, {r0, r1, r2, r3}
+ldmia r7, {r0, r1}
+stmia r6, {r0, r1}
+ldr r1, [r4, #0x8]
+add r0, sp, #0x4
+ldrb r2, [r1, r12]
+ldr r1, [lr, r5, lsl #0x3]
+ldr r0, [r0, r5, lsl #0x3]
+and r1, r2, r1
+mov r0, r1, asr r0
+and r0, r0, #0xff
+add sp, sp, #0x28
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_0209e608: .word data_020e210c

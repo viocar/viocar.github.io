@@ -1,0 +1,9 @@
+.arm
+func_02003630:
+stmdb sp!, {r4, lr}
+bl DisableIRQ
+mov r4, r0
+bl func_02003118
+mov r0, r4
+bl EnableIRQ
+ldmia sp!, {r4, pc}

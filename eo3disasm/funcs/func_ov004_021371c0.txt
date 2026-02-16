@@ -1,0 +1,9 @@
+.arm
+func_ov004_021371c0:
+ldr r3, [.L_4_021371d8]
+mov r2, #0x18
+mla r2, r0, r2, r3
+mov r0, #0xc
+mla r0, r1, r0, r2
+bx lr
+.L_4_021371d8: .word data_ov004_02141154

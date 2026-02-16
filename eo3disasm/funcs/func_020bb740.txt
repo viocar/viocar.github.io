@@ -1,0 +1,5 @@
+.arm
+func_020bb740:
+ldr r12, [.L_020bb748]
+bx r12
+.L_020bb748: .word func_ov003_02150674

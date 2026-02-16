@@ -1,0 +1,22 @@
+.arm
+func_0201cacc:
+mov r2, #0xc
+mul r2, r0, r2
+ldr r0, [.L_0201cb10]
+ldr r3, [r0, r2]
+cmp r3, #0x0
+bxeq lr
+mov r0, #0x1
+.L_0201cae8:
+ldrb r2, [r3, #0x0]
+cmp r2, r1
+bhi .L_0201cb00
+ldrb r2, [r3, #0x1]
+cmp r2, #0x0
+streqb r0, [r3, #0x1]
+.L_0201cb00:
+ldr r3, [r3, #0x18]
+cmp r3, #0x0
+bne .L_0201cae8
+bx lr
+.L_0201cb10: .word 0x20f15d0

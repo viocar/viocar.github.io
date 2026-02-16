@@ -1,0 +1,12 @@
+.arm
+func_0203c4dc:
+ldr r0, [.L_0203c500]
+mov r2, #0x0
+ldr r1, [r0, #0x0]
+str r2, [r1, #0x33c]
+ldr r1, [r0, #0x0]
+str r2, [r1, #0x340]
+ldr r0, [r0, #0x0]
+str r2, [r0, #0x340]
+bx lr
+.L_0203c500: .word 0x21143a4

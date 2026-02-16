@@ -1,0 +1,13 @@
+.arm
+func_020afd3c:
+ldr r1, [.L_020afd60]
+cmp r0, r1
+blo .L_020afd58
+add r1, r1, #0x17
+cmp r0, r1
+movls r0, #0x1
+bxls lr
+.L_020afd58:
+mov r0, #0x0
+bx lr
+.L_020afd60: .word 0x5c3

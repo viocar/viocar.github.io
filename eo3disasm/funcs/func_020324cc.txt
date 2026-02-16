@@ -1,0 +1,75 @@
+.arm
+func_020324cc:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0xc
+ldr r2, [.L_020325c8]
+mov r1, #0x1800
+mla r11, r0, r1, r2
+ldr r7, [.L_020325cc]
+mov r0, #0xc
+mov r2, r7
+.L_020324ec:
+mul r1, r2, r0
+ldr r1, [r11, r1]
+cmp r1, #0x1
+moveq r7, r2
+beq .L_02032508
+subs r2, r2, #0x1
+bpl .L_020324ec
+.L_02032508:
+mov r2, #0x0
+add r6, sp, #0x0
+mov r5, #0xc
+mov r4, r2
+b .L_020325ac
+.L_0203251c:
+cmp r7, #0x0
+mov r8, r11
+mov r2, #0x1
+mov r10, #0x0
+add r9, r11, #0xc
+cmpgt r7, #0x0
+ble .L_020325a8
+.L_02032538:
+ldr r0, [r8, #0x0]
+cmp r0, #0x0
+beq .L_02032560
+ldr r0, [r9, #0x0]
+cmp r0, #0x0
+beq .L_02032594
+ldr r1, [r8, #0x4]
+ldr r0, [r9, #0x4]
+cmp r1, r0
+bls .L_02032594
+.L_02032560:
+mov r0, r8
+mov r1, r6
+mov r2, r5
+bl Memcpy
+mov r0, r9
+mov r1, r8
+mov r2, r5
+bl Memcpy
+mov r0, r6
+mov r1, r9
+mov r2, r5
+bl Memcpy
+mov r2, r4
+.L_02032594:
+add r10, r10, #0x1
+cmp r10, r7
+add r8, r8, #0xc
+add r9, r9, #0xc
+blt .L_02032538
+.L_020325a8:
+sub r7, r7, #0x1
+.L_020325ac:
+cmp r7, #0x0
+addle sp, sp, #0xc
+ldmleia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+cmp r2, #0x0
+beq .L_0203251c
+add sp, sp, #0xc
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_020325c8: .word 0x2102bf4
+.L_020325cc: .word 0x1ff

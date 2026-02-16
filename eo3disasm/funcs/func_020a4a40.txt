@@ -1,0 +1,20 @@
+.arm
+func_020a4a40:
+ldr r1, [r0, #0xd4]
+add r2, r1, #0x1
+str r2, [r0, #0xd4]
+cmp r2, #0x1f
+bge .L_020a4a78
+.L_020a4a54:
+add r1, r0, r2
+ldrb r1, [r1, #0xb4]
+cmp r1, #0x0
+strne r2, [r0, #0xd4]
+movne r0, r2
+bxne lr
+add r2, r2, #0x1
+cmp r2, #0x1f
+blt .L_020a4a54
+.L_020a4a78:
+mvn r0, #0x0
+bx lr

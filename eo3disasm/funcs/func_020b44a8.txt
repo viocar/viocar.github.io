@@ -1,0 +1,19 @@
+.arm
+func_020b44a8:
+cmp r0, #0x0
+movlt r0, #0x0
+bxlt lr
+ldr r1, [.L_020b44dc]
+cmp r0, r1
+blt .L_020b44cc
+ldr r1, [.L_020b44e0]
+cmp r0, r1
+ble .L_020b44d4
+.L_020b44cc:
+mov r0, #0x0
+bx lr
+.L_020b44d4:
+mov r0, #0x1
+bx lr
+.L_020b44dc: .word 0x39d
+.L_020b44e0: .word 0x52c

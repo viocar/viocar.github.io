@@ -1,0 +1,60 @@
+.arm
+func_02075030:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r7, r1
+mov r5, #0x0
+mov r1, r7, lsl #0x10
+mov r4, r0
+mov r0, r1, lsr #0x10
+mov r6, r5
+bl func_0207518c
+cmp r0, #0x0
+moveq r0, r5
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+tst r4, #0x1
+cmpne r7, #0x200
+orrlt r6, r5, #0x1
+cmp r4, #0x2
+blo .L_020750e0
+ldrb r0, [r0, #0x0]
+sub r0, r0, #0xb
+cmp r0, #0x7
+addls pc, pc, r0, lsl #0x2
+b .L_020750e0
+.L_02075084: ; jump table
+b .L_020750a4 ; case 0
+b .L_020750b4 ; case 1
+b .L_020750ac ; case 2
+b .L_020750bc ; case 3
+b .L_020750c4 ; case 4
+b .L_020750cc ; case 5
+b .L_020750d4 ; case 6
+b .L_020750dc ; case 7
+.L_020750a4:
+orr r6, r6, #0x2
+b .L_020750e0
+.L_020750ac:
+orr r6, r6, #0x4
+b .L_020750e0
+.L_020750b4:
+orr r6, r6, #0x8
+b .L_020750e0
+.L_020750bc:
+orr r6, r6, #0x10
+b .L_020750e0
+.L_020750c4:
+orr r6, r6, #0x20
+b .L_020750e0
+.L_020750cc:
+orr r6, r6, #0x40
+b .L_020750e0
+.L_020750d4:
+orr r6, r6, #0x80
+b .L_020750e0
+.L_020750dc:
+orr r6, r6, #0x100
+.L_020750e0:
+tst r4, r6
+movne r5, #0x1
+mov r0, r5
+ldmia sp!, {r3, r4, r5, r6, r7, pc}

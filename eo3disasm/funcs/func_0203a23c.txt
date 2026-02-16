@@ -1,0 +1,124 @@
+.arm
+func_0203a23c:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+ldr r6, [sp, #0x2c]
+mov r10, r0
+ldrb r0, [r6, #0x0]
+mov r9, r1
+mov r8, r2
+mov r7, r3
+cmp r0, #0x4
+ldmhsia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+mov r1, #0xc
+mul r1, r0, r1
+ldr r2, [sp, #0x28]
+ldr r1, [r7, r1]
+cmp r2, r1
+blt .L_0203a36c
+cmp r0, #0x4
+bhs .L_0203a36c
+mov r1, #0xc
+.L_0203a284:
+ldrb r2, [r6, #0x0]
+add r4, r2, #0x1
+and r3, r4, #0xff
+mul r2, r3, r1
+strb r4, [r6, #0x0]
+ldr r2, [r7, r2]
+cmp r2, #0x0
+beq .L_0203a364
+mov r1, #0xc
+mul r5, r0, r1
+add r0, r7, #0x8
+ldrb r1, [r0, r5]
+add r4, r7, #0x9
+add r11, r7, #0xa
+strb r1, [r10, #0x0]
+ldrb r1, [r4, r5]
+strb r1, [r10, #0x1]
+ldrb r1, [r11, r5]
+strb r1, [r10, #0x2]
+ldrb r3, [r6, #0x0]
+mov r1, #0xc
+ldr r2, [r7, r5]
+smulbb r12, r3, r1
+ldr r1, [r7, r12]
+subs r3, r1, r2
+beq .L_0203a36c
+add r1, r7, r12
+ldrb r2, [r1, #0x8]
+ldrb r0, [r0, r5]
+mov r1, r3, lsl #0xc
+str r1, [sp, #0x0]
+sub r0, r2, r0
+mov r0, r0, lsl #0xc
+bl HardwareDiv32
+str r0, [r9, #0x0]
+ldrb r3, [r6, #0x0]
+mov r0, #0xc
+ldrb r2, [r4, r5]
+mla r0, r3, r0, r7
+ldrb r0, [r0, #0x9]
+ldr r1, [sp, #0x0]
+sub r0, r0, r2
+mov r0, r0, lsl #0xc
+bl HardwareDiv32
+str r0, [r9, #0x4]
+ldrb r3, [r6, #0x0]
+mov r0, #0xc
+ldrb r2, [r11, r5]
+mla r0, r3, r0, r7
+ldrb r0, [r0, #0xa]
+ldr r1, [sp, #0x0]
+sub r0, r0, r2
+mov r0, r0, lsl #0xc
+bl HardwareDiv32
+str r0, [r9, #0x8]
+b .L_0203a36c
+.L_0203a364:
+cmp r3, #0x4
+blo .L_0203a284
+.L_0203a36c:
+ldr r0, [r9, #0x0]
+ldmia r8, {r1, r2}
+add r0, r1, r0
+str r0, [r8, #0x0]
+ldr r1, [r9, #0x4]
+mov r0, r0, asr #0xc
+add r1, r2, r1
+str r1, [r8, #0x4]
+ldr r2, [r8, #0x8]
+ldr r1, [r9, #0x8]
+cmp r0, #0xff
+add r1, r2, r1
+str r1, [r8, #0x8]
+movgt r0, #0xff
+strgtb r0, [r10, #0x0]
+bgt .L_0203a3bc
+cmp r0, #0x0
+movlt r0, #0x0
+strltb r0, [r10, #0x0]
+strgeb r0, [r10, #0x0]
+.L_0203a3bc:
+ldr r0, [r8, #0x4]
+mov r0, r0, asr #0xc
+cmp r0, #0xff
+movgt r0, #0xff
+strgtb r0, [r10, #0x1]
+bgt .L_0203a3e4
+cmp r0, #0x0
+movlt r0, #0x0
+strltb r0, [r10, #0x1]
+strgeb r0, [r10, #0x1]
+.L_0203a3e4:
+ldr r0, [r8, #0x8]
+mov r0, r0, asr #0xc
+cmp r0, #0xff
+movgt r0, #0xff
+strgtb r0, [r10, #0x2]
+ldmgtia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+cmp r0, #0x0
+movlt r0, #0x0
+strltb r0, [r10, #0x2]
+strgeb r0, [r10, #0x2]
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}

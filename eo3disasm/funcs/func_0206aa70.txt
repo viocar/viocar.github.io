@@ -1,0 +1,6 @@
+.arm
+func_0206aa70:
+add r2, r0, #0x18
+mov r0, #0x2c
+smlabb r0, r1, r0, r2
+bx lr

@@ -1,0 +1,10 @@
+.arm
+func_0206c284:
+cmp r0, #0xf2
+blt .L_0206c298
+cmp r0, #0x110
+movle r0, #0x1
+bxle lr
+.L_0206c298:
+mov r0, #0x0
+bx lr

@@ -1,0 +1,12 @@
+.arm
+func_020b1a80:
+ldr r2, [.L_020b1aa4]
+ldr r2, [r2, #0x0]
+cmp r2, #0x0
+bxeq lr
+cmp r1, #0x0
+movne r0, #0x1
+str r0, [r2, #0xa4]
+str r1, [r2, #0xa8]
+bx lr
+.L_020b1aa4: .word 0x2135e44

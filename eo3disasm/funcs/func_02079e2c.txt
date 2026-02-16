@@ -1,0 +1,76 @@
+.arm
+func_02079e2c:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x10
+ldrb r7, [sp, #0x38]
+mov r11, r0
+mov r6, r1
+mov r5, r2
+mov r4, r3
+cmp r7, #0x3
+addls pc, pc, r7, lsl #0x2
+b .L_02079ea0
+.L_02079e54: ; jump table
+b .L_02079e64 ; case 0
+b .L_02079e78 ; case 1
+b .L_02079e8c ; case 2
+b .L_02079ea0 ; case 3
+.L_02079e64:
+mov r0, #0x63
+mov r9, #0xd
+str r0, [sp, #0xc]
+mov r10, #0x0
+b .L_02079eb0
+.L_02079e78:
+mov r0, #0x63
+mov r9, #0xd
+str r0, [sp, #0xc]
+mov r10, #0xe
+b .L_02079eb0
+.L_02079e8c:
+mov r0, #0x63
+mov r9, #0xd
+str r0, [sp, #0xc]
+mov r10, #0x18
+b .L_02079eb0
+.L_02079ea0:
+mov r0, #0x63
+mov r9, #0xd
+str r0, [sp, #0xc]
+mov r10, #0x24
+.L_02079eb0:
+mov r7, #0x1
+ldr r1, [sp, #0xc]
+mov r0, r7
+bl func_02031844
+cmp r0, #0x0
+addeq sp, sp, #0x10
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+ldr r0, [sp, #0xc]
+mov r1, #0x3e8
+mul r8, r0, r1
+.L_02079ed8:
+mov r0, r11
+mov r1, r7
+bl func_0207a25c
+cmp r0, #0xa
+beq .L_02079f1c
+sub r1, r7, #0x1
+mul r3, r1, r9
+add r1, r8, r0
+add r2, r10, r1
+str r5, [sp, #0x0]
+mov r0, #0x0
+str r0, [sp, #0x4]
+mov r0, #0x9
+sub r3, r6, r3
+mov r1, #0x1
+str r4, [sp, #0x8]
+bl func_ov000_01ffb424
+.L_02079f1c:
+add r0, r7, #0x1
+and r7, r0, #0xff
+cmp r7, #0xa
+blo .L_02079ed8
+add sp, sp, #0x10
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}

@@ -1,0 +1,118 @@
+.arm
+func_020c4af0:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+mov r4, #0xc0
+bl func_020c463c
+mov r8, r0
+ldr r0, [r8, #0x1c]
+mov r9, #0x0
+cmp r0, #0x0
+ble .L_020c4bc0
+.L_020c4b10:
+mul r6, r9, r4
+ldr r0, [r8, #0x18]
+mov r11, #0x0
+mov r10, r11
+cmp r0, #0x0
+add r7, r8, #0x620
+ble .L_020c4b58
+add r5, r8, #0x20
+.L_020c4b30:
+mla r1, r10, r4, r5
+add r0, r7, r6
+bl func_020c4ab0
+cmp r0, #0x0
+movne r11, #0x1
+bne .L_020c4b58
+ldr r0, [r8, #0x18]
+add r10, r10, #0x1
+cmp r10, r0
+blt .L_020c4b30
+.L_020c4b58:
+cmp r11, #0x0
+bne .L_020c4bb0
+ldr r0, [r8, #0x1c]
+mov r6, r9
+sub r0, r0, #0x1
+cmp r9, r0
+bge .L_020c4ba4
+add r5, r8, #0x620
+.L_020c4b78:
+mul r1, r6, r4
+add r0, r1, #0xc0
+mov r2, r4
+add r0, r5, r0
+add r1, r5, r1
+bl Memcpy
+ldr r0, [r8, #0x1c]
+add r6, r6, #0x1
+sub r0, r0, #0x1
+cmp r6, r0
+blt .L_020c4b78
+.L_020c4ba4:
+ldr r0, [r8, #0x1c]
+sub r0, r0, #0x1
+str r0, [r8, #0x1c]
+.L_020c4bb0:
+ldr r0, [r8, #0x1c]
+add r9, r9, #0x1
+cmp r9, r0
+blt .L_020c4b10
+.L_020c4bc0:
+ldr r0, [r8, #0x18]
+mov r4, #0xc0
+cmp r0, #0x0
+mov r9, #0x0
+ble .L_020c4c54
+add r5, r8, #0x620
+add r7, r8, #0x20
+.L_020c4bdc:
+mul r6, r9, r4
+ldr r0, [r8, #0x1c]
+mov r11, #0x0
+mov r10, r11
+cmp r0, #0x0
+ble .L_020c4c1c
+.L_020c4bf4:
+mla r0, r10, r4, r5
+add r1, r7, r6
+bl func_020c4ab0
+cmp r0, #0x0
+movne r11, #0x1
+bne .L_020c4c1c
+ldr r0, [r8, #0x1c]
+add r10, r10, #0x1
+cmp r10, r0
+blt .L_020c4bf4
+.L_020c4c1c:
+cmp r11, #0x0
+bne .L_020c4c44
+ldr r0, [r8, #0x1c]
+mov r2, r4
+mla r1, r0, r4, r5
+add r0, r7, r6
+bl Memcpy
+ldr r0, [r8, #0x1c]
+add r0, r0, #0x1
+str r0, [r8, #0x1c]
+.L_020c4c44:
+ldr r0, [r8, #0x18]
+add r9, r9, #0x1
+cmp r9, r0
+blt .L_020c4bdc
+.L_020c4c54:
+ldr r7, [r8, #0x1c]
+mov r5, #0x0
+mov r4, #0xc0
+cmp r7, #0x8
+ldmgeia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+add r6, r8, #0x620
+.L_020c4c6c:
+mla r0, r7, r4, r6
+mov r1, r5
+mov r2, r4
+bl Memset
+add r7, r7, #0x1
+cmp r7, #0x8
+blt .L_020c4c6c
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}

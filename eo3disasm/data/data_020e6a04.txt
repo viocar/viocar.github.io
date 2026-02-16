@@ -1,0 +1,3 @@
+data_020e6a04:
+.word 0x20e6aa8
+.word 0x20e6a6c

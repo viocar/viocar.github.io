@@ -1,0 +1,107 @@
+.arm
+func_ov001_02144b80:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0xc
+mov r9, r1
+mov r10, r0
+mov r6, r2
+mov r8, #0x0
+bl func_0204a6e8
+cmp r9, #0x0
+mov r4, r0
+addeq sp, sp, #0xc
+moveq r0, r8
+ldmeqia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+mov r0, r10
+mov r1, r6
+mov r2, #0x1f
+ldrb r6, [r9, #0x620]
+bl func_020501a0
+cmp r0, #0x0
+bne .L_1_02144c54
+mov r7, r8
+add r4, r4, #0x3700
+mov r11, #0x800000
+.L_1_02144bd8:
+mov r0, r6
+mov r1, r7
+bl func_0204029c
+movs r5, r0
+beq .L_1_02144c44
+bl func_02040dbc
+cmp r0, #0x0
+beq .L_1_02144c44
+mov r1, r11
+add r0, r5, #0x8
+bl func_0204a7a0
+cmp r0, #0x0
+ldrneb r1, [r10, #0x620]
+ldrneb r0, [r9, #0x620]
+cmpne r1, r0
+beq .L_1_02144c44
+ldrb r0, [r5, #0x1e6]
+cmp r0, #0x0
+ldrh r0, [r4, #0xf0]
+bne .L_1_02144c38
+tst r0, #0x7
+beq .L_1_02144c44
+mov r8, #0x1
+b .L_1_02144c54
+.L_1_02144c38:
+tst r0, #0x38
+movne r8, #0x1
+bne .L_1_02144c54
+.L_1_02144c44:
+add r0, r7, #0x1
+and r7, r0, #0xff
+cmp r7, #0x7
+blo .L_1_02144bd8
+.L_1_02144c54:
+cmp r8, #0x0
+beq .L_1_02144d00
+mov r0, #0x4d
+str r0, [sp, #0x0]
+add r2, r5, #0x100
+add r0, r5, #0x224
+ldrb r1, [r5, #0x620]
+ldrsh r2, [r2, #0xe8]
+ldrb r3, [r5, #0x1e7]
+add r0, r0, #0x400
+bl func_0206a9b4
+mov r2, r0
+add r0, r5, #0x700
+strh r2, [r0, #0x64]
+strh r2, [r0, #0x66]
+ldrb r1, [r5, #0x1e7]
+add r0, r5, #0x224
+add r3, sp, #0x8
+strb r1, [r5, #0x76d]
+ldrb r4, [r5, #0x620]
+add r1, sp, #0x9
+add r0, r0, #0x400
+strb r4, [r5, #0x760]
+ldrb r4, [r5, #0x621]
+strb r4, [r5, #0x761]
+str r3, [sp, #0x0]
+str r1, [sp, #0x4]
+ldrb r1, [r5, #0x620]
+ldrb r3, [r5, #0x76d]
+bl func_0206a950
+ldrb r0, [sp, #0x9]
+cmp r0, #0x2
+ldrb r0, [r5, #0x620]
+strneb r0, [r5, #0x762]
+ldrneb r0, [r5, #0x621]
+bne .L_1_02144cf0
+bl func_0204a9bc
+strb r0, [r5, #0x762]
+ldrb r0, [r10, #0x621]
+.L_1_02144cf0:
+strb r0, [r5, #0x763]
+add r0, r5, #0x760
+mov r1, #0x1
+bl func_ov001_02136df4
+.L_1_02144d00:
+mov r0, r8
+add sp, sp, #0xc
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}

@@ -1,0 +1,43 @@
+.arm
+func_02022694:
+ldr r1, [.L_02022724]
+ldr r2, [r1, #0x0]
+ldr r1, [r2, #0x0]
+ldr r12, [r2, #0xd4]
+ldrb r3, [r1, #0x1]
+cmp r12, #0x0
+beq .L_020226ec
+beq .L_020226d8
+ldrb r1, [r12, #0x1]
+cmp r3, r1
+bhs .L_020226d8
+ldrh r2, [r12, #0x6]
+ldrh r1, [r12, r2]
+add r2, r12, r2
+add r2, r2, #0x4
+mla r2, r1, r3, r2
+b .L_020226dc
+.L_020226d8:
+mov r2, #0x0
+.L_020226dc:
+cmp r2, #0x0
+ldrne r1, [r2, #0x0]
+addne r2, r12, r1
+bne .L_020226f0
+.L_020226ec:
+mov r2, #0x0
+.L_020226f0:
+ldrh r1, [r2, #0x0]
+tst r1, #0x1
+ldrne r1, [r0, #0x0]
+orrne r1, r1, #0x4
+strne r1, [r0, #0x0]
+bxne lr
+ldr r1, [r2, #0x4]
+str r1, [r0, #0x4c]
+ldr r1, [r2, #0x8]
+str r1, [r0, #0x50]
+ldr r1, [r2, #0xc]
+str r1, [r0, #0x54]
+bx lr
+.L_02022724: .word 0x20f98d4

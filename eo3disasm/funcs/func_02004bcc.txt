@@ -1,0 +1,6 @@
+.arm
+func_02004bcc:
+ldr r0, [.L_02004bd8]
+ldrh r0, [r0, #0x0]
+bx lr
+.L_02004bd8: .word 0x20ed9dc

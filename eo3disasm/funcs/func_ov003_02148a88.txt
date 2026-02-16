@@ -1,0 +1,12 @@
+.arm
+func_ov003_02148a88:
+stmdb sp!, {r3, lr}
+bl func_020b3970
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r3, pc}
+ldrsb r0, [r0, #0x57]
+cmp r0, #0x1
+moveq r0, #0x1
+movne r0, #0x0
+ldmia sp!, {r3, pc}

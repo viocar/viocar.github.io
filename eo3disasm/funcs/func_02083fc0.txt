@@ -1,0 +1,173 @@
+.arm
+func_02083fc0:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+sub sp, sp, #0x140
+mov r9, r0
+mov r8, r1
+mov r7, r2
+mov r5, #0x0
+bl func_02083ca4
+mov r1, r9
+bl func_02083d28
+mov r6, r0
+ldr r0, [r6, #0x0]
+cmp r0, #0x0
+moveq r0, #0x1
+movne r0, r5
+cmp r0, #0x0
+addeq sp, sp, #0x140
+moveq r0, #0x0
+ldmeqia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+str r5, [r6, #0x0]
+str r5, [r6, #0x4]
+add r10, sp, #0xc0
+str r5, [r6, #0xc]
+str r5, [r6, #0x8]
+mov r0, r10
+mov r1, r5
+mov r2, #0x80
+str r5, [r6, #0x10]
+bl Memset
+add r4, sp, #0x0
+mov r1, r5
+mov r0, r4
+mov r2, #0x40
+bl Memset
+ldr r1, [.L_02084208]
+mov r0, r10
+bl func_020142d0
+cmp r9, #0x8
+addls pc, pc, r9, lsl #0x2
+b .L_020840bc
+.L_0208405c: ; jump table
+b .L_02084080 ; case 0
+b .L_02084088 ; case 1
+b .L_02084088 ; case 2
+b .L_02084088 ; case 3
+b .L_02084088 ; case 4
+b .L_02084088 ; case 5
+b .L_020840a4 ; case 6
+b .L_02084090 ; case 7
+b .L_020840ac ; case 8
+.L_02084080:
+ldr r1, [.L_0208420c]
+b .L_020840b0
+.L_02084088:
+ldr r1, [.L_02084210]
+b .L_020840b0
+.L_02084090:
+ldr r0, [.L_02084214]
+ldr r1, [.L_02084218]
+ldr r2, [r0, r8, lsl #0x2]
+mov r0, r4
+b .L_020840b8
+.L_020840a4:
+ldr r1, [.L_0208421c]
+b .L_020840b0
+.L_020840ac:
+ldr r1, [.L_02084220]
+.L_020840b0:
+mov r0, r4
+mov r2, r8
+.L_020840b8:
+bl func_020142d0
+.L_020840bc:
+add r8, sp, #0xc0
+add r1, sp, #0x0
+mov r0, r8
+mov r5, #0x0
+bl Strcat
+cmp r9, #0x8
+beq .L_02084140
+add r4, sp, #0x40
+mov r0, r4
+mov r1, r5
+mov r2, #0x80
+bl Memset
+ldr r1, [.L_02084224]
+mov r0, r4
+mov r2, r8
+bl func_020142d0
+cmp r7, #0x0
+mov r0, r4
+beq .L_02084134
+mov r1, r5
+mov r2, r5
+bl func_0202e144
+cmp r0, #0x0
+str r0, [r6, #0x0]
+addeq sp, sp, #0x140
+moveq r0, r5
+ldmeqia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+add r0, r0, #0x8
+str r0, [r6, #0x4]
+b .L_02084140
+.L_02084134:
+mov r1, r6
+mov r2, r5
+bl func_0202e32c
+.L_02084140:
+add r4, sp, #0x40
+mov r0, r4
+mov r1, r5
+mov r2, #0x80
+bl Memset
+ldr r1, [.L_02084228]
+add r2, sp, #0xc0
+mov r0, r4
+bl func_020142d0
+cmp r7, #0x0
+mov r0, r4
+beq .L_02084184
+mov r1, r5
+mov r2, r5
+bl func_0202e144
+str r0, [r6, #0x10]
+b .L_02084190
+.L_02084184:
+mov r2, r5
+add r1, r6, #0x10
+bl func_0202e32c
+.L_02084190:
+add r4, sp, #0x40
+mov r0, r4
+mov r1, r5
+mov r2, #0x80
+bl Memset
+ldr r1, [.L_0208422c]
+add r2, sp, #0xc0
+mov r0, r4
+bl func_020142d0
+cmp r7, #0x0
+mov r0, r4
+beq .L_020841f0
+mov r1, r5
+mov r2, r5
+bl func_0202e144
+cmp r0, #0x0
+str r0, [r6, #0xc]
+addeq sp, sp, #0x140
+moveq r0, r5
+ldmeqia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+ldr r1, [r6, #0x10]
+bl func_02075e9c
+str r0, [r6, #0x8]
+b .L_020841fc
+.L_020841f0:
+mov r2, r5
+add r1, r6, #0xc
+bl func_0202e32c
+.L_020841fc:
+mov r0, #0x1
+add sp, sp, #0x140
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+.L_02084208: .word data_020e831c
+.L_0208420c: .word data_020e8328
+.L_02084210: .word data_020e833c
+.L_02084214: .word data_020e82e4
+.L_02084218: .word data_020e834c
+.L_0208421c: .word data_020e8358
+.L_02084220: .word data_020e836c
+.L_02084224: .word data_020e837c
+.L_02084228: .word data_020e8384
+.L_0208422c: .word data_020e838c

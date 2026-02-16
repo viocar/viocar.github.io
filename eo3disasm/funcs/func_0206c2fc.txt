@@ -1,0 +1,11 @@
+.arm
+func_0206c2fc:
+ldr r1, [.L_0206c31c]
+ldr r2, [r1, #0x8]
+cmp r2, #0x0
+moveq r0, #0x0
+bxeq lr
+mov r1, #0x6
+smlabb r0, r0, r1, r2
+bx lr
+.L_0206c31c: .word 0x21187ac

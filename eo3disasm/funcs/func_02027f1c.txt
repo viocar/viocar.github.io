@@ -1,0 +1,25 @@
+.arm
+func_02027f1c:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+movs r4, r1
+mov r7, r0
+mov r6, r2
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+bl DisableIRQ
+mov r5, r0
+mov r0, r4
+bl func_02027134
+mov r4, r0
+mov r0, r6
+bl func_02027440
+cmp r7, r0
+bne .L_02027f60
+mov r0, r6
+mov r1, #0x0
+bl func_02027468
+.L_02027f60:
+mov r0, r4
+bl func_02027134
+mov r0, r5
+bl EnableIRQ
+ldmia sp!, {r3, r4, r5, r6, r7, pc}

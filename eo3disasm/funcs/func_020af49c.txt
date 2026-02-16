@@ -1,0 +1,10 @@
+.arm
+func_020af49c:
+cmp r0, #0x800
+blo .L_020af4b0
+cmp r0, #0x8c0
+movlo r0, #0x1
+bxlo lr
+.L_020af4b0:
+mov r0, #0x0
+bx lr

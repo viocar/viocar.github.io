@@ -1,0 +1,13 @@
+.arm
+func_0202e8e4:
+mvn r1, #0xf
+cmp r0, r1
+movlt r0, r1
+blt .L_0202e8fc
+cmp r0, #0x10
+movgt r0, #0x10
+.L_0202e8fc:
+ldr r1, [.L_0202e908]
+strb r0, [r1, #0x0]
+bx lr
+.L_0202e908: .word 0x20ff610

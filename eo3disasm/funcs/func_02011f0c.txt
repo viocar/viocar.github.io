@@ -1,0 +1,5 @@
+.arm
+func_02011f0c:
+cmp r0, #0x0
+rsblt r0, r0, #0x0
+bx lr

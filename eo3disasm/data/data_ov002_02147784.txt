@@ -1,0 +1,7 @@
+data_ov002_02147784:
+.word data_ov002_02145e70
+.word data_ov002_02145e1c
+.word data_ov002_02145dc8
+.word data_ov002_02145d74
+.word data_ov002_02145d20
+.word data_ov002_02145ccc

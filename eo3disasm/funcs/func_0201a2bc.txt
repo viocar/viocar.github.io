@@ -1,0 +1,154 @@
+.arm
+func_0201a2bc:
+eors r2, r0, r1
+eormi r1, r1, #0x80000000
+bmi .L_0201a4f8
+.L_0201a2c8:
+subs r12, r0, r1
+sublo r0, r0, r12
+addlo r1, r1, r12
+mov r2, #0x80000000
+mov r3, r0, lsr #0x17
+orr r0, r2, r0, lsl #0x8
+ands r12, r3, #0xff
+cmpne r12, #0xff
+beq .L_0201a35c
+mov r12, r1, lsr #0x17
+orr r1, r2, r1, lsl #0x8
+ands r2, r12, #0xff
+beq .L_0201a39c
+.L_0201a2fc:
+subs r12, r3, r12
+beq .L_0201a314
+rsb r2, r12, #0x20
+movs r2, r1, lsl r2
+mov r1, r1, lsr r12
+orrne r1, r1, #0x1
+.L_0201a314:
+adds r0, r0, r1
+blo .L_0201a334
+and r1, r0, #0x1
+orr r0, r1, r0, rrx #0x1
+add r3, r3, #0x1
+and r2, r3, #0xff
+cmp r2, #0xff
+beq .L_0201a4a4
+.L_0201a334:
+ands r1, r0, #0xff
+add r0, r0, r0
+mov r0, r0, lsr #0x9
+orr r0, r0, r3, lsl #0x17
+tst r1, #0x80
+bxeq lr
+ands r1, r1, #0x7f
+andeqs r1, r0, #0x1
+addne r0, r0, #0x1
+bx lr
+.L_0201a35c:
+cmp r3, #0x100
+movge r2, #0x80000000
+movlt r2, #0x0
+ands r3, r3, #0xff
+beq .L_0201a3c0
+movs r0, r0, lsl #0x1
+bne .L_0201a4d0
+mov r12, r1, lsr #0x17
+mov r1, r1, lsl #0x9
+ands r12, r12, #0xff
+beq .L_0201a4c4
+cmp r12, #0xff
+blt .L_0201a4c4
+cmp r1, #0x0
+beq .L_0201a4c4
+b .L_0201a4d0
+.L_0201a39c:
+cmp r3, #0x100
+movge r2, #0x80000000
+movlt r2, #0x0
+and r3, r3, #0xff
+ands r12, r12, #0xff
+beq .L_0201a41c
+.L_0201a3b4:
+movs r1, r1, lsl #0x1
+bne .L_0201a4d0
+b .L_0201a4c4
+.L_0201a3c0:
+movs r0, r0, lsl #0x1
+beq .L_0201a3f8
+mov r3, #0x1
+mov r0, r0, lsr #0x1
+mov r12, r1, lsr #0x17
+mov r1, r1, lsl #0x8
+ands r12, r12, #0xff
+beq .L_0201a41c
+cmp r12, #0xff
+beq .L_0201a3b4
+orr r1, r1, #0x80000000
+orr r3, r3, r2, lsr #0x17
+orr r12, r12, r2, lsr #0x17
+b .L_0201a2fc
+.L_0201a3f8:
+mov r3, r1, lsr #0x17
+mov r0, r1, lsl #0x9
+ands r3, r3, #0xff
+beq .L_0201a484
+cmp r3, #0xff
+blt .L_0201a484
+cmp r0, #0x0
+beq .L_0201a4c4
+b .L_0201a4bc
+.L_0201a41c:
+movs r1, r1, lsl #0x1
+beq .L_0201a48c
+mov r1, r1, lsr #0x1
+mov r12, #0x1
+orr r3, r3, r2, lsr #0x17
+orr r12, r12, r2, lsr #0x17
+cmp r0, #0x0
+bmi .L_0201a2fc
+adds r0, r0, r1
+blo .L_0201a450
+and r1, r0, #0x1
+orr r0, r1, r0, rrx #0x1
+add r12, r12, #0x1
+.L_0201a450:
+cmp r0, #0x0
+subge r12, r12, #0x1
+ands r1, r0, #0xff
+add r0, r0, r0
+mov r0, r0, lsr #0x9
+orr r0, r0, r12, lsl #0x17
+bxeq lr
+tst r1, #0x80
+bxeq lr
+ands r1, r1, #0x7f
+andeqs r1, r0, #0x1
+addne r0, r0, #0x1
+bx lr
+.L_0201a484:
+mov r0, r1
+bx lr
+.L_0201a48c:
+cmp r0, #0x0
+subges r3, r3, #0x1
+add r0, r0, r0
+orr r0, r2, r0, lsr #0x9
+orr r0, r0, r3, lsl #0x17
+bx lr
+.L_0201a4a4:
+cmp r3, #0x100
+movge r2, #0x80000000
+movlt r2, #0x0
+mov r0, #0xff000000
+orr r0, r2, r0, lsr #0x1
+bx lr
+.L_0201a4bc:
+mvn r0, #0x80000000
+bx lr
+.L_0201a4c4:
+mov r0, #0xff000000
+orr r0, r2, r0, lsr #0x1
+bx lr
+.L_0201a4d0:
+mvn r0, #0x80000000
+bx lr

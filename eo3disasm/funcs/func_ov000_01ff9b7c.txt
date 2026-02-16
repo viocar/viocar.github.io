@@ -1,0 +1,8 @@
+.arm
+func_ov000_01ff9b7c:
+sub r1, r1, r2
+mul r1, r0, r1
+mov r0, r1, asr #0x5
+add r0, r1, r0, lsr #0x1a
+add r0, r2, r0, asr #0x6
+bx lr

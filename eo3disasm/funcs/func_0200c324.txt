@@ -1,0 +1,300 @@
+.arm
+func_0200c324:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+cmp r2, #0x0
+ldr r0, [.L_0200c754]
+mov r4, #0x0
+ldr r6, [.L_0200c758]
+beq .L_0200c374
+ldr r0, [r6, #0x1c]
+cmp r0, #0x0
+strne r4, [r6, #0x1c]
+ldr r0, [r6, #0x4]
+cmp r0, #0x0
+strne r4, [r6, #0x4]
+ldr r2, [r6, #0x8]
+cmp r2, #0x0
+ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
+str r4, [r6, #0x8]
+ldr r1, [r6, #0x14]
+mov r0, #0x6
+blx r2
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_0200c374:
+and r2, r1, #0x7f00
+mov r2, r2, lsr #0x8
+and r2, r2, #0xff
+cmp r2, #0x30
+and r1, r1, #0xff
+bne .L_0200c3a0
+ldr r0, [r6, #0x20]
+cmp r0, #0x0
+ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
+blx r0
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_0200c3a0:
+cmp r1, #0x0
+bne .L_0200c6e0
+ldr r1, [r6, #0x18]
+mov r5, r4
+cmp r1, #0xf
+addls pc, pc, r1, lsl #0x2
+b .L_0200c6d4
+.L_0200c3bc: ; jump table
+b .L_0200c3fc ; case 0
+b .L_0200c450 ; case 1
+b .L_0200c498 ; case 2
+b .L_0200c71c ; case 3
+b .L_0200c71c ; case 4
+b .L_0200c71c ; case 5
+b .L_0200c518 ; case 6
+b .L_0200c53c ; case 7
+b .L_0200c55c ; case 8
+b .L_0200c5f4 ; case 9
+b .L_0200c660 ; case 10
+b .L_0200c71c ; case 11
+b .L_0200c71c ; case 12
+b .L_0200c71c ; case 13
+b .L_0200c71c ; case 14
+b .L_0200c71c ; case 15
+.L_0200c3fc:
+ldr r7, [.L_0200c75c]
+ldr r8, [r6, #0xc]
+ldr r0, [r7, #0x0]
+mov r0, r0, lsl #0x18
+mov r0, r0, lsr #0x18
+bl func_0200c764
+str r0, [r8, #0x0]
+ldr r0, [r7, #0x0]
+mov r0, r0, lsl #0x13
+mov r0, r0, lsr #0x1b
+bl func_0200c764
+str r0, [r8, #0x4]
+ldr r0, [r7, #0x0]
+mov r0, r0, lsl #0xa
+mov r0, r0, lsr #0x1a
+bl func_0200c764
+str r0, [r8, #0x8]
+mov r0, r8
+bl func_0200c840
+str r0, [r8, #0xc]
+b .L_0200c71c
+.L_0200c450:
+ldr r7, [.L_0200c760]
+ldr r8, [r6, #0xc]
+ldr r0, [r7, #0x0]
+mov r0, r0, lsl #0x1a
+mov r0, r0, lsr #0x1a
+bl func_0200c764
+str r0, [r8, #0x0]
+ldr r0, [r7, #0x0]
+mov r0, r0, lsl #0x11
+mov r0, r0, lsr #0x19
+bl func_0200c764
+str r0, [r8, #0x4]
+ldr r0, [r7, #0x0]
+.L_0200c484:
+mov r0, r0, lsl #0x9
+mov r0, r0, lsr #0x19
+bl func_0200c764
+str r0, [r8, #0x8]
+b .L_0200c71c
+.L_0200c498:
+ldr r7, [.L_0200c75c]
+ldr r8, [r6, #0xc]
+ldr r0, [r7, #0x0]
+and r0, r0, #0xff
+bl func_0200c764
+str r0, [r8, #0x0]
+ldr r0, [r7, #0x0]
+mov r0, r0, lsl #0x13
+mov r0, r0, lsr #0x1b
+bl func_0200c764
+str r0, [r8, #0x4]
+ldr r0, [r7, #0x0]
+mov r0, r0, lsl #0xa
+mov r0, r0, lsr #0x1a
+bl func_0200c764
+str r0, [r8, #0x8]
+mov r0, r8
+bl func_0200c840
+str r0, [r8, #0xc]
+ldr r0, [r7, #0x4]
+ldr r8, [r6, #0x10]
+mov r0, r0, lsl #0x1a
+mov r0, r0, lsr #0x1a
+bl func_0200c764
+str r0, [r8, #0x0]
+ldr r0, [r7, #0x4]
+mov r0, r0, lsl #0x11
+mov r0, r0, lsr #0x19
+bl func_0200c764
+str r0, [r8, #0x4]
+ldr r0, [r7, #0x4]
+b .L_0200c484
+.L_0200c518:
+ldrh r0, [r0, #0x0]
+ldr r1, [r6, #0xc]
+mov r0, r0, lsl #0x1c
+mov r0, r0, lsr #0x1c
+cmp r0, #0x4
+moveq r0, #0x1
+streq r0, [r1, #0x0]
+strne r5, [r1, #0x0]
+b .L_0200c71c
+.L_0200c53c:
+ldrh r0, [r0, #0x0]
+ldr r1, [r6, #0xc]
+mov r0, r0, lsl #0x19
+movs r0, r0, lsr #0x1f
+movne r0, #0x1
+strne r0, [r1, #0x0]
+streq r5, [r1, #0x0]
+b .L_0200c71c
+.L_0200c55c:
+ldr r7, [.L_0200c760]
+ldr r8, [r6, #0xc]
+ldr r0, [r7, #0x0]
+mov r0, r0, lsl #0x1d
+mov r0, r0, lsr #0x1d
+str r0, [r8, #0x0]
+ldr r0, [r7, #0x0]
+mov r0, r0, lsl #0x12
+mov r0, r0, lsr #0x1a
+bl func_0200c764
+str r0, [r8, #0x4]
+ldr r0, [r7, #0x0]
+mov r0, r0, lsl #0x9
+mov r0, r0, lsr #0x19
+bl func_0200c764
+str r0, [r8, #0x8]
+str r5, [r8, #0xc]
+ldr r0, [r7, #0x0]
+mov r0, r0, lsl #0x18
+movs r0, r0, lsr #0x1f
+ldrne r0, [r8, #0xc]
+addne r0, r0, #0x1
+strne r0, [r8, #0xc]
+ldr r0, [.L_0200c760]
+ldr r0, [r0, #0x0]
+mov r0, r0, lsl #0x10
+movs r0, r0, lsr #0x1f
+ldrne r0, [r8, #0xc]
+addne r0, r0, #0x2
+strne r0, [r8, #0xc]
+ldr r0, [.L_0200c760]
+ldr r0, [r0, #0x0]
+mov r0, r0, lsl #0x8
+movs r0, r0, lsr #0x1f
+ldrne r0, [r8, #0xc]
+addne r0, r0, #0x4
+strne r0, [r8, #0xc]
+b .L_0200c71c
+.L_0200c5f4:
+ldr r2, [r6, #0x1c]
+cmp r2, #0x0
+bne .L_0200c658
+ldr r1, [r6, #0xc]
+ldr r1, [r1, #0x0]
+cmp r1, #0x1
+ldrh r1, [r0, #0x0]
+mov r1, r1, lsl #0x1c
+bne .L_0200c63c
+mov r1, r1, lsr #0x1c
+cmp r1, #0x4
+beq .L_0200c71c
+add r1, r2, #0x1
+str r1, [r6, #0x1c]
+ldrh r1, [r0, #0x0]
+bic r1, r1, #0xf
+orr r1, r1, #0x4
+b .L_0200c6b8
+.L_0200c63c:
+movs r1, r1, lsr #0x1c
+beq .L_0200c71c
+add r1, r2, #0x1
+str r1, [r6, #0x1c]
+ldrh r1, [r0, #0x0]
+bic r1, r1, #0xf
+b .L_0200c6b8
+.L_0200c658:
+str r5, [r6, #0x1c]
+b .L_0200c71c
+.L_0200c660:
+ldr r2, [r6, #0x1c]
+cmp r2, #0x0
+bne .L_0200c6d0
+ldr r1, [r6, #0xc]
+ldr r1, [r1, #0x0]
+cmp r1, #0x1
+ldrh r1, [r0, #0x0]
+mov r1, r1, lsl #0x19
+bne .L_0200c6a0
+movs r1, r1, lsr #0x1f
+bne .L_0200c71c
+add r1, r2, #0x1
+str r1, [r6, #0x1c]
+ldrh r1, [r0, #0x0]
+orr r1, r1, #0x40
+b .L_0200c6b8
+.L_0200c6a0:
+movs r1, r1, lsr #0x1f
+beq .L_0200c71c
+add r1, r2, #0x1
+str r1, [r6, #0x1c]
+ldrh r1, [r0, #0x0]
+bic r1, r1, #0x40
+.L_0200c6b8:
+strh r1, [r0, #0x0]
+bl func_0200c804
+cmp r0, #0x0
+streq r5, [r6, #0x1c]
+moveq r5, #0x3
+b .L_0200c71c
+.L_0200c6d0:
+b .L_0200c658
+.L_0200c6d4:
+str r4, [r6, #0x1c]
+.L_0200c6d8:
+mov r5, #0x4
+b .L_0200c71c
+.L_0200c6e0:
+str r4, [r6, #0x1c]
+cmp r1, #0x4
+addls pc, pc, r1, lsl #0x2
+b .L_0200c718
+.L_0200c6f0: ; jump table
+b .L_0200c718 ; case 0
+b .L_0200c704 ; case 1
+b .L_0200c708 ; case 2
+b .L_0200c710 ; case 3
+b .L_0200c718 ; case 4
+.L_0200c704:
+b .L_0200c6d8
+.L_0200c708:
+mov r5, #0x5
+b .L_0200c71c
+.L_0200c710:
+mov r5, #0x1
+b .L_0200c71c
+.L_0200c718:
+mov r5, #0x6
+.L_0200c71c:
+ldr r0, [r6, #0x1c]
+cmp r0, #0x0
+ldmneia sp!, {r4, r5, r6, r7, r8, pc}
+ldr r0, [r6, #0x4]
+cmp r0, #0x0
+strne r4, [r6, #0x4]
+ldr r2, [r6, #0x8]
+cmp r2, #0x0
+ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
+str r4, [r6, #0x8]
+ldr r1, [r6, #0x14]
+mov r0, r5
+blx r2
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_0200c754: .word 0x2fffdea
+.L_0200c758: .word 0x20ef938
+.L_0200c75c: .word 0x2fffde8
+.L_0200c760: .word 0x2fffdec

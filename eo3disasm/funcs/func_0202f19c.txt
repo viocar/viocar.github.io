@@ -1,0 +1,12 @@
+.arm
+func_0202f19c:
+ldr r0, [.L_0202f1bc]
+ldr r1, [.L_0202f1c0]
+ldr r2, [r0, #0x4]
+ldr r0, [r1, #0x0]
+sub r1, r2, #0x1
+cmp r1, #0x1
+movls r0, #0x1
+bx lr
+.L_0202f1bc: .word 0x20ff62c
+.L_0202f1c0: .word data_020e59a8

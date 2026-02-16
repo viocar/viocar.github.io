@@ -1,0 +1,12 @@
+.arm
+func_020c6f30:
+stmdb sp!, {r4, lr}
+ldr r4, [.L_020c6f54]
+ldr r0, [r4, #0x4]
+cmp r0, #0x0
+ldmeqia sp!, {r4, pc}
+bl func_0208c154
+mov r0, #0x0
+str r0, [r4, #0x4]
+ldmia sp!, {r4, pc}
+.L_020c6f54: .word 0x213665c

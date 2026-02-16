@@ -1,0 +1,10 @@
+.arm
+func_ov003_0214a5a4:
+ldr r12, [.L_3_0214a5c0]
+mov r2, #0x0
+mov r1, #0xf
+str r2, [r0, #0x2c]
+str r2, [r0, #0x30]
+str r1, [r0, #0x1c]
+bx r12
+.L_3_0214a5c0: .word func_ov003_02148f74

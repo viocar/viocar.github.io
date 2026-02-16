@@ -1,0 +1,8 @@
+.arm
+func_020d89e8:
+cmp r1, #0x5
+movhs r0, #0x0
+addlo r2, r0, #0x30
+movlo r0, #0x38
+mlalo r0, r1, r0, r2
+bx lr

@@ -1,0 +1,4 @@
+.arm
+func_ov002_0213ae24:
+str r1, [r0, #0x20]
+bx lr

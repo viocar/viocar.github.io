@@ -1,0 +1,14 @@
+.arm
+func_02035dc0:
+ldr r1, [.L_02035de4]
+ldr r0, [.L_02035de8]
+ldr r1, [r1, #0x0]
+ldr r0, [r0, #0x0]
+cmp r1, r0
+movge r0, #0x0
+ldrlt r0, [.L_02035dec]
+ldrlt r0, [r0, r1, lsl #0x2]
+bx lr
+.L_02035de4: .word 0x210ecac
+.L_02035de8: .word 0x210ecb4
+.L_02035dec: .word 0x210ecb8

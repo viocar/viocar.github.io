@@ -1,0 +1,7 @@
+.arm
+func_ov003_0215cac4:
+ldr r12, [.L_3_0215cad4]
+mov r0, #0x1
+mov r1, #0x0
+bx r12
+.L_3_0215cad4: .word func_0202c548

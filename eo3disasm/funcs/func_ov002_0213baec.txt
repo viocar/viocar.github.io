@@ -1,0 +1,4 @@
+.arm
+func_ov002_0213baec:
+add r0, r0, #0x84
+bx lr

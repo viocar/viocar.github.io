@@ -1,0 +1,13 @@
+.arm
+func_0201c704:
+ldr r0, [.L_0201c724]
+ldr r2, [.L_0201c728]
+ldr r0, [r0, #0x0]
+ldr r12, [.L_0201c72c]
+add r0, r0, #0x38
+mov r1, #0x0
+add r0, r0, #0x18400
+bx r12
+.L_0201c724: .word 0x20f1488
+.L_0201c728: .word 0x29e0
+.L_0201c72c: .word Memset

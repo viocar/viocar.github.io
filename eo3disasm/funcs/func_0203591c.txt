@@ -1,0 +1,5 @@
+.arm
+func_0203591c:
+ldr r0, [.L_02035924]
+bx lr
+.L_02035924: .word 0x210eaac

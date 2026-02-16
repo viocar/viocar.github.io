@@ -1,0 +1,41 @@
+.arm
+func_02003c84:
+stmdb sp!, {r4, r5, r6, lr}
+mov r6, r0
+bl DisableIRQ
+ldr r2, [r6, #0x8]
+ldr r1, [.L_02003d14]
+mov r4, r0
+cmp r2, #0x0
+ldr r0, [r1, #0x4]
+bne .L_02003cdc
+ldr r2, [r6, #0xc]
+mov r1, r6
+bic r2, r2, #0xff000000
+orr r3, r2, #0x10000000
+add r2, r3, #0x1
+and r3, r3, #0xff000000
+bic r2, r2, #0xff000000
+orr r2, r3, r2
+str r0, [r6, #0x8]
+str r2, [r6, #0xc]
+bl func_02003df0
+mov r5, #0x1
+b .L_02003d04
+.L_02003cdc:
+cmp r2, r0
+movne r5, #0x0
+bne .L_02003d04
+ldr r1, [r6, #0xc]
+mov r5, #0x1
+add r0, r1, #0x1
+and r1, r1, #0xff000000
+bic r0, r0, #0xff000000
+orr r0, r1, r0
+str r0, [r6, #0xc]
+.L_02003d04:
+mov r0, r4
+bl EnableIRQ
+mov r0, r5
+ldmia sp!, {r4, r5, r6, pc}
+.L_02003d14: .word 0x20ed6a4

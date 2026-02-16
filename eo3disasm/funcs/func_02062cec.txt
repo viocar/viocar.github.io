@@ -1,0 +1,27 @@
+.arm
+func_02062cec:
+cmp r0, #0x6
+movle r0, #0x3
+bxle lr
+cmp r0, #0x7
+blt .L_02062d0c
+cmp r0, #0x9
+movle r0, #0x0
+bxle lr
+.L_02062d0c:
+cmp r0, #0xa
+blt .L_02062d20
+cmp r0, #0xf
+movle r0, #0x1
+bxle lr
+.L_02062d20:
+cmp r0, #0x10
+blt .L_02062d34
+cmp r0, #0x12
+movle r0, #0x2
+bxle lr
+.L_02062d34:
+cmp r0, #0x13
+movge r0, #0x3
+mvnlt r0, #0x0
+bx lr

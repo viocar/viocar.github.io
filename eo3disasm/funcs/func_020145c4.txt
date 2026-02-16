@@ -1,0 +1,79 @@
+.arm
+func_020145c4:
+stmdb sp!, {r4, lr}
+ldrb r2, [r0, #0x0]
+ldrb r3, [r1, #0x0]
+subs r3, r2, r3
+movne r0, r3
+ldmneia sp!, {r4, pc}
+and r4, r0, #0x3
+and r3, r1, #0x3
+cmp r3, r4
+bne .L_020146a0
+cmp r4, #0x0
+beq .L_02014638
+cmp r2, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r4, pc}
+rsbs r4, r4, #0x3
+beq .L_02014630
+.L_02014608:
+ldrb r3, [r0, #0x1]!
+ldrb r2, [r1, #0x1]!
+subs r2, r3, r2
+movne r0, r2
+ldmneia sp!, {r4, pc}
+cmp r3, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r4, pc}
+subs r4, r4, #0x1
+bne .L_02014608
+.L_02014630:
+add r0, r0, #0x1
+add r1, r1, #0x1
+.L_02014638:
+ldr r2, [r0, #0x0]
+ldr r3, [.L_020146d0]
+mvn r4, r2
+add lr, r2, r3
+ldr r12, [.L_020146d4]
+and r4, lr, r4
+tst r4, r12
+ldr r4, [r1, #0x0]
+bne .L_0201468c
+cmp r2, r4
+bne .L_02014680
+.L_02014664:
+ldr r2, [r0, #0x4]!
+ldr r4, [r1, #0x4]!
+add lr, r2, r3
+tst lr, r12
+bne .L_0201468c
+cmp r2, r4
+beq .L_02014664
+.L_02014680:
+sub r0, r0, #0x1
+sub r1, r1, #0x1
+b .L_020146a0
+.L_0201468c:
+ldrb r2, [r0, #0x0]
+ldrb r3, [r1, #0x0]
+subs r3, r2, r3
+movne r0, r3
+ldmneia sp!, {r4, pc}
+.L_020146a0:
+cmp r2, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r4, pc}
+.L_020146ac:
+ldrb r3, [r0, #0x1]!
+ldrb r2, [r1, #0x1]!
+subs r2, r3, r2
+movne r0, r2
+ldmneia sp!, {r4, pc}
+cmp r3, #0x0
+bne .L_020146ac
+mov r0, #0x0
+ldmia sp!, {r4, pc}
+.L_020146d0: .word 0xfefefeff
+.L_020146d4: .word 0x80808080

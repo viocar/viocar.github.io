@@ -1,0 +1,18 @@
+.arm
+func_ov004_0213e128:
+stmdb sp!, {r3, r4, r5, lr}
+mov r5, r0
+mov r4, r1
+bl func_ov004_0213de38
+cmp r0, #0x0
+ldmeqia sp!, {r3, r4, r5, pc}
+cmp r5, #0x1
+ldreqb r1, [r0, #0xc1]
+orreq r1, r1, r4
+streqb r1, [r0, #0xc1]
+mvnne r1, r4
+ldrneb r2, [r0, #0xc1]
+andne r1, r1, #0xff
+andne r1, r2, r1
+strneb r1, [r0, #0xc1]
+ldmia sp!, {r3, r4, r5, pc}

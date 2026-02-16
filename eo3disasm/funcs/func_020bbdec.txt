@@ -1,0 +1,248 @@
+.arm
+func_020bbdec:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+sub sp, sp, #0x8
+mov r6, r0
+mov r4, #0x0
+bl func_020bbd4c
+mov r5, r0
+mov r0, r6
+mov r1, #0x1
+bl func_020c57c8
+cmp r0, #0x1
+bne .L_020bbe28
+ldr r0, [r5, #0x0]
+cmp r0, #0x12c
+movlt r0, #0x12c
+strlt r0, [r5, #0x0]
+.L_020bbe28:
+ldr r0, [r5, #0x0]
+cmp r0, #0x17
+bgt .L_020bbe8c
+cmp r0, #0x15
+blt .L_020bbe54
+beq .L_020bc020
+cmp r0, #0x16
+beq .L_020bc068
+cmp r0, #0x17
+beq .L_020bc07c
+b .L_020bc144
+.L_020bbe54:
+cmp r0, #0xa
+bgt .L_020bbe80
+bge .L_020bbfb0
+cmp r0, #0x1
+bgt .L_020bc144
+cmp r0, #0x0
+blt .L_020bc144
+beq .L_020bc144
+cmp r0, #0x1
+beq .L_020bbec0
+b .L_020bc144
+.L_020bbe80:
+cmp r0, #0x14
+beq .L_020bc014
+b .L_020bc144
+.L_020bbe8c:
+cmp r0, #0x29
+bgt .L_020bbea4
+bge .L_020bc0f0
+cmp r0, #0x28
+beq .L_020bc0b0
+b .L_020bc144
+.L_020bbea4:
+cmp r0, #0x32
+bgt .L_020bbeb4
+beq .L_020bc118
+b .L_020bc144
+.L_020bbeb4:
+cmp r0, #0x12c
+beq .L_020bc130
+b .L_020bc144
+.L_020bbec0:
+mov r8, #0x1
+mov r0, r4
+mov r1, r8
+bl func_0202d78c
+cmp r0, #0x0
+beq .L_020bbf5c
+ldr r0, [r5, #0x10]
+ldr r0, [r0, #0x98]
+bl func_020b9fd8
+cmp r0, #0x0
+beq .L_020bbf50
+mov r0, r4
+bl func_0202bd4c
+ldr r0, [r5, #0x10]
+bl func_020ba1b0
+mov r0, r6
+bl func_020b94a4
+str r8, [sp, #0x0]
+str r4, [sp, #0x4]
+mov r1, #0x6
+mov r2, r4
+mov r3, #0xa1
+bl func_0207eab4
+mov r1, r4
+mov r0, #0x21
+bl func_0204bdec
+ldr r0, [r5, #0x10]
+ldr r0, [r0, #0x98]
+and r0, r0, #0xff
+bl func_020a0e74
+str r0, [r5, #0x14]
+ldr r1, [.L_020bc160]
+mov r2, #0xa
+strb r0, [r1, #0x0]
+str r2, [r5, #0x0]
+b .L_020bc144
+.L_020bbf50:
+mov r0, #0x3
+bl func_0202bd4c
+b .L_020bc144
+.L_020bbf5c:
+mov r7, #0x2
+mov r0, r4
+mov r1, r7
+bl func_0202d78c
+cmp r0, #0x0
+beq .L_020bc144
+ldr r0, [r5, #0x10]
+mov r1, r4
+bl func_020ba1c4
+str r8, [sp, #0x0]
+str r7, [sp, #0x4]
+ldr r0, [r6, #0x78]
+mov r2, r8
+mov r1, #0x20
+mov r3, #0x9
+bl func_0207eab4
+mov r0, r7
+bl func_0202bd4c
+mov r0, #0x28
+.L_020bbfa8:
+str r0, [r5, #0x0]
+b .L_020bc144
+.L_020bbfb0:
+mov r1, r4
+mov r0, #0x21
+bl func_020c5a28
+cmp r0, #0x0
+beq .L_020bbfd8
+mov r1, r4
+mov r0, #0x22
+bl func_0204bdec
+mov r0, #0x14
+b .L_020bbfa8
+.L_020bbfd8:
+mov r6, #0x2
+mov r0, r4
+mov r1, r6
+bl func_0202d78c
+cmp r0, #0x0
+beq .L_020bc144
+mov r0, r6
+bl func_0202bd4c
+ldr r0, [r5, #0x10]
+bl func_020ba19c
+mov r6, #0x1
+mov r0, r6
+bl func_0207ea44
+str r6, [r5, #0x0]
+b .L_020bc144
+.L_020bc014:
+mov r0, r6
+bl func_020c5248
+b .L_020bc070
+.L_020bc020:
+mov r0, r6
+bl func_020c54b0
+cmp r0, #0x0
+beq .L_020bc144
+ldr r1, [r5, #0x0]
+mov r0, r6
+add r1, r1, #0x1
+str r1, [r5, #0x0]
+mov r1, #0x0
+bl func_020b946c
+ldr r1, [r5, #0x14]
+mov r6, r0
+and r0, r1, #0xff
+bl func_020a0c5c
+add r1, r6, #0x60
+mov r2, #0x118
+bl Memcpy
+b .L_020bc144
+.L_020bc068:
+mov r0, r6
+bl func_020c5384
+.L_020bc070:
+ldr r0, [r5, #0x0]
+add r0, r0, #0x1
+b .L_020bbfa8
+.L_020bc07c:
+mov r0, r6
+bl func_020c54b0
+cmp r0, #0x0
+beq .L_020bc144
+ldr r0, [r6, #0x24c]
+cmp r0, #0x0
+beq .L_020bc0a0
+bl func_0202b6e4
+str r4, [r6, #0x24c]
+.L_020bc0a0:
+mov r0, #0x0
+bl func_0207ea44
+mov r0, #0x32
+b .L_020bbfa8
+.L_020bc0b0:
+bl func_0207ec68
+cmp r0, #0x1
+bne .L_020bc0d4
+bl func_0204be1c
+mov r0, #0x1f
+mov r1, #0x0
+bl func_0204bdec
+mov r0, #0x29
+b .L_020bbfa8
+.L_020bc0d4:
+cmp r0, #0x2
+bne .L_020bc144
+mov r1, #0x1
+str r1, [r5, #0x0]
+ldr r0, [r5, #0x10]
+bl func_020ba1c4
+b .L_020bc144
+.L_020bc0f0:
+mov r0, #0x1f
+mov r1, #0x0
+bl func_020c5a28
+cmp r0, #0x0
+beq .L_020bc144
+ldr r0, [r6, #0xc]
+bl func_020d569c
+add sp, sp, #0x8
+mov r0, #0x3
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020bc118:
+bl func_0207ec90
+cmp r0, #0x0
+bne .L_020bc144
+add sp, sp, #0x8
+mov r0, #0x7
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020bc130:
+bl func_02035a10
+cmp r0, #0x0
+addne sp, sp, #0x8
+movne r0, #0xd
+ldmneia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020bc144:
+ldr r0, [r5, #0x8]
+mov r1, r4
+sub r2, r4, #0x1
+bl func_020694a8
+mov r0, r4
+add sp, sp, #0x8
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020bc160: .word data_020ed20c

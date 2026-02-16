@@ -1,0 +1,22 @@
+.arm
+func_0200a38c:
+stmdb sp!, {r4, lr}
+mov r4, r1
+bl func_0200cacc
+mov lr, #0x0
+str lr, [r4, #0x20]
+str lr, [r4, #0x24]
+str lr, [r4, #0x28]
+str lr, [r4, #0x2c]
+ldr r12, [r0, #0x80]
+mov r2, lr
+str r12, [r4, #0x0]
+stmib r4, {r2, lr}
+sub r1, lr, #0x80000001
+mov r0, lr
+str lr, [r4, #0xc]
+str r1, [r4, #0x10]
+str lr, [r4, #0x14]
+str r1, [r4, #0x18]
+str lr, [r4, #0x1c]
+ldmia sp!, {r4, pc}

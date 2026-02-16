@@ -1,0 +1,6 @@
+.arm
+func_0201cabc:
+cmp r0, #0x0
+movne r1, #0x1
+strneb r1, [r0, #-0x1f]
+bx lr

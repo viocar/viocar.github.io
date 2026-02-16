@@ -1,0 +1,10 @@
+.arm
+func_02006fec:
+ldr r2, [.L_02007008]
+mov r1, #0xc
+mla r1, r0, r1, r2
+ldrb r0, [r1, #0x8]
+add r0, r0, #0x1
+strb r0, [r1, #0x8]
+bx lr
+.L_02007008: .word 0x20ef540

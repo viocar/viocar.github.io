@@ -1,0 +1,15 @@
+.arm
+func_020292b4:
+ldr r2, [r0, #0x2c]
+cmp r2, #0x0
+beq .L_020292d4
+.L_020292c0:
+ldr r1, [r0, #0x1c]
+str r1, [r2, #0x8]
+ldr r2, [r2, #0xc]
+cmp r2, #0x0
+bne .L_020292c0
+.L_020292d4:
+ldr r1, [r0, #0x1c]
+str r1, [r0, #0x28]
+bx lr

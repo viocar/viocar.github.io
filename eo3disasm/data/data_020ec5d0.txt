@@ -1,0 +1,56 @@
+data_020ec5d0:
+.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+.word func_020ba784
+.word func_020ba838
+.word func_020baab0
+.word func_020baac0
+.word func_020baae8
+.word func_020bab74
+.word func_020bb11c
+.word func_020bb31c
+.word func_020bb3b8
+.word func_020bb4f0
+.word func_020bb73c
+.word func_020bb740
+.word func_020bb74c
+.word func_020bb8a4
+.word func_020bbcf0
+.word func_020bbcf4
+.word func_020bbd54
+.word func_020bbdec
+.word func_020bc164
+.word func_020bc168
+.word func_020bc1a4
+.word func_020bc24c
+.word func_020bc610
+.word func_020bc614
+.word func_020bc658
+.word func_020bc6c8
+.word func_020bc9bc
+.word func_020bc9c0
+.word func_020bc9c4
+.word func_020bc9d4
+.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+.word func_020bb330
+.word func_020bb358
+.word func_020bb394
+.word func_020bb3a4
+.word func_020bcd90
+.word func_020bcdd0
+.word func_020bcf94
+.word func_020bcf98
+.word func_020bcfbc
+.word func_020bcfe8
+.word func_020bd1dc
+.word func_020bd1e0
+.word func_020bd1e4
+.word func_020bd220
+.word func_020bd368
+.word func_020bd36c
+.word func_020bd370
+.word func_020bd374
+.word func_020bd45c
+.word func_020bd460
+.byte 0x00, 0x00, 0x00, 0x00
+.word func_020bd464
+.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00

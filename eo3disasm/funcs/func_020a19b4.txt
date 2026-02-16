@@ -1,0 +1,8 @@
+.arm
+func_020a19b4:
+ldr r2, [.L_020a19c8]
+mov r1, #0x14
+ldr r2, [r2, #0x8]
+smlabb r0, r0, r1, r2
+bx lr
+.L_020a19c8: .word 0x2135ae8

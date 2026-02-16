@@ -1,0 +1,53 @@
+.arm
+func_ov002_02143098:
+stmdb sp!, {r4, lr}
+mov r4, r0
+bl func_0201c230
+cmp r4, #0x4
+addls pc, pc, r4, lsl #0x2
+b .L_2_0214311c
+.L_2_021430b0: ; jump table
+b .L_2_021430c4 ; case 0
+b .L_2_021430e4 ; case 1
+b .L_2_021430f8 ; case 2
+b .L_2_0214310c ; case 3
+b .L_2_02143114 ; case 4
+.L_2_021430c4:
+ldrsh r0, [r0, #0x8]
+cmp r0, #0x0
+ldreq r0, [.L_2_02143124]
+ldmeqia sp!, {r4, pc}
+cmp r0, #0x64
+ldrgt r0, [.L_2_02143128]
+ldrle r0, [.L_2_0214312c]
+ldmia sp!, {r4, pc}
+.L_2_021430e4:
+ldrsh r0, [r0, #0x8]
+cmp r0, #0x0
+ldreq r0, [.L_2_02143130]
+ldrne r0, [.L_2_02143134]
+ldmia sp!, {r4, pc}
+.L_2_021430f8:
+ldrsh r0, [r0, #0x8]
+cmn r0, #0x1
+ldreq r0, [.L_2_02143138]
+ldrne r0, [.L_2_0214313c]
+ldmia sp!, {r4, pc}
+.L_2_0214310c:
+ldr r0, [.L_2_02143140]
+ldmia sp!, {r4, pc}
+.L_2_02143114:
+ldr r0, [.L_2_02143144]
+ldmia sp!, {r4, pc}
+.L_2_0214311c:
+ldr r0, [.L_2_02143124]
+ldmia sp!, {r4, pc}
+.L_2_02143124: .word 0x32cc
+.L_2_02143128: .word 0x32ca
+.L_2_0214312c: .word 0x32cb
+.L_2_02143130: .word 0x32c9
+.L_2_02143134: .word 0x32c8
+.L_2_02143138: .word 0x32ce
+.L_2_0214313c: .word 0x32cd
+.L_2_02143140: .word 0x36b0
+.L_2_02143144: .word 0x36b1

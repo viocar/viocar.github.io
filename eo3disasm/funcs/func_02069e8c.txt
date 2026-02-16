@@ -1,0 +1,8 @@
+.arm
+func_02069e8c:
+ldr r2, [r0, #0x4]
+mov r0, #0xc
+mla r0, r1, r0, r2
+ldr r12, [.L_02069ea0]
+bx r12
+.L_02069ea0: .word func_02069d7c

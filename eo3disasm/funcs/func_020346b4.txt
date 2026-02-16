@@ -1,0 +1,39 @@
+.arm
+func_020346b4:
+mov r1, #0x0
+mov r2, #0x0
+mov r3, #0x0
+mov r12, #0x0
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+stmia r0, {r1, r2, r3, r12}
+bx lr

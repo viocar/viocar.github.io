@@ -1,0 +1,10 @@
+.arm
+func_0204bc3c:
+ldr r1, [.L_0204bc58]
+ldr r2, [r1, #0x14]
+cmp r2, #0x0
+ldrneh r1, [r2, #0x2]
+orrne r0, r1, r0
+strneh r0, [r2, #0x2]
+bx lr
+.L_0204bc58: .word 0x21143c0

@@ -1,0 +1,6 @@
+.arm
+func_020cef04:
+ldr r0, [.L_020cef10]
+ldr r0, [r0, #0x0]
+bx lr
+.L_020cef10: .word 0x2136710

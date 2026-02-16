@@ -1,0 +1,40 @@
+.arm
+func_0207770c:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+ldr r7, [.L_02077798]
+mov r8, r0
+mov r0, r7
+mov r1, #0x28
+bl func_02035bb0
+mov r6, r0
+mov r5, #0x0
+mov r4, #0x26
+ldr r1, [.L_0207779c]
+str r5, [r6, #0x70]
+ldr r0, [.L_020777a0]
+str r1, [r6, #0x74]
+str r0, [r6, #0x78]
+mov r0, r4
+str r7, [r6, #0x30]
+bl func_ov000_01ff9b94
+str r0, [r6, #0x8c]
+mov r0, r6
+bl func_02036060
+strb r5, [r0, #0x2]
+strb r8, [r0, #0x3]
+str r5, [r0, #0x4]
+str r5, [r0, #0x8]
+str r5, [r0, #0xc]
+str r5, [r0, #0x10]
+strh r5, [r0, #0x1c]
+str r5, [r0, #0x20]
+mov r1, #0x1f
+strh r1, [r0, #0x1e]
+str r4, [r0, #0x14]
+ldr r1, [r6, #0x8c]
+str r1, [r0, #0x18]
+mov r0, r6
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_02077798: .word 0x9004
+.L_0207779c: .word func_02077de0
+.L_020777a0: .word func_02077ee4

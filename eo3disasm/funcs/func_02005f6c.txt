@@ -1,0 +1,10 @@
+.arm
+func_02005f6c:
+mov r12, #0x0
+.L_02005f70:
+cmp r12, r2
+ldrlth r3, [r0, r12]
+strlth r3, [r1, r12]
+addlt r12, r12, #0x2
+blt .L_02005f70
+bx lr

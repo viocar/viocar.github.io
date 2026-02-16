@@ -1,0 +1,48 @@
+.arm
+func_0208bed8:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+bl func_02076fb4
+cmp r0, #0x0
+bne .L_0208bf58
+mov r9, #0x0
+mov r0, r9
+bl func_02076de4
+mov r7, #0x1
+mov r8, r0
+mov r0, r7
+bl func_02076de4
+mov r6, r0
+mov r0, #0x2
+bl func_02076de4
+mov r5, r0
+bl func_0202bccc
+mov r4, r0
+cmp r8, r4
+moveq r0, r7
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+mov r0, #0x18
+bl func_0202b664
+str r8, [r0, #0x4]
+str r6, [r0, #0x10]
+str r5, [r0, #0x14]
+str r4, [r0, #0x8]
+ldr r1, [.L_0208bf88]
+str r9, [r0, #0x0]
+str r9, [r0, #0xc]
+str r0, [r1, #0x0]
+mov r0, r9
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_0208bf58:
+ldr r4, [.L_0208bf88]
+ldr r0, [r4, #0x0]
+bl func_0208bdd8
+cmp r0, #0x1
+movne r0, #0x0
+ldmneia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+ldr r0, [r4, #0x0]
+bl func_0202b6e4
+mov r0, #0x0
+str r0, [r4, #0x0]
+mov r0, #0x1
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_0208bf88: .word 0x21196d4

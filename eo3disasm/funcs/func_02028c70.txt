@@ -1,0 +1,14 @@
+.arm
+func_02028c70:
+str r2, [r1, #0x8]
+cmp r2, #0x0
+ldrne r3, [r2, #0xc]
+strne r1, [r2, #0xc]
+ldreq r3, [r0, #0x0]
+streq r1, [r0, #0x0]
+str r3, [r1, #0xc]
+cmp r3, #0x0
+strne r1, [r3, #0x8]
+streq r1, [r0, #0x4]
+mov r0, r1
+bx lr

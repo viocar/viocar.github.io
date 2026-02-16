@@ -1,0 +1,20 @@
+.arm
+func_020029a8:
+stmdb sp!, {r4, r5, r6, lr}
+mov r3, #0xc
+mul r6, r0, r3
+ldr r12, [.L_020029e4]
+add r4, r0, #0x8
+mov r5, #0x1
+mov r0, r5, lsl r4
+ldr r3, [.L_020029e8]
+str r1, [r12, r6]
+str r2, [r3, r6]
+bl func_02002a60
+and r1, r0, r5, lsl r4
+ldr r0, [.L_020029ec]
+str r1, [r0, r6]
+ldmia sp!, {r4, r5, r6, pc}
+.L_020029e4: .word 0x20ed620
+.L_020029e8: .word 0x20ed628
+.L_020029ec: .word 0x20ed624

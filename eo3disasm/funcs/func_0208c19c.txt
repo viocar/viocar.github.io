@@ -1,0 +1,4 @@
+.arm
+func_0208c19c:
+str r1, [r0, #0x54]
+bx lr

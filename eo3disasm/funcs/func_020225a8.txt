@@ -1,0 +1,16 @@
+.arm
+func_020225a8:
+adds r3, r0, #0xc
+beq .L_020225d4
+ldrb r2, [r0, #0xd]
+cmp r1, r2
+bhs .L_020225d4
+ldrh r0, [r0, #0x12]
+ldrh r2, [r3, r0]
+add r0, r3, r0
+add r0, r0, #0x4
+mla r0, r2, r1, r0
+bx lr
+.L_020225d4:
+mov r0, #0x0
+bx lr

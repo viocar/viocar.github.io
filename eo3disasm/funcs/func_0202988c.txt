@@ -1,0 +1,22 @@
+.arm
+func_0202988c:
+stmdb sp!, {r3, lr}
+ldr r12, [.L_020298d8]
+ldrh lr, [r12, #0x0]
+bic lr, lr, #0x3
+orr r0, lr, r0
+strh r0, [r12, #0x0]
+ldrh r0, [r12, #0x2]
+bic r0, r0, #0x3
+orr r0, r0, r1
+strh r0, [r12, #0x2]
+ldrh r0, [r12, #0x4]
+bic r0, r0, #0x3
+orr r0, r0, r2
+strh r0, [r12, #0x4]
+ldrh r0, [r12, #0x6]
+bic r0, r0, #0x3
+orr r0, r0, r3
+strh r0, [r12, #0x6]
+ldmia sp!, {r3, pc}
+.L_020298d8: .word 0x4001008

@@ -1,0 +1,15 @@
+.arm
+func_020a49fc:
+mov r2, #0x0
+mov r3, r2
+.L_020a4a04:
+add r1, r0, r2, lsl #0x2
+str r3, [r1, #0x20]
+add r3, r3, #0x1
+cmp r3, #0x1e
+add r2, r2, #0x1
+ble .L_020a4a04
+add r0, r0, r2, lsl #0x2
+mov r1, #0x1f
+str r1, [r0, #0x20]
+bx lr

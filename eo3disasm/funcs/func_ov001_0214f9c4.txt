@@ -1,0 +1,8 @@
+.arm
+func_ov001_0214f9c4:
+mov r1, #0x44
+smulbb r1, r0, r1
+ldr r0, [.L_1_0214f9d8]
+ldrsh r0, [r0, r1]
+bx lr
+.L_1_0214f9d8: .word 0x0215b148

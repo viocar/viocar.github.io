@@ -1,0 +1,40 @@
+.arm
+func_0202cdac:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+ldr r6, [.L_0202ce40]
+mov r5, r0
+ldr r2, [r6, #0x4]
+mov r4, r1
+ldrh r0, [r2, #0x8]
+cmp r5, r0
+movhs r0, #0x8
+ldmhsia sp!, {r3, r4, r5, r6, r7, pc}
+ldr r1, [r2, #0x0]
+mov r0, #0x14
+mla r7, r5, r0, r1
+bl func_0202cc78
+cmp r0, #0x4
+moveq r0, #0x4
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+cmp r0, #0x3
+moveq r0, #0x3
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+mov r0, r5
+bl func_0202c848
+cmp r0, #0x0
+moveq r0, #0x5
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+ldr r1, [r6, #0x4]
+ldmia r7, {r0, r2}
+ldr r1, [r1, #0x14]
+mov r3, r4
+add r2, r2, #0x4
+bl func_0202ca9c
+cmp r0, #0x1
+ldmneia sp!, {r3, r4, r5, r6, r7, pc}
+ldr r1, [r6, #0x4]
+mov r0, r7
+ldr r1, [r1, #0x14]
+bl func_0202cd68
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_0202ce40: .word 0x20ff394

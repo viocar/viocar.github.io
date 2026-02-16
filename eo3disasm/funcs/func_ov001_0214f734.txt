@@ -1,0 +1,21 @@
+.arm
+func_ov001_0214f734:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+movs r7, r0
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+mov r6, #0x0
+mov r5, r6
+mov r4, #0x8
+.L_1_0214f74c:
+mov r1, r5
+mov r2, r4
+add r0, r7, r6, lsl #0x3
+bl Memset
+add r0, r6, #0x1
+and r6, r0, #0xff
+cmp r6, #0x6
+blo .L_1_0214f74c
+strh r5, [r7, #0x36]
+ldrh r0, [r7, #0x36]
+strh r0, [r7, #0x30]
+ldmia sp!, {r3, r4, r5, r6, r7, pc}

@@ -1,0 +1,23 @@
+.arm
+func_0201ce2c:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r6, r1
+ldrh r1, [r6, #0x0]
+mov r7, r0
+mov r5, r2
+cmp r1, #0x0
+mov r4, #0x0
+beq .L_0201ce70
+.L_0201ce4c:
+cmp r1, #0x8000
+bhs .L_0201ce70
+mov r0, r7
+bl func_0201ce00
+.word 0xe1f610b2 //ldrh r1, [r6, #0x2]! - ARMIPS bug
+add r0, r4, r0
+add r4, r0, r5
+cmp r1, #0x0
+bne .L_0201ce4c
+.L_0201ce70:
+mov r0, r4
+ldmia sp!, {r3, r4, r5, r6, r7, pc}

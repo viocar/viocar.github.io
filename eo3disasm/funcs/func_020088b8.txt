@@ -1,0 +1,26 @@
+.arm
+func_020088b8:
+stmdb sp!, {r3, lr}
+mov r3, #0x0
+mov r12, #0x1
+b .L_020088e8
+.L_020088c8:
+and r2, lr, #0xff
+eor r2, r2, #0x20
+sub r2, r2, #0xa1
+cmp r2, #0x3c
+movlo r2, r12
+movhs r2, r3
+add r1, r1, #0x1
+add r1, r1, r2
+.L_020088e8:
+ldrsb lr, [r0, r1]
+cmp lr, #0x0
+andne r2, lr, #0xff
+cmpne r2, #0x2f
+beq .L_02008904
+cmp r2, #0x5c
+bne .L_020088c8
+.L_02008904:
+mov r0, r1
+ldmia sp!, {r3, pc}

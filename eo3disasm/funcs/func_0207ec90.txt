@@ -1,0 +1,9 @@
+.arm
+func_0207ec90:
+ldr r0, [.L_0207eca8]
+ldr r0, [r0, #0x0]
+cmp r0, #0x0
+moveq r0, #0x0
+ldrne r0, [r0, #0x14]
+bx lr
+.L_0207eca8: .word 0x21194f0

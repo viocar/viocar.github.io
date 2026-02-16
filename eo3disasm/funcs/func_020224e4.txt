@@ -1,0 +1,13 @@
+.arm
+func_020224e4:
+cmp r0, #0x0
+beq .L_02022504
+ldrb r2, [r0, #0x6]
+cmp r1, r2
+ldrloh r2, [r0, #0x8]
+addlo r0, r0, r2
+addlo r0, r0, r1, lsl #0x4
+bxlo lr
+.L_02022504:
+mov r0, #0x0
+bx lr

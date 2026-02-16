@@ -1,0 +1,10 @@
+.arm
+func_ov002_0213e5a4:
+stmdb sp!, {r3, lr}
+bl func_ov002_0213e45c
+mov r1, #0x0
+str r1, [r0, #0x10]
+mov r2, #0x2c
+str r1, [r0], #0x20
+bl Memset
+ldmia sp!, {r3, pc}

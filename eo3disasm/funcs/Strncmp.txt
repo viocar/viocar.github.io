@@ -1,0 +1,17 @@
+.arm
+Strncmp:
+cmp r2, #0x0
+beq .L_02014704
+.L_020146e0:
+ldrb r12, [r1], #0x1
+ldrb r3, [r0], #0x1
+cmp r3, r12
+subne r0, r3, r12
+bxne lr
+cmp r3, #0x0
+beq .L_02014704
+subs r2, r2, #0x1
+bne .L_020146e0
+.L_02014704:
+mov r0, #0x0
+bx lr

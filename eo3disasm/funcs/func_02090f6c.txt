@@ -1,0 +1,9 @@
+.arm
+func_02090f6c:
+mov r1, r0
+ldr r0, [.L_02090f80]
+ldr r12, [.L_02090f84]
+mov r2, #0x22
+bx r12
+.L_02090f80: .word 0x21196f4
+.L_02090f84: .word Strcpy8

@@ -1,0 +1,9 @@
+.arm
+func_ov002_02140604:
+add r2, r2, #0x4
+add r2, r2, r2, lsl #0x3
+add r1, r1, r2
+add r1, r1, #0x4
+add r0, r0, r1
+ldrb r0, [r0, #0x304]
+bx lr

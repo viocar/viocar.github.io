@@ -1,0 +1,8 @@
+.arm
+func_0200a248:
+ldr r2, [r1, #0xc]
+mov r0, #0x0
+bic r2, r2, #0x30
+str r0, [r1, #0x4]
+str r2, [r1, #0xc]
+bx lr

@@ -1,0 +1,30 @@
+.arm
+func_0208b440:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+bl func_0208ac8c
+movs r4, r0
+ldmeqia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+mov r5, #0x0
+mov r7, #0x2c
+ldr r8, [.L_0208b4a8]
+mov r9, r5
+mov r10, #0x1
+mov r6, r7
+.L_0208b468:
+mov r0, r4
+mov r1, r5
+bl func_0208ac9c
+ldr r1, [r0, #0x1c]
+cmp r1, #0x0
+moveq r1, r10
+movne r1, r9
+cmp r1, #0x0
+ldmeqia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+mla r1, r5, r6, r8
+mov r2, r7
+bl Memcpy
+add r5, r5, #0x1
+cmp r5, #0x2
+blt .L_0208b468
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+.L_0208b4a8: .word 0x211967c

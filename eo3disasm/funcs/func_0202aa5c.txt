@@ -1,0 +1,45 @@
+.arm
+func_0202aa5c:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+mov r12, #0x0
+ldr r8, [.L_0202aaf8]
+mov r6, r0
+mov r5, r1
+mov r4, r2
+mov r3, r12
+.L_0202aa78:
+mov lr, r12, lsl #0x5
+mov r7, r3
+add r0, r8, lr, lsl #0x1
+.L_0202aa84:
+add r1, r7, lr
+add r2, r1, r6, lsr #0x5
+mov r1, r7, lsl #0x1
+orr r2, r2, #0xf000
+add r7, r7, #0x1
+strh r2, [r1, r0]
+cmp r7, #0x20
+blt .L_0202aa84
+add r12, r12, #0x1
+cmp r12, #0x18
+blt .L_0202aa78
+mov r7, #0x600
+mov r0, r8
+mov r1, r7
+bl DrainWriteBufferAndInvalidateDataCache
+mov r0, r8
+mov r2, r7
+mov r1, #0x1800
+bl func_020349cc
+cmp r5, #0x0
+beq .L_0202aae4
+mov r0, r6
+mov r1, r5
+bl func_0202aa18
+.L_0202aae4:
+cmp r4, #0x0
+ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
+mov r0, r4
+bl func_0202aa48
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_0202aaf8: .word 0x20fe788

@@ -1,0 +1,12 @@
+.arm
+func_ov003_02150f70:
+cmp r0, #0x4
+cmplo r1, #0x6
+mov r2, #0x0
+ldrlo r3, [.L_3_02150f94]
+movlo r2, #0x6
+mlalo r2, r0, r2, r3
+ldrlob r2, [r1, r2]
+mov r0, r2
+bx lr
+.L_3_02150f94: .word data_ov003_021662d8

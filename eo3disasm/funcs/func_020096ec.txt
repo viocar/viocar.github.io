@@ -1,0 +1,243 @@
+.arm
+func_020096ec:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0xe0
+mov r11, r0
+ldr r0, [r11, #0x8]
+add r8, sp, #0x4
+str r0, [sp, #0x0]
+add r0, sp, #0x4
+mov r6, #0x3
+mov r7, #0x1
+bl func_02008984
+ldr r0, [sp, #0x0]
+str r0, [sp, #0xc]
+ldr r0, [r11, #0xc]
+tst r0, #0x20
+movne r0, r7
+moveq r0, #0x0
+cmp r0, #0x0
+ldrneh r5, [r11, #0x24]
+movne r4, #0x10000
+bne .L_020097c8
+mov r9, #0x0
+ldr r4, [r11, #0x20]
+mov r10, r9
+mov r5, #0x10000
+.L_0200974c:
+mov r0, r8
+mov r1, r9
+bl func_020092e4
+add r2, sp, #0x4c
+str r2, [sp, #0x34]
+cmp r9, #0x0
+mov r0, r8
+mov r1, r6
+mov r2, r7
+ldreq r10, [sp, #0x30]
+str r7, [sp, #0x38]
+bl func_02009b7c
+cmp r0, #0x0
+bne .L_020097b4
+.L_02009784:
+ldr r0, [sp, #0x58]
+cmp r0, #0x0
+ldreq r0, [sp, #0x50]
+cmpeq r0, r4
+ldreqh r5, [sp, #0x28]
+beq .L_020097b4
+mov r0, r8
+mov r1, r6
+mov r2, r7
+bl func_02009b7c
+cmp r0, #0x0
+beq .L_02009784
+.L_020097b4:
+cmp r5, #0x10000
+bne .L_020097c8
+add r9, r9, #0x1
+cmp r9, r10
+blo .L_0200974c
+.L_020097c8:
+cmp r5, #0x10000
+mov r0, #0x0
+streqh r0, [r11, #0x38]
+mov r6, #0x3
+mov r7, #0x1
+addeq sp, sp, #0xe0
+moveq r0, #0xb
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+ldr r0, [sp, #0x0]
+mov r9, r5
+bl func_020086c8
+bl func_02011da0
+add r10, r0, #0x2
+add r0, sp, #0x4
+mov r1, r5
+bl func_020092e4
+cmp r4, #0x10000
+ldrne r0, [sp, #0x5c]
+add r8, sp, #0x4
+addne r10, r10, r0
+cmp r5, #0x0
+beq .L_02009898
+.L_02009820:
+ldr r1, [sp, #0x30]
+mov r0, r8
+bl func_020092e4
+add r0, sp, #0x4c
+str r0, [sp, #0x34]
+mov r0, r8
+mov r1, r6
+mov r2, r7
+str r7, [sp, #0x38]
+bl func_02009b7c
+cmp r0, #0x0
+bne .L_0200988c
+.L_02009850:
+ldr r0, [sp, #0x58]
+cmp r0, #0x0
+beq .L_02009874
+ldrh r0, [sp, #0x50]
+cmp r0, r9
+ldreq r0, [sp, #0x5c]
+addeq r0, r0, #0x1
+addeq r10, r10, r0
+beq .L_0200988c
+.L_02009874:
+mov r0, r8
+mov r1, r6
+mov r2, r7
+bl func_02009b7c
+cmp r0, #0x0
+beq .L_02009850
+.L_0200988c:
+ldrh r9, [sp, #0x28]
+cmp r9, #0x0
+bne .L_02009820
+.L_02009898:
+ldr r7, [r11, #0x30]
+add r0, r10, #0x1
+strh r0, [r11, #0x38]
+strh r5, [r11, #0x3a]
+cmp r7, #0x0
+add r9, sp, #0x4
+mov r8, #0x1
+beq .L_02009a58
+ldrh r6, [r11, #0x38]
+ldr r0, [r11, #0x34]
+cmp r0, r6
+blo .L_02009a58
+ldr r0, [sp, #0x0]
+bl func_020086c8
+mov r11, r0
+bl func_02011da0
+mov r10, r0
+mov r0, r11
+mov r1, r7
+mov r2, r10
+bl Memcpy
+mov r0, #0x0
+add r0, r10, r0
+add r1, r7, r0
+ldr r0, [.L_02009a64]
+mov r2, #0x2
+bl Memcpy
+mov r0, r9
+mov r1, r5
+bl func_020092e4
+cmp r4, #0x10000
+beq .L_02009994
+add r3, sp, #0x4c
+mov r1, #0x3
+str r3, [sp, #0x34]
+mov r3, #0x0
+mov r0, r9
+mov r2, r8
+str r3, [sp, #0x38]
+mov r10, r1
+bl func_02009b7c
+cmp r0, #0x0
+bne .L_02009970
+.L_02009944:
+ldr r0, [sp, #0x58]
+cmp r0, #0x0
+ldreq r0, [sp, #0x50]
+cmpeq r0, r4
+beq .L_02009970
+mov r0, r9
+mov r1, r10
+mov r2, r8
+bl func_02009b7c
+cmp r0, #0x0
+beq .L_02009944
+.L_02009970:
+ldr r0, [sp, #0x5c]
+add r1, r7, r6
+add r4, r0, #0x1
+add r0, sp, #0x60
+mov r2, r4
+sub r1, r1, r4
+bl Memcpy
+sub r6, r6, r4
+b .L_020099a4
+.L_02009994:
+add r1, r7, r6
+mov r0, #0x0
+strb r0, [r1, #-0x1]
+sub r6, r6, #0x1
+.L_020099a4:
+cmp r5, #0x0
+add r10, sp, #0x4
+mov r11, #0x0
+mov r8, #0x3
+mov r4, #0x1
+beq .L_02009a58
+add r9, sp, #0x4c
+.L_020099c0:
+ldr r1, [sp, #0x30]
+mov r0, r10
+bl func_020092e4
+add r1, r7, r6
+str r9, [sp, #0x34]
+str r11, [sp, #0x38]
+mov r0, #0x2f
+strb r0, [r1, #-0x1]
+mov r0, r10
+mov r1, r8
+mov r2, r4
+sub r6, r6, #0x1
+bl func_02009b7c
+cmp r0, #0x0
+bne .L_02009a4c
+.L_020099fc:
+ldr r0, [sp, #0x58]
+cmp r0, #0x0
+beq .L_02009a34
+ldrh r0, [sp, #0x50]
+cmp r0, r5
+bne .L_02009a34
+ldr r5, [sp, #0x5c]
+add r1, r7, r6
+add r0, sp, #0x60
+sub r1, r1, r5
+mov r2, r5
+bl Memcpy
+sub r6, r6, r5
+b .L_02009a4c
+.L_02009a34:
+mov r0, r10
+mov r1, r8
+mov r2, r4
+bl func_02009b7c
+cmp r0, #0x0
+beq .L_020099fc
+.L_02009a4c:
+ldrh r5, [sp, #0x28]
+cmp r5, #0x0
+bne .L_020099c0
+.L_02009a58:
+mov r0, #0x0
+add sp, sp, #0xe0
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_02009a64: .word data_020e22a0

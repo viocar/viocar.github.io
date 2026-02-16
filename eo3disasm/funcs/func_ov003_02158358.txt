@@ -1,0 +1,16 @@
+.arm
+func_ov003_02158358:
+stmdb sp!, {r4, lr}
+mov r4, r0
+bl func_020b820c
+cmp r0, #0x0
+mov r2, #0x63
+bne .L_3_02158380
+add r0, r4, #0x67
+mov r1, #0xff
+bl Memset
+ldmia sp!, {r4, pc}
+.L_3_02158380:
+add r1, r4, #0x67
+bl Memcpy
+ldmia sp!, {r4, pc}

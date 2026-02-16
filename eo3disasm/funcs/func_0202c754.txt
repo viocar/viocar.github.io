@@ -1,0 +1,47 @@
+.arm
+func_0202c754:
+ldr r2, [.L_0202c7e0]
+cmp r0, r2
+bgt .L_0202c788
+bge .L_0202c7c8
+sub r1, r2, #0x700
+cmp r0, r1
+bgt .L_0202c778
+beq .L_0202c7b8
+b .L_0202c7d8
+.L_0202c778:
+sub r1, r2, #0x300
+cmp r0, r1
+beq .L_0202c7c0
+b .L_0202c7d8
+.L_0202c788:
+ldr r1, [.L_0202c7e4]
+cmp r0, r1
+bgt .L_0202c7a8
+bge .L_0202c7d0
+sub r1, r1, #0x100
+cmp r0, r1
+beq .L_0202c7d0
+b .L_0202c7d8
+.L_0202c7a8:
+add r1, r1, #0x100
+cmp r0, r1
+beq .L_0202c7d0
+b .L_0202c7d8
+.L_0202c7b8:
+mov r0, #0x10
+bx lr
+.L_0202c7c0:
+mov r0, #0x20
+bx lr
+.L_0202c7c8:
+mov r0, #0x80
+bx lr
+.L_0202c7d0:
+mov r0, #0x100
+bx lr
+.L_0202c7d8:
+mov r0, #0x1
+bx lr
+.L_0202c7e0: .word 0x1001
+.L_0202c7e4: .word 0x1302

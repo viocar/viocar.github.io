@@ -1,0 +1,8 @@
+.arm
+func_02042cb4:
+ldrsh r2, [r1, #0x1a]
+ldrsh r1, [sp, #0x0]
+mov r0, #0x0
+cmp r2, r1
+moveq r0, #0x1
+bx lr

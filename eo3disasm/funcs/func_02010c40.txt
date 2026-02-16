@@ -1,0 +1,26 @@
+.arm
+func_02010c40:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+ldr r5, [.L_02010c98]
+mov r7, r0
+mov r6, r1
+mov r4, #0x1
+.L_02010c54:
+bl DisableIRQ
+str r0, [r6, #0x4]
+mov r0, r5
+bl func_02002e9c
+ands r0, r0, #0x40
+str r0, [r6, #0x0]
+ldmneia sp!, {r3, r4, r5, r6, r7, pc}
+mov r0, r7
+bl func_02002de4
+cmp r0, #0x0
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+ldr r0, [r6, #0x4]
+bl EnableIRQ
+mov r0, r4
+blx WaitByLoop
+b .L_02010c54
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_02010c98: .word 0x2ffffe8

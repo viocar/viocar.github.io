@@ -1,0 +1,13 @@
+.arm
+func_0202a580:
+ldr r0, [.L_0202a5a8]
+mov r3, #0xf
+ldr r1, [r0, #0x4]
+mov r2, #0x0
+strb r3, [r1, #0xa0d]
+ldr r1, [r0, #0x4]
+strb r2, [r1, #0xa0e]
+ldr r0, [r0, #0x4]
+strb r2, [r0, #0xa0f]
+bx lr
+.L_0202a5a8: .word 0x20fe780

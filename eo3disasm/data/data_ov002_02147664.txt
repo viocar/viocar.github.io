@@ -1,0 +1,20 @@
+data_ov002_02147664:
+.word data_ov002_02144724
+.word data_ov002_02147610
+.word data_ov002_021475bc
+.word data_ov002_02147568
+.word data_ov002_02147514
+.word data_ov002_021474c0
+.word data_ov002_0214746c
+.word data_ov002_02147418
+.word data_ov002_021473c4
+.word data_ov002_02147370
+.word data_ov002_0214731c
+.word data_ov002_021472c8
+.word data_ov002_02147274
+.word data_ov002_02147220
+.word data_ov002_021471cc
+.word data_ov002_02147178
+.word data_ov002_02147124
+.word data_ov002_021470d0
+.word data_ov002_0214707c

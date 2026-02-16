@@ -1,0 +1,7 @@
+data_ov003_02166a00:
+.word func_ov003_02163d08
+.word func_ov003_02163d14
+.word func_ov003_02163ddc
+.word func_ov003_02163dfc
+.word func_ov003_02163e38
+.word func_ov003_02163e44

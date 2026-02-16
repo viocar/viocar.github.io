@@ -1,0 +1,12 @@
+.arm
+func_0202a930:
+ldr r0, [.L_0202a950]
+ldr r12, [.L_0202a954]
+ldr r0, [r0, #0x4]
+mov r1, #0x0
+add r0, r0, #0x230
+mov r2, #0x200
+add r0, r0, #0x1000
+bx r12
+.L_0202a950: .word 0x20fe780
+.L_0202a954: .word Memset

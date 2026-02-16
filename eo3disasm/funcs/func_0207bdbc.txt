@@ -1,0 +1,4 @@
+.arm
+func_0207bdbc:
+str r1, [r0, #0x58]
+bx lr

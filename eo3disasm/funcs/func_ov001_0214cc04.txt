@@ -1,0 +1,107 @@
+.arm
+func_ov001_0214cc04:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+bl func_0204a6e8
+mov r6, r0
+add r0, r6, #0x3000
+ldr r0, [r0, #0x794]
+bl func_0207c0b0
+add r1, r6, #0x3000
+strb r0, [r1, #0x707]
+bl func_ov001_0214b834
+cmp r0, #0x0
+beq .L_1_0214cd60
+mov r5, #0x0
+mov r0, r5
+bl func_ov001_0214b890
+add r3, r6, #0x3700
+mov r0, #0xa
+strh r0, [r3, #0x0]
+mov r0, #0xb
+strh r0, [r3, #0x2]
+add r1, r6, #0x3000
+ldrb r0, [r1, #0x704]
+ldrb r1, [r1, #0x705]
+ldrsb r2, [r3, #0x7]
+ldrsh r3, [r3, #0x56]
+bl func_ov001_0214c524
+add r1, r6, #0x3000
+ldrb r0, [r1, #0x704]
+ldrb r1, [r1, #0x705]
+bl func_0204029c
+mov r7, r0
+mov r1, r5
+add r0, r7, #0x46
+bl func_0204b794
+mov r4, r0
+ldrsh r0, [r4, #0x0]
+cmp r0, #0x4
+bne .L_1_0214cd28
+ldrsh r1, [r4, #0x4]
+add r2, r6, #0x3000
+add r0, r6, #0x3700
+strb r1, [r2, #0x706]
+ldrsh r0, [r0, #0x5a]
+and r1, r1, #0xff
+cmp r1, r0
+blt .L_1_0214cccc
+.L_1_0214ccb8:
+add r0, r7, #0x46
+mov r1, #0x4
+strb r5, [r2, #0x706]
+.L_1_0214ccc4:
+bl func_0204b724
+b .L_1_0214cd30
+.L_1_0214cccc:
+add r0, r6, r1, lsl #0x1
+add r1, r0, #0x3000
+ldrb r0, [r1, #0x75e]
+ldrb r1, [r1, #0x75f]
+bl func_0204029c
+movs r8, r0
+bne .L_1_0214ccf0
+add r2, r6, #0x3000
+b .L_1_0214ccb8
+.L_1_0214ccf0:
+bl func_02040dbc
+cmp r0, #0x0
+beq .L_1_0214cd10
+ldrsh r0, [r4, #0x2]
+ldrb r1, [r8, #0x621]
+and r0, r0, #0xff
+cmp r1, r0
+beq .L_1_0214cd30
+.L_1_0214cd10:
+add r2, r6, #0x3000
+mov r3, #0x0
+add r0, r7, #0x46
+mov r1, #0x4
+strb r3, [r2, #0x706]
+b .L_1_0214ccc4
+.L_1_0214cd28:
+add r0, r6, #0x3000
+strb r5, [r0, #0x706]
+.L_1_0214cd30:
+bl func_ov001_02158ac4
+bl func_ov001_0215a5c4
+bl func_ov001_0214ba5c
+mov r4, #0x0
+add r0, r6, #0x3000
+ldr r0, [r0, #0x794]
+mov r1, r4
+mov r2, r4
+bl func_0207be10
+mov r0, r4
+bl func_ov001_0214cd94
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_1_0214cd60:
+add r0, r6, #0x3700
+mov r1, #0xa
+strh r1, [r0, #0x0]
+mov r1, #0xd
+strh r1, [r0, #0x2]
+add r1, r6, #0x3000
+mov r0, #0x0
+strb r0, [r1, #0x709]
+bl func_ov001_0214b890
+ldmia sp!, {r4, r5, r6, r7, r8, pc}

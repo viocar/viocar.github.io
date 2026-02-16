@@ -1,0 +1,116 @@
+.arm
+func_020a45e8:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+mov r9, #0x0
+ldr r4, [.L_020a4748]
+ldr r11, [.L_020a474c]
+ldr r8, [.L_020a4750]
+mov r6, #0x10
+mov r5, #0x1
+mov r7, r9
+.L_020a4608:
+mov r0, #0x18
+mla r10, r9, r0, r8
+str r7, [r10, #0xc]
+str r7, [r10, #0x10]
+cmp r9, #0x1b
+str r7, [r10, #0x14]
+bgt .L_020a464c
+cmp r9, #0x1b
+bge .L_020a46c4
+cmp r9, #0x1
+bgt .L_020a470c
+cmp r9, #0x0
+blt .L_020a470c
+beq .L_020a4674
+cmp r9, #0x1
+beq .L_020a4688
+b .L_020a470c
+.L_020a464c:
+cmp r9, #0x1e
+bgt .L_020a470c
+cmp r9, #0x1c
+blt .L_020a470c
+beq .L_020a46e8
+cmp r9, #0x1d
+beq .L_020a4688
+cmp r9, #0x1e
+beq .L_020a46a0
+b .L_020a470c
+.L_020a4674:
+bl func_0201bd10
+stmia r10, {r0, r6}
+str r6, [r10, #0x8]
+str r5, [r10, #0x14]
+b .L_020a4734
+.L_020a4688:
+bl func_0201bb9c
+stmia r10, {r0, r4}
+str r4, [r10, #0x8]
+str r11, [r10, #0xc]
+ldr r0, [.L_020a4754]
+b .L_020a4730
+.L_020a46a0:
+bl func_0201bb9c
+str r0, [r10, #0x0]
+ldr r0, [.L_020a4758]
+str r0, [r10, #0x4]
+str r0, [r10, #0x8]
+ldr r0, [.L_020a475c]
+str r0, [r10, #0xc]
+ldr r0, [.L_020a4760]
+b .L_020a4730
+.L_020a46c4:
+mov r0, #0x1a
+bl func_0201be9c
+str r0, [r10, #0x0]
+ldr r0, [.L_020a4764]
+str r0, [r10, #0x4]
+ldr r0, [.L_020a4768]
+str r0, [r10, #0xc]
+ldr r0, [.L_020a476c]
+b .L_020a4730
+.L_020a46e8:
+mov r0, r7
+bl func_0201c680
+str r0, [r10, #0x0]
+ldr r0, [.L_020a4770]
+str r0, [r10, #0x4]
+ldr r0, [.L_020a4774]
+str r0, [r10, #0xc]
+ldr r0, [.L_020a4778]
+b .L_020a4730
+.L_020a470c:
+sub r0, r9, #0x1
+bl func_0201be6c
+str r0, [r10, #0x0]
+ldr r0, [.L_020a477c]
+str r0, [r10, #0x4]
+str r0, [r10, #0x8]
+ldr r0, [.L_020a4780]
+str r0, [r10, #0xc]
+ldr r0, [.L_020a4784]
+.L_020a4730:
+str r0, [r10, #0x10]
+.L_020a4734:
+add r9, r9, #0x1
+cmp r9, #0x1f
+blt .L_020a4608
+ldr r0, [.L_020a4750]
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_020a4748: .word 0x4424
+.L_020a474c: .word func_020a4574
+.L_020a4750: .word 0x2135b4c
+.L_020a4754: .word func_020a453c
+.L_020a4758: .word 0x1ae0c
+.L_020a475c: .word func_020a45c4
+.L_020a4760: .word func_020a45b8
+.L_020a4764: .word 0x30b4
+.L_020a4768: .word func_020a45ac
+.L_020a476c: .word func_020a45a0
+.L_020a4770: .word 0x29e0
+.L_020a4774: .word func_020a45dc
+.L_020a4778: .word func_020a45d0
+.L_020a477c: .word 0xada
+.L_020a4780: .word func_020a4594
+.L_020a4784: .word func_020a4588

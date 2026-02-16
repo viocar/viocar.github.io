@@ -1,0 +1,9 @@
+.arm
+func_020adf20:
+stmdb sp!, {r3, lr}
+bl func_020a9c68
+ldr r1, [r0, #0x2b0]
+cmp r1, #0x0
+moveq r1, #0x1
+streq r1, [r0, #0x2b0]
+ldmia sp!, {r3, pc}

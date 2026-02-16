@@ -1,0 +1,14 @@
+.arm
+func_ov003_02158190:
+ldr r0, [.L_3_021581bc]
+mov r1, #0x1
+ldr r2, [r0, #0x0]
+mov r0, #0x0
+strb r1, [r2, #0x66]
+strb r0, [r2, #0xca]
+mov r0, #0x31
+str r0, [r2, #0x24]
+mov r0, #0x3b
+str r0, [r2, #0x28]
+bx lr
+.L_3_021581bc: .word 0x02166b04

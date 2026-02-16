@@ -1,0 +1,28 @@
+.arm
+func_0202e590:
+ldr r3, [r0, #0x0]
+cmp r3, r1
+bge .L_0202e5c0
+add r2, r3, r2
+cmp r2, r1
+addgt r2, r3, #0x1
+str r2, [r0, #0x0]
+mov r0, r2
+cmp r0, r1
+moveq r0, #0x1
+movne r0, #0x0
+bx lr
+.L_0202e5c0:
+ble .L_0202e5e8
+sub r2, r3, r2
+cmp r2, r1
+sublt r2, r3, #0x1
+str r2, [r0, #0x0]
+mov r0, r2
+cmp r0, r1
+moveq r0, #0x1
+movne r0, #0x0
+bx lr
+.L_0202e5e8:
+mov r0, #0x1
+bx lr

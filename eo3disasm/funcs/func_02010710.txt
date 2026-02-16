@@ -1,0 +1,19 @@
+.arm
+func_02010710:
+stmdb sp!, {r3, lr}
+ldr r2, [.L_02010750]
+mov r12, #0x0
+ldr r3, [r2, #0xc]
+mov r1, r0
+strb r12, [r3, #0x50d]
+ldr r0, [r2, #0x10]
+add r0, r0, #0x1300
+strh r12, [r0, #0x16]
+ldr r0, [r2, #0xc]
+ldr r2, [r0, #0x51c]
+cmp r2, #0x0
+ldmeqia sp!, {r3, pc}
+mov r0, #0x11
+blx r2
+ldmia sp!, {r3, pc}
+.L_02010750: .word 0x20f0e20

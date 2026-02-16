@@ -1,0 +1,14 @@
+.arm
+func_0200b354:
+stmdb sp!, {r3, lr}
+ldr r2, [.L_0200b380]
+mov r3, #0x0
+ldr r12, [r2, #0x30]
+ldr r1, [r2, #0x34]
+cmp r12, #0x0
+str r3, [r2, #0x2c]
+ldmeqia sp!, {r3, pc}
+str r3, [r2, #0x30]
+blx r12
+ldmia sp!, {r3, pc}
+.L_0200b380: .word 0x20ef8fc

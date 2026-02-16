@@ -1,0 +1,129 @@
+.arm
+func_02011494:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+sub sp, sp, #0x8
+mov r4, r0
+ldr r3, [r4, #0x54]
+ldr r2, [r4, #0x58]
+mov r3, r3, lsl #0x3
+add r7, r3, r2, lsl #0x9
+mov r5, r7, lsr #0x18
+mov r3, r7, lsr #0x8
+mov r6, r7, lsl #0x8
+mov r7, r7, lsl #0x18
+and r5, r5, #0xff
+and r3, r3, #0xff00
+and r6, r6, #0xff0000
+orr r3, r5, r3
+and r5, r7, #0xff000000
+orr r3, r6, r3
+orr r3, r5, r3
+str r3, [sp, #0x4]
+ldr r3, [r4, #0x5c]
+mov r2, r2, lsr #0x17
+add r6, r2, r3, lsl #0x9
+mov r3, r6, lsr #0x18
+mov r2, r6, lsr #0x8
+mov r5, r6, lsl #0x8
+mov r7, r6, lsl #0x18
+mov r6, r1
+and r3, r3, #0xff
+and r1, r2, #0xff00
+and r2, r5, #0xff0000
+orr r1, r3, r1
+and r3, r7, #0xff000000
+orr r1, r2, r1
+orr r2, r3, r1
+ldr r1, [.L_02011684]
+str r2, [sp, #0x0]
+mov r2, #0x1
+bl func_02011400
+ldr r0, [r4, #0x54]
+rsb r2, r0, #0x40
+cmp r2, #0x8
+bhs .L_02011548
+ldr r1, [.L_02011688]
+mov r0, r4
+bl func_02011400
+.L_02011548:
+ldr r1, [r4, #0x54]
+mov r0, r4
+rsb r2, r1, #0x38
+mov r1, #0x0
+bl func_020112e0
+add r1, sp, #0x0
+mov r0, r4
+mov r2, #0x8
+bl func_02011400
+ldmia r4, {r5, r12}
+mov r1, r5, lsr #0x18
+and r7, r1, #0xff
+mov r1, r6
+mov r6, r5, lsl #0x18
+and lr, r6, #0xff000000
+mov r6, r5, lsl #0x8
+mov r5, r5, lsr #0x8
+and r5, r5, #0xff00
+and r6, r6, #0xff0000
+orr r5, r7, r5
+orr r5, r6, r5
+orr r5, lr, r5
+mov r6, r12, lsr #0x18
+str r5, [r4, #0x0]
+mov r5, r12, lsr #0x8
+ldr r3, [r4, #0x8]
+and r6, r6, #0xff
+and r5, r5, #0xff00
+orr r6, r6, r5
+mov r5, r3, lsr #0x18
+and lr, r5, #0xff
+mov r5, r12, lsl #0x18
+and r7, r5, #0xff000000
+mov r5, r12, lsl #0x8
+and r5, r5, #0xff0000
+orr r5, r5, r6
+orr r6, r7, r5
+mov r5, r3, lsr #0x8
+and r5, r5, #0xff00
+ldr r2, [r4, #0xc]
+str r6, [r4, #0x4]
+mov r6, r2, lsr #0x18
+orr lr, lr, r5
+mov r5, r2, lsr #0x8
+ldr r0, [r4, #0x10]
+and r6, r6, #0xff
+and r5, r5, #0xff00
+orr r12, r6, r5
+mov r5, r0, lsr #0x18
+and r6, r5, #0xff
+mov r5, r3, lsl #0x18
+mov r3, r3, lsl #0x8
+and r3, r3, #0xff0000
+and r5, r5, #0xff000000
+orr r3, r3, lr
+orr r3, r5, r3
+str r3, [r4, #0x8]
+mov r3, r2, lsl #0x8
+mov r2, r2, lsl #0x18
+and lr, r2, #0xff000000
+and r2, r3, #0xff0000
+orr r2, r2, r12
+orr r3, lr, r2
+mov r5, r0, lsr #0x8
+mov r12, r0, lsl #0x8
+and r2, r5, #0xff00
+mov lr, r0, lsl #0x18
+orr r0, r6, r2
+and r5, r12, #0xff0000
+and r2, lr, #0xff000000
+orr r0, r5, r0
+orr r5, r2, r0
+mov r0, r4
+mov r2, #0x14
+str r3, [r4, #0xc]
+str r5, [r4, #0x10]
+bl Memcpy
+add sp, sp, #0x8
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_02011684: .word data_020de4d4
+.L_02011688: .word data_020de4d5

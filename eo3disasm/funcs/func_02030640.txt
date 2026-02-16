@@ -1,0 +1,20 @@
+.arm
+func_02030640:
+mov r2, r0, lsr #0x10
+and r2, r2, #0xff
+mov r12, r0, lsr #0x8
+mov r3, r0, lsr #0x18
+mov r0, r2, lsr #0x3
+and r12, r12, #0xff
+and r2, r3, #0xff
+mov r0, r0, lsl #0x5
+mov r3, r12, lsr #0x3
+orr r0, r0, r2, lsr #0x3
+orr r0, r0, r3, lsl #0xa
+mov r0, r0, lsl #0x10
+mov r2, r1, lsl #0x10
+ldr r1, [.L_02030684]
+orr r0, r2, r0, lsr #0x10
+str r0, [r1, #0x0]
+bx lr
+.L_02030684: .word 0x4000358

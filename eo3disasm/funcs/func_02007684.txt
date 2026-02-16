@@ -1,0 +1,21 @@
+.arm
+func_02007684:
+stmdb sp!, {r3, r4, r5, lr}
+mov r4, r0
+mov r5, r1
+bl DisableIRQ
+ldr r1, [.L_020076c8]
+ldr r3, [.L_020076cc]
+str r5, [r1, r4, lsl #0x2]
+cmp r5, #0x0
+ldrne r2, [r3, #0x388]
+mov r1, #0x1
+orrne r1, r2, r1, lsl r4
+mvneq r1, r1, lsl r4
+ldreq r2, [r3, #0x388]
+andeq r1, r2, r1
+str r1, [r3, #0x388]
+bl EnableIRQ
+ldmia sp!, {r3, r4, r5, pc}
+.L_020076c8: .word 0x20ef5a8
+.L_020076cc: .word 0x2fffc00

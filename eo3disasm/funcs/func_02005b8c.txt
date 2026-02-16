@@ -1,0 +1,41 @@
+.arm
+func_02005b8c:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r5, r0
+mov r4, r1
+mov r7, #0x0
+mov r6, #0xc
+.L_02005ba0:
+cmp r7, r5
+beq .L_02005c08
+mul r0, r7, r6
+add r0, r0, #0x4000000
+ldr r0, [r0, #0xb8]
+tst r0, #0x80000000
+andne r0, r0, #0x38000000
+cmpne r0, r4
+beq .L_02005c08
+cmp r0, #0x8000000
+bne .L_02005bd4
+cmp r4, #0x10000000
+beq .L_02005c08
+.L_02005bd4:
+cmp r0, #0x10000000
+bne .L_02005be4
+cmp r4, #0x8000000
+beq .L_02005c08
+.L_02005be4:
+cmp r0, #0x18000000
+cmpne r0, #0x20000000
+cmpne r0, #0x28000000
+cmpne r0, #0x30000000
+cmpne r0, #0x38000000
+cmpne r0, #0x8000000
+cmpne r0, #0x10000000
+bne .L_02005c08
+bl HandleError
+.L_02005c08:
+add r7, r7, #0x1
+cmp r7, #0x3
+blt .L_02005ba0
+ldmia sp!, {r3, r4, r5, r6, r7, pc}

@@ -1,0 +1,26 @@
+.arm
+func_02002ff0:
+ldr r12, [r0, #0x0]
+mov r2, r12
+cmp r12, #0x0
+beq .L_0200303c
+.L_02003000:
+cmp r2, r1
+ldr r3, [r2, #0x80]
+bne .L_02003030
+cmp r12, r2
+ldr r12, [r2, #0x7c]
+streq r3, [r0, #0x0]
+strne r3, [r12, #0x80]
+ldr r1, [r0, #0x4]
+cmp r1, r2
+streq r12, [r0, #0x4]
+strne r12, [r3, #0x7c]
+b .L_0200303c
+.L_02003030:
+mov r2, r3
+cmp r3, #0x0
+bne .L_02003000
+.L_0200303c:
+mov r0, r2
+bx lr

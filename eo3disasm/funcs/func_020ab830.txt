@@ -1,0 +1,59 @@
+.arm
+func_020ab830:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, lr}
+sub sp, sp, #0x4
+bl func_020a9c68
+mov r8, #0x0
+ldr r7, [.L_020ab8fc]
+mov r5, r0
+mvn r4, #0x0
+mov r6, r8
+.L_020ab850:
+str r7, [sp, #0x0]
+add r0, r5, r8, lsl #0x2
+ldr r0, [r0, #0x38]
+mov r1, r4
+mov r2, r6
+mov r3, r6
+bl func_0201d1d0
+add r0, r8, #0x1
+and r8, r0, #0xff
+cmp r8, #0x7
+blo .L_020ab850
+mov r4, #0x0
+.L_020ab880:
+add r0, r6, #0x1
+add r1, r5, r6, lsl #0x3
+and r6, r0, #0xff
+strh r4, [r1, #0xc4]
+cmp r6, #0x3c
+blo .L_020ab880
+ldr r0, [r5, #0x2b8]
+cmp r0, #0x0
+bne .L_020ab8ec
+ldr r0, [r5, #0x60]
+cmp r0, #0x0
+blt .L_020ab8ec
+ldr r0, [.L_020ab900]
+mvn r6, #0x0
+str r0, [sp, #0x0]
+ldr r0, [r5, #0x58]
+mov r1, r6
+mov r2, r4
+mov r3, r4
+bl func_0201d1d0
+ldr r0, [.L_020ab904]
+mov r1, r6
+str r0, [sp, #0x0]
+ldr r0, [r5, #0x54]
+mov r2, r4
+mov r3, r4
+bl func_0201d1d0
+.L_020ab8ec:
+mov r0, #0x0
+strb r0, [r5, #0x2a7]
+add sp, sp, #0x4
+ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
+.L_020ab8fc: .word data_020ec1cc
+.L_020ab900: .word data_020ec1d0
+.L_020ab904: .word data_020ec1d4

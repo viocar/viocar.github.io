@@ -1,0 +1,12 @@
+.arm
+func_02026410:
+ldr r1, [r0, #0x0]
+cmp r1, #0x0
+mvneq r0, #0x0
+bxeq lr
+ldr r1, [r0, #0x0]
+ldrh r0, [r1, #0x34]
+cmp r0, #0x2
+mvnne r0, #0x0
+ldreqh r0, [r1, #0x3a]
+bx lr

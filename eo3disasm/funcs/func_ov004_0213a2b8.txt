@@ -1,0 +1,33 @@
+.arm
+func_ov004_0213a2b8:
+stmdb sp!, {r4, lr}
+bl func_ov004_02139b18
+mov r4, r0
+bl func_0201e268
+bl func_ov004_02139b28
+ldr r1, [r4, #0x98]
+cmp r1, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r4, pc}
+ldr r1, [r4, #0x88]
+cmp r1, #0x4
+addls pc, pc, r1, lsl #0x2
+b .L_4_0213a31c
+.L_4_0213a2ec: ; jump table
+b .L_4_0213a31c ; case 0
+b .L_4_0213a300 ; case 1
+b .L_4_0213a30c ; case 2
+b .L_4_0213a31c ; case 3
+b .L_4_0213a31c ; case 4
+.L_4_0213a300:
+ldr r0, [r0, #0x24]
+blx r0
+b .L_4_0213a31c
+.L_4_0213a30c:
+ldr r0, [r0, #0x24]
+blx r0
+mov r0, #0x3c
+bl func_ov004_0213d2f4
+.L_4_0213a31c:
+mov r0, #0x0
+ldmia sp!, {r4, pc}

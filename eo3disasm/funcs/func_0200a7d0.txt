@@ -1,0 +1,7 @@
+.arm
+func_0200a7d0:
+mov r0, #0x4
+cmp r1, #0x1
+ldrne r0, [.L_0200a7e0]
+bx lr
+.L_0200a7e0: .word 0x102

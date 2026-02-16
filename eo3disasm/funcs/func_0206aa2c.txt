@@ -1,0 +1,20 @@
+.arm
+func_0206aa2c:
+stmdb sp!, {r3, lr}
+mov lr, #0x0
+mov r3, #0x2c
+.L_0206aa38:
+smulbb r12, lr, r3
+add r2, r0, r12
+ldr r2, [r2, #0x18]
+cmp r1, r2
+addeq r0, r0, #0x18
+addeq r0, r0, r12
+ldmeqia sp!, {r3, pc}
+add r2, lr, #0x1
+mov r2, r2, lsl #0x10
+mov lr, r2, asr #0x10
+cmp lr, #0x8
+blt .L_0206aa38
+mov r0, #0x0
+ldmia sp!, {r3, pc}

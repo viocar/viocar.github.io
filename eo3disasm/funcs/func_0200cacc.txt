@@ -1,0 +1,5 @@
+.arm
+func_0200cacc:
+ldr r0, [.L_0200cad4]
+bx lr
+.L_0200cad4: .word 0x2fffa80

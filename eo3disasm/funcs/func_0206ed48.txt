@@ -1,0 +1,14 @@
+.arm
+func_0206ed48:
+stmdb sp!, {r3, r4, r5, lr}
+mov r5, r1
+bl func_0206edb8
+mov r4, r0
+mov r1, r4
+mov r0, #0x0
+mov r2, #0x40
+bl Memset32Aligned
+mov r0, r4
+mov r1, r5
+bl func_020142d0
+ldmia sp!, {r3, r4, r5, pc}

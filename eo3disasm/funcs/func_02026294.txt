@@ -1,0 +1,9 @@
+.arm
+func_02026294:
+ldr r1, [r0, #0x0]
+cmp r1, #0x0
+ldrne r1, [r0, #0x0]
+movne r2, #0x0
+strne r2, [r1, #0x0]
+strne r2, [r0, #0x0]
+bx lr

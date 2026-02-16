@@ -1,0 +1,50 @@
+.arm
+func_0202e280:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r4, r2
+ldr r0, [r4, #0x18]
+mov r6, r1
+cmp r0, #0x0
+ldr r7, [r4, #0x24]
+beq .L_0202e2dc
+ldr r1, [r6, #0x0]
+ldr r0, [r4, #0x1c]
+mov r7, r1, lsr #0x8
+cmp r0, #0x0
+mov r0, r7
+beq .L_0202e2bc
+bl func_0202b664
+b .L_0202e2c0
+.L_0202e2bc:
+bl func_0202b680
+.L_0202e2c0:
+mov r5, r0
+mov r0, r6
+mov r1, r5
+bl func_0202e0d0
+mov r0, r6
+bl func_0202b6e4
+b .L_0202e2e0
+.L_0202e2dc:
+mov r5, r6
+.L_0202e2e0:
+bl DisableIRQ
+mov r6, r0
+mov r0, r4
+bl func_02033794
+ldr r0, [r4, #0x20]
+cmp r0, #0x0
+strne r5, [r0, #0x0]
+ldr r3, [r4, #0x10]
+cmp r3, #0x0
+beq .L_0202e318
+ldr r1, [r4, #0x14]
+mov r0, r5
+mov r2, r7
+blx r3
+.L_0202e318:
+mov r0, r4
+bl func_0202b6e4
+mov r0, r6
+bl EnableIRQ
+ldmia sp!, {r3, r4, r5, r6, r7, pc}

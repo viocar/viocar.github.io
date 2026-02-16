@@ -1,0 +1,28 @@
+.arm
+func_0201105c:
+stmdb sp!, {r3, lr}
+and r0, r1, #0x3f
+cmp r0, #0x11
+bne .L_020110ac
+ldr r0, [.L_020110b4]
+ldr r1, [r0, #0xc]
+cmp r1, #0x0
+ldmneia sp!, {r3, pc}
+ldr r1, [r0, #0x18]
+mov r0, #0x0
+cmp r1, #0x0
+beq .L_02011090
+blx r1
+.L_02011090:
+cmp r0, #0x0
+beq .L_0201109c
+bl func_020110b8
+.L_0201109c:
+ldr r0, [.L_020110b4]
+mov r1, #0x1
+str r1, [r0, #0xc]
+ldmia sp!, {r3, pc}
+.L_020110ac:
+bl HandleError
+ldmia sp!, {r3, pc}
+.L_020110b4: .word 0x20f0e40

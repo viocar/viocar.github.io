@@ -1,0 +1,11 @@
+.arm
+func_ov001_0215a5a0:
+stmdb sp!, {r3, lr}
+ldr r0, [r0, #0x60c]
+bl func_02036060
+ldrh r2, [r0, #0x18]
+ldr r1, [.L_1_0215a5c0]
+and r1, r2, r1
+strh r1, [r0, #0x18]
+ldmia sp!, {r3, pc}
+.L_1_0215a5c0: .word 0xfffe

@@ -1,0 +1,12 @@
+.arm
+func_0202bcdc:
+mov r3, r0
+cmp r3, #0x7f
+movhi r3, #0x7f
+mov r2, r1
+ldr r0, [.L_0202bcfc]
+ldr r12, [.L_0202bd00]
+mov r1, r3
+bx r12
+.L_0202bcfc: .word 0x20ff31c
+.L_0202bd00: .word func_02026378

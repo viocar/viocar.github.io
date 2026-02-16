@@ -1,0 +1,35 @@
+data_020e6d80:
+.word func_0205c6cc
+.word func_0205c844
+.word func_0205c854
+.word func_0205c8b4
+.word func_0205c8d8
+.word func_0205cc60
+.word func_0205cc68
+.word func_0205cddc
+.word func_0205cde4
+.word func_0205ce38
+.word func_0205ce40
+.word func_0205ced0
+.word func_0205d004
+.word func_0205d034
+.word func_0205d068
+.word func_0205d8f8
+.word func_0205d968
+.word func_0205e43c
+.word func_0205e534
+.word func_0205e8e4
+.word func_0205ea84
+.word func_0205eb70
+.word func_0205eb78
+.word func_0205ec7c
+.word func_0205f190
+.word func_0205f2e0
+.word func_0205f308
+.word func_0205d46c
+.word func_0205d47c
+.word func_0205d4b0
+.word func_0205d4b8
+.word func_0205d718
+.word func_0205d720
+.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00

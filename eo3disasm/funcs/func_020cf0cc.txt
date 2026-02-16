@@ -1,0 +1,38 @@
+.arm
+func_020cf0cc:
+ldr r2, [r0, #0x64]
+ldr r1, [r0, #0x70]
+mov r3, #0x0
+cmp r1, r2
+ble .L_020cf108
+subs r1, r2, #0xc
+str r1, [r0, #0x6c]
+str r2, [r0, #0x70]
+strmi r3, [r0, #0x6c]
+ldr r2, [r0, #0x70]
+ldr r1, [r0, #0x68]
+mov r3, #0x1
+cmp r1, r2
+subge r1, r2, #0x1
+strge r1, [r0, #0x68]
+.L_020cf108:
+ldr r2, [r0, #0x68]
+ldr r1, [r0, #0x70]
+cmp r2, r1
+blt .L_020cf130
+add r2, r2, #0x1
+sub r1, r2, #0xc
+str r2, [r0, #0x70]
+str r1, [r0, #0x6c]
+mov r3, #0x1
+b .L_020cf148
+.L_020cf130:
+ldr r1, [r0, #0x6c]
+cmp r2, r1
+addlt r1, r2, #0xc
+strlt r2, [r0, #0x6c]
+strlt r1, [r0, #0x70]
+movlt r3, #0x1
+.L_020cf148:
+mov r0, r3
+bx lr

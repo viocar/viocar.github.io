@@ -1,0 +1,11 @@
+.arm
+func_02000b64:
+bx lr
+.word 0x00000000
+.word 0x00000000
+.word 0x00000000
+.word 0x00000000
+.word 0x900
+.word 0x1
+.word 0xdec08133
+.word 0x3381c0de

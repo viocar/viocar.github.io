@@ -1,0 +1,68 @@
+.arm
+func_020341bc:
+stmdb sp!, {r4, r5, r6, lr}
+bl func_0203432c
+ldr r0, [.L_020342a4]
+mov r1, #0x0
+str r1, [r0, #0x0]
+.L_020341d0:
+ldr r1, [r0, #0xfc]
+tst r1, #0x8000000
+bne .L_020341d0
+ldr r4, [.L_020342a8]
+mov r5, #0x0
+strh r5, [r4, #0x0]
+str r5, [r0, #0xfc]
+str r5, [r4, #-0x50]
+ldrh r2, [r4, #0x0]
+ldr r6, [.L_020342ac]
+ldr r1, [.L_020342b0]
+orr r2, r2, #0x2000
+strh r2, [r4, #0x0]
+ldrh r2, [r4, #0x0]
+orr r2, r2, #0x1000
+strh r2, [r4, #0x0]
+ldrh r2, [r4, #0x0]
+and r2, r2, r6
+strh r2, [r4, #0x0]
+ldrh r2, [r4, #0x0]
+bic r2, r2, #0x3000
+orr r2, r2, #0x10
+strh r2, [r4, #0x0]
+ldrh r2, [r4, #0x0]
+and r1, r2, r1
+strh r1, [r4, #0x0]
+ldr r1, [r0, #0xfc]
+orr r1, r1, #0x8000
+str r1, [r0, #0xfc]
+ldr r1, [r0, #0xfc]
+bic r1, r1, #0xc0000000
+orr r1, r1, #0x80000000
+str r1, [r0, #0xfc]
+bl func_02034350
+str r5, [r4, #0x2f0]
+mov r2, r6, lsr #0x11
+add r1, r4, #0x2f4
+ldr r0, [.L_020342b4]
+strh r2, [r1, #0x0]
+strh r5, [r0, #0x0]
+str r5, [r0, #0x2]
+strh r5, [r0, #0x6]
+sub r1, r4, #0x58
+ldrh r0, [r1, #0x0]
+bic r0, r0, #0x3
+strh r0, [r1, #0x0]
+bl func_02034568
+ldr r1, [.L_020342b8]
+ldr r0, [.L_020342bc]
+str r1, [r0, #0x0]
+str r5, [r0, #0x4]
+str r5, [r0, #0x8]
+ldmia sp!, {r4, r5, r6, pc}
+.L_020342a4: .word 0x4000504
+.L_020342a8: .word 0x4000060
+.L_020342ac: .word 0xffffcffd
+.L_020342b0: .word 0xcffb
+.L_020342b4: .word 0x4000356
+.L_020342b8: .word 0x1f0080
+.L_020342bc: .word 0x40004a4

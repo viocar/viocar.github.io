@@ -1,0 +1,38 @@
+.arm
+func_0204b694:
+stmdb sp!, {r4, lr}
+ldrsh r4, [r0, #0x78]
+mov r12, #0xc
+cmp r4, #0xa
+movge r4, #0x0
+strgeh r4, [r0, #0x78]
+ldrsh lr, [r0, #0x78]
+ldrsh r4, [sp, #0x8]
+smulbb lr, lr, r12
+strh r1, [r0, lr]
+ldrsh r1, [r0, #0x78]
+ldrsh lr, [sp, #0xc]
+smlabb r1, r1, r12, r0
+strh r3, [r1, #0x4]
+ldrsh r1, [r0, #0x78]
+ldrsh r3, [r0, #0x7a]
+smlabb r1, r1, r12, r0
+strh r3, [r1, #0x6]
+ldrsh r1, [r0, #0x78]
+smlabb r1, r1, r12, r0
+strh r4, [r1, #0x8]
+ldrsh r1, [r0, #0x78]
+smlabb r1, r1, r12, r0
+strh lr, [r1, #0xa]
+ldrsh r1, [r0, #0x78]
+smlabb r1, r1, r12, r0
+strh r2, [r1, #0x2]
+ldrsh r1, [r0, #0x78]
+add r1, r1, #0x1
+strh r1, [r0, #0x78]
+ldrsh r1, [r0, #0x78]
+cmp r1, #0xa
+movge r1, #0x0
+strgeh r1, [r0, #0x78]
+mov r0, #0x1
+ldmia sp!, {r4, pc}

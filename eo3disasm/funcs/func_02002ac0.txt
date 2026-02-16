@@ -1,0 +1,13 @@
+.arm
+func_02002ac0:
+ldr r3, [.L_02002ae8]
+mov r1, #0x0
+ldrh r2, [r3, #0x0]
+strh r1, [r3, #0x0]
+ldr r1, [r3, #0xc]
+str r0, [r3, #0xc]
+ldrh r0, [r3, #0x0]
+mov r0, r1
+strh r2, [r3, #0x0]
+bx lr
+.L_02002ae8: .word 0x4000208

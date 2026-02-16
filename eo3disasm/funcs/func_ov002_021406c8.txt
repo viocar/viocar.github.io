@@ -1,0 +1,9 @@
+.arm
+func_ov002_021406c8:
+add r0, r0, #0x55
+ldr r12, [.L_2_021406e0]
+add r0, r0, #0x300
+mov r1, #0x0
+mov r2, #0x51
+bx r12
+.L_2_021406e0: .word Memset

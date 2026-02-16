@@ -1,0 +1,59 @@
+.arm
+func_0200ebb0:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, lr}
+sub sp, sp, #0x44
+movs r5, r1
+mov r6, r0
+mov r4, r2
+beq .L_0200ec18
+mov r7, #0x0
+add r0, sp, #0x0
+mov r1, r7
+mov r2, #0x44
+bl Memset
+ldr r1, [.L_0200ec84]
+mov r3, #0x82
+mov r2, #0x19
+add r0, sp, #0x14
+strh r3, [sp, #0x0]
+strh r7, [sp, #0x2]
+strh r2, [sp, #0x4]
+strh r6, [sp, #0x6]
+str r7, [sp, #0x8]
+str r7, [sp, #0xc]
+strh r7, [sp, #0x10]
+strh r1, [sp, #0x1a]
+str r4, [sp, #0x1c]
+strh r7, [sp, #0x12]
+bl func_0200541c
+.L_0200ec18:
+bl DisableIRQ
+mov r8, r0
+bl func_0200e5bc
+movs r7, r0
+beq .L_0200ec40
+mov r0, r8
+bl EnableIRQ
+add sp, sp, #0x44
+mov r0, r7
+ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
+.L_0200ec40:
+bl func_0200e5ac
+add r0, r0, r6, lsl #0x2
+str r5, [r0, #0xcc]
+str r4, [r0, #0x10c]
+cmp r5, #0x0
+beq .L_0200ec70
+bl func_0200eae8
+strh r0, [sp, #0x22]
+bl func_0200eab8
+strh r0, [sp, #0x20]
+add r0, sp, #0x0
+blx r5
+.L_0200ec70:
+mov r0, r8
+bl EnableIRQ
+mov r0, #0x0
+add sp, sp, #0x44
+ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
+.L_0200ec84: .word 0xffff

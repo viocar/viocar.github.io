@@ -1,0 +1,44 @@
+.arm
+func_02097138:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+ldr r4, [.L_020971cc]
+mov r6, #0x6000
+mov r7, #0x0
+mov r8, r0
+mov r0, r7
+mov r1, r4
+mov r2, r6
+bl Memset32Aligned
+mov r0, r4
+bl func_0202b080
+ldr r4, [.L_020971d0]
+ldr r5, [.L_020971d4]
+mov r0, r4
+mov r1, r5
+mov r2, r6
+bl Memset32Aligned
+mov r0, r4
+ldr r4, [.L_020971d8]
+mov r2, r6
+mov r1, r4
+bl Memset32Aligned
+cmp r8, #0x0
+mov r0, r5
+beq .L_020971b4
+mov r1, #0x4
+bl func_0209f9b4
+mov r0, r4
+mov r1, #0x3
+bl func_0209f9b4
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020971b4:
+mov r1, #0x1
+bl func_0209f9b4
+mov r0, r4
+mov r1, r7
+bl func_0209f9b4
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020971cc: .word 0x2125880
+.L_020971d0: .word 0x22222222
+.L_020971d4: .word 0x211f880
+.L_020971d8: .word 0x2119880

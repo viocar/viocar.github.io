@@ -1,0 +1,31 @@
+.arm
+func_ov004_0213f00c:
+stmdb sp!, {r4, lr}
+mov r4, r0
+ldr r2, [r4, #0x18]
+cmp r2, #0x3
+bne .L_4_0213f02c
+bl func_ov004_021400e8
+bl func_ov004_0213e8b8
+b .L_4_0213f040
+.L_4_0213f02c:
+ldr r1, [r4, #0x48]
+mov r0, r2
+bl func_ov004_0213e66c
+mov r0, r4
+bl func_ov004_0213fa78
+.L_4_0213f040:
+mov r0, r4
+bl func_ov004_02140200
+bl func_ov004_0213fb60
+mov r0, #0x16
+bl func_02035ae0
+mov r0, #0x3
+bl func_02035ae0
+mov r0, #0x5
+bl func_02035ae0
+ldr r0, [.L_4_0213f074]
+mov r1, #0x0
+str r1, [r0, #0x0]
+ldmia sp!, {r4, pc}
+.L_4_0213f074: .word 0x02145700

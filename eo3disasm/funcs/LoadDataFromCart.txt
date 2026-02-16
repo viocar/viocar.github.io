@@ -1,0 +1,81 @@
+.arm
+LoadDataFromCart:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x8
+ldr r0, [.L_0200db40]
+mov r8, r3
+ldr r0, [r0, #0x0]
+mov r10, r1
+mov r9, r2
+str r8, [sp, #0x4]
+str r0, [sp, #0x0]
+ldr r11, [.L_0200db44]
+ldr r4, [.L_0200db48]
+b .L_0200db18
+.L_0200da64:
+mov r0, #0x200
+rsb r0, r0, #0x0
+and r6, r9, r0
+ldr r0, [sp, #0x0]
+mov r5, r10
+cmp r6, r0
+mov r7, #0x200
+ldreq r5, [.L_0200db4c]
+beq .L_0200dadc
+cmp r6, r9
+bne .L_0200daa4
+tst r10, #0x3
+bne .L_0200daa4
+mov r0, r7
+cmp r8, r0
+bhs .L_0200daac
+.L_0200daa4:
+ldr r5, [.L_0200db4c]
+str r6, [sp, #0x0]
+.L_0200daac:
+mov r0, r6
+bl func_0200d894
+mov r3, #0x0
+.L_0200dab8:
+ldr r2, [r4, #0x0]
+tst r2, #0x800000
+beq .L_0200dad4
+ldr r1, [r11, #0x0]
+cmp r3, #0x80
+strlo r1, [r5, r3, lsl #0x2]
+addlo r3, r3, #0x1
+.L_0200dad4:
+tst r2, #0x80000000
+bne .L_0200dab8
+.L_0200dadc:
+ldr r0, [.L_0200db4c]
+cmp r5, r0
+bne .L_0200db0c
+sub r3, r9, r6
+rsb r7, r3, #0x200
+ldr r0, [.L_0200db4c]
+cmp r8, r7
+movls r7, r8
+mov r1, r10
+mov r2, r7
+add r0, r0, r3
+bl Memcpy
+.L_0200db0c:
+add r10, r10, r7
+add r9, r9, r7
+sub r8, r8, r7
+.L_0200db18:
+cmp r8, #0x0
+bne .L_0200da64
+bl func_0200d8c8
+bl func_0200e0b4
+ldr r2, [.L_0200db40]
+ldr r1, [sp, #0x0]
+ldr r0, [sp, #0x4]
+str r1, [r2, #0x0]
+add sp, sp, #0x8
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0200db40: .word data_020e22b4
+.L_0200db44: .word 0x4100010
+.L_0200db48: .word 0x40001a4
+.L_0200db4c: .word 0x20f00e0

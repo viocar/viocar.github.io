@@ -1,0 +1,14 @@
+.arm
+func_0209f34c:
+mov r12, #0x0
+ldr r2, [.L_0209f374]
+mov r3, r12
+mov r0, #0x18
+.L_0209f35c:
+mla r1, r12, r0, r2
+add r12, r12, #0x1
+strb r3, [r1, #0x2]
+cmp r12, #0x80
+blt .L_0209f35c
+bx lr
+.L_0209f374: .word 0x212bf1c

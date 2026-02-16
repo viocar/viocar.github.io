@@ -1,0 +1,36 @@
+.arm
+func_02002cb8:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r7, r1
+ldrh r1, [r7, #0x4]
+mov r6, r2
+mov r5, r3
+cmp r0, r1
+mvnne r0, #0x1
+ldmneia sp!, {r3, r4, r5, r6, r7, pc}
+cmp r5, #0x0
+beq .L_02002ce8
+bl DisableFastIRQ
+b .L_02002cec
+.L_02002ce8:
+bl DisableIRQ
+.L_02002cec:
+mov r4, r0
+mov r0, #0x0
+strh r0, [r7, #0x4]
+cmp r6, #0x0
+beq .L_02002d04
+blx r6
+.L_02002d04:
+mov r0, #0x0
+str r0, [r7, #0x0]
+cmp r5, #0x0
+mov r0, r4
+beq .L_02002d20
+bl EnableFastIRQ
+b .L_02002d24
+.L_02002d20:
+bl EnableIRQ
+.L_02002d24:
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, r6, r7, pc}

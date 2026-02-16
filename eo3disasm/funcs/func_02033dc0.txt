@@ -1,0 +1,19 @@
+.arm
+func_02033dc0:
+ldr r0, [.L_02033dfc]
+ldr r1, [.L_02033e00]
+ldrh r2, [r0, #0x0]
+mov r0, #0x1
+strh r0, [r1, #0x0]
+mov r1, #0x4000000
+cmp r2, #0x0
+ldrne r0, [r1, #0x0]
+bicne r0, r0, #0x30000
+orrne r0, r0, r2, lsl #0x10
+strne r0, [r1, #0x0]
+ldreq r0, [r1, #0x0]
+orreq r0, r0, #0x10000
+streq r0, [r1, #0x0]
+bx lr
+.L_02033dfc: .word 0x210ea6c
+.L_02033e00: .word data_020e5a48

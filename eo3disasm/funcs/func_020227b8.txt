@@ -1,0 +1,104 @@
+.arm
+func_020227b8:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+ldr r1, [.L_02022924]
+mov r8, r0
+ldr r1, [r1, #0x0]
+ldr r0, [r1, #0x0]
+ldr r3, [r1, #0xd4]
+ldrb r2, [r0, #0x1]
+cmp r3, #0x0
+beq .L_02022818
+beq .L_02022804
+ldrb r0, [r3, #0x1]
+cmp r2, r0
+bhs .L_02022804
+ldrh r1, [r3, #0x6]
+ldrh r0, [r3, r1]
+add r1, r3, r1
+add r1, r1, #0x4
+mla r1, r0, r2, r1
+b .L_02022808
+.L_02022804:
+mov r1, #0x0
+.L_02022808:
+cmp r1, #0x0
+ldrne r0, [r1, #0x0]
+addne r5, r3, r0
+bne .L_0202281c
+.L_02022818:
+mov r5, #0x0
+.L_0202281c:
+ldrh r0, [r5, #0x0]
+add r1, r5, #0x4
+tst r0, #0x1
+addeq r1, r1, #0xc
+tst r0, #0x2
+bne .L_02022914
+tst r0, #0x8
+beq .L_020228c8
+and r2, r0, #0xf0
+add r0, r8, #0x28
+mov r4, r2, asr #0x4
+ldrsh r7, [r1, #0x0]
+ldrsh r6, [r1, #0x2]
+blx func_0200629c
+ldrh r0, [r5, #0x0]
+ldr r1, [.L_02022928]
+mov r3, #0x1000
+tst r0, #0x100
+ldr r0, [.L_0202292c]
+ldrb r1, [r1, r4, lsl #0x2]
+ldrb r0, [r0, r4, lsl #0x2]
+rsbne r3, r3, #0x0
+add r2, r8, r4, lsl #0x2
+str r3, [r2, #0x28]
+add r1, r8, r1, lsl #0x2
+str r7, [r1, #0x28]
+add r0, r8, r0, lsl #0x2
+str r6, [r0, #0x28]
+ldrh r0, [r5, #0x0]
+tst r0, #0x200
+ldr r0, [.L_02022930]
+rsbne r6, r6, #0x0
+ldrb r0, [r0, r4, lsl #0x2]
+add r0, r8, r0, lsl #0x2
+str r6, [r0, #0x28]
+ldrh r0, [r5, #0x0]
+tst r0, #0x400
+ldr r0, [.L_02022934]
+rsbne r7, r7, #0x0
+ldrb r0, [r0, r4, lsl #0x2]
+add r0, r8, r0, lsl #0x2
+str r7, [r0, #0x28]
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020228c8:
+ldrsh r0, [r5, #0x2]
+str r0, [r8, #0x28]
+ldrsh r0, [r1, #0x0]
+str r0, [r8, #0x2c]
+ldrsh r0, [r1, #0x2]
+str r0, [r8, #0x30]
+ldrsh r0, [r1, #0x4]
+str r0, [r8, #0x34]
+ldrsh r0, [r1, #0x6]
+str r0, [r8, #0x38]
+ldrsh r0, [r1, #0x8]
+str r0, [r8, #0x3c]
+ldrsh r0, [r1, #0xa]
+str r0, [r8, #0x40]
+ldrsh r0, [r1, #0xc]
+str r0, [r8, #0x44]
+ldrsh r0, [r1, #0xe]
+str r0, [r8, #0x48]
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_02022914:
+ldr r0, [r8, #0x0]
+orr r0, r0, #0x2
+str r0, [r8, #0x0]
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_02022924: .word 0x20f98d4
+.L_02022928: .word data_020de868
+.L_0202292c: .word data_020de869
+.L_02022930: .word data_020de86a
+.L_02022934: .word data_020de86b

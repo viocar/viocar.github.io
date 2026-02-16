@@ -1,0 +1,11 @@
+.arm
+func_020c55e0:
+stmdb sp!, {r3, lr}
+add r1, r0, #0x288
+mov r0, #0xc
+bl func_0204c7bc
+mov r0, #0x4b
+bl func_0204c77c
+mov r0, #0x1
+bl func_0204c48c
+ldmia sp!, {r3, pc}

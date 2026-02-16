@@ -1,0 +1,23 @@
+.arm
+func_0201e390:
+stmdb sp!, {r3, r4, r5, lr}
+mov r5, r0
+mov r4, r1
+mov r1, r5
+mov r0, #0x0
+mov r2, #0x54
+bl Memset32Aligned
+ldr r0, [.L_0201e3d8]
+ldr r1, [.L_0201e3dc]
+ldr r2, [r0, #0x0]
+ldr r0, [.L_0201e3e0]
+str r2, [r5, #0xc]
+ldr r1, [r1, #0x0]
+str r1, [r5, #0x14]
+ldr r0, [r0, #0x0]
+str r0, [r5, #0x1c]
+str r4, [r5, #0x4]
+ldmia sp!, {r3, r4, r5, pc}
+.L_0201e3d8: .word data_020e5724
+.L_0201e3dc: .word data_020e5720
+.L_0201e3e0: .word data_020e571c

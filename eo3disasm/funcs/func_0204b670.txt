@@ -1,0 +1,11 @@
+.arm
+func_0204b670:
+ldrsh r1, [r0, #0x78]
+sub r1, r1, #0x1
+strh r1, [r0, #0x78]
+ldrsh r1, [r0, #0x78]
+cmp r1, #0x0
+movlt r1, #0x9
+strlth r1, [r0, #0x78]
+mov r0, #0x1
+bx lr

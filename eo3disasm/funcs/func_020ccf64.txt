@@ -1,0 +1,6 @@
+.arm
+func_020ccf64:
+ldr r0, [.L_020ccf70]
+ldr r0, [r0, #0x0]
+bx lr
+.L_020ccf70: .word 0x213670c

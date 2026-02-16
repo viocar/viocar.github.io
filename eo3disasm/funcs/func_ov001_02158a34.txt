@@ -1,0 +1,26 @@
+.arm
+func_ov001_02158a34:
+mvn r1, #0x0
+tst r0, #0x4
+movne r1, #0x3
+bne .L_1_02158a88
+tst r0, #0x8
+movne r1, #0x4
+bne .L_1_02158a88
+tst r0, #0x10
+movne r1, #0x1
+bne .L_1_02158a88
+tst r0, #0x20
+movne r1, #0x2
+bne .L_1_02158a88
+tst r0, #0x40
+movne r1, #0x6
+bne .L_1_02158a88
+tst r0, #0x80
+movne r1, #0x0
+bne .L_1_02158a88
+tst r0, #0x100
+movne r1, #0x5
+.L_1_02158a88:
+mov r0, r1
+bx lr

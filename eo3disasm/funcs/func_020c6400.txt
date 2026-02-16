@@ -1,0 +1,134 @@
+.arm
+func_020c6400:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x8
+mov r5, #0x1
+mov r4, r0
+mov r0, r5
+mov r11, r1
+bl func_0209ef30
+ldr r0, [r4, #0x40]
+cmp r0, #0x0
+addeq sp, sp, #0x8
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+mov r0, r4
+bl func_0208c1c8
+mov r9, r0
+sub r0, r5, #0x2
+cmp r9, r0
+addeq sp, sp, #0x8
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+ldr r0, [r4, #0x40]
+mov r8, #0x0
+cmp r0, #0x0
+ble .L_020c6510
+mvn r5, #0x0
+.L_020c645c:
+mov r0, r4
+mov r1, r8
+bl func_0208c2c8
+mov r7, r0
+mov r0, r4
+mov r1, r7
+bl func_0208c208
+cmp r0, #0x0
+bne .L_020c6500
+mov r0, r4
+mov r1, r8
+bl func_0208c2ec
+mov r6, r0
+ldr r2, [r4, #0x50]
+mov r1, #0x3c
+mla r10, r9, r1, r2
+mov r0, r4
+mov r1, r6
+mov r2, r7
+mov r3, r11
+bl func_020c6cec
+cmp r0, r5
+beq .L_020c6500
+mov r1, r9, lsl #0x18
+mov r1, r1, asr #0x18
+str r1, [sp, #0x0]
+str r0, [sp, #0x4]
+mov r0, r4
+mov r1, r10
+mov r2, r6
+mov r3, r7
+bl func_0208f1a8
+cmp r11, #0x0
+moveq r0, #0x1
+streqb r0, [r10, #0x1a]
+mov r0, r4
+bl func_0208c1c8
+mov r9, r0
+cmp r9, r5
+addeq sp, sp, #0x8
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_020c6500:
+ldr r0, [r4, #0x40]
+add r8, r8, #0x1
+cmp r8, r0
+blt .L_020c645c
+.L_020c6510:
+ldr r0, [r4, #0x18]
+mov r6, #0x0
+cmp r0, #0x0
+ble .L_020c65d8
+mov r5, r6
+.L_020c6524:
+cmp r11, #0x0
+bne .L_020c653c
+ldr r0, [r4, #0x24]
+ldrb r0, [r0, r6]
+cmp r0, #0x0
+beq .L_020c65c8
+.L_020c653c:
+ldr r1, [r4, #0x1c]
+mov r0, #0x1
+add r1, r1, r6, lsl #0x3
+ldrsh r1, [r1, #0x2]
+bl func_0202e6b4
+ldr r1, [r4, #0x4]
+mov r8, r0
+mov r9, #0x0
+cmp r1, #0x0
+ble .L_020c65c8
+.L_020c6564:
+mov r0, r4
+mov r1, r9
+bl func_0208ceec
+movs r10, r0
+beq .L_020c65b8
+ldr r1, [r10, #0x0]
+mov r0, r4
+ldrsh r1, [r1, #0xec]
+bl func_020c6274
+ldrsh r0, [r0, #0x0]
+cmp r0, r6
+bne .L_020c65b8
+mov r7, r5
+cmp r8, #0x0
+ble .L_020c65b8
+.L_020c65a0:
+mov r0, r4
+mov r1, r10
+bl func_0208f58c
+add r7, r7, #0x1
+cmp r7, r8
+blt .L_020c65a0
+.L_020c65b8:
+ldr r0, [r4, #0x4]
+add r9, r9, #0x1
+cmp r9, r0
+blt .L_020c6564
+.L_020c65c8:
+ldr r0, [r4, #0x18]
+add r6, r6, #0x1
+cmp r6, r0
+blt .L_020c6524
+.L_020c65d8:
+mov r0, r4
+bl func_020c6b08
+add sp, sp, #0x8
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}

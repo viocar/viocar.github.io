@@ -1,0 +1,11 @@
+.arm
+func_02035348:
+ldr r2, [.L_02035364]
+mov r1, r0, lsl #0x10
+ldrh r3, [r2, #0x0]
+ldr r12, [.L_02035368]
+orr r1, r3, r1, lsr #0x10
+strh r1, [r2, #0x0]
+bx r12
+.L_02035364: .word 0x210ea90
+.L_02035368: .word func_02034e58

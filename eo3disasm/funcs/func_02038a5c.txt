@@ -1,0 +1,64 @@
+.arm
+func_02038a5c:
+stmdb sp!, {r4, r5, r6, lr}
+ldr r6, [.L_02038b24]
+mov r5, r0
+ldr r0, [r6, #0x20]
+mov r4, r1
+cmp r0, #0x1
+beq .L_02038a7c
+bl HandleError
+.L_02038a7c:
+mov r1, #0x440
+str r1, [r6, #0x24]
+mov r0, #0x80
+str r0, [r6, #0x30]
+ldr r2, [r6, #0x2c]
+cmp r2, #0x0
+beq .L_02038aa0
+ldr r0, [.L_02038b28]
+blx r2
+.L_02038aa0:
+ldr r2, [r6, #0x2c]
+cmp r2, #0x0
+beq .L_02038ab8
+ldr r1, [r6, #0x30]
+ldr r0, [.L_02038b2c]
+blx r2
+.L_02038ab8:
+mov r0, #0x3
+str r5, [r6, #0x18]
+bl func_02037060
+cmp r5, #0x1
+cmpne r5, #0x3
+beq .L_02038ad8
+cmp r5, #0x5
+bne .L_02038b04
+.L_02038ad8:
+ldr r1, [.L_02038b30]
+mov r0, r4
+mov r2, #0xc0
+bl Memcpy
+ldr r0, [r6, #0x44]
+cmp r0, #0x0
+beq .L_02038afc
+bl func_02037d34
+ldmia sp!, {r4, r5, r6, pc}
+.L_02038afc:
+bl func_02037df0
+ldmia sp!, {r4, r5, r6, pc}
+.L_02038b04:
+ldr r2, [r6, #0x2c]
+cmp r2, #0x0
+beq .L_02038b1c
+ldr r0, [.L_02038b34]
+mov r1, r5
+blx r2
+.L_02038b1c:
+mov r0, #0x0
+ldmia sp!, {r4, r5, r6, pc}
+.L_02038b24: .word 0x2111620
+.L_02038b28: .word data_020e6464
+.L_02038b2c: .word data_020e647c
+.L_02038b30: .word 0x2111760
+.L_02038b34: .word data_020e6494

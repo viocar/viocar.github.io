@@ -1,0 +1,39 @@
+.arm
+func_0202e5f0:
+stmdb sp!, {r3, lr}
+ldr r12, [r0, #0x0]
+ldr lr, [sp, #0x8]
+add r1, r12, r1
+str r1, [r0, #0x0]
+cmp r1, r2
+bge .L_0202e638
+cmp lr, #0x1
+subeq r1, r3, #0x1
+streq r1, [r0, #0x0]
+beq .L_0202e630
+cmp lr, #0x2
+subeq r1, r2, r1
+subeq r1, r3, r1
+streq r1, [r0, #0x0]
+strne r2, [r0, #0x0]
+.L_0202e630:
+mov r0, #0x1
+ldmia sp!, {r3, pc}
+.L_0202e638:
+cmp r1, r3
+blt .L_0202e66c
+cmp lr, #0x1
+streq r2, [r0, #0x0]
+beq .L_0202e664
+cmp lr, #0x2
+subeq r1, r1, r3
+addeq r1, r2, r1
+streq r1, [r0, #0x0]
+subne r1, r3, #0x1
+strne r1, [r0, #0x0]
+.L_0202e664:
+mov r0, #0x1
+ldmia sp!, {r3, pc}
+.L_0202e66c:
+mov r0, #0x0
+ldmia sp!, {r3, pc}

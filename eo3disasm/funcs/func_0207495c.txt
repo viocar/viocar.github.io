@@ -1,0 +1,12 @@
+.arm
+func_0207495c:
+sub r0, r1, r0
+cmp r0, #0x0
+ldrgt r0, [.L_02074978]
+bxgt lr
+ldrlt r0, [.L_0207497c]
+ldrge r0, [.L_02074980]
+bx lr
+.L_02074978: .word 0xf0f068ff
+.L_0207497c: .word 0x20b8f0ff
+.L_02074980: .word 0x78e0f8ff

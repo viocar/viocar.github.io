@@ -1,0 +1,5 @@
+.arm
+ErrorHandlerThunk:
+ldr r12, [.L_0200eb68]
+bx r12
+.L_0200eb68: .word HandleError

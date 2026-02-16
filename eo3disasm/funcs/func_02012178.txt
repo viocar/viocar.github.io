@@ -1,0 +1,21 @@
+.arm
+func_02012178:
+cmp r2, #0x0
+beq .L_020121b0
+.L_02012180:
+ldrb r12, [r0], #0x1
+ldrb r3, [r1], #0x1
+cmp r12, r3
+beq .L_020121a8
+ldrb r2, [r0, #-0x1]
+ldrb r0, [r1, #-0x1]
+cmp r2, r0
+mvnlo r0, #0x0
+movhs r0, #0x1
+bx lr
+.L_020121a8:
+subs r2, r2, #0x1
+bne .L_02012180
+.L_020121b0:
+mov r0, #0x0
+bx lr

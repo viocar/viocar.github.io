@@ -1,0 +1,9 @@
+.arm
+func_0209dad0:
+cmp r1, #0x4
+ldrlo r2, [.L_0209dae8]
+movhs r0, #0x0
+addlo r0, r2, r0, lsl #0x5
+ldrlo r0, [r0, r1, lsl #0x3]
+bx lr
+.L_0209dae8: .word data_020e9574

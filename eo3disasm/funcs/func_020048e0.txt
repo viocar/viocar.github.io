@@ -1,0 +1,33 @@
+.arm
+func_020048e0:
+stmdb sp!, {r3, lr}
+ldr r0, [.L_02004944]
+ldr r0, [r0, #0xc]
+cmp r0, #0x0
+ldmeqia sp!, {r3, pc}
+mrs r2, cpsr
+mov r0, sp
+ldr r1, [.L_02004948]
+msr cpsr_fsxc, r1
+mov r1, sp
+mov sp, r0
+stmdb sp!, {r1, r2}
+bl EnableMPU
+ldr r0, [.L_0200494c]
+ldr r1, [.L_02004950]
+ldr r1, [r1, #0x0]
+ldr r12, [.L_02004954]
+ldr r12, [r12, #0x0]
+ldr lr, [.L_02004958]
+bx r12
+bl DisableMPU
+ldmia sp!, {r1, r2}
+mov sp, r1
+msr cpsr_fsxc, r2
+ldmia sp!, {r3, pc}
+.L_02004944: .word 0x20ed928
+.L_02004948: .word 0x9f
+.L_0200494c: .word 0x20ed958
+.L_02004950: .word 0x20ed92c
+.L_02004954: .word 0x20ed934
+.L_02004958: .word 0x2004930

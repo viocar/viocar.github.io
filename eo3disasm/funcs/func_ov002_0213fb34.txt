@@ -1,0 +1,22 @@
+.arm
+func_ov002_0213fb34:
+cmp r0, #0x0
+beq .L_2_0213fb50
+cmp r0, #0x1
+beq .L_2_0213fb58
+cmp r0, #0x2
+beq .L_2_0213fb60
+b .L_2_0213fb68
+.L_2_0213fb50:
+mov r0, #0x0
+bx lr
+.L_2_0213fb58:
+ldr r0, [.L_2_0213fb70]
+bx lr
+.L_2_0213fb60:
+mov r0, #0xb4
+bx lr
+.L_2_0213fb68:
+mov r0, #0x5a
+bx lr
+.L_2_0213fb70: .word 0x10e

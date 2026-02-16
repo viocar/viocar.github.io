@@ -1,0 +1,43 @@
+.arm
+func_0200b44c:
+stmdb sp!, {r3, lr}
+and r0, r1, #0x7f00
+mov r3, r0, lsl #0x8
+and r0, r1, #0xff
+cmp r2, #0x0
+mov r1, r3, lsr #0x10
+beq .L_0200b480
+cmp r1, #0x61
+cmpne r1, #0x62
+moveq r0, #0x1
+movne r0, #0x2
+bl func_0200b354
+ldmia sp!, {r3, pc}
+.L_0200b480:
+sub r1, r1, #0x60
+cmp r1, #0x3
+addls pc, pc, r1, lsl #0x2
+b .L_0200b4c8
+.L_0200b490: ; jump table
+b .L_0200b4b8 ; case 0
+b .L_0200b4a0 ; case 1
+b .L_0200b4c8 ; case 2
+b .L_0200b4bc ; case 3
+.L_0200b4a0:
+ldr r1, [.L_0200b4d0]
+ldr r1, [r1, #0x38]
+cmp r1, #0x0
+strneh r0, [r1, #0x0]
+.L_0200b4b0:
+mov r0, #0x0
+b .L_0200b4c8
+.L_0200b4b8:
+b .L_0200b4b0
+.L_0200b4bc:
+ldr r1, [.L_0200b4d0]
+mov r2, #0x1
+str r2, [r1, #0xc]
+.L_0200b4c8:
+bl func_0200b354
+ldmia sp!, {r3, pc}
+.L_0200b4d0: .word 0x20ef8fc

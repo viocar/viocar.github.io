@@ -1,0 +1,12 @@
+.arm
+func_0207b848:
+ldr r1, [r0, #0x5c]
+ldr r0, [r0, #0x4c]
+cmp r1, #0x1
+movne r0, #0x0
+bxne lr
+ldr r0, [r0, #0x1c]
+cmp r0, #0x0
+movge r0, #0x1
+movlt r0, #0x0
+bx lr

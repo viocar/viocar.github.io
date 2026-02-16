@@ -1,0 +1,15 @@
+.arm
+func_020b3864:
+ldr r1, [.L_020b3894]
+ldr r1, [r1, #0x0]
+cmp r0, r1
+movlt r1, #0x1
+movge r1, #0x0
+cmp r1, #0x0
+ldrne r2, [.L_020b3894]
+moveq r0, #0x0
+ldrne r2, [r2, #0x4]
+movne r1, #0xa
+mlane r0, r1, r0, r2
+bx lr
+.L_020b3894: .word 0x2135e48

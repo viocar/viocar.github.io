@@ -1,0 +1,62 @@
+.arm
+func_02074d74:
+add r0, r0, #0x1
+cmp r0, #0xc
+addls pc, pc, r0, lsl #0x2
+b .L_02074e20
+.L_02074d84: ; jump table
+b .L_02074db8 ; case 0
+b .L_02074de0 ; case 1
+b .L_02074dc0 ; case 2
+b .L_02074dc8 ; case 3
+b .L_02074dd0 ; case 4
+b .L_02074dd8 ; case 5
+b .L_02074df8 ; case 6
+b .L_02074e00 ; case 7
+b .L_02074de8 ; case 8
+b .L_02074df0 ; case 9
+b .L_02074e08 ; case 10
+b .L_02074e10 ; case 11
+b .L_02074e18 ; case 12
+.L_02074db8:
+mov r0, #0x0
+bx lr
+.L_02074dc0:
+mov r0, #0x2
+bx lr
+.L_02074dc8:
+mov r0, #0x4
+bx lr
+.L_02074dd0:
+mov r0, #0x8
+bx lr
+.L_02074dd8:
+mov r0, #0x10
+bx lr
+.L_02074de0:
+mov r0, #0x1
+bx lr
+.L_02074de8:
+mov r0, #0x80
+bx lr
+.L_02074df0:
+mov r0, #0x100
+bx lr
+.L_02074df8:
+mov r0, #0x20
+bx lr
+.L_02074e00:
+mov r0, #0x40
+bx lr
+.L_02074e08:
+mov r0, #0x200
+bx lr
+.L_02074e10:
+mov r0, #0x400
+bx lr
+.L_02074e18:
+mov r0, #0x800
+bx lr
+.L_02074e20:
+mov r0, #0x0
+bx lr

@@ -1,0 +1,40 @@
+.arm
+func_02031e8c:
+stmdb sp!, {r3, lr}
+ldr r1, [.L_02031f08]
+ldr r3, [.L_02031f0c]
+ldr r12, [r1, #0x0]
+mov lr, #0x0
+str lr, [r3, r12, lsl #0x2]
+ldr r2, [.L_02031f10]
+ldr r12, [r1, #0x0]
+ldr r3, [.L_02031f14]
+str lr, [r2, r12, lsl #0x2]
+ldr r12, [r1, #0x0]
+ldr r2, [.L_02031f18]
+str r0, [r3, r12, lsl #0x2]
+ldr r3, [r1, #0x0]
+sub r12, lr, #0x1
+str r12, [r2, r3, lsl #0x2]
+ldr lr, [r1, #0x8]
+ldr r12, [r1, #0x0]
+ldr r3, [.L_02031f1c]
+ldr r2, [.L_02031f20]
+str lr, [r3, r12, lsl #0x2]
+ldr r3, [r1, #0x0]
+mov r12, #0x3
+str r12, [r2, r3, lsl #0x2]
+ldr r2, [r1, #0x0]
+cmp r0, #0x0
+add r2, r2, #0x1
+str r2, [r1, #0x0]
+ldmeqia sp!, {r3, pc}
+bl func_020320a0
+ldmia sp!, {r3, pc}
+.L_02031f08: .word 0x2108bf4
+.L_02031f0c: .word 0x2105bf4
+.L_02031f10: .word 0x21063f4
+.L_02031f14: .word 0x2106bf4
+.L_02031f18: .word 0x21073f4
+.L_02031f1c: .word 0x2107bf4
+.L_02031f20: .word 0x21083f4

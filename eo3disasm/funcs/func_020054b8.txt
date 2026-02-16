@@ -1,0 +1,4 @@
+.arm
+func_020054b8:
+clz r0, r0
+bx lr

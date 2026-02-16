@@ -1,0 +1,35 @@
+.arm
+func_0200a110:
+cmp r3, #0x0
+ldr r1, [r1, #0x4]
+ldr r12, [r2, #0x0]
+beq .L_0200a134
+cmp r3, #0x1
+beq .L_0200a13c
+cmp r3, #0x2
+beq .L_0200a144
+b .L_0200a13c
+.L_0200a134:
+ldr r0, [r1, #0x4]
+b .L_0200a148
+.L_0200a13c:
+ldr r0, [r1, #0xc]
+b .L_0200a148
+.L_0200a144:
+ldr r0, [r1, #0x8]
+.L_0200a148:
+add r12, r12, r0
+ldr r0, [r1, #0x4]
+cmp r12, r0
+blt .L_0200a164
+ldr r0, [r1, #0x8]
+cmp r12, r0
+ble .L_0200a16c
+.L_0200a164:
+mov r0, #0x6
+bx lr
+.L_0200a16c:
+str r12, [r1, #0xc]
+str r12, [r2, #0x0]
+mov r0, #0x0
+bx lr

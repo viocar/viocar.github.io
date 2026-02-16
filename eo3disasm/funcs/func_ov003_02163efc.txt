@@ -1,0 +1,6 @@
+.arm
+func_ov003_02163efc:
+ldr r1, [.L_3_02163f08]
+add r0, r1, r0, lsl #0x3
+bx lr
+.L_3_02163f08: .word data_ov003_02166a00

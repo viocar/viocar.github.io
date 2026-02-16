@@ -1,0 +1,129 @@
+.arm
+func_02010e50:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x14
+ldr r0, [.L_0201100c]
+ldr r1, [r0, #0x0]
+cmp r1, #0x0
+addne sp, sp, #0x14
+ldmneia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+ldr r5, [.L_02011010]
+mov r7, #0x1
+ldrh r1, [r5, #0x0]
+str r7, [r0, #0x0]
+tst r1, #0x1
+addeq sp, sp, #0x14
+ldmeqia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+mov r0, #0x40000
+bl func_02002a34
+sub r1, r5, #0xf8
+ldrh r9, [r1, #0x0]
+ldr r4, [.L_02011014]
+mov r8, r0
+strh r7, [r1, #0x0]
+add r11, sp, #0xc
+ldrh r0, [r4, #0x2]
+mov r1, r11
+bl func_02010c40
+sub r6, r5, #0xfc
+ldrh r0, [r6, #0x0]
+and r0, r0, #0x8000
+mov r10, r0, asr #0xf
+add r0, sp, #0x4
+bl func_02010bc4
+ldrh r0, [r6, #0x0]
+ldr r5, [.L_02011018]
+mov r1, #0x40
+bic r0, r0, #0x8000
+strh r0, [r6, #0x0]
+add r0, r5, #0x80
+bl InvalidateDataCacheLine
+ldr r1, [.L_0201101c]
+add r2, r5, #0x80
+mov r3, #0x40
+str r7, [sp, #0x0]
+mov r0, r7
+bl func_020057f4
+ldrh r1, [r6, #0x0]
+add r0, sp, #0x4
+bic r1, r1, #0x8000
+orr r1, r1, r10, lsl #0xf
+strh r1, [r6, #0x0]
+bl func_02010c0c
+ldrh r0, [r4, #0x2]
+mov r1, r11
+bl func_02010c9c
+ldr r1, [.L_02011020]
+ldrb r0, [r1, #0x0]
+cmp r0, #0x0
+bne .L_02010f40
+ldrb r0, [r1, #-0x1]
+cmp r0, #0x0
+bne .L_02010fa4
+.L_02010f40:
+ldr r3, [.L_02011018]
+ldr r4, [.L_02011024]
+ldrh r0, [r3, #0xbe]
+mov r2, #0x0
+strh r0, [r4, #0x0]
+b .L_02010f6c
+.L_02010f58:
+add r0, r3, r2
+ldrb r1, [r0, #0xb5]
+add r0, r4, r2
+add r2, r2, #0x1
+strb r1, [r0, #0x2]
+.L_02010f6c:
+cmp r2, #0x3
+blt .L_02010f58
+ldrh r0, [r3, #0xb0]
+strh r0, [r4, #0x6]
+ldr r0, [r3, #0xac]
+str r0, [r4, #0x8]
+bl func_02010ac0
+cmp r0, #0x0
+mov r2, #0x1
+ldr r1, [.L_02011020]
+moveq r2, #0x0
+mov r0, #0x1
+strb r2, [r1, #0x0]
+strb r0, [r1, #-0x1]
+.L_02010fa4:
+ldr r0, [.L_02011028]
+ldr r1, [.L_0201102c]
+mov r2, #0x9c
+bl func_02005f9c
+bl DrainWriteBufferAndUnknownCacheOp
+ldr r0, [.L_02011018]
+add r0, r0, #0xfe000000
+mov r0, r0, lsr #0x5
+mov r0, r0, lsl #0x6
+orr r0, r0, #0x1
+bl func_02010cc0
+mov r5, #0x1
+ldr r4, [.L_02011014]
+b .L_02010fe4
+.L_02010fdc:
+mov r0, r5
+blx WaitByLoop
+.L_02010fe4:
+ldrh r0, [r4, #0x0]
+cmp r0, #0x1
+bne .L_02010fdc
+ldr r2, [.L_02011030]
+mov r0, r8
+ldrh r1, [r2, #0x0]
+strh r9, [r2, #0x0]
+bl func_02002a34
+add sp, sp, #0x14
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0201100c: .word 0x20f0e40
+.L_02011010: .word 0x4000300
+.L_02011014: .word 0x20f0e3c
+.L_02011018: .word 0x20f0e60
+.L_0201101c: .word 0x8000080
+.L_02011020: .word 0x2ffff9b
+.L_02011024: .word 0x2fffc30
+.L_02011028: .word 0xffff0020
+.L_0201102c: .word 0x20f0e64
+.L_02011030: .word 0x4000208

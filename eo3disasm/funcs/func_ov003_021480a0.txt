@@ -1,0 +1,76 @@
+.arm
+func_ov003_021480a0:
+stmdb sp!, {r4, r5, r6, lr}
+mov r6, r0
+bl func_ov003_0214761c
+mov r4, r0
+cmp r6, #0x0
+ble .L_3_0214815c
+and r0, r6, #0xff
+bl func_ov003_02147acc
+mov r6, r0
+bl func_ov003_02147afc
+cmp r0, #0x0
+beq .L_3_02148104
+mov r0, r6
+bl func_020775e4
+tst r0, #0x4
+bne .L_3_021480ec
+mov r0, r6
+mov r1, #0x1
+bl func_02077584
+.L_3_021480ec:
+mov r0, r6
+mov r1, #0x1
+bl func_02077604
+mov r0, r6
+mov r1, #0x2
+bl func_02077664
+.L_3_02148104:
+ldr r0, [r4, #0x24]
+cmp r0, #0x0
+blt .L_3_02148154
+and r0, r0, #0xff
+bl func_ov003_02147afc
+cmp r0, #0x0
+beq .L_3_02148154
+ldr r0, [r4, #0x24]
+mov r5, #0x1
+mov r1, r5
+and r0, r0, #0xff
+bl func_02077630
+ldr r0, [r4, #0x24]
+mov r1, r5
+and r0, r0, #0xff
+bl func_020775b0
+ldr r0, [r4, #0x24]
+mov r1, #0x2
+and r0, r0, #0xff
+bl func_020776a8
+.L_3_02148154:
+str r6, [r4, #0x24]
+ldmia sp!, {r4, r5, r6, pc}
+.L_3_0214815c:
+ldr r0, [r4, #0x24]
+cmp r0, #0x0
+ldmltia sp!, {r4, r5, r6, pc}
+and r0, r0, #0xff
+bl func_ov003_02147afc
+cmp r0, #0x0
+beq .L_3_021481ac
+ldr r0, [r4, #0x24]
+mov r5, #0x1
+mov r1, r5
+and r0, r0, #0xff
+bl func_02077630
+ldr r0, [r4, #0x24]
+mov r1, r5
+and r0, r0, #0xff
+bl func_020775b0
+ldr r0, [r4, #0x24]
+mov r1, #0x2
+and r0, r0, #0xff
+bl func_020776a8
+.L_3_021481ac:
+str r6, [r4, #0x24]
+ldmia sp!, {r4, r5, r6, pc}

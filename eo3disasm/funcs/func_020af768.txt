@@ -1,0 +1,41 @@
+.arm
+func_020af768:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+mov r10, r0
+mov r9, r1
+bl func_0201bbb0
+mov r6, r0
+mov r0, r10
+mov r8, #0x0
+bl func_020af4ec
+cmp r0, #0x0
+subeq r0, r8, #0x1
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+add r0, r6, #0x2c
+mov r7, r8
+add r5, r0, #0x2400
+mov r11, r8
+mov r4, #0xc
+.L_020af7a8:
+mul r0, r7, r4
+add r1, r6, r0
+add r1, r1, #0x2400
+ldrsh r1, [r1, #0x2c]
+cmp r10, r1
+bne .L_020af7dc
+mov r1, r11
+mov r2, #0xc
+add r0, r5, r0
+bl Memset
+add r8, r8, #0x1
+cmp r8, r9
+beq .L_020af7ec
+.L_020af7dc:
+add r0, r7, #0x1
+and r7, r0, #0xff
+cmp r7, #0x3c
+blo .L_020af7a8
+.L_020af7ec:
+bl func_020af5a8
+mov r0, r8
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}

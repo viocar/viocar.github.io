@@ -1,0 +1,16 @@
+.arm
+func_0204b628:
+cmp r1, #0x5
+subgt r2, r1, #0x5
+movgt r2, r2, lsl #0x10
+movgt r3, r2, asr #0x10
+movle r3, #0x0
+cmp r1, #0x5
+subgt r2, r1, #0x5
+movgt r2, r2, lsl #0x10
+movgt r2, r2, asr #0x10
+movle r2, #0x0
+strh r1, [r0, #0x4]
+strh r2, [r0, #0xa]
+strh r3, [r0, #0x8]
+bx lr

@@ -1,0 +1,58 @@
+.arm
+func_02084e60:
+cmp r0, #0x26
+bgt .L_02084ec0
+cmp r0, #0x22
+blt .L_02084e7c
+cmpne r0, #0x26
+beq .L_02084f08
+b .L_02084f10
+.L_02084e7c:
+cmp r0, #0xe
+bgt .L_02084ea4
+bge .L_02084f08
+cmp r0, #0x4
+bgt .L_02084e98
+beq .L_02084f08
+b .L_02084f10
+.L_02084e98:
+cmp r0, #0x9
+beq .L_02084f08
+b .L_02084f10
+.L_02084ea4:
+cmp r0, #0x13
+bgt .L_02084eb4
+beq .L_02084f08
+b .L_02084f10
+.L_02084eb4:
+cmp r0, #0x1b
+beq .L_02084f08
+b .L_02084f10
+.L_02084ec0:
+cmp r0, #0x52
+bgt .L_02084ee8
+bge .L_02084f08
+cmp r0, #0x48
+bgt .L_02084edc
+beq .L_02084f08
+b .L_02084f10
+.L_02084edc:
+cmp r0, #0x4d
+beq .L_02084f08
+b .L_02084f10
+.L_02084ee8:
+cmp r0, #0x5d
+bgt .L_02084f00
+bge .L_02084f08
+cmp r0, #0x57
+beq .L_02084f08
+b .L_02084f10
+.L_02084f00:
+cmp r0, #0x62
+bne .L_02084f10
+.L_02084f08:
+mov r0, #0x1
+bx lr
+.L_02084f10:
+mov r0, #0x0
+bx lr

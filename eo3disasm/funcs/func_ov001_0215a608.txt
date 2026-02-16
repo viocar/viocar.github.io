@@ -1,0 +1,31 @@
+.arm
+func_ov001_0215a608:
+stmdb sp!, {r3, lr}
+bl func_0204a6e8
+add r0, r0, #0x3700
+ldrsh r0, [r0, #0x0]
+cmp r0, #0xf
+addls pc, pc, r0, lsl #0x2
+b .L_1_0215a668
+.L_1_0215a624: ; jump table
+b .L_1_0215a668 ; case 0
+b .L_1_0215a668 ; case 1
+b .L_1_0215a668 ; case 2
+b .L_1_0215a668 ; case 3
+b .L_1_0215a668 ; case 4
+b .L_1_0215a668 ; case 5
+b .L_1_0215a668 ; case 6
+b .L_1_0215a664 ; case 7
+b .L_1_0215a668 ; case 8
+b .L_1_0215a668 ; case 9
+b .L_1_0215a668 ; case 10
+b .L_1_0215a668 ; case 11
+b .L_1_0215a668 ; case 12
+b .L_1_0215a668 ; case 13
+b .L_1_0215a668 ; case 14
+b .L_1_0215a668 ; case 15
+.L_1_0215a664:
+bl func_ov000_01ff9c0c
+.L_1_0215a668:
+mov r0, #0x0
+ldmia sp!, {r3, pc}

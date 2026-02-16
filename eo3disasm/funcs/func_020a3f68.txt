@@ -1,0 +1,131 @@
+.arm
+func_020a3f68:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+mov r9, r0
+ldrb r0, [r9, #0x3e]
+ldr r2, [r9, #0x34]
+mov r7, #0x2
+add r1, r0, #0x1
+mov r0, r2, lsl #0x10
+mov r1, r1, lsl #0x18
+mov r0, r0, asr #0x10
+mov r1, r1, asr #0x18
+bl func_0204ad9c
+ldr r2, [r9, #0x34]
+ldrsb r1, [r9, #0x3e]
+mov r2, r2, lsl #0x10
+mov r5, r0
+mov r0, r2, asr #0x10
+bl func_0204ad9c
+mov r4, r0
+ldr r0, [r9, #0x1c]
+sub r6, r5, r4
+sub r0, r0, r4
+bl func_02019688
+mov r8, r0
+mov r0, r6
+bl func_02019688
+mov r1, r0
+mov r0, r8
+bl func_0201a770
+mov r8, r0
+ldr r0, [r9, #0x14]
+cmp r0, r5
+ble .L_020a40ec
+.L_020a3fe8:
+ldrb r0, [r9, #0x3e]
+add r1, r0, r7
+cmp r1, #0x63
+ldrleb r0, [r9, #0x3d]
+cmple r1, r0
+bgt .L_020a402c
+ldr r0, [r9, #0x34]
+mov r1, r1, lsl #0x18
+mov r0, r0, lsl #0x10
+mov r0, r0, asr #0x10
+mov r1, r1, asr #0x18
+bl func_0204ad9c
+ldr r1, [r9, #0x14]
+cmp r1, r0
+addge r0, r7, #0x1
+andge r7, r0, #0xff
+bge .L_020a3fe8
+.L_020a402c:
+ldrb r0, [r9, #0x3e]
+ldr r2, [r9, #0x34]
+add r1, r0, r7
+mov r0, r2, lsl #0x10
+mov r1, r1, lsl #0x18
+mov r0, r0, asr #0x10
+mov r1, r1, asr #0x18
+bl func_0204ad9c
+ldr r1, [r9, #0x34]
+ldrb r3, [r9, #0x3e]
+sub r2, r7, #0x1
+mov r1, r1, lsl #0x10
+add r2, r3, r2
+mov r4, r0
+mov r2, r2, lsl #0x18
+mov r0, r1, asr #0x10
+mov r1, r2, asr #0x18
+bl func_0204ad9c
+ldr r1, [r9, #0x14]
+mov r6, r0
+sub r0, r1, r6
+bl func_02019688
+mov r5, r0
+sub r0, r4, r6
+bl func_02019688
+mov r1, r0
+mov r0, r5
+bl func_0201a770
+mov r5, r0
+mov r1, r8
+mov r0, #0x3f800000
+bl func_0201a4ec
+mov r4, r0
+sub r0, r7, #0x2
+bl func_02019688
+mov r1, r5
+bl func_0201a2bc
+mov r1, r0
+mov r0, r4
+bl func_0201a2bc
+mov r1, r0
+ldr r0, [.L_020a4154]
+bl func_0201a0dc
+bl func_02019d10
+cmp r0, #0xf0
+movgt r0, #0xf0
+bgt .L_020a4138
+b .L_020a4130
+.L_020a40ec:
+sub r0, r0, r4
+bl func_02019688
+mov r4, r0
+mov r0, r6
+bl func_02019688
+mov r1, r0
+mov r0, r4
+bl func_0201a770
+mov r1, r8
+bl func_0201a4ec
+mov r1, r0
+ldr r0, [.L_020a4154]
+bl func_0201a0dc
+bl func_02019d10
+cmp r0, #0xf0
+movgt r0, #0xf0
+bgt .L_020a4138
+.L_020a4130:
+cmp r0, #0xa
+movlt r0, #0xa
+.L_020a4138:
+ldrb r2, [r9, #0x3d]
+ldrb r1, [r9, #0x3e]
+cmp r2, r1
+movls r1, #0x1
+strlsb r2, [r9, #0x3e]
+strls r1, [r9, #0x44]
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_020a4154: .word 0x43020000

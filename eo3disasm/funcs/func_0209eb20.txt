@@ -1,0 +1,16 @@
+.arm
+func_0209eb20:
+cmp r1, #0x0
+cmpge r2, #0x0
+blt .L_0209eb38
+cmp r1, #0x23
+cmplt r2, #0x3c
+blt .L_0209eb40
+.L_0209eb38:
+mov r0, #0x0
+bx lr
+.L_0209eb40:
+mov r3, #0x23
+mla r1, r2, r3, r1
+ldrb r0, [r0, r1, lsl #0x3]
+bx lr

@@ -1,0 +1,26 @@
+.arm
+func_0202dec4:
+ldr r3, [.L_0202df1c]
+ldrh r2, [r3, #0x0]
+cmp r2, #0x0
+ldreqh r2, [r3, #0x2]
+cmpeq r2, #0x1
+bne .L_0202defc
+cmp r0, #0x0
+ldrneh r2, [r3, #0x8]
+strneh r2, [r0, #0x0]
+cmp r1, #0x0
+ldrneh r0, [r3, #0xa]
+strneh r0, [r1, #0x0]
+mov r0, #0x1
+bx lr
+.L_0202defc:
+cmp r0, #0x0
+movne r2, #0x0
+strneh r2, [r0, #0x0]
+cmp r1, #0x0
+movne r0, #0x0
+strneh r0, [r1, #0x0]
+mov r0, #0x0
+bx lr
+.L_0202df1c: .word 0x20ff5b0

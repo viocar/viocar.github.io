@@ -1,0 +1,31 @@
+.arm
+func_02004d14:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+movs r8, r0
+mov r7, r1
+mov r6, r2
+mov r5, r3
+beq .L_02004d38
+ldr r0, [r8, #0x0]
+cmp r0, #0x0
+beq .L_02004d3c
+.L_02004d38:
+bl HandleError
+.L_02004d3c:
+bl DisableIRQ
+mov r2, #0x0
+ldr r1, [sp, #0x18]
+mov r4, r0
+str r2, [r8, #0x1c]
+str r2, [r8, #0x20]
+str r5, [r8, #0x0]
+str r1, [r8, #0x4]
+bl func_02004a68
+adds r3, r7, r0
+adc r2, r6, r1
+mov r0, r8
+mov r1, r3
+bl func_02004bec
+mov r0, r4
+bl EnableIRQ
+ldmia sp!, {r4, r5, r6, r7, r8, pc}

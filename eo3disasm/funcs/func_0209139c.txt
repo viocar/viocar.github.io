@@ -1,0 +1,11 @@
+.arm
+func_0209139c:
+stmdb sp!, {r3, lr}
+cmp r0, #0x2
+ldrlo r1, [.L_020913bc]
+ldrlo r0, [r1, r0, lsl #0x3]
+ldmloia sp!, {r3, pc}
+bl HandleError
+mov r0, #0x0
+ldmia sp!, {r3, pc}
+.L_020913bc: .word data_020e873c

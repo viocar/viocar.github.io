@@ -1,0 +1,34 @@
+.arm
+func_02076d6c:
+stmdb sp!, {r4, r5, r6, lr}
+ldr r6, [.L_02076de0]
+mov r4, r0
+mov r5, #0x0
+.L_02076d7c:
+ldr r0, [r4, #0x18]
+ldr r1, [r4, #0xbc]
+mov r0, r0, lsl #0x2
+ldrh r1, [r1, r0]
+mov r0, r4
+ldr r1, [r6, r1, lsl #0x2]
+blx r1
+cmp r0, #0x0
+moveq r0, #0x0
+streq r0, [r4, #0xd0]
+moveq r0, #0x2
+ldmeqia sp!, {r4, r5, r6, pc}
+cmp r0, #0x2
+beq .L_02076dc0
+cmp r0, #0x1
+streq r5, [r4, #0xd0]
+b .L_02076d7c
+.L_02076dc0:
+ldr r1, [r4, #0xd0]
+ldr r0, [r4, #0xcc]
+add r1, r1, #0x1
+add r0, r0, #0x1
+str r1, [r4, #0xd0]
+str r0, [r4, #0xcc]
+mov r0, #0x1
+ldmia sp!, {r4, r5, r6, pc}
+.L_02076de0: .word data_020e7ff4

@@ -1,0 +1,9 @@
+.arm
+func_020359f4:
+cmp r1, #0x400
+bxeq lr
+cmp r1, #0x0
+moveq r0, #0x0
+mulne r1, r0, r1
+movne r0, r1, asr #0xa
+bx lr

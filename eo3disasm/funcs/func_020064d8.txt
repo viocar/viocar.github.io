@@ -1,0 +1,30 @@
+.arm
+func_020064d8:
+stmdb sp!, {r4}
+ldmia r0, {r2}
+mov r3, #0x0
+and r4, r2, #0xf
+mov r2, r2, lsr #0x8
+cmp r4, #0x1
+bne .L_02006514
+add r0, r0, #0x3
+sub r1, r1, #0x1
+.L_020064fc:
+ldrb r4, [r0, #0x1]!
+subs r2, r2, #0x1
+add r3, r3, r4
+strb r3, [r1, #0x1]!
+bgt .L_020064fc
+b .L_02006530
+.L_02006514:
+add r0, r0, #0x2
+sub r1, r1, #0x2
+.L_0200651c:
+.word 0xe1f040b2 // ldrh r4,[r0,#0x2]! - ARMIPS bug
+subs r2, r2, #0x2
+add r3, r3, r4
+strh r3, [r1, #0x2]!
+bgt .L_0200651c
+.L_02006530:
+ldmia sp!, {r4}
+bx lr

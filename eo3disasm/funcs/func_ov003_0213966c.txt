@@ -1,0 +1,16 @@
+.arm
+func_ov003_0213966c:
+stmdb sp!, {r3, r4, r5, lr}
+ldr r4, [.L_3_021396a0]
+ldr r0, [r4, #0x0]
+cmp r0, #0x0
+ldrne r5, [r0, #0x0]
+cmpne r5, #0x0
+ldmeqia sp!, {r3, r4, r5, pc}
+bl func_0201b55c
+mov r1, r5
+bl func_02035f40
+mov r0, #0x0
+str r0, [r4, #0x0]
+ldmia sp!, {r3, r4, r5, pc}
+.L_3_021396a0: .word 0x02166ab4

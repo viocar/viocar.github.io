@@ -1,0 +1,13 @@
+.arm
+func_020263e4:
+ldr r3, [r0, #0x0]
+cmp r3, #0x0
+bxeq lr
+ldr r3, [r0, #0x0]
+mov r12, #0x2
+strh r12, [r3, #0x34]
+ldr r3, [r0, #0x0]
+strh r1, [r3, #0x38]
+ldr r0, [r0, #0x0]
+strh r2, [r0, #0x3a]
+bx lr

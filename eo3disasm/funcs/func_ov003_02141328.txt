@@ -1,0 +1,215 @@
+.arm
+func_ov003_02141328:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x14
+mov r6, #0x0
+bl func_ov003_0213dd68
+mov r4, #0x1f
+mov r7, r0
+bl func_ov000_01ff9c0c
+mov r0, r4
+bl func_ov000_01ff9c40
+ldr r1, [r7, #0x9c]
+cmp r1, #0xb
+blt .L_3_02141360
+cmp r1, #0xe
+ble .L_3_02141368
+.L_3_02141360:
+cmp r1, #0x12
+bne .L_3_02141374
+.L_3_02141368:
+add sp, sp, #0x14
+mov r0, #0x0
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_3_02141374:
+cmp r1, #0x8
+ldreqb r4, [r7, #0x233]
+ldrb r0, [r7, #0x237]
+cmp r0, #0x0
+movne r4, r0
+cmp r1, #0x12
+ldrneb r0, [r7, #0x238]
+cmpne r0, #0x0
+beq .L_3_021413ac
+cmp r0, #0x1
+mov r4, r0
+addls sp, sp, #0x14
+movls r0, #0x0
+ldmlsia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_3_021413ac:
+mov r0, r4
+bl func_ov000_01ff9c40
+bl func_ov000_01ff9c98
+mov r0, #0x0
+str r0, [sp, #0x10]
+mov r11, #0x2
+mov r4, #0x3e8
+.L_3_021413c8:
+ldr r1, [sp, #0x10]
+mov r0, #0x6
+mul r9, r1, r0
+mov r0, r1
+mov r0, r0, lsl #0x1
+rsb r10, r0, #0x11
+mov r0, r1
+mov r8, r6
+add r5, r7, r0, lsl #0x2
+.L_3_021413ec:
+str r6, [sp, #0x0]
+stmib sp, {r6, r10}
+ldr r0, [r7, #0xc8]
+ldr r1, [r7, #0xcc]
+mul r2, r0, r4
+add r0, r2, #0x62
+add r0, r8, r0
+add r2, r0, r9
+ldr r3, [r5, #0x204]
+mov r0, r11
+bl func_ov000_01ffb424
+add r0, r8, #0x1
+and r8, r0, #0xff
+cmp r8, #0x6
+blo .L_3_021413ec
+ldr r0, [sp, #0x10]
+add r0, r0, #0x1
+and r0, r0, #0xff
+str r0, [sp, #0x10]
+cmp r0, #0x4
+blo .L_3_021413c8
+ldr r0, [r7, #0x1fc]
+str r0, [sp, #0xc]
+cmp r0, #0x4
+subge r0, r0, #0x4
+strge r0, [sp, #0xc]
+bl func_ov000_01ff9c98
+mov r11, #0x0
+mov r6, #0x2
+mov r4, #0x3e8
+.L_3_02141464:
+mov r0, r11, lsl #0x1
+mov r10, #0x0
+add r8, r11, r11, lsl #0x2
+rsb r9, r0, #0x13
+add r5, r7, r11, lsl #0x2
+.L_3_02141478:
+mov r0, #0x0
+str r0, [sp, #0x0]
+stmib sp, {r0, r9}
+ldr r0, [r7, #0xc8]
+ldr r1, [r7, #0xcc]
+mul r2, r0, r4
+add r0, r2, #0x80
+add r0, r10, r0
+add r2, r0, r8
+ldr r3, [r5, #0x204]
+mov r0, r6
+bl func_ov000_01ffb424
+add r0, r10, #0x1
+and r10, r0, #0xff
+cmp r10, #0x5
+blo .L_3_02141478
+add r0, r11, #0x1
+and r11, r0, #0xff
+cmp r11, #0x4
+blo .L_3_02141464
+bl func_ov000_01ff9c98
+ldr r3, [.L_3_02141648]
+add r2, r7, #0x228
+mov r0, #0xf
+mov r1, #0x1f
+bl func_02079bf8
+ldr r2, [r7, #0x9c]
+ldrb r1, [r7, #0x237]
+cmp r2, #0x8
+ldreqb r0, [r7, #0x233]
+cmp r1, #0x0
+movne r0, r1
+cmp r2, #0x12
+ldrneb r1, [r7, #0x238]
+cmpne r1, #0x0
+beq .L_3_0214151c
+cmp r1, #0x1
+mov r0, r1
+addls sp, sp, #0x14
+movls r0, #0x0
+ldmlsia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_3_0214151c:
+bl func_ov000_01ff9c40
+ldr r0, [sp, #0xc]
+mov r1, #0x3d
+mul r9, r0, r1
+mov r2, r0, lsl #0x1
+rsb r8, r2, #0x18
+mov r10, #0x7a
+add r5, r7, r0, lsl #0x2
+mov r6, #0x2
+mov r4, #0x3e8
+.L_3_02141544:
+mov r0, #0x0
+str r0, [sp, #0x0]
+stmib sp, {r0, r8}
+ldr r0, [r7, #0xc8]
+ldr r3, [r5, #0x204]
+mla r2, r0, r4, r10
+ldr r1, [r7, #0xcc]
+mov r0, r6
+add r3, r3, r9
+bl func_ov000_01ffb424
+add r0, r10, #0x1
+and r10, r0, #0xff
+cmp r10, #0x80
+blo .L_3_02141544
+ldrb r0, [r7, #0x23b]
+mov r4, #0x1f
+ldr r1, [r7, #0x9c]
+cmp r0, #0x0
+cmpne r0, #0x2
+ldreqb r4, [r7, #0x236]
+cmp r1, #0x8
+ldrb r0, [r7, #0x237]
+ldreqb r4, [r7, #0x233]
+mov r6, #0x0
+cmp r0, #0x0
+movne r4, r0
+cmp r1, #0x12
+beq .L_3_021415d0
+ldrb r0, [r7, #0x238]
+cmp r0, #0x0
+movne r4, r0
+cmp r4, #0x1
+addls sp, sp, #0x14
+movls r0, #0x0
+ldmlsia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_3_021415d0:
+bl func_ov000_01ff9c98
+mov r0, r4
+bl func_ov000_01ff9c40
+mov r8, #0x0
+mov r5, #0x2
+mov r4, #0x8
+mov r9, #0x3e8
+.L_3_021415ec:
+str r6, [sp, #0x0]
+mov r0, r8, lsl #0x1
+str r6, [sp, #0x4]
+rsb r0, r0, #0x17
+str r0, [sp, #0x8]
+add r1, r7, r8, lsl #0x2
+ldr r0, [r1, #0x1b0]
+ldr r3, [r1, #0x204]
+mul r2, r0, r9
+mov r0, r5
+mov r1, r4
+bl func_ov000_01ffb424
+add r0, r8, #0x1
+and r8, r0, #0xff
+cmp r8, #0x4
+blo .L_3_021415ec
+mov r0, #0x1f
+bl func_ov000_01ff9c40
+bl func_ov000_01ff9c0c
+bl func_ov000_01ff9ce4
+mov r0, #0x1
+add sp, sp, #0x14
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_3_02141648: .word 0x3ca3d70a

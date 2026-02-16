@@ -1,0 +1,80 @@
+.arm
+func_020afab0:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x88
+bl func_0201bbb0
+mov r8, #0x0
+add r4, sp, #0x6
+str r0, [sp, #0x0]
+mov r0, r4
+mov r1, r8
+mov r2, #0x80
+bl Memset
+ldr r0, [sp, #0x0]
+mov r5, r8
+add r0, r0, #0xba0
+add r7, r0, #0x2000
+mov r6, #0x2
+.L_020afaec:
+ldr r0, [sp, #0x0]
+add r0, r0, r5, lsl #0x1
+add r0, r0, #0x2b00
+ldrsh r0, [r0, #0xa0]
+cmp r0, #0x0
+beq .L_020afb18
+mov r2, r6
+add r0, r7, r5, lsl #0x1
+add r1, r4, r8, lsl #0x1
+bl Memcpy
+add r8, r8, #0x1
+.L_020afb18:
+add r5, r5, #0x1
+cmp r5, #0x40
+blt .L_020afaec
+cmp r8, #0x0
+mov r11, #0x0
+ble .L_020afbac
+add r5, sp, #0x4
+mov r4, #0x2
+add r7, sp, #0x6
+.L_020afb3c:
+add r9, r11, #0x1
+cmp r9, r8
+bge .L_020afba0
+mov r6, r11, lsl #0x1
+.L_020afb4c:
+mov r0, r9, lsl #0x1
+ldrsh r1, [r7, r6]
+ldrsh r0, [r7, r0]
+cmp r1, r0
+ble .L_020afb94
+mov r1, r5
+mov r2, r4
+add r0, r7, r6
+bl Memcpy
+add r10, r7, r9, lsl #0x1
+mov r0, r10
+mov r2, r4
+add r1, r7, r6
+bl Memcpy
+mov r1, r10
+mov r0, r5
+mov r2, r4
+bl Memcpy
+.L_020afb94:
+add r9, r9, #0x1
+cmp r9, r8
+blt .L_020afb4c
+.L_020afba0:
+add r11, r11, #0x1
+cmp r11, r8
+blt .L_020afb3c
+.L_020afbac:
+ldr r0, [sp, #0x0]
+mov r2, #0x80
+add r1, r0, #0xba0
+add r0, sp, #0x6
+add r1, r1, #0x2000
+bl Memcpy
+add sp, sp, #0x88
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}

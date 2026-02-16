@@ -1,0 +1,14 @@
+.arm
+func_0202e684:
+ldr r3, [.L_0202e6b0]
+mov r1, #0x6d
+ldr r2, [r3, r0, lsl #0x2]
+mul r1, r2, r1
+add r1, r1, #0xfd
+add r1, r1, #0x300
+mov r1, r1, lsl #0x10
+mov r1, r1, lsr #0x10
+str r1, [r3, r0, lsl #0x2]
+mov r0, r1
+bx lr
+.L_0202e6b0: .word 0x20ff608

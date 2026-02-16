@@ -1,0 +1,11 @@
+.arm
+func_02033eb0:
+cmp r2, #0x0
+orrlt r1, r1, #0xc0
+strlth r1, [r0, #0x0]
+rsblt r1, r2, #0x0
+strlth r1, [r0, #0x4]
+orrge r1, r1, #0x80
+strgeh r1, [r0, #0x0]
+strgeh r2, [r0, #0x4]
+bx lr

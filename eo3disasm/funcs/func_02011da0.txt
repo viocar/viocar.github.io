@@ -1,0 +1,40 @@
+.arm
+func_02011da0:
+stmdb sp!, {r3, lr}
+tst r0, #0x3
+mov r12, #0x0
+beq .L_02011dd0
+.L_02011db0:
+ldrsb r1, [r0, r12]
+cmp r1, #0x0
+moveq r0, r12
+ldmeqia sp!, {r3, pc}
+add r12, r12, #0x1
+add r1, r0, r12
+tst r1, #0x3
+bne .L_02011db0
+.L_02011dd0:
+ldr r1, [.L_02011e20]
+add lr, r0, r12
+.L_02011dd8:
+ldr r3, [lr, #0x0]
+and r2, r3, r1
+add r2, r2, r1
+orr r2, r2, r3
+orr r2, r2, r1
+mvns r2, r2
+addeq lr, lr, #0x4
+addeq r12, r12, #0x4
+beq .L_02011dd8
+ldrsb r1, [r0, r12]
+cmp r1, #0x0
+beq .L_02011e18
+.L_02011e08:
+add r12, r12, #0x1
+ldrsb r1, [r0, r12]
+cmp r1, #0x0
+bne .L_02011e08
+.L_02011e18:
+mov r0, r12
+ldmia sp!, {r3, pc}
+.L_02011e20: .word 0x7f7f7f7f

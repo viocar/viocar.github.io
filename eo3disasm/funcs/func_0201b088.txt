@@ -1,0 +1,16 @@
+.arm
+func_0201b088:
+stmdb sp!, {r4, lr}
+ldr r4, [.L_0201b0b4]
+b .L_0201b09c
+.L_0201b094:
+blx r0
+add r4, r4, #0x4
+.L_0201b09c:
+cmp r4, #0x0
+ldmeqia sp!, {r4, pc}
+ldr r0, [r4, #0x0]
+cmp r0, #0x0
+bne .L_0201b094
+ldmia sp!, {r4, pc}
+.L_0201b0b4: .word data_020e223c

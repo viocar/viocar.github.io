@@ -1,0 +1,17 @@
+.arm
+func_02003490:
+stmdb sp!, {r3, lr}
+ldr r1, [.L_020034c4]
+ldr r1, [r1, #0x8]
+ldr r3, [r1, #0x0]
+ldr r2, [r3, #0xb4]
+cmp r2, #0x0
+beq .L_020034bc
+mov r1, #0x0
+str r1, [r3, #0xb4]
+blx r2
+bl DisableIRQ
+.L_020034bc:
+bl func_020034c8
+ldmia sp!, {r3, pc}
+.L_020034c4: .word 0x20ed688

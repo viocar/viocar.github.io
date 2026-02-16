@@ -1,0 +1,22 @@
+.arm
+func_0201c5dc:
+stmdb sp!, {r4, lr}
+mov r0, #0x1
+mov r1, #0x63
+bl func_0202e6b4
+cmp r0, #0xa
+ldmgeia sp!, {r4, pc}
+mov r4, #0x0
+.L_0201c5f8:
+and r0, r4, #0xff
+bl func_0201c58c
+mov r1, r0
+cmp r1, #0xa
+subhi r0, r1, #0x1
+andhi r1, r0, #0xff
+and r0, r4, #0xff
+bl func_0201c5b4
+add r4, r4, #0x1
+cmp r4, #0x40
+blt .L_0201c5f8
+ldmia sp!, {r4, pc}

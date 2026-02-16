@@ -1,0 +1,11 @@
+.arm
+func_ov001_0214f888:
+cmp r0, #0x0
+beq .L_1_0214f8a0
+ldrh r0, [r0, #0x36]
+tst r0, r1
+movne r0, #0x1
+bxne lr
+.L_1_0214f8a0:
+mov r0, #0x0
+bx lr

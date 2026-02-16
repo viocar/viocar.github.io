@@ -1,0 +1,14 @@
+.arm
+func_ov003_0213a390:
+ldr r1, [.L_3_0213a3bc]
+ldr r3, [r1, #0x0]
+ldr r2, [r3, #0x64]
+ldr r1, [r3, #0x58]
+add r0, r2, r0
+cmp r0, r1
+mvnge r0, #0x0
+ldrlt r1, [r3, #0x54]
+movlt r0, r0, lsl #0x1
+ldrltsh r0, [r1, r0]
+bx lr
+.L_3_0213a3bc: .word 0x02166ab4

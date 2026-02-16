@@ -1,0 +1,8 @@
+.arm
+func_02038db0:
+cmp r0, #0x4
+ldrlo r1, [.L_02038dc4]
+movhs r0, #0x0
+ldrlob r0, [r1, r0]
+bx lr
+.L_02038dc4: .word 0x211166c

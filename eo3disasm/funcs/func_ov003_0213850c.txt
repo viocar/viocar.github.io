@@ -1,0 +1,58 @@
+.arm
+func_ov003_0213850c:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+sub sp, sp, #0x3f8
+sub sp, sp, #0x400
+mov r7, #0x0
+mov r8, r0
+add r5, sp, #0x0
+mvn r6, #0x0
+mov r4, r7
+.L_3_0213852c:
+ldr r0, [r8, #0xd0]
+cmp r7, r0
+movge r0, r7, lsl #0x3
+strgeh r6, [r5, r0]
+addge r0, r5, r7, lsl #0x3
+strge r4, [r0, #0x4]
+bge .L_3_02138570
+ldr r3, [r8, #0xcc]
+mov r2, r7, lsl #0x1
+ldrsh r1, [r3, r2]
+mov r0, r7, lsl #0x3
+strh r1, [r5, r0]
+ldrsh r0, [r3, r2]
+bl func_020a193c
+ldrsh r1, [r0, #0xc]
+add r0, r5, r7, lsl #0x3
+str r1, [r0, #0x4]
+.L_3_02138570:
+add r7, r7, #0x1
+cmp r7, #0xff
+blt .L_3_0213852c
+add r4, sp, #0x0
+ldr r1, [r8, #0xd0]
+ldr r3, [.L_3_021385dc]
+mov r0, r4
+mov r2, #0x8
+bl func_020142fc
+ldr r0, [r8, #0xd0]
+mov r3, #0x0
+cmp r0, #0x0
+addle sp, sp, #0x3f8
+addle sp, sp, #0x400
+ldmleia sp!, {r4, r5, r6, r7, r8, pc}
+.L_3_021385ac:
+mov r0, r3, lsl #0x3
+ldrsh r2, [r4, r0]
+ldr r1, [r8, #0xcc]
+mov r0, r3, lsl #0x1
+strh r2, [r1, r0]
+ldr r0, [r8, #0xd0]
+add r3, r3, #0x1
+cmp r3, r0
+blt .L_3_021385ac
+add sp, sp, #0x3f8
+add sp, sp, #0x400
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_3_021385dc: .word func_ov003_02138474

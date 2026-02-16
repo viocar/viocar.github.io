@@ -1,0 +1,265 @@
+.arm
+func_020187d4:
+stmdb sp!, {r4, lr}
+eors r12, r1, r3
+eormi r3, r3, #0x80000000
+bmi .L_020184b4
+.L_020187e4:
+subs r12, r0, r2
+sbcs lr, r1, r3
+bhs .L_02018804
+eor lr, lr, #0x80000000
+adds r2, r2, r12
+adc r3, r3, lr
+subs r0, r0, r12
+sbc r1, r1, lr
+.L_02018804:
+mov lr, #0x80000000
+mov r12, r1, lsr #0x14
+orr r1, lr, r1, lsl #0xb
+orr r1, r1, r0, lsr #0x15
+mov r0, r0, lsl #0xb
+movs r4, r12, lsl #0x15
+cmnne r4, #0x200000
+beq .L_02018a08
+mov r4, r3, lsr #0x14
+orr r3, lr, r3, lsl #0xb
+orr r3, r3, r2, lsr #0x15
+mov r2, r2, lsl #0xb
+movs lr, r4, lsl #0x15
+beq .L_02018a50
+.L_0201883c:
+subs r4, r12, r4
+beq .L_020188e4
+cmp r4, #0x20
+ble .L_02018878
+cmp r4, #0x38
+movge r4, #0x3f
+sub r4, r4, #0x20
+rsb lr, r4, #0x20
+orrs lr, r2, r3, lsl lr
+mov r2, r3, lsr r4
+orrne r2, r2, #0x1
+subs r0, r0, r2
+sbcs r1, r1, #0x0
+bmi .L_020188a0
+b .L_02018990
+.L_02018878:
+rsb lr, r4, #0x20
+movs lr, r2, lsl lr
+rsb lr, r4, #0x20
+mov r2, r2, lsr r4
+orr r2, r2, r3, lsl lr
+mov r3, r3, lsr r4
+orrne r2, r2, #0x1
+subs r0, r0, r2
+sbcs r1, r1, r3
+bpl .L_02018990
+.L_020188a0:
+movs r2, r0, lsl #0x15
+mov r0, r0, lsr #0xb
+orr r0, r0, r1, lsl #0x15
+add r1, r1, r1
+mov r1, r1, lsr #0xc
+orr r1, r1, r12, lsl #0x14
+tst r2, #0x80000000
+ldmeqia sp!, {r4, lr}
+bxeq lr
+movs r2, r2, lsl #0x1
+andeqs r2, r0, #0x1
+ldmeqia sp!, {r4, lr}
+bxeq lr
+adds r0, r0, #0x1
+adc r1, r1, #0x0
+ldmia sp!, {r4, lr}
+bx lr
+.L_020188e4:
+subs r0, r0, r2
+sbc r1, r1, r3
+orrs lr, r1, r0
+beq .L_02018b74
+mov lr, r12, lsl #0x14
+and lr, lr, #0x80000000
+bic r12, r12, #0x800
+cmp r1, #0x0
+bmi .L_0201896c
+bne .L_0201891c
+sub r12, r12, #0x20
+movs r1, r0
+mov r0, #0x0
+bmi .L_02018938
+.L_0201891c:
+clz r4, r1
+movs r1, r1, lsl r4
+rsb r4, r4, #0x20
+orr r1, r1, r0, lsr r4
+rsb r4, r4, #0x20
+mov r0, r0, lsl r4
+sub r12, r12, r4
+.L_02018938:
+cmp r12, #0x0
+bgt .L_02018974
+rsb r12, r12, #0xc
+cmp r12, #0x20
+movge r0, r1
+movge r1, #0x0
+subge r12, r12, #0x20
+rsb r4, r12, #0x20
+mov r0, r0, lsr r12
+orr r0, r0, r1, lsl r4
+orr r1, lr, r1, lsr r12
+ldmia sp!, {r4, lr}
+bx lr
+.L_0201896c:
+cmp r1, #0x0
+subges r12, r12, #0x1
+.L_02018974:
+mov r0, r0, lsr #0xb
+orr r0, r0, r1, lsl #0x15
+add r1, r1, r1
+orr r1, lr, r1, lsr #0xc
+orr r1, r1, r12, lsl #0x14
+ldmia sp!, {r4, lr}
+bx lr
+.L_02018990:
+mov lr, r12, lsl #0x14
+and lr, lr, #0x80000000
+bic r12, r12, #0x800
+cmp r1, #0x0
+bne .L_020189b4
+sub r12, r12, #0x20
+movs r1, r0
+mov r0, #0x0
+bmi .L_020189d0
+.L_020189b4:
+clz r4, r1
+movs r1, r1, lsl r4
+rsb r4, r4, #0x20
+orr r1, r1, r0, lsr r4
+rsb r4, r4, #0x20
+mov r0, r0, lsl r4
+sub r12, r12, r4
+.L_020189d0:
+cmp r12, #0x0
+orrgt r12, r12, lr, lsr #0x14
+bgt .L_020188a0
+rsb r12, r12, #0xc
+cmp r12, #0x20
+movge r0, r1
+movge r1, #0x0
+subge r12, r12, #0x20
+rsb r4, r12, #0x20
+mov r0, r0, lsr r12
+orr r0, r0, r1, lsl r4
+orr r1, lr, r1, lsr r12
+ldmia sp!, {r4, lr}
+bx lr
+.L_02018a08:
+cmp r12, #0x800
+movge lr, #0x80000000
+movlt lr, #0x0
+bics r12, r12, #0x800
+beq .L_02018a74
+orrs r4, r0, r1, lsl #0x1
+bne .L_02018b50
+mov r4, r3, lsr #0x14
+mov r3, r3, lsl #0xb
+orr r3, r3, r2, lsr #0x15
+mov r2, r2, lsl #0xb
+movs r4, r4, lsl #0x15
+beq .L_02018b3c
+cmn r4, #0x200000
+bne .L_02018b3c
+orrs r4, r2, r3, lsl #0x1
+beq .L_02018b64
+b .L_02018b50
+.L_02018a50:
+cmp r4, #0x800
+movge lr, #0x80000000
+movlt lr, #0x0
+bic r12, r12, #0x800
+bics r4, r4, #0x800
+beq .L_02018aec
+orrs r4, r2, r3, lsl #0x1
+bne .L_02018b50
+b .L_02018b3c
+.L_02018a74:
+orrs r4, r0, r1, lsl #0x1
+beq .L_02018ab4
+mov r12, #0x1
+bic r1, r1, #0x80000000
+mov r4, r3, lsr #0x14
+mov r3, r3, lsl #0xb
+orr r3, r3, r2, lsr #0x15
+mov r2, r2, lsl #0xb
+movs r4, r4, lsl #0x15
+cmnne r4, #0x200000
+mov r4, r4, lsr #0x15
+orr r4, r4, lr, lsr #0x14
+beq .L_02018a50
+orr r3, r3, #0x80000000
+orr r12, r12, lr, lsr #0x14
+b .L_0201883c
+.L_02018ab4:
+mov r12, r3, lsr #0x14
+mov r1, r3, lsl #0xb
+orr r1, r1, r2, lsr #0x15
+mov r0, r2, lsl #0xb
+movs r4, r12, lsl #0x15
+beq .L_02018ae0
+cmn r4, #0x200000
+bne .L_02018b08
+orrs r4, r0, r1, lsl #0x1
+bne .L_02018b54
+b .L_02018b3c
+.L_02018ae0:
+orrs r4, r0, r1, lsl #0x1
+beq .L_02018b74
+b .L_02018b08
+.L_02018aec:
+orrs r4, r2, r3, lsl #0x1
+beq .L_02018b18
+mov r4, #0x1
+bic r3, r3, #0x80000000
+orr r12, r12, lr, lsr #0x14
+orr r4, r4, lr, lsr #0x14
+b .L_0201883c
+.L_02018b08:
+mov r1, r3
+mov r0, r2
+ldmia sp!, {r4, lr}
+bx lr
+.L_02018b18:
+cmp r1, #0x0
+subges r12, r12, #0x1
+mov r0, r0, lsr #0xb
+orr r0, r0, r1, lsl #0x15
+add r1, r1, r1
+orr r1, lr, r1, lsr #0xc
+orr r1, r1, r12, lsl #0x14
+ldmia sp!, {r4, lr}
+bx lr
+.L_02018b3c:
+ldr r1, [.L_02018b84]
+orr r1, lr, r1
+mov r0, #0x0
+ldmia sp!, {r4, lr}
+bx lr
+.L_02018b50:
+mov r1, r3
+.L_02018b54:
+mvn r0, #0x0
+bic r1, r0, #0x80000000
+ldmia sp!, {r4, lr}
+bx lr
+.L_02018b64:
+mvn r0, #0x0
+bic r1, r0, #0x80000000
+ldmia sp!, {r4, lr}
+bx lr
+.L_02018b74:
+mov r1, #0x0
+mov r0, #0x0
+ldmia sp!, {r4, lr}
+bx lr
+.L_02018b84: .word 0x7ff00000

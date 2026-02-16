@@ -1,0 +1,55 @@
+.arm
+func_020429d0:
+cmp r2, #0x0
+mov r2, #0x54
+mla r0, r1, r2, r0
+ldreqb r0, [r0, #0x3c9]
+mov r3, #0x0
+ldrneb r0, [r0, #0x4c5]
+cmp r0, #0xa
+addls pc, pc, r0, lsl #0x2
+b .L_02042a6c
+.L_020429f4: ; jump table
+b .L_02042a6c ; case 0
+b .L_02042a20 ; case 1
+b .L_02042a28 ; case 2
+b .L_02042a38 ; case 3
+b .L_02042a30 ; case 4
+b .L_02042a40 ; case 5
+b .L_02042a48 ; case 6
+b .L_02042a50 ; case 7
+b .L_02042a58 ; case 8
+b .L_02042a60 ; case 9
+b .L_02042a68 ; case 10
+.L_02042a20:
+mov r3, #0x1
+b .L_02042a6c
+.L_02042a28:
+mov r3, #0xe
+b .L_02042a6c
+.L_02042a30:
+mov r3, #0xf
+b .L_02042a6c
+.L_02042a38:
+mov r3, #0x3
+b .L_02042a6c
+.L_02042a40:
+mov r3, #0x5
+b .L_02042a6c
+.L_02042a48:
+mov r3, #0x6
+b .L_02042a6c
+.L_02042a50:
+mov r3, #0xd
+b .L_02042a6c
+.L_02042a58:
+mov r3, #0xa
+b .L_02042a6c
+.L_02042a60:
+mov r3, #0xb
+b .L_02042a6c
+.L_02042a68:
+mov r3, #0xc
+.L_02042a6c:
+mov r0, r3
+bx lr

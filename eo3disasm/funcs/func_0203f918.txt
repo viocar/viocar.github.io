@@ -1,0 +1,8 @@
+.arm
+func_0203f918:
+cmp r1, #0x0
+ldr r1, [r0, #0x24]
+orrne r1, r1, #0x200
+biceq r1, r1, #0x200
+str r1, [r0, #0x24]
+bx lr

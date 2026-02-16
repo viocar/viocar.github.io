@@ -1,0 +1,50 @@
+.arm
+func_02035600:
+stmdb sp!, {r4, lr}
+ldrh r4, [r0, #0x0]
+mov r1, #0x0
+strh r1, [r0, #0x0]
+tst r4, #0x1
+ldrne r0, [.L_02035698]
+strneb r1, [r0, #0x0]
+tst r4, #0x2
+ldrne r0, [.L_0203569c]
+strneb r1, [r0, #0x0]
+tst r4, #0x4
+ldrne r0, [.L_020356a0]
+strneb r1, [r0, #0x0]
+tst r4, #0x8
+ldrne r0, [.L_020356a4]
+strneb r1, [r0, #0x0]
+tst r4, #0x10
+ldrne r0, [.L_020356a8]
+strneb r1, [r0, #0x0]
+tst r4, #0x20
+ldrne r0, [.L_020356ac]
+strneb r1, [r0, #0x0]
+tst r4, #0x40
+ldrne r0, [.L_020356b0]
+strneb r1, [r0, #0x0]
+tst r4, #0x80
+ldrne r0, [.L_020356b4]
+strneb r1, [r0, #0x0]
+tst r4, #0x100
+ldrne r0, [.L_020356b8]
+strneb r1, [r0, #0x0]
+ldr r1, [.L_020356bc]
+mov r0, r4, lsl #0x10
+ldrh r1, [r1, #0x0]
+mov r0, r0, lsr #0x10
+bl func_020054f4
+mov r0, r4
+ldmia sp!, {r4, pc}
+.L_02035698: .word 0x4000240
+.L_0203569c: .word 0x4000241
+.L_020356a0: .word 0x4000242
+.L_020356a4: .word 0x4000243
+.L_020356a8: .word 0x4000244
+.L_020356ac: .word 0x4000245
+.L_020356b0: .word 0x4000246
+.L_020356b4: .word 0x4000248
+.L_020356b8: .word 0x4000249
+.L_020356bc: .word 0x210ea6e

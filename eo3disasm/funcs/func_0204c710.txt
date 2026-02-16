@@ -1,0 +1,18 @@
+.arm
+func_0204c710:
+ldr r1, [.L_0204c748]
+cmp r0, #0x40
+ldr r2, [r1, #0x14]
+strb r0, [r2, #0x4]
+ldreq r1, [r1, #0x14]
+ldreqh r0, [r1, #0x2]
+orreq r0, r0, #0x10
+streqh r0, [r1, #0x2]
+ldrne r2, [r1, #0x14]
+ldrne r0, [.L_0204c74c]
+ldrneh r1, [r2, #0x2]
+andne r0, r1, r0
+strneh r0, [r2, #0x2]
+bx lr
+.L_0204c748: .word 0x21143c0
+.L_0204c74c: .word 0xffef

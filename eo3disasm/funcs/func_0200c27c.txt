@@ -1,0 +1,31 @@
+.arm
+func_0200c27c:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+mov r8, r0
+mov r7, r1
+mov r6, r2
+bl DisableIRQ
+ldr r4, [.L_0200c2e8]
+ldr r1, [r4, #0x4]
+cmp r1, #0x0
+beq .L_0200c2ac
+bl EnableIRQ
+mov r0, #0x1
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_0200c2ac:
+mov r5, #0x1
+str r5, [r4, #0x4]
+bl EnableIRQ
+str r5, [r4, #0x18]
+mov r5, #0x0
+str r5, [r4, #0x1c]
+str r8, [r4, #0xc]
+str r7, [r4, #0x8]
+str r6, [r4, #0x14]
+bl func_0200c7f4
+cmp r0, #0x0
+movne r0, r5
+streq r5, [r4, #0x4]
+moveq r0, #0x3
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_0200c2e8: .word 0x20ef938

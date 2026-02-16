@@ -1,0 +1,17 @@
+.arm
+func_0209db90:
+stmdb sp!, {r3, lr}
+bl func_0201b75c
+cmp r0, #0x0
+movne r0, #0x0
+ldmneia sp!, {r3, pc}
+bl func_0201e20c
+cmp r0, #0x0
+movne r0, #0x0
+ldmneia sp!, {r3, pc}
+bl func_0203cf04
+cmp r0, #0x0
+moveq r0, #0x0
+ldmeqia sp!, {r3, pc}
+bl func_0203f714
+ldmia sp!, {r3, pc}

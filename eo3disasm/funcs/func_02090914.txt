@@ -1,0 +1,51 @@
+.arm
+func_02090914:
+stmdb sp!, {r4, r5, r6, lr}
+mov r4, r0
+ldr r0, [r4, #0x0]
+mov r6, r1
+cmp r0, #0x0
+cmpne r0, #0x2
+bne .L_02090964
+bl func_0203591c
+mov r1, #0x0
+mov r2, #0x200
+mov r5, r0
+bl Memset
+ldr r1, [.L_020909c8]
+mov r0, r5
+mov r2, r6
+bl func_020142d0
+mov r0, r5
+bl func_0202e130
+str r0, [r4, #0x4c]
+b .L_0209099c
+.L_02090964:
+cmp r0, #0x1
+bne .L_0209099c
+ldr r0, [.L_020909cc]
+bl func_0202e130
+str r0, [r4, #0x4c]
+bl func_020c623c
+str r0, [r4, #0x10]
+bl func_020c6260
+str r0, [r4, #0x14]
+add r0, r4, #0x18
+bl func_020c6284
+str r0, [r4, #0x1c]
+bl func_020c62bc
+str r0, [r4, #0x28]
+.L_0209099c:
+ldr r2, [r4, #0x4c]
+mov r0, #0x1
+ldr r1, [r2, #0x0]
+str r1, [r4, #0x40]
+ldr r1, [r2, #0x4]
+add r1, r1, r2
+str r1, [r4, #0x44]
+ldr r1, [r2, #0x8]
+add r1, r1, r2
+str r1, [r4, #0x48]
+ldmia sp!, {r4, r5, r6, pc}
+.L_020909c8: .word data_020e858c
+.L_020909cc: .word data_020e85a8

@@ -1,0 +1,46 @@
+.arm
+func_ov002_0213a304:
+stmdb sp!, {r3, r4, r5, lr}
+mov r5, #0x0
+bl func_0203cf04
+bl func_ov002_0213a1d4
+mov r4, r0
+ldr r0, [r4, #0x0]
+cmp r0, #0x2
+beq .L_2_0213a330
+cmp r0, #0x3
+beq .L_2_0213a364
+b .L_2_0213a398
+.L_2_0213a330:
+ldr r0, [r4, #0x10]
+add r3, r0, #0x1
+str r3, [r4, #0x10]
+cmp r3, #0x8
+blt .L_2_0213a35c
+mov r0, #0x8
+str r0, [r4, #0x10]
+str r5, [r4, #0x14]
+mov r0, #0x1
+str r0, [r4, #0x0]
+b .L_2_0213a398
+.L_2_0213a35c:
+mov r0, #0x43
+b .L_2_0213a388
+.L_2_0213a364:
+ldr r0, [r4, #0x10]
+sub r3, r0, #0x1
+str r3, [r4, #0x10]
+cmp r3, #0x0
+mov r0, #0x43
+strle r5, [r4, #0x10]
+strle r0, [r4, #0x14]
+strle r5, [r4, #0x0]
+ble .L_2_0213a398
+.L_2_0213a388:
+mov r1, r5
+mov r2, #0x8
+bl func_0202e7e0
+str r0, [r4, #0x14]
+.L_2_0213a398:
+mov r0, #0x0
+ldmia sp!, {r3, r4, r5, pc}

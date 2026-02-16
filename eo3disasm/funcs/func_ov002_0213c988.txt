@@ -1,0 +1,24 @@
+.arm
+func_ov002_0213c988:
+stmdb sp!, {r4, lr}
+mov r4, r0
+bl func_0203f360
+mov r1, r0
+mov r0, r4
+bl func_0203f19c
+mov r0, r4
+bl func_0203df68
+cmp r0, #0x0
+ldmneia sp!, {r4, pc}
+mov r0, r4
+bl func_0203f360
+mov r1, r0
+mov r0, r4
+bl func_0203f280
+mov r0, r4
+mov r1, #0xa
+bl func_ov002_0213e938
+ldr r0, [r4, #0x24]
+orr r0, r0, #0x10000
+str r0, [r4, #0x24]
+ldmia sp!, {r4, pc}

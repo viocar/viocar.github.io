@@ -1,0 +1,18 @@
+.arm
+func_020ccf74:
+mov r12, #0x0
+mov r3, r12
+cmp r1, #0x0
+ble .L_020ccfa4
+.L_020ccf84:
+mov r2, r3, lsl #0x1
+ldrh r2, [r0, r2]
+cmp r2, #0x0
+beq .L_020ccfa4
+add r3, r3, #0x1
+cmp r3, r1
+add r12, r12, #0x1
+blt .L_020ccf84
+.L_020ccfa4:
+mov r0, r12
+bx lr

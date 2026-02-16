@@ -1,0 +1,76 @@
+.arm
+func_020636e0:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x54
+mov r5, r0
+mov r4, r1
+bl func_02039f50
+ldr r8, [.L_020637f4]
+add r7, sp, #0x0
+mov r10, r0
+mov r6, #0x5
+.L_02063704:
+ldmia r8!, {r0, r1, r2, r3}
+stmia r7!, {r0, r1, r2, r3}
+subs r6, r6, #0x1
+bne .L_02063704
+ldr r0, [r8, #0x0]
+mov r9, #0x0
+str r0, [r7, #0x0]
+ldr r8, [r4, #0xc]
+mov r7, r9
+mov r11, r9
+.L_0206372c:
+ldr r3, [r4, #0x18]
+mov r2, #0x1c
+add r1, sp, #0x0
+mla r1, r3, r2, r1
+ldr r6, [r1, r7, lsl #0x2]
+ldrb r0, [r5, #0xe4]
+mov r1, r6
+bl func_020631f0
+cmp r0, #0x0
+beq .L_020637d0
+mov r0, r10
+mov r1, r6
+bl func_02063064
+movs r6, r0
+addne r0, r6, #0x1000
+ldrneb r1, [r0, #0x162]
+cmpne r1, #0x0
+beq .L_020637d0
+ldr r2, [r4, #0x1c]
+str r9, [r6, #0x25c]
+ldr r1, [r4, #0x1c]
+add r8, r8, r2
+strb r11, [r0, #0x160]
+ldr r0, [r6, #0x254]
+add r9, r9, r1
+cmp r0, #0x0
+addne r0, r6, #0x50
+strne r0, [r6, #0x254]
+bne .L_020637bc
+ldr r0, [r6, #0x250]
+mov r2, #0x200
+add r1, r6, #0x50
+str r0, [r6, #0x254]
+bl Memcpy
+add r0, r6, #0x1000
+strb r11, [r0, #0x161]
+.L_020637bc:
+mov r0, r6
+str r5, [r6, #0x4c]
+add r1, r6, #0x50
+str r1, [r6, #0x18]
+bl func_02031a38
+.L_020637d0:
+add r7, r7, #0x1
+cmp r7, #0x7
+blt .L_0206372c
+ldr r0, [r5, #0xcc]
+cmp r0, #0x0
+cmpgt r8, r0
+strgt r8, [r5, #0xcc]
+add sp, sp, #0x54
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_020637f4: .word data_020e0f7c

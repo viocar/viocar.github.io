@@ -1,0 +1,145 @@
+.arm
+func_020b1080:
+cmp r0, #0x0
+mov r2, #0x19
+moveq r0, #0x0
+bxeq lr
+cmp r0, #0x1
+blo .L_020b10a4
+cmp r0, #0x29
+movlo r2, #0x1
+blo .L_020b1250
+.L_020b10a4:
+cmp r0, #0x29
+blo .L_020b10b8
+cmp r0, #0x51
+movlo r2, #0x4
+blo .L_020b1250
+.L_020b10b8:
+cmp r0, #0x51
+blo .L_020b10cc
+cmp r0, #0x79
+movlo r2, #0x5
+blo .L_020b1250
+.L_020b10cc:
+cmp r0, #0x79
+blo .L_020b10e0
+cmp r0, #0xa1
+movlo r2, #0x3
+blo .L_020b1250
+.L_020b10e0:
+cmp r0, #0xa1
+blo .L_020b10f4
+cmp r0, #0xc9
+movlo r2, #0x2
+blo .L_020b1250
+.L_020b10f4:
+cmp r0, #0xc9
+blo .L_020b1108
+cmp r0, #0xf1
+movlo r2, #0x6
+blo .L_020b1250
+.L_020b1108:
+cmp r0, #0xf1
+blo .L_020b1120
+ldr r1, [.L_020b1258]
+cmp r0, r1
+movlo r2, #0x7
+blo .L_020b1250
+.L_020b1120:
+ldr r1, [.L_020b1258]
+cmp r0, r1
+blo .L_020b113c
+add r1, r1, #0x28
+cmp r0, r1
+movlo r2, #0xa
+blo .L_020b1250
+.L_020b113c:
+ldr r1, [.L_020b125c]
+cmp r0, r1
+blo .L_020b1154
+cmp r0, #0x200
+movlo r2, #0x9
+blo .L_020b1250
+.L_020b1154:
+cmp r0, #0x200
+blo .L_020b1168
+cmp r0, #0x220
+movlo r2, #0xd
+blo .L_020b1250
+.L_020b1168:
+cmp r0, #0x220
+blo .L_020b117c
+cmp r0, #0x240
+movlo r2, #0xb
+blo .L_020b1250
+.L_020b117c:
+cmp r0, #0x240
+blo .L_020b1190
+cmp r0, #0x260
+movlo r2, #0xc
+blo .L_020b1250
+.L_020b1190:
+cmp r0, #0x260
+blo .L_020b11a4
+cmp r0, #0x280
+movlo r2, #0xd
+blo .L_020b1250
+.L_020b11a4:
+cmp r0, #0x280
+blo .L_020b11b8
+cmp r0, #0x2a0
+movlo r2, #0xf
+blo .L_020b1250
+.L_020b11b8:
+cmp r0, #0x2a0
+blo .L_020b11cc
+cmp r0, #0x2c0
+movlo r2, #0x10
+blo .L_020b1250
+.L_020b11cc:
+cmp r0, #0x2c0
+blo .L_020b11e0
+cmp r0, #0x2e0
+movlo r2, #0x11
+blo .L_020b1250
+.L_020b11e0:
+cmp r0, #0x2e0
+blo .L_020b11f4
+cmp r0, #0x300
+movlo r2, #0xe
+blo .L_020b1250
+.L_020b11f4:
+cmp r0, #0x300
+blo .L_020b1208
+cmp r0, #0x39c
+movlo r2, #0x12
+blo .L_020b1250
+.L_020b1208:
+cmp r0, #0x39c
+blo .L_020b1220
+ldr r1, [.L_020b1260]
+cmp r0, r1
+movlo r2, #0x13
+blo .L_020b1250
+.L_020b1220:
+ldr r1, [.L_020b1260]
+cmp r0, r1
+blo .L_020b123c
+add r1, r1, #0x18
+cmp r0, r1
+movlo r2, #0x14
+blo .L_020b1250
+.L_020b123c:
+cmp r0, #0x640
+blo .L_020b1250
+ldr r1, [.L_020b1264]
+cmp r0, r1
+movlo r2, #0x15
+.L_020b1250:
+mov r0, r2
+bx lr
+.L_020b1258: .word 0x119
+.L_020b125c: .word 0x141
+.L_020b1260: .word 0x5c3
+.L_020b1264: .word 0x67f

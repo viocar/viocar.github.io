@@ -1,0 +1,51 @@
+.arm
+func_02066c5c:
+stmdb sp!, {r3, r4, r5, lr}
+mov r5, r0
+mov r4, r1
+bl func_0204a6e8
+cmp r5, #0x8
+addls pc, pc, r5, lsl #0x2
+b .L_02066ce4
+.L_02066c78: ; jump table
+b .L_02066ce4 ; case 0
+b .L_02066ce4 ; case 1
+b .L_02066c9c ; case 2
+b .L_02066ca8 ; case 3
+b .L_02066cb4 ; case 4
+b .L_02066cc0 ; case 5
+b .L_02066ccc ; case 6
+b .L_02066ce4 ; case 7
+b .L_02066cd8 ; case 8
+.L_02066c9c:
+add r0, r0, #0x1e00
+strh r4, [r0, #0x4]
+ldmia sp!, {r3, r4, r5, pc}
+.L_02066ca8:
+add r0, r0, #0x1e00
+strh r4, [r0, #0x6]
+ldmia sp!, {r3, r4, r5, pc}
+.L_02066cb4:
+add r0, r0, #0x1e00
+strh r4, [r0, #0x8]
+ldmia sp!, {r3, r4, r5, pc}
+.L_02066cc0:
+add r0, r0, #0x1e00
+strh r4, [r0, #0xa]
+ldmia sp!, {r3, r4, r5, pc}
+.L_02066ccc:
+add r0, r0, #0x1e00
+strh r4, [r0, #0xc]
+ldmia sp!, {r3, r4, r5, pc}
+.L_02066cd8:
+add r0, r0, #0x1e00
+strh r4, [r0, #0xe]
+ldmia sp!, {r3, r4, r5, pc}
+.L_02066ce4:
+add r0, r0, #0x1e00
+strh r4, [r0, #0x4]
+strh r4, [r0, #0x6]
+strh r4, [r0, #0x8]
+strh r4, [r0, #0xa]
+strh r4, [r0, #0xc]
+ldmia sp!, {r3, r4, r5, pc}

@@ -1,0 +1,9 @@
+.arm
+func_02005fb4:
+add r12, r0, r2
+.L_02005fb8:
+cmp r0, r12
+ldmltia r0!, {r2}
+strlt r2, [r1, #0x0]
+blt .L_02005fb8
+bx lr

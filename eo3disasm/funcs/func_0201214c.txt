@@ -1,0 +1,15 @@
+.arm
+func_0201214c:
+cmp r2, #0x0
+and r3, r1, #0xff
+beq .L_02012170
+.L_02012158:
+ldrb r1, [r0], #0x1
+cmp r1, r3
+subeq r0, r0, #0x1
+bxeq lr
+subs r2, r2, #0x1
+bne .L_02012158
+.L_02012170:
+mov r0, #0x0
+bx lr

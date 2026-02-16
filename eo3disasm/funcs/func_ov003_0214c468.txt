@@ -1,0 +1,9 @@
+.arm
+func_ov003_0214c468:
+ldrsh r2, [r0, #0x64]
+cmp r1, r2
+movgt r0, #0x0
+ldrle r2, [r0, #0x60]
+movle r0, r1, lsl #0x1
+ldrlesh r0, [r2, r0]
+bx lr

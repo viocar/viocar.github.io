@@ -1,0 +1,9 @@
+data_020e5940:
+.word func_020253f8
+.word func_020254fc
+.word func_020255d4
+.word func_02025648
+.word func_02025694
+.word func_02025788
+.word func_02025850
+.word func_02025898

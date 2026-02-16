@@ -1,0 +1,27 @@
+.arm
+func_0200cfb4:
+stmdb sp!, {r4, r5, r6, lr}
+mov r5, r1
+mov r6, r0
+cmp r5, r2
+blo .L_0200cfd0
+bl DrainWriteBufferAndUnknownCacheOp
+ldmia sp!, {r4, r5, r6, pc}
+.L_0200cfd0:
+ands r0, r6, #0x1f
+beq .L_0200cffc
+sub r6, r6, r0
+mov r4, #0x20
+mov r0, r6
+mov r1, r4
+bl CleanDataCacheLine
+mov r1, r4
+add r0, r6, r5
+bl CleanDataCacheLine
+add r5, r5, #0x20
+.L_0200cffc:
+mov r0, r6
+mov r1, r5
+bl InvalidateDataCacheLine
+bl DrainWriteBuffer
+ldmia sp!, {r4, r5, r6, pc}

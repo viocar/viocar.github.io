@@ -1,0 +1,12 @@
+.arm
+func_0203ace8:
+ldr r2, [r0, #0xfc]
+cmp r2, #0x0
+movne r1, #0x0
+strne r1, [r2, #0x0]
+strne r1, [r0, #0xfc]
+mov r2, #0x0
+ldr r1, [r0, #0x104]
+str r2, [r0, #0x100]
+str r2, [r1, #0x80]
+bx lr

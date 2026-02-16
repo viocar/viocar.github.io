@@ -1,0 +1,12 @@
+.arm
+func_ov003_02163ba4:
+stmdb sp!, {r4, lr}
+bl func_ov003_02163524
+mov r4, r0
+mov r0, #0x2
+str r0, [r4, #0x14]
+bl func_ov003_02163efc
+ldr r1, [r0, #0x0]
+mov r0, r4
+blx r1
+ldmia sp!, {r4, pc}

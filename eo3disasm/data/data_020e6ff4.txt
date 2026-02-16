@@ -1,0 +1,8 @@
+data_020e6ff4:
+.word 0x20e6e30
+.word 0x20e6e1c
+.word 0x20e6e3c
+.word 0x20e6e90
+.word 0x20e6ecc
+.word 0x20e6ebc
+.word 0x20e6f2c

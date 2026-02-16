@@ -1,0 +1,37 @@
+.arm
+func_02084b04:
+stmdb sp!, {r4, lr}
+ldrsb r12, [r2, #0x0]
+ldr r4, [sp, #0x8]
+ldr lr, [sp, #0xc]
+cmn r12, #0x1
+addeq r12, r0, #0x1
+cmpeq r3, r12
+cmpeq r4, r1
+cmpeq lr, #0x3
+moveq r0, #0x1
+ldmeqia sp!, {r4, pc}
+ldrsb r12, [r2, #0x1]
+cmn r12, #0x1
+subeq r12, r0, #0x1
+cmpeq r3, r12
+cmpeq r4, r1
+cmpeq lr, #0x2
+moveq r0, #0x1
+ldmeqia sp!, {r4, pc}
+ldrsb r12, [r2, #0x2]
+cmn r12, #0x1
+cmpeq r3, r0
+addeq r2, r1, #0x1
+cmpeq r4, r2
+cmpeq lr, #0x0
+moveq r0, #0x1
+ldmeqia sp!, {r4, pc}
+cmn r12, #0x1
+cmpeq r3, r0
+subeq r0, r1, #0x1
+cmpeq r4, r0
+cmpeq lr, #0x1
+moveq r0, #0x1
+movne r0, #0x0
+ldmia sp!, {r4, pc}

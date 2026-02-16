@@ -1,0 +1,53 @@
+.arm
+func_0200ecf8:
+stmdb sp!, {r4, r5, r6, lr}
+bl func_0200e5ac
+mov r5, #0x2
+mov r4, r0
+mov r0, r5
+mov r1, #0x7
+mov r2, #0x8
+bl func_0200e61c
+cmp r0, #0x0
+movne r0, #0x0
+ldmneia sp!, {r4, r5, r6, pc}
+ldr r0, [r4, #0x4]
+mov r1, #0x4
+add r0, r0, #0xc
+bl InvalidateDataCacheLine
+ldr r2, [r4, #0x4]
+ldr r0, [r2, #0xc]
+cmp r0, #0x1
+moveq r0, #0x0
+ldmeqia sp!, {r4, r5, r6, pc}
+mov r1, r5
+add r0, r2, #0x188
+bl InvalidateDataCacheLine
+ldr r2, [r4, #0x4]
+mov r5, #0x2
+add r0, r2, #0x100
+ldrh r0, [r0, #0x88]
+mov r6, #0x1
+mov r1, r5
+cmp r0, #0x0
+add r0, r2, #0x3e
+movne r6, #0x0
+bl InvalidateDataCacheLine
+ldr r0, [r4, #0x4]
+cmp r6, #0x1
+ldrh r6, [r0, #0x3e]
+addne r0, r6, #0x51
+bicne r0, r0, #0x1f
+movne r0, r0, lsl #0x1
+ldmneia sp!, {r4, r5, r6, pc}
+mov r1, r5
+add r0, r0, #0xf8
+bl InvalidateDataCacheLine
+ldr r0, [r4, #0x4]
+add r1, r6, #0xc
+ldrh r0, [r0, #0xf8]
+mul r0, r1, r0
+add r0, r0, #0x29
+bic r0, r0, #0x1f
+mov r0, r0, lsl #0x1
+ldmia sp!, {r4, r5, r6, pc}

@@ -1,0 +1,14 @@
+.arm
+func_02036534:
+ldr r3, [r1, #0x6c]
+ldr r2, [r1, #0x68]
+cmp r3, #0x0
+strne r2, [r3, #0x68]
+streq r2, [r0, #0x4]
+ldr r2, [r1, #0x68]
+cmp r2, #0x0
+ldrne r0, [r1, #0x6c]
+strne r0, [r2, #0x6c]
+ldreq r1, [r1, #0x6c]
+streq r1, [r0, #0x0]
+bx lr

@@ -1,0 +1,10 @@
+.arm
+func_ov001_02146a80:
+cmp r2, #0x0
+moveq r2, #0x0
+streq r2, [r0, #0x2f4]
+ldr r2, [r0, #0x2f4]
+orr r1, r2, r1
+str r1, [r0, #0x2f4]
+mov r0, #0x1
+bx lr

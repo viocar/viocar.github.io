@@ -1,0 +1,14 @@
+.arm
+func_020b2cf0:
+ldr r0, [.L_020b2d1c]
+ldr r0, [r0, #0x0]
+cmp r0, #0x0
+moveq r0, #0x1
+bxeq lr
+ldr r0, [r0, #0x40]
+sub r0, r0, #0x6
+cmp r0, #0x1
+movhi r0, #0x1
+movls r0, #0x0
+bx lr
+.L_020b2d1c: .word 0x2135e44

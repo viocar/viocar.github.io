@@ -1,0 +1,13 @@
+.arm
+func_02091a54:
+ldr r1, [r0, #0x0]
+cmp r1, #0x0
+blt .L_02091a70
+cmp r1, #0x6
+ldrlt r0, [.L_02091a78]
+ldrlt r0, [r0, r1, lsl #0x2]
+bxlt lr
+.L_02091a70:
+mov r0, #0x0
+bx lr
+.L_02091a78: .word data_020e2070

@@ -1,0 +1,6 @@
+.arm
+func_0206c4b8:
+ldr r0, [.L_0206c4c4]
+ldr r0, [r0, #0x4]
+bx lr
+.L_0206c4c4: .word 0x21187ac

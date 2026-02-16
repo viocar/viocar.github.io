@@ -1,0 +1,12 @@
+data_020e7034:
+.word 0x20e6e6c
+.word 0x20e6eec
+.word 0x20e6f3c
+.word 0x20e6e24
+.word 0x20e6f50
+.word 0x20e6efc
+.word 0x20e6f0c
+.word 0x20e6f64
+.word 0x20e6fac
+.word 0x20e6e48
+.word 0x20e6e54

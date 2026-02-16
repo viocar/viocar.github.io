@@ -1,0 +1,9 @@
+.arm
+func_02008cd0:
+ldr r1, [r0, #0x1c]
+mov r2, r1, lsr #0x18
+tst r2, #0x1
+movne r0, r1, lsl #0x8
+movne r0, r0, lsr #0x8
+ldreq r0, [r0, #0x8]
+bx lr

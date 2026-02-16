@@ -1,0 +1,49 @@
+.arm
+func_020387e0:
+stmdb sp!, {r4, r5, r6, lr}
+ldr r0, [.L_02038884]
+ldrh r1, [r0, #0x6]
+cmp r1, #0x0
+movne r0, #0x0
+ldmneia sp!, {r4, r5, r6, pc}
+ldr r1, [r0, #0x14]
+ldr r4, [.L_02038884]
+cmp r1, #0x0
+ldreq r1, [.L_02038888]
+mov r6, #0x0
+streq r1, [r0, #0x14]
+str r6, [r4, #0x24]
+str r6, [r4, #0x30]
+str r6, [r4, #0x28]
+strh r6, [r4, #0xa]
+mov r5, #0x1
+strh r5, [r4, #0xc]
+ldr r3, [.L_0203888c]
+str r6, [r4, #0x54]
+str r6, [r3, #0x0]
+ldr r0, [.L_02038890]
+mov r1, r6
+mov r2, #0x400
+strh r6, [r3, #0x4]
+bl Memset
+ldr r0, [.L_02038894]
+mov r1, r6
+mov r2, #0xc0
+bl Memset
+ldr r0, [.L_02038898]
+mov r1, r6
+mov r2, #0x18
+bl Memset
+str r6, [r4, #0x3c]
+bl func_020388bc
+cmp r0, #0x0
+moveq r0, r6
+movne r0, r5
+strneh r5, [r4, #0x6]
+ldmia sp!, {r4, r5, r6, pc}
+.L_02038884: .word 0x2111620
+.L_02038888: .word func_0203889c
+.L_0203888c: .word 0x21116c0
+.L_02038890: .word 0x2111c20
+.L_02038894: .word 0x2111760
+.L_02038898: .word 0x2111694

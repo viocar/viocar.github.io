@@ -1,0 +1,5 @@
+.arm
+func_020052e4:
+mrs r0, cpsr
+and r0, r0, #0x80
+bx lr

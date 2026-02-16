@@ -1,0 +1,17 @@
+.arm
+func_02033fe0:
+ldr r3, [.L_02034018]
+mov r2, #0x1000
+str r2, [r3, #0x0]
+mov r2, #0x0
+str r2, [r3, #0x0]
+str r2, [r3, #0x0]
+str r2, [r3, #0x0]
+str r1, [r3, #0x0]
+str r0, [r3, #0x0]
+str r2, [r3, #0x0]
+rsb r0, r0, #0x0
+str r0, [r3, #0x0]
+str r1, [r3, #0x0]
+bx lr
+.L_02034018: .word 0x4000468

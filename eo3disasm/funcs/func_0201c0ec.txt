@@ -1,0 +1,11 @@
+.arm
+func_0201c0ec:
+cmp r0, #0x1a
+moveq r0, #0xc0
+bxeq lr
+add r0, r0, #0xe2
+and r0, r0, #0xff
+cmp r0, #0x1
+movls r0, #0x0
+movhi r0, #0x20
+bx lr

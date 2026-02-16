@@ -1,0 +1,17 @@
+.arm
+func_02032ed0:
+stmdb sp!, {r3, r4, lr}
+sub sp, sp, #0x4
+add r1, sp, #0x0
+mov r2, #0x1
+bl func_0202e144
+movs r4, r0
+addeq sp, sp, #0x4
+moveq r0, #0x0
+ldmeqia sp!, {r3, r4, pc}
+ldr r1, [sp, #0x0]
+bl DrainWriteBufferAndInvalidateDataCache
+mov r0, r4
+bl func_02032f0c
+add sp, sp, #0x4
+ldmia sp!, {r3, r4, pc}

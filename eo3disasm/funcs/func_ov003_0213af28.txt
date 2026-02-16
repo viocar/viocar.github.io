@@ -1,0 +1,72 @@
+.arm
+func_ov003_0213af28:
+cmp r1, #0x0
+bne .L_3_0213af90
+cmp r0, #0x6
+addls pc, pc, r0, lsl #0x2
+b .L_3_0213afcc
+.L_3_0213af3c: ; jump table
+b .L_3_0213af58 ; case 0
+b .L_3_0213af60 ; case 1
+b .L_3_0213af68 ; case 2
+b .L_3_0213af70 ; case 3
+b .L_3_0213af78 ; case 4
+b .L_3_0213af80 ; case 5
+b .L_3_0213af88 ; case 6
+.L_3_0213af58:
+ldr r0, [.L_3_0213afd4]
+bx lr
+.L_3_0213af60:
+ldr r0, [.L_3_0213afd8]
+bx lr
+.L_3_0213af68:
+ldr r0, [.L_3_0213afdc]
+bx lr
+.L_3_0213af70:
+ldr r0, [.L_3_0213afe0]
+bx lr
+.L_3_0213af78:
+ldr r0, [.L_3_0213afe4]
+bx lr
+.L_3_0213af80:
+ldr r0, [.L_3_0213afe8]
+bx lr
+.L_3_0213af88:
+ldr r0, [.L_3_0213afec]
+bx lr
+.L_3_0213af90:
+cmp r0, #0x3
+addls pc, pc, r0, lsl #0x2
+b .L_3_0213afcc
+.L_3_0213af9c: ; jump table
+b .L_3_0213afac ; case 0
+b .L_3_0213afb4 ; case 1
+b .L_3_0213afbc ; case 2
+b .L_3_0213afc4 ; case 3
+.L_3_0213afac:
+ldr r0, [.L_3_0213aff0]
+bx lr
+.L_3_0213afb4:
+ldr r0, [.L_3_0213aff4]
+bx lr
+.L_3_0213afbc:
+ldr r0, [.L_3_0213aff8]
+bx lr
+.L_3_0213afc4:
+ldr r0, [.L_3_0213affc]
+bx lr
+.L_3_0213afcc:
+ldr r0, [.L_3_0213b000]
+bx lr
+.L_3_0213afd4: .word data_ov003_021655bc
+.L_3_0213afd8: .word data_ov003_021655e4
+.L_3_0213afdc: .word data_ov003_02165618
+.L_3_0213afe0: .word data_ov003_02165640
+.L_3_0213afe4: .word data_ov003_02165674
+.L_3_0213afe8: .word data_ov003_0216569c
+.L_3_0213afec: .word data_ov003_021656cc
+.L_3_0213aff0: .word data_ov003_021656f8
+.L_3_0213aff4: .word data_ov003_02165720
+.L_3_0213aff8: .word data_ov003_02165754
+.L_3_0213affc: .word data_ov003_02165784
+.L_3_0213b000: .word data_ov003_021657b0

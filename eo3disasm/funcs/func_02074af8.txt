@@ -1,0 +1,14 @@
+.arm
+func_02074af8:
+cmp r0, #0x0
+beq .L_02074b1c
+ldr r1, [r0, #0x4]
+cmp r1, #0xa
+bne .L_02074b1c
+ldrb r0, [r0, #0xca]
+cmp r0, #0x0
+movne r0, #0x1
+bxne lr
+.L_02074b1c:
+mov r0, #0x0
+bx lr

@@ -1,0 +1,106 @@
+.arm
+func_0203227c:
+stmdb sp!, {r3, r4, r5, lr}
+movs r5, r0
+ldrmi r0, [.L_020323d8]
+mov r4, #0x0
+ldrmi r0, [r0, #0x0]
+mov r2, r4
+submi r5, r0, #0x1
+cmp r5, #0x200
+ldmgeia sp!, {r3, r4, r5, pc}
+ldr r0, [.L_020323dc]
+ldr r0, [r0, r5, lsl #0x2]
+cmp r0, #0x0
+beq .L_020322cc
+ldr r0, [r0, #0x1c]
+tst r0, #0x800
+movne r2, #0x1
+moveq r2, #0x0
+tst r0, #0x400
+movne r4, #0x1
+moveq r4, #0x0
+.L_020322cc:
+ldr r0, [.L_020323e0]
+ldr r1, [r0, r5, lsl #0x2]
+cmp r1, #0x0
+beq .L_020322f0
+cmp r2, #0x0
+bne .L_020322f0
+ldr r0, [.L_020323e4]
+ldr r0, [r0, r5, lsl #0x2]
+bl func_0203213c
+.L_020322f0:
+ldr r0, [.L_020323e8]
+ldr r1, [r0, r5, lsl #0x2]
+cmp r1, #0x0
+beq .L_02032314
+cmp r4, #0x0
+bne .L_02032314
+ldr r0, [.L_020323ec]
+ldr r0, [r0, r5, lsl #0x2]
+bl func_0203214c
+.L_02032314:
+ldr r2, [.L_020323d8]
+ldr r3, [r2, #0x0]
+sub r0, r3, #0x1
+cmp r5, r0
+bhs .L_0203237c
+ldr r12, [.L_020323dc]
+.L_0203232c:
+add r4, r12, r5, lsl #0x2
+ldr r1, [r4, #0x4]
+add r0, r4, #0x1000
+str r1, [r12, r5, lsl #0x2]
+ldr r3, [r4, #0x804]
+add r1, r4, #0x2000
+str r3, [r4, #0x800]
+ldr r3, [r0, #0x4]
+add r5, r5, #0x1
+str r3, [r0, #0x0]
+ldr r3, [r0, #0x804]
+str r3, [r0, #0x800]
+ldr r0, [r1, #0x4]
+str r0, [r1, #0x0]
+ldr r0, [r1, #0x804]
+str r0, [r1, #0x800]
+ldr r3, [r2, #0x0]
+sub r0, r3, #0x1
+cmp r5, r0
+blo .L_0203232c
+.L_0203237c:
+ldr r1, [.L_020323f0]
+mov r4, #0x0
+ldr r0, [.L_020323d8]
+str r4, [r1, r3, lsl #0x2]
+ldr r3, [r0, #0x0]
+ldr r1, [.L_020323f4]
+ldr r2, [.L_020323f8]
+str r4, [r1, r3, lsl #0x2]
+ldr r3, [r0, #0x0]
+ldr r1, [.L_020323fc]
+str r4, [r2, r3, lsl #0x2]
+ldr r3, [r0, #0x0]
+ldr r2, [.L_02032400]
+str r4, [r1, r3, lsl #0x2]
+ldr r3, [r0, #0x0]
+ldr r1, [.L_02032404]
+str r4, [r2, r3, lsl #0x2]
+ldr r2, [r0, #0x0]
+str r4, [r1, r2, lsl #0x2]
+ldr r1, [r0, #0x0]
+sub r1, r1, #0x1
+str r1, [r0, #0x0]
+ldmia sp!, {r3, r4, r5, pc}
+.L_020323d8: .word 0x2108bf4
+.L_020323dc: .word 0x2105bf4
+.L_020323e0: .word 0x21063f4
+.L_020323e4: .word 0x21073f4
+.L_020323e8: .word 0x2106bf4
+.L_020323ec: .word 0x2107bf4
+.L_020323f0: .word 0x2105bf0
+.L_020323f4: .word 0x21063f0
+.L_020323f8: .word 0x2106bf0
+.L_020323fc: .word 0x21073f0
+.L_02032400: .word 0x2107bf0
+.L_02032404: .word 0x21083f0

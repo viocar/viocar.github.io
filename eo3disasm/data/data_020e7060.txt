@@ -1,0 +1,12 @@
+data_020e7060:
+.word 0x20e6e10
+.word 0x20e6f1c
+.word 0x20e6e14
+.word 0x20e6fdc
+.word 0x20e6e9c
+.word 0x20e6edc
+.word 0x20e6e60
+.word 0x20e6eac
+.word 0x20e6f7c
+.word 0x20e6f94
+.word 0x20e6e78

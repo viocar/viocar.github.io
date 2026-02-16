@@ -1,0 +1,13 @@
+.arm
+func_02028650:
+ldr r2, [r0, #0x154]
+cmp r2, #0x0
+movne r1, #0x0
+strne r1, [r2, #0x0]
+strne r1, [r0, #0x154]
+ldr r1, [r0, #0x118]
+bic r1, r1, #0x1
+bic r1, r1, #0x4
+bic r1, r1, #0x2
+str r1, [r0, #0x118]
+bx lr

@@ -1,0 +1,40 @@
+.arm
+func_02034e58:
+tst r0, #0x1
+ldrne r1, [.L_02034ecc]
+mov r2, #0x80
+strneb r2, [r1, #0x0]
+tst r0, #0x2
+ldrne r1, [.L_02034ed0]
+strneb r2, [r1, #0x0]
+tst r0, #0x4
+ldrne r1, [.L_02034ed4]
+strneb r2, [r1, #0x0]
+tst r0, #0x8
+ldrne r1, [.L_02034ed8]
+strneb r2, [r1, #0x0]
+tst r0, #0x10
+ldrne r1, [.L_02034edc]
+strneb r2, [r1, #0x0]
+tst r0, #0x20
+ldrne r1, [.L_02034ee0]
+strneb r2, [r1, #0x0]
+tst r0, #0x40
+ldrne r1, [.L_02034ee4]
+strneb r2, [r1, #0x0]
+tst r0, #0x80
+ldrne r1, [.L_02034ee8]
+strneb r2, [r1, #0x0]
+tst r0, #0x100
+ldrne r0, [.L_02034eec]
+strneb r2, [r0, #0x0]
+bx lr
+.L_02034ecc: .word 0x4000240
+.L_02034ed0: .word 0x4000241
+.L_02034ed4: .word 0x4000242
+.L_02034ed8: .word 0x4000243
+.L_02034edc: .word 0x4000244
+.L_02034ee0: .word 0x4000245
+.L_02034ee4: .word 0x4000246
+.L_02034ee8: .word 0x4000248
+.L_02034eec: .word 0x4000249

@@ -1,0 +1,7 @@
+.arm
+func_02031830:
+ldr r1, [r0, #0x1c]
+bic r1, r1, #0x80
+bic r1, r1, #0x100
+str r1, [r0, #0x1c]
+bx lr

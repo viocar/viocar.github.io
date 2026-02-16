@@ -1,0 +1,11 @@
+.arm
+func_02003efc:
+mov r12, #0x4000000
+ldr r1, [r12, #0x208]
+str r12, [r12, #0x208]
+.L_02003f08:
+ldrh r0, [r12, #0x6]
+cmp r0, #0x0
+bne .L_02003f08
+str r1, [r12, #0x208]
+bx lr

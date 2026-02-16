@@ -1,0 +1,69 @@
+.arm
+func_020326f4:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+mov r9, r0
+bl DisableIRQ
+ldr r3, [.L_020327e0]
+add r4, r9, #0x2000
+mov r6, r0
+ldrsb r1, [r3, #0x0]
+ldrsb r2, [r3, #0x1]
+ldrsb r3, [r3, #0x2]
+ldr r5, [.L_020327e4]
+ldr r0, [r4, #0xa84]
+ldrh r4, [r5, #0x0]
+bl func_02032a48
+mov r0, r6
+bl EnableIRQ
+bl func_02005324
+add r0, r9, #0x2000
+ldr r0, [r0, #0xa84]
+bl func_0202245c
+mov r7, r0
+ldrb r0, [r7, #0x9]
+mov r8, #0x0
+cmp r0, #0x0
+ldmleia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+add r6, r7, #0x8
+mov r5, r8
+mov r4, r8
+mov r10, #0x88
+.L_02032764:
+cmp r8, #0x50
+bne .L_02032770
+bl HandleError
+.L_02032770:
+cmp r7, #0x0
+beq .L_020327bc
+cmp r6, #0x0
+beq .L_020327a8
+ldrb r0, [r7, #0x9]
+and r2, r8, #0xff
+cmp r2, r0
+bhs .L_020327a8
+ldrh r1, [r7, #0xe]
+ldrh r0, [r6, r1]
+add r1, r6, r1
+add r1, r1, #0x4
+mla r1, r0, r2, r1
+b .L_020327ac
+.L_020327a8:
+mov r1, r5
+.L_020327ac:
+cmp r1, #0x0
+ldrne r0, [r1, #0x0]
+addne r1, r7, r0
+bne .L_020327c0
+.L_020327bc:
+mov r1, r4
+.L_020327c0:
+mla r0, r8, r10, r9
+str r1, [r0, #0x54]
+bl func_0201e390
+ldrb r0, [r7, #0x9]
+add r8, r8, #0x1
+cmp r8, r0
+blt .L_02032764
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+.L_020327e0: .word 0x2108c0c
+.L_020327e4: .word 0x4000006

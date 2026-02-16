@@ -1,0 +1,88 @@
+.arm
+func_020a176c:
+add r0, r0, #0x1
+cmp r0, #0xc
+addls pc, pc, r0, lsl #0x2
+b .L_020a183c
+.L_020a177c: ; jump table
+b .L_020a17b0 ; case 0
+b .L_020a17b8 ; case 1
+b .L_020a17e4 ; case 2
+b .L_020a17ec ; case 3
+b .L_020a17f4 ; case 4
+b .L_020a17fc ; case 5
+b .L_020a1804 ; case 6
+b .L_020a180c ; case 7
+b .L_020a1814 ; case 8
+b .L_020a181c ; case 9
+b .L_020a1824 ; case 10
+b .L_020a182c ; case 11
+b .L_020a1834 ; case 12
+.L_020a17b0:
+ldr r0, [.L_020a1844]
+bx lr
+.L_020a17b8:
+cmp r1, #0x0
+cmpne r1, #0x1
+beq .L_020a17d4
+add r0, r1, #0xfc
+and r0, r0, #0xff
+cmp r0, #0x1
+bhi .L_020a17dc
+.L_020a17d4:
+ldr r0, [.L_020a1848]
+bx lr
+.L_020a17dc:
+ldr r0, [.L_020a184c]
+bx lr
+.L_020a17e4:
+ldr r0, [.L_020a1850]
+bx lr
+.L_020a17ec:
+ldr r0, [.L_020a1854]
+bx lr
+.L_020a17f4:
+ldr r0, [.L_020a1858]
+bx lr
+.L_020a17fc:
+ldr r0, [.L_020a185c]
+bx lr
+.L_020a1804:
+ldr r0, [.L_020a1860]
+bx lr
+.L_020a180c:
+ldr r0, [.L_020a1864]
+bx lr
+.L_020a1814:
+ldr r0, [.L_020a1868]
+bx lr
+.L_020a181c:
+ldr r0, [.L_020a186c]
+bx lr
+.L_020a1824:
+ldr r0, [.L_020a1870]
+bx lr
+.L_020a182c:
+ldr r0, [.L_020a1874]
+bx lr
+.L_020a1834:
+ldr r0, [.L_020a1878]
+bx lr
+.L_020a183c:
+ldr r0, [.L_020a187c]
+bx lr
+.L_020a1844: .word data_020ebcdc
+.L_020a1848: .word data_020ebce8
+.L_020a184c: .word data_020ebcfc
+.L_020a1850: .word data_020ebd0c
+.L_020a1854: .word data_020ebd20
+.L_020a1858: .word data_020ebd30
+.L_020a185c: .word data_020ebd44
+.L_020a1860: .word data_020ebd50
+.L_020a1864: .word data_020ebd5c
+.L_020a1868: .word data_020ebd6c
+.L_020a186c: .word data_020ebd80
+.L_020a1870: .word data_020ebd94
+.L_020a1874: .word data_020ebda4
+.L_020a1878: .word data_020ebdb4
+.L_020a187c: .word data_020ebdc8

@@ -1,0 +1,19 @@
+.arm
+func_02029460:
+stmdb sp!, {r4, lr}
+ldr r4, [.L_0202949c]
+mov r0, #0x0
+mov r1, r4
+bl func_02009238
+cmp r0, #0x0
+bne .L_02029480
+bl HandleError
+.L_02029480:
+mov r1, r4
+mov r0, #0x0
+bl func_020091e4
+cmp r0, #0x0
+ldmneia sp!, {r4, pc}
+bl HandleError
+ldmia sp!, {r4, pc}
+.L_0202949c: .word 0x0

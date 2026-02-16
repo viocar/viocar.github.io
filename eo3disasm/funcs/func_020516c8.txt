@@ -1,0 +1,153 @@
+.arm
+func_020516c8:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+mov r7, r2
+mov r8, r3
+mov r5, #0x4
+mov r4, #0x0
+bl func_0204029c
+movs r6, r0
+ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
+cmp r8, #0xf
+addls pc, pc, r8, lsl #0x2
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020516f4: ; jump table
+ldmia sp!, {r4, r5, r6, r7, r8, pc} ; case 0
+b .L_020517e8 ; case 1
+b .L_020517e8 ; case 2
+b .L_020517e8 ; case 3
+b .L_02051734 ; case 4
+b .L_0205189c ; case 5
+b .L_02051840 ; case 6
+ldmia sp!, {r4, r5, r6, r7, r8, pc} ; case 7
+ldmia sp!, {r4, r5, r6, r7, r8, pc} ; case 8
+ldmia sp!, {r4, r5, r6, r7, r8, pc} ; case 9
+ldmia sp!, {r4, r5, r6, r7, r8, pc} ; case 10
+ldmia sp!, {r4, r5, r6, r7, r8, pc} ; case 11
+ldmia sp!, {r4, r5, r6, r7, r8, pc} ; case 12
+ldmia sp!, {r4, r5, r6, r7, r8, pc} ; case 13
+b .L_0205178c ; case 14
+b .L_020517e8 ; case 15
+.L_02051734:
+ldr r0, [r6, #0x314]
+sub r7, r0, r7
+cmp r7, #0x0
+movle r7, r4
+ble .L_0205177c
+add r0, r6, #0x224
+mov r1, r5
+mov r2, r4
+add r0, r0, #0x400
+bl GetStats
+cmp r7, r0
+blt .L_0205177c
+add r0, r6, #0x224
+mov r1, r5
+mov r2, r4
+add r0, r0, #0x400
+bl GetStats
+mov r7, r0
+.L_0205177c:
+add r0, r6, #0x600
+strh r7, [r0, #0xc4]
+str r7, [r6, #0x314]
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_0205178c:
+add r0, r6, #0x224
+mov r1, r5
+mov r2, r4
+add r0, r0, #0x400
+ldr r5, [r6, #0x314]
+bl GetStats
+sub r3, r0, r7
+cmp r3, #0x0
+movle r3, r4
+cmp r5, #0x0
+movle r5, #0x0
+ble .L_020517c4
+cmp r5, r3
+movge r5, r3
+.L_020517c4:
+add r0, r6, #0x600
+strh r5, [r0, #0xc4]
+add r1, r6, #0x224
+add r0, r1, #0x400
+mov r1, #0x4
+mov r2, #0x0
+str r5, [r6, #0x314]
+bl func_020a0a9c
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_020517e8:
+ldr r0, [r6, #0x314]
+add r7, r0, r7
+cmp r7, #0x0
+movle r7, r4
+ble .L_02051830
+add r0, r6, #0x224
+mov r1, r5
+mov r2, r4
+add r0, r0, #0x400
+bl GetStats
+cmp r7, r0
+blt .L_02051830
+add r0, r6, #0x224
+mov r1, r5
+mov r2, r4
+add r0, r0, #0x400
+bl GetStats
+mov r7, r0
+.L_02051830:
+add r0, r6, #0x600
+strh r7, [r0, #0xc4]
+str r7, [r6, #0x314]
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_02051840:
+ldr r0, [r6, #0x318]
+sub r7, r0, r7
+cmp r7, #0x0
+movle r7, r4
+ble .L_0205188c
+add r0, r6, #0x224
+mov r4, #0x1
+mov r1, r5
+mov r2, r4
+add r0, r0, #0x400
+bl GetStats
+cmp r7, r0
+blt .L_0205188c
+add r0, r6, #0x224
+mov r1, r5
+mov r2, r4
+add r0, r0, #0x400
+bl GetStats
+mov r7, r0
+.L_0205188c:
+add r0, r6, #0x600
+strh r7, [r0, #0xc6]
+str r7, [r6, #0x318]
+ldmia sp!, {r4, r5, r6, r7, r8, pc}
+.L_0205189c:
+ldr r0, [r6, #0x318]
+add r7, r0, r7
+cmp r7, #0x0
+movle r7, r4
+ble .L_020518e8
+add r0, r6, #0x224
+mov r4, #0x1
+mov r1, r5
+mov r2, r4
+add r0, r0, #0x400
+bl GetStats
+cmp r7, r0
+blt .L_020518e8
+add r0, r6, #0x224
+mov r1, r5
+mov r2, r4
+add r0, r0, #0x400
+bl GetStats
+mov r7, r0
+.L_020518e8:
+add r0, r6, #0x600
+strh r7, [r0, #0xc6]
+str r7, [r6, #0x318]
+ldmia sp!, {r4, r5, r6, r7, r8, pc}

@@ -1,0 +1,28 @@
+.arm
+func_ov001_0214e104:
+cmp r0, #0x1
+mov r1, #0x0
+bgt .L_1_0214e11c
+cmp r0, #0x1
+beq .L_1_0214e150
+b .L_1_0214e154
+.L_1_0214e11c:
+sub r0, r0, #0xa
+cmp r0, #0x8
+addls pc, pc, r0, lsl #0x2
+b .L_1_0214e154
+.L_1_0214e12c: ; jump table
+b .L_1_0214e150 ; case 0
+b .L_1_0214e150 ; case 1
+b .L_1_0214e154 ; case 2
+b .L_1_0214e150 ; case 3
+b .L_1_0214e154 ; case 4
+b .L_1_0214e150 ; case 5
+b .L_1_0214e154 ; case 6
+b .L_1_0214e150 ; case 7
+b .L_1_0214e150 ; case 8
+.L_1_0214e150:
+mov r1, #0x1
+.L_1_0214e154:
+mov r0, r1
+bx lr

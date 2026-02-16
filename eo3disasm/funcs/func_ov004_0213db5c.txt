@@ -1,0 +1,63 @@
+.arm
+func_ov004_0213db5c:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+mov r0, #0x1c
+mov r1, #0x1e
+bl func_0202ba38
+ldr r8, [.L_4_0213dc3c]
+mov r7, #0x10
+mov r0, r8
+mov r1, r7
+bl func_02035bb0
+ldr r2, [.L_4_0213dc40]
+mov r6, r0
+ldr r1, [.L_4_0213dc44]
+str r2, [r6, #0x74]
+str r1, [r6, #0x78]
+bl func_02036060
+mov r5, r0
+bl func_0201b55c
+mov r1, r6
+mov r4, #0x1
+mov r2, r4
+mov r9, #0x0
+mov r3, r9
+bl func_02036278
+mov r0, r5
+mov r1, r9
+mov r2, r7
+bl Memset
+add r0, r8, #0x1
+mov r1, r9
+ldr r2, [.L_4_0213dc48]
+str r5, [r2, #0x0]
+str r6, [r5, #0x0]
+bl func_02035bb0
+mov r6, r0
+mov r0, r4
+ldr r1, [.L_4_0213dc4c]
+str r1, [r6, #0x74]
+bl func_ov000_01ff9b94
+str r0, [r6, #0x8c]
+bl func_0201b55c
+mov r1, r6
+mov r2, #0x6
+ldr r3, [r5, #0x0]
+bl func_02036278
+str r6, [r5, #0x4]
+mov r0, r7
+bl func_02035a48
+mov r0, r7
+mov r1, #0x35
+bl func_020316bc
+mov r0, r7
+mov r1, #0x36
+bl func_020316bc
+mov r0, #0x3
+bl func_0202ff44
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_4_0213dc3c: .word 0x4010
+.L_4_0213dc40: .word func_ov004_0213d948
+.L_4_0213dc44: .word func_ov004_0213db20
+.L_4_0213dc48: .word 0x021456f8
+.L_4_0213dc4c: .word func_ov004_0213dab4

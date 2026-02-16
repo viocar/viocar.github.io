@@ -1,0 +1,125 @@
+.arm
+func_0209e334:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+mov r8, r2
+mov r10, r0
+mov r0, r8
+mov r9, r1
+mov r7, r3
+bl func_0201be4c
+mov r4, r0
+mov r0, r8
+ldrb r5, [sp, #0x28]
+bl func_0201c0c4
+mov r6, r0
+mov r0, r8
+bl func_0201c0cc
+ldrb r0, [sp, #0x28]
+mla r6, r9, r6, r10
+cmp r0, #0x0
+beq .L_0209e4ac
+bl func_0201e20c
+cmp r0, #0x0
+beq .L_0209e410
+cmp r7, #0x1
+bne .L_0209e3cc
+mov r11, #0x4
+mov r0, r10
+mov r1, r9
+mov r2, r8
+mov r3, r11
+bl func_0209e514
+cmp r0, #0x0
+bne .L_0209e3cc
+mov r1, r9
+mov r2, r8
+mov r3, r11
+add r0, r10, #0x1
+bl func_0209e514
+cmp r0, #0x0
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0209e3cc:
+cmp r7, #0x2
+bne .L_0209e410
+mov r11, #0x4
+mov r0, r10
+mov r1, r9
+mov r2, r8
+mov r3, r11
+bl func_0209e514
+cmp r0, #0x0
+bne .L_0209e410
+mov r0, r10
+mov r2, r8
+mov r3, r11
+add r1, r9, #0x1
+bl func_0209e514
+cmp r0, #0x0
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0209e410:
+cmp r7, #0x4
+moveq r0, r5, lsl #0x5
+andeq r5, r0, #0xff
+cmp r7, #0x0
+moveq r0, r5, lsl #0x4
+andeq r5, r0, #0xff
+cmp r7, #0x1
+moveq r0, r5, lsl #0x3
+andeq r5, r0, #0xff
+cmp r7, #0x2
+moveq r0, r5, lsl #0x2
+andeq r5, r0, #0xff
+cmp r7, #0x4
+andeq r5, r5, #0x20
+ldr r1, [r4, #0x8]
+cmp r7, #0x0
+andeq r5, r5, #0x10
+cmp r7, #0x1
+andeq r5, r5, #0x8
+cmp r7, #0x2
+andeq r5, r5, #0x4
+cmp r7, #0x3
+andeq r5, r5, #0x3
+ldrb r0, [r1, r6]
+cmp r7, #0x3
+orrne r0, r0, r5
+strneb r0, [r1, r6]
+ldmneia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+mov r0, r0, asr #0x2
+strb r0, [r1, r6]
+ldr r1, [r4, #0x8]
+ldrb r0, [r1, r6]
+mov r0, r0, lsl #0x2
+strb r0, [r1, r6]
+ldr r1, [r4, #0x8]
+ldrb r0, [r1, r6]
+orr r0, r0, r5
+strb r0, [r1, r6]
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0209e4ac:
+cmp r7, #0x4
+ldreq r1, [r4, #0x8]
+ldreqb r0, [r1, r6]
+andeq r0, r0, #0xdf
+streqb r0, [r1, r6]
+cmp r7, #0x0
+ldreq r1, [r4, #0x8]
+ldreqb r0, [r1, r6]
+andeq r0, r0, #0xef
+streqb r0, [r1, r6]
+cmp r7, #0x1
+ldreq r1, [r4, #0x8]
+ldreqb r0, [r1, r6]
+andeq r0, r0, #0xf7
+streqb r0, [r1, r6]
+cmp r7, #0x2
+ldreq r1, [r4, #0x8]
+ldreqb r0, [r1, r6]
+andeq r0, r0, #0xfb
+streqb r0, [r1, r6]
+cmp r7, #0x3
+ldreq r1, [r4, #0x8]
+ldreqb r0, [r1, r6]
+andeq r0, r0, #0xfc
+streqb r0, [r1, r6]
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}

@@ -1,0 +1,17 @@
+.arm
+func_020845b4:
+stmdb sp!, {r3, r4, r5, lr}
+bl func_020845a0
+mov r5, #0x0
+mov r1, r5
+mov r2, #0x168
+bl Memset
+mvn r4, #0x0
+.L_020845d0:
+mov r0, r5
+bl func_020845ec
+add r5, r5, #0x1
+str r4, [r0, #0x0]
+cmp r5, #0x9
+blt .L_020845d0
+ldmia sp!, {r3, r4, r5, pc}

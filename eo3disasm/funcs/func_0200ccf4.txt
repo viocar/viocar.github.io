@@ -1,0 +1,12 @@
+.arm
+func_0200ccf4:
+ldr r2, [.L_0200cd18]
+mov r0, #0x0
+mvn r1, #0x2
+str r1, [r2, #0x14]
+str r0, [r2, #0x18]
+str r0, [r2, #0x24]
+str r0, [r2, #0x20]
+str r0, [r2, #0x1c]
+bx lr
+.L_0200cd18: .word 0x20ef9e0

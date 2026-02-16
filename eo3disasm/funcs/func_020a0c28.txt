@@ -1,0 +1,7 @@
+.arm
+func_020a0c28:
+ldrh r0, [r0, #0xbc]
+tst r0, r1
+movne r0, #0x1
+moveq r0, #0x0
+bx lr

@@ -1,0 +1,14 @@
+.arm
+func_0202e7b8:
+cmp r1, #0x0
+mov r3, #0x1
+ble .L_0202e7d8
+.L_0202e7c4:
+mul r2, r3, r0
+sub r1, r1, #0x1
+mov r3, r2
+cmp r1, #0x0
+bgt .L_0202e7c4
+.L_0202e7d8:
+mov r0, r3
+bx lr

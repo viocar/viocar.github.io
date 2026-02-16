@@ -1,0 +1,67 @@
+.arm
+func_ov004_0213f3b0:
+stmdb sp!, {r3, r4, r5, lr}
+mov r5, r0
+bl func_0203591c
+mov r4, r0
+mov r1, r4
+mov r0, #0x0
+mov r2, #0x200
+bl Memset32Aligned
+ldr r0, [r5, #0x18]
+cmp r0, #0x0
+beq .L_4_0213f3f0
+cmp r0, #0x1
+beq .L_4_0213f3f8
+cmp r0, #0x2
+beq .L_4_0213f400
+b .L_4_0213f40c
+.L_4_0213f3f0:
+ldr r1, [.L_4_0213f474]
+b .L_4_0213f404
+.L_4_0213f3f8:
+ldr r1, [.L_4_0213f478]
+b .L_4_0213f404
+.L_4_0213f400:
+ldr r1, [.L_4_0213f47c]
+.L_4_0213f404:
+mov r0, r4
+bl func_020142d0
+.L_4_0213f40c:
+mov r0, r4
+bl func_0202e130
+ldr r1, [r5, #0x18]
+str r0, [r5, #0x54]
+cmp r1, #0x0
+beq .L_4_0213f438
+cmp r1, #0x1
+beq .L_4_0213f440
+cmp r1, #0x2
+beq .L_4_0213f448
+b .L_4_0213f454
+.L_4_0213f438:
+ldr r1, [.L_4_0213f480]
+b .L_4_0213f44c
+.L_4_0213f440:
+ldr r1, [.L_4_0213f484]
+b .L_4_0213f44c
+.L_4_0213f448:
+ldr r1, [.L_4_0213f488]
+.L_4_0213f44c:
+mov r0, r4
+bl func_020142d0
+.L_4_0213f454:
+mov r0, r4
+bl func_0202e130
+mov r1, r0
+ldr r0, [r5, #0x54]
+str r1, [r5, #0x58]
+bl func_02075e9c
+str r0, [r5, #0x5c]
+ldmia sp!, {r3, r4, r5, pc}
+.L_4_0213f474: .word data_ov004_02141734
+.L_4_0213f478: .word data_ov004_02141754
+.L_4_0213f47c: .word data_ov004_02141774
+.L_4_0213f480: .word data_ov004_02141794
+.L_4_0213f484: .word data_ov004_021417b4
+.L_4_0213f488: .word data_ov004_021417d4

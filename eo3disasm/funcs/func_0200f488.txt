@@ -1,0 +1,55 @@
+.arm
+func_0200f488:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+sub sp, sp, #0x28
+mov r7, r0
+mov r6, r1
+mov r0, #0x1
+mov r1, #0x2
+mov r5, r2
+mov r4, r3
+bl func_0200e61c
+cmp r0, #0x0
+addne sp, sp, #0x28
+ldmneia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+cmp r6, #0x0
+addeq sp, sp, #0x28
+moveq r0, #0x6
+ldmeqia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+ldrh r1, [r6, #0x0]
+mov r0, r6
+mov r1, r1, lsl #0x1
+bl CleanDataCacheLine
+bl func_0200e5ac
+add r1, r0, #0x100
+mov r9, #0x0
+strh r9, [r1, #0x50]
+mov r8, #0xc
+str r9, [r0, #0x14c]
+mov r0, r8
+mov r1, r7
+bl func_0200e418
+strh r8, [sp, #0x0]
+str r6, [sp, #0x4]
+cmp r5, #0x0
+mov r2, #0x18
+beq .L_0200f520
+add r1, sp, #0x8
+mov r0, r5
+bl Memcpy
+b .L_0200f52c
+.L_0200f520:
+add r0, sp, #0x8
+mov r1, r9
+bl Memset
+.L_0200f52c:
+ldrh r2, [sp, #0x48]
+add r0, sp, #0x0
+mov r1, #0x28
+str r4, [sp, #0x20]
+strh r2, [sp, #0x26]
+bl func_0200e53c
+cmp r0, #0x0
+moveq r0, #0x2
+add sp, sp, #0x28
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}

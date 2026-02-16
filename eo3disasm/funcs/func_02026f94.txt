@@ -1,0 +1,107 @@
+.arm
+func_02026f94:
+stmdb sp!, {r3, r4, r5, r6, r7, lr}
+mov r7, r0
+mov r4, #0x0
+mov r6, r1
+mov r5, r2
+mov r1, r4
+mov r2, r4
+add r0, r7, #0x34
+bl func_02008bc4
+cmp r0, #0x0
+moveq r0, r4
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+mov r1, r7
+add r0, r7, #0x34
+mov r2, #0x30
+bl func_02008bf0
+cmp r0, #0x30
+movne r0, r4
+ldmneia sp!, {r3, r4, r5, r6, r7, pc}
+cmp r6, #0x0
+beq .L_02027120
+str r4, [sp, #0x0]
+ldr r1, [r7, #0x1c]
+ldr r2, [.L_02027128]
+mov r0, r6
+mov r3, r7
+bl func_020275f0
+str r0, [r7, #0x98]
+cmp r0, #0x0
+moveq r0, r4
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+ldr r1, [r7, #0x18]
+mov r2, r4
+add r0, r7, #0x34
+bl func_02008bc4
+cmp r0, #0x0
+moveq r0, r4
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+ldr r1, [r7, #0x98]
+ldr r2, [r7, #0x1c]
+add r0, r7, #0x34
+bl func_02008bf0
+ldr r1, [r7, #0x1c]
+cmp r0, r1
+movne r0, r4
+ldmneia sp!, {r3, r4, r5, r6, r7, pc}
+str r4, [sp, #0x0]
+ldr r1, [r7, #0x24]
+ldr r2, [.L_0202712c]
+mov r0, r6
+mov r3, r7
+bl func_020275f0
+str r0, [r7, #0x90]
+cmp r0, #0x0
+moveq r0, r4
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+ldr r1, [r7, #0x20]
+mov r2, r4
+add r0, r7, #0x34
+bl func_02008bc4
+cmp r0, #0x0
+moveq r0, r4
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+ldr r1, [r7, #0x90]
+ldr r2, [r7, #0x24]
+add r0, r7, #0x34
+bl func_02008bf0
+ldr r1, [r7, #0x24]
+cmp r0, r1
+movne r0, r4
+ldmneia sp!, {r3, r4, r5, r6, r7, pc}
+cmp r5, #0x0
+ldrne r1, [r7, #0x14]
+cmpne r1, #0x0
+beq .L_02027120
+ldr r2, [.L_02027130]
+mov r0, r6
+mov r3, r7
+str r4, [sp, #0x0]
+bl func_020275f0
+str r0, [r7, #0x94]
+cmp r0, #0x0
+moveq r0, r4
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+ldr r1, [r7, #0x10]
+mov r2, r4
+add r0, r7, #0x34
+bl func_02008bc4
+cmp r0, #0x0
+moveq r0, r4
+ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
+ldr r1, [r7, #0x94]
+ldr r2, [r7, #0x14]
+add r0, r7, #0x34
+bl func_02008bf0
+ldr r1, [r7, #0x14]
+cmp r0, r1
+movne r0, r4
+ldmneia sp!, {r3, r4, r5, r6, r7, pc}
+.L_02027120:
+mov r0, #0x1
+ldmia sp!, {r3, r4, r5, r6, r7, pc}
+.L_02027128: .word func_02027484
+.L_0202712c: .word func_02027490
+.L_02027130: .word func_0202749c

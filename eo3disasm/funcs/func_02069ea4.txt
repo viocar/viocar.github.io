@@ -1,0 +1,23 @@
+.arm
+func_02069ea4:
+mov r1, #0xc
+mul r3, r0, r1
+ldr r1, [.L_02069eec]
+ldr r0, [.L_02069ef0]
+ldr r2, [.L_02069ef4]
+ldr r1, [r1, r3]
+ldr r0, [r0, r3]
+ldr r2, [r2, r3]
+mov r1, r1, lsl #0x18
+mov r0, r0, lsl #0x10
+mov r2, r2, lsl #0x8
+and r1, r1, #0xff000000
+and r0, r0, #0xff0000
+and r2, r2, #0xff00
+add r0, r1, r0
+add r0, r2, r0
+add r0, r0, #0xff
+bx lr
+.L_02069eec: .word data_020e765c
+.L_02069ef0: .word data_020e7660
+.L_02069ef4: .word data_020e7664

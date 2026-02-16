@@ -1,0 +1,32 @@
+.arm
+func_0202e0d0:
+stmdb sp!, {r3, lr}
+ldr r2, [r0, #0x0]
+and r2, r2, #0xf0
+cmp r2, #0x20
+bgt .L_0202e0f4
+bge .L_0202e118
+cmp r2, #0x10
+beq .L_0202e110
+ldmia sp!, {r3, pc}
+.L_0202e0f4:
+cmp r2, #0x30
+bgt .L_0202e104
+beq .L_0202e120
+ldmia sp!, {r3, pc}
+.L_0202e104:
+cmp r2, #0x80
+beq .L_0202e128
+ldmia sp!, {r3, pc}
+.L_0202e110:
+bl func_020062b4
+ldmia sp!, {r3, pc}
+.L_0202e118:
+bl func_02006394
+ldmia sp!, {r3, pc}
+.L_0202e120:
+bl func_0200646c
+ldmia sp!, {r3, pc}
+.L_0202e128:
+bl func_020064d8
+ldmia sp!, {r3, pc}

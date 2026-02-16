@@ -1,0 +1,15 @@
+.arm
+func_0202c638:
+ldr r2, [.L_0202c664]
+mov r0, #0x0
+.L_0202c640:
+add r1, r2, r0, lsl #0x2
+ldr r1, [r1, #0x574]
+cmp r1, #0x0
+bxeq lr
+add r0, r0, #0x1
+cmp r0, #0x8
+blt .L_0202c640
+mvn r0, #0x0
+bx lr
+.L_0202c664: .word 0x20fedb0

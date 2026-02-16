@@ -1,0 +1,19 @@
+.arm
+func_02029f48:
+ldr r3, [.L_02029f88]
+mov r2, #0xc
+ldr r3, [r3, #0x4]
+mla r12, r0, r2, r3
+add r3, r3, #0x8
+ldr r2, [r3, r0, lsl #0x3]
+ldrb r12, [r12, #0x410]
+bic r2, r2, #0xc00
+orr r1, r2, r1, lsl #0xa
+str r1, [r3, r0, lsl #0x3]
+add r1, r3, r0, lsl #0x3
+ldrh r0, [r1, #0x4]
+bic r0, r0, #0xf000
+orr r0, r0, r12, lsl #0xc
+strh r0, [r1, #0x4]
+bx lr
+.L_02029f88: .word 0x20fe780

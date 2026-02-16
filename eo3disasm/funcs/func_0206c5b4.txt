@@ -1,0 +1,25 @@
+.arm
+func_0206c5b4:
+ldr r2, [r0, #0x4]
+cmp r2, #0x4
+addls pc, pc, r2, lsl #0x2
+b .L_0206c5e0
+.L_0206c5c4: ; jump table
+b .L_0206c5e0 ; case 0
+b .L_0206c5e0 ; case 1
+b .L_0206c5e0 ; case 2
+b .L_0206c5e0 ; case 3
+b .L_0206c5d8 ; case 4
+.L_0206c5d8:
+mov r0, #0x1
+bx lr
+.L_0206c5e0:
+ldr r1, [r0, #0x70]
+cmp r1, #0x0
+beq .L_0206c5f8
+cmp r2, #0x0
+moveq r1, #0x4
+streq r1, [r0, #0x4]
+.L_0206c5f8:
+mov r0, #0x0
+bx lr

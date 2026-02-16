@@ -1,0 +1,18 @@
+.arm
+func_020337d0:
+ldmia r0, {r3, r12}
+add r3, r12, r3
+str r3, [r2, #0x0]
+ldr r12, [r0, #0x8]
+ldr r3, [r0, #0x0]
+cmp r3, r12
+movhs r1, #0x0
+bhs .L_02033804
+add r2, r3, r1
+cmp r2, r12
+strhi r12, [r0, #0x0]
+subhi r1, r12, r3
+strls r2, [r0, #0x0]
+.L_02033804:
+mov r0, r1
+bx lr

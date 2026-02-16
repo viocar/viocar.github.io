@@ -1,0 +1,4 @@
+data_020e231c:
+.word 0x20e22f0
+.word 0x20e22e0
+.word 0x20e22d8

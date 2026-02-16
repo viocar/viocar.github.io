@@ -1,0 +1,7 @@
+.arm
+func_020ba1b0:
+mov r2, #0x2
+mov r1, #0x0
+str r2, [r0, #0x4]
+str r1, [r0, #0x14]
+bx lr

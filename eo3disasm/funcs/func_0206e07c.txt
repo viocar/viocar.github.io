@@ -1,0 +1,129 @@
+.arm
+func_0206e07c:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+mov r7, #0x0
+mov r10, r0
+mov r9, r1
+mov r8, r2
+mov r11, r7
+mov r5, r7
+.L_0206e098:
+mov r0, #0xc
+smlabb r0, r5, r0, r10
+ldrsh r6, [r0, #0xc]
+cmp r6, #0x0
+beq .L_0206e158
+mov r0, r6
+bl func_0206e3e0
+mov r4, r0
+cmp r8, #0x0
+beq .L_0206e0d4
+cmp r8, #0x1
+beq .L_0206e110
+cmp r8, #0x2
+beq .L_0206e140
+b .L_0206e158
+.L_0206e0d4:
+cmp r9, #0x0
+bne .L_0206e0e8
+cmp r5, #0x0
+bne .L_0206e158
+b .L_0206e0f8
+.L_0206e0e8:
+cmp r9, #0x1
+bne .L_0206e0f8
+cmp r5, #0x1
+bne .L_0206e158
+.L_0206e0f8:
+mov r0, r6
+bl func_0206df44
+cmp r0, #0x0
+movne r11, #0x1
+ldrneh r7, [r4, #0x4]
+b .L_0206e158
+.L_0206e110:
+ldr r0, [r10, #0x8]
+cmp r0, #0xe
+mov r0, r6
+bne .L_0206e130
+bl func_0206df44
+cmp r0, #0x0
+ldrneh r0, [r4, #0x4]
+b .L_0206e13c
+.L_0206e130:
+bl func_0206df68
+cmp r0, #0x0
+ldrneh r0, [r4, #0x6]
+.L_0206e13c:
+b .L_0206e150
+.L_0206e140:
+mov r0, r6
+bl func_0206df44
+cmp r0, #0x0
+ldrneb r0, [r4, #0x1]
+.L_0206e150:
+addne r7, r7, r0
+mov r11, #0x1
+.L_0206e158:
+add r0, r5, #0x1
+mov r0, r0, lsl #0x10
+mov r5, r0, asr #0x10
+cmp r5, #0x4
+blt .L_0206e098
+cmp r11, #0x0
+cmpeq r8, #0x0
+bne .L_0206e238
+mov r0, r10
+mov r1, #0x4
+mov r2, #0x2
+bl GetStats
+ldr r1, [r10, #0x4]
+mov r7, r0
+cmp r1, #0xd
+beq .L_0206e238
+ldr r2, [.L_0206e240]
+add r3, sp, #0x0
+mov r1, r10
+mov r0, #0x0
+bl func_0206aa80
+cmp r0, #0x0
+mov r0, r7
+beq .L_0206e20c
+bl func_020196d0
+mov r4, r0
+ldrb r0, [r10, #0x3]
+bl func_020196d0
+mov r1, r0
+mov r0, r4
+bl func_0201a2bc
+mov r5, #0x3f000000
+mov r1, r5
+bl func_0201a0dc
+mov r4, r0
+ldr r0, [sp, #0x0]
+bl func_02019688
+add r1, r5, #0x3c80000
+bl func_0201a770
+mov r1, r0
+mov r0, r4
+bl func_0201a0dc
+mov r1, r0
+mov r0, #0x40000000
+b .L_0206e22c
+.L_0206e20c:
+bl func_020196d0
+mov r4, r0
+ldrb r0, [r10, #0x3]
+bl func_020196d0
+mov r1, r0
+mov r0, r4
+bl func_0201a2bc
+mov r1, #0x3f000000
+.L_0206e22c:
+bl func_0201a0dc
+bl func_02019d44
+mov r7, r0
+.L_0206e238:
+mov r0, r7
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_0206e240: .word 0x14b

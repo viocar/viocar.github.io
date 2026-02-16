@@ -1,0 +1,28 @@
+.arm
+func_0200f238:
+stmdb sp!, {r4, r5, r6, r7, r8, lr}
+mov r6, #0x1
+mov r8, r0
+mov r5, #0x2
+mov r7, r1
+mov r0, r6
+mov r1, r5
+bl func_0200e61c
+cmp r0, #0x0
+ldmneia sp!, {r4, r5, r6, r7, r8, pc}
+bl func_0200e5ac
+add r1, r0, #0x100
+mov r2, #0x0
+strh r2, [r1, #0x50]
+mov r4, #0x8
+str r2, [r0, #0x14c]
+mov r0, r4
+mov r1, r8
+bl func_0200e418
+mov r0, r4
+mov r1, r6
+mov r2, r7
+bl func_0200e490
+cmp r0, #0x0
+moveq r0, r5
+ldmia sp!, {r4, r5, r6, r7, r8, pc}

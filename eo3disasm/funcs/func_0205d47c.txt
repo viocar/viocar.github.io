@@ -1,0 +1,15 @@
+.arm
+func_0205d47c:
+stmdb sp!, {r4, lr}
+bl func_0204a6e8
+bl func_0205d0cc
+bl func_0205d874
+bl func_0204bc84
+mov r0, #0xf
+bl func_0205bbb0
+mov r4, #0x1
+mov r0, r4
+mov r1, #0xab
+bl func_0205ff54
+mov r0, r4
+ldmia sp!, {r4, pc}

@@ -1,0 +1,4 @@
+.arm
+func_ov002_0213fd70:
+ldr r0, [r0, #0x210]
+bx lr

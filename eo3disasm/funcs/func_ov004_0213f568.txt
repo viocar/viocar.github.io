@@ -1,0 +1,7 @@
+.arm
+func_ov004_0213f568:
+str r1, [r0, #0x50]
+ldr r0, [r0, #0x5c]
+ldr r12, [.L_4_0213f578]
+bx r12
+.L_4_0213f578: .word func_02075f1c

@@ -1,0 +1,10 @@
+.arm
+func_02042a74:
+cmp r2, #0x0
+mov r2, #0x54
+mla r0, r1, r2, r0
+addeq r0, r0, #0x300
+ldreqsb r0, [r0, #0xc8]
+addne r0, r0, #0x400
+ldrnesb r0, [r0, #0xc4]
+bx lr

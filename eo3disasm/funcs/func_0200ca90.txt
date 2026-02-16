@@ -1,0 +1,8 @@
+.arm
+func_0200ca90:
+stmdb sp!, {r3, lr}
+bl func_0200ca80
+cmp r0, #0x0
+ldmneia sp!, {r3, pc}
+bl HandleError
+ldmia sp!, {r3, pc}

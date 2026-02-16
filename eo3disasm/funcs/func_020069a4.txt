@@ -1,0 +1,71 @@
+.arm
+func_020069a4:
+stmdb sp!, {r4, r5, r6, lr}
+mov r5, r0
+ldr r6, [.L_02006a9c]
+bl DisableIRQ
+mov r4, r0
+tst r5, #0x1
+beq .L_02006a00
+bl func_02007078
+ldr r1, [r6, #0x4]
+cmp r1, r0
+bne .L_02006a20
+mov r5, #0x32
+.L_020069d4:
+mov r0, r4
+bl EnableIRQ
+mov r0, r5
+bl func_02005308
+bl DisableIRQ
+mov r4, r0
+bl func_02007078
+ldr r1, [r6, #0x4]
+cmp r1, r0
+beq .L_020069d4
+b .L_02006a20
+.L_02006a00:
+bl func_02007078
+ldr r1, [r6, #0x4]
+cmp r1, r0
+bne .L_02006a20
+mov r0, r4
+bl EnableIRQ
+mov r0, #0x0
+ldmia sp!, {r4, r5, r6, pc}
+.L_02006a20:
+ldr r2, [r6, #0x14]
+ldr r1, [.L_02006aa0]
+add r0, r2, #0x1
+ldr r5, [r1, r2, lsl #0x2]
+cmp r0, #0x8
+str r0, [r6, #0x14]
+movgt r0, #0x0
+strgt r0, [r6, #0x14]
+ldr r0, [r5, #0x0]
+mov r1, r5
+cmp r0, #0x0
+beq .L_02006a60
+.L_02006a50:
+ldr r1, [r1, #0x0]
+ldr r0, [r1, #0x0]
+cmp r0, #0x0
+bne .L_02006a50
+.L_02006a60:
+ldr r0, [r6, #0x10]
+cmp r0, #0x0
+strne r5, [r0, #0x0]
+streq r5, [r6, #0x0]
+str r1, [r6, #0x10]
+ldr r1, [r6, #0x1c]
+mov r0, r4
+sub r1, r1, #0x1
+str r1, [r6, #0x1c]
+ldr r1, [r6, #0x4]
+add r1, r1, #0x1
+str r1, [r6, #0x4]
+bl EnableIRQ
+mov r0, r5
+ldmia sp!, {r4, r5, r6, pc}
+.L_02006a9c: .word 0x20eda5c
+.L_02006aa0: .word 0x20eda80

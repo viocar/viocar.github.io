@@ -1,0 +1,54 @@
+.arm
+func_020b3608:
+stmdb sp!, {r3, r4, r5, lr}
+ldr r2, [.L_020b36c4]
+ldr r3, [.L_020b36c8]
+ldr r5, [r2, #0x0]
+ldr r4, [r3, r1, lsl #0x2]
+cmp r0, #0x0
+str r0, [r5, #0x70]
+bne .L_020b364c
+ldr r0, [r5, #0x48]
+bl func_02069430
+mov r0, #0x0
+str r0, [r5, #0x48]
+str r0, [r5, #0x74]
+ldrb r0, [r4, #0x0]
+sub r0, r0, #0x1
+str r0, [r5, #0x78]
+ldmia sp!, {r3, r4, r5, pc}
+.L_020b364c:
+ldrb r1, [r4, #0x0]
+cmp r0, r1
+strleb r0, [r5, #0x80]
+movle r0, #0x0
+strle r0, [r5, #0x60]
+strle r0, [r5, #0x5c]
+ble .L_020b36ac
+strb r1, [r5, #0x80]
+ldrb r1, [r4, #0x0]
+ldrb r2, [r4, #0x4]
+sub r1, r0, r1
+ldrb r0, [r4, #0x3]
+cmp r1, r2
+strlt r0, [r5, #0x60]
+blt .L_020b3698
+cmp r1, r0
+strgt r2, [r5, #0x60]
+suble r0, r0, r1
+strle r0, [r5, #0x60]
+.L_020b3698:
+ldrb r2, [r4, #0x2]
+ldr r0, [r5, #0x60]
+sub r0, r2, r0
+bl HardwareDiv32
+str r0, [r5, #0x5c]
+.L_020b36ac:
+mov r0, #0x0
+str r0, [r5, #0x74]
+ldrb r0, [r4, #0x0]
+sub r0, r0, #0x1
+str r0, [r5, #0x78]
+ldmia sp!, {r3, r4, r5, pc}
+.L_020b36c4: .word 0x2135e44
+.L_020b36c8: .word data_020ec24c

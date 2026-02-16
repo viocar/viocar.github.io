@@ -1,0 +1,23 @@
+.arm
+func_02034478:
+cmp r0, #0x0
+ldreq r2, [.L_020344c0]
+ldreq r0, [.L_020344c4]
+ldreqh r1, [r2, #0x0]
+andeq r0, r1, r0
+streqh r0, [r2, #0x0]
+bxeq lr
+ldr r12, [.L_020344c8]
+mov r0, r1, lsl #0x6
+strh r3, [r12, #0x0]
+sub r3, r12, #0x2fc
+ldrh r1, [r3, #0x0]
+orr r0, r0, r2, lsl #0x8
+orr r0, r0, #0x80
+bic r1, r1, #0x3f40
+orr r0, r1, r0
+strh r0, [r3, #0x0]
+bx lr
+.L_020344c0: .word 0x4000060
+.L_020344c4: .word 0xcf7f
+.L_020344c8: .word 0x400035c

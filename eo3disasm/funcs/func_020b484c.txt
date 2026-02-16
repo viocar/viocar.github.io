@@ -1,0 +1,24 @@
+.arm
+func_020b484c:
+ldr r1, [r0, #0x48]
+ldr r1, [r1, #0x0]
+cmp r1, #0x2
+moveq r1, #0x0
+streq r1, [r0, #0x164]
+beq .L_020b4890
+cmp r1, #0x3
+moveq r1, #0xb4
+streq r1, [r0, #0x164]
+beq .L_020b4890
+cmp r1, #0x1
+ldreq r1, [.L_020b489c]
+streq r1, [r0, #0x164]
+beq .L_020b4890
+cmp r1, #0x0
+moveq r1, #0x5a
+streq r1, [r0, #0x164]
+.L_020b4890:
+ldr r1, [r0, #0x164]
+str r1, [r0, #0x168]
+bx lr
+.L_020b489c: .word 0x10e

@@ -1,0 +1,121 @@
+.arm
+func_02048c18:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, lr}
+sub sp, sp, #0xc
+mov r6, #0x0
+mov r7, r1
+mov r8, r0
+mov r1, r6
+bl func_020427e8
+ldr r5, [r8, #0x314]
+cmp r5, #0x0
+ble .L_02048c7c
+add r0, r8, #0x224
+mov r4, #0x4
+mov r1, r4
+mov r2, r6
+add r0, r0, #0x400
+bl GetStats
+cmp r5, r0
+blt .L_02048c78
+add r0, r8, #0x224
+mov r1, r4
+mov r2, r6
+add r0, r0, #0x400
+bl GetStats
+mov r5, r0
+.L_02048c78:
+mov r6, r5
+.L_02048c7c:
+mov r5, #0x1
+mov r0, r8
+mov r1, r5
+str r6, [r8, #0x314]
+bl func_020427e8
+ldr r9, [r8, #0x318]
+cmp r9, #0x0
+movle r9, #0x0
+ble .L_02048cd8
+add r0, r8, #0x224
+mov r4, #0x4
+mov r1, r4
+mov r2, r5
+add r0, r0, #0x400
+bl GetStats
+cmp r9, r0
+blt .L_02048cd8
+add r0, r8, #0x224
+mov r1, r4
+mov r2, r5
+add r0, r0, #0x400
+bl GetStats
+mov r9, r0
+.L_02048cd8:
+mov r6, #0x2
+mov r0, r8
+mov r1, r6
+str r9, [r8, #0x318]
+bl func_020427e8
+mov r0, r8
+mov r1, #0x3
+bl func_020427e8
+mov r4, #0x4
+mov r0, r8
+mov r1, r4
+bl func_020427e8
+mov r0, r8
+mov r1, #0x5
+bl func_020427e8
+mov r0, r8
+mov r1, #0x6
+bl func_020427e8
+add r0, r8, #0x224
+mov r5, #0x0
+add r0, r0, #0x400
+mov r1, r4
+mov r2, r5
+bl GetStats
+mov r1, r4
+mov r4, r0
+add r0, r8, #0x224
+mov r9, #0x1
+add r0, r0, #0x400
+mov r2, r9
+bl GetStats
+cmp r7, #0x1
+mov r7, r0
+addne sp, sp, #0xc
+ldmneia sp!, {r4, r5, r6, r7, r8, r9, pc}
+ldrb r0, [r8, #0x620]
+cmp r0, #0x0
+bne .L_02048db4
+str r5, [sp, #0x0]
+str r5, [sp, #0x4]
+str r5, [sp, #0x8]
+ldrb r1, [r8, #0x621]
+mov r2, r4
+mov r3, #0x10
+bl func_ov001_02158b00 ; func_ov003_02158b00
+str r5, [sp, #0x0]
+str r5, [sp, #0x4]
+str r5, [sp, #0x8]
+ldrb r0, [r8, #0x620]
+ldrb r1, [r8, #0x621]
+mov r2, r7
+mov r3, #0x11
+bl func_ov001_02158b00 ; func_ov003_02158b00
+add sp, sp, #0xc
+ldmia sp!, {r4, r5, r6, r7, r8, r9, pc}
+.L_02048db4:
+ldr r0, [r8, #0x60c]
+ldr r1, [r8, #0x314]
+mov r2, r4
+mov r3, r9
+bl func_ov001_0215a264
+ldr r0, [r8, #0x60c]
+ldr r1, [r8, #0x318]
+mov r2, r7
+mov r3, r6
+bl func_ov001_0215a264
+add sp, sp, #0xc
+ldmia sp!, {r4, r5, r6, r7, r8, r9, pc}

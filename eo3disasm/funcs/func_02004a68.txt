@@ -1,0 +1,43 @@
+.arm
+func_02004a68:
+stmdb sp!, {r3, r4, lr}
+sub sp, sp, #0xc
+bl DisableIRQ
+ldr r4, [.L_02004afc]
+ldr r2, [.L_02004b00]
+ldrh r12, [r4, #0x0]
+ldr r3, [.L_02004b04]
+sub r1, r2, #0x10000
+strh r12, [sp, #0x0]
+ldr r12, [r3, #0x8]
+ldr lr, [r3, #0xc]
+and r12, r12, r1
+and lr, lr, r2
+str r12, [sp, #0x4]
+str lr, [sp, #0x8]
+ldr r1, [r4, #0x114]
+tst r1, #0x8
+beq .L_02004ad4
+ldrh r1, [sp, #0x0]
+tst r1, #0x8000
+bne .L_02004ad4
+ldr r2, [sp, #0x4]
+ldr r3, [sp, #0x8]
+adds r2, r2, #0x1
+adc r3, r3, #0x0
+str r2, [sp, #0x4]
+str r3, [sp, #0x8]
+.L_02004ad4:
+bl EnableIRQ
+ldr r2, [sp, #0x4]
+ldr r3, [sp, #0x8]
+ldrh r0, [sp, #0x0]
+mov r1, r3, lsl #0x10
+orr r1, r1, r2, lsr #0x10
+orr r1, r1, r0, asr #0x1f
+orr r0, r0, r2, lsl #0x10
+add sp, sp, #0xc
+ldmia sp!, {r3, r4, pc}
+.L_02004afc: .word 0x4000100
+.L_02004b00: .word 0xffff
+.L_02004b04: .word 0x20ed9cc

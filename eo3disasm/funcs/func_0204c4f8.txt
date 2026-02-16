@@ -1,0 +1,27 @@
+.arm
+func_0204c4f8:
+cmp r0, #0x0
+beq .L_0204c514
+cmp r0, #0x1
+beq .L_0204c52c
+cmp r0, #0x2
+beq .L_0204c520
+b .L_0204c52c
+.L_0204c514:
+ldr r0, [.L_0204c548]
+mov r1, #0x9
+b .L_0204c534
+.L_0204c520:
+ldr r0, [.L_0204c548]
+mov r1, #0x13
+b .L_0204c534
+.L_0204c52c:
+ldr r0, [.L_0204c548]
+mov r1, #0x1
+.L_0204c534:
+ldr r0, [r0, #0x14]
+add r0, r0, #0x1600
+strh r1, [r0, #0x40]
+mov r0, #0x1
+bx lr
+.L_0204c548: .word 0x21143c0

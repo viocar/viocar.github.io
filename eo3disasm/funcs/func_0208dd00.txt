@@ -1,0 +1,7 @@
+.arm
+func_0208dd00:
+ldrsb r0, [r0, #0x28]
+cmn r0, #0x1
+movne r0, #0x1
+moveq r0, #0x0
+bx lr

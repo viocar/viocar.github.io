@@ -1,0 +1,8 @@
+.arm
+func_02036e58:
+stmdb sp!, {r3, lr}
+bl func_02038428
+ldr r1, [.L_02036e6c]
+strh r0, [r1, #0x6]
+ldmia sp!, {r3, pc}
+.L_02036e6c: .word 0x2110cb8

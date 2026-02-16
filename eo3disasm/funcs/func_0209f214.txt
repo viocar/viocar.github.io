@@ -1,0 +1,14 @@
+.arm
+func_0209f214:
+stmdb sp!, {r3, lr}
+mov r1, #0x18
+mul r2, r0, r1
+ldr r1, [.L_0209f240]
+ldrb r1, [r1, r2]
+cmp r1, #0x1
+movne r0, #0x0
+ldmneia sp!, {r3, pc}
+bl func_0209f1bc
+mov r0, #0x1
+ldmia sp!, {r3, pc}
+.L_0209f240: .word 0x212bf1e

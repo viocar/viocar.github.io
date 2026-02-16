@@ -1,0 +1,33 @@
+.arm
+func_02074a94:
+stmdb sp!, {r3, lr}
+cmp r2, #0x0
+bne .L_02074adc
+cmp r1, #0x3
+addls pc, pc, r1, lsl #0x2
+b .L_02074ad8
+.L_02074aac: ; jump table
+b .L_02074abc ; case 0
+b .L_02074ac4 ; case 1
+b .L_02074ad4 ; case 2
+b .L_02074ad4 ; case 3
+.L_02074abc:
+ldr r0, [.L_02074ae8]
+ldmia sp!, {r3, pc}
+.L_02074ac4:
+cmp r0, #0x0
+ldrne r0, [.L_02074aec]
+ldreq r0, [.L_02074af0]
+ldmia sp!, {r3, pc}
+.L_02074ad4:
+ldr r0, [.L_02074af4]
+.L_02074ad8:
+ldmia sp!, {r3, pc}
+.L_02074adc:
+mov r0, r2
+bl func_0206df8c
+ldmia sp!, {r3, pc}
+.L_02074ae8: .word data_020e7f7c
+.L_02074aec: .word data_020e7f9c
+.L_02074af0: .word data_020e7fb8
+.L_02074af4: .word data_020e7fd4

@@ -1,0 +1,16 @@
+.arm
+func_02012038:
+cmp r1, #0x0
+moveq r0, #0x0
+bxeq lr
+cmp r2, #0x0
+mvneq r0, #0x0
+bxeq lr
+cmp r0, #0x0
+ldrneb r2, [r1, #0x0]
+strneh r2, [r0, #0x0]
+ldrb r0, [r1, #0x0]
+cmp r0, #0x0
+moveq r0, #0x0
+movne r0, #0x1
+bx lr

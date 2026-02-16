@@ -1,0 +1,9 @@
+.arm
+func_02033e6c:
+ldr r2, [.L_02033e84]
+ldr r1, [r2, #0x0]
+bic r1, r1, #0x7
+orr r0, r1, r0
+str r0, [r2, #0x0]
+bx lr
+.L_02033e84: .word 0x4001000

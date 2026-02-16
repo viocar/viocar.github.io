@@ -1,0 +1,26 @@
+.arm
+func_020193b8:
+mov r3, #0xff000000
+cmp r3, r0, lsl #0x1
+cmphs r3, r1, lsl #0x1
+blo .L_02019400
+cmp r0, #0x0
+bicmi r0, r0, #0x80000000
+rsbmi r0, r0, #0x0
+cmp r1, #0x0
+bicmi r1, r1, #0x80000000
+rsbmi r1, r1, #0x0
+cmp r0, r1
+movge r0, #0x1
+movlt r0, #0x0
+mrs r12, cpsr
+biclt r12, r12, #0x20000000
+orrge r12, r12, #0x20000000
+msr cpsr_f, r12
+bx lr
+.L_02019400:
+mov r0, #0x0
+mrs r12, cpsr
+bic r12, r12, #0x20000000
+msr cpsr_f, r12
+bx lr

@@ -1,0 +1,7 @@
+.arm
+func_0208b078:
+ldr r0, [r0, #0x1c]
+cmp r0, #0x0
+moveq r0, #0x1
+movne r0, #0x0
+bx lr

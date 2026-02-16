@@ -1,0 +1,126 @@
+.arm
+func_0206adac:
+stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+sub sp, sp, #0x10
+ldr r6, [sp, #0x30]
+mov r7, r3
+mov r8, r1
+mov r10, r2
+mov r1, r7
+mov r2, r6
+mov r9, r0
+mov r5, #0x0
+bl func_0206a56c
+mov r4, r0
+ldrb r0, [r4, #0x1]
+cmp r0, #0x2f
+bgt .L_0206ae7c
+bge .L_0206af54
+cmp r0, #0x28
+bgt .L_0206ae60
+bge .L_0206aebc
+cmp r0, #0x11
+bgt .L_0206ae54
+cmp r0, #0x0
+addge pc, pc, r0, lsl #0x2
+b .L_0206af58
+.L_0206ae0c: ; jump table
+b .L_0206aebc ; case 0
+b .L_0206aebc ; case 1
+b .L_0206af58 ; case 2
+b .L_0206aeec ; case 3
+b .L_0206aeec ; case 4
+b .L_0206aeec ; case 5
+b .L_0206af50 ; case 6
+b .L_0206af50 ; case 7
+b .L_0206af50 ; case 8
+b .L_0206af54 ; case 9
+b .L_0206af58 ; case 10
+b .L_0206af58 ; case 11
+b .L_0206af58 ; case 12
+b .L_0206aeec ; case 13
+b .L_0206aeec ; case 14
+b .L_0206af58 ; case 15
+b .L_0206af58 ; case 16
+b .L_0206aebc ; case 17
+.L_0206ae54:
+cmp r0, #0x26
+beq .L_0206aebc
+b .L_0206af58
+.L_0206ae60:
+cmp r0, #0x29
+bgt .L_0206ae70
+beq .L_0206aebc
+b .L_0206af58
+.L_0206ae70:
+cmp r0, #0x2e
+beq .L_0206aeec
+b .L_0206af58
+.L_0206ae7c:
+cmp r0, #0x3a
+bgt .L_0206aea4
+bge .L_0206aeec
+cmp r0, #0x30
+bgt .L_0206ae98
+beq .L_0206af54
+b .L_0206af58
+.L_0206ae98:
+cmp r0, #0x31
+beq .L_0206aebc
+b .L_0206af58
+.L_0206aea4:
+cmp r0, #0x3e
+bgt .L_0206aeb4
+beq .L_0206aebc
+b .L_0206af58
+.L_0206aeb4:
+cmp r0, #0x3f
+bne .L_0206af58
+.L_0206aebc:
+ldrsb r0, [sp, #0x34]
+stmia sp, {r6, r7}
+str r0, [sp, #0x8]
+ldrsb r5, [sp, #0x38]
+mov r0, r9
+mov r1, r8
+mov r2, r10
+mov r3, r4
+str r5, [sp, #0xc]
+bl func_0206b524
+mov r5, r0
+b .L_0206af58
+.L_0206aeec:
+mov r0, r4
+mov r1, #0x42
+bl func_0206aa2c
+cmp r0, #0x0
+addne r0, r0, r6, lsl #0x2
+ldrne r5, [r0, #0x4]
+ldrb r0, [sp, #0x3c]
+cmp r0, #0x1
+bne .L_0206af28
+mov r0, r4
+mov r1, #0x43
+bl func_0206aa2c
+cmp r0, #0x0
+addne r0, r0, r6, lsl #0x2
+ldrne r5, [r0, #0x4]
+.L_0206af28:
+ldrb r0, [sp, #0x3c]
+cmp r0, #0x2
+bne .L_0206af58
+mov r0, r4
+mov r1, #0x44
+bl func_0206aa2c
+cmp r0, #0x0
+addne r0, r0, r6, lsl #0x2
+ldrne r5, [r0, #0x4]
+b .L_0206af58
+.L_0206af50:
+b .L_0206aebc
+.L_0206af54:
+mov r5, #0x0
+.L_0206af58:
+mov r0, r5
+add sp, sp, #0x10
+ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, pc}

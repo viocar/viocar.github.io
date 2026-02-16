@@ -1,0 +1,14 @@
+.arm
+func_02063338:
+add r1, r0, #0x1000
+ldrb r2, [r1, #0x161]
+cmp r2, #0x0
+bne .L_02063358
+ldr r2, [r0, #0x1c]
+tst r2, #0x100
+movne r2, #0x1
+strneb r2, [r1, #0x161]
+.L_02063358:
+ldr r12, [.L_02063360]
+bx r12
+.L_02063360: .word func_02031a38

@@ -1,0 +1,45 @@
+.arm
+func_020044cc:
+stmdb sp!, {r4, r5, r6, lr}
+mov r4, r0
+mov r6, r1
+mov r5, r2
+bl DisableIRQ
+ldr r2, [.L_02004568]
+add r1, r6, #0x1f
+ldr r2, [r2, r4, lsl #0x2]
+bic r6, r1, #0x1f
+ldr lr, [r2, #0x4]
+bic r5, r5, #0x1f
+cmp lr, #0x0
+mov r4, #0x0
+ble .L_0200455c
+ldr r12, [r2, #0x10]
+mov r1, #0xc
+.L_0200450c:
+mul r3, r4, r1
+ldr r2, [r12, r3]
+add r3, r12, r3
+cmp r2, #0x0
+bge .L_02004550
+sub r1, r5, r6
+str r1, [r3, #0x0]
+mov r2, #0x0
+str r2, [r6, #0x0]
+str r2, [r6, #0x4]
+ldr r1, [r3, #0x0]
+str r1, [r6, #0x8]
+str r6, [r3, #0x4]
+str r2, [r3, #0x8]
+bl EnableIRQ
+mov r0, r4
+ldmia sp!, {r4, r5, r6, pc}
+.L_02004550:
+add r4, r4, #0x1
+cmp r4, lr
+blt .L_0200450c
+.L_0200455c:
+bl EnableIRQ
+mvn r0, #0x0
+ldmia sp!, {r4, r5, r6, pc}
+.L_02004568: .word 0x20ed904

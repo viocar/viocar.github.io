@@ -1,0 +1,14 @@
+.arm
+func_02036354:
+mov r3, #0x0
+str r3, [r1, #0x68]
+ldr r2, [r0, #0x60]
+cmp r2, #0x0
+strne r1, [r2, #0x68]
+ldrne r2, [r0, #0x60]
+strne r2, [r1, #0x6c]
+streq r1, [r0, #0x64]
+streq r3, [r1, #0x6c]
+str r1, [r0, #0x60]
+mov r0, #0x1
+bx lr

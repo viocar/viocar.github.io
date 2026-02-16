@@ -1,0 +1,73 @@
+.arm
+func_02088810:
+stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+sub sp, sp, #0x18
+mov r5, r0
+bl func_02086534
+mov r9, r0
+ldr r0, [r9, #0x0]
+cmp r0, #0x3
+cmpne r0, #0x0
+movne r4, #0x8
+moveq r4, #0x9
+add r0, r4, #0x1
+mov r10, r0, lsl #0x1
+bl func_02090f60
+mov r1, r0
+mov r2, r10
+add r0, r9, #0x10
+bl Strcpy8
+cmp r5, #0x1
+bne .L_02088870
+bl func_02090f60
+mov r1, r0
+mov r2, r4
+add r0, r9, #0x10
+bl func_02090edc
+.L_02088870:
+add r8, sp, #0x4
+mov r7, #0x0
+mov r11, #0x12
+mov r0, r8
+mov r1, r7
+mov r2, r11
+bl Memset
+mov r1, r8
+mov r2, r10
+add r0, r9, #0x10
+bl Memcpy
+ldr r4, [.L_02088924]
+sub r6, r11, #0x13
+str r7, [r4, #0x0]
+str r8, [sp, #0x0]
+mov r5, #0x1
+ldr r0, [r9, #0x50]
+mov r1, r6
+mov r2, r5
+mov r3, r7
+bl func_0201d1d0
+str r5, [r4, #0x0]
+bl func_02090f60
+mov r1, r0
+add r0, r9, #0x10
+mov r2, r10
+bl Strcpy8
+mov r2, r11
+mov r0, r8
+mov r1, r7
+bl Memset
+mov r2, r10
+add r0, r9, #0x10
+mov r1, r8
+bl Memcpy
+str r7, [r4, #0x0]
+str r8, [sp, #0x0]
+ldr r0, [r9, #0x54]
+mov r1, r6
+mov r3, r7
+mov r2, r5
+bl func_0201d1d0
+str r5, [r4, #0x0]
+add sp, sp, #0x18
+ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+.L_02088924: .word 0x20ffaf4

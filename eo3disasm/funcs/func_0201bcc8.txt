@@ -1,0 +1,20 @@
+.arm
+func_0201bcc8:
+stmdb sp!, {r4, lr}
+bl func_0201bd10
+mov r1, #0x0
+mov r2, #0x10
+mov r4, r0
+bl Memset
+ldr r0, [.L_0201bd0c]
+mov r1, #0x2
+str r0, [r4, #0x0]
+strb r1, [r4, #0x4]
+strb r1, [r4, #0x5]
+strb r1, [r4, #0x6]
+mov r0, #0x1
+strb r0, [r4, #0x8]
+strb r1, [r4, #0x7]
+bl func_0201bc7c
+ldmia sp!, {r4, pc}
+.L_0201bd0c: .word 0x4954504f

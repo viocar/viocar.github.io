@@ -1,0 +1,24 @@
+.arm
+func_02032d60:
+ldr r2, [r0, #0x0]
+cmp r2, #0x0
+bxeq lr
+ldr r1, [r2, #0x0]
+add r1, r1, #0x1000
+str r1, [r2, #0x0]
+ldr r3, [r0, #0x0]
+ldr r2, [r3, #0x8]
+ldr r1, [r3, #0x0]
+ldrh r2, [r2, #0x4]
+cmp r1, r2, lsl #0xc
+mov r2, r2, lsl #0xc
+bxlt lr
+ldrb r1, [r0, #0x8]
+cmp r1, #0x1
+moveq r0, #0x0
+streq r0, [r3, #0x0]
+subne r1, r2, #0x1000
+strne r1, [r3, #0x0]
+movne r1, #0x1
+strneb r1, [r0, #0x9]
+bx lr
