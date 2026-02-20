@@ -1,3 +1,12 @@
+Name: GetSkillCode(int* user, int* target, int skill_id, int level) -> int
+Arguments:
+r0: (int*) A pointer to the using character's combat data struct.
+r1: (int*) A pointer to the target character's combat data struct.
+r2: (int) The ID of the skill being used.
+r3: (int) The level of the skill being used.
+Returns:
+r0: (int) The skill's skill code.
+
 .arm
 func_02051e68:
 stmdb sp!, {r3, r4, r5, r6, r7, lr}

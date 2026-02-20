@@ -1,3 +1,11 @@
+Name: IntToFloat(int)
+Description: A software implementation of converting an int into a 32-bit floating point value.
+Arguments:
+r0: (int) Integer to be converted.
+Returns:
+r0: (float) A 32-bit floating point representation of the integer passed to the function.
+
+
 .arm
 func_02019688:
 ands r2, r0, #0x80000000

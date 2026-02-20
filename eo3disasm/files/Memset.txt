@@ -1,3 +1,10 @@
+Name: memset(int* ptr, short fill_value, int size) -> void
+Description: Fill a number of bytes equal to size into memory at ptr with fill_value.
+Arguments:
+r0: (int*) A pointer to the memory to be filled.
+r1: (short) The value to fill the memory with.
+r2: (int) Number of bytes to be filled.
+
 .arm
 Memset:
 cmp r2, #0x0

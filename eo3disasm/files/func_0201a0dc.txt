@@ -1,3 +1,11 @@
+Name: MultiplyFloats(float f1, float f2) -> float
+Description: Multiplies two floating point numbers together.
+Arguments:
+r0: (float) The first float to be multiplied.
+r1: (float) The second float to be multiplied.
+Returns:
+r0: (float) The result of the multiplication.
+
 .arm
 func_0201a0dc:
 eor r2, r0, r1
