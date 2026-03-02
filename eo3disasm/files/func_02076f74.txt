@@ -1,3 +1,8 @@
+Name: StoreScriptReturn(int return) -> void
+Description: Returns the result of the script to be fetched later by a different part of the script subsystem.
+Arguments:
+r0: (int) The value to be stored.
+
 .arm
 func_02076f74:
 ldr r1, [.L_02076f90]

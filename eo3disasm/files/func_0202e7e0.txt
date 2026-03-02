@@ -1,3 +1,13 @@
+Name: LinearInterpolation(int start, int end, int range, int progress) -> int
+Description: Interpolates between two values (start and end). Range is the divisor, and is the maximum progress value. Progress is how far along the interpolation is.
+Arguments:
+r0: (int) Start value of the interpolation.
+r1: (int) End value of the interpolation.
+r2: (int) Range of the interpolation.
+r3: (int) How far along the interpolation we are.
+Returns:
+r0: (int) The interpolated value.
+
 .arm
 func_0202e7e0:
 stmdb sp!, {r4, lr}
