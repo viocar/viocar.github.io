@@ -1,3 +1,11 @@
+Name: HandleProvoke(int* ptr, int mode) -> int
+Description: Handles Provoke and Play Possum, returning a value to be used in the AI targeting handler.
+Arguments:
+r0: (int*) Pointer to a character's battle data structure.
+r1: (int) A mode to check whether the buff is Provoke (0x200000) or Play Possum (0x400000).
+Returns:
+r0: (int) An amount to modify the targeting code by.
+
 .arm
 func_02054174:
 stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}

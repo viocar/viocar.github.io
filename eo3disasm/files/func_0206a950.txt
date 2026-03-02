@@ -1,3 +1,12 @@
+Name: GetTargetingInfo(int* ptr, bool team, int skill_id, int level, int* out1, int* out2) -> void
+Description: Gets a skill's targeting type and team and returns it in the out1 and out2 values.
+r0: (int*) Pointer to a character's battle data structure, but it is unused.
+r1: (bool) Team of the character using the skill.
+r2: (int) Skill ID.
+r3: (int) Skill level.
+stack+0: (int*) Pointer to a byte that receives the skill's targeting type.
+stack+1: (int*) Pointer to a byte that receives the skill's target team.
+
 .arm
 func_0206a950:
 stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}

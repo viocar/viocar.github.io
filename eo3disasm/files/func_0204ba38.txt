@@ -1,3 +1,12 @@
+Name: SortList(int* out, int len, int* list, bool reverse) -> void
+Description: Sorts a list of numbers.
+Arguments:
+r0: (int*) Pointer to a structure that contains the order of the sorted list.
+r1: (int) The number of elements in the list.
+r2: (int*) List of numbers to be sorted.
+r3: (bool) Order to sort the numbers in. 0 is descending order, 1 is ascending order. Not all functions respect this.
+
+
 .arm
 func_0204ba38:
 stmdb sp!, {r3, r4, r5, r6, r7, lr}

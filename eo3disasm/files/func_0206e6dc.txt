@@ -1,3 +1,10 @@
+Name: GetUseItemTableOffset(short id) -> int*
+Description: Converts an item ID into a pointer to that item's data in the consumable item data table ("useitemtable.tbl")
+Arguments:
+r0: (short) Item ID
+Returns:
+r0: (int*) Pointer to the item's data
+
 .arm
 func_0206e6dc:
 ldr r1, [.L_0206e6fc]

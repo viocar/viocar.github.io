@@ -1,3 +1,11 @@
+Name: CharacterHasAilment(int* ptr, int ailment) -> bool
+Description: Checks if the target character has an ailment.
+Arguments:
+r0: (int*) Pointer to the character's battle data structure's persistent section.
+r1: (int) Ailment to check.
+Returns:
+r0: (bool) True if the character has the specified ailment, false otherwise.
+
 .arm
 func_02051e20:
 cmp r2, #0x0

@@ -1,3 +1,8 @@
+Name: PlayUISound(int id) -> void
+Description: Plays an interface sound.
+Arguments:
+r0: (int) ID of sound to play.
+
 .arm
 func_0202bd4c:
 stmdb sp!, {r4, lr}

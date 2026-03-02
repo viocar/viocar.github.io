@@ -1,3 +1,8 @@
+Name: StoreGraphicOpacity(int opacity) -> void
+Description: Clamps an opacity value to 1-31 and stores it.
+Arguments:
+r0: (int) Opacity value to be stored.
+
 .arm
 func_ov000_01ff9c40:
 cmp r0, #0x1f

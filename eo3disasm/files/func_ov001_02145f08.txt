@@ -1,3 +1,8 @@
+
+Arguments:
+r0: (bool) Team of the unit getting the targeting. Often inverted to get the enemy team.
+stack+0: (int) If 0, target anyone. If 1, only target the front row. If 2 or greater, target only the rear row.
+
 .arm
 func_ov001_02145f08:
 stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}

@@ -1,3 +1,11 @@
+Name: GetBtlCharacterPtr(byte team, byte player) -> int*
+Description: Gets the pointer to the specified character's battle data struct.
+Arguments:
+r0: (byte) The team the character belongs to.
+r1: (byte) The character's position in the battle formation.
+Returns:
+r0: (int*) Pointer to the character's battle data struct.
+
 .arm
 func_0204029c:
 stmdb sp!, {r3, r4, r5, r6, r7, lr}

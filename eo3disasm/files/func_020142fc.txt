@@ -1,3 +1,11 @@
+Name: SortElementsAccordingToComparator(int* ptr, int count, int size, int* func) -> void
+Description: Sorts elements in a list according to a passed comparator function.
+Arguments:
+r0: (int*) Pointer to the list of elements to be sorted.
+r1: (int) Number of elements to be sorted.
+r2: (int) Size of the elements to be sorted.
+r3: (int*) Pointer to the comparator function.
+
 .arm
 func_020142fc:
 stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}

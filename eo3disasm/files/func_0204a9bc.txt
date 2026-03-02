@@ -1,3 +1,10 @@
+Name: InvertBool(bool arg) -> bool:
+Description: Inverts the argument.
+Arguments:
+r0: (bool) A boolean value.
+Returns:
+r0: (bool) Returns false if arg was true. Returns true if arg was false.
+
 .arm
 func_0204a9bc:
 cmp r0, #0x0

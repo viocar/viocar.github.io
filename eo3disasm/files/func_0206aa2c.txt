@@ -1,3 +1,11 @@
+Name: SearchSkillForSubheader(int* ptr, int subheader) -> int*
+Description: Searches a skill for a subheader and returns a pointer to that subheader if found. Returns 0 if not found.
+Arguments:
+r0: (int*) A pointer to the skill data to be searched.
+r1: (int) The subheader to be found.
+Returns:
+r0: (int*) A pointer to the subheader that was found, or 0 if not found.
+
 .arm
 func_0206aa2c:
 stmdb sp!, {r3, lr}

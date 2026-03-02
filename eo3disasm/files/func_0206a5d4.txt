@@ -1,3 +1,11 @@
+Name: GetAdjustedSkillLevel(int* ptr, int skill_id) -> byte
+Description: Gets the level of skill_id for the character. This uses the 0-9 scale instead of 1-10.
+Arguments:
+r0: (int*) Pointer to the character's battle data structure's persistent section.
+r1: (int) Skill ID to be checked.
+Returns:
+r0: (byte) Skill level.
+
 .arm
 func_0206a5d4:
 stmdb sp!, {r3, r4, r5, r6, r7, lr}

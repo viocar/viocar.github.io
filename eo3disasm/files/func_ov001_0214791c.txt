@@ -1,3 +1,10 @@
+Name: AIFunc_UpdateLineTargetSkillTargeting(int* ptr) -> bool
+Description: Updates targeting for skills that use line targeting when an AI script uses them.
+Arguments:
+r0: (int*) A pointer to the using character's battle data structure.
+Returns:
+r0: (bool) Always true.
+
 .arm
 func_ov001_0214791c:
 stmdb sp!, {r3, r4, lr}

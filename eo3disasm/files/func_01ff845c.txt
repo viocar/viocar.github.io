@@ -1,0 +1,59 @@
+        .arm
+func_01ff845c: ; 0x01ff845c
+    stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+    ldr r7, [sp, #0x20]
+    mov r4, r0
+    mov r9, r1
+    mov r8, r2
+    mov r6, r3
+    ands r5, r7, #0x1
+    bne .L_01ff8480
+    bl DisableIRQ
+.L_01ff8480:
+    mov r1, #0xc
+    mul r1, r4, r1
+    add r1, r1, #0xb0
+    tst r7, #0x10
+    add r1, r1, #0x4000000
+    beq .L_01ff84b0
+    mov r2, r4, lsl #0x2
+    add r3, r2, #0x4000000
+    add r2, r2, #0xe0
+    str r9, [r3, #0xe0]
+    add r9, r2, #0x4000000
+    b .L_01ff84c8
+.L_01ff84b0:
+    tst r7, #0x20
+    movne r2, r4, lsl #0x2
+    addne r3, r2, #0x4000000
+    addne r2, r2, #0xe0
+    strneh r9, [r3, #0xe0]
+    addne r9, r2, #0x4000000
+.L_01ff84c8:
+    str r9, [r1, #0x0]
+    str r8, [r1, #0x4]
+    str r6, [r1, #0x8]
+    ands r6, r7, #0x2
+    beq .L_01ff8504
+    ldr r3, [.L_01ff8524]
+    tst r7, #0x4
+    ldr r2, [r3, #0x0]
+    cmpeq r4, #0x0
+    ldr r2, [r3, #0x0]
+    moveq r3, #0x0
+    streq r3, [r1, #0x0]
+    ldreq r2, [.L_01ff8528]
+    streq r3, [r1, #0x4]
+    streq r2, [r1, #0x8]
+.L_01ff8504:
+    cmp r5, #0x0
+    bne .L_01ff8510
+    bl EnableIRQ
+.L_01ff8510:
+    cmp r6, #0x0
+    ldrne r1, [.L_01ff8524]
+    ldrne r0, [r1, #0x0]
+    ldrne r0, [r1, #0x0]
+    ldmia sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+.L_01ff8524: .word 0x40000b0
+.L_01ff8528: .word 0x81400001

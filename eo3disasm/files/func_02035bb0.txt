@@ -1,3 +1,7 @@
+Name: Create2DGraphicsObject(int flags, int size) -> void
+Description: Create a new 2D graphics object and insert it into the scene.
+Arguments:
+
 .arm
 func_02035bb0:
 stmdb sp!, {r3, r4, r5, r6, r7, lr}

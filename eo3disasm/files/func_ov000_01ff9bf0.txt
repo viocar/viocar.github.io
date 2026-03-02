@@ -1,3 +1,8 @@
+Name: StoreGraphicColour(int colour) -> void
+Description: Stores a 24-bit colour for the graphic.
+Arguments:
+r0: (int) Colour to be stored.
+
 .arm
 func_ov000_01ff9bf0:
 ldr r1, [.L_0_01ff9c08]

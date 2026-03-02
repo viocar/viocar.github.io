@@ -1,3 +1,8 @@
+Name: GetBattleDataStructPointer() -> int*
+Description: Get a pointer to the struct that holds much of the state about the battle.
+Returns:
+r0: (int*) A pointer to the battle data struct.
+
 .arm
 func_0204a6e8:
 ldr r0, [.L_0204a6f0]

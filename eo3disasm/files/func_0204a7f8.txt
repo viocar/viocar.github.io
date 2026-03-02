@@ -1,3 +1,10 @@
+Name: RNG0Floor(int ceil) -> int
+Description: Rolls a number between 0 and ceil (exclusive).
+Arguments:
+r0: Maximum bound of the numbers that can be rolled.
+Returns:
+r0: Result of the roll.
+
 .arm
 func_0204a7f8:
 ldr r2, [.L_0204a82c]

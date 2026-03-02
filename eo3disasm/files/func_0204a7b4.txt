@@ -1,3 +1,9 @@
+Name: FlipBitOn(int* ptr, int bit) -> void
+Description: Dereferences a pointer, flips a bit, then stores the value back in.
+Arguments:
+r0: (int*) A pointer containing the value to be bit-flipped.
+r1: (int) Bit to flip.
+
 .arm
 func_0204a7b4:
 ldr r2, [r0, #0x0]

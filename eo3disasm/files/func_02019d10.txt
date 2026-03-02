@@ -1,3 +1,10 @@
+Name: FloatToInt(float value) -> int
+Description: Software implementation of converting a 32-bit floating point value into an integer.
+Arguments:
+r0: (float) A number in floating point representation.
+Returns:
+r0: (int) An integer.
+
 .arm
 func_02019d10:
 bic r1, r0, #0x80000000

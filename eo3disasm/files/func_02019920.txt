@@ -1,3 +1,11 @@
+Name: Divide(int dividend, int divisor) -> int
+Description: Efficient software integer division.
+Arguments:
+r0: (int) Dividend of the equation.
+r1: (int) Divisor of the equation.
+Returns:
+r0: (int) Result of the division.
+
 .arm
 func_02019920:
 eor r12, r0, r1

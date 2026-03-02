@@ -1,3 +1,14 @@
+Name: GetPointerToSubheaderInSkill(int* ptr, bool team, int skill_id, int level, int subheader) -> int*
+Description: Gets a pointer to a subheader's offset in a specified skill, or 0 if it is not found.
+Arguments:
+r0: (int*) A pointer to a character's combat data, but it is unused.
+r1: (bool) Team of the character using the skill.
+r2: (int) Skill ID.
+r3: (int) Skill level.
+stack+0: (int) Subheader to get an offset to.
+Returns:
+r0: Pointer to the subheader's offset in specified skill, or 0 if it is not found.
+
 .arm
 func_0206a9b4:
 stmdb sp!, {r3, r4, r5, lr}

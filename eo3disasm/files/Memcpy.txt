@@ -1,3 +1,11 @@
+Name: Memcpy(int* src, int* dst, int len) -> void
+Description: Copies memory from one location to another.
+Arguments:
+r0: (int*) Pointer to the data to copy from.
+r1: (int*) Pointer to the data to copy to.
+r2: (int) Number of bytes to be copied.
+
+
 .arm
 Memcpy:
 cmp r2, #0x0

@@ -1,3 +1,10 @@
+name: Malloc(int len) -> int*
+Description: Allocates memory and returns a pointer to that memory.
+Arguments:
+r0: (int) Number of bytes to allocate.
+Returns:
+r0: (int*) Pointer to the allocated memory.
+
 .arm
 func_0202b664:
 ldr r2, [.L_0202b678]

@@ -1,3 +1,14 @@
+Name: AIFunc_SelectValidAlliesAndReadyThem(int* ptr, int monster_id, int count, int monster_id_2, int count_2)
+Description: An AI function that selects allies and readies them for team skills.
+Arguments:
+r0: (int*) Pointer to the acting character's battle data structure.
+r1: (int) ID of the ally required.
+r2: (int) Number of allies needed.
+r3: (int) ID of the ally required (second loop).
+stack+0: Number of allies required (second loop).
+Returns:
+r0: (bool) 0 if no allies were found and readied, 1 if they were.
+
 .arm
 func_ov001_0214a120:
 stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}

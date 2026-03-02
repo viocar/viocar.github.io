@@ -1,3 +1,11 @@
+Name: CountLearnedSkills(int* ptr, int* buf) -> int
+Description: Counts the number of skills the character knows.
+Arguments:
+r0: (int*) Pointer to the character's battle data structure's persistent section.
+r1: (int*) Pointer to a buffer of memory to work within. 0x178 bytes must be available.
+Returns:
+r0: (int) Number of skills the character knows.
+
 .arm
 func_0206a7f0:
 stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}

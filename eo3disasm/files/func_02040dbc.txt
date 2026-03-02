@@ -1,3 +1,10 @@
+Name: CharacterIsAlive(int* ptr) -> bool
+Description: Checks if the passed character is alive and not petrified.
+Arguments:
+r0: (int*) A pointer to a character's battle data structure.
+Returns:
+r0: (bool) Returns false (0) if dead or petrified and true (1) if not.
+
 .arm
 func_02040dbc:
 stmdb sp!, {r3, r4, r5, lr}

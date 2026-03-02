@@ -4,14 +4,6 @@ r0: (int*) A pointer to an integer.
 Returns:
 r0: (bool) True if bit is set, false if bit is not set.
 
-    .arm
-func_0204a7a0: ; 0x0204a7a0
-    ldr r2, [r0, #0x0]
-    mov r0, #0x0
-    tst r2, r1
-    movne r0, #0x1
-    bx lr
-
 .arm
 func_0204a7a0:
 ldr r2, [r0, #0x0]

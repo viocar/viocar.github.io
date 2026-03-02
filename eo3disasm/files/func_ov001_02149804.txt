@@ -1,3 +1,13 @@
+Name: AIFunc_GetTargetingInfo(int* ptr, int* ai_skill_info, int* out1, int* out2) -> bool
+Description: A version of GetTargetingInfo() for AI functions. Gets a skill's targeting type and team and returns it in the out1 and out2 values.
+Arguments:
+r0: (int*) Pointer to a character's battle data structure.
+r1: (int*) Pointer to offset +0x744 of the same character's battle data structure, containing skill targeting information.
+r2: (int*) Pointer to a byte that receives the skill's targeting type.
+r3: (int*) Pointer to a byte that receives the skill's target team.
+Returns:
+r0: (bool) Always true.
+
 .arm
 func_ov001_02149804:
 stmdb sp!, {r4, r5, r6, lr}

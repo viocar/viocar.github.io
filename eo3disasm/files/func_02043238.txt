@@ -1,3 +1,10 @@
+Name: CharacterHasNoDisablingAilments(int*) -> bool
+Description: Checks if the specified character has no disabling ailments (petrify, panic, or sleep).
+Arguments:
+r0: (int*) Pointer to the character's battle data structure's persistent section.
+Returns:
+r0: (bool) True if character has no ailments. False if character does.
+
 .arm
 func_02043238:
 stmdb sp!, {r4, lr}

@@ -1,3 +1,12 @@
+Name: GetSkillPointer(bool team, int skill_id, int level) -> int*
+Description: Gets a pointer to a skill's data. The "level" argument is never used despite being required in the function call.
+Arguments:
+r0: (bool) The team of the character that is using the skill. 0 is player and 1 is enemy.
+r1: (int) ID of the skill.
+r2: (int) The skill's level. Never used.
+Returns:
+r0: (int*) A pointer to the skill's data.
+
 .arm
 func_0206a56c:
 stmdb sp!, {r3, lr}

@@ -1,3 +1,11 @@
+Name: CombatRNG(int min, int max) -> int
+Description: Randomly rolls a number between min and max (inclusive), and returns the result.
+Arguments:
+r0: (int) Lower bound.
+r1: (int) Upper bound.
+Returns:
+r0: Rolled number.
+
 .arm
 func_0204a834:
 stmdb sp!, {r3, r4, r5, lr}
