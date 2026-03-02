@@ -1,3 +1,10 @@
+Name: LoadScriptArgument(int arg) -> int
+Description: Loads an argument for the script. If this function is present, the function is part of the game's scripting system.
+Arguments:
+r0: (int) Which argument to load.
+Returns:
+r0: (int) The value of the argument.
+
 .arm
 func_02076de4:
 stmdb sp!, {r3, lr}
