@@ -1,3 +1,13 @@
+Name: FindPassiveWithSubheaderAndReturnIDAndLevel(int team, int* ptr, int subheader, int* return) -> int
+Description: Searches all passives known by a character for specified subheader. Returns ID and level of skill.
+Arguments:
+r0: (int) Team of character to search
+r1: (int*) Pointer to character's persistent data
+r2: (int) Subheader to find
+r3: (int*) Address to return the level value on
+Returns:
+r0: (int) Subheader ID
+
 .arm
 func_0206ac1c:
 stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}

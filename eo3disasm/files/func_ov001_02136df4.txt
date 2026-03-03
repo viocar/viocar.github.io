@@ -1,3 +1,9 @@
+Name: PushSkillToFrontOfSkillQueue(int* skill, bool after) -> void
+Description: Pushes a skill to the front of the skill queue. Used for counterattacks mostly.
+Registers:
+r0: (int*) Pointer to the skill to push onto the queue.
+r1: (bool) Insert in the current slot (false) or the slot after (true)?
+
 .arm
 func_ov001_02136df4:
 stmdb sp!, {r3, r4, r5, lr}

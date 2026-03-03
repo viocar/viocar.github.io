@@ -1,3 +1,10 @@
+Name: SetMonsterSpriteOrShadowTransparency(int* monster, int transparency, bool shadow) -> void
+Description: Sets the transparency level on a monster's sprite or shadow.
+Arguments:
+r0: (int*) Pointer to the monster.
+r1: (int) Transparency level to set.
+r2: (bool) If false, set sprite transparency. If true, set shadow transparency.
+
 .arm
 func_ov001_021518dc:
 stmdb sp!, {r4, lr}
