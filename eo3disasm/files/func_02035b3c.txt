@@ -1,3 +1,11 @@
+Name: GetTexTableAndTexTableEntryFilenameIndexPointer(int textable_id, int filename_id) -> int*
+Description: Gets a pointer to a TexTable and then gets a pointer to an entry in the TexTable filename index in that TexTable.
+Registers:
+r0: (int) TexTable ID to get a pointer to.
+r1: (int) Entry in the TexTable filename index to get a pointer to.
+Returns:
+r0: (int*) A pointer to the entry in the TexTable filename index.
+
 .arm
 func_02035b3c:
 stmdb sp!, {r4, lr}

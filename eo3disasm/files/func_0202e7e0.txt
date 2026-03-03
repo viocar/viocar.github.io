@@ -1,5 +1,5 @@
-Name: LinearInterpolation(int start, int end, int range, int progress) -> int
-Description: Interpolates between two values (start and end). Range is the divisor, and is the maximum progress value. Progress is how far along the interpolation is.
+Name: Lerp(int start, int end, int range, int progress) -> int
+Description: Performs linear interpolation between two values.
 Arguments:
 r0: (int) Start value of the interpolation.
 r1: (int) End value of the interpolation.

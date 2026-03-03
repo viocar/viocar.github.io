@@ -1,3 +1,14 @@
+Name: ClampedHighPrecisionLerp(byte* output, int range, int start, int end, int progress) -> bool
+Description: Performs linear interpolation between two values and clamps the result. Multiplies start and end by 100 for higher precision.
+Arguments:
+r0: (byte*) Address to store the result of the interpolation at.
+r1: (int) Range of the interpolation.
+r2: (int) Start value of the interpolation.
+r3: (int) End value of the interpolation.
+stack+0: (int) How far along the interpolation we are.
+Returns:
+r0: () Returns true if the result was clamped.
+
 .arm
 func_02079b6c:
 stmdb sp!, {r4, r5, r6, r7, r8, lr}

@@ -1,3 +1,13 @@
+Name:
+Description:
+Arguments:
+r0: (int) Rendering flags
+r1: ?
+r2: ?
+r3: (int) X position
+stack+0: Y position [actual: stack+0xB0]
+
+
 .arm
 func_ov000_01ffb424:
 stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}

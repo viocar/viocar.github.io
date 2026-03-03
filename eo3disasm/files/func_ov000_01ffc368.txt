@@ -1,3 +1,11 @@
+Name: GetTexTableEntryFilenameIndexPointer(int* ptr, int entry) -> int*
+Description: Gets a pointer to an entry in the TexTable filename index in a TexTable.
+Arguments:
+r0: (int*) Pointer to the TexTable to search in.
+r1: (int) Entry in the TexTable filename index to get a pointer to.
+Returns:
+r0: (int*) A pointer to the entry in the TexTable filename index.
+
 .arm
 func_ov000_01ffc368:
 cmp r0, #0x0
