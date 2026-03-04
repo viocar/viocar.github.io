@@ -1,5 +1,5 @@
 Name: GetSkillPointer(bool team, int skill_id, int level) -> int*
-Description: Gets a pointer to a skill's data. The "level" argument is never used despite being required in the function call.
+Description: Gets a pointer to a skill's data. The "level" argument is never used despite being required in the function call. This is functionally identical to GetSkillPointer2.
 Arguments:
 r0: (bool) The team of the character that is using the skill. 0 is player and 1 is enemy.
 r1: (int) ID of the skill.
