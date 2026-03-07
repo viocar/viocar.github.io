@@ -1,0 +1,16 @@
+BuildInfo:
+    .word 0x020edbc0
+    .word 0x020edbd8
+    .word 0x020ed620
+    .word 0x020ed620
+    .word 0x02136c00 ; offset for loading overlays?
+    .word 0x02090ba0 ; strange. probably not a pointer?
+    .word 0x05047531
+    .word 0xdec00621 ; I think this is the beginning of the ![SDK+NINTENDO:BACKUP] string
+    .word 0x2106c0de
+    .word 0x4b44535b
+    .word 0x4e494e2b
+    .word 0x444e4554
+    .word 0x41423a4f
+    .word 0x50554b43
+    .word 0x5d
