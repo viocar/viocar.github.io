@@ -1,3 +1,16 @@
+Name: InitializeMonster(byte team, byte position, int flags, int flags_2, int flags_3, short monster_id, short foe_id) -> int*
+Description: Initializes a new monster in combat and returns its pointer.
+Arguments:
+r0: (byte) The monster's team. Should always be 1.
+r1: (byte) The monster's position.
+r2: (int) Flags for the first flag field.
+r3: (int) Flags for the second flag field.
+stack+0: (int) Flags for the third flag field.
+stack+1: (short) ID of the monster.
+stack+2: (short) ID of the FOE, if applicable.
+Returns:
+r0: (int*) Pointer to the initialized monster data.
+
 .arm
 func_0203fd68:
 stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, lr}

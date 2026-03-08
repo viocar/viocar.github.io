@@ -1,3 +1,8 @@
+Name: StartScreenFadeIn(int type) -> void
+Description: Starts a screen fade in.
+Arguments:
+r0: (int) Screen fade type (All but 3 seem to cause problems, and not all fades seem to go through here?)
+
 .arm
 func_0202ff44:
 stmdb sp!, {r4, lr}

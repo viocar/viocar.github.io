@@ -1,3 +1,13 @@
+Name: StartScreenFadeOut(int type) -> void
+Description: Starts a screen fade out.
+Arguments:
+r0: (int) Fade type:
+  0: Black fade
+  1: Black screen wipe from bottom
+  2: White fade
+  3: Black fade (No difference from 0?)
+  4: Slow white fade
+
 .arm
 func_0202ff00:
 stmdb sp!, {r4, lr}

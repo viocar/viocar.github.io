@@ -1,3 +1,8 @@
+Name: IsFadingInOrOut(void) -> bool
+Description: Checks if a fade in or fade out is in progress. (Doesn't seem to catch all cases - is there another function that does it?)
+Returns:
+r0: (bool) False if not fading, true if fading.
+
 .arm
 func_02030114:
 stmdb sp!, {r3, lr}

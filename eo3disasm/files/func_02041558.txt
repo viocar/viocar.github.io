@@ -1,3 +1,22 @@
+Name: ApplyAilment(int* target, short ailment) -> void
+Description: Applies an ailment to the target, using a bitfield for the ailment. The ailments are:
+  0x1: Death
+  0x2: Petrify
+  0x4: Sleep
+  0x8: Panic
+  0x10: Plague
+  0x20: Poison
+  0x40: Blind
+  0x80: Curse
+  0x100: Paralysis
+  0x200: Stun
+  0x400: Head bind
+  0x800: Arm bind
+  0x1000: Leg bind
+Arguments:
+r0: (int*) A pointer to the target's data.
+r1: (short) Ailment to apply. Can apply multiple at once.
+
 .arm
 func_02041558:
 stmdb sp!, {r3, lr}

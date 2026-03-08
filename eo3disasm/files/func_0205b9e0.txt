@@ -1,3 +1,10 @@
+Name: GetFirstFreeCharacterSlotInBattle(int team) -> int
+Description: Finds the first free character slot and returns its ID.
+Arguments:
+r0: (int) Team to check.
+Returns:
+r0: (int) First slot ID available, or -1 if no slots are available.
+
 .arm
 func_0205b9e0:
 stmdb sp!, {r4, lr}
