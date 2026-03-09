@@ -1,3 +1,9 @@
+Name: RemoveTargetSkillQueueEntry(byte team, byte position) -> void
+Description: Removes the target's skill entries from the queue.
+Arguments:
+r0: (byte) Team
+r1: (byte) Position
+
 .arm
 func_ov001_02136c74:
 stmdb sp!, {r4, r5, r6, lr}

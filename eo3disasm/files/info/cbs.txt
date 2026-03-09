@@ -319,7 +319,7 @@ Length: 0x8D4
 0x748 (h): Skill ID
 0x74A (h): Skill ID 2
 0x74C (h): Item being used (by item skill)
-0x74E (h): Possibly a bitfield of the row being targeted?
+0x74E (h): Some flag bitfield?
 0x751 (b): Skill in use level
 0x760 (b): Immediate skill link caster team
 0x761 (b): Immediate skill link caster position

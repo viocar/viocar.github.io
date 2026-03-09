@@ -1,0 +1,15 @@
+Ailments are represented by bits in a bitfield. This is what each bit represents:
+
+Death: 1
+Petrify: 2
+Sleep: 4
+Panic: 8
+Plague: 10
+Poison: 20
+Blind: 40
+Curse: 80
+Paralysis: 100
+Stun: 200
+Head: 400
+Arm: 800
+Leg: 1000
