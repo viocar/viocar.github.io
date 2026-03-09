@@ -1,3 +1,8 @@
+Name: StoreItemLevel (int item_level) -> void
+Description: Stores the level of the item being used.
+Arguments:
+r0: (int) Item level.
+
 .arm
 func_0206a550:
 cmp r0, #0x0

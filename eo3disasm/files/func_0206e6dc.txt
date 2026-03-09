@@ -1,4 +1,4 @@
-Name: GetUseItemTableOffset(short id) -> int*
+Name: GetConsumableItemPointer(short id) -> int*
 Description: Converts an item ID into a pointer to that item's data in the consumable item data table ("useitemtable.tbl")
 Arguments:
 r0: (short) Item ID

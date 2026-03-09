@@ -1,0 +1,194 @@
+Skills have a size of 0x178 and have a "header", which always has the same fields, and subheaders, which are per-skill fields that define its behaviour. This is how headers work:
+
+0x0 (b): Maximum level.
+0x1 (b): Skill type:
+
+    0:  STR-based attack
+    1:  TEC-based attack
+    2:  Attack passive
+    3:  HP fixed restore
+    4:  TP fixed restore
+    5:  HP and TP fixed restore
+    6:  HP healing skill
+    7:  TP healing skill (Inspire only)
+    8:  HP and TP healing skill (unused)
+    9:  Unsure (Used on 0x15C "NONE" as well as some monster "NONE" skills)
+    A:  Remove ailment or bind
+    B:  Remove ailment or bind (not sure what the difference is)
+    C:  Unused. Seems to cause the caster to gain the target's ailment?
+    D:  Resurrection
+    E:  Unused
+    F:  Non-attack ailment skill
+    10: Non-attack buff or debuff skill
+    11: Used only on Regal Radiance's link
+    12: Used only on Knighthood
+    13: Weapon elemental modifier skill
+    14: Unused (switch handler goes to the same as Regal Radiance's)
+    15: Charge
+    16: Unused - it appears to be a charge skill.
+    17: Bunshin
+    18: Kagerou
+    19: Bot
+    1A: Poison damage (Used on 0x171 "NONE" and monster 0xC5 "NONE")
+    1B: Delayed attack
+    1C: Link on trigger
+    1D: Follower skill, such as chasers, Dark Ether, Aegis skills, Rocket Jump
+    1E: Hoplite guard
+    1F: Counter skills
+    20: Wildling summon
+    21: Dismiss summon
+    22: Weapon mastery passive
+    23: Flee skill (does not include basic "Escape")
+    24: Regal Radiance
+    25: Seems to be something to mess with the units in battle... it's not clear. Call Allies and Submerged Move have it
+    26: HP Cannon
+    27: Marsh Dive
+    28: STR-based attack against TP
+    29: Unused
+    2A: Attack which deals damage based on the last damage dealt. Used only on the unused "Buc Nin" skill
+    2B: Regenerate
+    2C: Cover skills
+    2D: Overwatch
+    2E: Immortal
+    2F: Unsure (Used on 0x152 "NONE")
+    30: Unsure (Used on monster 0xC3 "NONE")
+    31: Bait skills
+    32: Throw damage reflection
+    33: Sarutobi
+    34: "Focus" - reassemble Gatekeeper?
+    35: "Disperse" - disassemble Gatekeeper?
+    36: "Summons" - unknown user
+    37: Lay Egg
+    38: "Change"
+    39: Forced row switch
+    3A: Restore TP if bound?
+    3B: Unused
+    3C: Unused
+    3D: Unsure (Used on monster 0xC4 "NONE")
+    3E: Unsure (Used on monster 0xBD "NONE")
+    3F: Unsure (Used on monster 0xBB "Counter)
+    40: Abyssal God summon
+    41: Abyssal God form transition
+    42: Automaton King death animation and Abyssal God death animation
+    43: Chop
+    44: Mine
+    45: Take
+    46: Danger value modifier
+    47: No encounters
+    48: Damage floor damage reduction
+    49: Ignore damage and mud floors
+    4A: Reveal FOEs (Horoscope)
+    4B: Reveal FOEs (Keen Eye)
+    4C: Increase preemptive chance
+    4D: Unused
+    4E: Unused
+    4F: All gathers up
+    50: Return home
+    51: Unused
+    52: Pass time
+    53: Null
+
+0x2 (h): A bitfield for body part and weapon type required:
+
+    0x0: No requirement
+    0x1: Head
+    0x2: Arm
+    0x4: Leg
+    0x8: Tome
+    0x10: Rapier
+    0x20: Sword
+    0x40: Club
+    0x80: Shield
+    0x100: Spear
+    0x200: Unarmed
+    0x400: Gun
+    0x800: Bow
+    0x1000: Katana
+    0x2000: Knife
+    0x4000: Requires any bind
+    0x8000: Requires full bind
+
+0x4 (h): A bitfield for a sort of special status targeting. This is incomplete.
+
+    0x0: Works unconditionally on living characters
+    0x1: Requires target to be dead
+    0x2: Requires target to have ailment
+    0x10: Requires target to have a buff
+    0x8000: Works unconditionally on both living and dead characters
+
+0x6 (b): Target type. I don't know these fully. Here are my rough notes:
+
+    0x00: ? - self only?
+    0x01: single target
+    0x02: all target
+    0x03: multi-hit, multi-target
+    0x04: multi-hit, can only hit once per target
+    0x05: some variation of all (includes enemies?)
+    0x06: self target. applies to allies but not self
+    0x07: hit all, but in reverse order? what's the point
+    0x08: all (?)
+    0x09: dunno
+    0x0A: self
+    0x0B: single target but can't target self
+    0x0C: splash?
+    0x0D: splash?
+    0x0E: dunno
+    0x0F: dunno
+    0x10: target line
+    0x11: multi-hit single target
+
+0x7 (b): Target team. 1 for allies, 2 for enemies. Unclear if other values are valid.
+0x8 (b): A bitfield for where you can use the skill:
+
+    0x1: Town
+    0x2: Dungeon
+    0x4: Combat
+
+0x9 (b): Buffs or debuffs:
+
+    0x0: No buff or debuff
+    0x1: Applies buff
+    0x2: Applies debuff
+    0x3: Dispels buff
+    0x4: Dispels debuff
+
+0xA (b): The type of buff or debuff:
+
+    0x1: Attack
+    0x2: Ailment resistance and immunity
+    0x3: Evasion
+    0x4: "Aptitude" - this is a hybrid ATK/DEF buff used on some Shogun skills. Multiple aptitude buffs do not stack (due to a bug?)
+    0x5: Defense
+    0x6: Regeneration
+    0x7: Elemental resistance
+    0x8: Maximum HP
+    0x9: Accuracy
+    0xA: Draw rate, such as provoke
+
+0xB (b): Unknown and probably unused.
+0xC (h): Bitfield for buff and debuff element.
+
+    0x1: Cut
+    0x2: Bash
+    0x4: Stab
+    0x8: Fire
+    0x10: Ice
+    0x20: Volt
+    0x40: Almighty/untyped
+
+0xE (h): Bitfield for the damage type of the skill. The bits are the same as the buff/debuff element, with the exception that 0x8000 will allow a skill to do full damage from the back row or while the user is bound.
+0x10 (b): Ailment infliction flag:
+
+    0x0: No ailment
+    0x1: Apply ailment
+    0x2: Cure ailment
+    0x3: I don't know, but it's in there
+    0x4: Sympathy Pain
+
+0x12 (h): A bitfield for ailments that are inflicted or cured. Refer to ailments at top of this file for specific bits.
+
+0x14 (h): Skill flags. These are all sorts of et-cetera qualities of the skill. For instance, 0x400 is a class skill, 0x2000 is a passive skill, etc. I haven't documented them much.
+
+0x16 (h): No idea. Skill flags are a halfword, and I've never seen this used.
+
+The remaining bytes in a skill are used for subheaders and are beyond the scope of this file.

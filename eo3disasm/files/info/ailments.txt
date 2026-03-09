@@ -10,6 +10,6 @@ Blind: 40
 Curse: 80
 Paralysis: 100
 Stun: 200
-Head: 400
-Arm: 800
-Leg: 1000
+Head bind: 400
+Arm bind: 800
+Leg bind: 1000
