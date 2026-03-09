@@ -1,3 +1,8 @@
+Name: GetPointerToSkillQueue(void) -> int*
+Description: Gets a pointer to the skill queue.
+Returns:
+r0: (int*) A pointer to the skill queue.
+
 .arm
 func_ov001_02136c00:
 stmdb sp!, {r3, lr}
