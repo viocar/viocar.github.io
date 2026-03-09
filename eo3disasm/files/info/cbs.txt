@@ -1,0 +1,553 @@
+CHARACTER BATTLE STRUCT (CBS):
+
+Length: 0x8D4
+
+0x0   (w): Bitfield
+	0x1: Player character
+	0x2: Enemy character
+	0x4: Beast
+	0x8: Seems to be a participant in battle?
+	0x80: Cannot act because the Yggdroid had too many turns (unused subheader)
+	0x100: Being targetted by an attack (used for graphics stuff)
+	0x400: Something with many characters? Or something? Used in a death function at 0x2042F98
+	0x800: Something with graphics
+	0x1000: Cannot act for some reason?
+	0x4000: Splash...? How exactly does this work
+	0x8000: King Penguin withstand 1
+	0x10000: King Penguin withstand 2
+	0x20000: Seems to prevent on-kill effects from triggering? Also runs the "with the last of its strength" line
+	0x40000: Reflection and similar skills
+	0x80000: Rocket jump evasion
+	0x200000: Snipe/Sharpshooter ready
+	0x1000000: Do not retarget skill if target is no longer valid
+	0x2000000: Some kind of death flag?
+0x4   (w): Bitfield – Might never be used
+0x8	  (w): Bitfield
+	0x40: I believe this is the boss flag
+	0x80: Charge skill active
+	0x100: Is a Bunshin clone
+	0x200: Is the original Ninja
+	0x400: Dark Ether active
+	0x1000: Something with beasts - perhaps a flag that says the user has one active?
+	0x2000: Is a beast
+	0x4000: Seems to cause the character to skip action time and retargeting AI scripts
+	0x8000: Is defending
+	0x20000: User cannot act this turn due to being blindsided (both allies and enemies)
+	0x40000: Set when the user can't act due to a status? Unsure when it is read, though.
+	0x100000: Unable to act for some reason?
+	0x200000: Active counter skill ready
+	0x1000000: Passive counter skill ready
+	0x8000000: Targetted counter ready (Prophecy/Reflector)
+	0x20000000: End Arms skills due to Regal Radiance
+	0x40000000: Using Knighthood (or a skill with subheader 0x97)
+	0x80000000: "Act First" affecting this unit (same for target of Knighthood as well as Quick Draw)
+0xC   (w): Bitfield
+	0x1: Give up all drops on kill
+	0x10: Unsure (checked when checking on-death passives and prevents them if enabled)
+	0x40: Endure active
+	0x80: Endure has procced and cannot proc again
+	0x100: Beast Soul attack boost active
+	0x200: Beast Soul defense boost active
+	0x400: Nature Pact has procced (goes on Beast)
+	0x1000: I believe this means "off-hand attack being used"
+	0x2000: Trigger a Narmer dive based off damage?
+	0x4000: Has unused charge
+	0x10000: Being Bodyguarded
+	0x20000: Being Reinforced
+	0x80000: Activate a healing-based Nobility Proof at the end of turn
+	0x100000: Activate Nobility Proof at the end of turn
+	0x4000000: Exhaust Field active
+	0x8000000: Is kagerou
+	0x10000000: Is bot
+	0x20000000: Sarutobi active
+	0x80000000: Swashbuckling procced
+0x10  (w): Bitfield
+	0x1: Warrior Might bonus damage taken
+	0x2: Rear Dignity damage taken active
+	0x4: Fore Honor damage taken active
+	0x8: Fore Honor speed. If set, flips 0x8.0x80000000 on.
+	0x10: Unsure, but grants -9999 speed if active. [I think this is an Elder Dragon thing]
+	0x40: Prevent order active?
+	0x80: Unsure, has to do with death states?
+	0x800: Appears to be the flag for Elder Dragon's strange resistance states.
+	0x1000: Do not apply accumulative resistance to binds. Set by monster flag 0x20.
+	0x10000: Daifuhensha damage out active
+	0x20000: Daifuhensha damage taken active
+	0x100000: Involved in transforming Abyssal God
+	0x400000: (GUESS) Endure used and not possible
+	0x800000: Do not trigger a Narmer dive in 0xC.0x2000
+	0x4000000: Something to do with death states
+0x14  (w): Bitfield
+	0x1: A bit on an unused subheader. Related to 0x10.0x40
+	0x4: Play the "Struck weakness" message (and sound?)
+0x1A  (h): Monster ID (I think position if player?)
+0x1C  (h): FOE ID
+0x1E  (h): Monster size (used for some graphics stuff and possibly for summoning?)
+0x22  (h): Something... number of turns alive?
+0x28  (w): Bitfield
+	0x1: Corresponds to the damage value in 0x30. Unused.
+	0x2: Corresponds to the damage value in 0x32. Unused.
+	0x4: Corresponds to the value stored at 0x34. Unused.
+	0x8: Corresponds to the value stored at 0x36. Unused.
+	0x10: Corresponds to the value stored at 0x38. Unused.
+	0x20: Corresponds to the value stored at 0x3A. Unused.
+	0x40: Corresponds to the value stored at 0x44. Unused. Can't find in code?
+	0x80: Checks if some lifesteal value is used. Is this unused?
+	0x100: Seems totally unused? I can't find a reference to it
+	0x200: Uroboros Guard active
+	0x400: Seems totally unused? I can't find a reference to it
+	0x800: Corresponds to unused subheader 0x133
+	0x1000: Corresponds to an unused subheader - not sure; can't find in code
+	0x2000: Corresponds to an unused subheader - something with ailments?
+	0x4000: Corresponds to an unused subheader - not sure; can't find in code
+	0x8000: Aegis Defense and similar active
+	0x10000: Deal guaranteed crits - lethal tactic?
+0x30  (h): Temporarily holds a value to modify damage this turn. Unused.
+0x32  (h): Identical functionality as 0x30, allowing for two to be in effect. Unused.
+0x34  (h): Permanent accuracy buff. Unused.
+0x36  (h): A second permanent accuracy buff. Unused. [might actually be evasion]
+0x38  (h): A speed value to add to the final action speed calculation. Added if a skill has 0x12D subheader? Unused. Lasts indefinitely.
+0x3A  (h): An ailment recovery value. Lasts indefinitely. Not sure which subheader applies it? Unused.
+0x3C  (h): Aegis Defense block element
+0x3E  (h): Aegis Defense block passive
+0x40  (h): Lifesteal if this element. Unused.
+0x42  (h): Uroboros Guard absorption element
+0x44  (h): A value of some kind. Unused. Not sure where it is in code. Can't seem to find it?
+0xA0  (h): Kagerou clone HP
+0xA2  (h): Kagerou clone TP
+0xBE  (h): ?
+0xC0  (h): ?
+0xC2  (h): Some counter used in Swashbuckling
+0xC4  (h):
+0xCE  (h): Phase of the skill selection...?
+0xDC  (h): Line Guard skill ID
+0xDE  (b): (GUESS) Line Guard user's team
+0xDF  (b): (GUESS) Line Guard user's position
+0xE0  (h): Sarutobi or Parry active
+0xE8  (h): Abyssal God transform from ID
+0xEA  (h): Abyssal God transform to ID
+0xEC  (h): Beast Soul offense
+0xEE  (h): Beast Soul defense
+0xF0  (h): Number of active Yggdroid turns (used in an unused subheader)
+0xF2  (h): ? The skill a bot uses?
+0xF4  (h): A bot element
+0xF7  (b): Something to do with Bunshin
+0xF8  (b): Level of the skill that inflicted the poison?
+0xF9  (b): Some position
+0xFA  (b): Target team again?
+0xFB  (b): Target position again?
+0xFD  (b): Not sure... a graphic something
+0xFE  (b): ?
+0xFF  (b): Level of charge skill
+0x100 (b): Level of unused charge value
+0x102 (h): Skill ID of charge skill
+0x104 (h): Duration of charge skill
+0x106 (h): Skill ID of an unused charge value
+0x108 (h): Duration of unused charge value
+0x10A (h): Damage multiplier of unused charge value
+0x114 (h): Dark Ether duration
+0x116 (h): Exhaust Field duration
+0x118 (h): Poison damage
+0x11A (h): Suikyou poison spread damage value
+0x11C (h): Plague forge damage?
+0x11E (h): Unknown but checked in the turn order code
+0x120 (w): Last attack's lifesteal amount
+0x124 (w): Same but for TP
+0x128 - 0x12F (array of h): Turns since ailment applied. (Ailment/head bind/arm bind/leg bind)
+0x132 (h): Appears to be a Suikyou ailment
+0x134 (h): Chance to endure
+0x138 (w): HP restored by extend
+0x13C (w): Curse damage
+0x140 (w): Some curse flag?
+0x144 (w): TP healing value for skills with type 0x9
+0x148 (w): TP healing value for skills with type 0x9
+0x14E (h): Turns to charge up Withstand
+0x150 (h): Returned damage from Withstand
+0x154 (w): Stored Withstand damage
+0x158 (h): Reflection's damage percentage
+0x15C (w): Reflection's stored damage
+0x160 (h): ?
+0x162 (h): ? I think these might be elements
+0x1A4 (h): Warrior Might damage taken multiplier
+0x1A6 (h): Daifuhensha damage out multiplier
+0x1A8 (h): Daifuhensha damage taken multiplier
+0x1AA (h): Rear Dignity damage out multiplier
+0x1AC (h): Fore Honor damage taken multiplier
+0x1AE (h): Daifuhensha damage out type
+0x1B0 (h): Rear Dignity damage out type
+0x1B2 (h): Daifuhensha damage taken type (yes, these are not consistently ordered)
+0x1B4 (h): Fore Honor damage taken type
+0x1B6 (h): Bloody Lance bonus damage
+0x1B8 (h): Flee chance from skills
+0x18C (b): Not sure?
+0x1BD (b): Chases made this turn
+0x1BE (h): Line Guard skill ID
+0x1C0 (b): Line Guard skill level
+0x1C2 (h): Trigger this skill when hit (actively set)
+0x1C4 (h): Level of 0x1C2 skill
+0x1C6 (h): Trigger this skill when hit (passively set)
+0x1C8 (h): Level of 0x1C6 skill
+0x1D2 (h): Red Pasaran multiply value
+0x1D4 (b): Red Pasaran multiply level
+0x1D6 (h): Blue Pasaran multiply value
+0x1D8 (b): Blue Pasaran multiply level
+0x1DA (h): Gold Pasaran multiply value
+0x1DC (b): Gold Pasaran multiply level [note - despite these being bytes, there doesn't seem to be anything used at 1D5, 1D9, or 1DD - potential free bytes?]
+0x1E0 (b): Target's team (for counters)
+0x1E1 (b): Target's position (for counters)
+0x1E6 (b): Which line the Makibishi user is on
+0x1EA (h): Reflector element
+0x1EC (h): Chase skill ID
+0x1F8 (h): Kaishaku/Swallow Whole activation chance
+0x1FE (h): ?
+0x200 (h): ?
+0x202 (b): Chase skill level
+0x208 (b): Kaishaku/Swallow Whole level
+0x209 (b): Summoner's position (for beasts)
+0x20A (h): Linked skill ID 1
+0x20C (h): Linked skill ID 2
+0x20E (h): Linked skill ID 3
+0x210 (h): Linked skill ID 4
+0x21A (b): Linked skill level 1
+0x21B (b): Linked skill level 2
+0x21C (b): Linked skill level 3
+0x21D (b): Linked skill level 4
+0x230 (h): Appears to be a value related to summoning?
+0x23C (b): Monster ID
+0x23E (b): Also monster ID?
+0x240 (w): Monster flags
+	0x1: Not in Monstrous Codex
+	0x2: Is a Ruin Caller head. Don't mix 0x2 and 0x4 or it'll mess up graphics
+	0x4: "Is Ruin Caller" - seems to do a lot of stuff related to Ruin Caller's graphics. A mix of this and 0x2 will cause glitchy graphics
+	0x8: Start full bound
+	0x10: Update stats when unbound
+	0x20: Does not have AR from binds
+	0x40: Immune to Kaishaku
+	0x80: Does not have a shadow
+0x29C (0x14): enemyhaveskilldata
+0x2B0 (w): Pointer to what I think is the temporary variables for the monster's script
+0x2B4 (w): Pointer to the monster's script
+0x2B8 (w): Some sort of flag field:
+	0x1: Action time skill enabled
+0x2BC (h): Some skill flag
+0x2BE (h): Number of turns the enemy has been in battle I think
+0x2C4 (w): Script store value 0
+0x2C8 (w): Script store value 1
+0x2CC (w): Script store value 2
+0x2D0 (w): Script store value 3
+0x2D4 (h): Unsure - has to do with Withstand
+0x2EC (w): Narmer can dive (0x1: already dived, 0x2: can't)
+0x2F4 (w): Last damage type received. Note that this is shifted left once, with the LSB meaning "damage received"
+0x2F8 (b): Position of ally who is joining a team skill
+0x300 (h): ID of ally who is joining team skill?
+0x312 (b): Some character slot? Used only in the skill "Change"
+0x313 (b): Also some character slot? Used only in the skill "Change"
+0x314 (w): Current HP
+0x318 (w): Current TP
+0x31C (0x14): Base HP, TP, and stats (not sure if these are ever used)
+0x334 - 0x33E (array of h): Elemental resistances
+0x340 - 0x35A (array of h): Ailment resistances
+0x360 - 0x384 (array of h): AR values. Note - this space allocates "elemental damage AR", which is used only for Elder Dragon. Death's AR begins at 0x36C
+0x388? 0x38C? - 0x3B0 (array of h): ??? values. These will add to resistance, but I cannot find where they are set at all. I'm fairly confident they're unused. These last only one turn.
+0x3B4 (w): TP cost of active summoned beast
+0x3B8 (b): Unknown - set to 1 on on-death passives
+0x3B9 (b): Unknown - set to 1 on on-death passives
+0x3BA (b): Unknown - set to killing skill skill level on on-death passives
+0x3BC (h): Unknown - set to killing skill skill id on on-death passives
+0x3BE (h): Unknown - related to an unused subheader 0x2E
+0x3C0 (h): Unknown - related to Ocean Drop subheader 0x2F
+0x3C2 (b): ?
+0x3C4 (b): (guess) Buffs active
+0x3C6 (b): Buff slot [NOTE: I THINK THIS IS WRONG]
+0x3C7 (b): Debuffs active
+0x3C8 - 0x41B (various): Buff slot 1
+	0x1 (b): Buff type
+	0x2 (b): Applier team
+	0x3 (b): Skill level
+	0x4 (h): Buff value (damage type?)
+	0x6 (h): Skill ID
+	0x8 (w): Flags
+		0x100: Buff fails unless you have the ailment at 0x3D2'
+		0x20000: Rear Dignity damage out
+		0x40000: Fore Honor damage in
+		0x80000: Is Fore Honor
+		0x100000: Is Rear Dignity
+		0x200000: Provoke
+		0x400000: Play Possum
+		0x800000: Daifuhensha damage out
+		0x1000000: Daifuhensha damage in
+
+	0xE (h): Ailment
+	0x10 (h): Buff-specific value 1
+	0x12 (h): Buff-specific value 2
+0x41C - 0x46F (various): Buff slot 2. Field values are identical to buff slot 1.
+0x470 - 0x4C3 (various): Buff slot 3. Field values are identical to buff slot 1.
+0x4C4 - 0x516 (various): Debuff slot 1. I believe the field values are identical to buff slot 1, but are used negatively instead of positively.
+0x517 - 0x569 (various): Debuff slot 2. I believe the field values are identical to buff slot 1, but are used negatively instead of positively.
+0x56A - 0x5BD (various): Debuff slot 3. I believe the field values are identical to buff slot 1, but are used negatively instead of positively.
+0x5BE (w): Unsure
+0x5C0 (b): Unsure
+0x5CF (b): Unsure
+0x5DE (b): Unsure
+0x5DF (b): Unsure
+0x5E6 (h): Snipe/Sharpshooter skill link ID
+0x5E8 (b): Snipe/Sharpshooter level
+0x5E9 (b): Team of character that is bodyguarding this character
+0x5EA (b): Position of character that is bodyguarding this character
+0x5EB (b): Team of character that triggered bodyguard/cover proc
+0x5EC (b): Position of character that triggered bodyguard/cover proc
+0x5ED (b): Team of character that triggered (?)
+0x5EE (b): Position of character that triggered (?)
+0x5F0 (h): Overwatch skill ID
+0x5F2 (h): Bodyguard damage reduction
+0x5F6 (h): Beast skill to use on summon
+0x5FA (b): Beast skill level
+0x5FC (h): Weapon elemental enchantment (Sovereign arms)
+0x5FE (h): Is it a valid buff for Regal Radiance to dispel
+0x604 (w): Pointer (Monsters only?) - possibly monster sprite
+0x608 (w): Pointer (Monsters only?) - shadow?
+0x60C (w): Pointer (Monsters only?) - HP bar?
+0x61C (w): Pointer (Monsters only?)
+0x620 (b): Team
+0x621 (b): Position
+0x624: The PCS begins here and is loaded unchanged. For any value that falls between this and 0x73F, refer to the PCS section and use the values in there as an offset.
+0x740 (w): A pointer to 0x744
+0x744 (b): Skill caster team
+0x745 (b): Skill caster position
+0x746 (b): Skill target team
+0x747 (b): Skill target position
+0x748 (h): Skill ID
+0x74A (h): Skill ID 2
+0x74C (h): Item being used (by item skill)
+0x74E (h): Possibly a bitfield of the row being targeted?
+0x751 (b): Skill in use level
+0x760 (b): Immediate skill link caster team
+0x761 (b): Immediate skill link caster position
+0x762 (b): Immediate skill link target team
+0x763 (b): Immediate skill link target position
+0x764 (h): Immediate skill link ID
+0x766 (h): Immediate skill link ID 2
+0x76D (b): Immediate skill link level
+0x77C (b): Linked skill caster team
+0x77D (b): Linked skill caster position
+0x77E (b): Linked skill target team
+0x77F (b): Linked skill target position
+0x780 (h): Linked skill ID
+0x782 (h): Linked skill ID copy?
+0x789 (b): Linked skill level
+0x7C2 (b): Swashbuckling (?) caster team
+0x7C3 (b): Swashbuckling (?) caster position
+0x7C4 (b): Swashbuckling (?) target team
+0x7C5 (b): Swashbuckling (?) target position
+0x7C6 (h): Swashbuckling (?) ID
+0x7C8 (h): Swashbuckling (?) ID copy?
+0x7CC (h): Swashbuckling (?) flag
+0x7CF (b): Swashbuckling (?) level
+0x7D0 (b): Death link skill caster team
+0x7D1 (b): Death link skill caster position
+0x7D2 (b): Death link skill target team
+0x7D3 (b): Death link skill target position
+0x7D4 (h): Death link skill ID
+0x7D6 (h): Death link skill ID copy?
+0x7DA (h): Death link skill flag
+0x7DD (b): Death link skill level
+0x7DE (b): Death link skill 2 caster team
+0x7DF (b): Death link skill 2 caster position
+0x7E0 (b): Death link skill 2 target team
+0x7E1 (b): Death link skill 2 target position
+0x7E2 (h): Death link skill ID 2
+0x7E4 (h): Death link skill ID 2 copy?
+0x7E8 (h): Death link skill 2 flag?
+0x7EB (b): Death link skill 2 level
+0x7FA (b): Buff apply link caster team (unused)
+0x7FB (b): Buff apply link caster position (unused)
+0x7FC (b): Buff apply link target team (unused)
+0x7FD (b): Buff apply link target position (unused)
+0x7FE (h): Buff apply link skill ID (unused)
+0x800 (h): Buff apply link skill ID copy? (unused)
+0x804 (h): Buff apply link flag (unused) [guess]
+0x807 (b): Buff apply link level (unused) [guess]
+0x808 (b): Swallow Whole skill link caster team
+0x809 (b): Swallow Whole skill link caster position
+0x80A (b): Swallow Whole skill link target team
+0x80B (b): Swallow Whole skill link target position
+0x80C (h): Swallow Whole skill link Skill ID
+0x80E (h): Swallow Whole skill link Skill ID copy?
+0x812 (h): Swallow Whole skill link flag
+0x815 (b): Another Swallow Whole skill link level
+0x816 (b): Another Swallow Whole skill link caster team
+0x817 (b): Another Swallow Whole skill link caster position
+0x818 (b): Another Swallow Whole skill link target team
+0x819 (b): Another Swallow Whole skill link target position
+0x81A (h): Another Swallow Whole skill link Skill ID
+0x81C (h): Another Swallow Whole skill link Skill ID copy?
+0x81E (h): Another Swallow Whole skill link flag
+0x823 (b): Another Swallow Whole skill link level
+0x832 (b): Forced row switch caster team
+0x833 (b): Forced row switch caster position
+0x834 (b): Forced row switch target team
+0x835 (b): Forced row switch target position
+0x836 (h): Forced row switch skill ID
+0x838 (h): Forced row switch skill ID copy?
+0x83F (b): Forced row switch skill level
+0x844 (h): Limit skill in use
+0x846 (h): Also limit skill in use?
+0x84E (b): Throw link caster team
+0x84F (b): Throw link caster position
+0x850 (b): Throw link target team
+0x851 (b): Throw link target position
+0x852 (h): Throw link skill ID
+0x854 (h): Throw link skill ID copy?
+0x85B (b): Throw link level
+0x85C (b): Some link caster team
+0x85D (b): Some link caster position
+0x85E (b): Some link target team
+0x85F (b): Some link target position
+0x860 (h): Some link skill ID
+0x862 (h): Some link skill ID copy?
+0x869 (b): Some link skill level
+0x86A (b): Use on death 1 skill team
+0x86B (b): Use on death 1 skill position
+0x86C (b): Use on death 1 skill target team
+0x86D (b): Use on death 1 skill target position
+0x86E (h): Use on death 1 skill ID
+0x870 (h): Also use on death 1 skill ID
+0x877 (b): Use on death 1 skill level
+0x878 (b): Use on death 2 skill team
+0x879 (b): Use on death 2 skill position
+0x87A (b): Use on death 2 skill target team
+0x87B (b): Use on death 2 skill target position
+0x87C (h): Use on death 2 skill ID
+0x87E (h): Also use on death 2 skill ID
+0x885 (b): Use on death 2 skill level
+0x886 (b): Snipe/Sharpshooter caster team
+0x887 (b): Snipe/Sharpshooter caster position
+0x888 (b): Snipe/Sharpshooter target team
+0x889 (b): Snipe/Sharpshooter target position
+0x88A (h): Snipe/Sharpshooter skill ID
+0x88C (h): Snipe/Sharpshooter skill ID 2?
+0x893 (b): Abyssal God attack transition skill level
+0x894 (b): Abyssal God attack transition caster team
+0x895 (b): Abyssal God attack transition caster position
+0x896 (b): Abyssal God attack transition target team
+0x897 (b): Abyssal God attack transition target position
+0x898 (h): Abyssal God attack transition skill ID
+0x89A (h): Abyssal God attack transition skill ID 2?
+0x8A1 (b): Abyssal God attack transition skill level
+0x8A2 (b): Some NONE caster team
+0x8A3 (b): Some NONE caster position
+0x8A4 (b): Some NONE target team
+0x8A5 (b): Some NONE target position
+0x8A6 (h): Some NONE skill ID
+0x8A8 (h): Some NONE skill ID 2?
+0x8AF (b): Some NONE skill level
+0x8B0 (b): Some boss death animation caster team
+0x8B1 (b): Some boss death animation caster position
+0x8B2 (b): Some boss death animation target team
+0x8B3 (b): Some boss death animation target position
+0x8B4 (h): Some boss death animation skill ID
+0x8B6 (h): Some boss death animation skill ID 2?
+0x8BD (b): Some boss death animation skill level
+0x8C4 (w): Pointer to beast CBS
+
+PERSISTENT CHARACTER STATS (PCS):
+
+0x0 (b): This is a bitfield and I think it's dynamically modified by the game. Don't change it.
+0x1 (b): Portrait. These IDs do not match the IDs in-game. Here's the table for how they line up with the standard portrait order:
+
+02 00 03 01 (main portraits)
+06 04 07 05 (alternates)
+
+0x2 (b): Guild order.
+0x3 (b): Current level.
+0x4 (w): Main class. I have no idea why this is a word. Monsters will get 0xD.
+0x8 (w): Sub class. Is 0xFFFFFFFF if no subclass.
+0xC (h): Equip slot 1.
+0xE (b): Forge slots. This includes ones that are filled by forges, but does not include forges that are innate on the gear.
+0xF - 0x17 (b): Forges. List of forges:
+
+00	None
+01	ATK
+02	HIT
+03	Blind
+04	Sleep
+05	STR
+06	TEC
+07	VIT
+08	AGI
+09	LUC
+0A	Poison
+0B	Panic
+0C	Paralysis
+0D	Stun
+0E	Plague
+0F	Curse
+10	Head Bind
+11	Arm Bind
+12	Leg Bind
+13	Crit
+14	Fire
+15	Ice
+16	Volt
+17	Petrify
+18	Death
+19	Blank (?)
+1A	HP
+1B	TP
+1C	Cut Resist
+1D	Bash Resist
+1E	Stab Resist
+1F	Speed
+20	Limit
+
+An item can have nine forges.
+
+0x18 - 0x23 (h/b): Equip slot 2 and forges.
+0x24 - 0x2F (h/b): Equip slot 3 and forges.
+0x30 - 0x3B (h/b): Equip slot 4 and forges.
+0x3C - 0x4F (w/h): Appears to be the number of stats added by books. Please note that this value is added to your stats and is not the stat after modification. For instance, if your character has 0x32 base STR and one STR book, the value in the STR field here will be 0x1, not 0x33.
+
+Stats begin here.
+
+This first block is your base stats, before any modifiers (including HP Up and TP Up)
+
+0x50 (w): Max HP
+0x54 (w): Max TP
+0x58 (h): STR
+0x5A (h): VIT
+0x5C (h): AGI
+0x5E (h): LUC
+0x60 (h): TEC
+0x62 (h): "WIS" (always empty)
+
+The second block begins at 0x64, and is a copy of block 1. Used for stat up passives in EO2 but is unused in EO3 (repurposed in EO4 for food buffs). However, it does apply HP Up and TP.
+
+The third block begins at 0x78, and is a copy of block 2. It adds bonuses from equipment, and is automatically recalculated when you change equipment.
+
+The fourth block begins at 0x8C. It is your current stats in battle. Outside of battle, I think this can show some weird values. Not sure why.
+
+0xA0 (h): Current HP.
+0xA2 (h): Current TP.
+0xA4 (w): Current EXP (total gained since LV 1).
+0xA8 - 0xBB: Name, in Shift-JIS. NOTE: Cap this to 9. The last halfword can be used for a character, but the game expects it to be a null byte. If you use the 10th character, and the next field is an ailment, the game can crash.
+0xBC (h): Current ailment.
+0xBE (b): Max level.
+0xBF (b): Current limit.
+0xC0 (b): Available stat points.
+0xC1 (b): Internal ID.
+0xC2 - 0xC9 (b): Common skill levels.
+0xCA - 0xDC (b): Main class skill levels.
+0xDD - 0xEF (b): Sub class skill levels.
+0xF0 (h): Equipped limit.
+0xF2 (b): Position (0-5).
+0xF3 (b): Unknown - used in allocating skill points after a rest.
+0xF4 (h): Unique sea quest ID. Should never show up in a save game.
+0xF6 - 0xF9 (?) Unknown. Changing these values doesn't seem to do anything.
+0xFA: Strength books read
+0xFB: Vitality books read
+0xFC: Agility books read
+0xFD: Luck books read
+0xFE: Technique books read
+0xFF: Wis?? books read
+
+Rest is unknown.
