@@ -131,7 +131,7 @@ Length: 0x8D4
 0xF0  (h): Number of active Yggdroid turns (used in an unused subheader)
 0xF2  (h): ? The skill a bot uses?
 0xF4  (h): A bot element
-0xF7  (b): Something to do with Bunshin
+0xF7  (b): Original ninja's position (used for Bunshin)
 0xF8  (b): Level of the skill that inflicted the poison?
 0xF9  (b): Some position
 0xFA  (b): Target team again?
@@ -328,6 +328,9 @@ Length: 0x8D4
 0x764 (h): Immediate skill link ID
 0x766 (h): Immediate skill link ID 2
 0x76D (b): Immediate skill link level
+0x772 (h): Abyssal God summon skill ID
+0x774 (h): Abyssal God summon skill ID 2
+0x77B (b): Abyssal God summon skill level
 0x77C (b): Linked skill caster team
 0x77D (b): Linked skill caster position
 0x77E (b): Linked skill target team
@@ -451,6 +454,8 @@ Length: 0x8D4
 0x8C4 (w): Pointer to beast CBS
 
 PERSISTENT CHARACTER STATS (PCS):
+
+Length: 0x118
 
 0x0 (b): This is a bitfield and I think it's dynamically modified by the game. Don't change it.
 0x1 (b): Portrait. These IDs do not match the IDs in-game. Here's the table for how they line up with the standard portrait order:
