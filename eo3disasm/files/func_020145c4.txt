@@ -1,3 +1,11 @@
+Name: Strcmp(int* str1, int* str2) -> int
+Description: Standard C strcmp function.
+Arguments:
+r0: (int*) First string to compare.
+r1: (int*) Second string to compare.
+Returns:
+r0: (int) First non-matching character. Positive if first non-matching str1 character is greater and negative if it is lower.
+
 .arm
 func_020145c4:
 stmdb sp!, {r4, lr}

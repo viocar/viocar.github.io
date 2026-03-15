@@ -23,6 +23,7 @@ Length: 0x8D4
 	0x2000000: Some kind of death flag?
 0x4   (w): Bitfield – Might never be used
 0x8	  (w): Bitfield
+	0x1: Exists in battle (I think)
 	0x40: I believe this is the boss flag
 	0x80: Charge skill active
 	0x100: Is a Bunshin clone

@@ -1,3 +1,10 @@
+Name: GetPersistentCharacterStats(int id) -> int*
+Description: Gets the passed character's persistent character stats (PCS).
+Arguments:
+r0: (int) Which character to get.
+Returns:
+r0: (int) Pointer to their stats.
+
 .arm
 func_020a1224:
 stmdb sp!, {r4, lr}

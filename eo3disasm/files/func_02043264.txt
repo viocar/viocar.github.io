@@ -1,3 +1,10 @@
+Name: CanCharacterAct(int* ptr) -> bool
+Description: Checks if the character can act.
+Arguments:
+r0: (int*) Pointer to the character's battle struct.
+Returns:
+r0: (bool) False if the character cannot act, true if the character can.
+
 .arm
 func_02043264:
 stmdb sp!, {r4, r5, r6, lr}
