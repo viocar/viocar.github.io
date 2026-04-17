@@ -1,5 +1,5 @@
-Name: GetBtlCharacterPtr(byte team, byte player) -> int*
-Description: Gets the pointer to the specified character's battle data struct.
+Name: GetBtlCharacterCBSPtr(byte team, byte player) -> int*
+Description: Gets the pointer to the specified character's battle stats ("CBS") struct.
 Arguments:
 r0: (byte) The team the character belongs to.
 r1: (byte) The character's position in the battle formation.

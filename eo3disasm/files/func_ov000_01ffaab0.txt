@@ -1,3 +1,14 @@
+Name: InitializeDescriptor(int* descriptor, int render_flags, int x, int y, int rotation, int z_depth) -> void
+Function Offset: 0x01FFAAB0
+Description: Initializes a non-scaled render descriptor with render flags, position, source-size-related fields, and default state.
+Arguments:
+r0: (int*) Pointer to the descriptor to initialize.
+r1: (int) Render flags.
+r2: (int) X position.
+r3: (int) Y position.
+stack+0: (int) Descriptor argument 0.
+stack+1: (int) Descriptor argument 1.
+
 .arm
 func_ov000_01ffaab0:
 stmdb sp!, {r3, r4, r5, lr}

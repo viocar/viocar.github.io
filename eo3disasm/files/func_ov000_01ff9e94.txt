@@ -1,3 +1,7 @@
+Name: ProgramGraphicControlRegisters() -> void
+Function Offset: 0x01FF9E94
+Description: Programs TEXIMAGE_PARAM-related 3D draw state from the current global opacity, selected color slot, and texture control state.
+
 .arm
 func_ov000_01ff9e94:
 ldr r1, [.L_0_01ff9ec4]

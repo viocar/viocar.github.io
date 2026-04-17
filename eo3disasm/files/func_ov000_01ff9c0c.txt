@@ -1,3 +1,6 @@
+Name: SetGraphicToWhite() -> void
+Description: Sets the graphic colour to be white.
+
 .arm
 func_ov000_01ff9c0c:
 ldr r0, [.L_0_01ff9c28]

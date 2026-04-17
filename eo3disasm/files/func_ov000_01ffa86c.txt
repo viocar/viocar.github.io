@@ -1,3 +1,6 @@
+Name: ClearZDepthStackingTable() -> void
+Description: Clears the 0x3F-byte table at global state offset 0x42.
+
 .arm
 func_ov000_01ffa86c:
 mov r3, #0x0

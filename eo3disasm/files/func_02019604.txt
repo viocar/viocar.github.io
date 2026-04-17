@@ -1,3 +1,10 @@
+Name: ConvertFloatToDouble(float value) -> double
+Description: Converts to a double.
+Arguments:
+r0: (float) Float to convert.
+Returns:
+r0, r1: (double) Resulting double.
+
 .arm
 func_02019604:
 and r2, r0, #0x80000000

@@ -1,3 +1,11 @@
+Name: DivideFloats(float f1, float f2) -> float:
+Description: Divides f1 by f2.
+Arguments:
+r0: (float) Dividend.
+r1: (float) Divisor.
+Returns:
+r0: (float) Quotient.
+
 .arm
 func_0201a770:
 stmdb sp!, {lr}

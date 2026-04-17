@@ -1,3 +1,12 @@
+Name: CreateTopInfoBarUI(int type) -> void
+Description: Creates the info bar that goes at the top of the screen, and sets up its thinkers and destructors.
+Arguments:
+r0: (int) Bar type.
+    0 = thin bar used for town area descriptions.
+    1 = thick bar used for shop information
+    2 = thick bar used in battle
+    Any other value create a bugged bar that is a mixture of 1 and 2.
+
 .arm
 func_0206d5d0:
 stmdb sp!, {r3, r4, r5, r6, r7, lr}

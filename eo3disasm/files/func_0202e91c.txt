@@ -1,3 +1,10 @@
+Name: InitializeGraphicsSystem(int mode) -> int
+Description: Performs full graphics-system initialization. It first resets shared graphics context render state and several lower-level subsystems, then configures display and engine state according to mode, initializes the 3D-related graphics context defaults, sets the global Z translation base and stride to -0x800 and 0x20, disables the graphics context 3D draw-mode flag, and returns success.
+Arguments:
+r0: (int) Display setup mode. Offers 0, 1, and 2... unsure what they are.
+Returns:
+r0: (int) Always 1.
+
 .arm
 func_0202e91c:
 stmdb sp!, {r3, r4, r5, r6, r7, lr}

@@ -1,3 +1,12 @@
+Name: InterpolateFixedRatio(int ratio, int end_value, int start_value) -> int
+Description: Returns a rounded linear interpolation between start_value and end_value using a fixed divisor of 64.
+Arguments:
+r0: (int) Interpolation ratio.
+r1: (int) End value.
+r2: (int) Start value.
+Returns:
+r0: (int) Interpolated result.
+
 .arm
 func_ov000_01ff9b7c:
 sub r1, r1, r2

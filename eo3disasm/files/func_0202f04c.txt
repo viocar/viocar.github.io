@@ -1,3 +1,6 @@
+Name: FinalizeGraphicsFrame() -> void
+Description: Finalizes a frame of graphics work by running several lower-level flush and swap helpers, storing two returned values into the global graphics block at 0x20ff610, finalizing graphics context colour-slot bookkeeping, clearing per-slot Z stack counts, and clearing the graphics context mode/control word.
+
 .arm
 func_0202f04c:
 stmdb sp!, {r3, lr}

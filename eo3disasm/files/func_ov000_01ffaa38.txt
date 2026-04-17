@@ -1,3 +1,16 @@
+Name: RenderGraphicNoMetadata(int render_flags, int textable_id, int graphic_id, int x, int y, int rotation, int z_depth) -> int
+Description: Renders a graphic when no metadata is present.
+Arguments:
+r0: (int) Render flags.
+r1: (int) TexTable ID.
+r2: (int) Graphic ID.
+r3: (int) X position.
+stack+0: (int) Y position.
+stack+1: (int) Rotation.
+stack+2: (int) Z-depth.
+Returns:
+r0: (int) Nonzero on success.
+
 .arm
 func_ov000_01ffaa38:
 stmdb sp!, {r3, r4, r5, r6, r7, lr}

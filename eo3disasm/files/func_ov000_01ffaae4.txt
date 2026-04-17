@@ -1,3 +1,15 @@
+Name: InitializeScaledDescriptor(int* descriptor, int render_flags, int x, int y, int width, int height, int z_depth) -> void
+Function Offset: 0x01FFAAE4
+Description: Initializes a scaled render descriptor with render flags, position, destination dimensions, and default state.
+Arguments:
+r0: (int*) Pointer to the descriptor to initialize.
+r1: (int) Render flags.
+r2: (int) X position.
+r3: (int) Y position.
+stack+0: (int) Width.
+stack+1: (int) Height.
+stack+2: (int) Z-depth.
+
 .arm
 func_ov000_01ffaae4:
 stmdb sp!, {r4, r5, r6, lr}

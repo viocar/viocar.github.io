@@ -1,6 +1,8 @@
-Name: TestBit(int* ptr) -> bool
+Name: TestBit(int* ptr, int bit) -> bool
+Description: Dereferences a pointer and tests a bit in the dereferenced value.
 Arguments:
 r0: (int*) A pointer to an integer.
+r1: (int) Bit to test.
 Returns:
 r0: (bool) True if bit is set, false if bit is not set.
 

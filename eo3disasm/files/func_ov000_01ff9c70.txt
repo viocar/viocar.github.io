@@ -1,3 +1,8 @@
+Name: SelectGraphicColourSlot(int slot_index) -> void
+Description: Selects a graphic colour slot and marks it as used.
+Arguments:
+r0: (int) Requested slot index.
+
 .arm
 func_ov000_01ff9c70:
 ldr r1, [.L_0_01ff9c90]

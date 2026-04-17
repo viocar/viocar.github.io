@@ -1,3 +1,10 @@
+Name: ApplyDescriptorFlip(int render_flags, int* descriptor) -> void
+Function Offset: 0x01FFB258
+Description: Reorders and adjusts the quad-corner fields inside a render descriptor according to the descriptor flip bits.
+Arguments:
+r0: (int) Render flags containing flip bits.
+r1: (int*) Pointer to the render descriptor to mutate.
+
 .arm
 func_ov000_01ffb258:
 stmdb sp!, {r4, r5, r6, r7, r8, lr}

@@ -1,3 +1,8 @@
+Name: GetBaseZ() -> int
+Description: Returns the global base Z value used when computing per-slot Z translation.
+Returns:
+r0: (int) Global base Z value.
+
 .arm
 func_ov000_01ff9b5c:
 ldr r0, [.L_0_01ff9b68]

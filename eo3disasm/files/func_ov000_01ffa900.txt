@@ -1,3 +1,15 @@
+Name: RenderWithoutTTD(int render_flags, int* resource_entry, int x, int y, int rotation_or_phase, int z_slot_index) -> int
+Description: Builds a fallback-rectangle render descriptor from a resolved resource entry, ensures the 3D geometry state is initialized, and renders through the low-level descriptor path without using a PSD entry.
+Arguments:
+r0: (int) Render flags.
+r1: (int*) Pointer to the resolved resource entry.
+r2: (int) X position.
+r3: (int) Y position.
+stack+0: (int) Rotation or phase value stored in the descriptor.
+stack+1: (int) Z-slot index stored in the descriptor.
+Returns:
+r0: (int) Always returns 1.
+
 .arm
 func_ov000_01ffa900:
 stmdb sp!, {r3, r4, r5, r6, r7, r8, lr}

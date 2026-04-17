@@ -1,3 +1,8 @@
+Name: GetPointerToGameStateStruct() -> int*
+Description: Loads a pointer to the game state struct, which contains information such as player position, player floor, current time, characters in party, etc.
+Returns:
+r0: (int*) A pointer to the game state struct.
+
 .arm
 func_0201bbb0:
 stmdb sp!, {r3, lr}

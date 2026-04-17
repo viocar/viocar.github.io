@@ -1,3 +1,12 @@
+Name: RenderMappedGlyph(int character, int x, int y) -> int
+Description: Maps an ASCII character to a glyph index in TexTable 0x16, renders that glyph with func_ov000_01ffb424, and returns the glyph width. Supported characters include A-Z, a-z, colon, period, comma, space, ampersand, and minus. Unsupported characters return 0. A space returns width 4 without rendering. (I'm not 100% sure about this one)
+Arguments:
+r0: (int) Input character code.
+r1: (int) X position.
+r2: (int) Y position.
+Returns:
+r0: (int) Glyph width, or 0 if unsupported.
+
 .arm
 func_ov004_0213fb74:
 stmdb sp!, {r4, r5, r6, r7, lr}

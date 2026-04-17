@@ -1,3 +1,8 @@
+Name: UpdateAllStats(int* pcs) -> void
+Description: Updates all stat values for the character after a level up or rest (and probably other situations).
+Arguments:
+r0: (int*) A pointer to the character's PCS.
+
 .arm
 func_020a04cc:
 stmdb sp!, {r3, r4, r5, r6, lr}

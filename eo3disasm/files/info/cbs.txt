@@ -511,7 +511,7 @@ An item can have nine forges.
 0x18 - 0x23 (h/b): Equip slot 2 and forges.
 0x24 - 0x2F (h/b): Equip slot 3 and forges.
 0x30 - 0x3B (h/b): Equip slot 4 and forges.
-0x3C - 0x4F (w/h): Appears to be the number of stats added by books. Please note that this value is added to your stats and is not the stat after modification. For instance, if your character has 0x32 base STR and one STR book, the value in the STR field here will be 0x1, not 0x33.
+0x3C - 0x4F (w/h): Some unknown stat values.
 
 Stats begin here.
 

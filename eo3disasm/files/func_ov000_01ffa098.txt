@@ -1,3 +1,15 @@
+Name: RenderTransformedGraphic(int x, int y, int width, int height, int graphic_state_index) -> int
+Function Offset: 0x01FFA098
+Description: Special transformed render path used by the MTD mode 1 branch. It updates 3D draw state, issues matrix translation and scale commands, programs texture state, and submits the final transformed polygon or quad.
+Arguments:
+r0: (int) X position.
+r1: (int) Y position.
+r2: (int) Width.
+r3: (int) Height.
+stack+0: (int) Graphic state index.
+Returns:
+r0: (int) Always returns 1.
+
 .arm
 func_ov000_01ffa098:
 stmdb sp!, {r3, r4, r5, r6, r7, lr}

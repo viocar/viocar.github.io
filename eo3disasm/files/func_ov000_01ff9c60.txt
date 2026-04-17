@@ -1,3 +1,9 @@
+Name: GetGraphicOpacity() -> int
+Function Offset: 0x01FF9C60
+Description: Gets the graphic opacity.
+Returns:
+r0: (int) Opacity.
+
 .arm
 func_ov000_01ff9c60:
 ldr r0, [.L_0_01ff9c6c]

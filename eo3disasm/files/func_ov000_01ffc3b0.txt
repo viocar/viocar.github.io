@@ -1,3 +1,11 @@
+Name: ApplyLocalTransformMatrix(int x, int y, int angle, int scale) -> void
+Description: Pushes the current matrix state, switches matrix mode, applies an angle-based rotation with a uniform scale factor, then emits a translation by the negated input position. The function uses the ARM9 3D matrix command ports directly.
+Arguments:
+r0: (int) X position.
+r1: (int) Y position.
+r2: (int) Angle-like transform input.
+r3: (int) Scale value.
+
 .arm
 func_ov000_01ffc3b0:
 stmdb sp!, {r4, r5, r6, lr}

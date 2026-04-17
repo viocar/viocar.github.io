@@ -1,3 +1,11 @@
+Name: AddFloats(float f1, float f2) -> float
+Description: Software implementation for adding two floats together.
+Arguments:
+r0: (float) First float to add.
+r1: (float) Second float to add.
+Returns:
+r0: (float) The result of the addition.
+
 .arm
 func_0201a2bc:
 eors r2, r0, r1

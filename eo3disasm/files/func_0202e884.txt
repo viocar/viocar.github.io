@@ -1,3 +1,7 @@
+Name: InitializeGraphicsContextRenderState() -> void
+Function Offset: 0x0202E884
+Description: Initializes the global graphics context render-state block to default values, resets the graphic colour-slot system, clears the per-slot Z stack counts, and fills the per-slot Z-stacking-enable table with 0.
+
 .arm
 func_0202e884:
 stmdb sp!, {r4, lr}

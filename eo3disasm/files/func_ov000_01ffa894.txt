@@ -1,3 +1,8 @@
+Name: FillPerSlotZDepthStackModeFlags(int value) -> void
+Description: Fills the 0x3F-byte table at global state offset 0x81 with the supplied byte value.
+Arguments:
+r0: (int) Byte value to store in every entry.
+
 .arm
 func_ov000_01ffa894:
 ldr r2, [.L_0_01ffa8b4]

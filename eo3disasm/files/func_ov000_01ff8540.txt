@@ -1,3 +1,14 @@
+Name: ClipOrSplitGradientQuad(int* quad, int* clip_rects, int clip_rect_count, int* output_list) -> int*
+Function Offset: 0x01FF8540
+Description: Processes a 0x48-byte colored quad-like structure against a list of clipping rectangles. If the quad does not intersect any clip rectangle, it copies the quad to the output list and returns the advanced output pointer. If the quad overlaps a clipping rectangle, it splits the quad, interpolates edge position and color data, and recursively processes the resulting pieces. If the quad is fully contained within one of the clipping rectangles, it emits nothing for that quad.
+Arguments:
+r0: (int*) Pointer to the source 0x48-byte quad structure.
+r1: (int*) Pointer to an array of 0x10-byte clipping rectangles.
+r2: (int) Number of clipping rectangles.
+r3: (int*) Pointer to the current write position in the output list.
+Returns:
+r0: (int*) Updated output pointer.
+
 .arm
 func_ov000_01ff8540:
 stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}

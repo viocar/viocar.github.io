@@ -1,3 +1,11 @@
+Name: SetCornerColours(int top_left, int bottom_left, int bottom_right, int top_right) -> void
+Description: Sets the colour of each corner of a sprite.
+Arguments:
+r0: (int) Top-left corner colour.
+r0: (int) Bottom-left corner colour.
+r0: (int) Bottom-right corner colour.
+r0: (int) Top-right corner colour.
+
 .arm
 func_ov000_01ff9bd4:
 ldr r12, [.L_0_01ff9bec]

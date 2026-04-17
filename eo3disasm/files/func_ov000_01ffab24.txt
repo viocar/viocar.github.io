@@ -1,3 +1,13 @@
+Name: RenderGraphic(int* psd_entry, int* descriptor, int* resource_entry) -> int
+Function Offset: 0x01FFAB24
+Description: Primary rendering function for TTD files.
+Arguments:
+r0: (int*) Pointer to the PSD entry, or 0 to use descriptor-provided rectangle data.
+r1: (int*) Pointer to the render descriptor.
+r2: (int*) Pointer to the resolved resource or filename-index entry.
+Returns:
+r0: (int) Nonzero on success.
+
 .arm
 func_ov000_01ffab24:
 stmdb sp!, {r4, r5, r6, r7, r8, lr}

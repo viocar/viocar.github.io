@@ -1,3 +1,9 @@
+Name: GetZStep() -> int
+Function Offset: 0x01FF9B6C
+Description: Returns the global per-slot Z step used when computing per-slot Z translation.
+Returns:
+r0: (int) Global Z step value.
+
 .arm
 func_ov000_01ff9b6c:
 ldr r0, [.L_0_01ff9b78]

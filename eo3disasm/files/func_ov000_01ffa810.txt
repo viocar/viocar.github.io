@@ -1,3 +1,11 @@
+Name: SubmitDescriptor(int* descriptor, int mode, int submit_arg) -> void
+Function Offset: 0x01FFA810
+Description: Chooses between two descriptor-submission paths depending on a global state flag.
+Arguments:
+r0: (int*) Pointer to the descriptor to submit.
+r1: (int) Mode argument.
+r2: (int) Submission argument.
+
 .arm
 func_ov000_01ffa810:
 stmdb sp!, {r3, lr}

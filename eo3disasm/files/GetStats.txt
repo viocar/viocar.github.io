@@ -1,3 +1,19 @@
+Name: GetStats(int* pcs, int stat_field, int stat) -> int
+Description: Returns the requested character's requested stat value.
+Arguments:
+r0: (int*) Requested character's PCS.
+r1: (int) Which field of stats to take from. 4 is the most common argument here.
+r2: (int) Which stat to get.
+    0: Max HP
+    1: Max TP
+    2: STR
+    3: VIT
+    4: AGI
+    5: LUC
+    6: TEC
+Returns:
+r0: (int) Requested stat value.
+
 .arm
 GetStats:
 stmdb sp!, {r3, r4, r5, lr}

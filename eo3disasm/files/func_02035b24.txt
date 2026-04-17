@@ -1,3 +1,11 @@
+Name: GetTexTableEntry(int textable_id, int entry_index) -> int*
+Description: Resolves a TTD or TexTable by ID and returns a pointer to the specified 0x4C-byte entry inside that table.
+Arguments:
+r0: (int) TexTable ID.
+r1: (int) Entry index.
+Returns:
+r0: (int*) Pointer to the selected TexTable entry.
+
 .arm
 func_02035b24:
 stmdb sp!, {r4, lr}

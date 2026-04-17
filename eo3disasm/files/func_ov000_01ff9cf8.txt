@@ -1,3 +1,6 @@
+Name: FinalizeGraphicColourSlots() -> void
+Description: Updates the global colour-slot bookkeeping after a draw batch. If the subsystem is active, it counts the temporary used-slot marks, combines that count with the current base slot index, stores the result, and then clears the temporary 0x40-byte usage table.
+
 .arm
 func_ov000_01ff9cf8:
 stmdb sp!, {r3, lr}

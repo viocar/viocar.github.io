@@ -1,3 +1,10 @@
+Name: BuildQuadCorners(int render_flags, int* descriptor, int* rect) -> void
+Description: Converts a rectangle into quad corner coordinates, applying horizontal and vertical flip adjustments based on the render flags, and stores the results in the render descriptor.
+Arguments:
+r0: (int) Render flags controlling flip behavior.
+r1: (int*) Pointer to the render descriptor to update.
+r2: (int*) Pointer to a four-word rectangle buffer.
+
 .arm
 func_ov000_01ffb140:
 stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}

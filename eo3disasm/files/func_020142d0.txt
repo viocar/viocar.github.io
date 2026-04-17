@@ -1,3 +1,10 @@
+Name: FormatFilenameString(char* out, char* fmt, ...) -> void
+Description: Formats a string, using an arbitrary number of variadic arguments.
+Arguments:
+r0: (char*) Output buffer.
+r1: (char*) Pointer to format string.
+r2 and so on: Variadic arguments.
+
 .arm
 func_020142d0:
 stmdb sp!, {r0, r1, r2, r3}

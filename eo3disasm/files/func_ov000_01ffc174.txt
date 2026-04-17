@@ -1,3 +1,11 @@
+Name: GetGraphicDisplaySize(int tex_table_id, int graphic_id, int* out_width, int* out_height) -> void
+Description: Resolves a PSD entry and returns the effective draw dimensions for that graphic. If linked MTD metadata enables size override fields, those values are used. Otherwise the PSD width and height fields are returned.
+Arguments:
+r0: (int) TexTable ID.
+r1: (int) Graphic ID.
+r2: (int*) Output pointer for width.
+r3: (int*) Output pointer for height.
+
 .arm
 func_ov000_01ffc174:
 stmdb sp!, {r3, r4, r5, lr}

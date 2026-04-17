@@ -1,3 +1,17 @@
+Name: RenderGraphicWithMTDScaled(int render_flags, int textable_id, int graphic_id, int x, int y, int width, int height, int z_depth) -> int
+Description: Scaled variant of the MTD-aware renderer. It builds a descriptor from caller-supplied destination dimensions and then follows the normal or transformed MTD 3D render path.
+Arguments:
+r0: (int) Render flags.
+r1: (int) TexTable ID.
+r2: (int) Graphic ID.
+r3: (int) X position.
+stack+0: (int) Y position.
+stack+1: (int) Destination width.
+stack+2: (int) Destination height.
+stack+3: (int) Z-depth.
+Returns:
+r0: (int) 0 on failure or unsupported MTD mode, nonzero on success.
+
 .arm
 func_ov000_01ffb828:
 stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}

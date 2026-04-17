@@ -1,3 +1,9 @@
+Name: SetBaseZAndStep(int base, int stride) -> void
+Description: Stores the global base Z value and per-slot Z step.
+Arguments:
+r0: (int) Base Z value.
+r1: (int) Per-slot Z stride.
+
 .arm
 func_ov000_01ff9b48:
 ldr r2, [.L_0_01ff9b58]

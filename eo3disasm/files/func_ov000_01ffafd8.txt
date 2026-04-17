@@ -1,3 +1,12 @@
+Name: RenderGraphicFromDescriptor(int textable_id, int graphic_id, int* descriptor) -> int
+Description: Gets the PSD entry and renders it with the descriptor.
+Arguments:
+r0: (int) TexTable ID.
+r1: (int) Graphic ID.
+r2: (int*) Pointer to the render descriptor.
+Returns:
+r0: (int) 1
+
 .arm
 func_ov000_01ffafd8:
 stmdb sp!, {r3, r4, r5, lr}

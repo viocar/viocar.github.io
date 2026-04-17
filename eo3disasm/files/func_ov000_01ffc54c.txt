@@ -1,3 +1,6 @@
+Name: MTX_POP_1() -> void
+Description: Pops current matrix from the stack.
+
 .arm
 func_ov000_01ffc54c:
 ldr r0, [.L_0_01ffc55c]

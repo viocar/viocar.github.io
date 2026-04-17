@@ -1,3 +1,12 @@
+Name: GetTextureSize(int* tex, int* out_texture_area, int* out_format_value, int* out_width, int* out_height) -> void
+Description: Decodes texture-dimension and format fields from a tex resource. It converts the encoded width and height selectors into numeric dimensions, derives a format-dependent texture-area value, and optionally stores the decoded width and height.
+Arguments:
+r0: (int*) Pointer to the resource entry.
+r1: (int*) Output pointer for the derived texture-area value.
+r2: (int*) Output pointer for the format-dependent auxiliary value.
+r3: (int*) Output pointer for the decoded width.
+stack+0: (int*) Output pointer for the decoded height.
+
 .arm
 func_ov000_01ffc1e8:
 stmdb sp!, {r4, lr}

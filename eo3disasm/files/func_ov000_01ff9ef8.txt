@@ -1,3 +1,8 @@
+Name: IsFogEnabled() -> int
+Description: Returns whether global render-state bit 0x8000 (fog) is set.
+Returns:
+r0: (int) 1 if the bit is set, otherwise 0.
+
 .arm
 func_ov000_01ff9ef8:
 ldr r0, [.L_0_01ff9f10]

@@ -1,3 +1,9 @@
+Name: SetGraphicRenderModeFlag(int enabled) -> void
+Function Offset: 0x01FF9ED0
+Description: Sets or clears a global render-mode bit used by the 3D geometry rendering path.
+Arguments:
+r0: (int) If 1, set the flag. Any other value clears the flag.
+
 .arm
 func_ov000_01ff9ed0:
 cmp r0, #0x1

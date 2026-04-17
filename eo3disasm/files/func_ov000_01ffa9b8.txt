@@ -1,3 +1,16 @@
+Name: RenderScaledGraphicWithDescriptor(int textable_id, int graphic_id, int x, int y, int width, int height, int z_slot_index) -> int
+Description: Builds a scaled descriptor on the stack, ensures the 3D geometry state is initialized, and renders the specified graphic through the standard PSD-backed draw path.
+Arguments:
+r0: (int) TexTable ID.
+r1: (int) Graphic ID.
+r2: (int) X position.
+r3: (int) Y position.
+stack+0: (int) Width.
+stack+1: (int) Height.
+stack+2: (int) Z-slot index stored in the descriptor.
+Returns:
+r0: (int) Result returned by RenderPsdEntryWithDescriptor.
+
 .arm
 func_ov000_01ffa9b8:
 stmdb sp!, {r4, r5, r6, r7, lr}

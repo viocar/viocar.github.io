@@ -1,3 +1,6 @@
+Name: ResetGraphicTransformState() -> void
+Description: Resets a fixed block of global 3D draw constants used by the geometry command path.
+
 .arm
 func_ov000_01ff9da4:
 ldr r0, [.L_0_01ff9de4]

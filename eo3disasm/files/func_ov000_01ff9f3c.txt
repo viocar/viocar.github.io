@@ -1,3 +1,7 @@
+Name: IsTranslucentPixelDepthEnabled() -> int
+Description: Returns whether the renderer is currently configured to write new depth values for translucent pixels.
+r0: (int) 1 if the bit is set, otherwise 0.
+
 .arm
 func_ov000_01ff9f3c:
 ldr r0, [.L_0_01ff9f54]

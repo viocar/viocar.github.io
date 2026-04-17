@@ -1,3 +1,25 @@
+Name: ProgramTextureAndPolygonState(int* resource_entry, int render_flags) -> void
+Description:
+Programs the ARM9 3D texture and polygon state for a draw using a resolved resource entry and the supplied render flags. It writes
+TEXIMAGE_PARAM, PLTT_BASE, and POLYGON_ATTR.
+Arguments:
+r0: (int*) Pointer to the resolved resource entry.
+Observed fields used:
+- +0x4: pointer to a texture-format/config substructure
+- +0x8: packed texture-address-related value used when building TEXIMAGE_PARAM
+- +0xC: one palette-base source value
+- +0x10: alternate palette-base source value
+r1: (int) Render flags controlling texture setup overrides and polygon-state bits.
+Observed bits used:
+- 0x10000000: forces one texture-control field to 0
+- 0x20000000: forces one texture-control field to 1
+- 0x100000: changes one polygon-attribute field from 3 to 2
+- 0x200000: sets another polygon-attribute field to 1
+- 0x10000: sets one texture-parameter field to 3
+- 0x40000: bypasses normal texture setup and writes constant 0x60030000 to TEXIMAGE_PARAM
+- 0x400000: selects resource_entry + 0x10 instead of resource_entry + 0xC as the PLTT_BASE source
+
+
 .arm
 func_ov000_01ffb028:
 stmdb sp!, {r4, r5, r6, r7, r8, lr}

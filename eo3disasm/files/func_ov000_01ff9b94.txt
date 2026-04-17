@@ -1,3 +1,10 @@
+Name: TranslateSlotToZDepth(int slot_idx) -> int
+Description: Translates a graphic slot to a z-depth.
+Arguments:
+r0: (int) Slot index.
+Returns:
+r0: (int) Z-depth.
+
 .arm
 func_ov000_01ff9b94:
 stmdb sp!, {r3, r4, r5, lr}

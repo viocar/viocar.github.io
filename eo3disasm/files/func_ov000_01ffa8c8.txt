@@ -1,3 +1,10 @@
+Name: GetZDepthStackingEnabled(int slot) -> int
+Description: Checks if z-depth stacking is enabled for slot.
+Arguments:
+r0: (int) Z-depth stacking is enabled.
+Returns:
+r0: (int) Whether z-depth stacking is enabled.
+
 .arm
 func_ov000_01ffa8c8:
 ldr r1, [.L_0_01ffa8d4]

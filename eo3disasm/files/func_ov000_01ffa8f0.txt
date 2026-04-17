@@ -1,3 +1,10 @@
+Name: GetZSlotStackCount(int slot) -> int
+Description: Returns the current extra Z-stacking count for the specified slot.
+Arguments:
+r0: (int) Z-slot index.
+Returns:
+r0: (int) Current stack count byte for that slot.
+
 .arm
 func_ov000_01ffa8f0:
 ldr r1, [.L_0_01ffa8fc]

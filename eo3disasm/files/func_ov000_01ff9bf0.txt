@@ -1,4 +1,4 @@
-Name: StoreGraphicColour(int colour) -> void
+Name: SetGraphicColour(int colour) -> void
 Description: Stores a 24-bit colour for the graphic.
 Arguments:
 r0: (int) Colour to be stored.

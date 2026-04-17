@@ -1,3 +1,19 @@
+Name: GetStatAverage(bool team, int stat_field, int stat) -> int
+Description: Get the team's average value for requested stat.
+Arguments:
+r0: (bool) Team.
+r1: (int) Which field of stats to take from. 4 is the most common argument here and means "current values".
+r2: (int) Which stat to get.
+    0: HP
+    1: TP
+    2: STR
+    3: VIT
+    4: AGI
+    5: LUC
+    6: TEC
+Returns:
+r0: (int) Requested stat value.
+
 .arm
 func_020501d0:
 stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, lr}

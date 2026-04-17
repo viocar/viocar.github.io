@@ -1,3 +1,17 @@
+Name: RenderResourceEntryWithTransformedQuad(int render_flags, int textable_id, int entry_index, int x, int y, int rotation_or_phase, int z_slot_index, int* quad_points) -> int
+Description: Resolves a TexTable entry, builds a fallback-rectangle descriptor from transformed corner data, ensures 3D geometry state is initialized, and renders the entry through a specialized low-level path that accepts an explicit four-point transformed quad.
+Arguments:
+r0: (int) Render flags.
+r1: (int) TexTable ID.
+r2: (int) Entry index.
+r3: (int) X position.
+stack+0: (int) Y position.
+stack+1: (int) Rotation or phase value.
+stack+2: (int) Z-slot index.
+stack+3: (int*) Pointer to four transformed values used to derive the quad.
+Returns:
+r0: (int) Return value from the specialized low-level renderer.
+
 .arm
 func_0205f4e0:
 stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}

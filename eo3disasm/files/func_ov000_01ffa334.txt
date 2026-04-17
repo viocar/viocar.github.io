@@ -1,3 +1,11 @@
+Name: SubmitClippedPrimitiveList(int* primitive_list, int primitive_count, int use_gradient_colours) -> void
+Function Offset: 0x01FFA334
+Description: Builds the active clipping-rectangle list from the current global clipping state, clips each input primitive against that list, and submits the surviving geometry through the ARM9 3D geometry ports. If use_gradient_colours is nonzero, it uses the 0x48-byte colored-primitive path. Otherwise it uses the 0x40-byte single-colour path.
+Arguments:
+r0: (int*) Pointer to the input primitive list.
+r1: (int) Number of input primitives.
+r2: (int) If nonzero, use the colored clipping path. If zero, use the non-colored path.
+
 .arm
 func_ov000_01ffa334:
 stmdb sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}

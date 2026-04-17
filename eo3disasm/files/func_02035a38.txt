@@ -1,3 +1,10 @@
+Name: GetTTDTableEntry(int id) -> int*
+Description: Gets a pointer to specified TTD file.
+Arguments:
+r0: (int) ID of TTD file pointer to get.
+Returns:
+r0: (int*) Pointer to TTD file.
+
 .arm
 func_02035a38:
 ldr r1, [.L_02035a44]

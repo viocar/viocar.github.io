@@ -1,3 +1,8 @@
+Name: AcquireGraphicColourSlot() -> int
+Description: Allocates or finds an available global color slot and marks it as used.
+Returns:
+r0: (int) Allocated slot index, or 0x3F if no slot is free.
+
 .arm
 func_ov000_01ff9c98:
 ldr r0, [.L_0_01ff9cdc]

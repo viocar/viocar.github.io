@@ -1,3 +1,11 @@
+Name: GetPSDEntry(int textable_id, int graphic_id) -> int*
+Description: Gets PSD entry pointer.
+Arguments:
+r0: (int) TexTable ID.
+r1: (int) Graphic ID.
+Returns:
+r0: (int*) Pointer to the PSD entry.
+
 .arm
 func_ov000_01ffb398:
 stmdb sp!, {r4, lr}

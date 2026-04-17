@@ -1,3 +1,10 @@
+Name: EmitPrimitiveVertices(int* vertex_list, int vertex_count, int use_per_vertex_colours) -> void
+Description: Emits a vertex list directly to the ARM9 3D geometry ports. It writes BEGIN_VTXS, COLOR, TEXCOORD, and VTX_16 commands from the supplied 0x14-byte vertex entries. If use_per_vertex_colours is zero, it uses the first entry's colour for the whole primitive. Otherwise it writes each entry's colour separately.
+Arguments:
+r0: (int*) Pointer to the vertex list.
+r1: (int) Number of vertices to emit.
+r2: (int) If nonzero, use per-vertex colours. If zero, use a single colour.
+
 .arm
 func_ov000_01ffa194:
 stmdb sp!, {r4, r5, r6, lr}

@@ -1,3 +1,6 @@
+Name: ResetGeneratedQuadBuffers() -> void
+Description: Resets two global quad-geometry template buffers to fixed default values used by the descriptor and submission paths.
+
 .arm
 func_ov000_01ff9dec:
 mov r12, #0x800

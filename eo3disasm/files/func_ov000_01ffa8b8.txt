@@ -1,3 +1,9 @@
+Name: SetZSlotStackingEnabled(int slot, int enabled) -> void
+Description: Stores a byte in the per-slot Z-stacking-enable table for the specified slot.
+Arguments:
+r0: (int) Z-slot index.
+r1: (int) Enable or mode byte for that slot.
+
 .arm
 func_ov000_01ffa8b8:
 ldr r2, [.L_0_01ffa8c4]

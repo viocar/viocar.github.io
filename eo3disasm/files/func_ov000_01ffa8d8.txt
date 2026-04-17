@@ -1,3 +1,8 @@
+Name: IncrementZDepthStack(int index) -> voi
+Description: Increments a byte in a small per-graphic state table.
+Arguments:
+r0: (int) State index.
+
 .arm
 func_ov000_01ffa8d8:
 ldr r2, [.L_0_01ffa8ec]

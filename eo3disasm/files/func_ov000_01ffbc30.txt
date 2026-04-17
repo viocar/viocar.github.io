@@ -1,3 +1,11 @@
+Name: GetTexTableEntryPointer(int* textable, int entry_index) -> int*
+Description: Returns a pointer to the specified 0x4C-byte entry within a TexTable.
+Arguments:
+r0: (int*) Pointer to the TexTable.
+r1: (int) Entry index.
+Returns:
+r0: (int*) Pointer to the selected entry, or 0 if the table pointer is null.
+
 .arm
 func_ov000_01ffbc30:
 stmdb sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}

@@ -1,4 +1,4 @@
-Name: StoreGraphicOpacity(int opacity) -> void
+Name: SetGraphicOpacity(int opacity) -> void
 Description: Clamps an opacity value to 1-31 and stores it.
 Arguments:
 r0: (int) Opacity value to be stored.

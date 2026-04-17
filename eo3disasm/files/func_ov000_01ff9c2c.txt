@@ -1,3 +1,6 @@
+Name: ResetGraphicOpacityAndColourSlot() -> void
+Description: Restores the default opacity value and clears the current colour-slot selection.
+
 .arm
 func_ov000_01ff9c2c:
 stmdb sp!, {r3, lr}

@@ -1,12 +1,15 @@
-Name:
-Description:
+Name: RenderGraphicWithMTD(int render_flags, int textable_id, int graphic_id, int x, int y, int rotation, int z_depth) -> int
+Description: Renders a graphic with metadata. If no metadata is present, it falls back to the standard renderer. If MTD metadata exists, it can apply opacity modulation, per-corner color modulation, and a transformed 3D render mode.
 Arguments:
-r0: (int) Rendering flags
-r1: ?
-r2: ?
-r3: (int) X position
-stack+0: Y position [actual: stack+0xB0]
-
+r0: (int) Render flags.
+r1: (int) TexTable ID.
+r2: (int) Graphic ID.
+r3: (int) X position.
+stack+0: (int) Y position.
+stack+1: (int) Rotation.
+stack+2: (int) Z-depth.
+Returns:
+r0: (int) 0 on failure or unsupported MTD mode, nonzero on success.
 
 .arm
 func_ov000_01ffb424:

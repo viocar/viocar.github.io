@@ -1,3 +1,8 @@
+Name: SetGraphicColourSlotBase(int slot_index) -> void
+Description: Stores the base colour-slot index used by the colour-slot allocator.
+Arguments:
+r0: (int) Base slot index.
+
 .arm
 func_ov000_01ff9d80:
 ldr r1, [.L_0_01ff9d8c]

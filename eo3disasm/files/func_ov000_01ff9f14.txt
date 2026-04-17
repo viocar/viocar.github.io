@@ -1,3 +1,9 @@
+Name: SetTranslucentDepthRenderingFlag(int enabled) -> void
+Function Offset: 0x01FF9F14
+Description: Sets or clears global render-state bit 0x800.
+Arguments:
+r0: (int) If 1, set the bit. Any other value clears it.
+
 .arm
 func_ov000_01ff9f14:
 cmp r0, #0x1

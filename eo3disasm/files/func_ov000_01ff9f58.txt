@@ -1,3 +1,9 @@
+Name: EmitImmediatePrimitive(int* vertex_list, int vertex_count) -> void
+Description: Emits a primitive directly to the ARM9 3D geometry ports from a list of 0x14-byte vertex entries. It writes per-vertex colour and vertex-position data and selects BEGIN_VTXS mode 1 when vertex_count is 4, otherwise mode 3.
+Arguments:
+r0: (int*) Pointer to the vertex list.
+r1: (int) Number of vertices to emit.
+
 .arm
 func_ov000_01ff9f58:
 stmdb sp!, {r3, r4, r5, lr}

@@ -1,3 +1,10 @@
+Name: SubmitPreparedPrimitive(int primitive_type, int* geometry, int polygon_type) -> void
+Description: Submits a prepared primitive through one of two draw paths. If the global clipping/subdivision callback is present and polygon_type is 4, it routes the primitive through the clipping path; otherwise it submits the primitive directly.
+Arguments:
+r0: (int) Primitive type or begin-vtxs mode passed through to the draw helper.
+r1: (int*) Pointer to the prepared geometry buffer.
+r2: (int) Polygon type selector.
+
 .arm
 func_ov000_01ffa838:
 stmdb sp!, {r3, lr}
