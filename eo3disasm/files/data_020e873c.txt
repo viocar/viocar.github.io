@@ -1,2 +1,0 @@
-data_020e873c:
-.word 0x20e874c

@@ -1,5 +1,0 @@
-.arm
-func_02038e30:
-ldr r12, [.L_02038e38]
-bx r12
-.L_02038e38: .word func_0203a0c4

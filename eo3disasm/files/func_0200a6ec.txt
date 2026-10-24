@@ -1,4 +1,0 @@
-.arm
-func_0200a6ec:
-mov r0, #0x0
-bx lr

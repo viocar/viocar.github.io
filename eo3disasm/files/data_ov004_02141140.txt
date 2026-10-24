@@ -1,6 +1,0 @@
-data_ov004_02141140:
-.word func_ov004_0213941c
-.word func_ov004_021394cc
-.word func_ov004_021395b8
-.word func_ov004_0213969c
-.word func_ov004_02139744

@@ -1,4 +1,0 @@
-.arm
-func_02036074:
-ldr r0, [r0, #0xc]
-bx lr

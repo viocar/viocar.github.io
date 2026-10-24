@@ -1,3 +1,0 @@
-.arm
-func_02000b60:
-bx lr

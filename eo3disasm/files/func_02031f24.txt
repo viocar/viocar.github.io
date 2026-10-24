@@ -1,5 +1,0 @@
-.arm
-func_02031f24:
-ldr r0, [.L_02031f2c]
-bx lr
-.L_02031f2c: .word 0x2105bf4

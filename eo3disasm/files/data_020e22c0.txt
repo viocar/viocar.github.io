@@ -1,2 +1,0 @@
-data_020e22c0:
-.word func_020118e0

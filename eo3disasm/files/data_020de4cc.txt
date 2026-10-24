@@ -1,3 +1,0 @@
-data_020de4cc:
-.word func_02006538
-.word func_02005afc

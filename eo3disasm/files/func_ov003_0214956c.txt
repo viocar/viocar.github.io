@@ -1,5 +1,0 @@
-.arm
-func_ov003_0214956c:
-mov r1, #0x0
-str r1, [r0, #0x30]
-bx lr

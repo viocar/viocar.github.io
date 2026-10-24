@@ -1,2 +1,0 @@
-data_020e0c0c:
-.byte 0x00, 0x00

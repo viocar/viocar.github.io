@@ -1,3 +1,0 @@
-.arm
-func_ov003_021598c8:
-bx lr

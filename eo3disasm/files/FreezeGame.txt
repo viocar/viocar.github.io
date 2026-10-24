@@ -1,7 +1,0 @@
-.arm
-FreezeGame:
-stmdb sp!, {r3, lr}
-bl DisableIRQ
-.L_020055b0:
-bl WaitForInterrupt
-b .L_020055b0

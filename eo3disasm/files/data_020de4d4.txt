@@ -1,2 +1,0 @@
-data_020de4d4:
-.byte 0x80

@@ -1,3 +1,0 @@
-.arm
-AutoloadCallback:
-bx lr

@@ -1,2 +1,0 @@
-data_ov001_0215ae0c:
-.byte 0x00

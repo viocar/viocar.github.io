@@ -1,5 +1,0 @@
-.arm
-func_0200b348:
-cmp r1, #0x0
-strne r0, [r1, #0x0]
-bx lr

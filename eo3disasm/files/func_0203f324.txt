@@ -1,4 +1,0 @@
-.arm
-func_0203f324:
-strb r1, [r0, #0x16c]
-bx lr

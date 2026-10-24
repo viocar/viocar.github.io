@@ -1,3 +1,0 @@
-.arm
-func_02077ddc:
-bx lr
